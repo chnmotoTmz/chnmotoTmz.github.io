@@ -1,0 +1,338 @@
+{
+  "workflow_name": "ArticleGenerationPipeline_V3",
+  "description": "Rationalized workflow with explicit Manga Drawing stage and Fail-Fast engine.",
+  "trigger": {
+    "type": "webhook",
+    "source": "line",
+    "url_prefix": "/api/webhook",
+    "endpoint": "/line",
+    "method": "POST"
+  },
+  "steps": [
+    {
+      "id": "fetch_data",
+      "module": "DatabaseFetcher",
+      "inputs": {
+        "user_id": "${initial_input.user_id}",
+        "message_ids": "${initial_input.message_ids}"
+      },
+      "outputs": {
+        "user": "user_data",
+        "blog": "blog_data",
+        "messages": "messages_data",
+        "assets": "assets_data",
+        "message_ids": "original_message_ids"
+      },
+      "on_success": "prepare_prompt",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "prepare_prompt",
+      "module": "PromptPreparer",
+      "inputs": {
+        "messages": "${messages_data}",
+        "assets": "${assets_data}"
+      },
+      "outputs": {
+        "texts": "prompt_texts",
+        "images_for_prompt": "prompt_images",
+        "youtube_links": "youtube_links",
+        "web_links": "web_links"
+      },
+      "on_success": "parse_commands",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "parse_commands",
+      "module": "CommandParserTask",
+      "inputs": {
+        "texts": "${prompt_texts}",
+        "user_id": "${initial_input.user_id}",
+        "line_user_id": "${initial_input.line_user_id}",
+        "channel_id": "${initial_input.channel_id}"
+      },
+      "outputs": {
+        "command_context": "command_context",
+        "cleaned_texts": "cleaned_texts",
+        "style_prompt": "style_prompt",
+        "stop_workflow": "stop_workflow"
+      },
+      "on_success": "web_summary_fetcher",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "web_summary_fetcher",
+      "module": "WebSummaryFetcher",
+      "inputs": {
+        "web_links": { "var": "${web_links}", "optional": true }
+      },
+      "outputs": { "web_summaries": "web_summaries" },
+      "on_success": "select_blog",
+      "on_failure": "select_blog"
+    },
+    {
+      "id": "select_blog",
+      "module": "BlogSelectorTaskV2",
+      "inputs": {
+        "command_context": "${command_context}",
+        "cleaned_texts": "${cleaned_texts}",
+        "style_prompt": "${style_prompt}",
+        "images_for_prompt": "${prompt_images}"
+      },
+      "outputs": {
+        "blog_config": "blog_data",
+        "cleaned_texts": "processed_texts",
+        "style_prompt": "style_prompt",
+        "repost_data": "repost_data"
+      },
+      "on_success": "check_repost_mode",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "check_repost_mode",
+      "module": "RepostModeCheckerTask",
+      "inputs": {
+        "command_context": "${command_context}",
+        "style_prompt": "${style_prompt}",
+        "cleaned_texts": "${processed_texts}"
+      },
+      "outputs": {
+        "is_repost": "is_repost",
+        "structured_post_id": "structured_post_id",
+        "repost_mode": "repost_mode",
+        "repost_data": "repost_data",
+        "cleaned_texts": "processed_texts"
+      },
+      "on_success": {
+        "if": "is_repost",
+        "then": "load_structured_data",
+        "else": "define_concept"
+      },
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "load_structured_data",
+      "module": "StructuredDataLoaderTask",
+      "inputs": { "structured_post_id": "${structured_post_id}" },
+      "outputs": { "structured_data": "structured_data" },
+      "on_success": "prepare_repost_context",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "prepare_repost_context",
+      "module": "RepostContextPreparerTask",
+      "inputs": {
+        "structured_data": "${structured_data}",
+        "style_prompt": "${style_prompt}",
+        "repost_mode": "${repost_mode}"
+      },
+      "outputs": {
+        "article_concept": "article_concept",
+        "article_structure": "article_structure"
+      },
+      "on_success": "generate_from_structured",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "generate_from_structured",
+      "module": "StructuredArticleGeneratorTask",
+      "inputs": {
+        "structured_data": "${structured_data}",
+        "style_prompt": "${style_prompt}",
+        "blog": "${blog_data}"
+      },
+      "outputs": { "title": "base_title", "content": "base_content" },
+      "on_success": "prepare_image_ui",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "define_concept",
+      "module": "ArticleConceptDefiner",
+      "inputs": {
+        "texts": "${processed_texts}",
+        "blog": "${blog_data}"
+      },
+      "outputs": { "article_concept": "article_concept" },
+      "on_success": "plan_strategy",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "plan_strategy",
+      "module": "ArticleStrategyPlanner",
+      "inputs": {
+        "article_concept": "${article_concept}",
+        "texts": "${processed_texts}",
+        "web_summaries": "${web_summaries}",
+        "blog": "${blog_data}"
+      },
+      "outputs": {
+        "article_structure": "article_structure",
+        "affiliate_strategy": "affiliate_strategy"
+      },
+      "on_success": "generate_content",
+      "on_failure": "generate_content"
+    },
+    {
+      "id": "generate_content",
+      "module": "ArticleContentGenerator",
+      "inputs": {
+        "texts": "${processed_texts}",
+        "blog": "${blog_data}",
+        "article_concept": "${article_concept}"
+      },
+      "outputs": {
+        "title": "base_title",
+        "content": "base_content",
+        "thumbnail_prompt": "generated_thumbnail_prompt"
+      },
+      "on_success": "prepare_image_ui",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "prepare_image_ui",
+      "module": "PressImageIcon",
+      "description": "Prepares the extension UI for image generation by pressing the 'Create images' icon.",
+      "inputs": {},
+      "outputs": { "press_success": "image_ui_ready" },
+      "on_success": "draw_manga_thumbnail",
+      "on_failure": "draw_manga_thumbnail"
+    },
+    {
+      "id": "draw_manga_thumbnail",
+      "module": "ThumbnailGenerator",
+      "description": "EXPLICIT STAGE: Trigger Drawing and Imgur Upload",
+      "inputs": {
+        "title": "${base_title}",
+        "content": "${base_content}",
+        "thumbnail_prompt": "${generated_thumbnail_prompt}"
+      },
+      "outputs": { "enhanced_content": "content_with_thumbnail" },
+      "on_success": "add_linked_sources",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "add_linked_sources",
+      "module": "AddLinkedSourcesTask",
+      "inputs": {
+        "content": "${content_with_thumbnail}",
+        "web_summaries": "${web_summaries}"
+      },
+      "outputs": { "content_with_links": "content_with_links" },
+      "on_success": "review_article",
+      "on_failure": "review_article"
+    },
+    {
+      "id": "review_article",
+      "module": "ArticleReviewer",
+      "inputs": {
+        "title": "${base_title}",
+        "content": "${content_with_links}",
+        "article_concept": "${article_concept}",
+        "blog": "${blog_data}",
+        "web_summaries": "${web_summaries}",
+        "style_prompt": "${style_prompt}"
+      },
+      "outputs": {
+        "review_feedback": "review_feedback",
+        "has_issues": "has_review_issues",
+        "revised_content": "final_content"
+      },
+      "on_success": {
+        "if": "has_review_issues",
+        "then": "revise_article",
+        "else": "set_final_content_no_revision"
+      },
+      "on_failure": "set_final_content_no_revision"
+    },
+    {
+      "id": "revise_article",
+      "module": "ArticleReviser",
+      "config": {
+        "rule_based_only": true
+      },
+      "inputs": {
+        "title": "${base_title}",
+        "content": "${content_with_links}",
+        "review_feedback": "${review_feedback}",
+        "article_concept": "${article_concept}",
+        "blog": "${blog_data}",
+        "web_summaries": "${web_summaries}"
+      },
+      "outputs": {
+        "revised_title": "final_title",
+        "revised_content": "final_content"
+      },
+      "on_success": "save_draft",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "set_final_content_no_revision",
+      "module": "PassthroughTask",
+      "inputs": { "title": "${base_title}", "content": "${final_content}" },
+      "outputs": { "title": "final_title", "content": "final_content" },
+      "on_success": "save_draft",
+      "on_failure": "save_draft"
+    },
+    {
+      "id": "save_draft",
+      "module": "DraftPersister",
+      "inputs": {
+        "blog": "${blog_data}",
+        "user": "${user_data}",
+        "title": "${final_title}",
+        "content": "${final_content}",
+        "message_ids": "${original_message_ids}"
+      },
+      "outputs": { "post_id": "draft_post_id" },
+      "on_success": "post_to_hatena",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "post_to_hatena",
+      "module": "HatenaPublisher",
+      "inputs": {
+        "blog": "${blog_data}",
+        "post_id": "${draft_post_id}"
+      },
+      "outputs": { "hatena_entry": "hatena_entry" },
+      "on_success": "notify_user",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "notify_user",
+      "module": "LineNotifier",
+      "inputs": {
+        "line_user_id": "${initial_input.line_user_id}",
+        "channel_id": "${initial_input.channel_id}",
+        "final_post_title": "${base_title}",
+        "hatena_entry": "${hatena_entry}",
+        "blog": "${blog_data}"
+      },
+      "on_success": "reset_session",
+      "on_failure": "reset_session"
+    },
+    {
+      "id": "handle_error",
+      "module": "LineNotifier",
+      "inputs": {
+        "line_user_id": "${initial_input.line_user_id}",
+        "channel_id": "${initial_input.channel_id}",
+        "last_error_message": "${last_error_message}",
+        "message_type": "failure"
+      },
+      "terminal": true
+    },
+    {
+      "id": "reset_session",
+      "module": "GeminiReset",
+      "description": "Final step to reset Gemini session after successful run.",
+      "inputs": {},
+      "outputs": {},
+      "terminal": true
+    }
+  ],
+  "variables": {
+    "is_repost": false,
+    "has_review_issues": false
+  }
+}

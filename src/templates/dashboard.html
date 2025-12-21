@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Analytics Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .chart-container h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+        
+        canvas {
+            max-height: 400px;
+        }
+        
+        .topic-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .topic-item {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .topic-item:hover {
+            background: #e9ecef;
+        }
+        
+        .topic-date {
+            color: #6c757d;
+            font-size: 0.85em;
+            margin-bottom: 5px;
+        }
+        
+        .topic-title {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            padding: 50px;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .refresh-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .refresh-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Blog Analytics Dashboard</h1>
+        
+        <div id="loading" class="loading">データを読み込んでいます...</div>
+        <div id="error" class="error" style="display:none;"></div>
+        
+        <div id="dashboard" style="display:none;">
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h2>📝 総投稿数</h2>
+                    <div id="total-posts" style="font-size: 2.5em; font-weight: bold; color: #667eea; text-align: center; margin-top: 20px;">-</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h2>✅ 公開済み</h2>
+                    <div id="published-posts" style="font-size: 2.5em; font-weight: bold; color: #28a745; text-align: center; margin-top: 20px;">-</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h2>📋 下書き</h2>
+                    <div id="draft-posts" style="font-size: 2.5em; font-weight: bold; color: #ffc107; text-align: center; margin-top: 20px;">-</div>
+                </div>
+            </div>
+            
+            <!-- Charts -->
+            <div class="chart-container">
+                <h2>ブログ別投稿数</h2>
+                <canvas id="blogChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <h2>投稿タイムライン（直近30日）</h2>
+                <canvas id="timelineChart"></canvas>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h2>頻出キーワード Top 10</h2>
+                    <canvas id="keywordChart"></canvas>
+                </div>
+                
+                <div class="stat-card">
+                    <h2>ステータス分布</h2>
+                    <canvas id="statusChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Recent Topics -->
+            <div class="chart-container">
+                <h2>最近の投稿トピック (Logs)</h2>
+                <div id="topics" class="topic-list"></div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="refresh-btn" onclick="loadDashboard()">🔄 更新</button>
+    
+    <script>
+        let charts = {};
+        
+        async function loadDashboard() {
+            try {
+                const loadingEl = document.getElementById('loading');
+                const errorEl = document.getElementById('error');
+                const dashboardEl = document.getElementById('dashboard');
+
+                // Only show loading if dashboard is not yet visible
+                if (dashboardEl.style.display === 'none') {
+                    loadingEl.style.display = 'block';
+                }
+                errorEl.style.display = 'none';
+                
+                const response = await fetch('/dashboard/api/stats');
+                if (!response.ok) throw new Error('Failed to fetch data');
+                
+                const data = await response.json();
+                
+                // Update stats cards
+                const totalPosts = data.posts_per_blog.reduce((sum, b) => sum + b.count, 0);
+                const publishedCount = data.status_distribution.find(s => s.status === 'published')?.count || 0;
+                const draftCount = data.status_distribution.find(s => s.status === 'draft')?.count || 0;
+                
+                document.getElementById('total-posts').textContent = totalPosts;
+                document.getElementById('published-posts').textContent = publishedCount;
+                document.getElementById('draft-posts').textContent = draftCount;
+                
+                // Render charts
+                renderBlogChart(data.posts_per_blog);
+                renderTimelineChart(data.posts_timeline);
+                renderKeywordChart(data.top_keywords.slice(0, 10));
+                renderStatusChart(data.status_distribution);
+                
+                // Render topics
+                renderTopics(data.recent_topics);
+                
+                loadingEl.style.display = 'none';
+                dashboardEl.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Dashboard load error:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent = 'データの読み込みに失敗しました: ' + error.message;
+            }
+        }
+        
+        function renderBlogChart(data) {
+            const ctx = document.getElementById('blogChart');
+            if (charts.blog) charts.blog.destroy();
+            
+            charts.blog = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.map(d => d.blog),
+                    datasets: [{
+                        label: '投稿数',
+                        data: data.map(d => d.count),
+                        backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                        borderColor: 'rgba(102, 126, 234, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 1 }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function renderTimelineChart(data) {
+            const ctx = document.getElementById('timelineChart');
+            if (charts.timeline) charts.timeline.destroy();
+            
+            charts.timeline = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.map(d => d.date),
+                    datasets: [{
+                        label: '投稿数',
+                        data: data.map(d => d.count),
+                        borderColor: 'rgba(118, 75, 162, 1)',
+                        backgroundColor: 'rgba(118, 75, 162, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 1 }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function renderKeywordChart(data) {
+            const ctx = document.getElementById('keywordChart');
+            if (charts.keyword) charts.keyword.destroy();
+            
+            charts.keyword = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.map(d => d.keyword),
+                    datasets: [{
+                        label: '出現回数',
+                        data: data.map(d => d.count),
+                        backgroundColor: 'rgba(40, 167, 69, 0.8)',
+                        borderColor: 'rgba(40, 167, 69, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: true
+                }
+            });
+        }
+        
+        function renderStatusChart(data) {
+            const ctx = document.getElementById('statusChart');
+            if (charts.status) charts.status.destroy();
+            
+            const colors = {
+                'published': 'rgba(40, 167, 69, 0.8)',
+                'draft': 'rgba(255, 193, 7, 0.8)',
+                'error': 'rgba(220, 53, 69, 0.8)'
+            };
+            
+            charts.status = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: data.map(d => d.status),
+                    datasets: [{
+                        data: data.map(d => d.count),
+                        backgroundColor: data.map(d => colors[d.status] || 'rgba(108, 117, 125, 0.8)')
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true
+                }
+            });
+        }
+        
+        function renderTopics(topics) {
+            const container = document.getElementById('topics');
+            if (topics.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:#6c757d;">最近のトピックがありません</p>';
+                return;
+            }
+            
+            container.innerHTML = topics.map(topic => `
+                <div class="topic-item">
+                    <div class="topic-date">${topic.date}</div>
+                    <div class="topic-title">${topic.title}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Auto-refresh every 5 minutes
+        setInterval(loadDashboard, 5 * 60 * 1000);
+        
+        // Initial load
+        loadDashboard();
+    </script>
+</body>
+</html>

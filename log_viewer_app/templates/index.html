@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Geminiログビューア</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        .entry { border-bottom: 1px solid #ccc; margin-bottom: 1em; padding-bottom: 1em; }
+        .prompt, .response, .module { margin: 0.5em 0; }
+    </style>
+</head>
+<body>
+    <h1>Geminiログビューア</h1>
+    <label for="logfile">ログファイル選択:</label>
+    <select id="logfile">
+        {% for file in files %}
+        <option value="{{ file }}">{{ file }}</option>
+        {% endfor %}
+    </select>
+    <button onclick="loadLog()">表示</button>
+    <input type="text" id="search" placeholder="user_id/timestampで絞り込み">
+    <div id="log"></div>
+    <script>
+        function loadLog() {
+            const file = document.getElementById('logfile').value;
+            fetch(`/view_log?filename=${file}`)
+                .then(res => res.json())
+                .then(data => {
+                    const search = document.getElementById('search').value.trim();
+                    let entries = data.entries;
+                    if (search) {
+                        entries = entries.filter(e => (e.user_id && e.user_id.includes(search)) || (e.timestamp && String(e.timestamp).includes(search)));
+                    }
+                    const logDiv = document.getElementById('log');
+                    logDiv.innerHTML = entries.map(e => `
+                        <div class="entry">
+                            <div class="module"><strong>Module:</strong> ${e.module || ''}</div>
+                            <div class="prompt"><strong>Prompt:</strong> <pre>${e.prompt || ''}</pre></div>
+                            <div class="response"><strong>Response:</strong> <pre>${e.response || ''}</pre></div>
+                            <div><strong>User ID:</strong> ${e.user_id || ''}</div>
+                            <div><strong>Timestamp:</strong> ${e.timestamp || ''}</div>
+                        </div>
+                    `).join('');
+                });
+        }
+        document.getElementById('search').addEventListener('input', loadLog);
+    </script>
+</body>
+</html>

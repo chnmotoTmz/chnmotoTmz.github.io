@@ -1,0 +1,80 @@
+{
+  "workflow_name": "ChatConversationPipeline",
+  "description": "A workflow to handle multi-turn chat with Gemini and LINE integration.",
+  "trigger": {
+    "type": "webhook",
+    "source": "line|chat",
+    "url_prefix": "/api/webhook",
+    "endpoint": "/chat",
+    "method": "POST",
+    "description": "Triggered by chat webhook events for user messages"
+  },
+  "steps": [
+    {
+      "id": "append_user_message",
+      "module": "ChatHistoryManager",
+      "description": "Append the user's message to the conversation history.",
+      "inputs": {
+        "user_id": "${initial_input.user_id}",
+        "message": "${initial_input.message}"
+      },
+      "outputs": {
+        "history": "chat_history"
+      },
+      "on_success": "generate_ai_reply",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "generate_ai_reply",
+      "module": "GeminiChatResponder",
+      "description": "Generate an AI reply using Gemini with conversation history.",
+      "inputs": {
+        "history": "${chat_history}"
+      },
+      "outputs": {
+        "reply": "ai_reply"
+      },
+      "on_success": "append_ai_reply",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "append_ai_reply",
+      "module": "ChatHistoryManager",
+      "description": "Append the AI's reply to the conversation history.",
+      "inputs": {
+        "user_id": "${initial_input.user_id}",
+        "message": "${ai_reply}",
+        "role": "ai"
+      },
+      "outputs": {
+        "history": "chat_history"
+      },
+      "on_success": "send_line_reply",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "send_line_reply",
+      "module": "LineNotifier",
+      "description": "Send the AI reply to the user via LINE.",
+      "inputs": {
+        "line_user_id": "${initial_input.user_id}",
+        "reply": "${ai_reply}"
+      },
+      "outputs": {},
+      "on_success": "end",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "handle_error",
+      "module": "LineNotifier",
+      "description": "Notifies the user of an error.",
+      "inputs": {
+        "line_user_id": "${initial_input.user_id}",
+        "last_error_message": "${last_error_message}"
+      },
+      "outputs": {},
+      "on_success": "end",
+      "on_failure": "end"
+    }
+  ]
+}

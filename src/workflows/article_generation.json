@@ -1,0 +1,436 @@
+{
+  "workflow_name": "ArticleGenerationPipeline",
+  "description": "A workflow to generate and publish a blog post from user messages.",
+  "trigger": {
+    "type": "webhook",
+    "source": "line",
+    "url_prefix": "/api/webhook",
+    "endpoint": "/line",
+    "method": "POST",
+    "description": "Triggered by LINE webhook events for user messages"
+  },
+  "steps": [
+    {
+      "id": "fetch_data",
+      "module": "DatabaseFetcher",
+      "description": "Fetches all necessary data from the database.",
+      "inputs": {
+        "user_id": "${initial_input.user_id}",
+        "message_ids": "${initial_input.message_ids}"
+      },
+      "outputs": {
+        "user": "user_data",
+        "blog": "blog_data",
+        "messages": "messages_data",
+        "assets": "assets_data",
+        "message_ids": "original_message_ids"
+      },
+      "on_success": "prepare_prompt",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "prepare_prompt",
+      "module": "PromptPreparer",
+      "description": "Prepares texts, image URLs, and link lists for the AI prompt.",
+      "inputs": {
+        "messages": "${messages_data}",
+        "assets": "${assets_data}"
+      },
+      "outputs": {
+        "texts": "prompt_texts",
+        "images_for_prompt": "prompt_images",
+        "youtube_links": "youtube_links",
+        "web_links": "web_links"
+      },
+      "on_success": "web_summary_fetcher",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "web_summary_fetcher",
+      "module": "WebSummaryFetcher",
+      "description": "Webリンクからページタイトル・本文要約を取得し、web_summariesとしてcontextに格納する。",
+      "inputs": {
+  "web_links": { "var": "${web_links}", "optional": true }
+      },
+      "outputs": {
+        "web_summaries": "web_summaries"
+      },
+      "on_success": "video_summary_fetcher",
+      "on_failure": "video_summary_fetcher"
+    },
+    {
+      "id": "video_summary_fetcher",
+      "module": "VideoSummaryFetcher",
+      "description": "YouTubeリンクから動画情報（タイトル・説明・サムネイル）を取得し、video_summariesとしてcontextに格納する。",
+      "inputs": {
+        "youtube_links": "${youtube_links}"
+      },
+      "outputs": {
+        "video_summaries": "video_summaries"
+      },
+      "on_success": "select_blog",
+      "on_failure": "select_blog"
+    },
+    {
+      "id": "select_blog",
+      "module": "BlogSelector",
+      "description": "Selects the most appropriate blog based on message content.",
+      "inputs": {
+        "texts": "${prompt_texts}",
+        "images_for_prompt": "${prompt_images}",
+        "web_summaries": "${web_summaries}"
+      },
+      "outputs": {
+        "blog_config": "blog_data",
+        "cleaned_texts": "prompt_texts",
+        "repost_data": "repost_data",
+        "style_prompt": "style_prompt"
+      },
+      "on_success": "define_concept",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "define_concept",
+      "module": "ArticleConceptDefiner",
+      "description": "Defines the article's concept.",
+      "inputs": {
+        "texts": "${prompt_texts}",
+        "images_for_prompt": "${prompt_images}",
+        "blog": "${blog_data}",
+        "web_summaries": "${web_summaries}",
+        "repost_data": "${repost_data}"
+      },
+      "outputs": {
+        "article_concept": "article_concept"
+      },
+      "on_success": "plan_strategy",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "plan_strategy",
+      "module": "ArticleStrategyPlanner",
+      "description": "Plans article structure, affiliate strategy, and thumbnail concept before writing.",
+      "inputs": {
+        "article_concept": "${article_concept}",
+        "texts": "${prompt_texts}",
+        "web_summaries": "${web_summaries}",
+        "video_summaries": "${video_summaries}",
+        "blog": "${blog_data}"
+      },
+      "outputs": {
+        "article_structure": "article_structure",
+        "affiliate_strategy": "affiliate_strategy",
+        "thumbnail_concept": "thumbnail_concept",
+        "target_keywords": "target_keywords"
+      },
+      "on_success": "fetch_similar_articles",
+      "on_failure": "fetch_similar_articles"
+    },
+    {
+      "id": "fetch_similar_articles",
+      "module": "RagSimilarArticlesFetcher",
+      "description": "Retrieves similar articles from RAG model for context enrichment.",
+      "config": { "enabled": true },
+      "inputs": {
+        "texts": "${prompt_texts}",
+        "article_concept": "${article_concept}",
+        "blog": "${blog_data}",
+        "web_summaries": "${web_summaries}"
+      },
+      "outputs": {
+        "similar_articles": "similar_articles",
+        "writing_style_hints": "writing_style_hints"
+      },
+      "on_success": "generate_content",
+      "on_failure": "generate_content"
+    },
+    {
+      "id": "generate_content",
+      "module": "ArticleContentGenerator",
+      "description": "Generates the main article title, content, and thumbnail prompt with RAG context.",
+      "inputs": {
+        "texts": "${prompt_texts}",
+        "images_for_prompt": "${prompt_images}",
+        "blog": "${blog_data}",
+        "article_concept": "${article_concept}",
+        "similar_articles": "${similar_articles}",
+        "writing_style_hints": "${writing_style_hints}",
+        "video_summaries": "${video_summaries}",
+        "web_summaries": "${web_summaries}",
+        "repost_data": "${repost_data}",
+        "article_structure": "${article_structure}",
+        "affiliate_strategy": "${affiliate_strategy}",
+        "style_prompt": "${style_prompt}"
+      },
+      "outputs": {
+        "title": "base_title",
+        "content": "base_content",
+        "thumbnail_prompt": "generated_thumbnail_prompt"
+      },
+      "on_success": "remove_amazon_links",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "remove_amazon_links",
+      "module": "AmazonLinkRemoverTask",
+      "description": "Removes Amazon links and replaces them with Rakuten alternatives.",
+      "config": { "enabled": true },
+      "inputs": {
+        "title": "${base_title}",
+        "content": "${base_content}"
+      },
+      "outputs": {
+        "title": "base_title",
+        "content": "base_content"
+      },
+      "on_success": "add_linked_sources",
+      "on_failure": "add_linked_sources"
+    },
+    {
+      "id": "add_linked_sources",
+      "module": "AddLinkedSourcesTask",
+      "description": "Appends a reference section with web_summaries to the article content.",
+      "inputs": {
+        "content": "${base_content}",
+        "web_summaries": "${web_summaries}",
+        "section_title": "📚 出典リンク"
+      },
+      "outputs": {
+        "content_with_links": "content_with_links"
+      },
+      "on_success": "add_thumbnail",
+      "on_failure": "add_thumbnail"
+    },
+    {
+      "id": "add_thumbnail",
+      "module": "ThumbnailGenerator",
+      "description": "Adds a thumbnail image to the content using the pre-generated prompt. ⚠️ Prompt modification is forbidden.",
+      "config": { "enabled": true },
+      "inputs": {
+        "title": "${base_title}",
+        "content": "${content_with_links}",
+        "thumbnail_prompt": "${generated_thumbnail_prompt}"
+      },
+      "outputs": {
+        "enhanced_content": "content_with_thumbnail"
+      },
+      "on_success": "add_fact_check",
+      "on_failure": "add_fact_check"
+    },
+    {
+      "id": "add_fact_check",
+      "module": "FactChecker",
+      "description": "Adds fact-check references to the content.",
+      "config": { "enabled": true },
+      "inputs": {
+        "title": "${base_title}",
+        "content": "${content_with_thumbnail}",
+        "web_summaries": "${web_summaries}"
+      },
+      "outputs": {
+        "enhanced_content": "content_with_facts"
+      },
+      "on_success": "review_article",
+      "on_failure": "review_article"
+    },
+    {
+      "id": "review_article",
+      "module": "ArticleReviewer",
+      "description": "Claudeによる記事レビュー・ダメ出し指摘。司馬遼太郎風の文体・論理性・独自性・継続性などを指摘。",
+      "config": { "enabled": true },
+      "inputs": {
+        "title": "${base_title}",
+        "content": "${content_with_facts}",
+        "article_concept": "${article_concept}",
+        "similar_articles": "${similar_articles}",
+        "blog": "${blog_data}"
+      },
+      "outputs": {
+        "review_feedback": "review_feedback",
+        "has_issues": "has_review_issues",
+        "improvement_suggestions": "improvement_suggestions"
+      },
+      "on_success": "revise_article",
+      "on_failure": "revise_article"
+    },
+    {
+      "id": "revise_article",
+      "module": "ArticleReviser",
+      "description": "Claudeによる記事修正。レビュー指摘を元に内容を改善・最終調整。",
+      "config": { "enabled": true },
+      "inputs": {
+        "title": "${base_title}",
+        "content": "${content_with_facts}",
+        "review_feedback": "${review_feedback}",
+        "improvement_suggestions": "${improvement_suggestions}",
+        "article_concept": "${article_concept}",
+        "blog": "${blog_data}"
+      },
+      "outputs": {
+        "revised_title": "final_title",
+        "revised_content": "final_content_revised"
+      },
+      "on_success": "final_fact_cleanup",
+      "on_failure": "final_fact_cleanup"
+    },
+    {
+      "id": "final_fact_cleanup",
+      "module": "FinalFactCleanupTask",
+      "description": "example.com等の仮URLや不要なリンクを除去し、参考記事はタイトルからURLを補完する最終クリーンアップ。",
+      "config": { "enabled": true },
+      "inputs": {
+        "title": "${final_title}",
+        "content": "${final_content_revised}",
+        "web_summaries": "${web_summaries}",
+        "similar_articles": "${similar_articles}"
+      },
+      "outputs": {
+        "title": "cleaned_title",
+        "content": "cleaned_content"
+      },
+      "on_success": "add_affiliate_links",
+      "on_failure": "fallback_to_revised"
+    },
+    {
+      "id": "fallback_to_revised",
+      "module": "PassthroughTask",
+      "description": "final_fact_cleanupが失敗した場合、修正済みコンテンツをそのまま使用する。",
+      "config": { "enabled": true },
+      "inputs": {
+        "title": "${final_title}",
+        "content": "${final_content_revised}"
+      },
+      "outputs": {
+        "title": "cleaned_title",
+        "content": "cleaned_content"
+      },
+      "on_success": "add_affiliate_links",
+      "on_failure": "add_affiliate_links"
+    },
+    {
+      "id": "add_affiliate_links",
+      "module": "AffiliateLinkerTask",
+      "description": "Adds affiliate links to the content.",
+      "config": { "enabled": true },
+      "inputs": {
+        "title": "${cleaned_title}",
+        "content": "${cleaned_content}",
+        "article_concept": "${article_concept}"
+      },
+      "outputs": {
+        "enhanced_content": "final_content_with_links"
+      },
+      "on_success": "persist_draft",
+      "on_failure": "persist_draft"
+    },
+    {
+      "id": "persist_draft",
+      "module": "DraftPersister",
+      "description": "Saves the final article as a draft in the database.",
+      "inputs": {
+        "blog": "${blog_data}",
+        "user": "${user_data}",
+        "title": "${cleaned_title}",
+        "content": "${final_content_with_links}",
+        "message_ids": "${original_message_ids}"
+      },
+      "outputs": {
+        "post_id": "draft_post_id"
+      },
+      "on_success": "validate_links",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "validate_links",
+      "module": "LinkValidatorTask",
+      "description": "Checks all URLs in the article for dead/broken links and replaces or removes them as needed.",
+      "inputs": {
+        "title": "${cleaned_title}",
+        "content": "${cleaned_content}",
+        "blog": "${blog_data}"
+      },
+      "outputs": {
+        "title": "validated_title",
+        "content": "validated_content"
+      },
+      "on_success": "publish_to_hatena",
+      "on_failure": "publish_to_hatena"
+    },
+    {
+      "id": "publish_to_hatena",
+      "module": "HatenaPublisher",
+      "description": "Publishes the article to Hatena Blog.",
+      "inputs": {
+        "blog": "${blog_data}",
+        "post_id": "${draft_post_id}",
+        "title": "${validated_title}",
+        "content": "${validated_content}",
+        "article_concept": "${article_concept}"
+      },
+      "outputs": {
+        "hatena_entry": "hatena_entry_details"
+      },
+      "on_success": "update_status",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "update_status",
+      "module": "StatusUpdater",
+      "description": "Updates the post status to 'published' in the database.",
+      "inputs": {
+        "post_id": "${draft_post_id}",
+        "hatena_entry": "${hatena_entry_details}"
+      },
+      "outputs": {
+        "final_post_title": "published_title",
+        "final_post_url": "published_url"
+      },
+      "on_success": "notify_user",
+      "on_failure": "notify_user"
+    },
+    {
+      "id": "notify_user",
+      "module": "LineNotifier",
+      "description": "Notifies the user on LINE.",
+      "inputs": {
+        "user": "${user_data}",
+        "line_user_id": "${initial_input.line_user_id}",
+        "channel_id": "${initial_input.channel_id}",
+        "final_post_title": "${published_title}",
+        "final_post_url": "${published_url}"
+      },
+      "outputs": {},
+      "on_success": "update_rag_model",
+      "on_failure": "update_rag_model"
+    },
+    {
+      "id": "update_rag_model",
+      "module": "RagUpdater",
+      "description": "Updates RAG model with newly published article.",
+      "config": { "enabled": true },
+      "inputs": {
+        "blog": "${blog_data}"
+      },
+      "outputs": {
+        "success": "rag_update_success",
+        "message": "rag_update_message"
+      },
+      "on_success": "end",
+      "on_failure": "end"
+    },
+    {
+      "id": "handle_error",
+      "module": "LineNotifier",
+      "description": "Notifies the user of an error.",
+      "inputs": {
+        "user": "${user_data}",
+        "line_user_id": "${initial_input.line_user_id}",
+        "channel_id": "${initial_input.channel_id}",
+        "last_error_message": "${last_error_message}"
+      },
+      "outputs": {},
+      "on_success": "end",
+      "on_failure": "end"
+    }
+  ]
+}

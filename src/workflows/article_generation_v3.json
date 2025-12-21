@@ -1,0 +1,88 @@
+{
+  "workflow_name": "ArticleGenerationPipeline_V3_Minimal",
+  "description": "Minimal workflow to generate a thumbnail, upload it (Imgur), and publish a minimal local post for investigation.",
+  "trigger": {
+    "type": "manual",
+    "description": "Manual test trigger"
+  },
+  "steps": [
+    {
+      "id": "prepare_thumbnail_prompt",
+      "module": "MinimalThumbnailPreparer",
+      "description": "Create a thumbnail prompt from title/content",
+      "inputs": {
+        "title": "${initial_input.title}",
+        "content": "${initial_input.content:}" 
+      },
+      "outputs": {
+        "thumbnail_prompt": "thumbnail_prompt"
+      },
+      "on_success": "generate_thumbnail",
+      "on_failure": "handle_error"
+    },
+    {
+      "id": "generate_thumbnail",
+      "module": "ThumbnailGenerator",
+      "description": "Generates the image and uploads to Imgur, embeds into content",
+      "inputs": {
+        "title": "${initial_input.title}",
+        "content": "${initial_input.content}",
+        "thumbnail_prompt": "${thumbnail_prompt}",
+        "new_chat": "${initial_input.new_chat:true}"
+      },
+      "outputs": {
+        "enhanced_content": "content_with_thumbnail"
+      },
+      "on_success": "save_draft_local",
+      "on_failure": "save_draft_local"
+    },
+    {
+      "id": "save_draft_local",
+      "module": "LocalPublisher",
+      "description": "Save the final content locally for inspection",
+      "inputs": {
+        "title": "${initial_input.title}",
+        "content": "${content_with_thumbnail}"
+      },
+      "outputs": {
+        "hatena_entry": "hatena_entry"
+      },
+      "on_success": "notify_user",
+      "on_failure": "notify_user"
+    },
+    {
+      "id": "notify_user",
+      "module": "ConsoleNotifier",
+      "description": "Notify the requestor that the post is ready (console-only for tests)",
+      "inputs": {
+        "line_user_id": "${initial_input.line_user_id}",
+        "channel_id": "${initial_input.channel_id}",
+        "final_post_title": "${initial_input.title}",
+        "hatena_entry": "${hatena_entry}"
+      },
+      "outputs": {},
+      "terminal": true
+    },
+    {
+      "id": "handle_error",
+      "module": "ConsoleNotifier",
+      "description": "Error handler: notify user (console-only)",
+      "inputs": {
+        "line_user_id": "${initial_input.line_user_id}",
+        "channel_id": "${initial_input.channel_id}",
+        "last_error_message": "${last_error_message}",
+        "message_type": "failure"
+      },
+      "outputs": {},
+      "terminal": true
+    }
+  ],
+  "variables": {
+    "title": "",
+    "content": "",
+    "thumbnail_prompt": "",
+    "content_with_thumbnail": "",
+    "hatena_entry": null,
+    "new_chat": true
+  }
+}

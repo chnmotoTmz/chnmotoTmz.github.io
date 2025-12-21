@@ -1,0 +1,13 @@
+{
+  "model": "self_blog_entries",
+  "docs": 20,
+  "trained_at": "2025-11-27T08:43:00.360941",
+  "features": 1835,
+  "config": {
+    "max_features": 8000,
+    "ngram_range": [
+      1,
+      2
+    ]
+  }
+}

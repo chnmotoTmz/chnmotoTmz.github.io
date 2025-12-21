@@ -1,0 +1,7 @@
+﻿tunnel: c9d3fca3-13d4-4d08-a528-5c2e85d56a6b
+credentials-file: C:\Users\motoc\.cloudflared\c9d3fca3-13d4-4d08-a528-5c2e85d56a6b.json
+
+ingress:
+  - hostname: chanmoto.duckdns.org
+    service: http://localhost:8083
+  - service: http_status:404

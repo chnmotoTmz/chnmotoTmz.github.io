@@ -1,0 +1,16 @@
+{
+  "name": "Paragraph Extraction Workflow",
+  "description": "Extracts paragraphs from latest articles based on keywords.",
+  "steps": [
+    {
+      "id": "extract_paragraphs",
+      "module": "ParagraphExtractor",
+      "inputs": {
+        "blog": "${initial_input.blog}",
+        "search_keywords": "${initial_input.search_keywords}",
+        "max_articles": "${initial_input.max_articles:10}",
+        "output_file": "${initial_input.output_file:extracted_paragraphs.md}"
+      }
+    }
+  ]
+}
