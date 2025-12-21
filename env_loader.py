@@ -71,6 +71,13 @@ def load() -> None:
         if os.getenv(k) is None:
             os.environ[k] = str(v)
     
+    # Load from standard .env if it exists
+    env_base = root / '.env'
+    data = _read_dotenv(env_base)
+    for k, v in data.items():
+        if os.getenv(k) is None:
+            os.environ[k] = v
+    
     # Second, try loading .env.production if it exists
     env_prod = root / '.env.production'
     data = _read_dotenv(env_prod)

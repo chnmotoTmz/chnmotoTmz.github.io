@@ -23,8 +23,17 @@
         "assets": "assets_data",
         "message_ids": "original_message_ids"
       },
-      "on_success": "prepare_prompt",
+      "on_success": "initial_reset",
       "on_failure": "handle_error"
+    },
+    {
+      "id": "initial_reset",
+      "module": "GeminiReset",
+      "description": "Explicitly reset Gemini session at start to clear any stuck modes.",
+      "inputs": {},
+      "outputs": {},
+      "on_success": "prepare_prompt",
+      "on_failure": "prepare_prompt"
     },
     {
       "id": "prepare_prompt",

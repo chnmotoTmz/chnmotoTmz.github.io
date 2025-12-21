@@ -41,6 +41,7 @@ class LineNotifierTask(BaseTaskModule):
             success = self.line_service.send_message(line_user_id, notification_message)
             if success:
                 logger.info(f"Notification sent to {line_user_id}")
+                logger.info(f"Message content:\n{notification_message}")
             else:
                 logger.warning(f"Failed to send notification to {line_user_id}")
         except Exception as e:

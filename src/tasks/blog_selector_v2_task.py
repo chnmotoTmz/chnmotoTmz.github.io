@@ -40,6 +40,10 @@ class BlogSelectorTaskV2(BaseTaskModule):
             target_keyword = cmd_ctx.get("target_blog")
             is_repost = cmd_ctx.get("is_repost", False)
 
+            logger.info(f"--- Blog Selection Trace (V2) ---")
+            logger.info(f"Available Candidates: {list(valid_blogs.keys())}")
+            logger.info(f"Command Target: '{target_keyword}'")
+
             if action == "REPOST" or is_repost:
                 repost_data = self._load_cached_article()
                 if repost_data:
@@ -48,17 +52,32 @@ class BlogSelectorTaskV2(BaseTaskModule):
                     else:
                         cleaned_texts = []
 
+            # Priority 1: Explicit Command Keyword (e.g. !主婦)
             if target_keyword:
+                logger.info(f"Priority Selection: Using keyword '{target_keyword}'")
                 selected_blog_id = self._select_blog_by_keyword(target_keyword, valid_blogs)
+                if selected_blog_id:
+                    logger.info(f"✅ [Case A] Selected by Command Keyword: {selected_blog_id}")
 
+            # Priority 2: Single Blog Case
+            if not selected_blog_id and len(valid_blogs) == 1:
+                selected_blog_id = next(iter(valid_blogs.keys()))
+                logger.info(f"✅ [Case B] Auto-selected Single Candidate: {selected_blog_id}")
+
+            # Priority 3: Content-based LLM Selection
             if not selected_blog_id:
-                if len(valid_blogs) == 1:
-                    selected_blog_id = next(iter(valid_blogs.keys()))
-                else:
-                    selected_blog_id = self._select_blog(cleaned_texts, images, valid_blogs)
+                logger.info("ℹ️ [Case C] Fallback to Content Analysis (LLM)")
+                selected_blog_id = self._select_blog(cleaned_texts, images, valid_blogs)
+                if selected_blog_id:
+                    logger.info(f"✅ [Case C] Selected by Content Analysis: {selected_blog_id}")
 
+            # Final Fallback
             if not selected_blog_id:
                 selected_blog_id = next(iter(valid_blogs.keys()))
+                logger.warning(f"⚠️ [Final Fallback] Selecting first available: {selected_blog_id}")
+
+            logger.info(f"🏁 Final Selection: {selected_blog_id}")
+            logger.info(f"---------------------------------")
 
             selected_yaml_config = BlogConfig.get_blog_config(selected_blog_id)
             blog_db_entry = self._get_or_create_blog_entry(selected_yaml_config)
@@ -89,32 +108,46 @@ class BlogSelectorTaskV2(BaseTaskModule):
         except: pass
         return None
 
-    def _select_blog_by_keyword(self, keyword: str, blogs: Dict[str, Any]) -> str:
-        prompt = f"Select blog ID for keyword '{keyword}':\n" + "\n".join([f"ID: {bid}, Name: {cfg.get('blog_name')}" for bid, cfg in blogs.items()])
-        prompt += "\nOutput JSON: {'blog_id': '...'}"
+    def _select_blog_by_keyword(self, keyword: str, blogs: Dict[str, Any]) -> Optional[str]:
+        prompt = f"Select one blog ID that matches the user keyword '{keyword}'.\nAvailable Blogs:\n" 
+        prompt += "\n".join([f"- ID: {bid}, Name: {cfg.get('blog_name')}" for bid, cfg in blogs.items()])
+        prompt += "\n\nReturn ONLY a JSON object: {\"blog_id\": \"...\"}"
         try:
             res = self.llm_service.generate_text(prompt=prompt, temperature=0.1)
             parsed = self._extract_json(res)
-            if parsed and parsed.get('blog_id'): return parsed['blog_id']
-        except: pass
-        return list(blogs.keys())[0]
+            if parsed and parsed.get('blog_id') in blogs: 
+                return parsed['blog_id']
+        except Exception as e:
+            logger.warning(f"Keyword selection LLM failed: {e}")
+        return None
 
-    def _select_blog(self, texts: List[str], images: List[Dict], blogs: Dict[str, Any]) -> str:
+    def _select_blog(self, texts: List[str], images: List[Dict], blogs: Dict[str, Any]) -> Optional[str]:
         content = "\n".join(texts[:3])
-        prompt = f"Select blog ID for content:\n{content[:500]}\n" + "\n".join([f"ID: {bid}, Name: {cfg.get('blog_name')}" for bid, cfg in blogs.items()])
-        prompt += "\nOutput JSON: {'blog_id': '...'}"
+        prompt = f"Analyze the content and select the most appropriate blog ID.\nContent:\n{content[:500]}\n\nAvailable Blogs:\n"
+        prompt += "\n".join([f"- ID: {bid}, Name: {cfg.get('blog_name')}" for bid, cfg in blogs.items()])
+        prompt += "\n\nReturn ONLY a JSON object: {\"blog_id\": \"...\"}"
         try:
             res = self.llm_service.generate_text(prompt=prompt, temperature=0.2)
             parsed = self._extract_json(res)
-            if parsed and parsed.get('blog_id'): return parsed['blog_id']
-        except: pass
-        return list(blogs.keys())[0]
+            if parsed and parsed.get('blog_id') in blogs: 
+                return parsed['blog_id']
+        except Exception as e:
+            logger.warning(f"Content-based selection LLM failed: {e}")
+        return None
 
     def _extract_json(self, text: str) -> Optional[Dict[str, Any]]:
         try:
-            match = re.search(r"\{{.*?\}}", text, re.DOTALL)
-            if match: return json.loads(match.group(0).replace("'", '"'))
-        except: pass
+            # Look for JSON block or outermost braces
+            match = re.search(r'```json\s*(.*?)\s*```', text, re.DOTALL | re.IGNORECASE)
+            cleaned = match.group(1) if match else text
+            
+            start = cleaned.find('{')
+            end = cleaned.rfind('}')
+            if start != -1 and end != -1:
+                json_str = cleaned[start:end+1]
+                return json.loads(json_str.replace("'", '"'))
+        except Exception as e:
+            logger.debug(f"JSON extraction failed: {e}")
         return None
 
     def _get_or_create_blog_entry(self, yaml_config: Dict[str, Any]) -> Optional[Blog]:

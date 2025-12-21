@@ -55,6 +55,17 @@ class ThumbnailGeneratorService:
         """
         logger.info(f"サムネイル生成開始: プロンプト='{prompt[:50]}...'")
 
+        # 0. Check if result is already an image URL (Scavenger support)
+        if prompt.startswith("__IMAGE_URL__"):
+            src_url = prompt.replace("__IMAGE_URL__", "")
+            logger.info("🎨 Result already exists as image URL. Scavenging directly: %s", src_url)
+            local_image_path = self._acquire_image_path(src_url)
+            if local_image_path:
+                return self._upload_and_cleanup(local_image_path)
+            else:
+                logger.error("Failed to scavenge image from URL: %s", src_url)
+                return None
+
         # 1. Custom API Flow (Preferred if configured)
         api_url = os.getenv('CUSTOM_THUMBNAIL_API_URL')
         if api_url:
@@ -180,15 +191,43 @@ class ThumbnailGeneratorService:
         return None, None
 
     def _acquire_image_path(self, src_url: str) -> Optional[str]:
-        """ブラウザのダウンロード完了を待機し、最新ファイルを拾う。"""
+        """ブラウザのダウンロード完了を待機し、最新ファイルを拾う。失敗時はURLから直接ダウンロードを試みる。"""
         logger.info("ブラウザのダウンロード完了を待機中...")
         time.sleep(3)
         
+        # 1. Try to pick up from local directory (Scavenger Protocol)
         latest_local = self._pick_latest_local_image()
         if latest_local:
+            logger.info(f"Local image found: {latest_local}")
             return latest_local
             
-        return self._wait_browser_download()
+        # 2. Wait for browser download
+        downloaded = self._wait_browser_download()
+        if downloaded:
+            logger.info(f"Browser download detected: {downloaded}")
+            return downloaded
+
+        # 3. Fallback: Direct Download from URL
+        logger.warning("Local image not found. Attempting direct download from URL.")
+        return self._download_from_url(src_url)
+
+    def _download_from_url(self, url: str) -> Optional[str]:
+        """URLから画像を直接ダウンロードして一時保存する"""
+        try:
+            response = requests.get(url, timeout=30)
+            if response.status_code == 200:
+                timestamp = int(time.time() * 1000)
+                local_path = os.path.join(self.temp_folder, f"download_{timestamp}.jpg")
+                with open(local_path, 'wb') as f:
+                    f.write(response.content)
+                logger.info(f"Direct download successful: {local_path}")
+                return local_path
+            else:
+                logger.error(f"Direct download failed. HTTP {response.status_code}")
+                return None
+        except Exception as e:
+            logger.error(f"Direct download exception: {e}")
+            return None
 
     def _wait_browser_download(self) -> Optional[str]:
         if not self.local_thumbnail_dir:

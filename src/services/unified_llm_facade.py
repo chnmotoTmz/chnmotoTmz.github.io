@@ -41,7 +41,8 @@ class UnifiedLLMFacade:
             blog_config: ブログ設定
         """
         # プロバイダー選択（環境変数で優先）
-        provider = os.getenv("LLM_PROVIDER", provider or "local")
+        # デフォルトを gemini に変更（ユーザーの要求に合わせる）
+        provider = os.getenv("LLM_PROVIDER", provider or "gemini")
         
         if provider == "gemini":
             self.provider = LLMProvider.GEMINI

@@ -59,15 +59,28 @@ class BlogSelectorTask(BaseTaskModule):
             valid_blogs = self.process.filter_blogs(all_blogs, "")
             if not valid_blogs: return {"blog_config": None}
 
-        # Case A: Explicit Command
-        if command_keyword and not selected_blog_id:
+        logger.info(f"--- Blog Selection Trace ---")
+        logger.info(f"Available Candidates: {list(valid_blogs.keys())}")
+        logger.info(f"Command Keyword: '{command_keyword}'")
+        logger.info(f"Repost Mode: {is_repost_mode} (Keyword: '{repost_keyword}')")
+
+        # Case A: Explicit Command (Prioritize immediately)
+        if command_keyword:
+            logger.info(f"Prioritizing explicit command keyword: {command_keyword}")
             prompt = self.process.create_keyword_selection_prompt(command_keyword, valid_blogs)
             try:
+                # Use a slightly higher temperature to allow for variations in how the model interprets the keyword match
+                # but keep it focused.
                 response = self.llm_service.generate_text(prompt=prompt, temperature=0.1, max_tokens=200)
                 sel_id, _ = self.process.parse_selection_response(response, list(valid_blogs.keys()))
-                selected_blog_id = self.process.resolve_blog_id(sel_id, valid_blogs)
-            except Exception:
-                pass
+                resolved_id = self.process.resolve_blog_id(sel_id, valid_blogs)
+                if resolved_id:
+                    selected_blog_id = resolved_id
+                    logger.info(f"✅ [Case A] Selected by Command: {selected_blog_id}")
+                else:
+                    logger.warning(f"❌ [Case A] Command selection failed. LLM response: {response[:100]}...")
+            except Exception as e:
+                logger.warning(f"❌ [Case A] Keyword selection exception: {e}")
 
         # Case B: Repost Keyword
         if is_repost_mode and repost_keyword and not selected_blog_id:
@@ -76,27 +89,43 @@ class BlogSelectorTask(BaseTaskModule):
                 response = self.llm_service.generate_text(prompt=prompt, temperature=0.1, max_tokens=200)
                 sel_id, _ = self.process.parse_selection_response(response, list(valid_blogs.keys()))
                 selected_blog_id = self.process.resolve_blog_id(sel_id, valid_blogs)
+                if selected_blog_id:
+                    logger.info(f"✅ [Case B] Selected by Repost Keyword: {selected_blog_id}")
              except Exception:
                 pass
 
         # Case C: Single Blog
         if len(valid_blogs) == 1 and not selected_blog_id:
             selected_blog_id = next(iter(valid_blogs.keys()))
+            logger.info(f"✅ [Case C] Auto-selected Single Candidate: {selected_blog_id}")
 
-        # Case D: LLM Selection
+        # Case D: LLM Selection (Content Analysis)
         if not selected_blog_id:
+            logger.info("ℹ️ [Case D] Fallback to Content Analysis (LLM)")
             selection_content = "\n".join(texts[:5])
             image_descs = [img.get('description', '') for img in images[:3]]
             prompt = self.process.create_selection_prompt(selection_content, image_descs, valid_blogs)
             try:
                 response = self.llm_service.generate_text(prompt=prompt, temperature=0.2, max_tokens=500)
                 sel_id, _ = self.process.parse_selection_response(response, list(valid_blogs.keys()))
-                selected_blog_id = self.process.resolve_blog_id(sel_id, valid_blogs) or self.process.heuristic_select(selection_content, valid_blogs)
-            except Exception:
+                selected_blog_id = self.process.resolve_blog_id(sel_id, valid_blogs)
+                if selected_blog_id:
+                    logger.info(f"✅ [Case D] Selected by Content Analysis: {selected_blog_id}")
+                else:
+                    heuristic_id = self.process.heuristic_select(selection_content, valid_blogs)
+                    selected_blog_id = heuristic_id
+                    logger.info(f"✅ [Case D] Fallback to Heuristic: {selected_blog_id}")
+            except Exception as e:
+                logger.warning(f"❌ [Case D] Content analysis failed: {e}")
                 selected_blog_id = self.process.heuristic_select(selection_content, valid_blogs)
+                logger.info(f"✅ [Case D] Emergency Heuristic: {selected_blog_id}")
 
         if not selected_blog_id:
              selected_blog_id = next(iter(valid_blogs.keys()))
+             logger.warning(f"⚠️ [Final Fallback] Selecting first available: {selected_blog_id}")
+
+        logger.info(f"🏁 Final Selection: {selected_blog_id}")
+        logger.info(f"------------------------------")
 
         selected_yaml_config = BlogConfig.get_blog_config(selected_blog_id)
         blog_db_entry = self._get_or_create_blog_entry(selected_yaml_config)

@@ -150,6 +150,17 @@ class CustomAPIClient:
                 if isinstance(text, str) and text.strip():
                     return text.strip()
         
+        # Fallback: if images are present but no text, return the first image URL (Scavenger support)
+        answer_obj = data.get('answer', {})
+        if isinstance(answer_obj, dict):
+            images = answer_obj.get('images', [])
+            if images and isinstance(images, list):
+                first_image = images[0]
+                url = first_image.get('src') or first_image.get('download_url')
+                if url:
+                    logger.info("No text found but image URL detected. Returning as __IMAGE_URL__.")
+                    return f"__IMAGE_URL__{url}"
+        
         return None
     
     def set_mode(self, mode: str) -> bool:

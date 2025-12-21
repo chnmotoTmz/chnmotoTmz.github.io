@@ -26,7 +26,17 @@ class ArticleContentGeneratorTask(BaseTaskModule):
         blog_description = blog.get("description", "")
         axes = article_concept.get("axes", [])
         axes_text = "\n".join([f"- {a.get('name')}: {a.get('description')} ({a.get('content_angle')})" for a in axes])
-        prompt = f"You are a writer for '{blog_name}'. Write a high-quality article.\nBlog: {blog_description}\nConcept: {article_concept}\nAxes: {axes_text}\nContent: {source_content[:2000]}\nRules:\n1. Start with 'タイトル: [title]'.\n2. Use BBCode tags like [h2], [h3], [b], [li] for structure.\n3. No meta-talk."
+        prompt = (
+            f"あなたは『{blog_name}』のライターです。高品質な記事を作成してください。\n"
+            f"ブログ説明: {blog_description}\n"
+            f"コンセプト: {article_concept}\n"
+            f"記事の軸:\n{axes_text}\n"
+            f"入力テキスト: {source_content[:2000]}\n"
+            "ルール:\n"
+            "1. 先頭に必ず「タイトル: [タイトル]」を記載する。\n"
+            "2. セクションは [h2], [h3], [b], [li] のようなBBCode風タグで構成すること。\n"
+            "3. プロンプトの説明や生成過程などのメタな記述は含めないこと。"
+        )
         response = self.llm_service.generate_text(prompt, max_tokens=2000)
         title, content = self._parse_response(response)
         return title, self._convert_markers_to_markdown(content)
@@ -58,9 +68,19 @@ class ArticleContentGeneratorTask(BaseTaskModule):
 
     def _generate_thumbnail_prompt(self, title: str, content: str, article_concept: Dict) -> str:
         clean = re.sub(r'[#*\->`\[\]()]', '', content[:1500])
-        prompt = f"Create a 4-panel manga prompt for: {title}\nContent: {clean[:500]}\nFormat:\n1) Intro\n2) Development\n3) Twist\n4) Conclusion"
+        prompt = (
+            f"タイトル『{title}』の4コマ漫画用サムネイル生成プロンプトを作成してください。\n"
+            f"内容: {clean[:500]}\n"
+            "フォーマット:\n1) 導入\n2) 展開\n3) どんでん返し\n4) 結末"
+        )
         thumbnail_prompt = self.llm_service.generate_text(prompt, max_tokens=400)
-        return ' '.join(thumbnail_prompt.split())[:600] if thumbnail_prompt else "Manga style"
+        
+        # Adopting proactively generated image (Scavenger support)
+        if thumbnail_prompt and thumbnail_prompt.startswith("__IMAGE_URL__"):
+            logger.info("Adopting proactively generated image URL.")
+            return thumbnail_prompt
+
+        return ' '.join(thumbnail_prompt.split())[:600] if thumbnail_prompt else "漫画風"
 
     @classmethod
     def get_module_info(cls) -> Dict[str, Any]:
