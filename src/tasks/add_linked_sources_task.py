@@ -28,9 +28,10 @@ class AddLinkedSourcesTask(BaseTaskModule):
         if not content:
             raise ValueError("Content is a required input.")
 
-        # 1. 既存�Eサムネイルを抽出�E�保存！E        import re
-        thumbnail_match = re.match(r"^\s*(!\[.*?\]\(http.*?\)\n*)", content)
-        thumbnail_md = thumbnail_match.group(1) if thumbnail_match else ""
+        # 1. Protect existing thumbnail
+        # More robust thumbnail detection (handles ![]() and [![]()]())
+        thumbnail_match = re.match(r"^\s*(?:(!\[.*?]\[http.*?])|(?:\b(!\[.*?]\[http.*?])\](http.*?)))\s*\n*", content)
+        thumbnail_md = thumbnail_match.group(0) if thumbnail_match else ""
         content_no_thumb = content[len(thumbnail_md):] if thumbnail_md else content
 
         if not web_summaries:

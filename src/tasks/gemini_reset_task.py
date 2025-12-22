@@ -11,6 +11,9 @@ class GeminiResetTask(BaseTaskModule):
         logger.info("Triggering Gemini session reset...")
         try:
             gemini_service = GeminiService()
+            # First, explicitly clear any image mode
+            gemini_service.clear_image_mode()
+            # Then start a new session
             success = gemini_service.start_new_session()
             return {"reset_success": success}
         except Exception as e:

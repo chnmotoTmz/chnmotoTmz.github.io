@@ -162,8 +162,24 @@
         "blog": "${blog_data}"
       },
       "outputs": { "article_concept": "article_concept" },
-      "on_success": "plan_strategy",
+      "on_success": "fetch_similar_articles",
       "on_failure": "handle_error"
+    },
+    {
+      "id": "fetch_similar_articles",
+      "module": "RagSimilarArticlesFetcher",
+      "description": "Retrieves past related articles from RAG for internal links.",
+      "inputs": {
+        "texts": "${processed_texts}",
+        "article_concept": "${article_concept}",
+        "blog": "${blog_data}"
+      },
+      "outputs": {
+        "similar_articles": "similar_articles",
+        "writing_style_hints": "style_hints"
+      },
+      "on_success": "plan_strategy",
+      "on_failure": "plan_strategy"
     },
     {
       "id": "plan_strategy",
@@ -216,8 +232,17 @@
         "thumbnail_prompt": "${generated_thumbnail_prompt}"
       },
       "outputs": { "enhanced_content": "content_with_thumbnail" },
-      "on_success": "add_linked_sources",
+      "on_success": "exit_image_ui",
       "on_failure": "handle_error"
+    },
+    {
+      "id": "exit_image_ui",
+      "module": "ClearGeminiMode",
+      "description": "Exits image mode to ensure subsequent text processing works correctly.",
+      "inputs": {},
+      "outputs": { "clear_success": "image_ui_cleared" },
+      "on_success": "add_linked_sources",
+      "on_failure": "add_linked_sources"
     },
     {
       "id": "add_linked_sources",
@@ -271,7 +296,7 @@
         "revised_title": "final_title",
         "revised_content": "final_content"
       },
-      "on_success": "save_draft",
+      "on_success": "final_enrichment",
       "on_failure": "handle_error"
     },
     {
@@ -279,6 +304,23 @@
       "module": "PassthroughTask",
       "inputs": { "title": "${base_title}", "content": "${final_content}" },
       "outputs": { "title": "final_title", "content": "final_content" },
+      "on_success": "final_enrichment",
+      "on_failure": "final_enrichment"
+    },
+    {
+      "id": "final_enrichment",
+      "module": "FinalArticleEnricher",
+      "description": "Final step to add DuckDuckGo references and Rakuten products.",
+      "inputs": {
+        "final_title": "${final_title}",
+        "final_content": "${final_content}",
+        "article_concept": "${article_concept}",
+        "similar_articles": "${similar_articles}"
+      },
+      "outputs": {
+        "final_title": "final_title",
+        "final_content": "final_content"
+      },
       "on_success": "save_draft",
       "on_failure": "save_draft"
     },

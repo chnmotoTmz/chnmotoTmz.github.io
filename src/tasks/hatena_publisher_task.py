@@ -47,9 +47,32 @@ class HatenaPublisherTask(BaseTaskModule):
             }
             hatena_service = HatenaService(blog_config=blog_credentials)
 
+            # --- Physical Content Fixes ---
+            final_content = post.content
+            
+            # 1. Force Hatena TOC at the very top (after thumbnail)
+            if "[:contents]" not in final_content:
+                # If there's a thumbnail, insert after it
+                import re
+                # Robust match for thumbnail
+                thumb_match = re.match(r"^\s*(?:(!\[.*?\]\(http.*?\))|(?:\[(!\[.*?\]\(http.*?\))\]\(http.*?\)))\s*\n*", final_content)
+                if thumb_match:
+                    thumb_part = thumb_match.group(0).strip()
+                    rest_part = final_content[len(thumb_match.group(0)):].lstrip()
+                    final_content = f"{thumb_part}\n\n[:contents]\n\n{rest_part}"
+                else:
+                    final_content = f"[:contents]\n\n{final_content.lstrip()}"
+            else:
+                # Even if it exists, ensure it has clear space
+                final_content = final_content.replace("[:contents]", "\n\n[:contents]\n\n")
+                # Clean up any triple newlines created
+                final_content = re.sub(r'\n{3,}', '\n\n', final_content)
+            
+            logger.info("Publishing to Hatena with forced TOC.")
+
             entry = hatena_service.publish_article(
                 title=post.title,
-                content=post.content,
+                content=final_content,
                 tags=tags,
                 draft=False
             )

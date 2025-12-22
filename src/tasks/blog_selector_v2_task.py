@@ -9,6 +9,7 @@ from src.framework.base_task import BaseTaskModule
 from src.services.unified_llm_facade import UnifiedLLMFacade
 from src.blog_config import BlogConfig
 from src.database import db, Blog
+from src.processes.blog_selection import BlogSelectorProcess
 
 logger = logging.getLogger(__name__)
 
@@ -20,6 +21,7 @@ class BlogSelectorTaskV2(BaseTaskModule):
     def __init__(self, config: Dict[str, Any] = None):
         super().__init__(config)
         self.llm_service = UnifiedLLMFacade()
+        self.process = BlogSelectorProcess()
 
     def execute(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
         cmd_ctx = inputs.get("command_context", {})
@@ -31,7 +33,14 @@ class BlogSelectorTaskV2(BaseTaskModule):
             all_blogs = BlogConfig.get_all_blogs()
             if not all_blogs: return self._error_response()
 
-            valid_blogs = {bid: cfg for bid, cfg in all_blogs.items() if cfg.get('hatena_blog_id')}
+            # Filter blogs based on content and validation (respect exclude_keywords)
+            content_sample = "\n".join(cleaned_texts[:5])
+            valid_blogs = self.process.filter_blogs(all_blogs, content_sample)
+            
+            if not valid_blogs:
+                logger.warning("No blogs matched filtering. Falling back to all valid blogs.")
+                valid_blogs = self.process.filter_blogs(all_blogs, "")
+            
             if not valid_blogs: return self._error_response()
 
             selected_blog_id: Optional[str] = None
@@ -109,14 +118,43 @@ class BlogSelectorTaskV2(BaseTaskModule):
         return None
 
     def _select_blog_by_keyword(self, keyword: str, blogs: Dict[str, Any]) -> Optional[str]:
-        prompt = f"Select one blog ID that matches the user keyword '{keyword}'.\nAvailable Blogs:\n" 
-        prompt += "\n".join([f"- ID: {bid}, Name: {cfg.get('blog_name')}" for bid, cfg in blogs.items()])
+        keyword_lower = keyword.lower()
+        
+        # 1. Direct ID match
+        if keyword_lower in blogs:
+            logger.info(f"Direct ID match found: {keyword_lower}")
+            return keyword_lower
+            
+        # 2. Direct Name match
+        for bid, cfg in blogs.items():
+            if keyword_lower == cfg.get('blog_name', '').lower():
+                logger.info(f"Direct Name match found: {bid}")
+                return bid
+                
+        # 3. Partial Name match
+        for bid, cfg in blogs.items():
+            if keyword_lower in cfg.get('blog_name', '').lower():
+                logger.info(f"Partial Name match found: {bid}")
+                return bid
+
+        # 4. Predefined Keywords match
+        for bid, cfg in blogs.items():
+            keywords = [k.lower() for k in cfg.get('keywords', [])]
+            if keyword_lower in keywords:
+                logger.info(f"Keyword list match found: {bid}")
+                return bid
+
+        # 5. LLM Fallback for semantic matching
+        logger.info(f"No direct match for '{keyword}'. Falling back to LLM semantic matching.")
+        prompt = f"Select one blog ID that best matches the user keyword '{keyword}'.\nAvailable Blogs:\n" 
+        prompt += "\n".join([f"- ID: {bid}, Name: {cfg.get('blog_name')}, Description: {cfg.get('description')}" for bid, cfg in blogs.items()])
         prompt += "\n\nReturn ONLY a JSON object: {\"blog_id\": \"...\"}"
         try:
             res = self.llm_service.generate_text(prompt=prompt, temperature=0.1)
             parsed = self._extract_json(res)
-            if parsed and parsed.get('blog_id') in blogs: 
-                return parsed['blog_id']
+            blog_id = parsed.get('blog_id') if parsed else None
+            if blog_id in blogs: 
+                return blog_id
         except Exception as e:
             logger.warning(f"Keyword selection LLM failed: {e}")
         return None

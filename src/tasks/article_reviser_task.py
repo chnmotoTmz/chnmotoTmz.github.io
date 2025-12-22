@@ -20,8 +20,9 @@ class ArticleReviser(BaseTaskModule):
         rule_based_only = self.config.get('rule_based_only', False)
 
         import re
-        thumbnail_match = re.match(r"^\s*(!\[.*?\]\(http.*?\)\n*)", content)
-        thumbnail_md = thumbnail_match.group(1) if thumbnail_match else ""
+        # More robust thumbnail detection (handles ![]() and [![]()]())
+        thumbnail_match = re.match(r"^\s*(?:(!\[.*?\]\(http.*?\))|(?:\[(!\[.*?\]\(http.*?\))\]\(http.*?\)))\s*\n*", content)
+        thumbnail_md = thumbnail_match.group(0) if thumbnail_match else ""
 
         if (structured_sections and isinstance(structured_sections, list)) or rule_based_only:
             if rule_based_only:
@@ -93,7 +94,24 @@ class ArticleReviser(BaseTaskModule):
     def _build_revision_prompt(self, title: str, content: str, feedback: str,
                               suggestions: list, concept: str, blog: dict) -> str:
         s_text = "\n".join([f"- {s}" for s in suggestions]) if suggestions else "None"
-        return f"Revise article.\n\nTitle: {title}\nContent:\n{content}\n\nFeedback: {feedback}\nSuggestions:\n{s_text}\n\nRules:\n1. Markdown format.\n2. No meta-talk.\n3. Use 【修正タイトル】 and 【修正本文】 sections."
+        return (
+            f"あなたはプロの編集者として、以下の記事を『人間味あふれる、共感されるブログ記事』にリバイズ（校正）してください。\n\n"
+            f"【現在のタイトル】: {title}\n"
+            f"【現在の本文】:\n{content}\n\n"
+            f"【フィードバック】: {feedback}\n"
+            f"【具体的な修正提案】:\n{s_text}\n\n"
+            "【修正の鉄則】\n"
+            "1. 見出し（<h2>, <h3>）は、スマホでの視認性を最優先し、週刊誌の煽りのように「短く・鋭く」要約してください。絶対に15文字を超えてはいけません。\n"
+            "2. [[:contents]] タグを冒頭に維持してください。\n"
+            "3. <b> タグで重要な箇所を強調してください。\n"
+            "4. リストは <li> を使用してください。\n"
+            "5. 「AIが書いた感」を払拭するため、ライター個人の感想や驚き、ボヤキ、読者への親しみやすい語りかけを随所に織り交ぜてください。\n"
+            "6. 効果的に絵文字を使用してください。\n"
+            "7. 挨拶やメタな解説は一切禁止。結果のみを出力してください。\n"
+            "8. 出力は必ず以下の形式を守ってください：\n"
+            "【修正タイトル】[新しいタイトル]\n"
+            "【修正本文】[HTMLタグを含んだ新しい本文]\n"
+        )
     
     def _get_revised_content(self, prompt: str) -> str:
         """Geminiによる修正実施"""
@@ -101,7 +119,7 @@ class ArticleReviser(BaseTaskModule):
     
     def _parse_revision_response(self, response: str, orig_title: str, 
                                  orig_content: str) -> tuple:
-        """修正結果を解极E"""
+        """修正結果を解析"""
         rev_title, rev_content = orig_title, orig_content
         
         if '【修正タイトル】' in response:
@@ -114,6 +132,17 @@ class ArticleReviser(BaseTaskModule):
             rev_content = response[start:].strip()
         else:
             rev_content = response.strip()
+
+        # --- Scavenger Protocol: Physical Heading Truncation ---
+        import re
+        def truncate_heading(match):
+            tag = match.group(1)
+            text = match.group(2).strip()
+            if len(text) > 18:
+                text = text[:15] + "..."
+            return f"<{tag}>{text}</{tag}>"
+
+        rev_content = re.sub(r"<(h2|h3)>(.*?)</\1>", truncate_heading, rev_content, flags=re.DOTALL | re.IGNORECASE)
         
         return rev_title or orig_title, rev_content or orig_content
     

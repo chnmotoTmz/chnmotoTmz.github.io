@@ -41,6 +41,22 @@ class WorkflowProcessingService:
             logger.info("Manually registered AffiliateLinkerTask module.")
         except Exception as e:
             logger.error(f"Failed to manually register AffiliateLinkerTask: {e}")
+
+        # FinalArticleEnricherTaskを明示的に登録
+        try:
+            from src.tasks.final_article_enricher_task import FinalArticleEnricherTask
+            service_registry.register_module("FinalArticleEnricher", FinalArticleEnricherTask)
+            logger.info("Manually registered FinalArticleEnricher module.")
+        except Exception as e:
+            logger.error(f"Failed to manually register FinalArticleEnricher: {e}")
+
+        # ClearGeminiModeTaskを明示的に登録
+        try:
+            from src.tasks.clear_gemini_mode_task import ClearGeminiModeTask
+            service_registry.register_module("ClearGeminiMode", ClearGeminiModeTask)
+            logger.info("Manually registered ClearGeminiMode module.")
+        except Exception as e:
+            logger.error(f"Failed to manually register ClearGeminiMode: {e}")
         
 
     def process_user_batch(self, line_user_id: str, message_ids: List[Any], channel_id: str = None) -> None:

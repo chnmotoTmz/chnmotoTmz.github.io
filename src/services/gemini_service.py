@@ -264,6 +264,39 @@ class CustomAPIClient:
             logger.error("CustomAPIClient: error triggering image icon press: %s", e)
             return False
 
+    def clear_image_mode(self) -> bool:
+        """
+        Instruct the browser to clear/exit the image generation mode.
+        
+        Returns:
+            True if successful
+        """
+        if not self.api_url:
+            logger.error("CustomAPIClient: API URL not configured")
+            return False
+        
+        try:
+            api_root = self.api_url.split('/api', 1)[0]
+            resp = requests.post(
+                f"{api_root}/api/clear_image_mode",
+                json={},
+                timeout=20
+            )
+            
+            if resp.status_code == 200:
+                logger.info("CustomAPIClient: successfully cleared image mode")
+                return True
+            else:
+                logger.warning(
+                    "CustomAPIClient: failed to clear image mode (status=%s). It might not be active.",
+                    resp.status_code
+                )
+                return False
+                
+        except Exception as e:
+            logger.error("CustomAPIClient: error clearing image mode: %s", e)
+            return False
+
 
 class ClaudeClient:
     """Client for Claude API services."""
@@ -622,6 +655,13 @@ class GeminiService:
         """
         logger.info("GeminiService: Requesting image icon press.")
         return self.custom_client.press_image_icon()
+
+    def clear_image_mode(self) -> bool:
+        """
+        Instruct the browser to clear the 'Create images' mode.
+        """
+        logger.info("GeminiService: Requesting image mode clear.")
+        return self.custom_client.clear_image_mode()
     
     def set_test_mode(self, enabled: bool):
         """Enable or disable test mode."""
