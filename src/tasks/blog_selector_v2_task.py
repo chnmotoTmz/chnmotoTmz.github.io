@@ -89,11 +89,22 @@ class BlogSelectorTaskV2(BaseTaskModule):
             logger.info(f"---------------------------------")
 
             selected_yaml_config = BlogConfig.get_blog_config(selected_blog_id)
+            if not selected_yaml_config:
+                raise ValueError(f"Selected blog ID '{selected_blog_id}' not found in configuration.")
+
             blog_db_entry = self._get_or_create_blog_entry(selected_yaml_config)
-            if not blog_db_entry: return self._error_response()
+            if not blog_db_entry:
+                raise ValueError(f"Could not initialize database entry for blog '{selected_blog_id}'.")
 
             blog_config_dict = {c.name: getattr(blog_db_entry, c.name) for c in blog_db_entry.__table__.columns}
+            # Add back metadata from YAML
+            blog_config_dict['blog_name'] = selected_yaml_config.get('blog_name', blog_db_entry.name)
+            blog_config_dict['description'] = selected_yaml_config.get('description', '')
+            blog_config_dict['prompt_file'] = selected_yaml_config.get('prompt_file', '')
             
+            logger.info(f"🏁 Final Selection: {selected_blog_id} ({blog_config_dict['blog_name']})")
+            logger.info(f"---------------------------------")
+
             return {
                 "blog_config": blog_config_dict,
                 "cleaned_texts": cleaned_texts,
@@ -102,8 +113,8 @@ class BlogSelectorTaskV2(BaseTaskModule):
             }
 
         except Exception as e:
-            logger.error(f"Failed to select blog: {e}")
-            return self._error_response()
+            logger.error(f"Failed to select blog: {e}", exc_info=True)
+            raise  # Trigger handle_error
 
     def _error_response(self) -> Dict[str, Any]:
         return {"blog_config": None, "cleaned_texts": [], "style_prompt": None, "repost_data": None}
@@ -189,16 +200,32 @@ class BlogSelectorTaskV2(BaseTaskModule):
         return None
 
     def _get_or_create_blog_entry(self, yaml_config: Dict[str, Any]) -> Optional[Blog]:
+        if not yaml_config: return None
         hatena_blog_id = yaml_config.get('hatena_blog_id')
         if not hatena_blog_id: return None
-        blog = Blog.query.filter_by(hatena_blog_id=hatena_blog_id).first()
-        if not blog:
-            blog = Blog(name=yaml_config.get('blog_name', 'Unknown'), hatena_id=yaml_config.get('hatena_id', ''), hatena_blog_id=hatena_blog_id, api_key=yaml_config.get('hatena_api_key', ''))
-            db.session.add(blog)
-        else:
-            blog.api_key = yaml_config.get('hatena_api_key') or blog.api_key
-        db.session.commit()
-        return blog
+        
+        try:
+            blog = Blog.query.filter_by(hatena_blog_id=hatena_blog_id).first()
+            if not blog:
+                logger.info(f"Creating new DB entry for blog: {hatena_blog_id}")
+                blog = Blog(
+                    name=yaml_config.get('blog_name', 'Unknown'), 
+                    hatena_id=yaml_config.get('hatena_id', ''), 
+                    hatena_blog_id=hatena_blog_id, 
+                    api_key=yaml_config.get('hatena_api_key', '')
+                )
+                db.session.add(blog)
+            else:
+                # Update API key if it changed in YAML
+                if yaml_config.get('hatena_api_key'):
+                    blog.api_key = yaml_config.get('hatena_api_key')
+            
+            db.session.commit()
+            return blog
+        except Exception as e:
+            logger.error(f"Database error during blog selection: {e}")
+            db.session.rollback()
+            return None
 
     @classmethod
     def get_module_info(cls) -> Dict[str, Any]:

@@ -4,7 +4,7 @@ from typing import List, Any
 from datetime import datetime
 
 from src.framework.task_runner import TaskRunner
-from src.services.framework.service_registry import service_registry
+from src.framework.service_registry import service_registry
 from src.utils import gemini_logger
 
 logger = logging.getLogger(__name__)
