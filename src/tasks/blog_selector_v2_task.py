@@ -31,17 +31,12 @@ class BlogSelectorTaskV2(BaseTaskModule):
 
         try:
             all_blogs = BlogConfig.get_all_blogs()
-            if not all_blogs: return self._error_response()
+            if not all_blogs:
+                raise ValueError("No blogs found in blogs.yml configuration.")
 
-            # Filter blogs based on content and validation (respect exclude_keywords)
-            content_sample = "\n".join(cleaned_texts[:5])
-            valid_blogs = self.process.filter_blogs(all_blogs, content_sample)
-            
+            valid_blogs = {bid: cfg for bid, cfg in all_blogs.items() if cfg.get('hatena_blog_id')}
             if not valid_blogs:
-                logger.warning("No blogs matched filtering. Falling back to all valid blogs.")
-                valid_blogs = self.process.filter_blogs(all_blogs, "")
-            
-            if not valid_blogs: return self._error_response()
+                raise ValueError("No valid blogs found (missing hatena_blog_id).")
 
             selected_blog_id: Optional[str] = None
             repost_data = None
@@ -85,36 +80,21 @@ class BlogSelectorTaskV2(BaseTaskModule):
                 selected_blog_id = next(iter(valid_blogs.keys()))
                 logger.warning(f"⚠️ [Final Fallback] Selecting first available: {selected_blog_id}")
 
-            logger.info(f"🏁 Final Selection: {selected_blog_id}")
+            logger.info(f"🏁 Final Selection Result: id={selected_blog_id}, name={blog_config_dict.get('blog_name')}, has_api_key={'yes' if blog_config_dict.get('api_key') else 'no'}")
             logger.info(f"---------------------------------")
 
-            selected_yaml_config = BlogConfig.get_blog_config(selected_blog_id)
-            if not selected_yaml_config:
-                raise ValueError(f"Selected blog ID '{selected_blog_id}' not found in configuration.")
-
-            blog_db_entry = self._get_or_create_blog_entry(selected_yaml_config)
-            if not blog_db_entry:
-                raise ValueError(f"Could not initialize database entry for blog '{selected_blog_id}'.")
-
-            blog_config_dict = {c.name: getattr(blog_db_entry, c.name) for c in blog_db_entry.__table__.columns}
-            # Add back metadata from YAML
-            blog_config_dict['blog_name'] = selected_yaml_config.get('blog_name', blog_db_entry.name)
-            blog_config_dict['description'] = selected_yaml_config.get('description', '')
-            blog_config_dict['prompt_file'] = selected_yaml_config.get('prompt_file', '')
-            
-            logger.info(f"🏁 Final Selection: {selected_blog_id} ({blog_config_dict['blog_name']})")
-            logger.info(f"---------------------------------")
-
-            return {
+            result = {
                 "blog_config": blog_config_dict,
                 "cleaned_texts": cleaned_texts,
                 "style_prompt": style_prompt,
                 "repost_data": repost_data
             }
+            logger.info(f"[BlogSelectorTaskV2] Returning keys: {list(result.keys())}")
+            return result
 
         except Exception as e:
             logger.error(f"Failed to select blog: {e}", exc_info=True)
-            raise  # Trigger handle_error
+            raise  # Trigger handle_error in workflow
 
     def _error_response(self) -> Dict[str, Any]:
         return {"blog_config": None, "cleaned_texts": [], "style_prompt": None, "repost_data": None}

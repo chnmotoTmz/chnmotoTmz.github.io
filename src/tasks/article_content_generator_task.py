@@ -12,7 +12,8 @@ class ArticleContentGeneratorTask(BaseTaskModule):
         self.llm_service = GeminiService()
 
     def _generate_article_content(self, article_concept: Dict[str, Any], source_content: str, blog: Dict[str, Any]) -> tuple[str, str]:
-        if not blog: raise ValueError("Blog config missing.")
+        if not blog:
+            raise ValueError(f"Blog config missing. Received: {blog} (type: {type(blog).__name__})")
         blog_name = blog.get("name", "")
         blog_description = blog.get("description", "")
         axes = article_concept.get("axes", [])
@@ -62,6 +63,10 @@ class ArticleContentGeneratorTask(BaseTaskModule):
         return title, content
 
     def execute(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
+        logger.info(f"[ArticleContentGeneratorTask] Received inputs: {list(inputs.keys())}")
+        blog = inputs.get("blog")
+        logger.info(f"[ArticleContentGeneratorTask] Blog input type: {type(blog).__name__}")
+        
         article_concept = inputs.get("article_concept", {})
         texts = inputs.get("texts", [])
         source_content = "\n\n".join([str(t) for t in texts]) if isinstance(texts, list) else str(texts)
