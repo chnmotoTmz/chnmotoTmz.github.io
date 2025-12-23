@@ -67,7 +67,9 @@ class ServiceRegistry:
 
 service_registry = ServiceRegistry()
 current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.dirname(os.path.dirname(current_dir))
+# current_dir: src/services/framework
+# project_root should be the parent of src
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
 service_registry.discover_modules([
     os.path.join(project_root, 'src', 'tasks')
 ])

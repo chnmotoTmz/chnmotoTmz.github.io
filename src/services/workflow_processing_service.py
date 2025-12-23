@@ -20,15 +20,16 @@ class WorkflowProcessingService:
         Initializes the service and discovers all available task modules.
         """
         # Discover and register all task modules upon initialization.
-        # Include the new src/tasks directory
-        module_path = os.path.join(os.path.dirname(__file__), 'tasks')
-        new_tasks_path = os.path.join(os.path.dirname(__file__), '..', 'tasks')
-        service_registry.discover_modules([module_path, new_tasks_path])
-        logger.info(f"Discovered modules in: {module_path} and {new_tasks_path}")
+        # Include the core src/tasks directory
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        tasks_path = os.path.join(project_root, 'src', 'tasks')
+        
+        service_registry.discover_modules([tasks_path])
+        logger.info(f"Discovered modules in: {tasks_path}")
 
         # RagSimilarArticlesFetcherを明示的に登録
         try:
-            from src.services.tasks.rag_similar_articles_fetcher import RagSimilarArticlesFetcher
+            from src.tasks.rag_similar_articles_fetcher import RagSimilarArticlesFetcher
             service_registry.register_module("RagSimilarArticlesFetcher", RagSimilarArticlesFetcher)
             logger.info("Manually registered RagSimilarArticlesFetcher module.")
         except Exception as e:
@@ -36,7 +37,7 @@ class WorkflowProcessingService:
         
         # AffiliateLinkerTaskを明示的に登録
         try:
-            from src.services.tasks.affiliate_linker_task import AffiliateLinkerTask
+            from src.tasks.affiliate_linker_task import AffiliateLinkerTask
             service_registry.register_module("AffiliateLinkerTask", AffiliateLinkerTask)
             logger.info("Manually registered AffiliateLinkerTask module.")
         except Exception as e:
