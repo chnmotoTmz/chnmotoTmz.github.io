@@ -39,10 +39,11 @@ class ArticleContentGeneratorTask(BaseTaskModule):
             f"【独自の切り口】\n{axes_text}\n\n"
             f"【参考情報】\n{source_content[:2500]}\n\n"
             "【執筆・構成の鉄則】\n"
-            "1. 見出し（<h2>, <h3>）は、週刊誌の煽り見出しのように「短く・鋭く・キャッチー」にしてください。絶対に15文字を超えてはいけません。見出しに説明文を書くのは厳禁です。\n"
-            "2. 重要な箇所は <b> タグで強調してください。\n"
-            "3. 箇条書きは <li> タグを使用してください。\n"
-            "4. 先頭に必ず「タイトル: [タイトル]」を記載すること。\n"
+            "1. 見出し（<h2>, <h3>）は、週刊誌の煽り見出しのように「短く・鋭く・キャッチー」にしてください。絶対に15文字を超えてはいけません。見出しタグの中に本文を書くのは厳禁です。\n"
+            "2. 本文（段落）は必ず <p> タグで囲むか、タグなしのプレーンテキストとして記述してください。見出しタグの直後に本文を繋げないでください。\n"
+            "3. 重要な箇所は <b> タグで強調してください。\n"
+            "4. 箇条書きは <li> タグを使用してください。\n"
+            "5. 先頭に必ず「タイトル: [タイトル]」を記載すること。\n"
             "5. 生成過程の解説、挨拶、CSSブロック、および『次に私ができること』といったメタな記述は**死んでも含めない**でください。\n\n"
             "【★最重要：ライターの『魂』を込める】\n"
             "これは自動生成記事ではなく、あなたの個人的なブログです。以下の「人間らしい痕跡」を過剰なほどに織り交ぜてください：\n"
@@ -57,18 +58,6 @@ class ArticleContentGeneratorTask(BaseTaskModule):
         # Ensure [:contents] exists if the LLM forgot it
         if "[:contents]" not in content:
             content = "[:contents]\n\n" + content
-            
-        # --- Scavenger Protocol: Physical Heading Truncation ---
-        # AI often fails the character limit. We enforce it here.
-        def truncate_heading(match):
-            tag = match.group(1)
-            text = match.group(2).strip()
-            if len(text) > 18:  # Absolute max limit
-                logger.warning(f"Truncating long heading: {text}")
-                text = text[:15] + "..."
-            return f"<{tag}>{text}</{tag}>"
-
-        content = re.sub(r"<(h2|h3)>(.*?)</\1>", truncate_heading, content, flags=re.DOTALL | re.IGNORECASE)
             
         return title, content
 

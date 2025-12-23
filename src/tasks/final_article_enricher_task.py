@@ -17,7 +17,7 @@ class FinalArticleEnricherTask(BaseTaskModule):
     1. Performs DuckDuckGo search for fact-checking references.
     2. Fetches Rakuten affiliate products.
     3. Fetches past articles (similar articles).
-    4. Merges them into the final content using a rigid physical append strategy.
+    4. Merges them into the final content using a PURE CODE GENERATION strategy (No AI for formatting).
     """
 
     def __init__(self, config: Dict[str, Any]):
@@ -35,8 +35,6 @@ class FinalArticleEnricherTask(BaseTaskModule):
             return inputs
 
         # --- Scavenger Protocol: Search and Destroy AI Duplicates ---
-        # Refined regex: match only the heading line and immediate subsequent list items/text 
-        # until the next heading or multiple newlines, to avoid deleting the whole article.
         logger.info("Stripping potential AI-generated placeholders.")
         patterns_to_strip = [
             r"##\s*📚\s*参考文献.*?(?=\n##|\n\n|$)",
@@ -53,34 +51,28 @@ class FinalArticleEnricherTask(BaseTaskModule):
         if not keywords:
             keywords = [title] if title else ["ブログ記事"]
 
-        logger.info(f"--- Final Enrichment Phase ---")
+        logger.info(f"--- Final Enrichment Phase (Code-Only Strategy) ---")
 
-        # 1. Fact Check Section
+        # 1. Fact Check Section (Code-generated)
         fact_check_html = self._get_fact_check_html(keywords[:2])
 
-        # 2. Past Articles Section
+        # 2. Past Articles Section (Code-generated)
         past_articles_html = self._get_past_articles_html(similar_articles)
 
-        # 3. Affiliate Section
+        # 3. Affiliate Section (Code-generated)
         affiliate_html = self._get_affiliate_html(article_concept, keywords[:3])
 
-        # 4. Final Physical Merge (The Scavenger Way)
+        # 4. Final Physical Merge
         enriched_content = content.strip()
         
-        sections_added = 0
         if fact_check_html:
-            enriched_content += "\n\n<hr/>\n\n" + fact_check_html
-            sections_added += 1
+            enriched_content += "\n\n<hr/>\n\n## 📚 参考文献\n\n" + fact_check_html
             
         if past_articles_html:
-            enriched_content += "\n\n" + past_articles_html
-            sections_added += 1
+            enriched_content += "\n\n## 🔗 あわせて読みたい\n\n" + past_articles_html
 
         if affiliate_html:
-            enriched_content += "\n\n" + affiliate_html
-            sections_added += 1
-
-        logger.info(f"Enrichment complete. Added {sections_added} sections.")
+            enriched_content += "\n\n## 🛒 おすすめ商品\n\n" + affiliate_html
 
         return {
             "final_title": title,
@@ -96,56 +88,38 @@ class FinalArticleEnricherTask(BaseTaskModule):
         
         if not all_results: return ""
 
-        prompt = f"""以下の検索結果をブログ記事の「参考文献・ファクトチェック」セクションとしてHTML整形してください。
-各リンクについて、なぜこの記事に関連するのか「読者への一言」を添えてください。
-
-【検索結果】
-{json.dumps(all_results, ensure_ascii=False, indent=2)}
-
-【出力ルール】
-- 見出しは <h2> 📚 参考文献・ファクトチェック </h2> としてください。
-- 各リンクは <li><a href="..."...>
-- 余計な挨拶や説明は一切含めず、スニペットのみを出力してください。
-"""
-        fallback_html = "<h2> 📚 参考文献・ファクトチェック </h2><ul>"
+        html = "<ul>\n"
         for res in all_results[:3]:
-            fallback_html += f"<li><a href='{res['url']}'>{res['title']}</a></li>"
-        fallback_html += "</ul>"
-
-        try:
-            res = self.llm_service.generate_text(prompt, max_tokens=800).strip()
-            if "href" in res and "<li>" in res: 
-                return res
-        except: pass
-        return fallback_html
+            # Physical URL adoption - No AI mangling
+            html += f"  <li><a href='{res['url']}'>{res['title']}</a></li>\n"
+        html += "</ul>"
+        return html
 
     def _get_affiliate_html(self, concept: Dict, keywords: List[str]) -> str:
         try:
             products = rakuten_api.search_related_products(concept, keywords)
             if not products: return ""
 
-            prompt = f"""以下の楽天商品情報を、魅力的な「おすすめ商品」セクションとしてHTMLで整形してください。
-各商品に「これ、マジでおすすめです！」という熱量の高い紹介文を1-2文添えてください。
-
-【商品情報】
-{json.dumps(products, ensure_ascii=False, indent=2)}
-
-【出力ルール】
-- 見出しは <h2> 🛒 本日のおすすめアイテム </h2> としてください。
-- 商品画像 <img> とリンク <a> を含めてください。
-- 余計な挨拶や説明は一切含めず、スニペットのみを出力してください。
-"""
-            fallback_html = "<h2> 🛒 本日のおすすめアイテム </h2><div class='rakuten-items'>"
-            for p in products[:2]:
-                fallback_html += f"<div style='margin-bottom:10px;'><b>{p['itemName']}</b><br/><a href='{p['affiliate_url']}'>[楽天で詳細を見る]</a></div>"
-            fallback_html += "</div>"
-
-            try:
-                res = self.llm_service.generate_text(prompt, max_tokens=1000).strip()
-                if "rakuten" in res and "href" in res:
-                    return res
-            except: pass
-            return fallback_html
+            # Pure code-generated layout for reliability
+            html = "<div class='rakuten-items' style='display:flex; flex-direction:column; gap:20px;'>\n"
+            for p in products[:3]:
+                name = p.get('itemName', '商品')
+                price = p.get('itemPrice', 0)
+                url = p.get('affiliate_url')
+                img = p.get('imageUrl')
+                
+                html += f"  <div class='item' style='border:1px solid #eee; padding:10px; border-radius:8px;'>\n"
+                if img:
+                    html += f"    <a href='{url}'><img src='{img}' alt='{name}' style='float:left; margin-right:10px; max-width:100px;'/></a>\n"
+                html += f"    <div style='overflow:hidden;'>\n"
+                html += f"      <a href='{url}' style='font-weight:bold; text-decoration:none;'>{name}</a><br/>\n"
+                html += f"      <span style='color:#c00; font-size:1.1em;'>価格: ¥{price:,}</span><br/>\n"
+                html += f"      <a href='{url}' style='display:inline-block; margin-top:5px; padding:5px 10px; background:#c00; color:#fff; border-radius:4px; text-decoration:none;'>楽天で見る</a>\n"
+                html += f"    </div>\n"
+                html += f"    <div style='clear:both;'></div>\n"
+                html += f"  </div>\n"
+            html += "</div>"
+            return html
         except Exception as e:
             logger.warning(f"Affiliate logic failed: {e}")
             return ""
@@ -153,28 +127,12 @@ class FinalArticleEnricherTask(BaseTaskModule):
     def _get_past_articles_html(self, articles: List[Dict]) -> str:
         if not articles: return ""
         
-        prompt = f"""以下の過去記事リストを、「あわせて読みたい」セクションとしてHTMLで整形してください。
-読者がクリックしたくなるような、人間味のある紹介文（1文）を添えてください。
-
-【過去記事リスト】
-{json.dumps(articles, ensure_ascii=False, indent=2)}
-
-【出力ルール】
-- 見出しは <h2> 🔗 あわせて読みたい（過去の人気記事） </h2> としてください。
-- リンクは <a href="..."...>
-- 余計な挨拶や説明は一切含めず、スニペットのみを出力してください。
-"""
-        fallback_html = "<h2> 🔗 あわせて読みたい </h2><ul>"
+        html = "<ul>\n"
         for art in articles[:3]:
-            fallback_html += f"<li><a href='{art.get('url')}'>{art.get('title')}</a></li>"
-        fallback_html += "</ul>"
-
-        try:
-            res = self.llm_service.generate_text(prompt, max_tokens=800).strip()
-            if "href" in res and "<li>" in res:
-                return res
-        except: pass
-        return fallback_html
+            # Physical URL adoption
+            html += f"  <li><a href='{art.get('url')}'>{art.get('title')}</a></li>\n"
+        html += "</ul>"
+        return html
 
     def _search_duckduckgo(self, query: str) -> List[Dict[str, str]]:
         try:
@@ -198,5 +156,5 @@ class FinalArticleEnricherTask(BaseTaskModule):
     def get_module_info(cls) -> Dict[str, Any]:
         return {
             "name": "FinalArticleEnricher",
-            "description": "Rigid HTML merging of search, affiliate, and RAG links with LLM formatting and hard fallback."
+            "description": "PURE CODE physical merging of search, affiliate, and RAG links."
         }

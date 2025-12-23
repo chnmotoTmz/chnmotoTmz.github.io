@@ -1,6 +1,7 @@
 from typing import Dict, Any
 import json
 import os
+import re
 import logging
 from src.framework.base_task import BaseTaskModule
 from src.services.hatena_service import HatenaService
@@ -53,7 +54,6 @@ class HatenaPublisherTask(BaseTaskModule):
             # 1. Force Hatena TOC at the very top (after thumbnail)
             if "[:contents]" not in final_content:
                 # If there's a thumbnail, insert after it
-                import re
                 # Robust match for thumbnail
                 thumb_match = re.match(r"^\s*(?:(!\[.*?\]\(http.*?\))|(?:\[(!\[.*?\]\(http.*?\))\]\(http.*?\)))\s*\n*", final_content)
                 if thumb_match:
