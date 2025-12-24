@@ -80,6 +80,7 @@ class BlogSelectorTaskV2(BaseTaskModule):
                 selected_blog_id = next(iter(valid_blogs.keys()))
                 logger.warning(f"⚠️ [Final Fallback] Selecting first available: {selected_blog_id}")
 
+            blog_config_dict = valid_blogs.get(selected_blog_id, {})
             logger.info(f"🏁 Final Selection Result: id={selected_blog_id}, name={blog_config_dict.get('blog_name')}, has_api_key={'yes' if blog_config_dict.get('api_key') else 'no'}")
             logger.info(f"---------------------------------")
 

@@ -38,8 +38,21 @@ class HatenaPublisherTask(BaseTaskModule):
             post = db.session.query(BlogPost).get(post_id)
             if not post: raise ValueError(f"Post {post_id} not found.")
 
-            blog = db.session.query(Blog).get(blog_data['id'])
-            if not blog: raise ValueError(f"Blog {blog_data['id']} not found.")
+            # Resolve blog DB entry: prioritize 'hatena_blog_id' over 'id'
+            if 'hatena_blog_id' in blog_data:
+                hatena_blog_id = blog_data['hatena_blog_id']
+                blog = db.session.query(Blog).filter_by(hatena_blog_id=hatena_blog_id).first()
+            elif 'id' in blog_data:
+                # Try as database ID first, then as hatena_blog_id
+                blog_id = blog_data['id']
+                blog = db.session.query(Blog).get(blog_id)
+                if not blog:
+                    # Maybe 'id' is actually the hatena_blog_id string
+                    blog = db.session.query(Blog).filter_by(hatena_blog_id=str(blog_id)).first()
+            else:
+                raise ValueError("Blog data missing 'id' or 'hatena_blog_id'")
+
+            if not blog: raise ValueError(f"Blog not found in database.")
 
             blog_credentials = {
                 'hatena_id': blog.hatena_id,

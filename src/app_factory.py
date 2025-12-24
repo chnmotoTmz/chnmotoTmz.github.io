@@ -50,6 +50,15 @@ def create_app() -> Flask:
         except Exception as e:
             logger.warning("[Startup] Failed to sync blog config: %s", e, exc_info=True)
 
+        # ブログ設定をYAMLファイルからデータベースに同期
+        try:
+            from blog_initializer import initialize_blog_config
+            yaml_upserts = initialize_blog_config()
+            if yaml_upserts > 0:
+                logger.info(f"[Startup] Blog config from YAML: upserted={yaml_upserts}")
+        except Exception as e:
+            logger.warning("[Startup] Failed to initialize blog config from YAML: %s", e, exc_info=True)
+
         # 起動時自己診断: Google Custom Search Engine (CSE) の動作確認
         # この診断はアプリケーションの起動を妨げないように設計されています。
         # 失敗した場合は警告をログに出力するのみです。

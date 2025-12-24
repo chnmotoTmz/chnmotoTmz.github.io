@@ -141,6 +141,33 @@ def line_webhook():
         logger.error("events field not list")
         return jsonify({"error": "events field invalid"}), 400
 
+    # --- Persist raw webhook to DB and append to line_messages.log ---
+    try:
+        from src.database import db, LineWebhookEvent
+        evt = LineWebhookEvent(
+            channel_id=channel_info.get('channel_id'),
+            channel_name=channel_info.get('channel_name'),
+            raw_body=body,
+            events_count=len(events),
+            processed=False
+        )
+        db.session.add(evt)
+        db.session.commit()
+        logger.info("Saved LINE webhook event id=%s, events=%s", evt.id, len(events))
+    except Exception as e:
+        logger.warning("Failed to persist LINE webhook event: %s", e)
+
+    try:
+        logs_dir = os.path.join(os.getcwd(), 'logs')
+        os.makedirs(logs_dir, exist_ok=True)
+        log_path = os.path.join(logs_dir, 'line_messages.log')
+        from datetime import datetime
+        with open(log_path, 'a', encoding='utf-8') as f:
+            f.write(f"{datetime.utcnow().isoformat()} | channel={channel_info.get('channel_id')} | events={len(events)} | body={body}\n")
+        logger.info("Appended raw webhook to %s", log_path)
+    except Exception as e:
+        logger.warning("Failed to append webhook to file: %s", e)
+
     processed = 0
     line_service.set_channel(channel_info.get("channel_id"))
 
@@ -166,6 +193,19 @@ def line_webhook():
             raise
 
     return jsonify({"status": "ok", "events_processed": processed})
+
+
+@chat_bp.route('/line/events', methods=['GET'])
+def line_events():
+    """Return recent LINE webhook events (most recent first). Query param: ?limit=50"""
+    try:
+        from src.database import LineWebhookEvent
+        limit = int(request.args.get('limit') or 50)
+        results = LineWebhookEvent.query.order_by(LineWebhookEvent.created_at.desc()).limit(limit).all()
+        return jsonify([r.to_dict() for r in results])
+    except Exception as e:
+        logger.exception("Failed to fetch line events: %s", e)
+        return jsonify({'error': 'failed to fetch events'}), 500
 
 
 # ユーザーごとの会話履歴（最大10ターン）

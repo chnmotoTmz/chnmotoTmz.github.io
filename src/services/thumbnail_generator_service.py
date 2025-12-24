@@ -63,8 +63,12 @@ class ThumbnailGeneratorService:
             if local_image_path:
                 return self._upload_and_cleanup(local_image_path)
             else:
-                logger.error("Failed to scavenge image from URL: %s", src_url)
-                return None
+                logger.warning("Failed to scavenge image from URL: %s. Falling back to new generation.", src_url)
+                # Remove the __IMAGE_URL__ prefix and use the rest as a new prompt
+                prompt = prompt.replace("__IMAGE_URL__", "").strip()
+                if not prompt or prompt.startswith("https://"):
+                    # If it's just a URL or empty, generate a generic prompt
+                    prompt = "Create a manga-style thumbnail for a blog article about technology and creativity"
 
         # 1. Custom API Flow (Preferred if configured)
         api_url = os.getenv('CUSTOM_THUMBNAIL_API_URL')
@@ -73,6 +77,35 @@ class ThumbnailGeneratorService:
             return self._generate_via_custom_api(prompt, api_url)
 
         # 2. Magic Hour Flow (Default)
+        return self._generate_via_magic_hour(prompt)
+
+    def _generate_via_custom_api(self, prompt: str, api_url: str) -> str:
+        """
+        カスタムAPI経由でサムネイル画像を生成します。
+        URLが取得できない場合は例外を発生させ、ワークフローを停止させます。
+        """
+        body, src_url = self._call_custom_api(prompt, api_url)
+        
+        if not src_url:
+            logger.warning("No image URL returned from Custom API. Falling back to Magic Hour.")
+            return self._generate_via_magic_hour(prompt)
+            
+        local_image_path = self._acquire_image_path(src_url)
+        if not local_image_path:
+            logger.warning(f"Could not acquire image from {src_url}. Falling back to Magic Hour.")
+            return self._generate_via_magic_hour(prompt)
+            
+        imgur_url = self._upload_and_cleanup(local_image_path)
+        if not imgur_url:
+            raise RuntimeError("Thumbnail upload failed: Could not upload to Imgur.")
+            
+        return imgur_url
+
+    def _generate_via_magic_hour(self, prompt: str) -> str:
+        """
+        Magic Hour APIを使用して画像を生成します。
+        """
+        logger.info("Falling back to Magic Hour for image generation.")
         response = self.magichour.generate_image(prompt)
         if not response or 'images' not in response or not response['images']:
             raise RuntimeError("Magic Hour generation failed: Empty response.")
@@ -96,26 +129,6 @@ class ThumbnailGeneratorService:
                 f.write(image_response.content)
 
         return self._upload_and_cleanup(local_image_path)
-
-    def _generate_via_custom_api(self, prompt: str, api_url: str) -> str:
-        """
-        カスタムAPI経由でサムネイル画像を生成します。
-        URLが取得できない場合は例外を発生させ、ワークフローを停止させます。
-        """
-        body, src_url = self._call_custom_api(prompt, api_url)
-        
-        if not src_url:
-            raise RuntimeError("Thumbnail generation failed: No image URL returned from Custom API after retries.")
-            
-        local_image_path = self._acquire_image_path(src_url)
-        if not local_image_path:
-            raise RuntimeError(f"Thumbnail download failed: Could not acquire image from {src_url}")
-            
-        imgur_url = self._upload_and_cleanup(local_image_path)
-        if not imgur_url:
-            raise RuntimeError("Thumbnail upload failed: Could not upload to Imgur.")
-            
-        return imgur_url
 
     def _call_custom_api(self, prompt: str, api_url: str):
         """
@@ -212,22 +225,68 @@ class ThumbnailGeneratorService:
         return self._download_from_url(src_url)
 
     def _download_from_url(self, url: str) -> Optional[str]:
-        """URLから画像を直接ダウンロードして一時保存する"""
-        try:
-            response = requests.get(url, timeout=30)
-            if response.status_code == 200:
-                timestamp = int(time.time() * 1000)
-                local_path = os.path.join(self.temp_folder, f"download_{timestamp}.jpg")
-                with open(local_path, 'wb') as f:
-                    f.write(response.content)
-                logger.info(f"Direct download successful: {local_path}")
-                return local_path
-            else:
-                logger.error(f"Direct download failed. HTTP {response.status_code}")
+        """URLから画像を直接ダウンロードして一時保存する。
+
+        Implements multiple attempts with browser-like headers and simple
+        Googleusercontent URL normalization to reduce HTTP 403 occurrences.
+        """
+        def _try_get(u: str, headers: dict) -> Optional[requests.Response]:
+            try:
+                resp = requests.get(u, headers=headers, timeout=30)
+                return resp
+            except Exception as e:
+                logger.warning(f"Direct download attempt exception for {u}: {e}")
                 return None
-        except Exception as e:
-            logger.error(f"Direct download exception: {e}")
-            return None
+
+        attempts = []
+
+        # 1) Raw request (existing behavior)
+        attempts.append({'url': url, 'headers': {}})
+
+        # 2) Browser-like User-Agent
+        ua_headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+        }
+        attempts.append({'url': url, 'headers': ua_headers})
+
+        # 3) Add Referer (some Google-hosted urls require a referer)
+        ref_headers = ua_headers.copy()
+        ref_headers['Referer'] = 'https://lh3.googleusercontent.com/'
+        attempts.append({'url': url, 'headers': ref_headers})
+
+        # 4) Try normalized Googleusercontent URL variants (strip size suffix or set s0)
+        if '=s' in url:
+            base = url.split('=s')[0]
+            attempts.append({'url': base + '=s0', 'headers': ua_headers})
+            attempts.append({'url': base, 'headers': ua_headers})
+
+        # 5) Final attempt with lowered headers
+        attempts.append({'url': url, 'headers': {'User-Agent': ua_headers['User-Agent']}})
+
+        for idx, a in enumerate(attempts, start=1):
+            resp = _try_get(a['url'], a['headers'])
+            if resp is None:
+                continue
+            if resp.status_code == 200:
+                try:
+                    timestamp = int(time.time() * 1000)
+                    local_ext = 'jpg' if 'jpeg' in resp.headers.get('Content-Type', '') or 'image' in resp.headers.get('Content-Type', '') else 'bin'
+                    local_path = os.path.join(self.temp_folder, f"download_{timestamp}.{local_ext}")
+                    with open(local_path, 'wb') as f:
+                        f.write(resp.content)
+                    logger.info(f"Direct download successful (attempt {idx}): {a['url']} -> {local_path}")
+                    return local_path
+                except Exception as e:
+                    logger.warning(f"Failed to write downloaded content to file: {e}")
+                    return None
+            else:
+                logger.warning(f"Direct download attempt {idx} returned HTTP {resp.status_code} for URL: {a['url']}")
+                # small backoff between attempts
+                time.sleep(1)
+
+        logger.error("Direct download failed after all attempts: HTTP 403 or other errors")
+        return None
 
     def _wait_browser_download(self) -> Optional[str]:
         if not self.local_thumbnail_dir:

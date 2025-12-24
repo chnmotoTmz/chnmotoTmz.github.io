@@ -3,6 +3,7 @@ import re
 from typing import Dict, Any, List, Optional
 from src.framework.base_task import BaseTaskModule
 from src.services.gemini_service import GeminiService
+import os
 
 logger = logging.getLogger(__name__)
 

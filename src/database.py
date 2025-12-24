@@ -186,6 +186,31 @@ class UserBlogPermission(db.Model):
     blog_id = Column(Integer, ForeignKey('blogs.id'), primary_key=True)
     can_post = Column(Boolean, default=False, comment="投稿権限の有無")
 
+class LineWebhookEvent(db.Model):
+    """受信したLINE webhookの生ログを保存するモデル。"""
+    __tablename__ = 'line_webhook_events'
+    id = Column(Integer, primary_key=True)
+    channel_id = Column(String(100), comment="LINEチャンネルID")
+    channel_name = Column(String(200), comment="チャンネル名")
+    raw_body = Column(Text, comment="受信した生JSONペイロード")
+    events_count = Column(Integer, default=0, comment="含まれるeventsの件数")
+    processed = Column(Boolean, default=False, comment="処理済みフラグ")
+    processed_at = Column(DateTime, comment="処理日時")
+    created_at = Column(DateTime, server_default=func.now(), comment="受信日時")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'channel_id': self.channel_id,
+            'channel_name': self.channel_name,
+            'events_count': self.events_count,
+            'processed': bool(self.processed),
+            'processed_at': self.processed_at.isoformat() if self.processed_at else None,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'raw_body_preview': (self.raw_body or '')[:200]
+        }
+
+
 class GeminiUsageLog(db.Model):
     """Gemini APIの利用状況を記録するログモデル。"""
     __tablename__ = 'gemini_usage_logs'

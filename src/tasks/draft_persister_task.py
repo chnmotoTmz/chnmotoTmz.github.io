@@ -3,7 +3,7 @@ from typing import Dict, Any, List
 from sqlalchemy.exc import SQLAlchemyError
 
 from src.framework.base_task import BaseTaskModule
-from src.database import db, BlogPost, PostSourceMessage
+from src.database import db, BlogPost, PostSourceMessage, Blog, User
 
 logger = logging.getLogger(__name__)
 
@@ -50,9 +50,55 @@ class DraftPersisterTask(BaseTaskModule):
             return {"post_id": None} 
 
         try:
+            # Resolve blog DB id: accept either a DB-style dict with 'id' or a YAML config dict containing 'hatena_blog_id'
+            if 'id' in blog_data:
+                blog_id = blog_data['id']
+            elif 'hatena_blog_id' in blog_data:
+                hatena = blog_data.get('hatena_blog_id')
+                blog_entry = db.session.query(Blog).filter_by(hatena_blog_id=hatena).first()
+                if not blog_entry:
+                    # Try to create a DB entry from YAML-like config
+                    try:
+                        blog_entry = Blog(
+                            name=blog_data.get('blog_name', 'Unknown'),
+                            hatena_id=blog_data.get('hatena_id', ''),
+                            hatena_blog_id=hatena,
+                            api_key=blog_data.get('hatena_api_key', blog_data.get('api_key', ''))
+                        )
+                        db.session.add(blog_entry)
+                        db.session.commit()
+                    except SQLAlchemyError as e:
+                        db.session.rollback()
+                        logger.warning("Failed to create Blog DB entry: %s", e)
+                        return {"post_id": None}
+                blog_id = blog_entry.id
+            else:
+                logger.warning("DraftPersisterTask: blog data has no 'id' or 'hatena_blog_id', skipping persist")
+                return {"post_id": None}
+
+            # Resolve author id: prefer explicit 'id', else try to find/create by line_user_id
+            if 'id' in user_data:
+                author_id = user_data['id']
+            else:
+                line_uid = user_data.get('line_user_id') or user_data.get('line_id')
+                if not line_uid:
+                    logger.warning("DraftPersisterTask: user has no 'id' or 'line_user_id', skipping persist")
+                    return {"post_id": None}
+                user_entry = db.session.query(User).filter_by(line_user_id=line_uid).first()
+                if not user_entry:
+                    try:
+                        user_entry = User(line_user_id=line_uid, display_name=user_data.get('display_name', ''))
+                        db.session.add(user_entry)
+                        db.session.commit()
+                    except SQLAlchemyError as e:
+                        db.session.rollback()
+                        logger.warning("Failed to create User DB entry: %s", e)
+                        return {"post_id": None}
+                author_id = user_entry.id
+
             post = BlogPost(
-                blog_id=blog_data['id'],
-                author_id=user_data['id'],
+                blog_id=blog_id,
+                author_id=author_id,
                 title=title,
                 content=content,
                 status='draft'
@@ -60,7 +106,13 @@ class DraftPersisterTask(BaseTaskModule):
             db.session.add(post)
             db.session.flush()  # To get post.id before commit
 
-            actual_ids = [msg['id'] for msg in message_ids if isinstance(msg, dict) and 'id' in msg] if isinstance(message_ids[0], dict) else message_ids
+            # Normalize message_ids: accept list of dicts or list of ids, and handle empty lists
+            actual_ids = []
+            if message_ids:
+                if isinstance(message_ids[0], dict):
+                    actual_ids = [msg['id'] for msg in message_ids if isinstance(msg, dict) and 'id' in msg]
+                else:
+                    actual_ids = list(message_ids)
 
             for msg_id in actual_ids:
                 source_msg = PostSourceMessage(post_id=post.id, message_id=msg_id)
