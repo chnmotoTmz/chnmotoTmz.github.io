@@ -6,6 +6,8 @@ import logging
 from src.framework.base_task import BaseTaskModule
 from src.services.hatena_service import HatenaService
 from src.database import db, BlogPost, Blog
+from src.services.imgur_service import ImgurService
+from src.config import Config
 
 logger = logging.getLogger(__name__)
 
@@ -63,7 +65,42 @@ class HatenaPublisherTask(BaseTaskModule):
 
             # --- Physical Content Fixes ---
             final_content = post.content
-            
+
+            # Replace local image srcs (file://, local paths) by uploading to Imgur when possible
+            try:
+                imgur = ImgurService()
+                def _upload_local(src_path: str) -> str:
+                    # Normalize file:// prefix
+                    p = src_path
+                    if p.startswith('file://'):
+                        p = p[len('file://'):]
+                    # If it is not absolute, try relative to CWD
+                    if not os.path.isabs(p):
+                        p = os.path.join(os.getcwd(), p)
+                    if not os.path.exists(p):
+                        logger.warning(f"Local image path not found for upload: {p}")
+                        return src_path
+                    try:
+                        resp = imgur.upload_image(p)
+                        if resp and resp.get('success') and resp.get('link'):
+                            return resp.get('link')
+                        logger.warning(f"Imgur upload failed for {p}: {resp}")
+                    except Exception as e:
+                        logger.warning(f"Imgur upload exception for {p}: {e}")
+                    return src_path
+
+                # Find all <img src='...'> or src="..."
+                def _replace_src(match):
+                    src = match.group(1)
+                    if src.startswith('file://') or src.startswith('/') or src.startswith('./') or src.startswith(Config.UPLOAD_FOLDER):
+                        new = _upload_local(src)
+                        return f"src=\"{new}\""
+                    return match.group(0)
+
+                final_content = re.sub(r'src=["\']([^"\']+)["\']', _replace_src, final_content)
+            except Exception as e:
+                logger.warning(f"Image uploading before publish failed: {e}")
+
             # 1. Force Hatena TOC at the very top (after thumbnail)
             if "[:contents]" not in final_content:
                 # If there's a thumbnail, insert after it
@@ -82,7 +119,6 @@ class HatenaPublisherTask(BaseTaskModule):
                 final_content = re.sub(r'\n{3,}', '\n\n', final_content)
             
             logger.info("Publishing to Hatena with forced TOC.")
-
             entry = hatena_service.publish_article(
                 title=post.title,
                 content=final_content,

@@ -56,10 +56,24 @@ class PromptPreparerTask(BaseTaskModule):
                     except Exception as e:
                         logger.warning(f"Imgur upload failed for Asset {asset_id}: {e}")
 
-                if external_url and asset_data.get('message_id'):
+                if asset_data.get('message_id'):
+                    # Prefer external_url (public). If missing, include a file:// URL based on local_path
+                    # so downstream tasks can use it in prompts and the publisher can detect and upload it.
+                    if external_url:
+                        public_url = external_url
+                    elif local_path:
+                        # Normalize to file:// scheme for consistent detection
+                        normalized = local_path
+                        if not normalized.startswith('file://'):
+                            normalized = f"file://{normalized}"
+                        public_url = normalized
+                    else:
+                        public_url = ''
+
                     asset_by_message_id[asset_data['message_id']] = {
-                        "url": external_url,
-                        "description": asset_data.get("description")
+                        "url": public_url,
+                        "description": asset_data.get("description"),
+                        "local_path": local_path
                     }
 
         if assets_to_update:
