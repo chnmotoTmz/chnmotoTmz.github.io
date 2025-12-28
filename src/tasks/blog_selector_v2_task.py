@@ -152,8 +152,26 @@ class BlogSelectorTaskV2(BaseTaskModule):
         return None
 
     def _select_blog(self, texts: List[str], images: List[Dict], blogs: Dict[str, Any]) -> Optional[str]:
-        content = "\n".join(texts[:3])
-        prompt = f"Analyze the content and select the most appropriate blog ID.\nContent:\n{content[:500]}\n\nAvailable Blogs:\n"
+        # Merge texts and image descriptions as equal information sources
+        content_parts = []
+        
+        # Add user texts
+        if texts:
+            content_parts.append("【ユーザー入力テキスト】:")
+            content_parts.extend([t for t in texts if t][:3])
+            
+        # Add image descriptions
+        image_descs = [img.get("description") for img in images if img.get("description")]
+        if image_descs:
+            if content_parts:
+                content_parts.append("") # Spacer
+            content_parts.append("【画像解析結果】:")
+            for desc in image_descs:
+                content_parts.append(f"- {desc}")
+
+        content = "\n".join(content_parts) if content_parts else "(入力コンテンツなし)"
+        
+        prompt = f"Analyze the combined content (text and images) and select the most appropriate blog ID.\n\nContent:\n{content[:1000]}\n\nAvailable Blogs:\n"
         prompt += "\n".join([f"- ID: {bid}, Name: {cfg.get('blog_name')}" for bid, cfg in blogs.items()])
         prompt += "\n\nReturn ONLY a JSON object: {\"blog_id\": \"...\"}"
         try:

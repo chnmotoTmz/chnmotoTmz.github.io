@@ -59,4 +59,3 @@ class BlogConfig:
                 return config
         return None
 
-BlogConfig.load_config()

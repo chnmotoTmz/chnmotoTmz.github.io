@@ -10,6 +10,7 @@ import os
 import argparse
 from pathlib import Path
 from datetime import datetime
+from dotenv import load_dotenv
 
 # Add project root to path
 project_root = Path(__file__).parent
@@ -153,6 +154,9 @@ def run_workflow(workflow_name: str, topic: str):
 def main():
     """Main entry point."""
     load_env()
+    load_dotenv('.env.production')
+    from src.blog_config import BlogConfig
+    BlogConfig.load_config()
     
     parser = argparse.ArgumentParser(description="Hatena Blog Suite Application")
     parser.add_argument('--flow', type=str, help='Name or path of the workflow to execute (e.g. simple_hatena_flow)')
