@@ -74,6 +74,15 @@ class ArticleContentGeneratorTask(BaseTaskModule):
         blog = inputs.get("blog", {})
         images = inputs.get("images_for_prompt", [])
 
+        # Include image descriptions in source content for better context
+        image_descriptions = []
+        for img in images:
+            desc = img.get("description")
+            if desc and desc != "画像解析に失敗しました":
+                image_descriptions.append(f"画像情報: {desc}")
+        if image_descriptions:
+            source_content += "\n\n" + "\n\n".join(image_descriptions)
+
         title, content = self._generate_article_content(article_concept, source_content, blog)
         
         # --- Physical Image Injection (User Uploaded Photos) ---

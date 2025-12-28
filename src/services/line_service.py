@@ -130,16 +130,37 @@ class LineService:
             logger.info(f"メッセージをユーザー({user_id})に送信しました。")
             return True
         except LineBotApiError as e:
-            logger.error(f"LINE APIへのメッセージ送信でエラーが発生しました (ユーザーID: {user_id}): {e.status_code} {e.error.message}")
-            if hasattr(e, 'error') and hasattr(e.error, 'details'):
-                logger.error(f"LINE APIエラーの詳細: {e.error.details}")
+            # e.error may be an object or dict depending on SDK version; handle both
+            err_obj = getattr(e, 'error', None)
+            if isinstance(err_obj, dict):
+                err_msg = err_obj.get('message')
+                err_details = err_obj.get('details')
+            else:
+                err_msg = getattr(err_obj, 'message', None)
+                err_details = getattr(err_obj, 'details', None)
+
+            logger.error(f"LINE APIへのメッセージ送信でエラーが発生しました (ユーザーID: {user_id}): {getattr(e, 'status_code', 'N/A')} {err_msg}")
+            if err_details:
+                logger.error(f"LINE APIエラーの詳細: {err_details}")
             # 完全なエラー情報を追加でログ出力
-            logger.error(f"LINE APIエラー完全情報: status_code={e.status_code}, error={e.error}, message='{text[:200]}...'")
+            logger.error(f"LINE APIエラー完全情報: status_code={getattr(e, 'status_code', 'N/A')}, error={err_obj}, message='{text[:200]}...'")
             
             # 400エラーの場合、ユーザーがBotを友だち追加していない可能性が高い
             if e.status_code == 400:
                 logger.warning(f"ユーザー({user_id})へのメッセージ送信が拒否されました。Botが友だち追加されていないか、ブロックされている可能性があります。")
                 # 400エラーは通知失敗として扱うが、例外を投げない（ワークフローを失敗させない）
+                return False
+
+            # 429 (Rate Limit) はフォールバックでメール送信
+            if e.status_code == 429:
+                logger.warning(f"LINE API レート制限（429）検出。フォールバックメールを送信します。ユーザーID={user_id}")
+                try:
+                    recipient = Config.FALLBACK_EMAIL_RECIPIENT
+                    subject = f"[Fallback] LINE delivery failed (user={user_id})"
+                    body = f"LINE push_message to {user_id} failed with status 429 (rate limit).\n\nOriginal message:\n{text}\n\nError: {e}"
+                    self._send_email_fallback(recipient, subject, body)
+                except Exception as mail_e:
+                    logger.error(f"フォールバックメール送信中にエラー: {mail_e}", exc_info=True)
                 return False
             
             return False
@@ -199,6 +220,99 @@ class LineService:
                 return False
 
         return True
+
+    def _send_email_fallback(self, recipient: str, subject: str, body: str) -> bool:
+        """フォールバック用にメールを送信するヘルパー。
+
+        SMTP設定は `src.config.Config` から取得します。
+        Returns True on success, False otherwise.
+        Additionally logs every attempt to `logs/fallback_emails.log` (JSONL) and queues failed sends to `data/email_queue.json`.
+        """
+        from email.message import EmailMessage
+        import smtplib, json
+        from datetime import datetime
+
+        log_entry = {
+            'timestamp': datetime.utcnow().isoformat() + 'Z',
+            'recipient': recipient,
+            'subject': subject,
+            'body_preview': (body[:100] + '...') if body and len(body) > 100 else body,
+            'result': None,
+            'error': None,
+            'smtp_refusal': None,
+        }
+
+        if not Config.SMTP_HOST:
+            logger.error("SMTP_HOSTが設定されていません。フォールバックメールを送信できません。")
+            log_entry.update({'result': False, 'error': 'SMTP_HOST not configured'})
+            # persist log
+            Path('logs').mkdir(exist_ok=True)
+            with open('logs/fallback_emails.log', 'a', encoding='utf-8') as f:
+                f.write(json.dumps(log_entry, ensure_ascii=False) + '\n')
+            return False
+
+        msg = EmailMessage()
+        msg['Subject'] = subject
+        msg['From'] = Config.EMAIL_FROM or Config.SMTP_USER or 'no-reply@example.com'
+        msg['To'] = recipient
+        msg.set_content(body)
+
+        host = Config.SMTP_HOST
+        port = Config.SMTP_PORT
+        user = Config.SMTP_USER
+        pwd = Config.SMTP_PASSWORD
+
+        logger.info(f"Sending fallback email to {recipient} via SMTP {host}:{port}")
+        try:
+            with smtplib.SMTP(host, port, timeout=30) as s:
+                try:
+                    s.starttls()
+                except Exception:
+                    logger.debug("STARTTLS failed or unsupported, proceeding without STARTTLS")
+                if user and pwd:
+                    s.login(user, pwd)
+                # send_message may raise or return a dict of refused recipients when using sendmail
+                refusal = s.send_message(msg)
+
+            log_entry.update({'result': True, 'smtp_refusal': refusal})
+            Path('logs').mkdir(exist_ok=True)
+            with open('logs/fallback_emails.log', 'a', encoding='utf-8') as f:
+                f.write(json.dumps(log_entry, ensure_ascii=False) + '\n')
+
+            logger.info(f"フォールバックメールを送信しました: {recipient}")
+            return True
+
+        except Exception as e:
+            logger.error(f"フォールバックメール送信に失敗しました: {e}", exc_info=True)
+            log_entry.update({'result': False, 'error': str(e)})
+            # persist log
+            Path('logs').mkdir(exist_ok=True)
+            with open('logs/fallback_emails.log', 'a', encoding='utf-8') as f:
+                f.write(json.dumps(log_entry, ensure_ascii=False) + '\n')
+
+            # queue for retry
+            try:
+                qpath = Path('data/email_queue.json')
+                qpath.parent.mkdir(parents=True, exist_ok=True)
+                if qpath.exists():
+                    with open(qpath, 'r', encoding='utf-8') as qf:
+                        queue = json.load(qf)
+                else:
+                    queue = []
+                queue.append({
+                    'recipient': recipient,
+                    'subject': subject,
+                    'body': body,
+                    'first_failed_at': log_entry['timestamp'],
+                    'attempts': 1,
+                })
+                with open(qpath, 'w', encoding='utf-8') as qf:
+                    json.dump(queue, qf, ensure_ascii=False, indent=2)
+                logger.info(f"フォールバックメールをキューに格納しました: {qpath}")
+            except Exception as qe:
+                logger.error(f"キュー保存中にエラーが発生しました: {qe}", exc_info=True)
+
+            return False
 
     def save_message(self, line_message_id: str, user_id: int, message_type: str, content: str = None) -> dict:
         """受信したメッセージをデータベースに保存します。"""

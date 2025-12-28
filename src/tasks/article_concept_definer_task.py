@@ -20,6 +20,7 @@ class ArticleConceptDefinerTask(BaseTaskModule):
 
     def execute(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
         texts = inputs.get("texts", [])
+        images = inputs.get("images_for_prompt", [])
         blog_data = inputs.get("blog") or {}
         repost_data = inputs.get("repost_data")
         
@@ -36,6 +37,13 @@ class ArticleConceptDefinerTask(BaseTaskModule):
         
         logger.info(f"🔍 Analyzing content concept for blog '{blog_name}'")
         
+        # Include image descriptions in content
+        content_parts = texts[:3]
+        for img in images:
+            desc = img.get("description")
+            if desc and desc != "画像解析に失敗しました":
+                content_parts.append(f"画像情報: {desc}")
+        
         prompt = f"""ブログ記事のコンセプトを定義してください。
 
 【ブログ情報】
@@ -43,7 +51,7 @@ class ArticleConceptDefinerTask(BaseTaskModule):
 概要: {blog_description}
 
 【コンテンツ】
-{" ".join(texts[:3])}
+{" ".join(content_parts)}
 
 以下のJSON形式で出力してください：
 {{

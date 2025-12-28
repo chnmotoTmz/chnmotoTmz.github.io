@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_EXTS = {'.md', '.txt', '.py', '.html', '.json', '.csv'}
 # File extensions that are considered source code and may be embedded fully when requested
 CODE_EXTS = {'.py', '.js', '.ts', '.java', '.sh', '.ps1'}
-EXCLUDE_DIRS = {'.git', 'venv', '__pycache__', 'node_modules', 'data', 'pgadmin', 'postgres'}
+EXCLUDE_DIRS = {'.git', 'venv', '__pycache__', 'node_modules', 'data', 'pgadmin', 'postgres', 'cache', 'cache/hatena_content'}
 
 
 def guess_summary_from_text(text: str, max_len: int = 200) -> str:

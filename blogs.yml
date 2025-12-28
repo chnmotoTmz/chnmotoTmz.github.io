@@ -1,260 +1,53 @@
 blogs:
-  gadget_productivity:
+  lifehacking1919:
     hatena_id: "motochan1969"
     hatena_api_key: "${MOTOCHAN_HATENA_API_KEY}"
     hatena_blog_id: "lifehacking1919.hatenablog.jp"
-    blog_name: "ガジェット生産性ラボ"
-    description: "最新ガジェット、生産性ツール、PCアクセサリ、スマートホームデバイスのレビューとアフィリエイト情報を発信。高単価商品中心。"
-    prompt_file: "blog_main_prompt_gadget_productivity.txt"
+    blog_name: "Lifehacking 1919"
+    description: "ライフハック、テクノロジー、ガジェット、自己啓発に関する情報を発信するブログ。"
+    prompt_file: "blog_main_prompt_Lifehacking_1919.txt"
     gemini_api_key: "${GEMINI_API_KEY}"
-    keywords:
-      - ガジェット
-      - 生産性ツール
-      - PCアクセサリ
-      - スマートホーム
-      - ワイヤレスイヤホン
-      - モニター
-      - キーボード
-      - マウス
-      - 仕事効率化
-    exclude_keywords:
-      - 家族
-      - 子育て
-      - 登山
-      - ハイキング
-      - 語学
-      - 投資
-      - FX
-      - グルメ
-      - 美容
-      - 健康食品
-      - 主婦
-  ai_music_production:
-    hatena_id: "yamasan1969"
-    hatena_api_key: "${YAMASAN_HATENA_API_KEY}"
-    hatena_blog_id: "hikingsong.hatenablog.jp"
-    blog_name: "AI音楽制作スタジオ"
-    description: "AI音楽生成ツール、DTM機材、オーディオインターフェース、マイク、ヘッドホンのレビューとアフィリエイト。SUNO AI、音楽制作ソフト中心。"
-    prompt_file: "blog_main_prompt_ai_music_production.txt"
-    gemini_api_key: "${GEMINI_API_KEY}"
-    keywords:
-      - AI音楽生成
-      - DTM
-      - SUNO AI
-      - オーディオインターフェース
-      - コンデンサーマイク
-      - モニターヘッドホン
-      - 音楽制作ソフト
-      - DAW
-      - 作曲
-    exclude_keywords:
-      - 家族
-      - 子育て
-      - 登山
-      - ハイキング
-      - 投資
-      - FX
-      - グルメ
-      - 語学
-      - 美容
-      - IT技術
-      - プログラミング
-      - エンジニア
-  travel_gear:
+  arafo40tozan:
     hatena_id: "motochan1969"
     hatena_api_key: "${MOTOCHAN_HATENA_API_KEY}"
     hatena_blog_id: "arafo40tozan.hatenadiary.jp"
-    blog_name: "トラベルギアレビュー"
-    description: "旅行用バックパック、スーツケース、アウトドアギア、カメラ機材、トラベルガジェットのレビューとアフィリエイト。高単価旅行用品中心。"
-    prompt_file: "blog_main_prompt_travel_gear.txt"
+    blog_name: "Hiking Community from Kansai／関西ハイキングコミュニティ"
+    description: "関西中心の登山、ハイキング、アウトドア活動の記録やギアレビューに関するブログ。"
+    prompt_file: "blog_main_prompt_arafo40tozan.txt"
     gemini_api_key: "${GEMINI_API_KEY}"
-    keywords:
-      - トラベルギア
-      - バックパック
-      - スーツケース
-      - アウトドアギア
-      - カメラ
-      - 旅行グッズ
-      - 登山用品
-      - キャンプ用品
-      - 旅行
-    exclude_keywords:
-      - 家族
-      - 子育て
-      - 音楽
-      - 語学
-      - IT技術
-      - 投資
-      - FX
-      - グルメ
-      - 美容
-  english_learning:
+  chinese:
     hatena_id: "motochan1969"
     hatena_api_key: "${MOTOCHAN_HATENA_API_KEY}"
     hatena_blog_id: "motochan1969.hatenablog.com"
-    blog_name: "English Learning Pro"
-    description: "オンライン英会話、英語学習アプリ、TOEIC対策教材、英語教材のレビューとアフィリエイト。高単価英語サービス中心。"
-    prompt_file: "blog_main_prompt_english_learning.txt"
+    blog_name: "我正在學中文"
+    description: "中国語の学習記録、TIPS、文化に関する個人的なメモを綴るブログ。"
+    prompt_file: "blog_main_prompt_Lifehacking_1919.txt"
     gemini_api_key: "${GEMINI_API_KEY}"
     keywords:
-      - オンライン英会話
-      - 英語学習
-      - TOEIC
-      - 英語アプリ
-      - 英語教材
-      - スピーキング
-      - リスニング
-      - 英会話
-      - 語学
-    exclude_keywords:
-      - 家族
-      - 子育て
-      - 登山
-      - 音楽
-      - IT技術
-      - 投資
-      - FX
-      - グルメ
-      - 美容
-  it_engineer_philosophy:
+      - 中国語
+      - 中文
+      - 中国語学習
+      - HSK
+      - 拼音
+      - 漢字
+      - 繁体字
+      - 简体字
+      - 台湾華語
+      - 発音
+      - 文法
+  yamasan1969:
     hatena_id: "yamasan1969"
     hatena_api_key: "${YAMASAN_HATENA_API_KEY}"
     hatena_blog_id: "yamasan1969.hatenablog.com"
-    blog_name: "ITエンジニアの哲学と技術"
-    description: "IT技術、開発、Qiita連動、技術解説、人生哲学、自己啓発を発信し、ITエンジニアのキャリアと人生を支援する。"
-    prompt_file: "it_engineer_philosophy_prompt.txt"
+    blog_name: "真面目に人生を考えるページ"
+    description: "人生、哲学、社会問題について真面目に考察するブログ。"
+    prompt_file: "blog_main_prompt_yamasan1969.txt"
     gemini_api_key: "${GEMINI_API_KEY}"
-    max_article_length: 600
-    keywords:
-      - IT技術
-      - プログラミング
-      - エンジニア
-      - 開発
-      - 技術解説
-      - キャリア
-      - 自己啓発
-      - Qiita
-      - Python
-      - AI
-    exclude_keywords:
-      - 家族
-      - 子育て
-      - 登山
-      - 音楽
-      - 投資
-      - FX
-      - グルメ
-      - 美容
-      - 健康
-  crypto_investment:
+  fx:
     hatena_id: "yamasan1969"
     hatena_api_key: "${YAMASAN_HATENA_API_KEY}"
     hatena_blog_id: "tekunikaru.hatenadiary.jp"
-    blog_name: "仮想通貨投資ラボ"
-    description: "仮想通貨取引所、ウォレット、NFT、DeFi、投資ツール、証券口座のレビューとアフィリエイト。高単価金融サービス中心。"
-    prompt_file: "blog_main_prompt_crypto_investment.txt"
+    blog_name: "晴れ時々、ＦＸ"
+    description: "FX（外国為替証拠金取引）のテクニカル分析や市場考察に関するブログ。"
+    prompt_file: "blog_main_prompt_yamasan1969.txt"
     gemini_api_key: "${GEMINI_API_KEY}"
-    keywords:
-      - 仮想通貨
-      - 暗号資産
-      - ビットコイン
-      - イーサリアム
-      - NFT
-      - DeFi
-      - 取引所
-      - ウォレット
-      - 投資
-    exclude_keywords:
-      - 家族
-      - 子育て
-      - 登山
-      - 音楽
-      - 語学
-      - IT技術
-      - グルメ
-      - 美容
-      - 健康
-  beauty_life_hack:
-    hatena_id: "kaigot"
-    hatena_api_key: "${KAIGOT_HATENA_API_KEY}"
-    hatena_blog_id: "wellness-mom-diary.hatenablog.com"
-    blog_name: "ビューティーライフハック"
-    description: "美容家電、スキンケア、コスメ、時短家電、脱毛器、美顔器のレビューとアフィリエイト。高単価美容商品中心。"
-    prompt_file: "blog_main_prompt_beauty_life_hack.txt"
-    gemini_api_key: "${GEMINI_API_KEY_USER3}"
-    keywords:
-      - 美容家電
-      - スキンケア
-      - コスメ
-      - 時短家電
-      - 脱毛器
-      - 美顔器
-      - ドライヤー
-      - ヘアアイロン
-      - 美容
-      - 主婦
-    exclude_keywords:
-      - 登山
-      - IT技術
-      - 投資
-      - FX
-      - 語学
-      - 音楽
-      - 旅行
-      - ゲーム
-      - 子育て
-  education_review:
-    hatena_id: "kaigot"
-    hatena_api_key: "${KAIGOT_HATENA_API_KEY}"
-    hatena_blog_id: "kosodate-hub.hatenablog.com"
-    blog_name: "教育サービスレビュー"
-    description: "オンライン学習サービス、知育玩具、学習塾、プログラミング教室、通信教育のレビュー。主婦のライフハックや子育て情報も発信。"
-    prompt_file: "blog_main_prompt_education_review.txt"
-    gemini_api_key: "${GEMINI_API_KEY_USER3}"
-    keywords:
-      - オンライン学習
-      - 知育玩具
-      - 学習塾
-      - プログラミング教室
-      - 通信教育
-      - 英語教育
-      - 受験
-      - 教育
-      - 学習
-      - 主婦
-      - 子育て
-    exclude_keywords:
-      - 登山
-      - IT技術開発
-      - 投資
-      - FX
-      - 音楽
-      - グルメ
-      - 美容
-      - 旅行
-  daily_world_news:
-    hatena_id: "kaigot"
-    hatena_api_key: "${KAIGOT_HATENA_API_KEY}"
-    hatena_blog_id: "kaigotmusic.hatenablog.com"
-    blog_name: "日常と世界のあいだ"
-    description: "主婦の視点で政治・経済・社会ニュースを深掘り。生活への影響や独自の考察を分かりやすく解説。"
-    prompt_file: "blog_main_prompt_daily_world_news.txt"
-    gemini_api_key: "${GEMINI_API_KEY}"
-    keywords:
-      - ニュース解説
-      - 政治
-      - 経済
-      - 社会問題
-      - 生活への影響
-      - 主婦目線
-      - 時事問題
-      - 物価
-      - 暮らし
-    exclude_keywords:
-      - IT技術
-      - プログラミング
-      - 登山
-      - 音楽
-      - ゲーム
-      - 投資
-      - FX

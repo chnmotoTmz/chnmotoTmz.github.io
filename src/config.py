@@ -86,6 +86,14 @@ class Config:
     # --- Claude API ---
     CLAUDE_API_KEY = os.getenv('CLAUDE_API_KEY')
 
+    # --- SMTP / Email fallback settings ---
+    SMTP_HOST = os.getenv('SMTP_HOST')
+    SMTP_PORT = int(os.getenv('SMTP_PORT', '587'))
+    SMTP_USER = os.getenv('SMTP_USER')
+    SMTP_PASSWORD = os.getenv('SMTP_PASSWORD')
+    EMAIL_FROM = os.getenv('EMAIL_FROM', SMTP_USER)
+    FALLBACK_EMAIL_RECIPIENT = os.getenv('FALLBACK_EMAIL_RECIPIENT', 'cmrmb738@yahoo.co.jp')
+
     # --- Rakuten API Settings ---
     RAKUTEN_APP_ID = os.getenv('RAKUTEN_APP_ID')
     RAKUTEN_AFFILIATE_ID = os.getenv('RAKUTEN_AFFILIATE_ID')
