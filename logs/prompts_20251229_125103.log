@@ -1,0 +1,11 @@
+2025-12-29 13:53:19 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '【冷や汗卒業】年賀状の手書きをやめたら、美肌が手に入った話✨...'
+2025-12-29 13:53:44 | ERROR    | src.services.line_service                          | LINE APIエラー完全情報: status_code=429, error={"details": [], "message": "You have reached your monthly limit."}, message='Article published!
+
+"【冷や汗卒業】年賀状の手書きをやめたら、美肌が手に入った話✨"
+https://wellness-mom-diary.hatenablog.com/entry/2025/12/29/135343...'
+2025-12-29 15:39:06 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2025-12-29 15:40:56 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '【断捨離】年収29万を捨て、私が「真の自由」を手に入れるまで...'
+2025-12-29 15:41:22 | ERROR    | src.services.line_service                          | LINE APIエラー完全情報: status_code=429, error={"details": [], "message": "You have reached your monthly limit."}, message='Article published!
+
+"【断捨離】年収29万を捨て、私が「真の自由」を手に入れるまで"
+https://yamasan1969.hatenablog.com/entry/2025/12/29/154120...'

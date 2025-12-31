@@ -1,0 +1,554 @@
+2025-12-28 09:33:28 | DEBUG    | src.services.framework.service_registry            | Registered: AddLinkedSourcesTask
+2025-12-28 09:33:31 | DEBUG    | src.services.framework.service_registry            | Registered: AffiliateLinkerTask
+2025-12-28 09:33:31 | DEBUG    | src.services.framework.service_registry            | Registered: AffiliateLinkAdderTask
+2025-12-28 09:33:31 | DEBUG    | src.services.framework.service_registry            | Registered: AmazonLinkRemoverTask
+2025-12-28 09:33:31 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleCacheTask
+2025-12-28 09:33:31 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleConceptDefiner
+2025-12-28 09:33:31 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleContentGenerator
+2025-12-28 09:33:31 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleReviewer
+2025-12-28 09:33:31 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleReviser
+2025-12-28 09:33:31 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleStrategyPlanner
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: BlogContextResolverTask
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: BlogContextUpdaterTask
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: BlogSelectorTask
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: BlogSelectorTaskV2
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: ChatHistoryManager
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: ClearGeminiMode
+2025-12-28 09:33:32 | INFO     | src.services.multi_channel_line_manager            | [登録] chanmotocaffe (ID: 2006378351)
+2025-12-28 09:33:32 | INFO     | src.services.multi_channel_line_manager            | [登録] FX Channel Bot (ID: 2007594340)
+2025-12-28 09:33:32 | INFO     | src.services.multi_channel_line_manager            | [登録] lang (ID: 2007819423)
+2025-12-28 09:33:32 | INFO     | src.services.multi_channel_line_manager            | 合計 3 チャンネル登録
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: CommandParserTask
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: ConditionalBranchTask
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: ConsoleNotifier
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: DatabaseFetcher
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: DraftPersister
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: FactChecker
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: FinalizePostTask
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: FinalArticleEnricher
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: FinalFactCleanupTask
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: GeminiChatResponder
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: GeminiChatResponder
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: GeminiReset
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: HatenaPublisher
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: LineChatReplyTask
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: LineNotifier
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: LineNotifier
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: LinkValidatorTask
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: LocalPublisher
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: MinimalThumbnailPreparer
+2025-12-28 09:33:32 | DEBUG    | src.services.framework.service_registry            | Registered: NotePost
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: ParagraphExtractor
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: PassthroughTask
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: PressImageIcon
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: PromptPreparer
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: RagSimilarArticlesFetcher
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: RagUpdater
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: RepostContextPreparerTask
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: RepostModeCheckerTask
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: StatusUpdater
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: StructuredArticleGeneratorTask
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: StructuredDataLoaderTask
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: StyleMemoryBuilder
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: ThumbnailGenerator
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: VideoSummaryFetcher
+2025-12-28 09:33:35 | DEBUG    | src.services.framework.service_registry            | Registered: WebSummaryFetcher
+2025-12-28 09:33:35 | INFO     | src.services.framework.service_registry            | Total registered modules: 49
+2025-12-28 09:33:35 | INFO     | __main__                                           | Application starting in SERVER mode
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\add_linked_sources_task.py as src.tasks.add_linked_sources_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: AddLinkedSourcesTask (from src.tasks.add_linked_sources_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\affiliate_linker_task.py as src.tasks.affiliate_linker_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: AffiliateLinkerTask (from src.tasks.affiliate_linker_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\affiliate_link_adder_task.py as src.tasks.affiliate_link_adder_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: AffiliateLinkAdderTask (from src.tasks.affiliate_link_adder_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\amazon_link_remover_task.py as src.tasks.amazon_link_remover_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: AmazonLinkRemoverTask (from src.tasks.amazon_link_remover_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_cache_task.py as src.tasks.article_cache_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ArticleCacheTask (from src.tasks.article_cache_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_concept_definer_task.py as src.tasks.article_concept_definer_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ArticleConceptDefiner (from src.tasks.article_concept_definer_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_content_generator_task.py as src.tasks.article_content_generator_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ArticleContentGenerator (from src.tasks.article_content_generator_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_reviewer_task.py as src.tasks.article_reviewer_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ArticleReviewer (from src.tasks.article_reviewer_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_reviser_task.py as src.tasks.article_reviser_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ArticleReviser (from src.tasks.article_reviser_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_strategy_planner_task.py as src.tasks.article_strategy_planner_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ArticleStrategyPlanner (from src.tasks.article_strategy_planner_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_context_resolver_task.py as src.tasks.blog_context_resolver_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: BlogContextResolverTask (from src.tasks.blog_context_resolver_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_context_updater_task.py as src.tasks.blog_context_updater_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: BlogContextUpdaterTask (from src.tasks.blog_context_updater_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_selector_task.py as src.tasks.blog_selector_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: BlogSelectorTask (from src.tasks.blog_selector_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_selector_v2_task.py as src.tasks.blog_selector_v2_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: BlogSelectorTaskV2 (from src.tasks.blog_selector_v2_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\chat_history_manager.py as src.tasks.chat_history_manager
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ChatHistoryManager (from src.tasks.chat_history_manager)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\clear_gemini_mode_task.py as src.tasks.clear_gemini_mode_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ClearGeminiMode (from src.tasks.clear_gemini_mode_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\command_parser_task.py as src.tasks.command_parser_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: CommandParserTask (from src.tasks.command_parser_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\conditional_branch_task.py as src.tasks.conditional_branch_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ConditionalBranchTask (from src.tasks.conditional_branch_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\console_notifier_task.py as src.tasks.console_notifier_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: ConsoleNotifier (from src.tasks.console_notifier_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\database_fetcher_task.py as src.tasks.database_fetcher_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: DatabaseFetcher (from src.tasks.database_fetcher_task)
+2025-12-28 09:33:35 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\draft_persister_task.py as src.tasks.draft_persister_task
+2025-12-28 09:33:35 | INFO     | src.framework.service_registry                     | Registered task module: DraftPersister (from src.tasks.draft_persister_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\fact_checker_task.py as src.tasks.fact_checker_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: FactChecker (from src.tasks.fact_checker_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\finalize_post_task.py as src.tasks.finalize_post_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: FinalizePostTask (from src.tasks.finalize_post_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\final_article_enricher_task.py as src.tasks.final_article_enricher_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: FinalArticleEnricher (from src.tasks.final_article_enricher_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\final_fact_cleanup_task.py as src.tasks.final_fact_cleanup_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: FinalFactCleanupTask (from src.tasks.final_fact_cleanup_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\gemini_chat_responder.py as src.tasks.gemini_chat_responder
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: GeminiChatResponder (from src.tasks.gemini_chat_responder)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\gemini_chat_responder_task.py as src.tasks.gemini_chat_responder_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: GeminiChatResponder (from src.tasks.gemini_chat_responder_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\gemini_reset_task.py as src.tasks.gemini_reset_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: GeminiReset (from src.tasks.gemini_reset_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\hatena_publisher_task.py as src.tasks.hatena_publisher_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: HatenaPublisher (from src.tasks.hatena_publisher_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\line_chat_reply_task.py as src.tasks.line_chat_reply_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: LineChatReplyTask (from src.tasks.line_chat_reply_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\line_notifier.py as src.tasks.line_notifier
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: LineNotifier (from src.tasks.line_notifier)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\line_notifier_task.py as src.tasks.line_notifier_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: LineNotifier (from src.tasks.line_notifier_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\link_validator_task.py as src.tasks.link_validator_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: LinkValidatorTask (from src.tasks.link_validator_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\local_publisher_task.py as src.tasks.local_publisher_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: LocalPublisher (from src.tasks.local_publisher_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\minimal_thumbnail_preparer_task.py as src.tasks.minimal_thumbnail_preparer_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: MinimalThumbnailPreparer (from src.tasks.minimal_thumbnail_preparer_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\note_post_task.py as src.tasks.note_post_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: NotePost (from src.tasks.note_post_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\paragraph_extractor_task.py as src.tasks.paragraph_extractor_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: ParagraphExtractor (from src.tasks.paragraph_extractor_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\passthrough_task.py as src.tasks.passthrough_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: PassthroughTask (from src.tasks.passthrough_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\press_image_icon_task.py as src.tasks.press_image_icon_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: PressImageIcon (from src.tasks.press_image_icon_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\prompt_preparer_task.py as src.tasks.prompt_preparer_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: PromptPreparer (from src.tasks.prompt_preparer_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\rag_similar_articles_fetcher.py as src.tasks.rag_similar_articles_fetcher
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: RagSimilarArticlesFetcher (from src.tasks.rag_similar_articles_fetcher)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\rag_updater_task.py as src.tasks.rag_updater_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: RagUpdater (from src.tasks.rag_updater_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\repost_context_preparer_task.py as src.tasks.repost_context_preparer_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: RepostContextPreparerTask (from src.tasks.repost_context_preparer_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\repost_mode_checker_task.py as src.tasks.repost_mode_checker_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: RepostModeCheckerTask (from src.tasks.repost_mode_checker_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\status_updater_task.py as src.tasks.status_updater_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: StatusUpdater (from src.tasks.status_updater_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\structured_article_generator_task.py as src.tasks.structured_article_generator_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: StructuredArticleGeneratorTask (from src.tasks.structured_article_generator_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\structured_data_loader_task.py as src.tasks.structured_data_loader_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: StructuredDataLoaderTask (from src.tasks.structured_data_loader_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\style_memory_builder_task.py as src.tasks.style_memory_builder_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: StyleMemoryBuilder (from src.tasks.style_memory_builder_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\thumbnail_generator_task.py as src.tasks.thumbnail_generator_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: ThumbnailGenerator (from src.tasks.thumbnail_generator_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\video_summary_fetcher_task.py as src.tasks.video_summary_fetcher_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: VideoSummaryFetcher (from src.tasks.video_summary_fetcher_task)
+2025-12-28 09:33:36 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\web_summary_fetcher_task.py as src.tasks.web_summary_fetcher_task
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Registered task module: WebSummaryFetcher (from src.tasks.web_summary_fetcher_task)
+2025-12-28 09:33:36 | INFO     | src.framework.service_registry                     | Total registered modules: 49
+2025-12-28 09:33:36 | INFO     | src.services.line_service                          | LineService initialized with token: ${LINE_CHA...
+2025-12-28 09:33:36 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:33:36 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:33:36 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:33:36 | INFO     | src.routes                                         | Registered combined webhook blueprint (chat + article generation).
+2025-12-28 09:33:36 | INFO     | src.routes                                         | Registered dashboard blueprint.
+2025-12-28 09:33:36 | INFO     | src.routes                                         | Registered other blueprints: api, rag, posts, health, logs.
+2025-12-28 09:33:36 | INFO     | src.database                                       | Database engine: sqlite
+2025-12-28 09:33:36 | INFO     | src.services.search_service                        | DuckDuckGo Search サービスが初期化されました。
+2025-12-28 09:33:36 | INFO     | src.services.search_service                        | 🔍 Web検索開始: クエリ「Python」, 最大1件
+2025-12-28 09:33:36 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 09:33:36 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 09:33:36 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 09:33:36 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 09:33:36 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 09:33:36 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 09:33:36 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 09:33:36 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 09:33:36 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 09:33:36 | DEBUG    | rquest.connect                                     | starting new connection: https://jp.wikipedia.org/
+2025-12-28 09:33:36 | DEBUG    | rquest.connect                                     | starting new connection: https://search.yahoo.com/
+2025-12-28 09:33:36 | DEBUG    | rquest.util.client.connect.dns                     | resolving jp.wikipedia.org
+2025-12-28 09:33:36 | DEBUG    | rquest.util.client.connect.dns                     | resolving search.yahoo.com
+2025-12-28 09:33:36 | DEBUG    | rquest.util.client.connect.http                    | connecting to [2001:df2:e500:ed1a::1]:443
+2025-12-28 09:33:36 | DEBUG    | rquest.util.client.connect.http                    | connecting to [2406:2000:e4:1404::3000]:443
+2025-12-28 09:33:36 | DEBUG    | rquest.util.client.connect.http                    | connected to [2406:2000:e4:1404::3000]:443
+2025-12-28 09:33:37 | DEBUG    | rquest.util.client.pool                            | pooling idle connection for PoolKey { uri: https://search.yahoo.com/, alpn_protos: None, network: default }
+2025-12-28 09:33:37 | DEBUG    | rquest.util.client.connect.http                    | connecting to 103.102.166.224:443
+2025-12-28 09:33:37 | DEBUG    | rquest.util.client.connect.http                    | connected to [2001:df2:e500:ed1a::1]:443
+2025-12-28 09:33:37 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'lkl'
+2025-12-28 09:33:37 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'A1'
+2025-12-28 09:33:37 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'A3'
+2025-12-28 09:33:37 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'A1S'
+2025-12-28 09:33:37 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'dflow'
+2025-12-28 09:33:37 | INFO     | primp                                              | response: https://search.yahoo.com/search;_ylt=Zc_6xWPKeiqW4kI4k6jUKmiP;_ylu=RC9xJg5TY6vhpZRHZwgwNUycg4r3LqdlVpWwMQG1YG_qHy4?p=Python 200
+2025-12-28 09:33:37 | DEBUG    | rquest.util.client.pool                            | pooling idle connection for PoolKey { uri: https://jp.wikipedia.org/, alpn_protos: None, network: default }
+2025-12-28 09:33:38 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Last-Access'
+2025-12-28 09:33:38 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Last-Access-Global'
+2025-12-28 09:33:38 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'GeoIP'
+2025-12-28 09:33:38 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'NetworkProbeLimit'
+2025-12-28 09:33:38 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Uniq'
+2025-12-28 09:33:38 | DEBUG    | rquest.client.http                                 | redirecting 'https://jp.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Python' to 'https://ja.wikipedia.org/w/api.php?action=opensearch&limit=1&profile=fuzzy&search=Python'
+2025-12-28 09:33:38 | DEBUG    | rquest.connect                                     | starting new connection: https://ja.wikipedia.org/
+2025-12-28 09:33:38 | DEBUG    | rquest.util.client.connect.dns                     | resolving ja.wikipedia.org
+2025-12-28 09:33:38 | DEBUG    | rquest.util.client.connect.http                    | connecting to [2001:df2:e500:ed1a::1]:443
+2025-12-28 09:33:38 | DEBUG    | rquest.util.client.connect.http                    | connecting to 103.102.166.224:443
+2025-12-28 09:33:38 | DEBUG    | rquest.util.client.connect.http                    | connected to [2001:df2:e500:ed1a::1]:443
+2025-12-28 09:33:39 | DEBUG    | rquest.util.client.pool                            | pooling idle connection for PoolKey { uri: https://ja.wikipedia.org/, alpn_protos: None, network: default }
+2025-12-28 09:33:39 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Last-Access'
+2025-12-28 09:33:39 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'NetworkProbeLimit'
+2025-12-28 09:33:39 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Uniq'
+2025-12-28 09:33:39 | INFO     | primp                                              | response: https://ja.wikipedia.org/w/api.php?action=opensearch&limit=1&profile=fuzzy&search=Python 200
+2025-12-28 09:33:39 | DEBUG    | rquest.util.client.pool                            | reuse idle connection for PoolKey { uri: https://jp.wikipedia.org/, alpn_protos: None, network: default }
+2025-12-28 09:33:40 | DEBUG    | rquest.client.http                                 | redirecting 'https://jp.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=Python&explaintext=0&exintro=0&redirects=1' to 'https://ja.wikipedia.org/w/api.php?action=query&exintro=0&explaintext=0&format=json&prop=extracts&redirects=1&titles=Python'
+2025-12-28 09:33:40 | DEBUG    | rquest.util.client.pool                            | reuse idle connection for PoolKey { uri: https://ja.wikipedia.org/, alpn_protos: None, network: default }
+2025-12-28 09:33:41 | INFO     | primp                                              | response: https://ja.wikipedia.org/w/api.php?action=query&exintro=0&explaintext=0&format=json&prop=extracts&redirects=1&titles=Python 200
+2025-12-28 09:33:41 | INFO     | src.services.search_service                        | ✅ Web検索が完了しました。クエリ「Python」で1件の結果を取得。
+2025-12-28 09:33:41 | INFO     | src.services.search_service                        | [SearchService] Self-check: OK (items=1)
+2025-12-28 09:33:41 | INFO     | src.app_factory                                    | [Startup] Google Search status: enabled=True, keys=None, cooldown=0s, http_ok=True, code=None, items=1, reason=ok
+2025-12-28 09:33:41 | INFO     | werkzeug                                           | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.40:8000
+2025-12-28 09:33:41 | INFO     | werkzeug                                           | [33mPress CTRL+C to quit[0m
+2025-12-28 09:33:52 | INFO     | src.routes_webhook_chat                            | --- line_webhook function entered ---
+2025-12-28 09:33:52 | INFO     | src.routes_webhook_chat                            | Webhook received. Body length=1552
+2025-12-28 09:33:52 | INFO     | src.routes_webhook_chat                            | Channel identified: FX Channel Bot (ID: 2007594340)
+2025-12-28 09:33:52 | INFO     | src.routes_webhook_chat                            | Saved LINE webhook event id=259, events=2
+2025-12-28 09:33:52 | INFO     | src.routes_webhook_chat                            | Appended raw webhook to C:\Users\motoc\hatena-blog-suite\logs\line_messages.log
+2025-12-28 09:33:52 | INFO     | src.services.line_service                          | LineService initialized with token: aTGLe0olN0...
+2025-12-28 09:33:52 | INFO     | src.handlers.event_router                          | LINEメッセージを受信: チャンネル=FX Channel Bot (ID: 2007594340)
+2025-12-28 09:33:52 | DEBUG    | src.handlers.event_router                          | 画像メッセージを受信。ImageHandlerにルーティングします。
+2025-12-28 09:33:52 | INFO     | src.handlers.image_handler                         | 画像メッセージ処理開始: チャンネル=FX Channel Bot (ID: 2007594340), ユーザー=U03d198f73356c158e8eb9bc4284bd982
+2025-12-28 09:33:52 | INFO     | src.services.line_service                          | v2 APIでコンテンツダウンロード開始 (試行 1/3): message_id=593998553324453923
+2025-12-28 09:33:52 | DEBUG    | urllib3.connectionpool                             | Starting new HTTPS connection (1): api-data.line.me:443
+2025-12-28 09:33:53 | DEBUG    | urllib3.connectionpool                             | https://api-data.line.me:443 "GET /v2/bot/message/593998553324453923/content HTTP/1.1" 200 111637
+2025-12-28 09:33:53 | INFO     | src.services.line_service                          | コンテンツをダウンロードしました: uploads\20251228_093352_593998553324453923.jpg
+2025-12-28 09:33:53 | INFO     | src.handlers.image_handler                         | 画像コンテンツをダウンロードしました: uploads\20251228_093352_593998553324453923.jpg
+2025-12-28 09:33:53 | DEBUG    | urllib3.connectionpool                             | Starting new HTTPS connection (1): api.imgur.com:443
+2025-12-28 09:33:55 | DEBUG    | urllib3.connectionpool                             | https://api.imgur.com:443 "POST /3/image HTTP/1.1" 200 382
+2025-12-28 09:33:55 | DEBUG    | src.services.imgur_service                         | Imgur API response status: 200
+2025-12-28 09:33:55 | DEBUG    | src.services.imgur_service                         | Imgur API response headers: {'Connection': 'keep-alive', 'Content-Length': '382', 'content-encoding': 'gzip', 'content-type': 'application/json; charset=utf-8', 'monorepo-upload': 'true', 'x-post-rate-limit-limit': '1250', 'x-post-rate-limit-remaining': '1245', 'x-post-rate-limit-reset': '1642', 'x-ratelimit-clientlimit': '12500', 'x-ratelimit-clientremaining': '12492', 'x-ratelimit-clientreset': '79586', 'x-ratelimit-userlimit': '2000', 'x-ratelimit-userremaining': '191', 'x-ratelimit-userreset': '3600', 'Accept-Ranges': 'bytes', 'Date': 'Sun, 28 Dec 2025 00:33:55 GMT', 'X-Served-By': 'cache-bur-kbur8200157-BUR', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1766882034.433800,VS0,VE1390', 'Vary': 'Accept-Encoding', 'access-control-allow-methods': 'GET, PUT, POST, PATCH, DELETE, OPTIONS', 'Server': 'cat factory 1.0', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'X-Frame-Options': 'DENY', 'Access-Control-Allow-Headers': 'Authorization, Content-Type, Accept, X-Mashape-Authorization, IMGURPLATFORM, IMGURUIDJAFO, sessionCount, IMGURMWBETA, IMGURMWBETAOPTIN, X-expSNKPK127, X-Imgur-Defender-Bypass'}
+2025-12-28 09:33:55 | INFO     | src.handlers.image_handler                         | Imgurへのアップロード成功: https://i.imgur.com/5xKCiKb.jpeg
+2025-12-28 09:33:55 | DEBUG    | src.services.claude_service                        | Calling Claude API url=https://api.anthropic.com/v1/messages model=claude-3-5-haiku-20241022 tokens=800 messages=True
+2025-12-28 09:33:55 | DEBUG    | urllib3.connectionpool                             | Starting new HTTPS connection (1): api.anthropic.com:443
+2025-12-28 09:34:03 | DEBUG    | urllib3.connectionpool                             | https://api.anthropic.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2025-12-28 09:34:03 | INFO     | src.handlers.image_handler                         | AI画像解析成功: 【最新家電レビュー】電動式フィットネス革命！？ 座りながら運動できる驚きの「脚筋エクササイザー」
+
+忙しい現代人必見の画期的な運動器具が登場！このデバイスは、座ったままでも効果的な下半身トレーニングを...
+2025-12-28 09:34:03 | INFO     | src.services.batch_service                         | BatchService: メッセージをキューに追加しました (ユーザー: U03d198f73356c158e8eb9bc4284bd982, 現在のサイズ: 1, タイプ: {'image': 1})
+2025-12-28 09:34:03 | DEBUG    | src.services.batch_service                         | BatchService: ユーザー U03d198f73356c158e8eb9bc4284bd982 のタイマーを 60秒でセットしました。
+2025-12-28 09:34:03 | INFO     | src.handlers.image_handler                         | 画像メッセージ (DB ID: 1066) をユーザー (ID: 2) から正常に処理し、キューに追加しました。
+2025-12-28 09:34:03 | INFO     | src.handlers.event_router                          | LINEメッセージを受信: チャンネル=FX Channel Bot (ID: 2007594340)
+2025-12-28 09:34:03 | DEBUG    | src.handlers.event_router                          | テキストメッセージを受信。TextHandlerにルーティングします。
+2025-12-28 09:34:03 | INFO     | src.handlers.text_handler                          | テキストメッセージ処理開始: チャンネル=FX Channel Bot (ID: 2007594340), ユーザー=U03d198f73356c158e8eb9bc4284bd982
+2025-12-28 09:34:03 | INFO     | src.handlers.text_handler                          | メッセージ内にURLは検出されませんでした。
+2025-12-28 09:34:03 | INFO     | src.services.batch_service                         | BatchService: メッセージをキューに追加しました (ユーザー: U03d198f73356c158e8eb9bc4284bd982, 現在のサイズ: 2, タイプ: {'image': 1, 'text': 1})
+2025-12-28 09:34:03 | DEBUG    | src.services.batch_service                         | BatchService: ユーザー U03d198f73356c158e8eb9bc4284bd982 のタイマーを 60秒でセットしました。
+2025-12-28 09:34:03 | INFO     | src.handlers.text_handler                          | テキストメッセージ (ID: 1067) をLINEユーザー (ID: U03d198f73356c158e8eb9bc4284bd982) から正常に処理し、キューに追加しました。
+2025-12-28 09:34:03 | INFO     | werkzeug                                           | 127.0.0.1 - - [28/Dec/2025 09:34:03] "POST /api/webhook/line HTTP/1.1" 200 -
+2025-12-28 09:35:03 | INFO     | src.services.batch_service                         | BatchService: バッチ処理を実行します (ユーザー: U03d198f73356c158e8eb9bc4284bd982, メッセージ数: 2)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\add_linked_sources_task.py as src.tasks.add_linked_sources_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: AddLinkedSourcesTask (from src.tasks.add_linked_sources_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\affiliate_linker_task.py as src.tasks.affiliate_linker_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: AffiliateLinkerTask (from src.tasks.affiliate_linker_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\affiliate_link_adder_task.py as src.tasks.affiliate_link_adder_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: AffiliateLinkAdderTask (from src.tasks.affiliate_link_adder_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\amazon_link_remover_task.py as src.tasks.amazon_link_remover_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: AmazonLinkRemoverTask (from src.tasks.amazon_link_remover_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_cache_task.py as src.tasks.article_cache_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ArticleCacheTask (from src.tasks.article_cache_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_concept_definer_task.py as src.tasks.article_concept_definer_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ArticleConceptDefiner (from src.tasks.article_concept_definer_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_content_generator_task.py as src.tasks.article_content_generator_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ArticleContentGenerator (from src.tasks.article_content_generator_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_reviewer_task.py as src.tasks.article_reviewer_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ArticleReviewer (from src.tasks.article_reviewer_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_reviser_task.py as src.tasks.article_reviser_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ArticleReviser (from src.tasks.article_reviser_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_strategy_planner_task.py as src.tasks.article_strategy_planner_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ArticleStrategyPlanner (from src.tasks.article_strategy_planner_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_context_resolver_task.py as src.tasks.blog_context_resolver_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: BlogContextResolverTask (from src.tasks.blog_context_resolver_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_context_updater_task.py as src.tasks.blog_context_updater_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: BlogContextUpdaterTask (from src.tasks.blog_context_updater_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_selector_task.py as src.tasks.blog_selector_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: BlogSelectorTask (from src.tasks.blog_selector_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_selector_v2_task.py as src.tasks.blog_selector_v2_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: BlogSelectorTaskV2 (from src.tasks.blog_selector_v2_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\chat_history_manager.py as src.tasks.chat_history_manager
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ChatHistoryManager (from src.tasks.chat_history_manager)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\clear_gemini_mode_task.py as src.tasks.clear_gemini_mode_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ClearGeminiMode (from src.tasks.clear_gemini_mode_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\command_parser_task.py as src.tasks.command_parser_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: CommandParserTask (from src.tasks.command_parser_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\conditional_branch_task.py as src.tasks.conditional_branch_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ConditionalBranchTask (from src.tasks.conditional_branch_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\console_notifier_task.py as src.tasks.console_notifier_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ConsoleNotifier (from src.tasks.console_notifier_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\database_fetcher_task.py as src.tasks.database_fetcher_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: DatabaseFetcher (from src.tasks.database_fetcher_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\draft_persister_task.py as src.tasks.draft_persister_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: DraftPersister (from src.tasks.draft_persister_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\fact_checker_task.py as src.tasks.fact_checker_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: FactChecker (from src.tasks.fact_checker_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\finalize_post_task.py as src.tasks.finalize_post_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: FinalizePostTask (from src.tasks.finalize_post_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\final_article_enricher_task.py as src.tasks.final_article_enricher_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: FinalArticleEnricher (from src.tasks.final_article_enricher_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\final_fact_cleanup_task.py as src.tasks.final_fact_cleanup_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: FinalFactCleanupTask (from src.tasks.final_fact_cleanup_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\gemini_chat_responder.py as src.tasks.gemini_chat_responder
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: GeminiChatResponder (from src.tasks.gemini_chat_responder)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\gemini_chat_responder_task.py as src.tasks.gemini_chat_responder_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: GeminiChatResponder (from src.tasks.gemini_chat_responder_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\gemini_reset_task.py as src.tasks.gemini_reset_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: GeminiReset (from src.tasks.gemini_reset_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\hatena_publisher_task.py as src.tasks.hatena_publisher_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: HatenaPublisher (from src.tasks.hatena_publisher_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\line_chat_reply_task.py as src.tasks.line_chat_reply_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: LineChatReplyTask (from src.tasks.line_chat_reply_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\line_notifier.py as src.tasks.line_notifier
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: LineNotifier (from src.tasks.line_notifier)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\line_notifier_task.py as src.tasks.line_notifier_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: LineNotifier (from src.tasks.line_notifier_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\link_validator_task.py as src.tasks.link_validator_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: LinkValidatorTask (from src.tasks.link_validator_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\local_publisher_task.py as src.tasks.local_publisher_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: LocalPublisher (from src.tasks.local_publisher_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\minimal_thumbnail_preparer_task.py as src.tasks.minimal_thumbnail_preparer_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: MinimalThumbnailPreparer (from src.tasks.minimal_thumbnail_preparer_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\note_post_task.py as src.tasks.note_post_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: NotePost (from src.tasks.note_post_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\paragraph_extractor_task.py as src.tasks.paragraph_extractor_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: ParagraphExtractor (from src.tasks.paragraph_extractor_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\passthrough_task.py as src.tasks.passthrough_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: PassthroughTask (from src.tasks.passthrough_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\press_image_icon_task.py as src.tasks.press_image_icon_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: PressImageIcon (from src.tasks.press_image_icon_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\prompt_preparer_task.py as src.tasks.prompt_preparer_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: PromptPreparer (from src.tasks.prompt_preparer_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\rag_similar_articles_fetcher.py as src.tasks.rag_similar_articles_fetcher
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: RagSimilarArticlesFetcher (from src.tasks.rag_similar_articles_fetcher)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\rag_updater_task.py as src.tasks.rag_updater_task
+2025-12-28 09:35:03 | INFO     | src.framework.service_registry                     | Registered task module: RagUpdater (from src.tasks.rag_updater_task)
+2025-12-28 09:35:03 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\repost_context_preparer_task.py as src.tasks.repost_context_preparer_task
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Registered task module: RepostContextPreparerTask (from src.tasks.repost_context_preparer_task)
+2025-12-28 09:35:04 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\repost_mode_checker_task.py as src.tasks.repost_mode_checker_task
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Registered task module: RepostModeCheckerTask (from src.tasks.repost_mode_checker_task)
+2025-12-28 09:35:04 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\status_updater_task.py as src.tasks.status_updater_task
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Registered task module: StatusUpdater (from src.tasks.status_updater_task)
+2025-12-28 09:35:04 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\structured_article_generator_task.py as src.tasks.structured_article_generator_task
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Registered task module: StructuredArticleGeneratorTask (from src.tasks.structured_article_generator_task)
+2025-12-28 09:35:04 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\structured_data_loader_task.py as src.tasks.structured_data_loader_task
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Registered task module: StructuredDataLoaderTask (from src.tasks.structured_data_loader_task)
+2025-12-28 09:35:04 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\style_memory_builder_task.py as src.tasks.style_memory_builder_task
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Registered task module: StyleMemoryBuilder (from src.tasks.style_memory_builder_task)
+2025-12-28 09:35:04 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\thumbnail_generator_task.py as src.tasks.thumbnail_generator_task
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Registered task module: ThumbnailGenerator (from src.tasks.thumbnail_generator_task)
+2025-12-28 09:35:04 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\video_summary_fetcher_task.py as src.tasks.video_summary_fetcher_task
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Registered task module: VideoSummaryFetcher (from src.tasks.video_summary_fetcher_task)
+2025-12-28 09:35:04 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\web_summary_fetcher_task.py as src.tasks.web_summary_fetcher_task
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Registered task module: WebSummaryFetcher (from src.tasks.web_summary_fetcher_task)
+2025-12-28 09:35:04 | INFO     | src.framework.service_registry                     | Total registered modules: 49
+2025-12-28 09:35:04 | INFO     | src.services.workflow_processing_service           | Discovered modules in: C:\Users\motoc\hatena-blog-suite\src\tasks
+2025-12-28 09:35:04 | INFO     | src.services.workflow_processing_service           | Manually registered RagSimilarArticlesFetcher module.
+2025-12-28 09:35:04 | INFO     | src.services.workflow_processing_service           | Manually registered AffiliateLinkerTask module.
+2025-12-28 09:35:04 | INFO     | src.services.workflow_processing_service           | Manually registered FinalArticleEnricher module.
+2025-12-28 09:35:04 | INFO     | src.services.workflow_processing_service           | Manually registered ClearGeminiMode module.
+2025-12-28 09:35:04 | INFO     | src.utils.gemini_logger                            | Gemini interaction logging enabled: logs\posts\gemini_20251228_093504_U03d198f73356c158e8eb9bc4284bd982.jsonl
+2025-12-28 09:35:04 | INFO     | src.services.workflow_processing_service           | Workflow service: Starting article generation for LINE user U03d198f73356c158e8eb9bc4284bd982 on channel 2007594340.
+2025-12-28 09:35:04 | INFO     | src.services.workflow_processing_service           | Gemini interactions will be logged to: logs\posts\gemini_20251228_093504_U03d198f73356c158e8eb9bc4284bd982.jsonl
+2025-12-28 09:35:04 | INFO     | src.services.workflow_processing_service           | Using workflow definition: C:\Users\motoc\hatena-blog-suite\src\apps\article_generation\workflow.json
+2025-12-28 09:35:04 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: fetch_data. Context keys: ['initial_input', 'is_repost', 'has_review_issues']
+2025-12-28 09:35:04 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'user_data' with value from 'user' (type: dict)
+2025-12-28 09:35:04 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'blog_data' with value from 'blog' (type: dict)
+2025-12-28 09:35:04 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'messages_data' with value from 'messages' (type: list)
+2025-12-28 09:35:04 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'assets_data' with value from 'assets' (type: list)
+2025-12-28 09:35:04 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'original_message_ids' with value from 'message_ids' (type: list)
+2025-12-28 09:35:04 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: initial_reset. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids']
+2025-12-28 09:35:04 | INFO     | src.tasks.gemini_reset_task                        | Triggering Gemini session reset...
+2025-12-28 09:35:04 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:35:04 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:35:04 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:35:04 | INFO     | src.services.gemini_service                        | GeminiService: Requesting image mode clear.
+2025-12-28 09:35:04 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:35:06 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/clear_image_mode HTTP/1.1" 200 51
+2025-12-28 09:35:06 | INFO     | src.services.gemini_service                        | CustomAPIClient: successfully cleared image mode
+2025-12-28 09:35:06 | INFO     | src.services.gemini_service                        | GeminiService: Starting new chat session.
+2025-12-28 09:35:06 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:35:10 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/new_chat HTTP/1.1" 200 57
+2025-12-28 09:35:10 | INFO     | src.services.gemini_service                        | CustomAPIClient: successfully triggered new chat
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: prepare_prompt. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids']
+2025-12-28 09:35:10 | INFO     | src.tasks.prompt_preparer_task                     | [PromptPreparerTask] Messages: 2, Assets: 1
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'prompt_texts' with value from 'texts' (type: list)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'prompt_images' with value from 'images_for_prompt' (type: list)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'youtube_links' with value from 'youtube_links' (type: list)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'web_links' with value from 'web_links' (type: list)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: parse_commands. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links']
+2025-12-28 09:35:10 | INFO     | src.services.line_service                          | LineService initialized with token: ${LINE_CHA...
+2025-12-28 09:35:10 | INFO     | src.tasks.command_parser_task                      | 📥 CommandParserTask processing 1 message(s)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'command_context' with value from 'command_context' (type: dict)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'cleaned_texts' with value from 'cleaned_texts' (type: list)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'style_prompt' with value from 'style_prompt' (type: NoneType)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'stop_workflow' with value from 'stop_workflow' (type: bool)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: web_summary_fetcher. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow']
+2025-12-28 09:35:10 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:35:10 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:35:10 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:35:10 | DEBUG    | src.framework.task_runner                          | [resolve_value] Resolved optional web_links -> found
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'web_summaries' with value from 'web_summaries' (type: list)
+2025-12-28 09:35:10 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: select_blog. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow', 'web_summaries']
+2025-12-28 09:35:10 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:35:11 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:35:11 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:35:11 | INFO     | src.services.unified_llm_facade                    | UnifiedLLMFacade using provider: gemini
+2025-12-28 09:35:11 | WARNING  | src.framework.task_runner                          | [resolve_value] Context key 'style_prompt' IS NONE.
+2025-12-28 09:35:11 | INFO     | src.tasks.blog_selector_v2_task                    | --- Blog Selection Trace (V2) ---
+2025-12-28 09:35:11 | INFO     | src.tasks.blog_selector_v2_task                    | Available Candidates: ['lifehacking1919', 'arafo40tozan', 'chinese', 'yamasan1969', 'fx']
+2025-12-28 09:35:11 | INFO     | src.tasks.blog_selector_v2_task                    | Command Target: 'None'
+2025-12-28 09:35:11 | INFO     | src.tasks.blog_selector_v2_task                    | ℹ️ [Case C] Fallback to Content Analysis (LLM)
+2025-12-28 09:35:11 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:35:15 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/set_mode HTTP/1.1" 200 38
+2025-12-28 09:35:15 | INFO     | src.services.gemini_service                        | CustomAPIClient: successfully switched to mode 'Thinking'
+2025-12-28 09:35:15 | INFO     | src.services.gemini_service                        | CustomAPIClient: calling ask (timeout=600s)
+2025-12-28 09:35:15 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:35:29 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/ask HTTP/1.1" 200 117
+2025-12-28 09:35:29 | INFO     | src.services.gemini_service                        | CustomAPIClient: success (len=35)
+2025-12-28 09:35:31 | INFO     | src.tasks.blog_selector_v2_task                    | ✅ [Case C] Selected by Content Analysis: yamasan1969
+2025-12-28 09:35:31 | INFO     | src.tasks.blog_selector_v2_task                    | 🏁 Final Selection Result: id=yamasan1969, name=真面目に人生を考えるページ, has_api_key=no
+2025-12-28 09:35:31 | INFO     | src.tasks.blog_selector_v2_task                    | ---------------------------------
+2025-12-28 09:35:31 | INFO     | src.tasks.blog_selector_v2_task                    | [BlogSelectorTaskV2] Returning keys: ['blog_config', 'cleaned_texts', 'style_prompt', 'repost_data']
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'blog_data' with value from 'blog_config' (type: dict)
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'processed_texts' with value from 'cleaned_texts' (type: list)
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'style_prompt' with value from 'style_prompt' (type: NoneType)
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'repost_data' with value from 'repost_data' (type: NoneType)
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: check_repost_mode. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow', 'web_summaries', 'processed_texts', 'repost_data']
+2025-12-28 09:35:31 | WARNING  | src.framework.task_runner                          | [resolve_value] Context key 'style_prompt' IS NONE.
+2025-12-28 09:35:31 | INFO     | src.tasks.repost_mode_checker_task                 | Checking repost mode from command_context
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'is_repost' with value from 'is_repost' (type: bool)
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'structured_post_id' with value from 'structured_post_id' (type: NoneType)
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'repost_mode' with value from 'repost_mode' (type: NoneType)
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'repost_data' with value from 'repost_data' (type: NoneType)
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'processed_texts' with value from 'cleaned_texts' (type: list)
+2025-12-28 09:35:31 | DEBUG    | src.framework.task_runner                          | [transition] condition 'is_repost' -> False
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: define_concept. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow', 'web_summaries', 'processed_texts', 'repost_data', 'structured_post_id', 'repost_mode']
+2025-12-28 09:35:31 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:35:31 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:35:31 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:35:31 | INFO     | src.framework.task_runner                          | [resolve_inputs] 'blog' resolved to: valid dict
+2025-12-28 09:35:31 | INFO     | src.tasks.article_concept_definer_task             | 🔍 Analyzing content concept for blog 'ブログ'
+2025-12-28 09:35:31 | INFO     | src.services.gemini_service                        | CustomAPIClient: calling ask (timeout=600s)
+2025-12-28 09:35:31 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:35:45 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/ask HTTP/1.1" 200 886
+2025-12-28 09:35:45 | INFO     | src.services.gemini_service                        | CustomAPIClient: success (len=372)
+2025-12-28 09:35:45 | DEBUG    | src.tasks.article_concept_definer_task             | Concept response (truncated): { "theme": "息子の提案から再考する、現代を生きるための新しい価値観", "genre": "人生哲学・家族論", "keywords": ["世代間の対話", "固定観念の打破", "未来への視点"], "target_audience": "子育て世代や、既成概念に疑問を感じている40〜50代の社会人", "writing_tone": "思索的で落ち着いた、論理的かつ温かみのある文体", "axes": [ {\n "name": "子供の直感と大人の論理の対比", "description": "息子の純粋な提案を、大人の社会的な常識や哲学的な視点と照らし合わせる試み。", "content_angle": "提案の背景にある子供特有の素直な正義感や合理性を、現代社会の課題解決のヒントとして抽象化する。" } ] }
+2025-12-28 09:35:45 | WARNING  | src.tasks.article_concept_definer_task             | Initial JSON parsing failed - retrying LLM with strict JSON-only instruction.
+2025-12-28 09:35:45 | INFO     | src.services.gemini_service                        | CustomAPIClient: calling ask (timeout=600s)
+2025-12-28 09:35:45 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:35:59 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/ask HTTP/1.1" 200 885
+2025-12-28 09:35:59 | INFO     | src.services.gemini_service                        | CustomAPIClient: success (len=372)
+2025-12-28 09:35:59 | DEBUG    | src.tasks.article_concept_definer_task             | Retry response (truncated): { "theme": "息子の提案から再考する、現代を生きるための新しい価値観", "genre": "人生哲学・家族論", "keywords": [ "世代間の対話", "固定観念の打破", "未来への視点" ], "target_audience": "子育て世代や、既成概念に疑問を感じている40〜50代の社会人", "writing_tone": "思索的で落ち着いた、論理的かつ温かみのある文体", "axes": [ { "name": "子供の直感と大人の論理の対比", "description": "息子の純粋な提案を、大人の社会的な常識や哲学的な視点と照らし合わせる試み。", "content_angle": "提案の背景にある子供特有の素直な正義感や合理性を、現代社会の課題解決のヒントとして抽象化する。" } ] }
+2025-12-28 09:35:59 | DEBUG    | src.tasks.article_concept_definer_task             | Parsed JSON from retry via raw_decode, consumed 372 chars
+2025-12-28 09:35:59 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'article_concept' with value from 'article_concept' (type: dict)
+2025-12-28 09:35:59 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: fetch_similar_articles. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow', 'web_summaries', 'processed_texts', 'repost_data', 'structured_post_id', 'repost_mode', 'article_concept']
+2025-12-28 09:35:59 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:36:00 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:36:00 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:36:00 | INFO     | src.framework.task_runner                          | [resolve_inputs] 'blog' resolved to: valid dict
+2025-12-28 09:36:00 | INFO     | src.tasks.rag_similar_articles_fetcher             | RAG Search Query: 息子の提案から再考する、現代を生きるための新しい価値観 世代間の対話 固定観念の打破 未来への視点 息子からの提案...
+2025-12-28 09:36:00 | INFO     | src.services.blog_rag_service                      | ブログ 'yamasan1969.hatenablog.com' から類似記事を検索中: '息子の提案から再考する、現代を生きるための新しい価値観 世代間の対話 固定観念の打破 未来への視点 ...'
+2025-12-28 09:36:01 | INFO     | RAGService                                         | Found 5 similar documents for query
+2025-12-28 09:36:01 | INFO     | src.services.blog_rag_service                      | RAGモデルから 5 件の候補を取得しました
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/27/102927', Title: '主婦の副業！在宅で月5万円稼ぐ方法を徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | フィルタリング対象: URL 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/27/102927' に blog_id 'yamasan1969.hatenablog.com' が含まれていません
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/25/213257', Title: '赤色光DIYで夜間家事の眩しさ解消！...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | フィルタリング対象: URL 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/25/213257' に blog_id 'yamasan1969.hatenablog.com' が含まれていません
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/25/215427', Title: '夜間家事の眩しさ解消！赤色光DIYで快適な夜を...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | フィルタリング対象: URL 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/25/215427' に blog_id 'yamasan1969.hatenablog.com' が含まれていません
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/190628', Title: '火星の女王：NHKドラマの最新情報と注目ポイント...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | フィルタリング対象: URL 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/190628' に blog_id 'yamasan1969.hatenablog.com' が含まれていません
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/131536', Title: '主婦が輝く！暮らしを豊かにする情報発信術...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2025-12-28 09:36:01 | DEBUG    | src.services.blog_rag_service                      | フィルタリング対象: URL 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/131536' に blog_id 'yamasan1969.hatenablog.com' が含まれていません
+2025-12-28 09:36:01 | INFO     | src.services.blog_rag_service                      | フィルタリング結果: 0 件の類似記事が見つかりました（5 件をフィルタリング）
+2025-12-28 09:36:01 | INFO     | src.tasks.rag_similar_articles_fetcher             | No similar articles found for blog 'yamasan1969.hatenablog.com'.
+2025-12-28 09:36:01 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'similar_articles' with value from 'similar_articles' (type: list)
+2025-12-28 09:36:01 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'style_hints' with value from 'writing_style_hints' (type: str)
+2025-12-28 09:36:01 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: plan_strategy. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow', 'web_summaries', 'processed_texts', 'repost_data', 'structured_post_id', 'repost_mode', 'article_concept', 'similar_articles', 'style_hints']
+2025-12-28 09:36:01 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:36:02 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:36:02 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:36:02 | INFO     | src.framework.task_runner                          | [resolve_inputs] 'blog' resolved to: valid dict
+2025-12-28 09:36:02 | INFO     | src.services.gemini_service                        | CustomAPIClient: calling ask (timeout=600s)
+2025-12-28 09:36:02 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:36:16 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/ask HTTP/1.1" 200 2055
+2025-12-28 09:36:16 | INFO     | src.services.gemini_service                        | CustomAPIClient: success (len=872)
+2025-12-28 09:36:16 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'article_structure' with value from 'article_structure' (type: list)
+2025-12-28 09:36:16 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'affiliate_strategy' with value from 'affiliate_strategy' (type: dict)
+2025-12-28 09:36:16 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: generate_content. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow', 'web_summaries', 'processed_texts', 'repost_data', 'structured_post_id', 'repost_mode', 'article_concept', 'similar_articles', 'style_hints', 'article_structure', 'affiliate_strategy']
+2025-12-28 09:36:16 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:36:17 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:36:17 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:36:17 | INFO     | src.framework.task_runner                          | [resolve_inputs] 'blog' resolved to: valid dict
+2025-12-28 09:36:17 | INFO     | src.tasks.article_content_generator_task           | [ArticleContentGeneratorTask] Received inputs: ['texts', 'blog', 'article_concept']
+2025-12-28 09:36:17 | INFO     | src.tasks.article_content_generator_task           | [ArticleContentGeneratorTask] Blog input type: dict
+2025-12-28 09:36:17 | INFO     | src.services.gemini_service                        | CustomAPIClient: calling ask (timeout=600s)
+2025-12-28 09:36:17 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:36:35 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/ask HTTP/1.1" 200 3909
+2025-12-28 09:36:35 | INFO     | src.services.gemini_service                        | CustomAPIClient: success (len=1458)
+2025-12-28 09:36:35 | INFO     | src.services.gemini_service                        | CustomAPIClient: calling ask (timeout=600s)
+2025-12-28 09:36:35 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:36:58 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/ask HTTP/1.1" 200 2010
+2025-12-28 09:36:58 | INFO     | src.services.gemini_service                        | CustomAPIClient: success (len=1707)
+2025-12-28 09:36:58 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'base_title' with value from 'title' (type: str)
+2025-12-28 09:36:58 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'base_content' with value from 'content' (type: str)
+2025-12-28 09:36:58 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'generated_thumbnail_prompt' with value from 'thumbnail_prompt' (type: str)
+2025-12-28 09:36:58 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: prepare_image_ui. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow', 'web_summaries', 'processed_texts', 'repost_data', 'structured_post_id', 'repost_mode', 'article_concept', 'similar_articles', 'style_hints', 'article_structure', 'affiliate_strategy', 'base_title', 'base_content', 'generated_thumbnail_prompt']
+2025-12-28 09:36:58 | INFO     | src.tasks.press_image_icon_task                    | 🚀 Triggering 'Create images' icon press via extension...
+2025-12-28 09:36:58 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:36:58 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:36:58 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:36:58 | INFO     | src.services.gemini_service                        | GeminiService: Requesting image icon press.
+2025-12-28 09:36:58 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:37:01 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/press_image_icon HTTP/1.1" 200 59
+2025-12-28 09:37:01 | INFO     | src.services.gemini_service                        | CustomAPIClient: successfully triggered image icon press
+2025-12-28 09:37:01 | INFO     | src.tasks.press_image_icon_task                    | ✅ Image icon press confirmed.
+2025-12-28 09:37:01 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'image_ui_ready' with value from 'press_success' (type: bool)
+2025-12-28 09:37:01 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: draw_manga_thumbnail. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow', 'web_summaries', 'processed_texts', 'repost_data', 'structured_post_id', 'repost_mode', 'article_concept', 'similar_articles', 'style_hints', 'article_structure', 'affiliate_strategy', 'base_title', 'base_content', 'generated_thumbnail_prompt', 'image_ui_ready']
+2025-12-28 09:37:02 | DEBUG    | src.services.magichour_service                     | Magic Hour クライアント初期化: キー #1/1
+2025-12-28 09:37:02 | INFO     | src.services.magichour_service                     | Magic Hour サービスが初期化されました。（1個のAPIキー利用可能）
+2025-12-28 09:37:02 | INFO     | src.services.thumbnail_generator_service           | サムネイル生成開始: プロンプト='導入: A four-panel comic strip in a warm, Japanese m...'
+2025-12-28 09:37:02 | INFO     | src.services.thumbnail_generator_service           | Using Custom Thumbnail API: http://localhost:3000/api/ask
+2025-12-28 09:37:02 | INFO     | src.services.thumbnail_generator_service           | ステップ1: カスタムAPI画像生成開始: http://localhost:3000/api/ask
+2025-12-28 09:37:02 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:37:03 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:37:03 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:37:03 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000
+2025-12-28 09:38:51 | DEBUG    | urllib3.connectionpool                             | http://localhost:3000 "POST /api/ask HTTP/1.1" 200 623
+2025-12-28 09:38:51 | INFO     | src.services.thumbnail_generator_service           | 画像URL取得成功: https://lh3.googleusercontent.com/gg-dl/ABS2GSkE7Vu1Ao6y-kDsbbWeHoNynQpAU8VrjnVy58OLvmHVQQtf5vM5-1y07bXpScD7ScSiM0ieEHjW8hIgYIUIXMR2LnKKdeJ8UQLja69rELxYY9aepvUcZJuQRZBDmyO0WMEUY3OJpcwhOPnfj9wH8Soohv32j1Ll-0S4fBjCYA-60hIfpQ=s1024-rj
+2025-12-28 09:38:51 | INFO     | src.services.thumbnail_generator_service           | ブラウザのダウンロード完了を待機中...
+2025-12-28 09:38:54 | INFO     | src.services.thumbnail_generator_service           | Local image found: C:\Users\motoc\Downloads\gemini_image_1766882271481.jpg
+2025-12-28 09:38:54 | INFO     | src.services.thumbnail_generator_service           | ステップ3: Imgurアップロード開始
+2025-12-28 09:38:54 | DEBUG    | urllib3.connectionpool                             | Starting new HTTPS connection (1): api.imgur.com:443
+2025-12-28 09:38:57 | DEBUG    | urllib3.connectionpool                             | https://api.imgur.com:443 "POST /3/image HTTP/1.1" 200 369
+2025-12-28 09:38:57 | DEBUG    | src.services.imgur_service                         | Imgur API response status: 200
+2025-12-28 09:38:57 | DEBUG    | src.services.imgur_service                         | Imgur API response headers: {'Connection': 'keep-alive', 'Content-Length': '369', 'content-encoding': 'gzip', 'content-type': 'application/json; charset=utf-8', 'monorepo-upload': 'true', 'x-post-rate-limit-limit': '1250', 'x-post-rate-limit-remaining': '1244', 'x-post-rate-limit-reset': '1340', 'x-ratelimit-clientlimit': '12500', 'x-ratelimit-clientremaining': '12491', 'x-ratelimit-clientreset': '79284', 'x-ratelimit-userlimit': '2000', 'x-ratelimit-userremaining': '190', 'x-ratelimit-userreset': '3600', 'Accept-Ranges': 'bytes', 'Date': 'Sun, 28 Dec 2025 00:38:57 GMT', 'X-Served-By': 'cache-bur-kbur8200035-BUR', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1766882336.933163,VS0,VE1397', 'Vary': 'Accept-Encoding', 'access-control-allow-methods': 'GET, PUT, POST, PATCH, DELETE, OPTIONS', 'Server': 'cat factory 1.0', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'X-Frame-Options': 'DENY', 'Access-Control-Allow-Headers': 'Authorization, Content-Type, Accept, X-Mashape-Authorization, IMGURPLATFORM, IMGURUIDJAFO, sessionCount, IMGURMWBETA, IMGURMWBETAOPTIN, X-expSNKPK127, X-Imgur-Defender-Bypass'}
+2025-12-28 09:38:57 | INFO     | src.framework.task_runner                          | [_update_context] Updating 'content_with_thumbnail' with value from 'enhanced_content' (type: str)
+2025-12-28 09:38:57 | INFO     | src.framework.task_runner                          | [TaskRunner] Current Step: exit_image_ui. Context keys: ['initial_input', 'is_repost', 'has_review_issues', 'user_data', 'blog_data', 'messages_data', 'assets_data', 'original_message_ids', 'prompt_texts', 'prompt_images', 'youtube_links', 'web_links', 'command_context', 'cleaned_texts', 'style_prompt', 'stop_workflow', 'web_summaries', 'processed_texts', 'repost_data', 'structured_post_id', 'repost_mode', 'article_concept', 'similar_articles', 'style_hints', 'article_structure', 'affiliate_strategy', 'base_title', 'base_content', 'generated_thumbnail_prompt', 'image_ui_ready', 'content_with_thumbnail']
+2025-12-28 09:38:57 | INFO     | src.tasks.clear_gemini_mode_task                   | Exiting Gemini image mode to return to text input...
+2025-12-28 09:38:57 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 09:38:59 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 09:38:59 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 09:38:59 | INFO     | src.services.gemini_service                        | GeminiService: Requesting image mode clear.
+2025-12-28 09:38:59 | DEBUG    | urllib3.connectionpool                             | Starting new HTTP connection (1): localhost:3000

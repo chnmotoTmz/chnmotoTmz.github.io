@@ -66,6 +66,38 @@ class HatenaPublisherTask(BaseTaskModule):
             # --- Physical Content Fixes ---
             final_content = post.content
 
+            # 0. Inject Thumbnail if provided in inputs but missing in content
+            thumbnail_input = inputs.get("thumbnail") or inputs.get("thumbnail_path") or inputs.get("thumbnail_url")
+            if thumbnail_input:
+                # Basic check to avoid duplication (checking filename or url)
+                # If the content doesn't seem to start with an image or contain this specific thumbnail
+                if thumbnail_input not in final_content:
+                    logger.info(f"Injecting thumbnail from inputs: {thumbnail_input}")
+                    
+                    # Upload if local
+                    uploaded_thumb_url = thumbnail_input
+                    if os.path.exists(thumbnail_input) or thumbnail_input.startswith("file://"):
+                        try:
+                            imgur = ImgurService()
+                            p = thumbnail_input
+                            if p.startswith('file://'):
+                                p = p[len('file://'):]
+                            if not os.path.isabs(p):
+                                p = os.path.join(os.getcwd(), p)
+                            
+                            if os.path.exists(p):
+                                resp = imgur.upload_image(p)
+                                if resp and resp.get('success') and resp.get('link'):
+                                    uploaded_thumb_url = resp.get('link')
+                                    logger.info(f"Uploaded thumbnail to: {uploaded_thumb_url}")
+                                else:
+                                    logger.warning(f"Failed to upload thumbnail {p}: {resp}")
+                        except Exception as e:
+                            logger.error(f"Error uploading thumbnail {thumbnail_input}: {e}")
+
+                    # Prepend to content
+                    final_content = f"![Thumbnail]({uploaded_thumb_url})\n\n" + final_content
+
             # Replace local image srcs (file://, local paths) by uploading to Imgur when possible
             try:
                 imgur = ImgurService()
@@ -118,6 +150,13 @@ class HatenaPublisherTask(BaseTaskModule):
                 # Clean up any triple newlines created
                 final_content = re.sub(r'\n{3,}', '\n\n', final_content)
             
+            # Update DB with final content (including thumbnail and TOC)
+            try:
+                post.content = final_content
+                db.session.commit()
+            except Exception as e:
+                logger.warning(f"Failed to update post content in DB: {e}")
+
             logger.info("Publishing to Hatena with forced TOC.")
             entry = hatena_service.publish_article(
                 title=post.title,

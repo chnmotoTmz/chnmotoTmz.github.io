@@ -61,3 +61,14 @@
 ---
 
 作成: GitHub Copilot (Raptor mini (Preview))
+
+Great! You want the system to reliably insert affiliate links — I'll add a robust Rakuten retry/backoff + fallback strategy and a retry worker; I'll start by creating the plan and marking the Rakuten retry task in-progress.
+
+Proceeding to harden rakuten_api.py: add exponential backoff with jitter to search_products, and expand search variations in search_related_products, with logging and more aggressive keyword strategies. I'll apply the edits now.
+
+Edited
+rakuten_api.py+0-0
+Edited
+rakuten_api.py+0-0
+test_rakuten_api.py
+

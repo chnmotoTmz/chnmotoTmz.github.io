@@ -1,0 +1,23 @@
+2025-12-30 15:45:24 | INFO     | src.handlers.image_handler                         | AI画像解析成功: 【DIYer必見！】マキタの最新バッテリーチャージャーで作業効率UP
+
+マキタの18V 6.0Ahリチウムイオンバッテリーと急速充電器DC18RCの登場です！
+
+プロも愛用するこの充電システムは、パワ...
+2025-12-30 15:47:03 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2025-12-30 16:28:53 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '【人生OS拡張】思考の多言語化とタスク自動化で「自分」をアップデートせよ...'
+2025-12-30 16:29:29 | ERROR    | src.services.line_service                          | LINE APIエラー完全情報: status_code=429, error={"details": [], "message": "You have reached your monthly limit."}, message='Article published!
+
+"【人生OS拡張】思考の多言語化とタスク自動化で「自分」をアップデートせよ"
+https://yamasan1969.hatenablog.com/entry/2025/12/30/162927...'
+2025-12-30 16:43:12 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '【断末魔】来年こそ本気出す教の信者たちへ捧ぐ英語学習あるある2025...'
+2025-12-30 16:43:37 | ERROR    | src.services.line_service                          | LINE APIエラー完全情報: status_code=429, error={"details": [], "message": "You have reached your monthly limit."}, message='Article published!
+
+"【断末魔】来年こそ本気出す教の信者たちへ捧ぐ英語学習あるある2025"
+https://motochan1969.hatenablog.com/entry/20251230/1767080616...'
+2025-12-30 16:52:20 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '【絶望】韓国語学習の挫折を「AI音楽」で神曲に変える逆転の発想！✨...'
+2025-12-30 16:52:47 | ERROR    | src.services.line_service                          | LINE APIエラー完全情報: status_code=429, error={"details": [], "message": "You have reached your monthly limit."}, message='Article published!
+
+"【絶望】韓国語学習の挫折を「AI音楽」で神曲に変える逆転の発想！✨"
+https://hikingsong.hatenablog.jp/entry/2025/12/30/165245...'
+2025-12-30 23:08:39 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2025-12-31 10:25:24 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'

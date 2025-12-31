@@ -61,20 +61,24 @@ JSON形式 {{"keywords": ["キーワード1", "キーワード2"]}} で出力し
 
         try:
             keywords = self._extract_affiliate_keywords(title, content, blog_info)
-            if not keywords: return {"enhanced_content": content}
-
-            products = rakuten_api.search_related_products(article_concept, keywords, gemini_service=self.llm_service)
-            if not products: return {"enhanced_content": content}
-
             section = "\n\n## 🛒 おすすめ関連商品\n\n"
-            for i, product in enumerate(products[:3], 1):
-                name = product.get('itemName', '商品')
-                price = product.get('itemPrice', 0)
-                url = product.get('affiliate_url', product.get('itemUrl', ''))
-                img = product.get('imageUrl', '')
-                section += f"### {i}. {name}\n\n"
-                if img: section += f"[![{name}]({img})]({url})\n\n"
-                section += f"**価格**: ¥{price:,}\n\n[詳細を見る]({url})\n\n---\n\n"
+            products = []
+            if keywords:
+                products = rakuten_api.search_related_products(article_concept, keywords, gemini_service=self.llm_service)
+
+            if products:
+                for i, product in enumerate(products[:3], 1):
+                    name = product.get('itemName', '商品')
+                    price = product.get('itemPrice', 0)
+                    url = product.get('affiliate_url', product.get('itemUrl', ''))
+                    img = product.get('imageUrl', '')
+                    section += f"### {i}. {name}\n\n"
+                    if img: section += f"[![{name}]({img})]({url})\n\n"
+                    section += f"**価格**: ¥{price:,}\n\n[詳細を見る]({url})\n\n---\n\n"
+            else:
+                # 商品が見つからなかった場合でも案内文＋楽天市場カテゴリページへのリンクを追加
+                section += "おすすめ商品が現在こちらのカテゴリーで利用可能なアフィリエイト商品が見つかりませんでした。後で再検索します。\n\n"
+                section += "[楽天市場で商品を探す](https://www.rakuten.co.jp/category/)\n\n---\n\n"
 
             return {"enhanced_content": content + section}
         except Exception as e:

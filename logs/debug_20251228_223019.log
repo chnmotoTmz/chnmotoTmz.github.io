@@ -1,0 +1,231 @@
+2025-12-28 22:30:19 | DEBUG    | src.services.framework.service_registry            | Registered: AddLinkedSourcesTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: AffiliateLinkerTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: AffiliateLinkAdderTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: AmazonLinkRemoverTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleCacheTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleConceptDefiner
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleContentGenerator
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleReviewer
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleReviser
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleStrategyPlanner
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: BlogContextResolverTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: BlogContextUpdaterTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: BlogSelectorTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: BlogSelectorTaskV2
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ChatHistoryManager
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ClearGeminiMode
+2025-12-28 22:30:22 | INFO     | src.services.multi_channel_line_manager            | [登録] chanmotocaffe (ID: 2006378351)
+2025-12-28 22:30:22 | INFO     | src.services.multi_channel_line_manager            | [登録] FX Channel Bot (ID: 2007594340)
+2025-12-28 22:30:22 | INFO     | src.services.multi_channel_line_manager            | [登録] lang (ID: 2007819423)
+2025-12-28 22:30:22 | INFO     | src.services.multi_channel_line_manager            | 合計 3 チャンネル登録
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: CommandParserTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ConditionalBranchTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: ConsoleNotifier
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: DatabaseFetcher
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: DraftPersister
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: FactChecker
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: FinalizePostTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: FinalArticleEnricher
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: FinalFactCleanupTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: GeminiChatResponder
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: GeminiChatResponder
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: GeminiReset
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: HatenaPublisher
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: LineChatReplyTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: LineNotifier
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: LineNotifier
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: LinkValidatorTask
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: LocalPublisher
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: MinimalThumbnailPreparer
+2025-12-28 22:30:22 | DEBUG    | src.services.framework.service_registry            | Registered: NotePost
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: ParagraphExtractor
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: PassthroughTask
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: PressImageIcon
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: PromptPreparer
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: RagSimilarArticlesFetcher
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: RagUpdater
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: RepostContextPreparerTask
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: RepostModeCheckerTask
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: StatusUpdater
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: StructuredArticleGeneratorTask
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: StructuredDataLoaderTask
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: StyleMemoryBuilder
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: ThumbnailGenerator
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: VideoSummaryFetcher
+2025-12-28 22:30:25 | DEBUG    | src.services.framework.service_registry            | Registered: WebSummaryFetcher
+2025-12-28 22:30:25 | INFO     | src.services.framework.service_registry            | Total registered modules: 49
+2025-12-28 22:30:25 | INFO     | __main__                                           | Application starting in SERVER mode
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\add_linked_sources_task.py as src.tasks.add_linked_sources_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: AddLinkedSourcesTask (from src.tasks.add_linked_sources_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\affiliate_linker_task.py as src.tasks.affiliate_linker_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: AffiliateLinkerTask (from src.tasks.affiliate_linker_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\affiliate_link_adder_task.py as src.tasks.affiliate_link_adder_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: AffiliateLinkAdderTask (from src.tasks.affiliate_link_adder_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\amazon_link_remover_task.py as src.tasks.amazon_link_remover_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: AmazonLinkRemoverTask (from src.tasks.amazon_link_remover_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_cache_task.py as src.tasks.article_cache_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ArticleCacheTask (from src.tasks.article_cache_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_concept_definer_task.py as src.tasks.article_concept_definer_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ArticleConceptDefiner (from src.tasks.article_concept_definer_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_content_generator_task.py as src.tasks.article_content_generator_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ArticleContentGenerator (from src.tasks.article_content_generator_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_reviewer_task.py as src.tasks.article_reviewer_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ArticleReviewer (from src.tasks.article_reviewer_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_reviser_task.py as src.tasks.article_reviser_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ArticleReviser (from src.tasks.article_reviser_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\article_strategy_planner_task.py as src.tasks.article_strategy_planner_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ArticleStrategyPlanner (from src.tasks.article_strategy_planner_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_context_resolver_task.py as src.tasks.blog_context_resolver_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: BlogContextResolverTask (from src.tasks.blog_context_resolver_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_context_updater_task.py as src.tasks.blog_context_updater_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: BlogContextUpdaterTask (from src.tasks.blog_context_updater_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_selector_task.py as src.tasks.blog_selector_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: BlogSelectorTask (from src.tasks.blog_selector_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\blog_selector_v2_task.py as src.tasks.blog_selector_v2_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: BlogSelectorTaskV2 (from src.tasks.blog_selector_v2_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\chat_history_manager.py as src.tasks.chat_history_manager
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ChatHistoryManager (from src.tasks.chat_history_manager)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\clear_gemini_mode_task.py as src.tasks.clear_gemini_mode_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ClearGeminiMode (from src.tasks.clear_gemini_mode_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\command_parser_task.py as src.tasks.command_parser_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: CommandParserTask (from src.tasks.command_parser_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\conditional_branch_task.py as src.tasks.conditional_branch_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ConditionalBranchTask (from src.tasks.conditional_branch_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\console_notifier_task.py as src.tasks.console_notifier_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ConsoleNotifier (from src.tasks.console_notifier_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\database_fetcher_task.py as src.tasks.database_fetcher_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: DatabaseFetcher (from src.tasks.database_fetcher_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\draft_persister_task.py as src.tasks.draft_persister_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: DraftPersister (from src.tasks.draft_persister_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\fact_checker_task.py as src.tasks.fact_checker_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: FactChecker (from src.tasks.fact_checker_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\finalize_post_task.py as src.tasks.finalize_post_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: FinalizePostTask (from src.tasks.finalize_post_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\final_article_enricher_task.py as src.tasks.final_article_enricher_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: FinalArticleEnricher (from src.tasks.final_article_enricher_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\final_fact_cleanup_task.py as src.tasks.final_fact_cleanup_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: FinalFactCleanupTask (from src.tasks.final_fact_cleanup_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\gemini_chat_responder.py as src.tasks.gemini_chat_responder
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: GeminiChatResponder (from src.tasks.gemini_chat_responder)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\gemini_chat_responder_task.py as src.tasks.gemini_chat_responder_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: GeminiChatResponder (from src.tasks.gemini_chat_responder_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\gemini_reset_task.py as src.tasks.gemini_reset_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: GeminiReset (from src.tasks.gemini_reset_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\hatena_publisher_task.py as src.tasks.hatena_publisher_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: HatenaPublisher (from src.tasks.hatena_publisher_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\line_chat_reply_task.py as src.tasks.line_chat_reply_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: LineChatReplyTask (from src.tasks.line_chat_reply_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\line_notifier.py as src.tasks.line_notifier
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: LineNotifier (from src.tasks.line_notifier)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\line_notifier_task.py as src.tasks.line_notifier_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: LineNotifier (from src.tasks.line_notifier_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\link_validator_task.py as src.tasks.link_validator_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: LinkValidatorTask (from src.tasks.link_validator_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\local_publisher_task.py as src.tasks.local_publisher_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: LocalPublisher (from src.tasks.local_publisher_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\minimal_thumbnail_preparer_task.py as src.tasks.minimal_thumbnail_preparer_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: MinimalThumbnailPreparer (from src.tasks.minimal_thumbnail_preparer_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\note_post_task.py as src.tasks.note_post_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: NotePost (from src.tasks.note_post_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\paragraph_extractor_task.py as src.tasks.paragraph_extractor_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ParagraphExtractor (from src.tasks.paragraph_extractor_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\passthrough_task.py as src.tasks.passthrough_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: PassthroughTask (from src.tasks.passthrough_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\press_image_icon_task.py as src.tasks.press_image_icon_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: PressImageIcon (from src.tasks.press_image_icon_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\prompt_preparer_task.py as src.tasks.prompt_preparer_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: PromptPreparer (from src.tasks.prompt_preparer_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\rag_similar_articles_fetcher.py as src.tasks.rag_similar_articles_fetcher
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: RagSimilarArticlesFetcher (from src.tasks.rag_similar_articles_fetcher)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\rag_updater_task.py as src.tasks.rag_updater_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: RagUpdater (from src.tasks.rag_updater_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\repost_context_preparer_task.py as src.tasks.repost_context_preparer_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: RepostContextPreparerTask (from src.tasks.repost_context_preparer_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\repost_mode_checker_task.py as src.tasks.repost_mode_checker_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: RepostModeCheckerTask (from src.tasks.repost_mode_checker_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\status_updater_task.py as src.tasks.status_updater_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: StatusUpdater (from src.tasks.status_updater_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\structured_article_generator_task.py as src.tasks.structured_article_generator_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: StructuredArticleGeneratorTask (from src.tasks.structured_article_generator_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\structured_data_loader_task.py as src.tasks.structured_data_loader_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: StructuredDataLoaderTask (from src.tasks.structured_data_loader_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\style_memory_builder_task.py as src.tasks.style_memory_builder_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: StyleMemoryBuilder (from src.tasks.style_memory_builder_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\thumbnail_generator_task.py as src.tasks.thumbnail_generator_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: ThumbnailGenerator (from src.tasks.thumbnail_generator_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\video_summary_fetcher_task.py as src.tasks.video_summary_fetcher_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: VideoSummaryFetcher (from src.tasks.video_summary_fetcher_task)
+2025-12-28 22:30:25 | DEBUG    | src.framework.service_registry                     | Attempting to load module file: C:\Users\motoc\hatena-blog-suite\src\tasks\web_summary_fetcher_task.py as src.tasks.web_summary_fetcher_task
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Registered task module: WebSummaryFetcher (from src.tasks.web_summary_fetcher_task)
+2025-12-28 22:30:25 | INFO     | src.framework.service_registry                     | Total registered modules: 49
+2025-12-28 22:30:25 | INFO     | src.services.line_service                          | LineService initialized with token: ${LINE_CHA...
+2025-12-28 22:30:25 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized ClaudeService
+2025-12-28 22:30:26 | INFO     | src.services.gemini_service                        | ClaudeClient: initialized Claude4Service
+2025-12-28 22:30:26 | INFO     | src.services.gemini_service                        | GeminiService initialized (claude_fallback=False)
+2025-12-28 22:30:26 | INFO     | src.routes                                         | Registered combined webhook blueprint (chat + article generation).
+2025-12-28 22:30:26 | INFO     | src.routes                                         | Registered dashboard blueprint.
+2025-12-28 22:30:26 | INFO     | src.routes                                         | Registered other blueprints: api, rag, posts, health, logs.
+2025-12-28 22:30:26 | INFO     | src.database                                       | Database engine: sqlite
+2025-12-28 22:30:26 | INFO     | src.services.search_service                        | DuckDuckGo Search サービスが初期化されました。
+2025-12-28 22:30:26 | INFO     | src.services.search_service                        | 🔍 Web検索開始: クエリ「Python」, 最大1件
+2025-12-28 22:30:26 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 22:30:26 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 22:30:26 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 22:30:26 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 22:30:26 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 22:30:26 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 22:30:26 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 22:30:26 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 22:30:26 | DEBUG    | primp.utils                                        | Loaded CA certs
+2025-12-28 22:30:26 | DEBUG    | rquest.connect                                     | starting new connection: https://jp.wikipedia.org/
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting Set-Cookie 'Cookie { cookie_string: Some("_EDGE_CD=m=jp-jp&u=jp-jp"), name: Indexed(0, 8), value: Indexed(9, 24), expires: None, max_age: None, domain: None, path: None, secure: None, http_only: None, same_site: None, partitioned: None }'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting Set-Cookie 'Cookie { cookie_string: Some("_EDGE_S=mkt=jp-jp&ui=jp-jp"), name: Indexed(0, 7), value: Indexed(8, 26), expires: None, max_age: None, domain: None, path: None, secure: None, http_only: None, same_site: None, partitioned: None }'
+2025-12-28 22:30:26 | DEBUG    | rquest.connect                                     | starting new connection: https://www.bing.com/
+2025-12-28 22:30:26 | DEBUG    | rquest.util.client.connect.dns                     | resolving jp.wikipedia.org
+2025-12-28 22:30:26 | DEBUG    | rquest.util.client.connect.dns                     | resolving www.bing.com
+2025-12-28 22:30:26 | DEBUG    | rquest.util.client.connect.http                    | connecting to [2600:140b:2c00:ba::17d7:d447]:443
+2025-12-28 22:30:26 | DEBUG    | rquest.util.client.connect.http                    | connected to [2600:140b:2c00:ba::17d7:d447]:443
+2025-12-28 22:30:26 | DEBUG    | rquest.util.client.pool                            | pooling idle connection for PoolKey { uri: https://www.bing.com/, alpn_protos: None, network: default }
+2025-12-28 22:30:26 | DEBUG    | rquest.util.client.connect.http                    | connecting to [2001:df2:e500:ed1a::1]:443
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'MUID'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting Set-Cookie 'Cookie { cookie_string: Some("MUIDB=386D2F91EE5560813C253941EFA96138; expires=Fri, 22-Jan-2027 13:30:26 GMT; path=/; HttpOnly"), name: Indexed(0, 5), value: Indexed(6, 38), expires: Some(DateTime(2027-01-22 13:30:26.0 +00:00:00)), max_age: None, domain: None, path: Some(Indexed(84, 85)), secure: None, http_only: Some(true), same_site: None, partitioned: None }'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting Set-Cookie 'Cookie { cookie_string: Some("_EDGE_S=mkt=ja-jp&ui=jp-jp&F=1&SID=2EDD9AA96D9E602C11E68C796C62616F; domain=.bing.com; path=/; HttpOnly"), name: Indexed(0, 7), value: Indexed(8, 67), expires: None, max_age: None, domain: Some(Indexed(76, 85)), path: Some(Indexed(92, 93)), secure: None, http_only: Some(true), same_site: None, partitioned: None }'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting Set-Cookie 'Cookie { cookie_string: Some("_EDGE_V=1; domain=.bing.com; expires=Fri, 22-Jan-2027 13:30:26 GMT; path=/; HttpOnly"), name: Indexed(0, 7), value: Indexed(8, 9), expires: Some(DateTime(2027-01-22 13:30:26.0 +00:00:00)), max_age: None, domain: Some(Indexed(18, 27)), path: Some(Indexed(73, 74)), secure: None, http_only: Some(true), same_site: None, partitioned: None }'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'SRCHD'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'SRCHUID'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'SRCHUSR'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'SRCHHPGUSR'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie '_SS'
+2025-12-28 22:30:26 | DEBUG    | cookie_store.cookie_store                          | inserting Set-Cookie 'Cookie { cookie_string: Some("ak_bmsc=A71F643FE528D1C992E0F2E317FA0FA7~000000000000000000000000000000~YAAQJ1HMFxZ/NjSbAQAAZzQnZR4+k2KGuVKYO4/PfZjB9XAnddBPXT/rrrdzx5fTHMIOc4qrw00ATR0yVbDuUl+69SS/rSzJXHIIPCj3XMGhVlnuV4z6P6ybcYlqy1fT/yYwKbXBpavC/ZSkRFvaAqDf6D4/W+790Vmn8O5zCJU07qZz5ZuHx8dKP3ihmR/93TdtKB37tmDXU0stmYVk8ROmhQizukgrdl+X2PZTndQdxYOTlqbwbcKNrTU3K44nEHY6/y/32y4hhP4UgCKyLAPnuMe1SzYdtYQg9GONTRLJYiOvRxrCqncSIwACYUkyD3FFLxQAiQ0FbZw16M24eCWUYNHvbG5vFFIqdIFrw4VfFsAGSyXc/FAURSMKYiB22RMsY9eqHdh7LIQ+Ja+7/v99JZDWUg6prKUh3iR4sJrP; Domain=.bing.com; Path=/; Expires=Sun, 28 Dec 2025 15:30:26 GMT; Max-Age=7200; HttpOnly"), name: Indexed(0, 7), value: Indexed(8, 500), expires: Some(DateTime(2025-12-28 15:30:26.0 +00:00:00)), max_age: Some(Duration { seconds: 7200, nanoseconds: 0 }), domain: Some(Indexed(509, 518)), path: Some(Indexed(525, 526)), secure: None, http_only: Some(true), same_site: None, partitioned: None }'
+2025-12-28 22:30:26 | INFO     | primp                                              | response: https://www.bing.com/search?q=Python&pq=Python&cc=jp 200
+2025-12-28 22:30:27 | DEBUG    | rquest.util.client.connect.http                    | connecting to 103.102.166.224:443
+2025-12-28 22:30:27 | DEBUG    | rquest.util.client.connect.http                    | connected to [2001:df2:e500:ed1a::1]:443
+2025-12-28 22:30:27 | DEBUG    | rquest.util.client.pool                            | pooling idle connection for PoolKey { uri: https://jp.wikipedia.org/, alpn_protos: None, network: default }
+2025-12-28 22:30:28 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Last-Access'
+2025-12-28 22:30:28 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Last-Access-Global'
+2025-12-28 22:30:28 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'GeoIP'
+2025-12-28 22:30:28 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'NetworkProbeLimit'
+2025-12-28 22:30:28 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Uniq'
+2025-12-28 22:30:28 | DEBUG    | rquest.client.http                                 | redirecting 'https://jp.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Python' to 'https://ja.wikipedia.org/w/api.php?action=opensearch&limit=1&profile=fuzzy&search=Python'
+2025-12-28 22:30:28 | DEBUG    | rquest.connect                                     | starting new connection: https://ja.wikipedia.org/
+2025-12-28 22:30:28 | DEBUG    | rquest.util.client.connect.dns                     | resolving ja.wikipedia.org
+2025-12-28 22:30:28 | DEBUG    | rquest.util.client.connect.http                    | connecting to [2001:df2:e500:ed1a::1]:443
+2025-12-28 22:30:28 | DEBUG    | rquest.util.client.connect.http                    | connecting to 103.102.166.224:443
+2025-12-28 22:30:28 | DEBUG    | rquest.util.client.connect.http                    | connected to [2001:df2:e500:ed1a::1]:443
+2025-12-28 22:30:29 | DEBUG    | rquest.util.client.pool                            | pooling idle connection for PoolKey { uri: https://ja.wikipedia.org/, alpn_protos: None, network: default }
+2025-12-28 22:30:30 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Last-Access'
+2025-12-28 22:30:30 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'NetworkProbeLimit'
+2025-12-28 22:30:30 | DEBUG    | cookie_store.cookie_store                          | inserting secure cookie 'WMF-Uniq'
+2025-12-28 22:30:30 | INFO     | primp                                              | response: https://ja.wikipedia.org/w/api.php?action=opensearch&limit=1&profile=fuzzy&search=Python 200
+2025-12-28 22:30:30 | DEBUG    | rquest.util.client.pool                            | reuse idle connection for PoolKey { uri: https://jp.wikipedia.org/, alpn_protos: None, network: default }
+2025-12-28 22:30:30 | DEBUG    | rquest.client.http                                 | redirecting 'https://jp.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=Python&explaintext=0&exintro=0&redirects=1' to 'https://ja.wikipedia.org/w/api.php?action=query&exintro=0&explaintext=0&format=json&prop=extracts&redirects=1&titles=Python'
+2025-12-28 22:30:30 | DEBUG    | rquest.util.client.pool                            | reuse idle connection for PoolKey { uri: https://ja.wikipedia.org/, alpn_protos: None, network: default }
+2025-12-28 22:30:31 | INFO     | primp                                              | response: https://ja.wikipedia.org/w/api.php?action=query&exintro=0&explaintext=0&format=json&prop=extracts&redirects=1&titles=Python 200
+2025-12-28 22:30:31 | INFO     | src.services.search_service                        | ✅ Web検索が完了しました。クエリ「Python」で1件の結果を取得。
+2025-12-28 22:30:31 | INFO     | src.services.search_service                        | [SearchService] Self-check: OK (items=1)
+2025-12-28 22:30:31 | INFO     | src.app_factory                                    | [Startup] Google Search status: enabled=True, keys=None, cooldown=0s, http_ok=True, code=None, items=1, reason=ok
+2025-12-28 22:30:31 | INFO     | werkzeug                                           | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.40:8000
+2025-12-28 22:30:31 | INFO     | werkzeug                                           | [33mPress CTRL+C to quit[0m

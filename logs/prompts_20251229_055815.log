@@ -1,0 +1,15 @@
+2025-12-29 07:35:29 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2025-12-29 07:37:22 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '【祝】登山×漫画×YouTube！僕の新しい挑戦、ついに開幕✨...'
+2025-12-29 07:37:47 | ERROR    | src.services.line_service                          | LINE APIエラー完全情報: status_code=429, error={"details": [], "message": "You have reached your monthly limit."}, message='Article published!
+
+"【祝】登山×漫画×YouTube！僕の新しい挑戦、ついに開幕✨"
+https://arafo40tozan.hatenadiary.jp/entry/20251229/1766961466...'
+2025-12-29 07:50:26 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '限界主婦、山でリフレッシュ！？【四コマ】...'
+2025-12-29 07:50:51 | ERROR    | src.services.line_service                          | LINE APIエラー完全情報: status_code=429, error={"details": [], "message": "You have reached your monthly limit."}, message='Article published!
+
+"限界主婦、山でリフレッシュ！？【四コマ】"
+https://kaigotmusic.hatenablog.com/entry/2025/12/29/075050...'
+2025-12-29 07:52:49 | INFO     | src.tasks.rag_similar_articles_fetcher             | RAG Search Query: 不測の事態を乗り越える『最高峰トラベルギア』の信頼性 トラベルギア 耐久性 年末旅行 心理的安全性 自分へのご褒美 【リポスト元記事】
+タイトル: 「名探偵津田」の持ち越しが最高！師走を彩るワクワク感...
+2025-12-29 08:27:42 | INFO     | src.tasks.rag_similar_articles_fetcher             | RAG Search Query: 過酷な旅を「ワクワク」に変える、名探偵級のタフな相棒たち 高耐久バックパック トラベルガジェット 師走の旅支度 自分へのご褒美 【リポスト元記事】
+タイトル: 「名探偵津田」の持ち越しが最高！師走を彩...

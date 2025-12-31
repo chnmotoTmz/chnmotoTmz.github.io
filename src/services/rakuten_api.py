@@ -21,7 +21,7 @@ import random
 def search_products(keyword: str, application_id: Optional[str] = None, max_retries: int = 5) -> Union[List[Dict], Dict]:
     """Search Rakuten Ichiba for a keyword with exponential backoff and jitter.
     Returns a list of normalized product dicts, or an error dict on fatal errors."""
-    app_id_to_use = application_id or RAKUTEN_APP_ID
+    app_id_to_use = application_id or os.getenv("RAKUTEN_APP_ID")
     if not app_id_to_use:
         logger.warning("RAKUTEN_APP_ID is not set; cannot search.")
         return {"status": "error", "message": "RAKUTEN_APP_ID missing."}
@@ -79,7 +79,7 @@ def search_products(keyword: str, application_id: Optional[str] = None, max_retr
     return {"status": "error", "message": "Max retries exceeded"}
 
 def generate_affiliate_link(item_url: str, affiliate_id: Optional[str] = None) -> str:
-    aff_id = affiliate_id or RAKUTEN_AFFILIATE_ID
+    aff_id = affiliate_id or os.getenv("RAKUTEN_AFFILIATE_ID")
     if not aff_id or not item_url: return item_url
     return f"https://hb.afl.rakuten.co.jp/hgc/{aff_id}/?pc={quote(item_url)}&m=http%3A%2F%2Fm.rakuten.co.jp%2F"
 
