@@ -53,13 +53,14 @@ class ThumbnailGeneratorService:
         Returns:
             Imgurにアップロードされた画像のURL
         """
+        start_time = time.time()
         logger.info(f"サムネイル生成開始: プロンプト='{prompt[:50]}...'")
 
         # 0. Check if result is already an image URL (Scavenger support)
         if prompt.startswith("__IMAGE_URL__"):
             src_url = prompt.replace("__IMAGE_URL__", "")
             logger.info("🎨 Result already exists as image URL. Scavenging directly: %s", src_url)
-            local_image_path = self._acquire_image_path(src_url)
+            local_image_path = self._acquire_image_path(src_url, start_time)
             if local_image_path:
                 return self._upload_and_cleanup(local_image_path)
             else:
@@ -74,12 +75,12 @@ class ThumbnailGeneratorService:
         api_url = os.getenv('CUSTOM_THUMBNAIL_API_URL')
         if api_url:
             logger.info(f"Using Custom Thumbnail API: {api_url}")
-            return self._generate_via_custom_api(prompt, api_url)
+            return self._generate_via_custom_api(prompt, api_url, start_time)
 
         # 2. Magic Hour Flow (Default)
         return self._generate_via_magic_hour(prompt)
 
-    def _generate_via_custom_api(self, prompt: str, api_url: str) -> str:
+    def _generate_via_custom_api(self, prompt: str, api_url: str, start_time: float) -> str:
         """
         カスタムAPI経由でサムネイル画像を生成します。
         URLが取得できない場合は例外を発生させ、ワークフローを停止させます。
@@ -90,7 +91,7 @@ class ThumbnailGeneratorService:
             logger.warning("No image URL returned from Custom API. Falling back to Magic Hour.")
             return self._generate_via_magic_hour(prompt)
             
-        local_image_path = self._acquire_image_path(src_url)
+        local_image_path = self._acquire_image_path(src_url, start_time)
         if not local_image_path:
             logger.warning(f"Could not acquire image from {src_url}. Falling back to Magic Hour.")
             return self._generate_via_magic_hour(prompt)
@@ -203,25 +204,30 @@ class ThumbnailGeneratorService:
 
         return None, None
 
-    def _acquire_image_path(self, src_url: str) -> Optional[str]:
+    def _acquire_image_path(self, src_url: str, min_timestamp: float) -> Optional[str]:
         """ブラウザのダウンロード完了を待機し、最新ファイルを拾う。失敗時はURLから直接ダウンロードを試みる。"""
         logger.info("ブラウザのダウンロード完了を待機中...")
         time.sleep(3)
         
         # 1. Try to pick up from local directory (Scavenger Protocol)
-        latest_local = self._pick_latest_local_image()
+        latest_local = self._pick_latest_local_image(min_timestamp)
         if latest_local:
-            logger.info(f"Local image found: {latest_local}")
+            logger.info(f"Local image found (verified fresh): {latest_local}")
             return latest_local
             
         # 2. Wait for browser download
         downloaded = self._wait_browser_download()
         if downloaded:
-            logger.info(f"Browser download detected: {downloaded}")
-            return downloaded
+            # _wait_browser_download uses FileSystemEventHandler which catches newly created files,
+            # so timestamp check is implicitly handled, but double check doesn't hurt.
+            if os.path.getmtime(downloaded) >= min_timestamp:
+                logger.info(f"Browser download detected: {downloaded}")
+                return downloaded
+            else:
+                logger.warning(f"Detected browser download {downloaded} is too old. Ignoring.")
 
         # 3. Fallback: Direct Download from URL
-        logger.warning("Local image not found. Attempting direct download from URL.")
+        logger.warning("Local image not found or too old. Attempting direct download from URL.")
         return self._download_from_url(src_url)
 
     def _download_from_url(self, url: str) -> Optional[str]:
@@ -322,7 +328,7 @@ class ThumbnailGeneratorService:
             return imgur_url
         return None
 
-    def _pick_latest_local_image(self) -> Optional[str]:
+    def _pick_latest_local_image(self, min_timestamp: float) -> Optional[str]:
         if not self.local_thumbnail_dir: return None
         folder = os.path.abspath(self.local_thumbnail_dir)
         if not os.path.isdir(folder): return None
@@ -330,7 +336,11 @@ class ThumbnailGeneratorService:
         for name in os.listdir(folder):
             path = os.path.join(folder, name)
             if os.path.isfile(path) and os.path.splitext(name)[1].lower() in {'.png', '.jpg', '.jpeg', '.webp'}:
-                candidates.append((path, os.path.getmtime(path)))
+                # Only verify timestamp
+                mtime = os.path.getmtime(path)
+                if mtime >= min_timestamp:
+                    candidates.append((path, mtime))
+        
         if not candidates: return None
         candidates.sort(key=lambda x: x[1], reverse=True)
         return candidates[0][0]
