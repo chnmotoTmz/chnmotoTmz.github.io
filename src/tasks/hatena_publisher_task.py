@@ -160,40 +160,40 @@ class HatenaPublisherTask(BaseTaskModule):
             else:
                 # Even if it exists, ensure it has clear space
                 final_content = final_content.replace("[:contents]", "\n\n[:contents]\n\n")
-                            # Clean up any triple newlines created
-                            final_content = re.sub(r'\n{3,}', '\n\n', final_content)
-                
-                            # --- Append Source Image if provided ---
-                            source_image_path = inputs.get("source_image_path")
-                            if source_image_path and os.path.exists(source_image_path):
-                                logger.info(f"Source image '{source_image_path}' found. Appending to content.")
-                                try:
-                                    # Use the existing local upload logic defined within this method's scope
-                                    imgur_url = _upload_local(source_image_path)
-                                    if imgur_url and imgur_url.startswith("http"):
-                                        final_content += f"\n\n## 参考資料\n![参考資料]({imgur_url})\n"
-                                        logger.info(f"Successfully appended source image to content: {imgur_url}")
-                                    else:
-                                        logger.warning(f"Failed to get a valid URL for source image: {source_image_path}")
-                                except Exception as e:
-                                    logger.error(f"Error processing source image {source_image_path}: {e}")
-                            elif source_image_path:
-                                logger.warning(f"source_image_path '{source_image_path}' was provided but file does not exist.")
-                
-                            # Update DB with final content (including all modifications)
-                            try:
-                                post.content = final_content
-                                db.session.commit()
-                            except Exception as e:
-                                logger.warning(f"Failed to update post content in DB: {e}")
-                
-                            logger.info("Publishing to Hatena with forced TOC.")
-                            entry = hatena_service.publish_article(
-                                title=post.title,
-                                content=final_content,
-                                tags=tags,
-                                draft=False
-                            )
+                # Clean up any triple newlines created
+                final_content = re.sub(r'\n{3,}', '\n\n', final_content)
+            
+            # --- Append Source Image if provided ---
+            source_image_path = inputs.get("source_image_path")
+            if source_image_path and os.path.exists(source_image_path):
+                logger.info(f"Source image '{source_image_path}' found. Appending to content.")
+                try:
+                    # Use the existing local upload logic defined within this method's scope
+                    imgur_url = _upload_local(source_image_path)
+                    if imgur_url and imgur_url.startswith("http"):
+                        final_content += f"\n\n## 参考資料\n![参考資料]({imgur_url})\n"
+                        logger.info(f"Successfully appended source image to content: {imgur_url}")
+                    else:
+                        logger.warning(f"Failed to get a valid URL for source image: {source_image_path}")
+                except Exception as e:
+                    logger.error(f"Error processing source image {source_image_path}: {e}")
+            elif source_image_path:
+                logger.warning(f"source_image_path '{source_image_path}' was provided but file does not exist.")
+
+            # Update DB with final content (including all modifications)
+            try:
+                post.content = final_content
+                db.session.commit()
+            except Exception as e:
+                logger.warning(f"Failed to update post content in DB: {e}")
+
+            logger.info("Publishing to Hatena with forced TOC.")
+            entry = hatena_service.publish_article(
+                title=post.title,
+                content=final_content,
+                tags=tags,
+                draft=False
+            )
             if not entry or not entry.get('url'):
                 raise RuntimeError("Publishing failed.")
 
