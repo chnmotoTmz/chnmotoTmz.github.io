@@ -1,8 +1,7 @@
-"""
-サムネイル画像生成サービス。
+"サムネイル画像生成サービス。
 Magic Hour APIで画像を生成し、Imgurにアップロードして、
 ブログ記事用のサムネイル画像URLを提供します。
-"""
+"
 
 
 import logging
@@ -53,7 +52,8 @@ class ThumbnailGeneratorService:
         Returns:
             Imgurにアップロードされた画像のURL
         """
-        start_time = time.time()
+        # Relax timestamp check by 60 seconds to handle clock skew or early triggers
+        start_time = time.time() - 60
         logger.info(f"サムネイル生成開始: プロンプト='{prompt[:50]}...'")
 
         # 0. Check if result is already an image URL (Scavenger support)
@@ -224,7 +224,7 @@ class ThumbnailGeneratorService:
                 logger.info(f"Browser download detected: {downloaded}")
                 return downloaded
             else:
-                logger.warning(f"Detected browser download {downloaded} is too old. Ignoring.")
+                logger.warning(f"Detected browser download {downloaded} is too old (threshold: {min_timestamp}). Ignoring.")
 
         # 3. Fallback: Direct Download from URL
         logger.warning("Local image not found or too old. Attempting direct download from URL.")
@@ -236,42 +236,48 @@ class ThumbnailGeneratorService:
         Implements multiple attempts with browser-like headers and simple
         Googleusercontent URL normalization to reduce HTTP 403 occurrences.
         """
-        def _try_get(u: str, headers: dict) -> Optional[requests.Response]:
+        def _try_get(u: str, headers: dict, cookies: dict = None) -> Optional[requests.Response]:
             try:
-                resp = requests.get(u, headers=headers, timeout=30)
+                resp = requests.get(u, headers=headers, cookies=cookies, timeout=30)
                 return resp
             except Exception as e:
                 logger.warning(f"Direct download attempt exception for {u}: {e}")
                 return None
 
         attempts = []
+        
+        # Session cookies from env
+        cookies = {}
+        if os.getenv("GEMINI_1PSID"):
+            cookies["__Secure-1PSID"] = os.getenv("GEMINI_1PSID")
+        if os.getenv("GEMINI_1PSIDTS"):
+            cookies["__Secure-1PSIDTS"] = os.getenv("GEMINI_1PSIDTS")
 
-        # 1) Raw request (existing behavior)
-        attempts.append({'url': url, 'headers': {}})
+        # 1) Raw request
+        attempts.append({'url': url, 'headers': {}, 'use_cookies': False})
 
-        # 2) Browser-like User-Agent
+        # 2) Browser-like User-Agent + Cookies
         ua_headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+            'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
         }
-        attempts.append({'url': url, 'headers': ua_headers})
+        attempts.append({'url': url, 'headers': ua_headers, 'use_cookies': True})
 
-        # 3) Add Referer (some Google-hosted urls require a referer)
+        # 3) Add Referer
         ref_headers = ua_headers.copy()
         ref_headers['Referer'] = 'https://lh3.googleusercontent.com/'
-        attempts.append({'url': url, 'headers': ref_headers})
+        attempts.append({'url': url, 'headers': ref_headers, 'use_cookies': True})
 
         # 4) Try normalized Googleusercontent URL variants (strip size suffix or set s0)
         if '=s' in url:
             base = url.split('=s')[0]
-            attempts.append({'url': base + '=s0', 'headers': ua_headers})
-            attempts.append({'url': base, 'headers': ua_headers})
-
-        # 5) Final attempt with lowered headers
-        attempts.append({'url': url, 'headers': {'User-Agent': ua_headers['User-Agent']}})
+            attempts.append({'url': base + '=s0', 'headers': ua_headers, 'use_cookies': True})
+            attempts.append({'url': base, 'headers': ua_headers, 'use_cookies': True})
 
         for idx, a in enumerate(attempts, start=1):
-            resp = _try_get(a['url'], a['headers'])
+            req_cookies = cookies if a.get('use_cookies') else None
+            resp = _try_get(a['url'], a['headers'], req_cookies)
+            
             if resp is None:
                 continue
             if resp.status_code == 200:
@@ -288,7 +294,6 @@ class ThumbnailGeneratorService:
                     return None
             else:
                 logger.warning(f"Direct download attempt {idx} returned HTTP {resp.status_code} for URL: {a['url']}")
-                # small backoff between attempts
                 time.sleep(1)
 
         logger.error("Direct download failed after all attempts: HTTP 403 or other errors")
@@ -332,16 +337,23 @@ class ThumbnailGeneratorService:
         if not self.local_thumbnail_dir: return None
         folder = os.path.abspath(self.local_thumbnail_dir)
         if not os.path.isdir(folder): return None
+        
+        logger.info(f"Checking for local images in {folder} modified after {min_timestamp}")
         candidates = []
         for name in os.listdir(folder):
             path = os.path.join(folder, name)
             if os.path.isfile(path) and os.path.splitext(name)[1].lower() in {'.png', '.jpg', '.jpeg', '.webp'}:
-                # Only verify timestamp
                 mtime = os.path.getmtime(path)
                 if mtime >= min_timestamp:
                     candidates.append((path, mtime))
+                else:
+                    # Optional: log rejected old files at debug level
+                    pass
         
-        if not candidates: return None
+        if not candidates:
+            logger.info("No fresh local images found.")
+            return None
+            
         candidates.sort(key=lambda x: x[1], reverse=True)
         return candidates[0][0]
 
