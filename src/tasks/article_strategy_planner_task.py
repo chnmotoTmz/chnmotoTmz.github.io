@@ -45,6 +45,9 @@ class ArticleStrategyPlannerTask(BaseTaskModule):
         
         return f"""記事の構成案を策定してください。
 
+【重要：入力データの取り扱い】
+提供された【コンテンツ】には、システムログ、タスク実行履歴、デバッグ情報などのノイズが含まれている可能性があります。これらは無視し、記事のテーマに関連する情報のみを抽出して構成案を作成してください。
+
 【ブログ情報】
 名前: {blog_data.get('name')}
 コンセプト: {concept.get('theme')}

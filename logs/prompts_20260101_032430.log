@@ -1,0 +1,28 @@
+2026-01-01 07:35:33 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2026-01-01 07:37:03 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '【禁断】AI同士を「会わせて」みた結果…月500円で始まる人生劇場...'
+2026-01-01 07:37:25 | DEBUG    | src.services.rakuten_api                           | Rakuten search attempt 1/5 for keyword='【禁断】AI同士を「会わせて」みた結果…月500円で始まる人生劇場'
+2026-01-01 07:37:29 | INFO     | src.tasks.line_notifier_task                       | Message content:
+Article published!
+
+"【禁断】AI同士を「会わせて」みた結果…月500円で始まる人生劇場"
+https://lifehacking1919.hatenablog.jp/entry/20260101/1767220649
+2026-01-01 08:49:15 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2026-01-01 08:51:08 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '【極秘】負け組ブログが世界を救う！？「不幸」をカネに変える禁断の戦略...'
+2026-01-01 08:51:30 | INFO     | src.tasks.line_notifier_task                       | Message content:
+Article published!
+
+"【極秘】負け組ブログが世界を救う！？「不幸」をカネに変える禁断の戦略"
+https://kaigotmusic.hatenablog.com/entry/2026/01/01/085129
+2026-01-01 09:00:42 | INFO     | src.tasks.rag_similar_articles_fetcher             | RAG Search Query: 「不幸」を資産に変える負け組ブログの逆転戦略 優越感 負け組戦略 共感マーケティング Article published!
+
+"【極秘】負け組ブログが世界を救う！？「不幸」をカネに変える禁断の戦略"
+...
+2026-01-01 10:38:39 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2026-01-01 10:40:25 | INFO     | src.tasks.article_reviewer_task                    | Article review started: '【覚醒】絶望をコンテンツ化する、唯一無二の生存戦略 ㊙️...'
+2026-01-01 10:40:49 | INFO     | src.tasks.line_notifier_task                       | Message content:
+Article published!
+
+"【覚醒】絶望をコンテンツ化する、唯一無二の生存戦略 ㊙️"
+https://yamasan1969.hatenablog.com/entry/2026/01/01/104048
+2026-01-01 15:32:11 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
+2026-01-01 17:02:02 | DEBUG    | src.services.blog_rag_service                      | 候補記事 - URL: 'https://wellness-mom-diary.hatenablog.com/entry/2025/11/26/193519', Title: '【アフィリエイト】収益アップ！攻略ガイドブックを徹底解説...', Blog ID in URL: False, Text Blog ID: 'wellness-mom-diary.hatenablog.com'
