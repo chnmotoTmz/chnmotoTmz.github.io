@@ -245,7 +245,7 @@ blogs:
     hatena_api_key: "${KAIGOT_HATENA_API_KEY}"
     hatena_blog_id: "kaigotmusic.hatenablog.com"
     blog_name: "日常と世界のあいだ"
-    description: "主婦の視点で政治・経済・社会ニュースを深掘り。生活への影響や独自の考察を分かりやすく解説。"
+    description: "主婦の視点で政治・経済・社会ニュースを深掘り。生活への影響や独自の考察、愛犬との暮らしを分かりやすく解説。"
     prompt_file: "blog_main_prompt_daily_world_news.txt"
     profile_prompt_file: "blog_profile_kaigot_erotic.txt"
     gemini_api_key: "${GEMINI_API_KEY}"
@@ -259,6 +259,9 @@ blogs:
       - 時事問題
       - 物価
       - 暮らし
+      - ペット
+      - 犬
+      - 愛犬
     exclude_keywords:
       - IT技術
       - プログラミング
@@ -267,3 +270,19 @@ blogs:
       - ゲーム
       - 投資
       - FX
+  personal_diary:
+    hatena_id: "YOUR_HATENA_ID"
+    hatena_api_key: "${YOUR_HATENA_API_KEY}"
+    hatena_blog_id: "your_diary.hatenablog.com"
+    blog_name: "個人的な日記"
+    description: "日々の出来事、思考、感情を正直に綴るパーソナルな日記。"
+    prompt_file: "blog_main_prompt_diary.txt"
+    profile_prompt_file: "blog_profile_diary.txt"
+    gemini_api_key: "${GEMINI_API_KEY}"
+    keywords:
+      - 日記
+      - 個人的
+      - 内省
+      - 感情
+      - 日々の記録
+    exclude_keywords: []
