@@ -107,7 +107,27 @@ class WorkflowProcessingService:
                 "line_user_id": line_user_id,  # エラーハンドラで必要
                 "channel_id": channel_id or "",  # ワークフローで必須なので必ず提供
             }
-            
+
+            # Check for an image in the batch and pass its path to the workflow
+            try:
+                from src.database import Message, Asset
+                # Find the first message in the batch that is an image
+                image_message = Message.query.filter(
+                    Message.id.in_(message_ids),
+                    Message.message_type == 'image'
+                ).first()
+
+                if image_message:
+                    # Find the associated asset to get the local path
+                    image_asset = Asset.query.filter_by(message_id=image_message.id).first()
+                    if image_asset and image_asset.local_path:
+                        logger.info(f"Found source image '{image_asset.local_path}' for this batch. Adding to workflow inputs.")
+                        initial_inputs['source_image_path'] = image_asset.local_path
+                    else:
+                        logger.warning(f"Image message (ID: {image_message.id}) found in batch, but no corresponding asset or local_path found.")
+            except Exception as e:
+                logger.error(f"Error while attempting to find source image for batch: {e}")
+
             # Execute the workflow
             result = task_runner.run(initial_inputs=initial_inputs)
 

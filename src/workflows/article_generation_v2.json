@@ -532,7 +532,8 @@
       "inputs": {
         "blog": "${blog_data}",
         "post_id": "${draft_post_id}",
-        "article_concept": "${article_concept}"
+        "article_concept": "${article_concept}",
+        "source_image_path": "${initial_input.source_image_path}"
       },
       "outputs": {
         "hatena_entry": "hatena_entry"

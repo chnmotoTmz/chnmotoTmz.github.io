@@ -124,12 +124,25 @@ class HatenaPublisherTask(BaseTaskModule):
                 # Find all <img src='...'> or src="..."
                 def _replace_src(match):
                     src = match.group(1)
-                    if src.startswith('file://') or src.startswith('/') or src.startswith('./') or src.startswith(Config.UPLOAD_FOLDER):
+                    # If it's not a remote URL or data URI, treat as local
+                    if not src.lower().startswith(('http://', 'https://', 'data:')):
                         new = _upload_local(src)
                         return f"src=\"{new}\""
                     return match.group(0)
 
                 final_content = re.sub(r'src=["\']([^"\']+)["\']', _replace_src, final_content)
+
+                # Find all markdown images ![...](...)
+                def _replace_md(match):
+                    alt = match.group(1)
+                    src = match.group(2)
+                    # If it's not a remote URL or data URI, treat as local
+                    if not src.lower().startswith(('http://', 'https://', 'data:')):
+                        new = _upload_local(src)
+                        return f"![{alt}]({new})"
+                    return match.group(0)
+
+                final_content = re.sub(r'!\[(.*?)\]\((.*?)\)', _replace_md, final_content)
             except Exception as e:
                 logger.warning(f"Image uploading before publish failed: {e}")
 
@@ -147,24 +160,40 @@ class HatenaPublisherTask(BaseTaskModule):
             else:
                 # Even if it exists, ensure it has clear space
                 final_content = final_content.replace("[:contents]", "\n\n[:contents]\n\n")
-                # Clean up any triple newlines created
-                final_content = re.sub(r'\n{3,}', '\n\n', final_content)
-            
-            # Update DB with final content (including thumbnail and TOC)
-            try:
-                post.content = final_content
-                db.session.commit()
-            except Exception as e:
-                logger.warning(f"Failed to update post content in DB: {e}")
-
-            logger.info("Publishing to Hatena with forced TOC.")
-            entry = hatena_service.publish_article(
-                title=post.title,
-                content=final_content,
-                tags=tags,
-                draft=False
-            )
-
+                            # Clean up any triple newlines created
+                            final_content = re.sub(r'\n{3,}', '\n\n', final_content)
+                
+                            # --- Append Source Image if provided ---
+                            source_image_path = inputs.get("source_image_path")
+                            if source_image_path and os.path.exists(source_image_path):
+                                logger.info(f"Source image '{source_image_path}' found. Appending to content.")
+                                try:
+                                    # Use the existing local upload logic defined within this method's scope
+                                    imgur_url = _upload_local(source_image_path)
+                                    if imgur_url and imgur_url.startswith("http"):
+                                        final_content += f"\n\n## 参考資料\n![参考資料]({imgur_url})\n"
+                                        logger.info(f"Successfully appended source image to content: {imgur_url}")
+                                    else:
+                                        logger.warning(f"Failed to get a valid URL for source image: {source_image_path}")
+                                except Exception as e:
+                                    logger.error(f"Error processing source image {source_image_path}: {e}")
+                            elif source_image_path:
+                                logger.warning(f"source_image_path '{source_image_path}' was provided but file does not exist.")
+                
+                            # Update DB with final content (including all modifications)
+                            try:
+                                post.content = final_content
+                                db.session.commit()
+                            except Exception as e:
+                                logger.warning(f"Failed to update post content in DB: {e}")
+                
+                            logger.info("Publishing to Hatena with forced TOC.")
+                            entry = hatena_service.publish_article(
+                                title=post.title,
+                                content=final_content,
+                                tags=tags,
+                                draft=False
+                            )
             if not entry or not entry.get('url'):
                 raise RuntimeError("Publishing failed.")
 
