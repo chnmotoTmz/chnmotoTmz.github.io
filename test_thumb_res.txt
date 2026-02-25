@@ -1,0 +1,1 @@
+Result: {'enhanced_content': '![Test Thumbnail](https://files.catbox.moe/u08rjd.jpg)\n\nTest content'}

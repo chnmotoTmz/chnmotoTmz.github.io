@@ -1,0 +1,40 @@
+2026-01-05 16:10:06 | DEBUG    | src.services.framework.service_registry            | Registered: AddLinkedSourcesTask
+2026-01-05 16:10:08 | DEBUG    | src.services.framework.service_registry            | Registered: AffiliateLinkerTask
+2026-01-05 16:10:08 | DEBUG    | src.services.framework.service_registry            | Registered: AffiliateLinkAdderTask
+2026-01-05 16:10:08 | DEBUG    | src.services.framework.service_registry            | Registered: AmazonLinkRemoverTask
+2026-01-05 16:10:08 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleCacheTask
+2026-01-05 16:10:08 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleConceptDefiner
+2026-01-05 16:10:08 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleContentGenerator
+2026-01-05 16:10:08 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleReviewer
+2026-01-05 16:10:08 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleReviser
+2026-01-05 16:10:08 | DEBUG    | src.services.framework.service_registry            | Registered: ArticleStrategyPlanner
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: BlogContextResolverTask
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: BlogContextUpdaterTask
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: BlogSelectorTask
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: BlogSelectorTaskV2
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: ChatHistoryManager
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: ClearGeminiMode
+2026-01-05 16:10:13 | INFO     | src.services.multi_channel_line_manager            | [登録] chanmotocaffe (ID: 2006378351)
+2026-01-05 16:10:13 | INFO     | src.services.multi_channel_line_manager            | [登録] FX Channel Bot (ID: 2007594340)
+2026-01-05 16:10:13 | INFO     | src.services.multi_channel_line_manager            | [登録] lang (ID: 2007819423)
+2026-01-05 16:10:13 | INFO     | src.services.multi_channel_line_manager            | 合計 3 チャンネル登録
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: CommandParserTask
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: ConditionalBranchTask
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: ConsoleNotifier
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: DatabaseFetcher
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: DraftPersister
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: FactChecker
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: FinalizePostTask
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: FinalArticleEnricher
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: FinalFactCleanupTask
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: GeminiChatResponder
+2026-01-05 16:10:13 | ERROR    | src.services.framework.service_registry            | Failed to process tasks.gemini_chat_responder_task: Non-UTF-8 code starting with '\xe8' on line 20, but no encoding declared; see https://peps.python.org/pep-0263/ for details (gemini_chat_responder_task.py, line 20)
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: GeminiReset
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: HatenaPublisher
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: LineChatReplyTask
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: LineNotifier
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: LineNotifier
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: LinkValidatorTask
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: LocalPublisher
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: MinimalThumbnailPreparer
+2026-01-05 16:10:13 | DEBUG    | src.services.framework.service_registry            | Registered: NotePost
