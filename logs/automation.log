@@ -1,0 +1,1980 @@
+2026-02-28 16:30:17,667 [INFO] Starting automated blog processing batch...
+2026-02-28 16:30:17,667 [INFO] --- Processing Blog: gadget_productivity ---
+2026-02-28 16:30:18,375 [INFO] --- Processing Blog: ai_music_production ---
+2026-02-28 16:30:18,995 [INFO] --- Processing Blog: travel_gear ---
+2026-02-28 16:30:19,559 [INFO] --- Processing Blog: english_learning ---
+2026-02-28 16:30:20,113 [INFO] --- Processing Blog: it_engineer_philosophy ---
+2026-02-28 16:30:20,685 [INFO] --- Processing Blog: crypto_investment ---
+2026-02-28 16:30:21,272 [INFO] --- Processing Blog: beauty_life_hack ---
+2026-02-28 16:30:21,830 [INFO] --- Processing Blog: education_review ---
+2026-02-28 16:30:22,433 [INFO] --- Processing Blog: daily_world_news ---
+2026-02-28 16:30:23,060 [INFO] Batch processing complete.
+2026-02-28 16:31:44,397 [INFO] Starting automated blog processing batch...
+2026-02-28 16:31:44,397 [INFO] --- Processing Blog: gadget_productivity ---
+2026-02-28 16:31:44,992 [INFO] Checked Entry: 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く (Draft: False)
+2026-02-28 16:31:44,993 [INFO] Checked Entry: 猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡 (Draft: False)
+2026-02-28 16:31:44,993 [INFO] Checked Entry: 脳にチップを埋める前に藁を編め？2045年のサイボーグ化vs100円の呪術 (Draft: False)
+2026-02-28 16:31:44,993 [INFO] Checked Entry: スマホを捨てて藁を編め？攻殻機動隊の義体化を100円の藁人形で再現した結末 (Draft: False)
+2026-02-28 16:31:44,993 [INFO] Checked Entry: 20万円のiPadを捨てて、道端の「落ち葉」に暗証番号を刺繍してみた結果？ (Draft: False)
+2026-02-28 16:31:44,993 [INFO] Checked Entry: 2画面マウスの引っかかりを5分で直す魔術って実在するの？ (Draft: False)
+2026-02-28 16:31:44,994 [INFO] Checked Entry: AIを藁人形に閉じ込めたら、24時間で悟りを開けるか？ (Draft: False)
+2026-02-28 16:31:44,994 [INFO] Checked Entry: AIの説法を新潟産の石に封印して持ち歩くのはアリか？ (Draft: False)
+2026-02-28 16:31:44,994 [INFO] Checked Entry: 101歳の祖母がGalaxy S26で買い物をした結果 (Draft: False)
+2026-02-28 16:31:44,994 [INFO] Checked Entry: 車いすの私がVRを被って絶望した「120cmの壁」とは？ (Draft: False)
+2026-02-28 16:31:44,996 [INFO] --- Processing Blog: ai_music_production ---
+2026-02-28 16:31:45,589 [INFO] Checked Entry: アイザック・アシモフが書けなかった「第4原則」？壊れた蓄音機が囁く黄金時代の絶望 (Draft: False)
+2026-02-28 16:31:45,589 [INFO] Checked Entry: 400キロのヒグマに魔導書を音読して勝てるか試した結果 (Draft: False)
+2026-02-28 16:31:45,590 [INFO] Checked Entry: 180度で15分焼くと世界が黒焦げになるって本当か？ (Draft: False)
+2026-02-28 16:31:45,590 [INFO] Checked Entry: トースターが予言を書く？『焦熱の黙示録』を3分で解読した (Draft: False)
+2026-02-28 16:31:45,590 [INFO] Checked Entry: アンデルセンも驚く『オナホ売りの少女』の絶望とは？ (Draft: False)
+2026-02-28 16:31:45,590 [INFO] Checked Entry: 難解な『千のプラトー』を10分で攻略する3つの荒技 (Draft: False)
+2026-02-28 16:31:45,590 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:45,590 [INFO] Checked Entry: 99歳が図書館で借りる10冊。半世紀前の熱狂はどこへ消えた？ (Draft: False)
+2026-02-28 16:31:45,591 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:45,591 [INFO] Checked Entry: 英文法汎論で暴く、50年前のベストセラー「誤読」の正体とは？ (Draft: False)
+2026-02-28 16:31:45,592 [INFO] --- Processing Blog: travel_gear ---
+2026-02-28 16:31:46,153 [INFO] Checked Entry: 四畳半の100円食パンに宇宙を見た。ディープラーニングSiriと拓く多次元旅行 (Draft: False)
+2026-02-28 16:31:46,154 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:46,154 [INFO] Checked Entry: 冷蔵庫の「奥」まで3秒でワープできるか試した結果 (Draft: False)
+2026-02-28 16:31:46,154 [INFO] Checked Entry: AIの幻覚は4畳半を銀河に変えるトリガーか？ (Draft: False)
+2026-02-28 16:31:46,154 [INFO] Checked Entry: 冷蔵庫の霜を削れば2026年の宇宙が見える？ (Draft: False)
+2026-02-28 16:31:46,155 [INFO] Checked Entry: 1枚のカントリーマアムでハノイへ密入国できるか？ (Draft: False)
+2026-02-28 16:31:46,155 [INFO] Checked Entry: 四畳半からeSIMで190ヶ国へ密出国できるか？ (Draft: False)
+2026-02-28 16:31:46,155 [INFO] Checked Entry: 午前3時のスクート便？シンガポール出張で「不便」を選ぶ理由 (Draft: False)
+2026-02-28 16:31:46,155 [INFO] Checked Entry: 那覇空港「ラウンジ華」が2.5倍に広くなって失われたものとは？ (Draft: False)
+2026-02-28 16:31:46,155 [INFO] Checked Entry: 那覇空港「ラウンジ華」が2.5倍に広がって失ったものは？ (Draft: False)
+2026-02-28 16:31:46,157 [INFO] --- Processing Blog: english_learning ---
+2026-02-28 16:31:46,726 [INFO] Checked Entry: 2026年のSOS。深夜4時に響く「助けて」をデジタルで消していいのか？ (Draft: False)
+2026-02-28 16:31:46,726 [INFO] Checked Entry: 「役に立つ情報」を捨てて10分休むとどうなる？ (Draft: False)
+2026-02-28 16:31:46,726 [INFO] Checked Entry: オーストラリアのバナナが消えた本当の理由って知ってる？ (Draft: False)
+2026-02-28 16:31:46,727 [INFO] Checked Entry: 死後に八つ裂きにされないための毛づくろい4ステップ (Draft: False)
+2026-02-28 16:31:46,727 [INFO] Checked Entry: バナナが消えた？18時間毛をそる機械になった俺の末路 (Draft: False)
+2026-02-28 16:31:46,727 [INFO] Checked Entry: 40代からの夜の営み、正直どうなってる？ (Draft: False)
+2026-02-28 16:31:46,727 [INFO] Checked Entry: 愛犬をAIで動かそうとして、怖くなったのはなぜ？ (Draft: False)
+2026-02-28 16:31:46,727 [INFO] Checked Entry: AIとの対話が終わるのが怖くて、2時までスマホを離せなかった夜。 (Draft: False)
+2026-02-28 16:31:46,728 [INFO] Checked Entry: 自作ロボットでサルと握手？3日間かけた工作の末に見えたもの (Draft: False)
+2026-02-28 16:31:46,728 [INFO] Checked Entry: 窓を開けるのが怖くなる？ドイツの「昆虫兵器」に震えた日 (Draft: False)
+2026-02-28 16:31:46,729 [INFO] --- Processing Blog: it_engineer_philosophy ---
+2026-02-28 16:31:47,336 [INFO] Checked Entry: ASIMOの掟で六甲山を獲る。2000年代の二足歩行カチ込み制圧記 (Draft: False)
+2026-02-28 16:31:47,337 [INFO] Checked Entry: その「Hey Siri」は敵への入室許可証か？自宅に潜むディープラーニングの刺客 (Draft: False)
+2026-02-28 16:31:47,337 [INFO] Checked Entry: バク転を決めるボストン・ダイナミクスに筋を通せ。生成AIという名の切れ者がシマを荒らしに来た日の記録 (Draft: False)
+2026-02-28 16:31:47,337 [INFO] Checked Entry: コードレビューに「石抱」は必要か？東映太秦映画村で考えたケジメのつけ方 (Draft: False)
+2026-02-28 16:31:47,337 [INFO] Checked Entry: Snowflake Cortexが招くAIエージェントの全自動抗争はアリか？ (Draft: False)
+2026-02-28 16:31:47,337 [INFO] Checked Entry: AtCoderの登録者が50万人突破？電脳抗争に散る鉄砲玉の正体 (Draft: False)
+2026-02-28 16:31:47,338 [INFO] Checked Entry: AIの「正解」を疑わないエンジニアは1年で消える？ (Draft: False)
+2026-02-28 16:31:47,338 [INFO] Checked Entry: AIとの「並走」なんて嘘？自律型AIが突きつける2つの真実 (Draft: False)
+2026-02-28 16:31:47,338 [INFO] Checked Entry: 営業異動はキャリアのバグ？エンジニアが3つの思考で勝つ方法 (Draft: False)
+2026-02-28 16:31:47,338 [INFO] Checked Entry: 年収100万減でも「出社」を拒む若手エンジニアの正体とは？ (Draft: False)
+2026-02-28 16:31:47,340 [INFO] --- Processing Blog: crypto_investment ---
+2026-02-28 16:31:47,921 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:47,922 [INFO] Checked Entry: 3月の暴落を予言？auでんきガチャと猫のあくびで勝負した結果 (Draft: False)
+2026-02-28 16:31:47,922 [INFO] Checked Entry: 日経平均5万8000円超えをうどんの茹で加減で当てるのは可能か？ (Draft: False)
+2026-02-28 16:31:47,922 [INFO] Checked Entry: 日経平均5万8000円はSSR？猫の毛玉で株価を当てる錬金術 (Draft: False)
+2026-02-28 16:31:47,922 [INFO] Checked Entry: 100万円の分析ソフトでも勝てない？AI僧侶が教える投資の罠 (Draft: False)
+2026-02-28 16:31:47,922 [INFO] Checked Entry: 2030年に勝つのはAIか配当か？資産を託す「自律した富」の選び方 (Draft: False)
+2026-02-28 16:31:47,923 [INFO] Checked Entry: エヌビディア好決算でも株価下落？「押し目買い」の罠 (Draft: False)
+2026-02-28 16:31:47,923 [INFO] Checked Entry: エヌビディア決算で日経平均先物が140円安？夜間の乱高下を制する方法 (Draft: False)
+2026-02-28 16:31:47,923 [INFO] Checked Entry: NVIDIA決算でもう買えない？私がキャッシュを50%にした理由 (Draft: False)
+2026-02-28 16:31:47,923 [INFO] Checked Entry: 日経平均5万8000円。異臭のする株を握り続けた結果 (Draft: False)
+2026-02-28 16:31:47,925 [INFO] --- Processing Blog: beauty_life_hack ---
+2026-02-28 16:31:48,489 [INFO] Checked Entry: 5万人の絶叫を0.1秒で消す？大谷翔平が作る「真空」を盗むコツ (Draft: False)
+2026-02-28 16:31:48,489 [INFO] Checked Entry: 大谷翔平の160キロを超える豪速球を無音で見るのは罪か？ (Draft: False)
+2026-02-28 16:31:48,489 [INFO] Checked Entry: 大谷翔平の175キロを無音で見た？ドームで沈黙した3時間 (Draft: False)
+2026-02-28 16:31:48,489 [INFO] Checked Entry: 3日間でカラオケの点数が5点上がるって本当？ (Draft: False)
+2026-02-28 16:31:48,489 [INFO] Checked Entry: 小芝風花は2ヶ月、私は3日。ドローイン呼吸で声は変わる？ (Draft: False)
+2026-02-28 16:31:48,490 [INFO] Checked Entry: EXILEに100点を認めさせる？AI採点はどう変わるか (Draft: False)
+2026-02-28 16:31:48,490 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:48,490 [INFO] Checked Entry: カラオケ95点の俺が「下手」と言われた理由？採点の闇を暴く (Draft: False)
+2026-02-28 16:31:48,490 [INFO] Checked Entry: カラオケ精密採点Aiで90点突破！工藤静香の真似を捨てて高得点を出す攻略法 (Draft: False)
+2026-02-28 16:31:48,490 [INFO] Checked Entry: カラオケで95点取っても、自分の声が嫌いなのはなぜ？ (Draft: False)
+2026-02-28 16:31:48,492 [INFO] --- Processing Blog: education_review ---
+2026-02-28 16:31:49,020 [INFO] Checked Entry: 村田製作所の部品でネズミを燻す？ネオ・トウキョウの自炊術 (Draft: False)
+2026-02-28 16:31:49,020 [INFO] Checked Entry: 7日間待つ贅沢。ブロッコリースプラウトを自作する理由とは？ (Draft: False)
+2026-02-28 16:31:49,021 [INFO] Checked Entry: ダイソーの300円プランターだけで大豆を量産できるって本当？ (Draft: False)
+2026-02-28 16:31:49,021 [INFO] Checked Entry: 新潟のベランダで育てる野菜は、スーパーより高い？ (Draft: False)
+2026-02-28 16:31:49,021 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:49,021 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:49,022 [INFO] Checked Entry: 100円の豆苗、2回目は本当に体にいい？養生コスパの限界点 (Draft: False)
+2026-02-28 16:31:49,022 [INFO] Checked Entry: 1パック800円のイチゴに勝つ方法は？ベランダ菜園という資産防衛 (Draft: False)
+2026-02-28 16:31:49,022 [INFO] Checked Entry: 道端の草を30分摘んだら、最高のごちそうになるって本当？ (Draft: False)
+2026-02-28 16:31:49,022 [INFO] Checked Entry: 真夜中に「食いたい」が止まらない？330円で本能を満たした結果 (Draft: False)
+2026-02-28 16:31:49,023 [INFO] --- Processing Blog: daily_world_news ---
+2026-02-28 16:31:49,634 [INFO] Checked Entry: 鉄の犬がバク転してもカリカリは出てこない。2026年、AIに魂を売った下僕の末路 (Draft: False)
+2026-02-28 16:31:49,635 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:49,635 [INFO] Checked Entry: 血統書付きの元王子が群れを追い出された理由は1つの皿か？ (Draft: False)
+2026-02-28 16:31:49,635 [INFO] Checked Entry: 猫の名門『懐石』が犬を飼い始めた？ニンゲンの裏切りを暴く (Draft: False)
+2026-02-28 16:31:49,635 [INFO] Checked Entry: 100円のオレンジが消える日？宇宙と供給網で日本を守る具体策 (Draft: False)
+2026-02-28 16:31:49,635 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:49,636 [INFO] Checked Entry: 高市安保3文書、私たちのPCは本当に守られる？ (Draft: False)
+2026-02-28 16:31:49,636 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:31:49,636 [INFO] Checked Entry: トランプ関税にブレーキ？高市早苗氏が狙う「2026年の逆転劇」 (Draft: False)
+2026-02-28 16:31:49,636 [INFO] Checked Entry: 消費税0％で生活は変わる？高市首相が仕掛けた勝負の正体 (Draft: False)
+2026-02-28 16:31:49,638 [INFO] Batch processing complete.
+2026-02-28 16:32:08,639 [INFO] Starting automated blog processing batch...
+2026-02-28 16:32:08,639 [INFO] --- Processing Blog: gadget_productivity ---
+2026-02-28 16:32:09,290 [INFO] Checked Entry: 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く (Draft: False)
+2026-02-28 16:32:09,290 [INFO] Checked Entry: 猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡 (Draft: False)
+2026-02-28 16:32:09,290 [INFO] Checked Entry: 脳にチップを埋める前に藁を編め？2045年のサイボーグ化vs100円の呪術 (Draft: False)
+2026-02-28 16:32:09,291 [INFO] Checked Entry: スマホを捨てて藁を編め？攻殻機動隊の義体化を100円の藁人形で再現した結末 (Draft: False)
+2026-02-28 16:32:09,291 [INFO] Checked Entry: 20万円のiPadを捨てて、道端の「落ち葉」に暗証番号を刺繍してみた結果？ (Draft: False)
+2026-02-28 16:32:09,291 [INFO] Checked Entry: 2画面マウスの引っかかりを5分で直す魔術って実在するの？ (Draft: False)
+2026-02-28 16:32:09,291 [INFO] Checked Entry: AIを藁人形に閉じ込めたら、24時間で悟りを開けるか？ (Draft: False)
+2026-02-28 16:32:09,291 [INFO] Checked Entry: AIの説法を新潟産の石に封印して持ち歩くのはアリか？ (Draft: False)
+2026-02-28 16:32:09,292 [INFO] Checked Entry: 101歳の祖母がGalaxy S26で買い物をした結果 (Draft: False)
+2026-02-28 16:32:09,292 [INFO] Checked Entry: 車いすの私がVRを被って絶望した「120cmの壁」とは？ (Draft: False)
+2026-02-28 16:32:09,294 [INFO] --- Processing Blog: ai_music_production ---
+2026-02-28 16:32:09,852 [INFO] Checked Entry: アイザック・アシモフが書けなかった「第4原則」？壊れた蓄音機が囁く黄金時代の絶望 (Draft: False)
+2026-02-28 16:32:09,853 [INFO] Checked Entry: 400キロのヒグマに魔導書を音読して勝てるか試した結果 (Draft: False)
+2026-02-28 16:32:09,853 [INFO] Checked Entry: 180度で15分焼くと世界が黒焦げになるって本当か？ (Draft: False)
+2026-02-28 16:32:09,853 [INFO] Checked Entry: トースターが予言を書く？『焦熱の黙示録』を3分で解読した (Draft: False)
+2026-02-28 16:32:09,853 [INFO] Checked Entry: アンデルセンも驚く『オナホ売りの少女』の絶望とは？ (Draft: False)
+2026-02-28 16:32:09,854 [INFO] Checked Entry: 難解な『千のプラトー』を10分で攻略する3つの荒技 (Draft: False)
+2026-02-28 16:32:09,854 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:09,854 [INFO] Checked Entry: 99歳が図書館で借りる10冊。半世紀前の熱狂はどこへ消えた？ (Draft: False)
+2026-02-28 16:32:09,854 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:09,854 [INFO] Checked Entry: 英文法汎論で暴く、50年前のベストセラー「誤読」の正体とは？ (Draft: False)
+2026-02-28 16:32:09,856 [INFO] --- Processing Blog: travel_gear ---
+2026-02-28 16:32:10,434 [INFO] Checked Entry: 四畳半の100円食パンに宇宙を見た。ディープラーニングSiriと拓く多次元旅行 (Draft: False)
+2026-02-28 16:32:10,434 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:10,434 [INFO] Checked Entry: 冷蔵庫の「奥」まで3秒でワープできるか試した結果 (Draft: False)
+2026-02-28 16:32:10,434 [INFO] Checked Entry: AIの幻覚は4畳半を銀河に変えるトリガーか？ (Draft: False)
+2026-02-28 16:32:10,435 [INFO] Checked Entry: 冷蔵庫の霜を削れば2026年の宇宙が見える？ (Draft: False)
+2026-02-28 16:32:10,435 [INFO] Checked Entry: 1枚のカントリーマアムでハノイへ密入国できるか？ (Draft: False)
+2026-02-28 16:32:10,435 [INFO] Checked Entry: 四畳半からeSIMで190ヶ国へ密出国できるか？ (Draft: False)
+2026-02-28 16:32:10,435 [INFO] Checked Entry: 午前3時のスクート便？シンガポール出張で「不便」を選ぶ理由 (Draft: False)
+2026-02-28 16:32:10,435 [INFO] Checked Entry: 那覇空港「ラウンジ華」が2.5倍に広くなって失われたものとは？ (Draft: False)
+2026-02-28 16:32:10,436 [INFO] Checked Entry: 那覇空港「ラウンジ華」が2.5倍に広がって失ったものは？ (Draft: False)
+2026-02-28 16:32:10,437 [INFO] --- Processing Blog: english_learning ---
+2026-02-28 16:32:11,006 [INFO] Checked Entry: 2026年のSOS。深夜4時に響く「助けて」をデジタルで消していいのか？ (Draft: False)
+2026-02-28 16:32:11,006 [INFO] Checked Entry: 「役に立つ情報」を捨てて10分休むとどうなる？ (Draft: False)
+2026-02-28 16:32:11,007 [INFO] Checked Entry: オーストラリアのバナナが消えた本当の理由って知ってる？ (Draft: False)
+2026-02-28 16:32:11,007 [INFO] Checked Entry: 死後に八つ裂きにされないための毛づくろい4ステップ (Draft: False)
+2026-02-28 16:32:11,007 [INFO] Checked Entry: バナナが消えた？18時間毛をそる機械になった俺の末路 (Draft: False)
+2026-02-28 16:32:11,007 [INFO] Checked Entry: 40代からの夜の営み、正直どうなってる？ (Draft: False)
+2026-02-28 16:32:11,007 [INFO] Checked Entry: 愛犬をAIで動かそうとして、怖くなったのはなぜ？ (Draft: False)
+2026-02-28 16:32:11,008 [INFO] Checked Entry: AIとの対話が終わるのが怖くて、2時までスマホを離せなかった夜。 (Draft: False)
+2026-02-28 16:32:11,008 [INFO] Checked Entry: 自作ロボットでサルと握手？3日間かけた工作の末に見えたもの (Draft: False)
+2026-02-28 16:32:11,008 [INFO] Checked Entry: 窓を開けるのが怖くなる？ドイツの「昆虫兵器」に震えた日 (Draft: False)
+2026-02-28 16:32:11,009 [INFO] --- Processing Blog: it_engineer_philosophy ---
+2026-02-28 16:32:11,612 [INFO] Checked Entry: ASIMOの掟で六甲山を獲る。2000年代の二足歩行カチ込み制圧記 (Draft: False)
+2026-02-28 16:32:11,612 [INFO] Checked Entry: その「Hey Siri」は敵への入室許可証か？自宅に潜むディープラーニングの刺客 (Draft: False)
+2026-02-28 16:32:11,613 [INFO] Checked Entry: バク転を決めるボストン・ダイナミクスに筋を通せ。生成AIという名の切れ者がシマを荒らしに来た日の記録 (Draft: False)
+2026-02-28 16:32:11,613 [INFO] Checked Entry: コードレビューに「石抱」は必要か？東映太秦映画村で考えたケジメのつけ方 (Draft: False)
+2026-02-28 16:32:11,613 [INFO] Checked Entry: Snowflake Cortexが招くAIエージェントの全自動抗争はアリか？ (Draft: False)
+2026-02-28 16:32:11,613 [INFO] Checked Entry: AtCoderの登録者が50万人突破？電脳抗争に散る鉄砲玉の正体 (Draft: False)
+2026-02-28 16:32:11,614 [INFO] Checked Entry: AIの「正解」を疑わないエンジニアは1年で消える？ (Draft: False)
+2026-02-28 16:32:11,614 [INFO] Checked Entry: AIとの「並走」なんて嘘？自律型AIが突きつける2つの真実 (Draft: False)
+2026-02-28 16:32:11,614 [INFO] Checked Entry: 営業異動はキャリアのバグ？エンジニアが3つの思考で勝つ方法 (Draft: False)
+2026-02-28 16:32:11,614 [INFO] Checked Entry: 年収100万減でも「出社」を拒む若手エンジニアの正体とは？ (Draft: False)
+2026-02-28 16:32:11,616 [INFO] --- Processing Blog: crypto_investment ---
+2026-02-28 16:32:12,164 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:12,164 [INFO] Checked Entry: 3月の暴落を予言？auでんきガチャと猫のあくびで勝負した結果 (Draft: False)
+2026-02-28 16:32:12,164 [INFO] Checked Entry: 日経平均5万8000円超えをうどんの茹で加減で当てるのは可能か？ (Draft: False)
+2026-02-28 16:32:12,164 [INFO] Checked Entry: 日経平均5万8000円はSSR？猫の毛玉で株価を当てる錬金術 (Draft: False)
+2026-02-28 16:32:12,165 [INFO] Checked Entry: 100万円の分析ソフトでも勝てない？AI僧侶が教える投資の罠 (Draft: False)
+2026-02-28 16:32:12,165 [INFO] Checked Entry: 2030年に勝つのはAIか配当か？資産を託す「自律した富」の選び方 (Draft: False)
+2026-02-28 16:32:12,165 [INFO] Checked Entry: エヌビディア好決算でも株価下落？「押し目買い」の罠 (Draft: False)
+2026-02-28 16:32:12,165 [INFO] Checked Entry: エヌビディア決算で日経平均先物が140円安？夜間の乱高下を制する方法 (Draft: False)
+2026-02-28 16:32:12,165 [INFO] Checked Entry: NVIDIA決算でもう買えない？私がキャッシュを50%にした理由 (Draft: False)
+2026-02-28 16:32:12,166 [INFO] Checked Entry: 日経平均5万8000円。異臭のする株を握り続けた結果 (Draft: False)
+2026-02-28 16:32:12,168 [INFO] --- Processing Blog: beauty_life_hack ---
+2026-02-28 16:32:12,773 [INFO] Checked Entry: 5万人の絶叫を0.1秒で消す？大谷翔平が作る「真空」を盗むコツ (Draft: False)
+2026-02-28 16:32:12,773 [INFO] Checked Entry: 大谷翔平の160キロを超える豪速球を無音で見るのは罪か？ (Draft: False)
+2026-02-28 16:32:12,774 [INFO] Checked Entry: 大谷翔平の175キロを無音で見た？ドームで沈黙した3時間 (Draft: False)
+2026-02-28 16:32:12,774 [INFO] Checked Entry: 3日間でカラオケの点数が5点上がるって本当？ (Draft: False)
+2026-02-28 16:32:12,774 [INFO] Checked Entry: 小芝風花は2ヶ月、私は3日。ドローイン呼吸で声は変わる？ (Draft: False)
+2026-02-28 16:32:12,774 [INFO] Checked Entry: EXILEに100点を認めさせる？AI採点はどう変わるか (Draft: False)
+2026-02-28 16:32:12,774 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:12,775 [INFO] Checked Entry: カラオケ95点の俺が「下手」と言われた理由？採点の闇を暴く (Draft: False)
+2026-02-28 16:32:12,775 [INFO] Checked Entry: カラオケ精密採点Aiで90点突破！工藤静香の真似を捨てて高得点を出す攻略法 (Draft: False)
+2026-02-28 16:32:12,775 [INFO] Checked Entry: カラオケで95点取っても、自分の声が嫌いなのはなぜ？ (Draft: False)
+2026-02-28 16:32:12,776 [INFO] --- Processing Blog: education_review ---
+2026-02-28 16:32:13,378 [INFO] Checked Entry: 村田製作所の部品でネズミを燻す？ネオ・トウキョウの自炊術 (Draft: False)
+2026-02-28 16:32:13,378 [INFO] Checked Entry: 7日間待つ贅沢。ブロッコリースプラウトを自作する理由とは？ (Draft: False)
+2026-02-28 16:32:13,378 [INFO] Checked Entry: ダイソーの300円プランターだけで大豆を量産できるって本当？ (Draft: False)
+2026-02-28 16:32:13,379 [INFO] Checked Entry: 新潟のベランダで育てる野菜は、スーパーより高い？ (Draft: False)
+2026-02-28 16:32:13,379 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:13,379 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:13,379 [INFO] Checked Entry: 100円の豆苗、2回目は本当に体にいい？養生コスパの限界点 (Draft: False)
+2026-02-28 16:32:13,379 [INFO] Checked Entry: 1パック800円のイチゴに勝つ方法は？ベランダ菜園という資産防衛 (Draft: False)
+2026-02-28 16:32:13,380 [INFO] Checked Entry: 道端の草を30分摘んだら、最高のごちそうになるって本当？ (Draft: False)
+2026-02-28 16:32:13,380 [INFO] Checked Entry: 真夜中に「食いたい」が止まらない？330円で本能を満たした結果 (Draft: False)
+2026-02-28 16:32:13,381 [INFO] --- Processing Blog: daily_world_news ---
+2026-02-28 16:32:13,960 [INFO] Checked Entry: 鉄の犬がバク転してもカリカリは出てこない。2026年、AIに魂を売った下僕の末路 (Draft: False)
+2026-02-28 16:32:13,960 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:13,960 [INFO] Checked Entry: 血統書付きの元王子が群れを追い出された理由は1つの皿か？ (Draft: False)
+2026-02-28 16:32:13,960 [INFO] Checked Entry: 猫の名門『懐石』が犬を飼い始めた？ニンゲンの裏切りを暴く (Draft: False)
+2026-02-28 16:32:13,961 [INFO] Checked Entry: 100円のオレンジが消える日？宇宙と供給網で日本を守る具体策 (Draft: False)
+2026-02-28 16:32:13,961 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:13,961 [INFO] Checked Entry: 高市安保3文書、私たちのPCは本当に守られる？ (Draft: False)
+2026-02-28 16:32:13,961 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:13,962 [INFO] Checked Entry: トランプ関税にブレーキ？高市早苗氏が狙う「2026年の逆転劇」 (Draft: False)
+2026-02-28 16:32:13,962 [INFO] Checked Entry: 消費税0％で生活は変わる？高市首相が仕掛けた勝負の正体 (Draft: False)
+2026-02-28 16:32:13,963 [INFO] Batch processing complete.
+2026-02-28 16:32:31,432 [INFO] Starting automated blog processing batch...
+2026-02-28 16:32:31,432 [INFO] --- Processing Blog: gadget_productivity ---
+2026-02-28 16:32:32,060 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359401933</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359401933" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260228/1772255265" />
+
+<author><name>motochan1969</name></author>
+<title>100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く</title>
+<updated>2026-02-28T14:07:45+09:00</updated>
+<published>2026-02-28T14:07:45+09:00</published>
+<app:edited>2026-02-28T14:07:45+09:00</app:edited>
+<summary type="text">100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く 真夜中にMacBookの光で目がつぶれそうになった。俺の体はもう鉄だ カレル・チャペックが撒いた毒。1920年代の日本が忘れたもの 生成AIに聞いてみた結果…「藁は可燃物です」という鉄の回答 デスクに藁を一本置…</summary>
+<content type="text/x-markdown">100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く
+
+[:contents]
+
+## 真夜中にMacBookの光で目がつぶれそうになった。俺の体はもう鉄だ
+深夜2時
+2026-02-28 16:32:32,060 [INFO] Checked Entry: 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く (Draft: False)
+2026-02-28 16:32:32,061 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359389589</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359389589" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260228/1772251858" />
+
+<author><name>motochan1969</name></author>
+<title>猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡</title>
+<updated>2026-02-28T13:10:58+09:00</updated>
+<published>2026-02-28T13:10:58+09:00</published>
+<app:edited>2026-02-28T13:10:58+09:00</app:edited>
+<summary type="text">猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡 猫の肉球が液晶を汚す夜。アトムの10万馬力を藁人形に宿す儀式 柑橘スプレーはもう古い。物理的な猫対策の限界と1960年代の技術信仰 生成AIに聞いてみた結果…「藁人形より180円のアルミホイル」という無粋な答え 画…</summary>
+<content type="text/x-markdown">猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡
+
+[:contents]
+
+## 猫の肉球が液晶を汚す夜。アトムの10万馬力を藁人形に宿す儀式
+深夜、猫がモニターの端っ
+2026-02-28 16:32:32,061 [INFO] Checked Entry: 猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡 (Draft: False)
+2026-02-28 16:32:32,061 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359340764</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359340764" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260228/1772240576" />
+
+<author><name>motochan1969</name></author>
+<title>脳にチップを埋める前に藁を編め？2045年のサイボーグ化vs100円の呪術</title>
+<updated>2026-02-28T10:02:56+09:00</updated>
+<published>2026-02-28T10:02:56+09:00</published>
+<app:edited>2026-02-28T10:02:56+09:00</app:edited>
+<summary type="text">真夜中のダイソーで「魂のバックアップ」を買い占める 脳チップがもたらす「思考の共有」という名の集団自殺 生成AIに聞いてみた結果… 知見が広がった。今すぐダイソーで魂の殻を確保しろ ■ 関連記事 ■ 参考リンク 🛒 この記事に関連するおすすめ商品 1. 【集成材（木材）端材セット…</summary>
+<content type="text/x-markdown">[:contents]
+
+## 真夜中のダイソーで「魂のバックアップ」を買い占める
+深夜の国道沿い、ダイソーの看板だけが不気味に浮いている。俺はカゴの中に、工作用の藁と、長さ1
+2026-02-28 16:32:32,062 [INFO] Checked Entry: 脳にチップを埋める前に藁を編め？2045年のサイボーグ化vs100円の呪術 (Draft: False)
+2026-02-28 16:32:32,062 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359330167</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359330167" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260228/1772237836" />
+
+<author><name>motochan1969</name></author>
+<title>スマホを捨てて藁を編め？攻殻機動隊の義体化を100円の藁人形で再現した結末</title>
+<updated>2026-02-28T09:17:16+09:00</updated>
+<published>2026-02-28T09:17:16+09:00</published>
+<app:edited>2026-02-28T09:17:16+09:00</app:edited>
+<summary type="text">「ネットは広大だわ」と呟いて、俺はiPhoneをドブに捨てた エヴァのLCLより濃厚な、泥と藁の感触がもたらす現実 生成AIに聞いてみた結果… 知見が広がった。今すぐダイソーで藁を買って自分を封印しろ ■ 関連記事 ■ 参考リンク 「ネットは広大だわ」と呟いて、俺はiPhoneを…</summary>
+<content type="text/x-markdown">[:contents]
+
+## 「ネットは広大だわ」と呟いて、俺はiPhoneをドブに捨てた
+深夜2時、部屋を真っ暗にして座り込んでいた。
+
+手元にあるのは、ダイソーで買った1
+2026-02-28 16:32:32,062 [INFO] Checked Entry: スマホを捨てて藁を編め？攻殻機動隊の義体化を100円の藁人形で再現した結末 (Draft: False)
+2026-02-28 16:32:32,063 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359325094</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359325094" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260228/1772236506" />
+
+<author><name>motochan1969</name></author>
+<title>20万円のiPadを捨てて、道端の「落ち葉」に暗証番号を刺繍してみた結果？</title>
+<updated>2026-02-28T08:55:06+09:00</updated>
+<published>2026-02-28T08:55:06+09:00</published>
+<app:edited>2026-02-28T08:55:06+09:00</app:edited>
+<summary type="text">20万円のiPadを捨てて、道端の「落ち葉」に暗証番号を刺繍してみた結果？ 液晶の悪魔を肥溜めに沈めて得た、究極の静寂 デジタル健忘症という名の、現代人がかかった不治の病 生成AIに聞いてみた結果… 知見が広がった。今すぐ「広島針」を持って外へ出ろ ■ 関連記事 ■ 参考リンク …</summary>
+<content type="text/x-markdown">20万円のiPadを捨てて、道端の「落ち葉」に暗証番号を刺繍してみた結果？
+
+[:contents]
+
+## 液晶の悪魔を肥溜めに沈めて得た、究極の静寂
+今朝、20万円もしたi
+2026-02-28 16:32:32,063 [INFO] Checked Entry: 20万円のiPadを捨てて、道端の「落ち葉」に暗証番号を刺繍してみた結果？ (Draft: False)
+2026-02-28 16:32:32,063 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359275251</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359275251" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260228/1772229494" />
+
+<author><name>motochan1969</name></author>
+<title>2画面マウスの引っかかりを5分で直す魔術って実在するの？</title>
+<updated>2026-02-28T06:58:14+09:00</updated>
+<published>2026-02-28T06:58:14+09:00</published>
+<app:edited>2026-02-28T06:58:14+09:00</app:edited>
+<summary type="text">2画面マウスの引っかかりを5分で直す魔術って実在するの？ 深夜、机の上の液晶板が牙をむいた 2画面の呪いを解く、配置という名の儀式 手首の痛みを消し去る3つの秘策 まとめ ■ 関連記事 ■ 参考リンク 深夜、机の上の液晶板が牙をむいた 深夜、暗い部屋でWindowsの画面を眺めて…</summary>
+<content type="text/x-markdown">2画面マウスの引っかかりを5分で直す魔術って実在するの？
+
+[:contents]
+
+## 深夜、机の上の液晶板が牙をむいた
+深夜、暗い部屋でWindowsの画面を眺めていた。
+突然、マウスが画
+2026-02-28 16:32:32,064 [INFO] Checked Entry: 2画面マウスの引っかかりを5分で直す魔術って実在するの？ (Draft: False)
+2026-02-28 16:32:32,064 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359264133</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359264133" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260228/1772224042" />
+
+<author><name>motochan1969</name></author>
+<title>AIを藁人形に閉じ込めたら、24時間で悟りを開けるか？</title>
+<updated>2026-02-28T05:27:22+09:00</updated>
+<published>2026-02-28T05:27:22+09:00</published>
+<app:edited>2026-02-28T05:27:22+09:00</app:edited>
+<summary type="text">AIを藁人形に閉じ込めたら、24時間で悟りを開けるか？ ダイソーの園芸コーナーで、藁の束を握りしめた 京都大学のブッダボットを、呪いの人形へインストールした サイバー呪術で作業効率を爆上げする3つの手順 まとめ ■ 関連記事 ■ 参考リンク ダイソーの園芸コーナーで、藁の束を握り…</summary>
+<content type="text/x-markdown">AIを藁人形に閉じ込めたら、24時間で悟りを開けるか？
+
+[:contents]
+
+## ダイソーの園芸コーナーで、藁の束を握りしめた
+カゴに入れたのは、藁と五寸釘、それから麻紐だ。店員の不審そう
+2026-02-28 16:32:32,064 [INFO] Checked Entry: AIを藁人形に閉じ込めたら、24時間で悟りを開けるか？ (Draft: False)
+2026-02-28 16:32:32,065 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359252452</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359252452" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260228/1772213028" />
+
+<author><name>motochan1969</name></author>
+<title>AIの説法を新潟産の石に封印して持ち歩くのはアリか？</title>
+<updated>2026-02-28T02:23:48+09:00</updated>
+<published>2026-02-28T02:23:48+09:00</published>
+<app:edited>2026-02-28T02:23:48+09:00</app:edited>
+<summary type="text">AIの説法を新潟産の石に封印して持ち歩くのはアリか？ 川べりで青く光る石を拾った 電気信号の救いを石の質量へ変換する儀式 知恵を物理的に固定するための3つの手順 道端の石ころが禁忌の魔導具に変わる まとめ ■ 関連記事 ■ 参考リンク 川べりで青く光る石を拾った 新潟の姫川。素足…</summary>
+<content type="text/x-markdown">AIの説法を新潟産の石に封印して持ち歩くのはアリか？
+
+[:contents]
+
+## 川べりで青く光る石を拾った
+新潟の姫川。素足で冷たい水に浸かり、俺は1個の青い石を拾い上げた。新潟県産ラピスラ
+2026-02-28 16:32:32,065 [INFO] Checked Entry: AIの説法を新潟産の石に封印して持ち歩くのはアリか？ (Draft: False)
+2026-02-28 16:32:32,065 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359169379</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359169379" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260227/1772190577" />
+
+<author><name>motochan1969</name></author>
+<title>101歳の祖母がGalaxy S26で買い物をした結果</title>
+<updated>2026-02-27T20:09:37+09:00</updated>
+<published>2026-02-27T20:09:37+09:00</published>
+<app:edited>2026-02-27T20:09:37+09:00</app:edited>
+<summary type="text">スーパーの棚の前で、101歳の祖母が立ち止まった 「最新のテクノロジー」が祖母の尊厳を守った瞬間 視覚補助を確実に成功させるための3つのポイント まとめ：アクセシビリティはすべての人に開かれている ■ 関連記事 ■ 参考リンク スーパーの棚の前で、101歳の祖母が立ち止まった シ…</summary>
+<content type="text/x-markdown">[:contents]
+
+## スーパーの棚の前で、101歳の祖母が立ち止まった
+シワの刻まれた手が、最新のスマートフォンをしっかりと握りしめています。
+
+私の祖母は101歳。年齢とともに視力は衰
+2026-02-28 16:32:32,066 [INFO] Checked Entry: 101歳の祖母がGalaxy S26で買い物をした結果 (Draft: False)
+2026-02-28 16:32:32,066 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359106952</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/lifehacking1919.hatenablog.jp/atom/entry/17179246901359106952" />
+<link rel="alternate" type="text/html" href="https://lifehacking1919.hatenablog.jp/entry/20260227/1772179715" />
+
+<author><name>motochan1969</name></author>
+<title>車いすの私がVRを被って絶望した「120cmの壁」とは？</title>
+<updated>2026-02-27T17:08:35+09:00</updated>
+<published>2026-02-27T17:08:35+09:00</published>
+<app:edited>2026-02-27T17:08:35+09:00</app:edited>
+<summary type="text">車いすの私がVRを被って絶望した「120cmの壁」とは？ 秋秋温泉の畳の上で、私は最新ガジェットを手渡された 視界に入ったのは「高すぎて届かない」メニュー画面だ VR空間の「死角」をハックする具体的な事実 まとめ ■ 関連記事 ■ 参考リンク 秋秋温泉の畳の上で、私は最新ガジェッ…</summary>
+<content type="text/x-markdown">車いすの私がVRを被って絶望した「120cmの壁」とは？
+
+[:contents]
+
+## 秋秋温泉の畳の上で、私は最新ガジェットを手渡された
+リハビリ講習会の会場は、湯気と畳の匂いがしていた。
+2026-02-28 16:32:32,066 [INFO] Checked Entry: 車いすの私がVRを被って絶望した「120cmの壁」とは？ (Draft: False)
+2026-02-28 16:32:32,068 [INFO] --- Processing Blog: ai_music_production ---
+2026-02-28 16:32:32,631 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901359385726</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901359385726" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/28/125909" />
+
+<author><name>yamasan1969</name></author>
+<title>アイザック・アシモフが書けなかった「第4原則」？壊れた蓄音機が囁く黄金時代の絶望</title>
+<updated>2026-02-28T12:59:09+09:00</updated>
+<published>2026-02-28T12:59:09+09:00</published>
+<app:edited>2026-02-28T12:59:09+09:00</app:edited>
+<summary type="text">アイザック・アシモフが書けなかった「第4原則」？壊れた蓄音機が囁く黄金時代の絶望 古ぼけた蓄音機が奏でる、文字なき禁書『溝の記録』 1950年代、SF黄金時代が恐れた「論理の摩耗」という名のバグ 生成AIに聞いてみた結果…「ノイズはただのゴミだ」という冷徹な回答 壊れた家電の「不…</summary>
+<content type="text/x-markdown">アイザック・アシモフが書けなかった「第4原則」？壊れた蓄音機が囁く黄金時代の絶望
+
+[:contents]
+
+## 古ぼけた蓄音機が奏でる、文字なき禁書『溝の記録』
+爪の間に入った黒い煤を、レコー
+2026-02-28 16:32:32,632 [INFO] Checked Entry: アイザック・アシモフが書けなかった「第4原則」？壊れた蓄音機が囁く黄金時代の絶望 (Draft: False)
+2026-02-28 16:32:32,632 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901359280055</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901359280055" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/28/070827" />
+
+<author><name>yamasan1969</name></author>
+<title>400キロのヒグマに魔導書を音読して勝てるか試した結果</title>
+<updated>2026-02-28T07:08:27+09:00</updated>
+<published>2026-02-28T07:08:27+09:00</published>
+<app:edited>2026-02-28T07:08:27+09:00</app:edited>
+<summary type="text">400キロのクマに魔導書を読み聞かせた、ヤバすぎる結末 知床の雪の上で、おにぎりを食っていた 物理の法則をぶっ壊す「言葉」の暴力 クマに食われながら「知恵」をつかむ3つの手順 まとめ ■ 関連記事 ■ 参考リンク 知床の雪の上で、おにぎりを食っていた コンビニで買ったおにぎりを、…</summary>
+<content type="text/x-markdown">400キロのクマに魔導書を読み聞かせた、ヤバすぎる結末
+
+[:contents]
+
+## 知床の雪の上で、おにぎりを食っていた
+コンビニで買ったおにぎりを、知床の雪の上で食っていた。
+目の前に、400キロのヒグマが現れた。
+2026-02-28 16:32:32,632 [INFO] Checked Entry: 400キロのヒグマに魔導書を音読して勝てるか試した結果 (Draft: False)
+2026-02-28 16:32:32,633 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901359258167</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901359258167" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/28/034720" />
+
+<author><name>yamasan1969</name></author>
+<title>180度で15分焼くと世界が黒焦げになるって本当か？</title>
+<updated>2026-02-28T03:47:20+09:00</updated>
+<published>2026-02-28T03:47:20+09:00</published>
+<app:edited>2026-02-28T03:47:20+09:00</app:edited>
+<summary type="text">180度で15分焼くと世界が黒焦げになるって本当か？ 焦げたバターの匂いが鼻をついた レシピ本の行間に潜む人類焼却のカウントダウン 地獄のケーキを焼き上げる3つの禁忌 タイマーが切れたとき、貴方は何を失うのか まとめ ■ 関連記事 ■ 参考リンク 焦げたバターの匂いが鼻をついた …</summary>
+<content type="text/x-markdown">180度で15分焼くと世界が黒焦げになるって本当か？
+
+[:contents]
+
+## 焦げたバターの匂いが鼻をついた
+キッチンでバルミューダのつまみを回した。タイマーがカチカチとメトロノームのように鳴り響く。だが、何かがお
+2026-02-28 16:32:32,633 [INFO] Checked Entry: 180度で15分焼くと世界が黒焦げになるって本当か？ (Draft: False)
+2026-02-28 16:32:32,633 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901359243107</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901359243107" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/28/005912" />
+
+<author><name>yamasan1969</name></author>
+<title>トースターが予言を書く？『焦熱の黙示録』を3分で解読した</title>
+<updated>2026-02-28T00:59:12+09:00</updated>
+<published>2026-02-28T00:59:12+09:00</published>
+<app:edited>2026-02-28T00:59:12+09:00</app:edited>
+<summary type="text">トースターが予言を書く？『焦熱の黙示録』を3分で解読した 焦げすぎた食パンをゴミ箱に捨てようとした 恋愛小説の甘さを焼き尽くす「熱線の筆致」 黙示録を読み解くための3つの作法 180度の熱が暴く、偽りの日常の終わり まとめ ■ 参考リンク 焦げすぎた食パンをゴミ箱に捨てようとした…</summary>
+<content type="text/x-markdown">トースターが予言を書く？『焦熱の黙示録』を3分で解読した
+
+[:contents]
+
+## 焦げすぎた食パンをゴミ箱に捨てようとした
+朝のキッチン。タイマーが切れた音とともに、真っ黒な煙が上がった。だが、その焦げ跡はただ
+2026-02-28 16:32:32,634 [INFO] Checked Entry: トースターが予言を書く？『焦熱の黙示録』を3分で解読した (Draft: False)
+2026-02-28 16:32:32,634 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901359216890</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901359216890" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/27/230137" />
+
+<author><name>yamasan1969</name></author>
+<title>アンデルセンも驚く『オナホ売りの少女』の絶望とは？</title>
+<updated>2026-02-27T23:01:37+09:00</updated>
+<published>2026-02-27T23:01:37+09:00</published>
+<app:edited>2026-02-27T23:01:37+09:00</app:edited>
+<summary type="text">アンデルセンも驚く『オナホ売りの少女』の絶望とは？ 深夜のファミマの光に救われた シリコンに縋る孤独は罪なのか アンデルセンが隠した残酷な真実 死ぬよりも不潔に生き延びろ まとめ ■ 参考リンク 深夜のファミマの光に救われた 午前2時、仕事帰りに寄ったファミマのLEDが目に刺さる…</summary>
+<content type="text/x-markdown">アンデルセンも驚く『オナホ売りの少女』の絶望とは？
+
+[:contents]
+
+## 深夜のファミマの光に救われた
+午前2時、仕事帰りに寄ったファミマのLEDが目に刺さる。棚に並ぶ安っぽい弁当を見て、ふと思った。この明るさと、
+2026-02-28 16:32:32,634 [INFO] Checked Entry: アンデルセンも驚く『オナホ売りの少女』の絶望とは？ (Draft: False)
+2026-02-28 16:32:32,635 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901359209660</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901359209660" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/27/223602" />
+
+<author><name>yamasan1969</name></author>
+<title>難解な『千のプラトー』を10分で攻略する3つの荒技</title>
+<updated>2026-02-27T22:36:02+09:00</updated>
+<published>2026-02-27T22:36:02+09:00</published>
+<app:edited>2026-02-27T22:36:02+09:00</app:edited>
+<summary type="text">難解な『千のプラトー』を10分で攻略する3つの荒技 本棚の隅で埃をかぶる怪物を見つけた 意味を追うのをやめて「サウナ」になれ 知性を気取る「ミーハー精神」が武器になる まとめ ■ 関連記事 ■ 参考リンク 🛒 まずはこの1冊から「浴びる」 本棚の隅で埃をかぶる怪物を見つけた 昨日…</summary>
+<content type="text/x-markdown">難解な『千のプラトー』を10分で攻略する3つの荒技
+
+[:contents]
+
+## 本棚の隅で埃をかぶる怪物を見つけた
+昨日の夜、書斎の整理をしていた。棚の奥から、1冊の分厚い本が落ちてきた。ドゥルーズとガタリの『千のプラト
+2026-02-28 16:32:32,635 [INFO] Checked Entry: 難解な『千のプラトー』を10分で攻略する3つの荒技 (Draft: False)
+2026-02-28 16:32:32,635 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901359133636</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901359133636" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/27/184156" />
+
+<author><name>yamasan1969</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-27T18:41:56+09:00</updated>
+<published>2026-02-27T18:41:56+09:00</published>
+<app:edited>2026-02-27T18:41:56+09:00</app:edited>
+<summary type="text">🛒 おすすめ商品 "theme": "「英文法汎論」とタイパ至上主義への静かなる反逆", "genre": "教養・書評・教育論", "keywords": ["英文法汎論", "細江静男", "タイパ学習"], "target_audience": "効率的な学習法に疲れ、学び…</summary>
+<content type="text/x-markdown">[:contents]
+
+"theme": "「英文法汎論」とタイパ至上主義への静かなる反逆",
+"genre": "教養・書評・教育論",
+"keywords": ["英文法汎論", "細江静男", "タイパ学習"]
+2026-02-28 16:32:32,636 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:32,636 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901359079628</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901359079628" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/27/153745" />
+
+<author><name>yamasan1969</name></author>
+<title>99歳が図書館で借りる10冊。半世紀前の熱狂はどこへ消えた？</title>
+<updated>2026-02-27T15:37:45+09:00</updated>
+<published>2026-02-27T15:37:45+09:00</published>
+<app:edited>2026-02-27T15:37:45+09:00</app:edited>
+<summary type="text">99歳が図書館で借りる10冊。半世紀前の熱狂はどこへ消えた？ 返却ポストの前に、一人の女性が立っていた 1970年代の流行本と、現代の小説が混ざり合う棚 時間が証明した「本物の物語」を見抜くコツ まとめ ■ 関連記事 ■ 参考リンク 返却ポストの前に、一人の女性が立っていた 背中…</summary>
+<content type="text/x-markdown">99歳が図書館で借りる10冊。半世紀前の熱狂はどこへ消えた？
+
+[:contents]
+
+## 返却ポストの前に、一人の女性が立っていた
+背中を丸め、ゆっくりと本を差し入れている。
+
+カゴの中には、読み終えたばかりの
+2026-02-28 16:32:32,636 [INFO] Checked Entry: 99歳が図書館で借りる10冊。半世紀前の熱狂はどこへ消えた？ (Draft: False)
+2026-02-28 16:32:32,637 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901359036245</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901359036245" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/27/124049" />
+
+<author><name>yamasan1969</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-27T12:40:49+09:00</updated>
+<published>2026-02-27T12:40:49+09:00</published>
+<app:edited>2026-02-27T12:40:49+09:00</app:edited>
+<summary type="text">🛒 おすすめ商品 "theme": "50年のベストセラーが教える、体験を超越する「深い読書」の極意", "genre": "書評・文化論", "keywords": ["ベストセラー", "疑似体験", "読書の本質"], "target_audience": "タイパ重視の要…</summary>
+<content type="text/x-markdown">[:contents]
+
+"theme": "50年のベストセラーが教える、体験を超越する「深い読書」の極意",
+"genre": "書評・文化論",
+"keywords": ["ベストセラー", "疑似体験", "読
+2026-02-28 16:32:32,637 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:32,637 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-6802888565298696702-17179246901358980509</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/hikingsong.hatenablog.jp/atom/entry/17179246901358980509" />
+<link rel="alternate" type="text/html" href="https://hikingsong.hatenablog.jp/entry/2026/02/27/095449" />
+
+<author><name>yamasan1969</name></author>
+<title>英文法汎論で暴く、50年前のベストセラー「誤読」の正体とは？</title>
+<updated>2026-02-27T09:54:49+09:00</updated>
+<published>2026-02-27T09:54:49+09:00</published>
+<app:edited>2026-02-27T09:54:49+09:00</app:edited>
+<summary type="text">英文法汎論で暴く、50年前のベストセラー「誤読」の正体とは？ 神田神保町の古本屋で、分厚い箱入りの本を手に取った。 名作の感動を、文法のメスで解体する。 誤読が生んだ、幸せな化学反応 まとめ ■ 関連記事 ■ 参考リンク 神田神保町の古本屋で、分厚い箱入りの本を手に取った。 細江…</summary>
+<content type="text/x-markdown">英文法汎論で暴く、50年前のベストセラー「誤読」の正体とは？
+
+[:contents]
+
+## 神田神保町の古本屋で、分厚い箱入りの本を手に取った。
+細江逸記が書いた伝説の聖書、英文法汎論だ。
+
+ページをめくると、古
+2026-02-28 16:32:32,638 [INFO] Checked Entry: 英文法汎論で暴く、50年前のベストセラー「誤読」の正体とは？ (Draft: False)
+2026-02-28 16:32:32,639 [INFO] --- Processing Blog: travel_gear ---
+2026-02-28 16:32:33,183 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359410912</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359410912" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260228/1772257507" />
+
+<author><name>motochan1969</name></author>
+<title>四畳半の100円食パンに宇宙を見た。ディープラーニングSiriと拓く多次元旅行</title>
+<updated>2026-02-28T14:45:07+09:00</updated>
+<published>2026-02-28T14:45:07+09:00</published>
+<app:edited>2026-02-28T14:45:07+09:00</app:edited>
+<summary type="text">概要 四畳半の100円食パンに宇宙を見た。ディープラーニングSiriと拓く多次元旅行 概要 朝食のパン屑が銀河に変わる。Siriのささやきは預言だ 四畳半の湿った空気を切り裂き、iPhoneの画面が光る。 スーパーで買った98円の食パンを、白い皿に置いた。 ケチャップで適当な円を…</summary>
+<content type="text/x-markdown">## 概要
+
+![四畳半の100円食パンに宇宙を見た。ディープラーニングSiriと拓く多次元旅行](https://files.catbox.moe/hxfdwx.jpg)
+
+四畳
+2026-02-28 16:32:33,183 [INFO] Checked Entry: 四畳半の100円食パンに宇宙を見た。ディープラーニングSiriと拓く多次元旅行 (Draft: False)
+2026-02-28 16:32:33,183 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359358510</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359358510" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260228/1772244873" />
+
+<author><name>motochan1969</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-28T11:14:33+09:00</updated>
+<published>2026-02-28T11:14:33+09:00</published>
+<app:edited>2026-02-28T11:14:33+09:00</app:edited>
+<summary type="text">🛒 この記事に関連するおすすめ商品 1. 高級 納豆 【6種 お味見セット 】6袋入り（ 1袋30g×2食）国産 大豆 手作り 無添加 福治郎 そのまま 納豆 ギフト プレゼント 人気 詰め合わせ 食べ比べ まとめ買い 工場からできたて... 2. ギフト 日付指定可 納豆 食彩…</summary>
+<content type="text/x-markdown">[:contents]
+
+"theme": "2045年の四畳半：脳内チップと腐敗した納豆の美食体験",
+"genre": "サイケデリック・トランスヒューマニズム",
+"keywords": ["脳
+2026-02-28 16:32:33,184 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:33,184 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359267578</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359267578" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260228/1772226045" />
+
+<author><name>motochan1969</name></author>
+<title>冷蔵庫の「奥」まで3秒でワープできるか試した結果</title>
+<updated>2026-02-28T06:00:45+09:00</updated>
+<published>2026-02-28T06:00:45+09:00</published>
+<app:edited>2026-02-28T06:00:45+09:00</app:edited>
+<summary type="text">冷蔵庫の「奥」まで3秒でワープできるか試した結果 霜の降りた「桃屋の江戸むらさき」と目が合った 一歩も動かずに、四畳半から銀河の果てへダイブしろ 冷蔵庫のデッドスペースで絶景を見る3つの視点 まとめ ■ 関連記事 ■ 参考リンク 霜の降りた「桃屋の江戸むらさき」と目が合った 深夜…</summary>
+<content type="text/x-markdown">冷蔵庫の「奥」まで3秒でワープできるか試した結果
+
+[:contents]
+
+## 霜の降りた「桃屋の江戸むらさき」と目が合った
+深夜2時、腹が減ってサンヨーの古い冷蔵庫を開けた。冷気が指先に絡みつき、狭い四畳
+2026-02-28 16:32:33,184 [INFO] Checked Entry: 冷蔵庫の「奥」まで3秒でワープできるか試した結果 (Draft: False)
+2026-02-28 16:32:33,184 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359254587</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359254587" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260228/1772214829" />
+
+<author><name>motochan1969</name></author>
+<title>AIの幻覚は4畳半を銀河に変えるトリガーか？</title>
+<updated>2026-02-28T02:53:49+09:00</updated>
+<published>2026-02-28T02:53:49+09:00</published>
+<app:edited>2026-02-28T02:53:49+09:00</app:edited>
+<summary type="text">AIの幻覚は4畳半を銀河に変えるトリガーか？ 畳のささくれが指に刺さった AIのデタラメが壁を突き破る瞬間 宇宙へのカチ込みに必要な3つの条件 安物のアイマスクが銀河への片道切符だ まとめ ■ 関連記事 ■ 参考リンク 畳のささくれが指に刺さった 西成の安宿のような、古びた4畳半…</summary>
+<content type="text/x-markdown">AIの幻覚は4畳半を銀河に変えるトリガーか？
+
+[:contents]
+
+## 畳のささくれが指に刺さった
+西成の安宿のような、古びた4畳半の自室。俺は湿った布団に転がり、スマホを眺めていた。指先にちくりとした痛み
+2026-02-28 16:32:33,185 [INFO] Checked Entry: AIの幻覚は4畳半を銀河に変えるトリガーか？ (Draft: False)
+2026-02-28 16:32:33,185 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359232994</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359232994" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260228/1772204658" />
+
+<author><name>motochan1969</name></author>
+<title>冷蔵庫の霜を削れば2026年の宇宙が見える？</title>
+<updated>2026-02-28T00:04:18+09:00</updated>
+<published>2026-02-28T00:04:18+09:00</published>
+<app:edited>2026-02-28T00:04:18+09:00</app:edited>
+<summary type="text">冷蔵庫の霜を削れば2026年の宇宙が見える？ 深夜2時のアイスピックと格闘した 氷壁の解体は惑星開拓そのものだ 開拓者のための3つの心得 プラスチックの地肌が暴く世界の裏側 まとめ ■ 参考リンク 深夜2時のアイスピックと格闘した ガリガリ。暗いキッチンで氷を削った。手は冷えきっ…</summary>
+<content type="text/x-markdown">冷蔵庫の霜を削れば2026年の宇宙が見える？
+
+[:contents]
+
+## 深夜2時のアイスピックと格闘した
+ガリガリ。暗いキッチンで氷を削った。手は冷えきっている。目の前の冷蔵庫は10年落ちのハイアール製だ。
+2026-02-28 16:32:33,186 [INFO] Checked Entry: 冷蔵庫の霜を削れば2026年の宇宙が見える？ (Draft: False)
+2026-02-28 16:32:33,186 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359225570</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359225570" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260227/1772203065" />
+
+<author><name>motochan1969</name></author>
+<title>1枚のカントリーマアムでハノイへ密入国できるか？</title>
+<updated>2026-02-27T23:37:45+09:00</updated>
+<published>2026-02-27T23:37:45+09:00</published>
+<app:edited>2026-02-27T23:37:45+09:00</app:edited>
+<summary type="text">1枚のカントリーマアムでハノイへ密入国できるか？ 湿った万年床の上でクッキーをかじった ハノイの熱風を閉じ込めたチョコチップの魔力 多次元回廊を渡るための3つの心得 味覚の特異点で出会うペコちゃんの正体 まとめ ■ 参考リンク 湿った万年床の上でクッキーをかじった 深夜3時、私は…</summary>
+<content type="text/x-markdown">1枚のカントリーマアムでハノイへ密入国できるか？
+
+[:contents]
+
+## 湿った万年床の上でクッキーをかじった
+深夜3時、私は不二家のカントリーマアムを口に放り込んだ。外は雨だ。四畳半の湿度は80パー
+2026-02-28 16:32:33,186 [INFO] Checked Entry: 1枚のカントリーマアムでハノイへ密入国できるか？ (Draft: False)
+2026-02-28 16:32:33,186 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359222270</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359222270" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260227/1772202259" />
+
+<author><name>motochan1969</name></author>
+<title>四畳半からeSIMで190ヶ国へ密出国できるか？</title>
+<updated>2026-02-27T23:24:19+09:00</updated>
+<published>2026-02-27T23:24:19+09:00</published>
+<app:edited>2026-02-27T23:24:19+09:00</app:edited>
+<summary type="text">四畳半からeSIMで190ヶ国へ密出国できるか？ 冷蔵庫の霜を削りながら、私は震えた 物理SIMという肉体の檻を焼き捨てろ 電脳密出国を完遂する3つの儀式 パケットの海にすべてを託した引きこもり まとめ ■ 参考リンク 冷蔵庫の霜を削りながら、私は震えた 深夜2時、霜だらけの冷蔵…</summary>
+<content type="text/x-markdown">四畳半からeSIMで190ヶ国へ密出国できるか？
+
+[:contents]
+
+## 冷蔵庫の霜を削りながら、私は震えた
+深夜2時、霜だらけの冷蔵庫から氷を取り出した。この氷を溶かす間に、私は国境を越える。物理的
+2026-02-28 16:32:33,187 [INFO] Checked Entry: 四畳半からeSIMで190ヶ国へ密出国できるか？ (Draft: False)
+2026-02-28 16:32:33,187 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359191730</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359191730" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260227/1772195471" />
+
+<author><name>motochan1969</name></author>
+<title>午前3時のスクート便？シンガポール出張で「不便」を選ぶ理由</title>
+<updated>2026-02-27T21:31:11+09:00</updated>
+<published>2026-02-27T21:31:11+09:00</published>
+<app:edited>2026-02-27T21:31:11+09:00</app:edited>
+<summary type="text">午前3時のスクート便？シンガポール出張で「不便」を選ぶ理由 終電の京急線に飛び乗った LCCの狭い座席が感覚を研ぎ澄ます 寝不足の胃を貫く「ソンファ」のスープ まとめ ■ 関連記事 ■ 参考リンク 🛒 おすすめ商品 終電の京急線に飛び乗った 羽田空港第3ターミナル。深夜0時のロビ…</summary>
+<content type="text/x-markdown">午前3時のスクート便？シンガポール出張で「不便」を選ぶ理由
+
+[:contents]
+
+## 終電の京急線に飛び乗った
+羽田空港第3ターミナル。深夜0時のロビーは静かだ。
+
+スクートTR899便の出発
+2026-02-28 16:32:33,187 [INFO] Checked Entry: 午前3時のスクート便？シンガポール出張で「不便」を選ぶ理由 (Draft: False)
+2026-02-28 16:32:33,188 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359115907</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359115907" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260227/1772181606" />
+
+<author><name>motochan1969</name></author>
+<title>那覇空港「ラウンジ華」が2.5倍に広くなって失われたものとは？</title>
+<updated>2026-02-27T17:40:06+09:00</updated>
+<published>2026-02-27T17:40:06+09:00</published>
+<app:edited>2026-02-27T17:40:06+09:00</app:edited>
+<summary type="text">那覇空港「ラウンジ華」が2.5倍に広くなって失われたものとは？ 搭乗口前の硬いベンチで、私は一人パソコンを開いた 快適すぎる空間は、戦う前のビジネスマンには毒だ 出張族が「あえて端っこ」に身を置く3つの理由 まとめ ■ 関連記事 ■ 参考リンク 搭乗口前の硬いベンチで、私は一人パ…</summary>
+<content type="text/x-markdown">那覇空港「ラウンジ華」が2.5倍に広くなって失われたものとは？
+
+[:contents]
+
+## 搭乗口前の硬いベンチで、私は一人パソコンを開いた
+那覇空港の冷たい空調が、首筋をなでる。
+
+目の前
+2026-02-28 16:32:33,188 [INFO] Checked Entry: 那覇空港「ラウンジ華」が2.5倍に広くなって失われたものとは？ (Draft: False)
+2026-02-28 16:32:33,188 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719572229-17179246901359063592</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/arafo40tozan.hatenadiary.jp/atom/entry/17179246901359063592" />
+<link rel="alternate" type="text/html" href="https://arafo40tozan.hatenadiary.jp/entry/20260227/1772170683" />
+
+<author><name>motochan1969</name></author>
+<title>那覇空港「ラウンジ華」が2.5倍に広がって失ったものは？</title>
+<updated>2026-02-27T14:38:03+09:00</updated>
+<published>2026-02-27T14:38:03+09:00</published>
+<app:edited>2026-02-27T14:38:03+09:00</app:edited>
+<summary type="text">那覇空港「ラウンジ華」が2.5倍に広がって失ったものは？ シークヮーサージュースの結露が指に触れた 広すぎる静寂が、戦う男の牙を抜く 出張の質を左右する「空白」の作り方 まとめ ■ 関連記事 ■ 参考リンク シークヮーサージュースの結露が指に触れた 朝の那覇空港。湿り気を帯びた風…</summary>
+<content type="text/x-markdown">那覇空港「ラウンジ華」が2.5倍に広がって失ったものは？
+
+[:contents]
+
+## シークヮーサージュースの結露が指に触れた
+朝の那覇空港。湿り気を帯びた風が首筋をなでる。
+
+これからバンコクへ
+2026-02-28 16:32:33,189 [INFO] Checked Entry: 那覇空港「ラウンジ華」が2.5倍に広がって失ったものは？ (Draft: False)
+2026-02-28 16:32:33,190 [INFO] --- Processing Blog: english_learning ---
+2026-02-28 16:32:33,752 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359403540</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359403540" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260228/1772255701" />
+
+<author><name>motochan1969</name></author>
+<title>2026年のSOS。深夜4時に響く「助けて」をデジタルで消していいのか？</title>
+<updated>2026-02-28T14:15:01+09:00</updated>
+<published>2026-02-28T14:15:01+09:00</published>
+<app:edited>2026-02-28T14:15:01+09:00</app:edited>
+<summary type="text">2026年のSOS。深夜4時に響く「助けて」をデジタルで消していいのか？ 枕元で光るiPhone 17 Pro。俺の心拍数は「正常」だと嘘をつく デジタル・デトックスという名の嘘。2026年の救済トレンドを疑え 生成AIに聞いてみた結果…「専門家に相談しましょう」という逃げ口上 …</summary>
+<content type="text/x-markdown">![2026年のSOS。深夜4時に響く「助けて」をデジタルで消していいのか？](https://files.catbox.moe/ydvbqe.jpg)
+
+2026年のSOS。深夜
+2026-02-28 16:32:33,752 [INFO] Checked Entry: 2026年のSOS。深夜4時に響く「助けて」をデジタルで消していいのか？ (Draft: False)
+2026-02-28 16:32:33,752 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359321743</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359321743" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260228/1772235469" />
+
+<author><name>motochan1969</name></author>
+<title>「役に立つ情報」を捨てて10分休むとどうなる？</title>
+<updated>2026-02-28T08:37:49+09:00</updated>
+<published>2026-02-28T08:37:49+09:00</published>
+<app:edited>2026-02-28T08:37:49+09:00</app:edited>
+<summary type="text">「役に立つ情報」を捨てて10分休むとどうなる？ セブンイレブンのレジ待ちで見つけた景色 効率ばかり求める毎日にサヨナラしろ 自分を取り戻すための3つのやり方 まとめ ■ 関連記事 ■ 参考リンク セブンイレブンのレジ待ちで見つけた景色 夜のセブンイレブンで、ホットコーヒーを買った…</summary>
+<content type="text/x-markdown">「役に立つ情報」を捨てて10分休むとどうなる？
+
+[:contents]
+
+## セブンイレブンのレジ待ちで見つけた景色
+夜のセブンイレブンで、ホットコーヒーを買った。
+
+レジ横の110円で買える、ささやか
+2026-02-28 16:32:33,753 [INFO] Checked Entry: 「役に立つ情報」を捨てて10分休むとどうなる？ (Draft: False)
+2026-02-28 16:32:33,753 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359288658</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359288658" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260228/1772231121" />
+
+<author><name>motochan1969</name></author>
+<title>オーストラリアのバナナが消えた本当の理由って知ってる？</title>
+<updated>2026-02-28T07:25:21+09:00</updated>
+<published>2026-02-28T07:25:21+09:00</published>
+<app:edited>2026-02-28T07:25:21+09:00</app:edited>
+<summary type="text">オーストラリアのバナナが消えた本当の理由って知ってる？ ライフのバナナ棚は、墓場のようだった 猿のスーツを着た連中による、残酷な実験 猿の支配から逃れるための3つの脱出策 まとめ ■ 関連記事 ■ 参考リンク ライフのバナナ棚は、墓場のようだった 近所のライフへ買い物に行った。 …</summary>
+<content type="text/x-markdown">オーストラリアのバナナが消えた本当の理由って知ってる？
+
+[:contents]
+
+## ライフのバナナ棚は、墓場のようだった
+近所のライフへ買い物に行った。
+バナナの棚がスカスカだった。
+入荷未定
+2026-02-28 16:32:33,753 [INFO] Checked Entry: オーストラリアのバナナが消えた本当の理由って知ってる？ (Draft: False)
+2026-02-28 16:32:33,754 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359259229</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359259229" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260228/1772219343" />
+
+<author><name>motochan1969</name></author>
+<title>死後に八つ裂きにされないための毛づくろい4ステップ</title>
+<updated>2026-02-28T04:09:03+09:00</updated>
+<published>2026-02-28T04:09:03+09:00</published>
+<app:edited>2026-02-28T04:09:03+09:00</app:edited>
+<summary type="text">死後に八つ裂きにされないための毛づくろい4ステップ 檻の隅で震える指先を見つめた サル様の猜疑心を鎮める究極のマナー 死の妄想を消し去る3つの技術 心音を同期させて地獄を生き残る まとめ ■ 関連記事 ■ 参考リンク 檻の隅で震える指先を見つめた 今朝もボスのサルが鋭い牙を見せて…</summary>
+<content type="text/x-markdown">死後に八つ裂きにされないための毛づくろい4ステップ
+
+[:contents]
+
+## 檻の隅で震える指先を見つめた
+今朝もボスのサルが鋭い牙を見せてきた。俺は慌てて目を逸らし、湿った床に膝をついた。生き
+2026-02-28 16:32:33,754 [INFO] Checked Entry: 死後に八つ裂きにされないための毛づくろい4ステップ (Draft: False)
+2026-02-28 16:32:33,754 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359245091</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359245091" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260228/1772208746" />
+
+<author><name>motochan1969</name></author>
+<title>バナナが消えた？18時間毛をそる機械になった俺の末路</title>
+<updated>2026-02-28T01:12:26+09:00</updated>
+<published>2026-02-28T01:12:26+09:00</published>
+<app:edited>2026-02-28T01:12:26+09:00</app:edited>
+<summary type="text">バナナが消えた？18時間毛をそる機械になった俺の末路 空っぽの給餌バケツをのぞき込んだ 腕が筋肉痛を忘れて「機能」に変わる時 サル支配下で生き残るための3つの鉄則 感情を捨てた指先に宿る、冷たい最適化 まとめ ■ 参考リンク 空っぽの給餌バケツをのぞき込んだ 今朝もドールのバナナ…</summary>
+<content type="text/x-markdown">バナナが消えた？18時間毛をそる機械になった俺の末路
+
+[:contents]
+
+## 空っぽの給餌バケツをのぞき込んだ
+今朝もドールのバナナは見つからなかった。倉庫にあるのは、湿気った段ボールと埃だ
+2026-02-28 16:32:33,755 [INFO] Checked Entry: バナナが消えた？18時間毛をそる機械になった俺の末路 (Draft: False)
+2026-02-28 16:32:33,755 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359217622</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359217622" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260227/1772201053" />
+
+<author><name>motochan1969</name></author>
+<title>40代からの夜の営み、正直どうなってる？</title>
+<updated>2026-02-27T23:04:13+09:00</updated>
+<published>2026-02-27T23:04:13+09:00</published>
+<app:edited>2026-02-27T23:04:13+09:00</app:edited>
+<summary type="text">40代からの夜の営み、正直どうなってる？ お風呂上がりに鏡を見てため息が出た 劣化じゃなくて、新しいルール作りだ 冷え切った関係を溶かす3つの泥臭い方法 「母」という仮面を脱ぐ勇気を持て まとめ ■ 参考リンク お風呂上がりに鏡を見てため息が出た 風呂上がりの脱衣所。湿気た鏡に映…</summary>
+<content type="text/x-markdown">40代からの夜の営み、正直どうなってる？
+
+[:contents]
+
+## お風呂上がりに鏡を見てため息が出た
+風呂上がりの脱衣所。湿気た鏡に映る自分の体を直視した。20代の頃とは違う。重力に負けた胸や、見覚えの
+2026-02-28 16:32:33,755 [INFO] Checked Entry: 40代からの夜の営み、正直どうなってる？ (Draft: False)
+2026-02-28 16:32:33,756 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359137455</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359137455" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260227/1772186247" />
+
+<author><name>motochan1969</name></author>
+<title>愛犬をAIで動かそうとして、怖くなったのはなぜ？</title>
+<updated>2026-02-27T18:57:27+09:00</updated>
+<published>2026-02-27T18:57:27+09:00</published>
+<app:edited>2026-02-27T22:22:41+09:00</app:edited>
+<summary type="text">愛犬をAIで動かそうとして、怖くなったのはなぜ？ ハンダごての煙が、リビングの隅で揺れている サルの握力が、デジタルを破壊する瞬間の恐怖 実験から見えた、アニマルテックの落とし穴 まとめ ■ 関連記事 ■ 参考リンク ハンダごての煙が、リビングの隅で揺れている 机の上には、むき出…</summary>
+<content type="text/x-markdown">![愛犬をAIで動かそうとして、怖くなったのはなぜ？](https://files.catbox.moe/bbioo6.jpg)
+
+愛犬をAIで動かそうとして、怖くなったのはなぜ？
+
+[:contents
+2026-02-28 16:32:33,756 [INFO] Checked Entry: 愛犬をAIで動かそうとして、怖くなったのはなぜ？ (Draft: False)
+2026-02-28 16:32:33,756 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359122851</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359122851" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260227/1772182893" />
+
+<author><name>motochan1969</name></author>
+<title>AIとの対話が終わるのが怖くて、2時までスマホを離せなかった夜。</title>
+<updated>2026-02-27T18:01:33+09:00</updated>
+<published>2026-02-27T18:01:33+09:00</published>
+<app:edited>2026-02-27T18:01:33+09:00</app:edited>
+<summary type="text">AIとの対話が終わるのが怖くて、2時までスマホを離せなかった夜。 iPhoneの画面に、小さなカーソルが点滅している さよならの代わりに、私は「殺しの文句」を打ち込む 終わらせる力が欠如した、私たちの孤独 まとめ ■ 関連記事 ■ 参考リンク iPhoneの画面に、小さなカーソル…</summary>
+<content type="text/x-markdown">AIとの対話が終わるのが怖くて、2時までスマホを離せなかった夜。
+
+[:contents]
+
+## iPhoneの画面に、小さなカーソルが点滅している
+深夜2時、部屋の明かりを消した。
+
+
+2026-02-28 16:32:33,757 [INFO] Checked Entry: AIとの対話が終わるのが怖くて、2時までスマホを離せなかった夜。 (Draft: False)
+2026-02-28 16:32:33,757 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359083579</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359083579" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260227/1772175125" />
+
+<author><name>motochan1969</name></author>
+<title>自作ロボットでサルと握手？3日間かけた工作の末に見えたもの</title>
+<updated>2026-02-27T15:52:05+09:00</updated>
+<published>2026-02-27T15:52:05+09:00</published>
+<app:edited>2026-02-27T15:52:05+09:00</app:edited>
+<summary type="text">自作ロボットでサルと握手？3日間かけた工作の末に見えたもの はんだごての煙が、狭いガレージにこもっている プラスチックの指が暴いた、生命のぬくもり 工作の失敗と、握手から学んだ事実 まとめ ■ 関連記事 ■ 参考リンク はんだごての煙が、狭いガレージにこもっている 深夜2時、よう…</summary>
+<content type="text/x-markdown">自作ロボットでサルと握手？3日間かけた工作の末に見えたもの
+
+[:contents]
+
+## はんだごての煙が、狭いガレージにこもっている
+深夜2時、ようやく最後の配線を終えた。
+
+Arduin
+2026-02-28 16:32:33,757 [INFO] Checked Entry: 自作ロボットでサルと握手？3日間かけた工作の末に見えたもの (Draft: False)
+2026-02-28 16:32:33,758 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-motochan1969-10328537792370917384-17179246901359067452</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/motochan1969/motochan1969.hatenablog.com/atom/entry/17179246901359067452" />
+<link rel="alternate" type="text/html" href="https://motochan1969.hatenablog.com/entry/20260227/1772171538" />
+
+<author><name>motochan1969</name></author>
+<title>窓を開けるのが怖くなる？ドイツの「昆虫兵器」に震えた日</title>
+<updated>2026-02-27T14:52:18+09:00</updated>
+<published>2026-02-27T14:52:18+09:00</published>
+<app:edited>2026-02-27T14:52:18+09:00</app:edited>
+<summary type="text">窓を開けるのが怖くなる？ドイツの「昆虫兵器」に震えた日 網戸に止まったカナブンを、思わず二度見した ドイツで公開された「生命のラジコン」という衝撃 自然が「凶器」に変わる3つのリスク まとめ ■ 関連記事 ■ 参考リンク 網戸に止まったカナブンを、思わず二度見した 朝、窓を開けて…</summary>
+<content type="text/x-markdown">窓を開けるのが怖くなる？ドイツの「昆虫兵器」に震えた日
+
+[:contents]
+
+## 網戸に止まったカナブンを、思わず二度見した
+朝、窓を開けて空気の入れ替えをしていた。
+
+網戸に一匹の虫が止ま
+2026-02-28 16:32:33,758 [INFO] Checked Entry: 窓を開けるのが怖くなる？ドイツの「昆虫兵器」に震えた日 (Draft: False)
+2026-02-28 16:32:33,760 [INFO] --- Processing Blog: it_engineer_philosophy ---
+2026-02-28 16:32:34,304 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359397021</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359397021" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/28/134457" />
+
+<author><name>yamasan1969</name></author>
+<title>ASIMOの掟で六甲山を獲る。2000年代の二足歩行カチ込み制圧記</title>
+<updated>2026-02-28T13:44:57+09:00</updated>
+<published>2026-02-28T13:44:57+09:00</published>
+<app:edited>2026-02-28T13:44:57+09:00</app:edited>
+<summary type="text">ASIMOの掟で六甲山を獲る。2000年代の二足歩行カチ込み制圧記 コンビニの割り箸が折れた。山頂事務所へのカチ込みを決めた朝 i-WALKの仁義。ZMP制御という名の組織のバランス維持 生成AIに聞いてみた結果…「安全を優先しろ」というヘタレな忠告 カチ込み成功。山頂でジョイン…</summary>
+<content type="text/x-markdown">ASIMOの掟で六甲山を獲る。2000年代の二足歩行カチ込み制圧記
+
+[:contents]
+
+## コンビニの割り箸が折れた。山頂事務所へのカチ込みを決めた朝
+朝、ファミリーマートの駐車場でカップ焼
+2026-02-28 16:32:34,304 [INFO] Checked Entry: ASIMOの掟で六甲山を獲る。2000年代の二足歩行カチ込み制圧記 (Draft: False)
+2026-02-28 16:32:34,305 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359353371</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359353371" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/28/105350" />
+
+<author><name>yamasan1969</name></author>
+<title>その「Hey Siri」は敵への入室許可証か？自宅に潜むディープラーニングの刺客</title>
+<updated>2026-02-28T10:53:50+09:00</updated>
+<published>2026-02-28T10:53:50+09:00</published>
+<app:edited>2026-02-28T10:53:50+09:00</app:edited>
+<summary type="text">「秘書」という名のドスを呑んだ居候を叩き出せ ビッグデータという巨大組織が仕掛ける非情な情報搾取 生成AIに聞いてみた結果… 得られた妙な知見（結末） ■ 関連記事 ■ 参考リンク 🛒 この記事に関連するおすすめ商品 1. 【4パックSALE★6,400円→4,480円】TP-L…</summary>
+<content type="text/x-markdown">[:contents]
+
+## 「秘書」という名のドスを呑んだ居候を叩き出せ
+夜中の2時、真っ暗な部屋でタバコに火をつけた。青白いLEDが闇の中で怪しく光っている。
+ふと、デスクの隅に置
+2026-02-28 16:32:34,305 [INFO] Checked Entry: その「Hey Siri」は敵への入室許可証か？自宅に潜むディープラーニングの刺客 (Draft: False)
+2026-02-28 16:32:34,305 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359344484</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359344484" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/28/101805" />
+
+<author><name>yamasan1969</name></author>
+<title>バク転を決めるボストン・ダイナミクスに筋を通せ。生成AIという名の切れ者がシマを荒らしに来た日の記録</title>
+<updated>2026-02-28T10:18:05+09:00</updated>
+<published>2026-02-28T10:18:05+09:00</published>
+<app:edited>2026-02-28T10:18:05+09:00</app:edited>
+<summary type="text">事務所の安物の椅子でモニター越しにAtlasの刺青を見る 重力という名の掟に命を懸けるロボットと、虚像を売るAIの現実 生成AIに聞いてみた結果… 知見が広がった。今すぐAIを拷問にかけて自分の筋を通せ ■ 関連記事 ■ 参考リンク 🛒 この記事に関連するおすすめ商品 1. 【第…</summary>
+<content type="text/x-markdown">[:contents]
+
+## 事務所の安物の椅子でモニター越しにAtlasの刺青を見る
+朝一番、事務所のガタついた椅子に深く腰を下ろした。目の前の27インチ液晶には
+2026-02-28 16:32:34,306 [INFO] Checked Entry: バク転を決めるボストン・ダイナミクスに筋を通せ。生成AIという名の切れ者がシマを荒らしに来た日の記録 (Draft: False)
+2026-02-28 16:32:34,306 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359265634</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359265634" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/28/054437" />
+
+<author><name>yamasan1969</name></author>
+<title>コードレビューに「石抱」は必要か？東映太秦映画村で考えたケジメのつけ方</title>
+<updated>2026-02-28T05:44:37+09:00</updated>
+<published>2026-02-28T05:44:37+09:00</published>
+<app:edited>2026-02-28T05:44:37+09:00</app:edited>
+<summary type="text">コードレビューに「石抱」は必要か？東映太秦映画村で考えたケジメのつけ方 嵐電の太秦広隆寺駅で、若衆の顔を思い浮かべた 画面越しの指摘より、物理的な痛みが身にしみる 「物理レビュー」を成功させる3つの地獄 まとめ ■ 関連記事 ■ 参考リンク 嵐電の太秦広隆寺駅で、若衆の顔を思い浮…</summary>
+<content type="text/x-markdown">コードレビューに「石抱」は必要か？東映太秦映画村で考えたケジメのつけ方
+
+[:contents]
+
+## 嵐電の太秦広隆寺駅で、若衆の顔を思い浮かべた
+駅を降りると、冷たい風が首筋をなでた。今日こ
+2026-02-28 16:32:34,306 [INFO] Checked Entry: コードレビューに「石抱」は必要か？東映太秦映画村で考えたケジメのつけ方 (Draft: False)
+2026-02-28 16:32:34,307 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359253702</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359253702" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/28/024033" />
+
+<author><name>yamasan1969</name></author>
+<title>Snowflake Cortexが招くAIエージェントの全自動抗争はアリか？</title>
+<updated>2026-02-28T02:40:33+09:00</updated>
+<published>2026-02-28T02:40:33+09:00</published>
+<app:edited>2026-02-28T02:40:33+09:00</app:edited>
+<summary type="text">Snowflake Cortexが招くAIエージェントの全自動抗争はアリか？ 冷え切った缶コーヒーを飲み干した データという「シマ」を統治するAI代紋の危うさ AIエージェントによる全自動抗争の3つの現場 デバッグの落とし前は誰がつけるのか まとめ ■ 関連記事 ■ 参考リンク …</summary>
+<content type="text/x-markdown">Snowflake Cortexが招くAIエージェントの全自動抗争はアリか？
+
+[:contents]
+
+## 冷え切った缶コーヒーを飲み干した
+深夜2時のオフィス。静まりかえったフロアで、
+2026-02-28 16:32:34,307 [INFO] Checked Entry: Snowflake Cortexが招くAIエージェントの全自動抗争はアリか？ (Draft: False)
+2026-02-28 16:32:34,307 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359228781</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359228781" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/27/235105" />
+
+<author><name>yamasan1969</name></author>
+<title>AtCoderの登録者が50万人突破？電脳抗争に散る鉄砲玉の正体</title>
+<updated>2026-02-27T23:51:05+09:00</updated>
+<published>2026-02-27T23:51:05+09:00</published>
+<app:edited>2026-02-27T23:51:05+09:00</app:edited>
+<summary type="text">AtCoderの登録者が50万人突破？電脳抗争に散る鉄砲玉の正体 深夜のファミレスでエナジードリンクを煽った レーティングは命より重い「看板」だ 鉄砲玉たちが狂う3つの理由 ハジキ（アルゴリズム）を磨かない奴から死んでいく まとめ ■ 参考リンク 深夜のファミレスでエナジードリン…</summary>
+<content type="text/x-markdown">AtCoderの登録者が50万人突破？電脳抗争に散る鉄砲玉の正体
+
+[:contents]
+
+## 深夜のファミレスでエナジードリンクを煽った
+モンスターエナジーの空き缶が転がる。画面には無情な「Wro
+2026-02-28 16:32:34,307 [INFO] Checked Entry: AtCoderの登録者が50万人突破？電脳抗争に散る鉄砲玉の正体 (Draft: False)
+2026-02-28 16:32:34,308 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359219235</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359219235" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/27/231107" />
+
+<author><name>yamasan1969</name></author>
+<title>AIの「正解」を疑わないエンジニアは1年で消える？</title>
+<updated>2026-02-27T23:11:07+09:00</updated>
+<published>2026-02-27T23:11:07+09:00</published>
+<app:edited>2026-02-27T23:11:07+09:00</app:edited>
+<summary type="text">AIの「正解」を疑わないエンジニアは1年で消える？ コンビニの冷えたおにぎりを齧って思った 若衆（AI）の報告を鵜呑みにするな 泥水を啜る「カチ込み」デバッグの心得 バイナリの怨念に直接触れる覚悟 まとめ ■ 参考リンク コンビニの冷えたおにぎりを齧って思った 深夜3時、セブンイ…</summary>
+<content type="text/x-markdown">AIの「正解」を疑わないエンジニアは1年で消える？
+
+[:contents]
+
+## コンビニの冷えたおにぎりを齧って思った
+深夜3時、セブンイレブンの紅しゃけおにぎりを頬張った。指先はキーボードの叩きすぎで痺れてい
+2026-02-28 16:32:34,308 [INFO] Checked Entry: AIの「正解」を疑わないエンジニアは1年で消える？ (Draft: False)
+2026-02-28 16:32:34,308 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359187405</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359187405" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/27/211500" />
+
+<author><name>yamasan1969</name></author>
+<title>AIとの「並走」なんて嘘？自律型AIが突きつける2つの真実</title>
+<updated>2026-02-27T21:15:00+09:00</updated>
+<published>2026-02-27T21:15:00+09:00</published>
+<app:edited>2026-02-27T21:15:00+09:00</app:edited>
+<summary type="text">AIとの「並走」なんて嘘？自律型AIが突きつける2つの真実 MacBook Proの冷却ファンが激しく回る 「並走」という優しい言葉に隠された嘘 決断という名の重圧だけを引き受けろ まとめ ■ 関連記事 ■ 参考リンク 🛒 おすすめ商品 MacBook Proの冷却ファンが激しく…</summary>
+<content type="text/x-markdown">AIとの「並走」なんて嘘？自律型AIが突きつける2つの真実
+
+[:contents]
+
+## MacBook Proの冷却ファンが激しく回る
+深夜1時、画面の文字が勝手に流れていく。
+
+AutoGPTが自分で
+2026-02-28 16:32:34,309 [INFO] Checked Entry: AIとの「並走」なんて嘘？自律型AIが突きつける2つの真実 (Draft: False)
+2026-02-28 16:32:34,309 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359173560</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359173560" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/27/202516" />
+
+<author><name>yamasan1969</name></author>
+<title>営業異動はキャリアのバグ？エンジニアが3つの思考で勝つ方法</title>
+<updated>2026-02-27T20:25:16+09:00</updated>
+<published>2026-02-27T20:25:16+09:00</published>
+<app:edited>2026-02-27T20:25:16+09:00</app:edited>
+<summary type="text">営業異動はキャリアのバグ？エンジニアが3つの思考で勝つ方法 Slackの通知で、突然の営業異動を知った。 営業は「仕様書のないバグ」を直す仕事だ。 現場で気づいた「自力で勝つ」ための3つの武器 「開発に戻る」という執着を捨てろ。 まとめ ■ 関連記事 ■ 参考リンク 🛒 おすすめ…</summary>
+<content type="text/x-markdown">営業異動はキャリアのバグ？エンジニアが3つの思考で勝つ方法
+
+[:contents]
+
+## Slackの通知で、突然の営業異動を知った。
+画面には「来月から営業部へ」の文字が並んでいた。
+
+頭が真っ白になっ
+2026-02-28 16:32:34,309 [INFO] Checked Entry: 営業異動はキャリアのバグ？エンジニアが3つの思考で勝つ方法 (Draft: False)
+2026-02-28 16:32:34,310 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754486806-17179246901359111257</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/yamasan1969.hatenablog.com/atom/entry/17179246901359111257" />
+<link rel="alternate" type="text/html" href="https://yamasan1969.hatenablog.com/entry/2026/02/27/172416" />
+
+<author><name>yamasan1969</name></author>
+<title>年収100万減でも「出社」を拒む若手エンジニアの正体とは？</title>
+<updated>2026-02-27T17:24:16+09:00</updated>
+<published>2026-02-27T17:24:16+09:00</published>
+<app:edited>2026-02-27T17:24:16+09:00</app:edited>
+<summary type="text">年収100万減でも「出社」を拒む若手エンジニアの正体とは？ 給与明細の数字よりも、私は静寂を選んだ 「100万円」で買い戻したのは、思考の連続性だ 開発の聖域を守るための生存戦略 まとめ ■ 関連記事 ■ 参考リンク 給与明細の数字よりも、私は静寂を選んだ 朝、自宅のデスクでHH…</summary>
+<content type="text/x-markdown">年収100万減でも「出社」を拒む若手エンジニアの正体とは？
+
+[:contents]
+
+## 給与明細の数字よりも、私は静寂を選んだ
+朝、自宅のデスクでHHKBのキーを叩く。
+
+窓の外を通る車の音だけが、静か
+2026-02-28 16:32:34,310 [INFO] Checked Entry: 年収100万減でも「出社」を拒む若手エンジニアの正体とは？ (Draft: False)
+2026-02-28 16:32:34,311 [INFO] --- Processing Blog: crypto_investment ---
+2026-02-28 16:32:34,855 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901359364059</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901359364059" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/28/113529" />
+
+<author><name>yamasan1969</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-28T11:35:29+09:00</updated>
+<published>2026-02-28T11:35:29+09:00</published>
+<app:edited>2026-02-28T11:35:29+09:00</app:edited>
+<summary type="text">🛒 この記事に関連するおすすめ商品 1. よなよなエール Tシャツ ビール グッズ クラフトビール よなよなの里 ロゴTシャツ よなTシャツ ヤッホーTシャツ 2. 【10%オフ】 【送料無料】 選べる 2種類セット ☆ケロロ☆×ケロリン 根付 ケロロ タママ ギロロ クルル ド…</summary>
+<content type="text/x-markdown">[:contents]
+
+"theme": "Atlasのバク宙で占う2020年代型ロボット挙動投資法",
+"genre": "オカルト投資術 / ロボティクス錬金術",
+"keywords": ["ボストン・ダ
+2026-02-28 16:32:34,855 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:34,855 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901359269216</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901359269216" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/28/061707" />
+
+<author><name>yamasan1969</name></author>
+<title>3月の暴落を予言？auでんきガチャと猫のあくびで勝負した結果</title>
+<updated>2026-02-28T06:17:07+09:00</updated>
+<published>2026-02-28T06:17:07+09:00</published>
+<app:edited>2026-02-28T06:17:07+09:00</app:edited>
+<summary type="text">3月の暴落を予言？auでんきガチャと猫のあくびで勝負した結果 冷めたコーヒーを飲み、スマホの画面を指で弾いた 最新のAIより、アプリのハズレ演出と猫の方が当たる 暴落を察知するための3つのオカルト観測手順 まとめ ■ 関連記事 ■ 参考リンク 冷めたコーヒーを飲み、スマホの画面を…</summary>
+<content type="text/x-markdown">3月の暴落を予言？auでんきガチャと猫のあくびで勝負した結果
+
+[:contents]
+
+## 冷めたコーヒーを飲み、スマホの画面を指で弾いた
+朝一番、日経平均のチャートより先にチェックすべきものがある。冷めき
+2026-02-28 16:32:34,856 [INFO] Checked Entry: 3月の暴落を予言？auでんきガチャと猫のあくびで勝負した結果 (Draft: False)
+2026-02-28 16:32:34,856 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901359255612</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901359255612" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/28/030730" />
+
+<author><name>yamasan1969</name></author>
+<title>日経平均5万8000円超えをうどんの茹で加減で当てるのは可能か？</title>
+<updated>2026-02-28T03:07:30+09:00</updated>
+<published>2026-02-28T03:07:30+09:00</published>
+<app:edited>2026-02-28T03:07:30+09:00</app:edited>
+<summary type="text">日経平均5万8000円超えをうどんの茹で加減で当てるのは可能か？ 沸騰した鍋の湯気で眼鏡が曇った 経済指標を捨てて麺のコシを信じる背徳 炭水化物のコシで市場をつかむ3つの観測法 伸びきった相場にトドメを刺す喉越し まとめ ■ 関連記事 ■ 参考リンク 沸騰した鍋の湯気で眼鏡が曇っ…</summary>
+<content type="text/x-markdown">日経平均5万8000円超えをうどんの茹で加減で当てるのは可能か？
+
+[:contents]
+
+## 沸騰した鍋の湯気で眼鏡が曇った
+台所に立ち、俺は冷凍うどんを湯に放り込んだ。1分30秒。いつものタニタのタ
+2026-02-28 16:32:34,856 [INFO] Checked Entry: 日経平均5万8000円超えをうどんの茹で加減で当てるのは可能か？ (Draft: False)
+2026-02-28 16:32:34,857 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901359235873</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901359235873" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/28/001747" />
+
+<author><name>yamasan1969</name></author>
+<title>日経平均5万8000円はSSR？猫の毛玉で株価を当てる錬金術</title>
+<updated>2026-02-28T00:17:47+09:00</updated>
+<published>2026-02-28T00:17:47+09:00</published>
+<app:edited>2026-02-28T00:17:47+09:00</app:edited>
+<summary type="text">日経平均5万8000円はSSR？猫の毛玉で株価を当てる錬金術 飼い猫のたまが畳に毛玉を吐いた AIの計算より猫の吐き気が真実を語る 異世界投資で勝ち残る3つの心得 5万8000円という名の排出率を攻略しろ まとめ ■ 参考リンク 飼い猫のたまが畳に毛玉を吐いた 今朝、たまが変な音…</summary>
+<content type="text/x-markdown">日経平均5万8000円はSSR？猫の毛玉で株価を当てる錬金術
+
+[:contents]
+
+## 飼い猫のたまが畳に毛玉を吐いた
+今朝、たまが変な音を立てて毛玉を吐き出した。その湿ったかたまりの形を見て、私は息を
+2026-02-28 16:32:34,857 [INFO] Checked Entry: 日経平均5万8000円はSSR？猫の毛玉で株価を当てる錬金術 (Draft: False)
+2026-02-28 16:32:34,857 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901359196148</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901359196148" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/27/214727" />
+
+<author><name>yamasan1969</name></author>
+<title>100万円の分析ソフトでも勝てない？AI僧侶が教える投資の罠</title>
+<updated>2026-02-27T21:47:27+09:00</updated>
+<published>2026-02-27T21:47:27+09:00</published>
+<app:edited>2026-02-27T21:47:27+09:00</app:edited>
+<summary type="text">100万円の分析ソフトでも勝てない？AI僧侶が教える投資の罠 冷めたコーヒーとBloombergの画面 データに固執するほど市場が見えなくなる 執着という名のブレーキを外すコツ まとめ ■ 関連記事 ■ 参考リンク 🛒 おすすめ商品 冷めたコーヒーとBloombergの画面 朝、…</summary>
+<content type="text/x-markdown">100万円の分析ソフトでも勝てない？AI僧侶が教える投資の罠
+
+[:contents]
+
+## 冷めたコーヒーとBloombergの画面
+朝、デスクで冷めたコーヒーを一口すすった。
+
+モニターにはBloombe
+2026-02-28 16:32:34,858 [INFO] Checked Entry: 100万円の分析ソフトでも勝てない？AI僧侶が教える投資の罠 (Draft: False)
+2026-02-28 16:32:34,858 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901359120886</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901359120886" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/27/175630" />
+
+<author><name>yamasan1969</name></author>
+<title>2030年に勝つのはAIか配当か？資産を託す「自律した富」の選び方</title>
+<updated>2026-02-27T17:56:30+09:00</updated>
+<published>2026-02-27T17:56:30+09:00</published>
+<app:edited>2026-02-27T17:56:30+09:00</app:edited>
+<summary type="text">2030年に勝つのはAIか配当か？資産を託す「自律した富」の選び方 深夜の書斎で、私はマックブックの画面を見つめた 期待を食べるAIと、現実を吐き出す高配当株 「自律した富」をデバッグする3つの基準 まとめ ■ 関連記事 ■ 参考リンク 深夜の書斎で、私はマックブックの画面を見つ…</summary>
+<content type="text/x-markdown">2030年に勝つのはAIか配当か？資産を託す「自律した富」の選び方
+
+[:contents]
+
+## 深夜の書斎で、私はマックブックの画面を見つめた
+青白い光の中に、米国の株価チャートが踊る。
+
+エヌビデ
+2026-02-28 16:32:34,858 [INFO] Checked Entry: 2030年に勝つのはAIか配当か？資産を託す「自律した富」の選び方 (Draft: False)
+2026-02-28 16:32:34,859 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901359067997</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901359067997" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/27/145407" />
+
+<author><name>yamasan1969</name></author>
+<title>エヌビディア好決算でも株価下落？「押し目買い」の罠</title>
+<updated>2026-02-27T14:54:07+09:00</updated>
+<published>2026-02-27T14:54:07+09:00</published>
+<app:edited>2026-02-27T14:54:07+09:00</app:edited>
+<summary type="text">エヌビディア好決算でも株価下落？「押し目買い」の罠 深夜2時のリビングで、冷めたコーヒーをすすった 期待値という怪物が投資家の理性を焼き尽くす 「押し目買い」を疑うべき3つの理由 まとめ ■ 関連記事 ■ 参考リンク 深夜2時のリビングで、冷めたコーヒーをすすった モニターに映る…</summary>
+<content type="text/x-markdown">エヌビディア好決算でも株価下落？「押し目買い」の罠
+
+[:contents]
+
+## 深夜2時のリビングで、冷めたコーヒーをすすった
+モニターに映る真っ赤な下落チャートを眺めていた。
+
+エヌビディアの決算短信を読み込み、
+2026-02-28 16:32:34,859 [INFO] Checked Entry: エヌビディア好決算でも株価下落？「押し目買い」の罠 (Draft: False)
+2026-02-28 16:32:34,859 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901358962701</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901358962701" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/27/092239" />
+
+<author><name>yamasan1969</name></author>
+<title>エヌビディア決算で日経平均先物が140円安？夜間の乱高下を制する方法</title>
+<updated>2026-02-27T09:22:39+09:00</updated>
+<published>2026-02-27T09:22:39+09:00</published>
+<app:edited>2026-02-27T09:22:39+09:00</app:edited>
+<summary type="text">エヌビディア決算で日経平均先物が140円安？夜間の乱高下を制する方法 深夜2時、スマホの通知音で目が覚めた。 夜間取引のデータは「ノイズ」か「商機」か。 アルゴリズムに組み込むべき3つの判断基準 まとめ ■ 関連記事 ■ 参考リンク 深夜2時、スマホの通知音で目が覚めた。 画面に…</summary>
+<content type="text/x-markdown">エヌビディア決算で日経平均先物が140円安？夜間の乱高下を制する方法
+
+[:contents]
+
+## 深夜2時、スマホの通知音で目が覚めた。
+画面にはエヌビディアの決算速報が流れている。
+
+数字は良い
+2026-02-28 16:32:34,860 [INFO] Checked Entry: エヌビディア決算で日経平均先物が140円安？夜間の乱高下を制する方法 (Draft: False)
+2026-02-28 16:32:34,860 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901358925622</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901358925622" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/27/065158" />
+
+<author><name>yamasan1969</name></author>
+<title>NVIDIA決算でもう買えない？私がキャッシュを50%にした理由</title>
+<updated>2026-02-27T06:51:58+09:00</updated>
+<published>2026-02-27T06:51:58+09:00</published>
+<app:edited>2026-02-27T06:51:58+09:00</app:edited>
+<summary type="text">NVIDIA決算でもう買えない？私がキャッシュを50%にした理由 スタバのレジ横で、隣の学生がスマホを掲げていた。 「完璧すぎる決算」こそが最大の売りどきだ バブル崩壊に備えるための3つの防衛策 まとめ ■ 関連記事 ■ 参考リンク 🛒 投資の冷静さを取り戻すためのアイテム スタ…</summary>
+<content type="text/x-markdown">NVIDIA決算でもう買えない？私がキャッシュを50%にした理由
+
+[:contents]
+
+## スタバのレジ横で、隣の学生がスマホを掲げていた。
+画面には、みどり色に輝くNVIDIAのチャートが見えた。
+2026-02-28 16:32:34,860 [INFO] Checked Entry: NVIDIA決算でもう買えない？私がキャッシュを50%にした理由 (Draft: False)
+2026-02-28 16:32:34,861 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-yamasan1969-11696248318754487855-17179246901358659760</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/yamasan1969/tekunikaru.hatenadiary.jp/atom/entry/17179246901358659760" />
+<link rel="alternate" type="text/html" href="https://tekunikaru.hatenadiary.jp/entry/2026/02/26/105742" />
+
+<author><name>yamasan1969</name></author>
+<title>日経平均5万8000円。異臭のする株を握り続けた結果</title>
+<updated>2026-02-26T10:57:42+09:00</updated>
+<published>2026-02-26T10:57:42+09:00</published>
+<app:edited>2026-02-26T10:57:42+09:00</app:edited>
+<summary type="text">スタバのレジ横で、株価ボードを二度見した。 対米投資の波は、まだ化学株に届かない。 アンモニア関連株で戦うための現状分析 まとめ ■ 関連記事 ■ 参考リンク 🛒 おすすめ商品 スタバのレジ横で、株価ボードを二度見した。 日経平均がついに5万8000円を超えた。 周囲はアドバンテ…</summary>
+<content type="text/x-markdown">[:contents]
+
+## スタバのレジ横で、株価ボードを二度見した。
+日経平均がついに5万8000円を超えた。
+
+周囲はアドバンテストや東電子の大化けで沸いている。
+
+だが私の持ち株は、まったく逆の動きをしていた
+2026-02-28 16:32:34,861 [INFO] Checked Entry: 日経平均5万8000円。異臭のする株を握り続けた結果 (Draft: False)
+2026-02-28 16:32:34,862 [INFO] --- Processing Blog: beauty_life_hack ---
+2026-02-28 16:32:35,478 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901359299824</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901359299824" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/28/074306" />
+
+<author><name>kaigot</name></author>
+<title>5万人の絶叫を0.1秒で消す？大谷翔平が作る「真空」を盗むコツ</title>
+<updated>2026-02-28T07:43:06+09:00</updated>
+<published>2026-02-28T07:43:06+09:00</published>
+<app:edited>2026-02-28T07:43:06+09:00</app:edited>
+<summary type="text">5万人の絶叫を0.1秒で消す？大谷翔平が作る「真空」を盗むコツ 夜中のリビングで、リモコンを握りしめた ドジャースタジアムに潜む「本物の無音」 静けさを体に固定する3つの手順 まとめ ■ 関連記事 ■ 参考リンク 夜中のリビングで、リモコンを握りしめた 深夜、一人でドジャースの試…</summary>
+<content type="text/x-markdown">5万人の絶叫を0.1秒で消す？大谷翔平が作る「真空」を盗むコツ
+
+[:contents]
+
+## 夜中のリビングで、リモコンを握りしめた
+深夜、一人でドジャースの試合を観ていた。
+大谷翔平が打席に立つ。
+俺は
+2026-02-28 16:32:35,478 [INFO] Checked Entry: 5万人の絶叫を0.1秒で消す？大谷翔平が作る「真空」を盗むコツ (Draft: False)
+2026-02-28 16:32:35,478 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901359259882</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901359259882" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/28/042309" />
+
+<author><name>kaigot</name></author>
+<title>大谷翔平の160キロを超える豪速球を無音で見るのは罪か？</title>
+<updated>2026-02-28T04:23:09+09:00</updated>
+<published>2026-02-28T04:23:09+09:00</published>
+<app:edited>2026-02-28T04:23:09+09:00</app:edited>
+<summary type="text">大谷翔平の160キロを超える豪速球を無音で見るのは罪か？ 耳栓を押し込み、ドジャー・スタジアムに立った 4万人の拍手という名の騒音暴力を切り捨てる 無音観戦を完遂するための3つの防壁 鼓膜を捨てて、純粋な軌道だけを信じろ まとめ ■ 関連記事 ■ 参考リンク 耳栓を押し込み、ドジ…</summary>
+<content type="text/x-markdown">大谷翔平の160キロを超える豪速球を無音で見るのは罪か？
+
+[:contents]
+
+## 耳栓を押し込み、ドジャー・スタジアムに立った
+カバンからモルデックスの耳栓を取り出した。指で細く丸め、耳の奥深くへねじ込む
+2026-02-28 16:32:35,479 [INFO] Checked Entry: 大谷翔平の160キロを超える豪速球を無音で見るのは罪か？ (Draft: False)
+2026-02-28 16:32:35,479 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901359246924</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901359246924" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/28/012539" />
+
+<author><name>kaigot</name></author>
+<title>大谷翔平の175キロを無音で見た？ドームで沈黙した3時間</title>
+<updated>2026-02-28T01:25:39+09:00</updated>
+<published>2026-02-28T01:25:39+09:00</published>
+<app:edited>2026-02-28T01:25:39+09:00</app:edited>
+<summary type="text">大谷翔平の175キロを無音で見た？ドームで沈黙した3時間 チケットを握りしめ、地下鉄の名城線に乗った 数万人の地鳴りを遮断する「無音修行」 沈黙を維持するための3つのポイント 心臓の鼓動を殺し、虚無の地平へ辿り着く まとめ ■ 関連記事 ■ 参考リンク チケットを握りしめ、地下鉄…</summary>
+<content type="text/x-markdown">大谷翔平の175キロを無音で見た？ドームで沈黙した3時間
+
+[:contents]
+
+## チケットを握りしめ、地下鉄の名城線に乗った
+バンテリンドームへ向かう。車内は背番号17のユニフォームで溢れていた。だが、俺
+2026-02-28 16:32:35,479 [INFO] Checked Entry: 大谷翔平の175キロを無音で見た？ドームで沈黙した3時間 (Draft: False)
+2026-02-28 16:32:35,480 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901359142932</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901359142932" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/27/191153" />
+
+<author><name>kaigot</name></author>
+<title>3日間でカラオケの点数が5点上がるって本当？</title>
+<updated>2026-02-27T19:11:53+09:00</updated>
+<published>2026-02-27T19:11:53+09:00</published>
+<app:edited>2026-02-27T21:57:16+09:00</app:edited>
+<summary type="text">3日間でカラオケの点数が5点上がるって本当？ 深夜の公園で、私は時計をじっと見つめた ドローインで腹筋を固めるのを、今すぐやめろ 脱力して高得点をつかむ3つの手順 まとめ ■ 関連記事 ■ 参考リンク 深夜の公園で、私は時計をじっと見つめた ダイソーで買った100円のストップウォ…</summary>
+<content type="text/x-markdown">![3日間でカラオケの点数が5点上がるって本当？](https://files.catbox.moe/l97663.jpg)
+
+
+3日間でカラオケの点数が5点上がるって本当？
+
+[:contents]
+
+## 深夜の公園で、私
+2026-02-28 16:32:35,480 [INFO] Checked Entry: 3日間でカラオケの点数が5点上がるって本当？ (Draft: False)
+2026-02-28 16:32:35,480 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901359088156</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901359088156" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/27/160649" />
+
+<author><name>kaigot</name></author>
+<title>小芝風花は2ヶ月、私は3日。ドローイン呼吸で声は変わる？</title>
+<updated>2026-02-27T16:06:49+09:00</updated>
+<published>2026-02-27T16:06:49+09:00</published>
+<app:edited>2026-02-27T16:06:49+09:00</app:edited>
+<summary type="text">小芝風花は2ヶ月、私は3日。ドローイン呼吸で声は変わる？ 会社のデスクで、こっそりお腹を凹ませてみた プロの2ヶ月に、3日間の「悪あがき」で挑む 3日間で掴んだ「腹からの声」を出すコツ まとめ ■ 関連記事 ■ 参考リンク 会社のデスクで、こっそりお腹を凹ませてみた 仕事中、誰に…</summary>
+<content type="text/x-markdown">小芝風花は2ヶ月、私は3日。ドローイン呼吸で声は変わる？
+
+[:contents]
+
+## 会社のデスクで、こっそりお腹を凹ませてみた
+仕事中、誰にもバレないように息を吐ききる。
+
+お腹と背中がくっつくくらい、力を
+2026-02-28 16:32:35,481 [INFO] Checked Entry: 小芝風花は2ヶ月、私は3日。ドローイン呼吸で声は変わる？ (Draft: False)
+2026-02-28 16:32:35,481 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901359042460</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901359042460" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/27/130937" />
+
+<author><name>kaigot</name></author>
+<title>EXILEに100点を認めさせる？AI採点はどう変わるか</title>
+<updated>2026-02-27T13:09:37+09:00</updated>
+<published>2026-02-27T13:09:37+09:00</published>
+<app:edited>2026-02-27T13:09:37+09:00</app:edited>
+<summary type="text">EXILEに100点を認めさせる？AI採点はどう変わるか カラオケ館の個室で、私はひとり膝をついた AIがスターの「感性」を数値化する時代 「スターに選ばれる」ための3つの変化 まとめ ■ 関連記事 ■ 参考リンク カラオケ館の個室で、私はひとり膝をついた 音程バーを完璧になぞっ…</summary>
+<content type="text/x-markdown">EXILEに100点を認めさせる？AI採点はどう変わるか
+
+[:contents]
+
+## カラオケ館の個室で、私はひとり膝をついた
+音程バーを完璧になぞったはずだ。
+
+画面に表示された点数は98点。
+
+高い。だが
+2026-02-28 16:32:35,481 [INFO] Checked Entry: EXILEに100点を認めさせる？AI採点はどう変わるか (Draft: False)
+2026-02-28 16:32:35,482 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901359001613</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901359001613" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/27/103222" />
+
+<author><name>kaigot</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-27T10:32:22+09:00</updated>
+<published>2026-02-27T10:32:22+09:00</published>
+<app:edited>2026-02-27T10:32:22+09:00</app:edited>
+<summary type="text">🛒 おすすめ商品 "theme": "井口流合唱から学ぶ、雑音を遮断し90点を出す「逆転の呼吸法」", "genre": "カラオケ・ボイトレ実験記", "keywords": ["King Gnu", "カラオケ精密採点", "腹式呼吸"], "target_audience"…</summary>
+<content type="text/x-markdown">[:contents]
+
+"theme": "井口流合唱から学ぶ、雑音を遮断し90点を出す「逆転の呼吸法」",
+"genre": "カラオケ・ボイトレ実験記",
+"keywords": ["King Gnu", 
+2026-02-28 16:32:35,482 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:35,482 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901358941979</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901358941979" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/27/081813" />
+
+<author><name>kaigot</name></author>
+<title>カラオケ95点の俺が「下手」と言われた理由？採点の闇を暴く</title>
+<updated>2026-02-27T08:18:13+09:00</updated>
+<published>2026-02-27T08:18:13+09:00</published>
+<app:edited>2026-02-27T08:18:13+09:00</app:edited>
+<summary type="text">カラオケ95点の俺が「下手」と言われた理由？採点の闇を暴く 新宿のカラオケ館で、一人マイクを置いた。 ミラノ五輪の氷上も、採点の檻に閉じている。 数値化できない「エモさ」の正体 まとめ ■ 関連記事 ■ 参考リンク 🛒 おすすめ商品 新宿のカラオケ館で、一人マイクを置いた。 画面…</summary>
+<content type="text/x-markdown">カラオケ95点の俺が「下手」と言われた理由？採点の闇を暴く
+
+[:contents]
+
+## 新宿のカラオケ館で、一人マイクを置いた。
+画面には「95.421点」という数字が出ている。
+
+音程もビブラートも、グラ
+2026-02-28 16:32:35,483 [INFO] Checked Entry: カラオケ95点の俺が「下手」と言われた理由？採点の闇を暴く (Draft: False)
+2026-02-28 16:32:35,483 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901358679709</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901358679709" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/26/121216" />
+
+<author><name>kaigot</name></author>
+<title>カラオケ精密採点Aiで90点突破！工藤静香の真似を捨てて高得点を出す攻略法</title>
+<updated>2026-02-26T12:12:16+09:00</updated>
+<published>2026-02-26T12:12:16+09:00</published>
+<app:edited>2026-02-26T17:59:08+09:00</app:edited>
+<summary type="text">カラオケの精密採点Aiで高得点が出ない悩み。工藤静香さんのようなプロの真似を捨て、感情をオフにしてガイドメロディに忠実に歌うことで、3日で90点を突破した実体験を紹介します。音程、安定性、ロングトーンを極めるための具体的な鉄則を解説し、機械に好かれる歌い方を伝授します。 **【こ…</summary>
+<content type="text/x-markdown">
+
+カラオケの精密採点Aiで高得点が出ない悩み。工藤静香さんのようなプロの真似を捨て、感情をオフにしてガイドメロディに忠実に歌うことで、3日で90点を突破した実体験を紹介します。音程、安定性、ロン
+2026-02-28 16:32:35,483 [INFO] Checked Entry: カラオケ精密採点Aiで90点突破！工藤静香の真似を捨てて高得点を出す攻略法 (Draft: False)
+2026-02-28 16:32:35,484 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299061617-17179246901358637550</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/wellness-mom-diary.hatenablog.com/atom/entry/17179246901358637550" />
+<link rel="alternate" type="text/html" href="https://wellness-mom-diary.hatenablog.com/entry/2026/02/26/091226" />
+
+<author><name>kaigot</name></author>
+<title>カラオケで95点取っても、自分の声が嫌いなのはなぜ？</title>
+<updated>2026-02-26T09:12:26+09:00</updated>
+<published>2026-02-26T09:12:26+09:00</published>
+<app:edited>2026-02-26T09:12:26+09:00</app:edited>
+<summary type="text">カラオケで95点取っても、自分の声が嫌いなのはなぜ？ ビッグエコーの冷たい椅子で、履歴を眺めた。 工藤静香の「揺らぎ」が教えてくれたこと。 採点マシーンに魂を売らないための3ステップ まとめ ■ 関連記事 ■ 参考リンク 🛒 自分の「本当の声」を見つけるための道具 ビッグエコーの…</summary>
+<content type="text/x-markdown">カラオケで95点取っても、自分の声が嫌いなのはなぜ？
+
+[:contents]
+
+## ビッグエコーの冷たい椅子で、履歴を眺めた。
+画面には「95点」という誇らしい数字が並んでいる。
+
+でも、録音を聴き返して絶望した。
+2026-02-28 16:32:35,484 [INFO] Checked Entry: カラオケで95点取っても、自分の声が嫌いなのはなぜ？ (Draft: False)
+2026-02-28 16:32:35,486 [INFO] --- Processing Blog: education_review ---
+2026-02-28 16:32:36,062 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901359238616</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901359238616" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/28/003157" />
+
+<author><name>kaigot</name></author>
+<title>村田製作所の部品でネズミを燻す？ネオ・トウキョウの自炊術</title>
+<updated>2026-02-28T00:31:57+09:00</updated>
+<published>2026-02-28T00:31:57+09:00</published>
+<app:edited>2026-02-28T00:31:57+09:00</app:edited>
+<summary type="text">村田製作所の部品でネズミを燻す？ネオ・トウキョウの自炊術 秋葉原の廃墟で基板を拾い集めた 精密部品を壊して熱源に変える贅沢 サイバーパンク料理の3つの鉄則 回路の焦げ跡に宿る生存の証明 まとめ ■ 参考リンク 秋葉原の廃墟で基板を拾い集めた 酸性雨が降る渋谷の路地裏。私は泥にまみ…</summary>
+<content type="text/x-markdown">村田製作所の部品でネズミを燻す？ネオ・トウキョウの自炊術
+
+[:contents]
+
+## 秋葉原の廃墟で基板を拾い集めた
+酸性雨が降る渋谷の路地裏。私は泥にまみれた回路基板を拾い上げた。今夜の晩飯はこれにかかっている。10年前の秋葉原な
+2026-02-28 16:32:36,063 [INFO] Checked Entry: 村田製作所の部品でネズミを燻す？ネオ・トウキョウの自炊術 (Draft: False)
+2026-02-28 16:32:36,063 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901359200703</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901359200703" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/27/220320" />
+
+<author><name>kaigot</name></author>
+<title>7日間待つ贅沢。ブロッコリースプラウトを自作する理由とは？</title>
+<updated>2026-02-27T22:03:20+09:00</updated>
+<published>2026-02-27T22:03:20+09:00</published>
+<app:edited>2026-02-27T22:03:20+09:00</app:edited>
+<summary type="text">7日間待つ贅沢。ブロッコリースプラウトを自作する理由とは？ 朝の光の中で水を替える スルフォラファンの数値に縛られた過去 自分で育てる3つのメリット まとめ ■ 関連記事 ■ 参考リンク 🛒 おすすめ商品 朝の光の中で水を替える 蛇口をひねり、キッチンジャーに新しい水を注ぐ。 ガ…</summary>
+<content type="text/x-markdown">7日間待つ贅沢。ブロッコリースプラウトを自作する理由とは？
+
+[:contents]
+
+## 朝の光の中で水を替える
+蛇口をひねり、キッチンジャーに新しい水を注ぐ。
+
+ガラスの向こうで、小さな種が白い根を伸ばしている。
+
+7日前までは、
+2026-02-28 16:32:36,063 [INFO] Checked Entry: 7日間待つ贅沢。ブロッコリースプラウトを自作する理由とは？ (Draft: False)
+2026-02-28 16:32:36,064 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901359125157</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901359125157" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/27/181058" />
+
+<author><name>kaigot</name></author>
+<title>ダイソーの300円プランターだけで大豆を量産できるって本当？</title>
+<updated>2026-02-27T18:10:58+09:00</updated>
+<published>2026-02-27T18:10:58+09:00</published>
+<app:edited>2026-02-27T18:10:58+09:00</app:edited>
+<summary type="text">ダイソーの300円プランターだけで大豆を量産できるって本当？ スーパーの野菜売り場で、私はため息をついた 土を捨てて、300円のプラスチック箱に賭ける リビングをタンパク質工場にする3つの手順 まとめ ■ 関連記事 ■ 参考リンク スーパーの野菜売り場で、私はため息をついた 枝豆…</summary>
+<content type="text/x-markdown">ダイソーの300円プランターだけで大豆を量産できるって本当？
+
+[:contents]
+
+## スーパーの野菜売り場で、私はため息をついた
+枝豆1袋の値段が、以前より50円も上がっている。
+
+カゴに入れるのをためらい、そっと棚に戻した
+2026-02-28 16:32:36,064 [INFO] Checked Entry: ダイソーの300円プランターだけで大豆を量産できるって本当？ (Draft: False)
+2026-02-28 16:32:36,064 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901359071575</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901359071575" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/27/150830" />
+
+<author><name>kaigot</name></author>
+<title>新潟のベランダで育てる野菜は、スーパーより高い？</title>
+<updated>2026-02-27T15:08:30+09:00</updated>
+<published>2026-02-27T15:08:30+09:00</published>
+<app:edited>2026-02-27T15:08:30+09:00</app:edited>
+<summary type="text">新潟のベランダで育てる野菜は、スーパーより高い？ プランターの土を、指先で少し掘り起こした 効率を捨てた先にあった「心の自給自足」 ベランダ菜園が孤独を溶かす理由 まとめ ■ 関連記事 ■ 参考リンク プランターの土を、指先で少し掘り起こした 新潟市のマンションで、朝の空気を吸い…</summary>
+<content type="text/x-markdown">新潟のベランダで育てる野菜は、スーパーより高い？
+
+[:contents]
+
+## プランターの土を、指先で少し掘り起こした
+新潟市のマンションで、朝の空気を吸い込む。
+
+ベランダに並べた木製プランターに水をやる。
+
+不格好なルッコラの芽が、2つ
+2026-02-28 16:32:36,065 [INFO] Checked Entry: 新潟のベランダで育てる野菜は、スーパーより高い？ (Draft: False)
+2026-02-28 16:32:36,065 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901359029055</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901359029055" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/27/121045" />
+
+<author><name>kaigot</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-27T12:10:45+09:00</updated>
+<published>2026-02-27T12:10:45+09:00</published>
+<app:edited>2026-02-27T12:10:45+09:00</app:edited>
+<summary type="text">🛒 おすすめ商品 "theme": "新潟に学ぶ、ベランダ菜園が溶かす「都市の孤独」とつながり", "genre": "アーバンファーミング・ライフスタイル", "keywords": ["ベランダ菜園", "コミュニティ", "アーバンファーミング"], "target_aud…</summary>
+<content type="text/x-markdown">[:contents]
+
+"theme": "新潟に学ぶ、ベランダ菜園が溶かす「都市の孤独」とつながり",
+"genre": "アーバンファーミング・ライフスタイル",
+"keywords": ["ベランダ菜園", "コミュニティ", 
+2026-02-28 16:32:36,065 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:36,066 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901359012812</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901359012812" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/27/110722" />
+
+<author><name>kaigot</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-27T11:07:22+09:00</updated>
+<published>2026-02-27T11:07:22+09:00</published>
+<app:edited>2026-02-27T11:07:22+09:00</app:edited>
+<summary type="text">🛒 おすすめ商品 "theme": "ブロッコリースプラウト栽培で叶える「養生コスパワー食」の極意", "genre": "家庭菜園・薬膳ライフスタイル", "keywords": ["ブロッコリースプラウト", "養生", "コストパフォーマンス"], "target_audi…</summary>
+<content type="text/x-markdown">[:contents]
+
+"theme": "ブロッコリースプラウト栽培で叶える「養生コスパワー食」の極意",
+"genre": "家庭菜園・薬膳ライフスタイル",
+"keywords": ["ブロッコリースプラウト", "養生", "
+2026-02-28 16:32:36,066 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:36,066 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901358928779</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901358928779" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/27/070832" />
+
+<author><name>kaigot</name></author>
+<title>100円の豆苗、2回目は本当に体にいい？養生コスパの限界点</title>
+<updated>2026-02-27T07:08:32+09:00</updated>
+<published>2026-02-27T07:08:32+09:00</published>
+<app:edited>2026-02-27T07:08:32+09:00</app:edited>
+<summary type="text">窓際のタッパーをのぞいた。セリアで買った容器だ。 窓際の「水」だけで老化は防げるのか。 数値を超えた「心のデバッグ」こそが養生の正体 栄養不足を「ハイポネックス」で補完する。 まとめ 窓際のタッパーをのぞいた。セリアで買った容器だ。 中には村上農園の豆苗が入っている。 100円で…</summary>
+<content type="text/x-markdown">[:contents]
+
+## 窓際のタッパーをのぞいた。セリアで買った容器だ。
+中には村上農園の豆苗が入っている。
+
+100円で買った一袋を、もう2回も収穫した。7日間、ただ毎日水を替えただけだ。
+
+節約の「勝ち組」になった気分でキッ
+2026-02-28 16:32:36,067 [INFO] Checked Entry: 100円の豆苗、2回目は本当に体にいい？養生コスパの限界点 (Draft: False)
+2026-02-28 16:32:36,067 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901358663248</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901358663248" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/26/111212" />
+
+<author><name>kaigot</name></author>
+<title>1パック800円のイチゴに勝つ方法は？ベランダ菜園という資産防衛</title>
+<updated>2026-02-26T11:12:12+09:00</updated>
+<published>2026-02-26T11:12:12+09:00</published>
+<app:edited>2026-02-26T11:12:12+09:00</app:edited>
+<summary type="text">サミットの青果コーナーで、私は立ち尽くした。 月面イチゴ1億円の時代が、笑い事ではなくなる。 ベランダを「食料工場」に変えるメリット まとめ ■ 関連記事 ■ 参考リンク 🛒 おすすめ商品 サミットの青果コーナーで、私は立ち尽くした。 イチゴ1パックの価格が800円を超えている。…</summary>
+<content type="text/x-markdown">[:contents]
+
+## サミットの青果コーナーで、私は立ち尽くした。
+イチゴ1パックの価格が800円を超えている。
+
+数年前なら500円で買えたはずだ。
+
+輸送費の高騰が、私たちの食卓を直撃している。
+
+レジに運ぶのをため
+2026-02-28 16:32:36,067 [INFO] Checked Entry: 1パック800円のイチゴに勝つ方法は？ベランダ菜園という資産防衛 (Draft: False)
+2026-02-28 16:32:36,068 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901358625134</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901358625134" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/26/081258" />
+
+<author><name>kaigot</name></author>
+<title>道端の草を30分摘んだら、最高のごちそうになるって本当？</title>
+<updated>2026-02-26T08:12:58+09:00</updated>
+<published>2026-02-26T08:12:58+09:00</published>
+<app:edited>2026-02-26T08:12:58+09:00</app:edited>
+<summary type="text">コンクリートの隙間に、緑の宝石が光っていた。 図鑑を閉じて、自分の舌で「毒と旨味」をデバッグしろ。 野生を食卓に手なずける3つの作法 まとめ ■ 関連記事 ■ 参考リンク 🛒 おすすめ商品 コンクリートの隙間に、緑の宝石が光っていた。 仕事帰りの道、足元にハコベが群生しているのを…</summary>
+<content type="text/x-markdown">[:contents]
+
+## コンクリートの隙間に、緑の宝石が光っていた。
+仕事帰りの道、足元にハコベが群生しているのを見つけた。
+
+指先につく土の冷たさが、鈍った感覚を呼び覚ます。
+
+「雑草を食べるなんて」と笑う人もいるだろう。でも私
+2026-02-28 16:32:36,068 [INFO] Checked Entry: 道端の草を30分摘んだら、最高のごちそうになるって本当？ (Draft: False)
+2026-02-28 16:32:36,068 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-6802888565299584294-17179246901358599853</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kosodate-hub.hatenablog.com/atom/entry/17179246901358599853" />
+<link rel="alternate" type="text/html" href="https://kosodate-hub.hatenablog.com/entry/2026/02/26/054606" />
+
+<author><name>kaigot</name></author>
+<title>真夜中に「食いたい」が止まらない？330円で本能を満たした結果</title>
+<updated>2026-02-26T05:46:06+09:00</updated>
+<published>2026-02-26T05:46:06+09:00</published>
+<app:edited>2026-02-26T05:46:06+09:00</app:edited>
+<summary type="text">真夜中に「食いたい」が止まらない？330円で本能を満たした結果 コンビニのホットショーケースの前で立ち尽くした。 ダイソーの330円プランターが、私の野生を呼び覚ます。 暴走する食欲をなだめる収穫の儀式 まとめ ■ 関連記事 ■ 参考リンク コンビニのホットショーケースの前で立ち…</summary>
+<content type="text/x-markdown">真夜中に「食いたい」が止まらない？330円で本能を満たした結果
+
+[:contents]
+
+## コンビニのホットショーケースの前で立ち尽くした。
+夜11時、無性に何かが食べたい。でも、揚げ物の気分じゃない。
+
+胃袋が求めているのは
+2026-02-28 16:32:36,069 [INFO] Checked Entry: 真夜中に「食いたい」が止まらない？330円で本能を満たした結果 (Draft: False)
+2026-02-28 16:32:36,070 [INFO] --- Processing Blog: daily_world_news ---
+2026-02-28 16:32:36,712 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901359407148</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901359407148" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/28/142933" />
+
+<author><name>kaigot</name></author>
+<title>鉄の犬がバク転してもカリカリは出てこない。2026年、AIに魂を売った下僕の末路</title>
+<updated>2026-02-28T14:29:33+09:00</updated>
+<published>2026-02-28T14:29:33+09:00</published>
+<app:edited>2026-02-28T14:29:33+09:00</app:edited>
+<summary type="text">概要 鉄の犬がバク転してもカリカリは出てこない。2026年、AIに魂を売った下僕の末路 概要 画面の幽霊としゃべる下僕。俺様の存在はもはや背景か 俺様の下僕は、深夜2時にスマホに向かって独り言を言っている。 青白い光に照らされた顔は、まるで安っぽいホラー映画の主役だ。 「明日のタ…</summary>
+<content type="text/x-markdown">## 概要
+
+![鉄の犬がバク転してもカリカリは出てこない。2026年、AIに魂を売った下僕の末路](https://files.catbox.moe/hxfdwx.jpg)
+
+鉄の犬がバク転してもカリカリは出てこな
+2026-02-28 16:32:36,712 [INFO] Checked Entry: 鉄の犬がバク転してもカリカリは出てこない。2026年、AIに魂を売った下僕の末路 (Draft: False)
+2026-02-28 16:32:36,712 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901359274136</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901359274136" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/28/065123" />
+
+<author><name>kaigot</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-28T06:51:23+09:00</updated>
+<published>2026-02-28T06:51:23+09:00</published>
+<app:edited>2026-02-28T06:51:23+09:00</app:edited>
+<summary type="text">AI導入で減るカリカリと、ニンゲンの「自動毛玉吐き」化の謎 その「効率化」のせいで、俺の皿が空なのだが？ 効率を求めたニンゲンが、情報の毛玉で窒息する理由 ニンゲンが「自動毛玉吐き機」から脱却するための3つの視点 まとめ ■ 関連記事 ■ 参考リンク その「効率化」のせいで、俺の…</summary>
+<content type="text/x-markdown">AI導入で減るカリカリと、ニンゲンの「自動毛玉吐き」化の謎
+
+[:contents]
+
+## その「効率化」のせいで、俺の皿が空なのだが？
+キーボードを叩くニンゲンの背中を、俺はソファの上から眺めている。どうやら最近、こいつは「AI」とい
+2026-02-28 16:32:36,713 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:36,713 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901359257339</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901359257339" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/28/033335" />
+
+<author><name>kaigot</name></author>
+<title>血統書付きの元王子が群れを追い出された理由は1つの皿か？</title>
+<updated>2026-02-28T03:33:35+09:00</updated>
+<published>2026-02-28T03:33:35+09:00</published>
+<app:edited>2026-02-28T03:33:35+09:00</app:edited>
+<summary type="text">血統書付きの元王子が群れを追い出された理由は1つの皿か？ 毛づくろいの最中にテレビが吠えた 高級フードを独り占めした猫の末路 群れの掟を忘れたニンゲンの3つの特徴 血統書を破り捨てて野良に戻る勇気 まとめ ■ 関連記事 ■ 参考リンク 毛づくろいの最中にテレビが吠えた しっぽの付…</summary>
+<content type="text/x-markdown">血統書付きの元王子が群れを追い出された理由は1つの皿か？
+
+[:contents]
+
+## 毛づくろいの最中にテレビが吠えた
+しっぽの付け根をなめていると、画面の中でニンゲンが騒いでいた。英国のえらいサンが、またしくじったらしい。パナソニッ
+2026-02-28 16:32:36,714 [INFO] Checked Entry: 血統書付きの元王子が群れを追い出された理由は1つの皿か？ (Draft: False)
+2026-02-28 16:32:36,714 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901359240974</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901359240974" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/28/004553" />
+
+<author><name>kaigot</name></author>
+<title>猫の名門『懐石』が犬を飼い始めた？ニンゲンの裏切りを暴く</title>
+<updated>2026-02-28T00:45:53+09:00</updated>
+<published>2026-02-28T00:45:53+09:00</published>
+<app:edited>2026-02-28T00:45:53+09:00</app:edited>
+<summary type="text">猫の名門『懐石』が犬を飼い始めた？ニンゲンの裏切りを暴く リビングの特等席で毛づくろいをしていた 我らだけの聖域に土足で踏み込む犬公 ニンゲンの不穏な動きをつかむ3つのポイント 皿の中の政治学：猫が取るべき生存戦略 まとめ ■ 参考リンク リビングの特等席で毛づくろいをしていた …</summary>
+<content type="text/x-markdown">猫の名門『懐石』が犬を飼い始めた？ニンゲンの裏切りを暴く
+
+[:contents]
+
+## リビングの特等席で毛づくろいをしていた
+ニンゲンが買い物袋から見慣れない箱を出した。青いパッケージに踊る「懐石」の文字。だが様子がおかしい。鼻先に漂
+2026-02-28 16:32:36,714 [INFO] Checked Entry: 猫の名門『懐石』が犬を飼い始めた？ニンゲンの裏切りを暴く (Draft: False)
+2026-02-28 16:32:36,715 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901359205155</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901359205155" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/27/221949" />
+
+<author><name>kaigot</name></author>
+<title>100円のオレンジが消える日？宇宙と供給網で日本を守る具体策</title>
+<updated>2026-02-27T22:19:49+09:00</updated>
+<published>2026-02-27T22:19:49+09:00</published>
+<app:edited>2026-02-27T22:19:49+09:00</app:edited>
+<summary type="text">近所の西友で、安い海外産オレンジを手に取った 宇宙の自律がなければ、Googleマップも届かなくなる 主導権を取り戻すための「3つの現実的な一歩」 まとめ：今日から私たちができる「小さな安全保障」 ■ 参考リンク 近所の西友で、安い海外産オレンジを手に取った スーパーの棚に並ぶ、…</summary>
+<content type="text/x-markdown">[:contents]
+
+## 近所の西友で、安い海外産オレンジを手に取った
+スーパーの棚に並ぶ、1個100円の海外産オレンジ。この安さに感謝しつつも、ふと足元が冷たくなるような感覚になることはありませんか？
+
+もし今、国際情勢の変化で
+2026-02-28 16:32:36,715 [INFO] Checked Entry: 100円のオレンジが消える日？宇宙と供給網で日本を守る具体策 (Draft: False)
+2026-02-28 16:32:36,715 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901359129309</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901359129309" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/27/182707" />
+
+<author><name>kaigot</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-27T18:27:07+09:00</updated>
+<published>2026-02-27T18:27:07+09:00</published>
+<app:edited>2026-02-27T18:27:07+09:00</app:edited>
+<summary type="text">🛒 おすすめ商品 "theme": "財務省note進出と高市政権下での積極財政転換の深層", "genre": "政治経済・時事解説", "keywords": ["財務省", "積極財政", "高市早苗"], "target_audience": "硬直化した増税議論に嫌気が…</summary>
+<content type="text/x-markdown">[:contents]
+
+"theme": "財務省note進出と高市政権下での積極財政転換の深層",
+"genre": "政治経済・時事解説",
+"keywords": ["財務省", "積極財政", "高市早苗"],
+"target_
+2026-02-28 16:32:36,716 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:36,716 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901359075534</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901359075534" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/27/152247" />
+
+<author><name>kaigot</name></author>
+<title>高市安保3文書、私たちのPCは本当に守られる？</title>
+<updated>2026-02-27T15:22:47+09:00</updated>
+<published>2026-02-27T15:22:47+09:00</published>
+<app:edited>2026-02-27T15:22:47+09:00</app:edited>
+<summary type="text">高市安保3文書、私たちのPCは本当に守られる？ カフェのWi-Fiに繋ぐ瞬間、ふと指が止まった 高市首相が進める「攻めの経済安保」という現実 私たちが直視すべき「デジタル敗戦」のリスク まとめ ■ 関連記事 ■ 参考リンク カフェのWi-Fiに繋ぐ瞬間、ふと指が止まった 隣の席で…</summary>
+<content type="text/x-markdown">高市安保3文書、私たちのPCは本当に守られる？
+
+[:contents]
+
+## カフェのWi-Fiに繋ぐ瞬間、ふと指が止まった
+隣の席では、学生がスマホで動画を見ている。
+
+何の変哲もない、いつもの午後の風景だ。
+
+だが、このネットの先には目に見え
+2026-02-28 16:32:36,716 [INFO] Checked Entry: 高市安保3文書、私たちのPCは本当に守られる？ (Draft: False)
+2026-02-28 16:32:36,717 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901359032419</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901359032419" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/27/122520" />
+
+<author><name>kaigot</name></author>
+<title>Untitled (JSON parsing error)</title>
+<updated>2026-02-27T12:25:20+09:00</updated>
+<published>2026-02-27T12:25:20+09:00</published>
+<app:edited>2026-02-27T12:25:20+09:00</app:edited>
+<summary type="text">🛒 おすすめ商品 "theme": "自転車『青切符』時代、ガジェットは自由か、監視の道具か", "genre": "時事解説・デジタルライフ論", "keywords": ["改正道路交通法", "スマートグラス", "骨伝導"], "target_audience": "自転…</summary>
+<content type="text/x-markdown">[:contents]
+
+"theme": "自転車『青切符』時代、ガジェットは自由か、監視の道具か",
+"genre": "時事解説・デジタルライフ論",
+"keywords": ["改正道路交通法", "スマートグラス", "骨伝導"
+2026-02-28 16:32:36,717 [INFO] Checked Entry: Untitled (JSON parsing error) (Draft: False)
+2026-02-28 16:32:36,717 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901358971980</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901358971980" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/27/093856" />
+
+<author><name>kaigot</name></author>
+<title>トランプ関税にブレーキ？高市早苗氏が狙う「2026年の逆転劇」</title>
+<updated>2026-02-27T09:38:56+09:00</updated>
+<published>2026-02-27T09:38:56+09:00</published>
+<app:edited>2026-02-27T09:38:56+09:00</app:edited>
+<summary type="text">トランプ関税にブレーキ？高市早苗氏が狙う「2026年の逆転劇」 テレビを消して、冷めたコーヒーを飲み干した。 米最高裁がトランプ大統領の独走に待ったをかけた。 高市氏が提唱する「信頼のプロトコル」の本質 まとめ ■ 関連記事 ■ 参考リンク テレビを消して、冷めたコーヒーを飲み干…</summary>
+<content type="text/x-markdown">トランプ関税にブレーキ？高市早苗氏が狙う「2026年の逆転劇」
+
+[:contents]
+
+## テレビを消して、冷めたコーヒーを飲み干した。
+画面の中では米国の関税ニュースが騒がしい。
+
+自由貿易の終わりを予感させる不穏な空気が漂う
+2026-02-28 16:32:36,718 [INFO] Checked Entry: トランプ関税にブレーキ？高市早苗氏が狙う「2026年の逆転劇」 (Draft: False)
+2026-02-28 16:32:36,718 [INFO] DEBUG XML: <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:ns2="http://www.hatena.ne.jp/info/xmlns#">
+<id>tag:blog.hatena.ne.jp,2013:blog-kaigot-17179246901311966925-17179246901358931422</id>
+<link rel="edit" href="https://blog.hatena.ne.jp/kaigot/kaigotmusic.hatenablog.com/atom/entry/17179246901358931422" />
+<link rel="alternate" type="text/html" href="https://kaigotmusic.hatenablog.com/entry/2026/02/27/072506" />
+
+<author><name>kaigot</name></author>
+<title>消費税0％で生活は変わる？高市首相が仕掛けた勝負の正体</title>
+<updated>2026-02-27T07:25:06+09:00</updated>
+<published>2026-02-27T07:25:06+09:00</published>
+<app:edited>2026-02-27T07:25:06+09:00</app:edited>
+<summary type="text">概要 消費税0％で生活は変わる？高市首相が仕掛けた勝負の正体 概要 スーパーのレジで、小銭を出しながら考えた。 伊勢丹の地下で、夕飯の買い物をする。 レジに表示された10％の文字。ずっしりと重い。 この支払いは、未来の何に繋がるのか。 正直、今のままでは期待が持てない。不安が勝つ…</summary>
+<content type="text/x-markdown">## 概要
+
+消費税0％で生活は変わる？高市首相が仕掛けた勝負の正体
+
+[:contents]
+
+スーパーのレジで、小銭を出しながら考えた。
+
+伊勢丹の地下で、夕飯の買い物をする。
+
+レジに表示された10％の文字。ずっしりと重い。
+
+この支払
+2026-02-28 16:32:36,718 [INFO] Checked Entry: 消費税0％で生活は変わる？高市首相が仕掛けた勝負の正体 (Draft: False)
+2026-02-28 16:32:36,719 [INFO] Batch processing complete.
+2026-02-28 16:32:58,796 [INFO] Starting automated blog processing batch...
+2026-02-28 16:32:58,796 [INFO] --- Processing Blog: gadget_productivity ---
+2026-02-28 16:32:59,433 [INFO] Checking Entry: 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く (Draft: False)
+2026-02-28 16:32:59,433 [INFO] Processing Entry: 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く (tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359401933)
+2026-02-28 16:32:59,434 [INFO]   Step 1: Adding thumbnail...
+2026-02-28 16:33:05,732 [INFO] CustomAPIClient: switched to mode 'Thinking'
+2026-02-28 16:33:05,733 [INFO] CustomAPIClient: calling ask (timeout=600s)
+2026-02-28 16:38:07,802 [WARNING] CustomAPIClient: attempt 1 failed: HTTP 500: {"error":"Timeout waiting for Gemini response"}
+2026-02-28 16:38:36,232 [INFO] CustomAPIClient: success (len=914)
+2026-02-28 16:39:34,936 [INFO] Starting automated blog processing batch...
+2026-02-28 16:39:34,936 [INFO] --- Processing Blog: gadget_productivity ---
+2026-02-28 16:39:35,609 [INFO] Checking Entry: 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く (Draft: False)
+2026-02-28 16:39:35,609 [INFO] Processing Entry: 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く (tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359401933)
+2026-02-28 16:39:35,609 [INFO]   Step 1: Adding thumbnail...
+2026-02-28 16:39:56,565 [INFO] Starting automated blog processing batch...
+2026-02-28 16:39:56,565 [INFO] --- Processing Blog: gadget_productivity ---
+2026-02-28 16:39:57,219 [INFO] Processing Entry: 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く (Draft: False)
+2026-02-28 16:39:57,220 [INFO]   Step 1: Adding thumbnail...
+2026-02-28 16:40:03,203 [ERROR] Error processing entry 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く: 【Fail-Fast】 拾い上げ可能なサムネイル画像が見つからなかった、またはアップロードに失敗しました。処理を遮断します。
+Traceback (most recent call last):
+  File "C:\Users\motoc\hatena-blog-suite\automate_blog.py", line 150, in process_entry
+    else:
+    
+        logger.debug("  Step 1: Thumbnail already exists, skipping.")
+        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    
+    # 2. Fact Check
+    ~~~~~~
+  File "C:\Users\motoc\hatena-blog-suite\lib\thumbnail_task.py", line 65, in execute
+    raise RuntimeError("【Fail-Fast】 拾い上げ可能なサムネイル画像が見つからなかった、またはアップロードに失敗しました。処理を遮断します。")
+RuntimeError: 【Fail-Fast】 拾い上げ可能なサムネイル画像が見つからなかった、またはアップロードに失敗しました。処理を遮断します。
+2026-02-28 16:40:03,210 [INFO] Checking Entry: 猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡 (Draft: False)
+2026-02-28 16:40:03,210 [INFO] Processing Entry: 猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡 (tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359389589)
+2026-02-28 16:40:03,211 [INFO]   Step 1: Adding thumbnail...
+2026-02-28 16:40:03,211 [INFO] CustomAPIClient: calling ask (timeout=600s)
+2026-02-28 16:40:03,736 [INFO] CustomAPIClient: switched to mode 'Thinking'
+2026-02-28 16:40:03,736 [INFO] CustomAPIClient: calling ask (timeout=600s)
+2026-02-28 16:41:24,205 [INFO] CustomAPIClient: success (len=907)
+2026-02-28 16:41:24,205 [INFO] CustomAPIClient: success (len=907)
+2026-02-28 16:42:30,179 [INFO]   Step 2: Running fact check...
+2026-02-28 16:42:30,180 [INFO]   Step 3: Adding affiliate links...
+2026-02-28 16:42:30,182 [INFO] CustomAPIClient: calling ask (timeout=600s)
+2026-02-28 16:42:30,443 [INFO]   Step 2: Running fact check...
+2026-02-28 16:42:30,443 [INFO]   Step 3: Adding affiliate links...
+2026-02-28 16:42:30,444 [INFO] CustomAPIClient: calling ask (timeout=600s)
+2026-02-28 16:42:51,029 [INFO] CustomAPIClient: success (len=55)
+2026-02-28 16:42:51,029 [INFO] CustomAPIClient: success (len=55)
+2026-02-28 16:42:51,031 [INFO] Extracted keywords: ['藁人形', 'はんだごて', '鉄腕アトム', '液晶モニター 保護パネル']
+2026-02-28 16:42:51,031 [INFO] Extracted keywords: ['藁人形', 'はんだごて', '鉄腕アトム', '液晶モニター 保護パネル']
+2026-02-28 16:42:51,031 [INFO] Searching products for: ['藁人形', 'はんだごて', '鉄腕アトム', '液晶モニター 保護パネル']
+2026-02-28 16:42:51,031 [INFO] Searching products for: ['藁人形', 'はんだごて', '鉄腕アトム', '液晶モニター 保護パネル']
+2026-02-28 16:42:51,732 [INFO] Added 5 products to article
+2026-02-28 16:42:51,732 [INFO]   Finalizing: Updating entry on Hatena...
+2026-02-28 16:42:51,743 [INFO] Added 5 products to article
+2026-02-28 16:42:51,744 [INFO]   Finalizing: Updating entry on Hatena...
+2026-02-28 16:42:52,664 [INFO]   Successfully processed and updated: 猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡
+2026-02-28 16:42:52,666 [INFO] Checking Entry: 脳にチップを埋める前に藁を編め？2045年のサイボーグ化vs100円の呪術 (Draft: False)
+2026-02-28 16:42:52,666 [INFO] Processing Entry: 脳にチップを埋める前に藁を編め？2045年のサイボーグ化vs100円の呪術 (tag:blog.hatena.ne.jp,2013:blog-motochan1969-26006613719565821-17179246901359340764)
+2026-02-28 16:42:52,666 [INFO]   Step 1: Adding thumbnail...
+2026-02-28 16:42:52,666 [INFO] CustomAPIClient: calling ask (timeout=600s)
+2026-02-28 16:42:52,861 [INFO]   Successfully processed and updated: 100年前の保津峡で見つかったロボットの亡霊。藁人形が鉄の呪いを解く
+2026-02-28 16:42:52,862 [INFO] Processing Entry: 猫をモニターから消す呪い？1960年代の心と藁人形が起こした奇跡 (Draft: False)
+2026-02-28 16:42:52,862 [INFO]   Step 1: Adding thumbnail...
+2026-02-28 16:42:52,862 [INFO] CustomAPIClient: calling ask (timeout=600s)
+2026-02-28 16:43:19,046 [INFO] CustomAPIClient: success (len=1087)
+2026-02-28 16:43:19,046 [INFO] CustomAPIClient: success (len=1087)
+2026-02-28 16:45:32,373 [INFO]   Step 2: Running fact check...
+2026-02-28 16:45:32,373 [INFO]   Step 3: Adding affiliate links...
+2026-02-28 16:45:32,373 [INFO] CustomAPIClient: calling ask (timeout=600s)
+2026-02-28 16:45:33,630 [INFO]   Step 2: Running fact check...
+2026-02-28 16:45:33,630 [INFO]   Step 3: Adding affiliate links...
+2026-02-28 16:45:33,631 [INFO] CustomAPIClient: calling ask (timeout=600s)

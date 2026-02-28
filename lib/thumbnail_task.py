@@ -1,7 +1,10 @@
 import os
 import glob
 import requests
+import time
 from typing import Dict, Any
+
+from lib.llm import LLMService
 
 class ThumbnailGeneratorTask:
     """
@@ -29,16 +32,34 @@ class ThumbnailGeneratorTask:
         if not thumbnail_prompt or thumbnail_prompt == title:
             # 記事の内容を面白おかしく表現する4コマ漫画風のプロンプトを生成
             content_snippet = content[:800] if content else title
-            thumbnail_prompt = (
-                f"ブログ記事の内容を面白おかしく表現した、4コマ漫画風のイラストを生成してください。\n"
+            metaprompt = (
+                f"あなたは優秀なプロンプトエンジニアです。以下のブログ記事の内容を面白おかしく表現した、"
+                f"4コマ漫画風のイラストを画像生成AIに描かせるための英語のプロンプトを1つ作成してください。\n"
+                f"英語のプロンプト「のみ」を出力し、説明や装飾は一切不要です。\n\n"
                 f"【記事のタイトル】: {title}\n"
                 f"【記事の内容（抜粋）】: {content_snippet}"
             )
+            
+            try:
+                print("Step 1: 画像生成用プロンプトをLLMで生成中...")
+                llm = LLMService()
+                thumbnail_prompt = llm.generate_text(metaprompt)
+                print(f"=> 生成された画像プロンプト: {thumbnail_prompt}")
+            except Exception as e:
+                print(f"LLMによる画像プロンプト生成に失敗しました: {e}")
+                # フォールバック: 元の簡易的なプロンプトをそのまま使う
+                thumbnail_prompt = (
+                    f"4-panel comic style, funny illustration representing blog article. "
+                    f"Title: {title}. Focus on the main keywords."
+                )
+                print(f"=> フォールバック用プロンプトを使用: {thumbnail_prompt}")
         
-        # 0. APIを叩いてサムネイル生成をトリガーする
+        # Step 2: APIを叩いてサムネイル生成をトリガーする
+        print("Step 2: サムネイル画像生成を開始します...")
+        start_time = time.time()
         self._trigger_image_generation(thumbnail_prompt)
         
-        thumbnail_url = self._scavenge_latest_image()
+        thumbnail_url = self._scavenge_latest_image(after_time=start_time)
         
         if not thumbnail_url:
             raise RuntimeError("【Fail-Fast】 拾い上げ可能なサムネイル画像が見つからなかった、またはアップロードに失敗しました。処理を遮断します。")
@@ -80,16 +101,14 @@ class ThumbnailGeneratorTask:
             
             if response.status_code == 200:
                 print("サムネイル生成指示完了（ブラウザ等でのダウンロード待機に入ります...）")
-                # ダウンロードが完了するまでのバッファとして数秒〜十数秒待機
-                # 完全に泥臭いアプローチですが、副作用ベースのため固定ウェイトを入れます
-                time.sleep(15) 
+                # ループによる待機は _scavenge_latest_image 側で行うため、ここではスリープしません。
             else:
                 print(f"サムネイル生成指示エラー (HTTP {response.status_code}): {response.text}")
                 
         except Exception as e:
             print(f"サムネイル生成トリガー中にエラー: {e}")
 
-    def _scavenge_latest_image(self):
+    def _scavenge_latest_image(self, after_time: float):
         """
         ローカルのDownloads等のフォルダから最も新しい画像ファイルを拾い上げ、
         Catboxに泥臭くアップロードしてURLを返す。
@@ -100,23 +119,32 @@ class ThumbnailGeneratorTask:
             os.path.join(os.getcwd(), 'data')
         ]
         
-        image_files = []
-        for d in search_dirs:
-            if os.path.exists(d):
-                image_files.extend(glob.glob(os.path.join(d, '*.png')))
-                image_files.extend(glob.glob(os.path.join(d, '*.jpg')))
-                image_files.extend(glob.glob(os.path.join(d, '*.jpeg')))
-                image_files.extend(glob.glob(os.path.join(d, '*.webp')))
+        print("新しい画像がダウンロードされるのを待機しています...")
+        poll_interval = 2
+        max_wait = 60
+        start_wait = time.time()
         
-        if not image_files:
-            return None
+        while time.time() - start_wait < max_wait:
+            valid_files = []
+            for d in search_dirs:
+                if os.path.exists(d):
+                    for ext in ['*.png', '*.jpg', '*.jpeg', '*.webp']:
+                        for f in glob.glob(os.path.join(d, ext)):
+                            # 処理開始後に作成または更新されたファイルのみを拾う
+                            if os.path.getmtime(f) >= after_time or os.path.getctime(f) >= after_time:
+                                valid_files.append(f)
             
-        # 最も新しいファイルを取得
-        latest_file = max(image_files, key=os.path.getctime)
-        print(f"泥臭く拾い上げたサムネイル候補: {latest_file}")
-        
-        # Catboxアップロード
-        return self._upload_to_catbox(latest_file)
+            if valid_files:
+                # 最も新しいファイルを取得
+                latest_file = max(valid_files, key=os.path.getctime)
+                print(f"泥臭く拾い上げたサムネイル候補: {latest_file}")
+                # Catboxアップロード
+                return self._upload_to_catbox(latest_file)
+                
+            time.sleep(poll_interval)
+            
+        print("指定時間(60秒)内に新しい画像ファイルが見つかりませんでした。")
+        return None
 
     def _upload_to_catbox(self, file_path: str):
         print(f"Catboxへアップロード中: {file_path}")
