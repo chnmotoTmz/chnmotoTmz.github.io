@@ -1,0 +1,11 @@
+{
+    "name": "chnmototmz-github-io",
+    "version": "1.0.0",
+    "description": "Media Factory V2 static site",
+    "main": "build.js",
+    "scripts": {
+        "build": "node build.js"
+    },
+    "author": "chnmotoTmz",
+    "license": "ISC"
+}

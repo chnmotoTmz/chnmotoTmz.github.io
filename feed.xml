@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>chnmotoTmz's Media Factory</title>
+    <link>https://chnmotoTmz.github.io</link>
+    <description>AI-generated Industrial Media Factory</description>
+    <atom:link href="https://chnmotoTmz.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+        <title>機械の沈黙、情報の荒野 ―「構文解析エラー」という名の断絶―</title>
+        <link>https://chnmotoTmz.github.io/posts/2026-03-01-機械の沈黙-情報の荒野---構文解析エラー-という名の断絶.html</link>
+        <description>デジタル文明の深淵で起こる「Parse Error」。司馬遼太郎風の筆致で、技術の構造、個人の焦燥、そして社会の断絶を鋭く描き出す考察録。</description>
+        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-機械の沈黙-情報の荒野---構文解析エラー-という名の断絶.html</guid>
+    </item>
+    
+</channel>
+</rss>
