@@ -4,20 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML First Test Post | chnmotoTmz Blog</title>
+    <title>HTML First Test Post | Humanoid Media Factory</title>
     <meta name="description" content="This is a test post for the new HTML-First Media Factory pipeline.">
-    <meta property="og:title" content="HTML First Test Post">
-    <meta property="og:description" content="This is a test post for the new HTML-First Media Factory pipeline.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://chnmotoTmz.github.io/HTML First Test Post.html">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Zen+Antique&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <header>
-        <h1><a href="index.html">chnmotoTmz Media Factory</a></h1>
-    </header>
-    <main>
-        <!--
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-left">
+          <span>Vol.08 No.621</span>
+          <span>2026年3月1日(日)</span>
+          <span>雑記</span>
+        </div>
+        <div class="topbar-right">
+          <a href="index.html" style="color: var(--accent); font-weight: 600;">← PORTAL HOME</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="wrapper">
+        <article>
+            <header>
+                <h1>HTML First Test Post</h1>
+                <div class="post-meta">
+                    <time>2026-03-01</time> | <span>雑記</span>
+                </div>
+            </header>
+            <div class="content">
+                <!--
 title: HTML First Test Post
 date: 2026-03-01
 description: This is a test post for the new HTML-First Media Factory pipeline.
@@ -33,9 +48,15 @@ tags: test, html, industrial
   </div>
 </article>
 
+            </div>
+        </article>
     </main>
+
     <footer>
-        <p>&copy; 2026 chnmotoTmz</p>
+      <div class="footer-bottom">
+        <span>© 2026 chnmotoTmz · Humanoid Media Factory</span>
+        <span>Powered by Gemini × LINE × GitHub</span>
+      </div>
     </footer>
 </body>
 </html>
