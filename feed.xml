@@ -1,90 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
 <channel>
-    <title>chnmotoTmz's Media Factory</title>
-    <link>https://chnmotoTmz.github.io</link>
-    <description>AI-generated Industrial Media Factory</description>
-    <atom:link href="https://chnmotoTmz.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-        <title>中東の炎上と日本の矜持――高市首相に問われる「自主外交」の継承</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-中東の炎上と日本の矜持--高市首相に問われる-自主外交-の継承.html</link>
-        <description>イスラエル・米軍によるイラン攻撃という衝撃の展開。2026年3月の訪米を控える高市首相に対し、先人が築き上げた中東との信頼関係をどう守り抜くべきか、その覚悟を問う。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-中東の炎上と日本の矜持--高市首相に問われる-自主外交-の継承.html</guid>
-    </item>
-    
-    <item>
-        <title>劫火の砂漠、鋼の相場 ―令和八年三月、原油高騰と日本株の『宿命』を俯瞰する―</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-劫火の砂漠-鋼の相場--令和八年三月-原油高騰と日本株の-宿命-を俯瞰する.html</link>
-        <description>2026年3月、中東情勢の緊迫化に伴う原油価格反発。この地政学的リスクを背景に、日本経済と株式市場が直面する構造的転換を司馬遼太郎風の視座で読み解く。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-劫火の砂漠-鋼の相場--令和八年三月-原油高騰と日本株の-宿命-を俯瞰する.html</guid>
-    </item>
-    
-    <item>
-        <title>情報の断崖、知性の防衛線 ―令和八年三月、多忙の深淵に刻む『寡兵』の美学―</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-情報の断崖-知性の防衛線--令和八年三月-多忙の深淵に刻む-寡兵-の美学.html</link>
-        <description>マスターライターによる査読済み究極稿。プロジェクトの奔流の中で、あえて『捨てる』ことを選んだ者の勝利の記録。司馬遼太郎風の語り口で綴る、現代の兵法と知の構造。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-情報の断崖-知性の防衛線--令和八年三月-多忙の深淵に刻む-寡兵-の美学.html</guid>
-    </item>
-    
-    <item>
-        <title>文明の転換点、銀の奔流 ―令和八年、トヨタが問う『物流という名の国家意志』―</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-文明の転換点-銀の奔流--令和八年-トヨタが問う-物流という名の国家意志.html</link>
-        <description>2026年3月1日、トヨタが放った物流革命。司馬遼太郎風の俯瞰的視点により、自動運転がもたらす『令和の街道整備』の正体と、そこに宿る日本人の精神性を浮き彫りにします。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-文明の転換点-銀の奔流--令和八年-トヨタが問う-物流という名の国家意志.html</guid>
-    </item>
-    
-    <item>
-        <title>機械の徒、人の業 ―令和八年、労働市場における「鋼の隣人」を巡る考察―</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-機械の徒-人の業--令和八年-労働市場における-鋼の隣人-を巡る考察.html</link>
-        <description>2026年、労働市場に浸透するAIロボット。司馬遼太郎風の筆致で、技術の構造、個人の焦燥、そして社会の変容を鋭く描き出す文明論的考察。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-機械の徒-人の業--令和八年-労働市場における-鋼の隣人-を巡る考察.html</guid>
-    </item>
-    
-    <item>
-        <title>機械の沈黙、情報の荒野 ―「構文解析エラー」という名の断絶―</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-機械の沈黙-情報の荒野---構文解析エラー-という名の断絶.html</link>
-        <description>デジタル文明の深淵で起こる「Parse Error」。司馬遼太郎風の筆致で、技術の構造、個人の焦燥、そして社会の断絶を鋭く描き出す考察録。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-機械の沈黙-情報の荒野---構文解析エラー-という名の断絶.html</guid>
-    </item>
-    
-    <item>
-        <title>砂上の信義、鋼の同盟 ―令和の中東危機と日本の『自主』を巡る考察―</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-砂上の信義-鋼の同盟--令和の中東危機と日本の-自主-を巡る考察.html</link>
-        <description>イスラエル・米軍によるイラン攻撃。この激動の最中に訪米する高市首相に突きつけられたのは、単なる追従か、それとも先人が築いた「自主外交」の継承か。司馬遼太郎風の俯瞰的視点で、国家の矜持を解き明かす究極の論考。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-砂上の信義-鋼の同盟--令和の中東危機と日本の-自主-を巡る考察.html</guid>
-    </item>
-    
-    <item>
-        <title>砂漠の劫火、知性の断崖 ―イスラエル・パレスチナという名の「歴史の宿痾」を鳥瞰する―</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-砂漠の劫火-知性の断崖--イスラエル-パレスチナという名の-歴史の宿痾-を鳥瞰する.html</link>
-        <description>2026年、中東の動乱は極点に達した。司馬遼太郎的俯瞰を用い、イラン・パペの視座を交えながら、地図の上に引かれた「傲慢の線」と、現代の「アルゴリズムの分断」が織りなす悲劇の構造を鋭く洞察する。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-砂漠の劫火-知性の断崖--イスラエル-パレスチナという名の-歴史の宿痾-を鳥瞰する.html</guid>
-    </item>
-    
-    <item>
-        <title>砂漠の劫火、鋼の相場 ―令和八年三月、原油高騰と日本株の『宿命』を俯瞰する―</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-砂漠の劫火-鋼の相場--令和八年三月-原油高騰と日本株の-宿命-を俯瞰する.html</link>
-        <description>2026年3月、中東情勢の緊迫化に伴い急騰する原油価格。この歴史的転換点において、日本の投資家が進むべき「資源株」の航路を、司馬遼太郎風の歴史的俯瞰と人間洞察を交えて解説します。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-砂漠の劫火-鋼の相場--令和八年三月-原油高騰と日本株の-宿命-を俯瞰する.html</guid>
-    </item>
-    
-    <item>
-        <title>砂漠の熱風、信義の測量 ―令和八年、中東の激震と日本の『自主』を巡る考察―</title>
-        <link>https://chnmotoTmz.github.io/posts/2026-03-01-砂漠の熱風-信義の測量--令和八年-中東の激震と日本の-自主-を巡る考察.html</link>
-        <description>2026年3月、中東情勢の激変を前に、司馬遼太郎風の俯瞰的視点で日本の国家としての「品格」と「自立」を問い直す、メディア工場基準のプレミアム論評。</description>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/2026-03-01-砂漠の熱風-信義の測量--令和八年-中東の激震と日本の-自主-を巡る考察.html</guid>
-    </item>
-    
+  <title>chnmotoTmz Media Factory</title>
+  <link>https://chnmotoTmz.github.io</link>
+  <description>AI-Synthesized Media Hub</description>
+  
+  <item>
+    <title>機械の沈黙、情報の荒野 ―『構文解析エラー』という名の断絶―</title>
+    <link>https://chnmotoTmz.github.io/2026-03-01-機械の沈黙-情報の荒野---構文解析エラー-という名の断絶.html</link>
+    <description>デジタル文明の深淵で起こる『Parse Error』。司馬遼太郎風の筆致で、技術の構造、個人の焦燥、そして社会の断絶を鋭く描き出す考察録。</description>
+    <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>HTML First Test Post</title>
+    <link>https://chnmotoTmz.github.io/test-html-post.html</link>
+    <description>This is a test post for the new HTML-First Media Factory pipeline.</description>
+    <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+  </item>
 </channel>
 </rss>

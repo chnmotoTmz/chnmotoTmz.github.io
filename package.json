@@ -1,11 +1,16 @@
 {
-    "name": "chnmototmz-github-io",
-    "version": "1.0.0",
-    "description": "Media Factory V2 static site",
-    "main": "build.js",
-    "scripts": {
-        "build": "node build.js"
-    },
-    "author": "chnmotoTmz",
-    "license": "ISC"
+  "name": "chnmototmz.github.io",
+  "version": "1.0.0",
+  "description": "Simple static blog for GitHub Pages",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chnmotoTmz",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^12.0.0",
+    "js-yaml": "^4.1.0"
+  }
 }
