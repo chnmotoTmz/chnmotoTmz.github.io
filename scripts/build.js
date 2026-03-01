@@ -75,6 +75,10 @@ function getExcerpt(html) {
     let clean = html.replace(/<style[\s\S]*?<\/style>/gi, '');
     clean = clean.replace(/<script[\s\S]*?<\/script>/gi, '');
     clean = clean.replace(/<!--[\s\S]*?-->/g, '');
+  // Remove leaked CSS-like fragments even when they are plain text
+  clean = clean.replace(/@import\s+url\([^)]*\);?/gi, '');
+  clean = clean.replace(/[.#]?[\w\-\s,>]+\{[^{}]*\}/g, '');
+  clean = clean.replace(/\b[a-z\-]+\s*:\s*[^;{}]+;/gi, '');
     // Remove tags
     clean = clean.replace(/<[^>]*>/g, '').trim();
     // Decode basic entities if needed or just collapse spaces
@@ -186,7 +190,7 @@ async function build() {
   <div class="masthead-inner">
     <div class="masthead-left">
       <div class="issue-info">// Automated Content Pipeline</div>
-      <div class="issue-info">LINE → Gemini → GitHub Publish</div>
+      <div class="issue-info">LINE → Moondream → Gemini → Publish</div>
     </div>
     <div class="mascot-area">
       <span class="mascot-emoji">🦾</span>
@@ -208,6 +212,9 @@ async function build() {
   <div class="nav-inner">
     <a href="#" class="nav-link active">すべて</a>
     ${categories.map(c => `<a href="#" class="nav-link">${c}</a>`).join('')}
+    <div class="nav-search">
+      <input type="text" placeholder="記事を検索...">
+    </div>
   </div>
 </nav>
 
@@ -249,8 +256,9 @@ async function build() {
 
   <!-- LATEST 3-COLUMN -->
   <div class="section-header">
-    <h2>アーカイブ</h2>
+    <h2>最新記事</h2>
     <div class="section-rule"></div>
+    <a href="#" class="section-more">すべて見る →</a>
   </div>
 
   <div class="grid-3">
@@ -273,6 +281,7 @@ async function build() {
       <div class="section-header">
         <h2>以前の投稿</h2>
         <div class="section-rule"></div>
+        <a href="#" class="section-more">もっと見る →</a>
       </div>
       <div class="grid-3" style="grid-template-columns: repeat(2,1fr);">
         ${posts.slice(8, 12).map(p => `
@@ -307,8 +316,28 @@ async function build() {
         <div class="widget-body">
           <div class="pipeline-mini">
             <div class="pipe-step"><span class="pipe-icon">📱</span><div><div class="pipe-name">LINE Webhook</div><div class="pipe-tech">接続中</div></div><span class="pipe-ok">● OK</span></div>
+            <div class="pipe-step"><span class="pipe-icon">🌙</span><div><div class="pipe-name">Moondream</div><div class="pipe-tech">画像解析</div></div><span class="pipe-ok">● OK</span></div>
+            <div class="pipe-step"><span class="pipe-icon">🖼️</span><div><div class="pipe-name">Catbox CDN</div><div class="pipe-tech">ホスティング</div></div><span class="pipe-ok">● OK</span></div>
             <div class="pipe-step"><span class="pipe-icon">✨</span><div><div class="pipe-name">Gemini AI</div><div class="pipe-tech">文章生成</div></div><span class="pipe-ok">● OK</span></div>
+            <div class="pipe-step"><span class="pipe-icon">📝</span><div><div class="pipe-name">はてなBlog</div><div class="pipe-tech">公開中</div></div><span class="pipe-ok">● OK</span></div>
             <div class="pipe-step"><span class="pipe-icon">🐙</span><div><div class="pipe-name">GitHub Pages</div><div class="pipe-tech">デプロイ済</div></div><span class="pipe-ok">● OK</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">最近の投稿</div>
+        <div class="widget-body">
+          <div class="recent-list">
+            ${posts.slice(0, 5).map((p, i) => `
+            <div class="recent-item" onclick="location.href='${p.url}'">
+              <div class="recent-num">${String(i + 1).padStart(2, '0')}</div>
+              <div>
+                <div class="recent-title">${p.title}</div>
+                <div class="recent-date">${p.date}</div>
+              </div>
+            </div>
+            `).join('')}
           </div>
         </div>
       </div>
