@@ -84,6 +84,11 @@ function build() {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="hero">
+        <div class="hero-bg"></div>
+        <h1 class="hero-title">🦾 Humanoid Media Factory 🦾</h1>
+        <p class="hero-sub">AI とロボットが紡ぐ、次世代コンテンツパイプライン</p>
+    </div>
     <div class="container">
         <aside class="sidebar">
             <h2>Categories</h2>
