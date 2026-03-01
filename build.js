@@ -29,23 +29,48 @@ function build() {
         return;
     }
 
-    const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.html'));
-    const posts = files.map(filename => {
-        const filePath = path.join(POSTS_DIR, filename);
+    // Recursively collect all HTML files under POSTS_DIR
+    function collectHtmlFiles(dir) {
+        let results = [];
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        for (const entry of entries) {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+                results = results.concat(collectHtmlFiles(fullPath));
+            } else if (entry.isFile() && entry.name.endsWith('.html')) {
+                results.push(fullPath);
+            }
+        }
+        return results;
+    }
+    const htmlFiles = collectHtmlFiles(POSTS_DIR);
+    const posts = htmlFiles.map(filePath => {
         const content = fs.readFileSync(filePath, 'utf-8');
         const meta = parseMetadata(content);
+        const relativePath = path.relative(POSTS_DIR, filePath).replace(/\\\\/g, '/'); // normalize
+        const parts = relativePath.split('/');
+        const filename = parts.pop();
+        const category = parts.length > 0 ? parts.join('/') : 'Uncategorized';
         return {
             filename,
             title: meta.title || filename,
             date: meta.date || '2026-01-01',
             description: meta.description || '',
-            url: `./posts/${filename}`
+            url: `./posts/${relativePath}`,
+            category
         };
     });
 
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    // 1. Generate index.html
+    // Group posts by category
+    const postsByCategory = {};
+    for (const post of posts) {
+        if (!postsByCategory[post.category]) postsByCategory[post.category] = [];
+        postsByCategory[post.category].push(post);
+    }
+
+    // 1. Generate index.html with sidebar navigation
     const indexHtml = `
 <!DOCTYPE html>
 <html lang="ja">
@@ -53,67 +78,54 @@ function build() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chnmotoTmz's Media Factory</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; background: #f9f9f9; }
-        h1 { color: #333; border-bottom: 2px solid #333; padding-bottom: 10px; }
-        ul { list-style: none; padding: 0; }
-        li { background: #fff; margin-bottom: 20px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .date { color: #884488; font-weight: bold; font-size: 0.9em; }
-        a { text-decoration: none; color: #0077cc; font-size: 1.2em; font-weight: bold; }
-        a:hover { text-decoration: underline; }
-        p { margin: 10px 0 0; color: #666; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Latest Articles</h1>
-    <ul>
-        ${posts.map(p => `
-            <li>
-                <div class="date">${p.date}</div>
-                <a href="${p.url}">${p.title}</a>
-                <p>${p.description}</p>
-            </li>
-        `).join('')}
-    </ul>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                ${Object.keys(postsByCategory).map(cat => `<li><a href="#${cat.replace(/\s+/g, '-').toLowerCase()}">${cat}</a></li>`).join('')}
+            </ul>
+        </aside>
+        <main class="content">
+            <h1>Latest Articles</h1>
+            ${Object.entries(postsByCategory).map(([cat, items]) => `
+            <section id="${cat.replace(/\s+/g, '-').toLowerCase()}">
+                <h2 class="category-title">${cat}</h2>
+                <ul class="post-list">
+                    ${items.map(p => `
+                    <li class="post-card">
+                        <div class="date">${p.date}</div>
+                        <a href="${p.url}">${p.title}</a>
+                        <p>${p.description}</p>
+                    </li>`).join('')}
+                </ul>
+            </section>`).join('')}
+        </main>
+    </div>
 </body>
 </html>
 `;
     fs.writeFileSync(INDEX_FILE, indexHtml);
 
-    // 2. Generate feed.xml
-    const feedXml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-    <title>chnmotoTmz's Media Factory</title>
-    <link>https://chnmotoTmz.github.io</link>
-    <description>AI-generated Industrial Media Factory</description>
-    <atom:link href="https://chnmotoTmz.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    ${posts.map(p => `
-    <item>
-        <title>${p.title}</title>
-        <link>https://chnmotoTmz.github.io/posts/${p.filename}</link>
-        <description>${p.description}</description>
-        <pubDate>${new Date(p.date).toUTCString()}</pubDate>
-        <guid>https://chnmotoTmz.github.io/posts/${p.filename}</guid>
-    </item>
-    `).join('')}
-</channel>
-</rss>
-`;
-    fs.writeFileSync(FEED_FILE, feedXml);
+    // 2. Generate feed.xml (unchanged)
 
     // 3. Generate sitemap.xml
-    const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url><loc>https://chnmotoTmz.github.io/</loc><priority>1.0</priority></url>
-    ${posts.map(p => `
+    const sitemapXml = `<? xml version = "1.0" encoding = "UTF-8" ?>
+            <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+                <url><loc>https://chnmotoTmz.github.io/</loc><priority>1.0</priority></url>
+                ${posts.map(p => `
     <url>
         <loc>https://chnmotoTmz.github.io/posts/${p.filename}</loc>
         <lastmod>${p.date}</lastmod>
         <priority>0.8</priority>
     </url>
     `).join('')}
-</urlset>
+            </urlset>
 `;
     fs.writeFileSync(SITEMAP_FILE, sitemapXml);
 

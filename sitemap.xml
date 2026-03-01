@@ -1,6 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url><loc>https://chnmotoTmz.github.io/</loc><priority>1.0</priority></url>
+<? xml version = "1.0" encoding = "UTF-8" ?>
+            <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+                <url><loc>https://chnmotoTmz.github.io/</loc><priority>1.0</priority></url>
+                
+    <url>
+        <loc>https://chnmotoTmz.github.io/posts/2026-03-02-鋼の執事と山嶺の呼声--2026年-生活osを再定義する-物理エージェント-の胎動.html</loc>
+        <lastmod>2026-03-02</lastmod>
+        <priority>0.8</priority>
+    </url>
     
     <url>
         <loc>https://chnmotoTmz.github.io/posts/2026-03-01-中東の炎上と日本の矜持--高市首相に問われる-自主外交-の継承.html</loc>
@@ -62,4 +68,4 @@
         <priority>0.8</priority>
     </url>
     
-</urlset>
+            </urlset>
