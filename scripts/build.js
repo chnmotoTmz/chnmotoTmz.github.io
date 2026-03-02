@@ -86,6 +86,29 @@ function getExcerpt(html) {
     return clean.substring(0, 160) + '...';
 }
 
+  function normalizePostContent(html) {
+    if (!html) return '';
+    let clean = html;
+
+    const bodyMatch = clean.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+    if (bodyMatch && bodyMatch[1]) {
+      clean = bodyMatch[1];
+    }
+
+    clean = clean.replace(/<!DOCTYPE[^>]*>/gi, '');
+    clean = clean.replace(/<html[^>]*>/gi, '');
+    clean = clean.replace(/<\/html>/gi, '');
+    clean = clean.replace(/<head[\s\S]*?<\/head>/gi, '');
+    clean = clean.replace(/<body[^>]*>/gi, '');
+    clean = clean.replace(/<\/body>/gi, '');
+    clean = clean.replace(/<link[^>]*>/gi, '');
+    clean = clean.replace(/<style[\s\S]*?<\/style>/gi, '');
+    clean = clean.replace(/@import\s+url\([^)]*\);?/gi, '');
+    clean = clean.trim();
+
+    return clean;
+  }
+
 async function build() {
     console.log('🚀 Synchronizing Humanoid Media Factory Portal...');
 
@@ -115,6 +138,7 @@ async function build() {
 
     allFiles.forEach(filePath => {
         const rawContent = fs.readFileSync(filePath, 'utf8');
+      const normalizedContent = normalizePostContent(rawContent);
         const meta = extractMetadata(rawContent);
         const fileName = path.basename(filePath);
         const slug = path.basename(fileName, '.html');
@@ -131,13 +155,13 @@ async function build() {
             category: meta.category || dirCategory || '雑記',
             emoji: meta.emoji || '🦾',
             kicker: meta.kicker || 'REPORT',
-            excerpt: getExcerpt(rawContent),
+            excerpt: getExcerpt(normalizedContent),
             slug: slug,
             url: `${slug}.html`
         };
 
         // Wrap the partial HTML into a full page
-        const fullContent = POST_WRAPPER(post.title, rawContent, post.date, post.description, post.category);
+          const fullContent = POST_WRAPPER(post.title, normalizedContent, post.date, post.description, post.category);
         fs.writeFileSync(path.join(DIST_DIR, `${slug}.html`), fullContent);
 
         posts.push(post);
