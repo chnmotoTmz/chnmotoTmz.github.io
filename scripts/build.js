@@ -14,7 +14,7 @@ const POST_WRAPPER = (title, content, date, description, category) => `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} | Humanoid Media Factory</title>
     <meta name="description" content="${description}">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Zen+Antique&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -84,6 +84,91 @@ function getExcerpt(html) {
     // Decode basic entities if needed or just collapse spaces
     clean = clean.replace(/\s+/g, ' ');
     return clean.substring(0, 160) + '...';
+}
+
+function getThumbnailFromContent(html) {
+    const imgMatch = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+    return imgMatch ? imgMatch[1] : '';
+}
+
+function normalizeThumbnailUrl(url) {
+  const raw = String(url || '').trim();
+  if (!raw) return '';
+  if (/^(https?:)?\/\//i.test(raw) || raw.startsWith('data:')) return raw;
+  if (raw.startsWith('/')) return `${BASE_URL}${raw}`;
+
+  let normalized = raw;
+  if (normalized.startsWith('./')) normalized = normalized.slice(2);
+  while (normalized.startsWith('../')) {
+    normalized = normalized.slice(3);
+  }
+  return normalized;
+}
+
+function normalizeCategory(category) {
+    const val = String(category || '').toLowerCase();
+    if (val.includes('humanoid')) return 'humanoid';
+    if (val.includes('music')) return 'music';
+    if (val.includes('雑記')) return 'zatsuki';
+    return 'zatsuki';
+}
+
+function categoryLabel(category) {
+    const key = normalizeCategory(category);
+    if (key === 'humanoid') return 'HUMANOID';
+    if (key === 'music') return 'MUSIC';
+    return '雑記';
+}
+
+function categoryBadgeClass(category) {
+    const key = normalizeCategory(category);
+    if (key === 'humanoid') return 'badge--humanoid';
+    if (key === 'music') return 'badge--music';
+    return 'badge--zatsuki';
+}
+
+function placeholderSvgDataUri(category) {
+    const label = categoryLabel(category);
+    const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#242420"/>
+      <stop offset="100%" stop-color="#1a1a18"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <rect x="24" y="24" width="1152" height="627" fill="none" stroke="#333330" stroke-width="2"/>
+  <text x="60" y="380" fill="#e8e4dc" font-family="IBM Plex Sans JP, sans-serif" font-size="56" font-weight="700">Humanoid Media Factory</text>
+  <text x="60" y="450" fill="#888880" font-family="IBM Plex Sans JP, sans-serif" font-size="36">${label}</text>
+</svg>`;
+    return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function renderCard(post, options = {}) {
+    const isHero = Boolean(options.hero);
+    const dateText = post.date || '';
+    const category = categoryLabel(post.category);
+    const categoryKey = normalizeCategory(post.category);
+    const badgeClass = categoryBadgeClass(post.category);
+    const thumb = normalizeThumbnailUrl(post.thumbnail) || placeholderSvgDataUri(post.category);
+    const sizeClass = isHero ? ' card--hero' : '';
+    return `
+<article class="card${sizeClass}" data-category="${categoryKey}">
+  <a class="card__link" href="${post.url}" aria-label="${post.title}">
+    <div class="card__thumb">
+      <img src="${thumb}" alt="${post.title}" loading="lazy" onerror="this.src='${placeholderSvgDataUri(post.category)}'">
+      <span class="card__badge ${badgeClass}">${category}</span>
+    </div>
+    <div class="card__body">
+      <h2 class="card__title">${post.title}</h2>
+      <footer class="card__meta">
+        <time>${dateText}</time>
+        <span class="card__ai-label">✦ Gemini生成</span>
+      </footer>
+    </div>
+  </a>
+</article>`;
 }
 
   function normalizePostContent(html) {
@@ -156,6 +241,7 @@ async function build() {
             emoji: meta.emoji || '🦾',
             kicker: meta.kicker || 'REPORT',
             excerpt: getExcerpt(normalizedContent),
+          thumbnail: getThumbnailFromContent(normalizedContent),
             slug: slug,
             url: `${slug}.html`
         };
@@ -172,10 +258,10 @@ async function build() {
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     // Data for templates
-    const featured = posts[0] || {};
-    const sideArticles = posts.slice(1, 5);
-    const gridArticles = posts.slice(5, 8);
-    const tickerText = posts.slice(0, 5).map(p => `${p.emoji} ${p.title}`).join(' \u00a0 ');
+    const featured = posts[0] || null;
+    const heroSide = posts[1] || null;
+    const gridPosts = posts.slice(2);
+    const tickerText = posts.slice(0, 5).map(p => p.title).join('  •  ');
 
     const categories = [...new Set(posts.map(p => p.category))];
     const catCounts = categories.map(c => ({
@@ -189,185 +275,47 @@ async function build() {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Humanoid Media Factory</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Zen+Antique&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="topbar-left">
-      <span>Vol.08 No.247</span>
-      <span>2026年3月2日（月）</span>
-      <span>AIとロボットが紡ぐ、次世代コンテンツパイプライン</span>
-    </div>
-    <div class="topbar-right">
-      <span class="live-badge"><span class="live-dot"></span>LIVE GENERATE</span>
-      <span>記事${posts.length}本公開中</span>
+<div class="ticker-strip" role="status" aria-live="polite">
+  <div class="ticker-strip__inner">
+    <span class="ticker-strip__live">LIVE GENERATE</span>
+    <div class="ticker-strip__track">
+      <div class="ticker-strip__content">${tickerText} • ${tickerText}</div>
     </div>
   </div>
 </div>
 
-<!-- MASTHEAD -->
-<div class="masthead">
-  <div class="masthead-inner">
-    <div class="masthead-left">
-      <div class="issue-info">// Automated Content Pipeline</div>
-      <div class="issue-info">LINE → Moondream → Gemini → Publish</div>
-    </div>
-    <div class="mascot-area">
-      <span class="mascot-emoji">🦾</span>
-      <h1 class="site-title">Humanoid<br><span class="robot">Media</span> Factory</h1>
-      <p class="site-tagline">// AIとロボットが紡ぐ、次世代コンテンツパイプライン</p>
-    </div>
-    <div class="masthead-right">
-      <div class="stats-mini">
-        <div class="stat-row"><strong>${posts.length}</strong>本 公開済</div>
-        <div class="stat-row"><strong>98%</strong> 生成成功率</div>
-        <div class="stat-row"><strong>2</strong>媒体 同時配信</div>
-      </div>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html">Humanoid Media Factory</a>
+    <nav class="header-nav" aria-label="カテゴリー">
+      <button class="tab is-active" data-filter="all">すべて</button>
+      <button class="tab" data-filter="humanoid">HUMANOID</button>
+      <button class="tab" data-filter="music">MUSIC</button>
+      <button class="tab" data-filter="zatsuki">雑記</button>
+    </nav>
+    <div class="header-tools">
+      <input class="search" id="searchInput" type="search" placeholder="記事を検索..." aria-label="記事を検索">
+      <span class="status-badge">${posts.length}本公開</span>
+      <span class="status-badge">98%生成率</span>
     </div>
   </div>
-</div>
+</header>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-link active">すべて</a>
-    ${categories.map(c => `<a href="#" class="nav-link">${c}</a>`).join('')}
-    <div class="nav-search">
-      <input type="text" placeholder="記事を検索...">
-    </div>
-  </div>
-</nav>
+<main class="portal">
+  <section class="hero-grid">
+    ${featured ? renderCard(featured, { hero: true }) : ''}
+    ${heroSide ? renderCard(heroSide) : ''}
+  </section>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-inner">
-    <div class="ticker-label">NEW</div>
-    <div class="ticker-text">${tickerText}</div>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="wrapper">
-
-  <!-- FEATURED -->
-  <div class="featured-label"><span>✦ 注目記事 ✦</span></div>
-  <div class="featured-grid">
-    <div class="featured-main">
-      <span class="featured-kicker">${featured.kicker || '特集'}</span>
-      <h2 class="featured-title" onclick="location.href='${featured.url}'">${featured.title}</h2>
-      <p class="featured-body">${featured.excerpt}</p>
-      <div class="featured-meta">
-        <span>📅 ${featured.date}</span>
-        <span>✨ Gemini生成</span>
-        <span style="margin-left:auto; color:var(--accent); font-weight:600; cursor:pointer;" onclick="location.href='${featured.url}'">続きを読む →</span>
-      </div>
-    </div>
-    <div class="featured-side">
-      <div class="side-title">最新の投稿</div>
-      ${sideArticles.map((p, i) => `
-      <div class="side-article" onclick="location.href='${p.url}'">
-        <div class="side-num">0${i + 1}</div>
-        <div class="side-article-title">${p.title}</div>
-        <div class="side-article-meta">${p.date} · ${p.category}</div>
-      </div>
-      `).join('')}
-    </div>
-  </div>
-
-  <!-- LATEST 3-COLUMN -->
-  <div class="section-header">
-    <h2>最新記事</h2>
-    <div class="section-rule"></div>
-    <a href="#" class="section-more">すべて見る →</a>
-  </div>
-
-  <div class="grid-3">
-    ${gridArticles.map(p => `
-    <div class="card" onclick="location.href='${p.url}'">
-      <div class="card-thumb">${p.emoji}<span class="card-thumb-label">${p.category}</span></div>
-      <div class="card-body">
-        <span class="card-cat">${p.category}</span>
-        <div class="card-title">${p.title}</div>
-        <p class="card-excerpt">${p.excerpt}</p>
-      </div>
-      <div class="card-footer"><span>${p.date}</span><span class="card-read-more">読む →</span></div>
-    </div>
-    `).join('')}
-  </div>
-
-  <!-- CONTENT + SIDEBAR -->
-  <div class="content-with-sidebar">
-    <div>
-      <div class="section-header">
-        <h2>以前の投稿</h2>
-        <div class="section-rule"></div>
-        <a href="#" class="section-more">もっと見る →</a>
-      </div>
-      <div class="grid-3" style="grid-template-columns: repeat(2,1fr);">
-        ${posts.slice(8, 12).map(p => `
-        <div class="card" onclick="location.href='${p.url}'">
-          <div class="card-thumb">${p.emoji}<span class="card-thumb-label">${p.category}</span></div>
-          <div class="card-body">
-            <span class="card-cat">${p.category}</span>
-            <div class="card-title">${p.title}</div>
-            <p class="card-excerpt">${p.excerpt}</p>
-          </div>
-          <div class="card-footer"><span>${p.date}</span><span class="card-read-more">読む →</span></div>
-        </div>
-        `).join('')}
-      </div>
-    </div>
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="widget">
-        <div class="widget-title">カテゴリー</div>
-        <div class="widget-body">
-          <ul class="cat-list">
-            ${catCounts.map(c => `
-            <li class="cat-item"><span>${c.name}</span><span class="cat-count">${c.count}</span></li>
-            `).join('')}
-          </ul>
-        </div>
-      </div>
-
-      <div class="widget">
-        <div class="widget-title">パイプライン状態</div>
-        <div class="widget-body">
-          <div class="pipeline-mini">
-            <div class="pipe-step"><span class="pipe-icon">📱</span><div><div class="pipe-name">LINE Webhook</div><div class="pipe-tech">接続中</div></div><span class="pipe-ok">● OK</span></div>
-            <div class="pipe-step"><span class="pipe-icon">🌙</span><div><div class="pipe-name">Moondream</div><div class="pipe-tech">画像解析</div></div><span class="pipe-ok">● OK</span></div>
-            <div class="pipe-step"><span class="pipe-icon">🖼️</span><div><div class="pipe-name">Catbox CDN</div><div class="pipe-tech">ホスティング</div></div><span class="pipe-ok">● OK</span></div>
-            <div class="pipe-step"><span class="pipe-icon">✨</span><div><div class="pipe-name">Gemini AI</div><div class="pipe-tech">文章生成</div></div><span class="pipe-ok">● OK</span></div>
-            <div class="pipe-step"><span class="pipe-icon">📝</span><div><div class="pipe-name">はてなBlog</div><div class="pipe-tech">公開中</div></div><span class="pipe-ok">● OK</span></div>
-            <div class="pipe-step"><span class="pipe-icon">🐙</span><div><div class="pipe-name">GitHub Pages</div><div class="pipe-tech">デプロイ済</div></div><span class="pipe-ok">● OK</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="widget">
-        <div class="widget-title">最近の投稿</div>
-        <div class="widget-body">
-          <div class="recent-list">
-            ${posts.slice(0, 5).map((p, i) => `
-            <div class="recent-item" onclick="location.href='${p.url}'">
-              <div class="recent-num">${String(i + 1).padStart(2, '0')}</div>
-              <div>
-                <div class="recent-title">${p.title}</div>
-                <div class="recent-date">${p.date}</div>
-              </div>
-            </div>
-            `).join('')}
-          </div>
-        </div>
-      </div>
-    </aside>
-  </div>
-</div>
+  <section class="cards-grid" id="cardsGrid">
+    ${gridPosts.map(p => renderCard(p)).join('')}
+  </section>
+</main>
 
 <footer>
   <div class="footer-inner">
@@ -396,6 +344,40 @@ async function build() {
     <span>Powered by Gemini × LINE × GitHub</span>
   </div>
 </footer>
+
+<script>
+(() => {
+  const tabs = document.querySelectorAll('.tab[data-filter]');
+  const cards = document.querySelectorAll('.card[data-category]');
+  const searchInput = document.getElementById('searchInput');
+  let activeFilter = 'all';
+
+  const applyFilter = () => {
+    const query = (searchInput?.value || '').trim().toLowerCase();
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      const title = (card.querySelector('.card__title')?.textContent || '').toLowerCase();
+      const matchesCategory = activeFilter === 'all' || category === activeFilter;
+      const matchesQuery = !query || title.includes(query);
+      const visible = matchesCategory && matchesQuery;
+      card.classList.toggle('is-hidden', !visible);
+    });
+  };
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+      activeFilter = tab.getAttribute('data-filter') || 'all';
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
 
 </body>
 </html>`;
