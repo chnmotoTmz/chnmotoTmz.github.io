@@ -167,58 +167,55 @@ img { display: block; max-width: 100%; }
 .card--hero {
   border-radius: var(--radius);
   overflow: hidden;
-  position: relative;
-  background: var(--surface);
   border: 1px solid var(--border);
   transition: transform .2s, box-shadow .2s;
 }
 .card--hero .card__link {
   display: block;
-  position: relative;
-  height: 100%;
 }
+/* thumb acts as the positioned container for overlay */
 .card--hero .card__thumb {
   position: relative;
-  width: 100%;
-  padding-top: 56.25%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--surface2);
 }
 .card--hero .card__thumb img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform .4s ease;
 }
+/* dark gradient over image */
 .card--hero .card__thumb::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    transparent 30%,
-    rgba(0,0,0,.55) 60%,
-    rgba(0,0,0,.88) 100%
+    transparent 25%,
+    rgba(0,0,0,.45) 55%,
+    rgba(0,0,0,.92) 100%
   );
   pointer-events: none;
+  z-index: 1;
 }
+/* title/meta sit on top of gradient */
 .card--hero .card__body {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 16px 18px 14px;
+  inset: auto 0 0 0;
+  padding: 20px 22px 16px;
   z-index: 2;
 }
 .card--hero .card__title {
   font-family: var(--font-head);
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(19px, 2.2vw, 26px);
   font-weight: 900;
-  line-height: 1.25;
+  line-height: 1.22;
   color: #fff;
   margin: 0 0 8px;
+  text-shadow: 0 1px 4px rgba(0,0,0,.6);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -229,36 +226,45 @@ img { display: block; max-width: 100%; }
   gap: 10px;
   align-items: center;
   font-size: 12px;
-  color: rgba(255,255,255,.65);
+  color: rgba(255,255,255,.7);
 }
 .card--hero .card__badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 12px;
   z-index: 3;
 }
-.card--hero:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,.5); }
+.card--hero:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.55); }
 .card--hero:hover .card__thumb img { transform: scale(1.04); }
 
 /* ── SUB-HERO SIDE ───────────────────────────────────── */
 .hero-side {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
 }
-/* Side cards in hero column = horizontal layout */
+/* Each side item: horizontal thumbnail + text */
 .hero-side .card {
-  flex: 1;
-  min-height: 0;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
 }
+.hero-side .card:last-child { border-bottom: none; }
 .hero-side .card .card__link {
   display: flex;
   flex-direction: row;
   height: 100%;
+  min-height: 0;
 }
 .hero-side .card .card__thumb {
   aspect-ratio: unset;
-  width: 44%;
+  width: 100px;
+  min-height: 68px;
   flex-shrink: 0;
 }
 .hero-side .card .card__thumb img {
@@ -267,17 +273,31 @@ img { display: block; max-width: 100%; }
   object-fit: cover;
 }
 .hero-side .card .card__body {
-  padding: 10px 12px;
+  padding: 8px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
 }
 .hero-side .card .card__title {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   line-height: 1.35;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
+  margin: 0;
+}
+.hero-side .card .card__badge {
+  position: static;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 2px;
+}
+.hero-side .card:hover {
+  transform: none;
+  box-shadow: none;
+  background: var(--surface2);
 }
 
 /* ── SECTION LABEL ─────────────────────────────────────── */

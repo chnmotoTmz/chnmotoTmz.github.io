@@ -282,7 +282,9 @@ async function build() {
     const featured   = posts[0] || null;
     const heroSide1  = posts[1] || null;
     const heroSide2  = posts[2] || null;
-    const gridPosts  = posts.slice(3);
+    const heroSide3  = posts[3] || null;
+    const heroSide4  = posts[4] || null;
+    const gridPosts  = posts.slice(5);
     const tickerText = posts.slice(0, 5).map(p => p.title).join('  •  ');
 
     const categories = [...new Set(posts.map(p => p.category))];
@@ -334,6 +336,8 @@ async function build() {
     <div class="hero-side">
       ${heroSide1 ? renderCard(heroSide1) : ''}
       ${heroSide2 ? renderCard(heroSide2) : ''}
+      ${heroSide3 ? renderCard(heroSide3) : ''}
+      ${heroSide4 ? renderCard(heroSide4) : ''}
     </div>
   </section>
 
