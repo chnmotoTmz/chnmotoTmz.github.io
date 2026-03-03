@@ -152,12 +152,33 @@ function renderCard(post, options = {}) {
     const categoryKey = normalizeCategory(post.category);
     const badgeClass = categoryBadgeClass(post.category);
     const thumb = normalizeThumbnailUrl(post.thumbnail) || placeholderSvgDataUri(post.category);
-    const sizeClass = isHero ? ' card--hero' : '';
-    return `
-<article class="card${sizeClass}" data-category="${categoryKey}">
+    const placeholder = placeholderSvgDataUri(post.category);
+
+    if (isHero) {
+        // Hero card: body positioned as overlay INSIDE the thumb container
+        return `
+<article class="card card--hero" data-category="${categoryKey}">
   <a class="card__link" href="${post.url}" aria-label="${post.title}">
     <div class="card__thumb">
-      <img src="${thumb}" alt="${post.title}" loading="lazy" onerror="this.src='${placeholderSvgDataUri(post.category)}'">
+      <img src="${thumb}" alt="${post.title}" loading="lazy" onerror="this.src='${placeholder}'">
+      <span class="card__badge ${badgeClass}">${category}</span>
+      <div class="card__body">
+        <h2 class="card__title">${post.title}</h2>
+        <footer class="card__meta">
+          <time>${dateText}</time>
+          <span class="card__ai-label">✦ Gemini生成</span>
+        </footer>
+      </div>
+    </div>
+  </a>
+</article>`;
+    }
+
+    return `
+<article class="card" data-category="${categoryKey}">
+  <a class="card__link" href="${post.url}" aria-label="${post.title}">
+    <div class="card__thumb">
+      <img src="${thumb}" alt="${post.title}" loading="lazy" onerror="this.src='${placeholder}'">
       <span class="card__badge ${badgeClass}">${category}</span>
     </div>
     <div class="card__body">
@@ -258,9 +279,10 @@ async function build() {
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     // Data for templates
-    const featured = posts[0] || null;
-    const heroSide = posts[1] || null;
-    const gridPosts = posts.slice(2);
+    const featured   = posts[0] || null;
+    const heroSide1  = posts[1] || null;
+    const heroSide2  = posts[2] || null;
+    const gridPosts  = posts.slice(3);
     const tickerText = posts.slice(0, 5).map(p => p.title).join('  •  ');
 
     const categories = [...new Set(posts.map(p => p.category))];
@@ -309,8 +331,13 @@ async function build() {
 <main class="portal">
   <section class="hero-grid">
     ${featured ? renderCard(featured, { hero: true }) : ''}
-    ${heroSide ? renderCard(heroSide) : ''}
+    <div class="hero-side">
+      ${heroSide1 ? renderCard(heroSide1) : ''}
+      ${heroSide2 ? renderCard(heroSide2) : ''}
+    </div>
   </section>
+
+  <div class="section-label">最新記事 — ${posts.length}本公開中</div>
 
   <section class="cards-grid" id="cardsGrid">
     ${gridPosts.map(p => renderCard(p)).join('')}
