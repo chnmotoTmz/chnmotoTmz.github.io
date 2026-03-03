@@ -3,14 +3,14 @@
    ========================================================== */
 
 :root {
-  --bg:       #0f0f0e;
-  --surface:  #2a2a27;
-  --surface2: #333330;
+  --bg:       #161614;
+  --surface:  #3c3c38;
+  --surface2: #484844;
   --accent:   #e05500;
   --accent-lt:#f26119;
-  --text:     #f0ece3;
-  --muted:    #aaa89f;
-  --border:   #3e3e3a;
+  --text:     #f5f2eb;
+  --muted:    #c8c5bc;
+  --border:   #525250;
 
   --font-head: 'Playfair Display', serif;
   --font-ui:   'IBM Plex Sans JP', sans-serif;
@@ -245,7 +245,7 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  background: #2a2a27;
+  background: var(--surface);
 }
 /* Each side item: horizontal thumbnail + text */
 .hero-side .card {
@@ -287,7 +287,7 @@ img { display: block; max-width: 100%; }
   line-height: 1.35;
   -webkit-line-clamp: 3;
   margin: 0;
-  color: #f0ece3;
+  color: var(--text);
 }
 .hero-side .card .card__badge {
   position: static;
@@ -374,7 +374,7 @@ img { display: block; max-width: 100%; }
   font-size: 13px;
   font-weight: 700;
   line-height: 1.4;
-  color: #f0ece3;
+  color: var(--text);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -384,7 +384,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #b0ada4;
+  color: var(--muted);
   font-size: 11px;
   margin-top: auto;
 }
