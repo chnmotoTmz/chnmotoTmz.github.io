@@ -21,7 +21,7 @@ const POST_WRAPPER = (title, content, date, description, category, rootPath) => 
     <div class="topbar">
       <div class="topbar-inner">
         <div class="topbar-left">
-          <span>Vol.08 No.${Math.floor(Math.random() * 900) + 100}</span>
+          <span>Vol.08 No.${(Math.abs(title.split('').reduce((a,b)=>{a=((a<<5)-a)+b.charCodeAt(0);return a&a},0)) % 900) + 100}</span>
           <span>${new Date(date).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' })}</span>
           <span>${category || 'Automated Content Pipeline'}</span>
         </div>
@@ -83,6 +83,7 @@ function getExcerpt(html) {
   // Remove style, script, and comments
   let clean = html.replace(/<style[\s\S]*?<\/style>/gi, '');
   clean = clean.replace(/<script[\s\S]*?<\/script>/gi, '');
+  clean = clean.replace(/<figure[\s\S]*?<\/figure>/gi, ''); // Exclude thumbnails and captions from excerpt
   clean = clean.replace(/<!--[\s\S]*?-->/g, '');
   // Remove leaked CSS-like fragments even when they are plain text
   clean = clean.replace(/@import\s+url\([^)]*\);?/gi, '');
