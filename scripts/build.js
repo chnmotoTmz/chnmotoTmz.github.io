@@ -21,7 +21,7 @@ const POST_WRAPPER = (title, content, date, description, category, rootPath) => 
     <div class="topbar">
       <div class="topbar-inner">
         <div class="topbar-left">
-          <span>Vol.08 No.${(Math.abs(title.split('').reduce((a,b)=>{a=((a<<5)-a)+b.charCodeAt(0);return a&a},0)) % 900) + 100}</span>
+          <span>Vol.08 No.${(Math.abs(title.split('').reduce((a, b) => { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0)) % 900) + 100}</span>
           <span>${new Date(date).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' })}</span>
           <span>${category || 'Automated Content Pipeline'}</span>
         </div>
@@ -260,7 +260,7 @@ async function build() {
       const stat = fs.statSync(filePath);
       if (stat && stat.isDirectory()) {
         results = results.concat(getFiles(filePath));
-      } else if (file.endsWith('.html')) {
+      } else if (file.endsWith('.html') && file !== 'index.html') {
         results.push(filePath);
       }
     });
