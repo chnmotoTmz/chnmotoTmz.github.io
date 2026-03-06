@@ -251,17 +251,14 @@ async function build() {
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="newsletter-signup">
-      <h3>📬 メールマガジン登録</h3>
-      <p>ヒューマノイド・AI・開発の最新情報をお届けします</p>
-      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
-        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..."
-          style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
-        <button type="submit"
-          style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">
-          登録する
-        </button>
-      </form>
-      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
+      <h3>📬 記事の通知を受け取る</h3>
+      <p>新着記事はメールでお知らせします</p>
+      <div style="margin-top:1rem;">
+        <a href="mailto:?subject=Humanoid Media Factory 記事通知登録&body=このアドレスに登録リクエストをお送りください。"
+          style="display:inline-block; padding:0.7rem 1.8rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; text-decoration:none; font-weight:600;">
+          📩 メールで連絡する
+        </a>
+      </div>
     </div>
     <div class="footer-links" style="margin-top:1.5rem; font-size:0.85rem; color:#888;">
       <a href="about.html" style="color:#a0a0ff; margin-right:1rem;">About</a>
@@ -276,59 +273,6 @@ async function build() {
 .newsletter-signup h3 { color:#e0e0e0; margin-bottom:0.5rem; }
 .newsletter-signup p { color:#888; }
 </style>
-<script>
-document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const email = document.getElementById('newsletter-email').value.trim();
-  const msgEl = document.getElementById('newsletter-msg');
-  const btn   = e.submitter;
-  const API = window.location.hostname === 'localhost'
-    ? 'http://localhost:8084/api/subscribe'
-    : 'https://new-blog-system.onrender.com/api/subscribe';
-
-  btn.disabled = true;
-  msgEl.style.color = '#a0a0ff';
-  msgEl.textContent = '送信中...';
-
-  async function tryFetch() {
-    const ctrl = new AbortController();
-    const tid  = setTimeout(() => ctrl.abort(), 35000); // 35s for Render cold-start
-    try {
-      const res = await fetch(API, {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({email}),
-        signal: ctrl.signal
-      });
-      clearTimeout(tid);
-      return res;
-    } catch(err) {
-      clearTimeout(tid);
-      throw err;
-    }
-  }
-
-  try {
-    let res;
-    try {
-      res = await tryFetch();
-    } catch (firstErr) {
-      // Cold-start or network hiccup — show message and retry once
-      msgEl.textContent = 'サーバー起動中... もう少しお待ちください（初回は30秒ほどかかります）';
-      await new Promise(r => setTimeout(r, 3000));
-      res = await tryFetch(); // 2nd attempt
-    }
-    const data = await res.json();
-    msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
-    msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
-  } catch (err) {
-    msgEl.style.color = '#cf6f6f';
-    msgEl.textContent = 'サーバーに接続できませんでした。時間をおいて再度お試しください。';
-  } finally {
-    btn.disabled = false;
-  }
-});
-</script>
 
 <script>
 (() => {
