@@ -35,128 +35,128 @@ const POST_WRAPPER = (title, content, date, description, tags) => `
 `;
 
 function extractMetadata(content) {
-    const meta = {};
-    const match = content.match(/<!--([\s\S]*?)-->/);
-    if (match) {
-        const lines = match[1].strip ? match[1].strip().split('\n') : match[1].trim().split('\n');
-        lines.forEach(line => {
-            const part = line.split(':');
-            if (part.length >= 2) {
-                meta[part[0].trim()] = part.slice(1).join(':').trim();
-            }
-        });
-    }
-    return meta;
+  const meta = {};
+  const match = content.match(/<!--([\s\S]*?)-->/);
+  if (match) {
+    const lines = match[1].strip ? match[1].strip().split('\n') : match[1].trim().split('\n');
+    lines.forEach(line => {
+      const part = line.split(':');
+      if (part.length >= 2) {
+        meta[part[0].trim()] = part.slice(1).join(':').trim();
+      }
+    });
+  }
+  return meta;
 }
 
 function collectHtmlFiles(dir) {
-    let results = [];
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    for (const entry of entries) {
-        const fullPath = path.join(dir, entry.name);
-        if (entry.isDirectory()) {
-            results = results.concat(collectHtmlFiles(fullPath));
-        } else if (entry.isFile() && entry.name.endsWith('.html')) {
-            // Skip index files under posts/* to avoid listing category index pages as articles.
-            if (entry.name.toLowerCase() === 'index.html') {
-                continue;
-            }
-            results.push(fullPath);
-        }
+  let results = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results = results.concat(collectHtmlFiles(fullPath));
+    } else if (entry.isFile() && entry.name.endsWith('.html')) {
+      // Skip index files under posts/* to avoid listing category index pages as articles.
+      if (entry.name.toLowerCase() === 'index.html') {
+        continue;
+      }
+      results.push(fullPath);
     }
-    return results;
+  }
+  return results;
 }
 
 function extractTitleFromHtml(content) {
-    const h1 = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-    if (h1 && h1[1]) return h1[1].replace(/<[^>]+>/g, '').trim();
+  const h1 = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+  if (h1 && h1[1]) return h1[1].replace(/<[^>]+>/g, '').trim();
 
-    const title = content.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-    if (title && title[1]) return title[1].replace(/<[^>]+>/g, '').trim();
+  const title = content.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+  if (title && title[1]) return title[1].replace(/<[^>]+>/g, '').trim();
 
-    return '';
+  return '';
 }
 
 function extractDescriptionFromHtml(content) {
-    const p = content.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
-    if (!p || !p[1]) return '';
-    return p[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const p = content.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+  if (!p || !p[1]) return '';
+  return p[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
 async function build() {
-    console.log('🚀 Building Industrial Media Factory...');
+  console.log('🚀 Building Industrial Media Factory...');
 
-    if (!fs.existsSync(POSTS_DIR)) {
-        console.error('Error: Posts directory not found');
-        return;
+  if (!fs.existsSync(POSTS_DIR)) {
+    console.error('Error: Posts directory not found');
+    return;
+  }
+
+  const files = collectHtmlFiles(POSTS_DIR);
+  const posts = [];
+
+  files.forEach(filePath => {
+    const rawContent = fs.readFileSync(filePath, 'utf8');
+    const meta = extractMetadata(rawContent);
+    const relativePath = path.relative(POSTS_DIR, filePath).replace(/\\/g, '/');
+    const filename = path.basename(filePath);
+    const slug = path.basename(filename, '.html');
+    const isTopLevelPost = !relativePath.includes('/');
+    const dateFromFilename = (filename.match(/^(\d{4}-\d{2}-\d{2})/) || [])[1];
+
+    const post = {
+      title: meta.title || extractTitleFromHtml(rawContent) || slug,
+      date: meta.date || dateFromFilename || new Date().toISOString().split('T')[0],
+      description: meta.description || extractDescriptionFromHtml(rawContent) || '',
+      tags: meta.tags ? meta.tags.split(',').map(t => t.trim()) : [],
+      slug: slug,
+      // Keep backward compatibility for top-level posts,
+      // and link nested posts directly under /posts/... (e.g. posts/devlog/...)
+      url: isTopLevelPost ? `${slug}.html` : `posts/${relativePath}`
+    };
+
+    if (isTopLevelPost) {
+      // Wrap only top-level partial HTML into a full page in root.
+      const fullContent = POST_WRAPPER(post.title, rawContent, post.date, post.description, post.tags);
+      fs.writeFileSync(path.join(DIST_DIR, `${slug}.html`), fullContent);
+      console.log(`- Synthesized ${slug}.html`);
+    } else {
+      console.log(`- Indexed nested post ${relativePath}`);
     }
 
-    const files = collectHtmlFiles(POSTS_DIR);
-    const posts = [];
+    posts.push(post);
+  });
 
-    files.forEach(filePath => {
-        const rawContent = fs.readFileSync(filePath, 'utf8');
-        const meta = extractMetadata(rawContent);
-        const relativePath = path.relative(POSTS_DIR, filePath).replace(/\\/g, '/');
-        const filename = path.basename(filePath);
-        const slug = path.basename(filename, '.html');
-        const isTopLevelPost = !relativePath.includes('/');
-        const dateFromFilename = (filename.match(/^(\d{4}-\d{2}-\d{2})/) || [])[1];
+  // Sort descending
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        const post = {
-            title: meta.title || extractTitleFromHtml(rawContent) || slug,
-            date: meta.date || dateFromFilename || new Date().toISOString().split('T')[0],
-            description: meta.description || extractDescriptionFromHtml(rawContent) || '',
-            tags: meta.tags ? meta.tags.split(',').map(t => t.trim()) : [],
-            slug: slug,
-            // Keep backward compatibility for top-level posts,
-            // and link nested posts directly under /posts/... (e.g. posts/devlog/...)
-            url: isTopLevelPost ? `${slug}.html` : `posts/${relativePath}`
-        };
+  // 1. index.html
+  const featured = posts[0];
+  const heroSide1 = posts[1];
+  const heroSide2 = posts[2];
+  const gridPosts = posts.slice(3, 11);
+  const rankingPosts = posts.slice(0, 5);
 
-        if (isTopLevelPost) {
-            // Wrap only top-level partial HTML into a full page in root.
-            const fullContent = POST_WRAPPER(post.title, rawContent, post.date, post.description, post.tags);
-            fs.writeFileSync(path.join(DIST_DIR, `${slug}.html`), fullContent);
-            console.log(`- Synthesized ${slug}.html`);
-        } else {
-            console.log(`- Indexed nested post ${relativePath}`);
-        }
-
-        posts.push(post);
-    });
-
-    // Sort descending
-    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    // 1. index.html
-    const featured = posts[0];
-    const heroSide1 = posts[1];
-    const heroSide2 = posts[2];
-    const gridPosts = posts.slice(3, 11);
-    const rankingPosts = posts.slice(0, 5);
-
-    function renderCard(p, opts = {}) {
-        const hero = opts.hero || false;
-        const excerpt = p.description || p.title;
-        const getCategory = (p) => {
-            const url = p.url || '';
-            if (url.includes('/humanoid/')) return 'humanoid';
-            if (url.includes('/music/')) return 'music';
-            if (url.includes('/tech/')) return 'tech';
-            if (url.includes('/rakuten/')) return 'rakuten';
-            if (url.includes('/art/')) return 'art';
-            if (url.includes('/devlog/')) return 'devlog';
-            const tags = (p.tags || []).join(' ').toLowerCase();
-            if (tags.includes('humanoid') || tags.includes('robot')) return 'humanoid';
-            if (tags.includes('music')) return 'music';
-            return 'zatsuki';
-        };
-        const category = getCategory(p);
-        const categoryLabels = { humanoid: 'ロボット・AI', music: '音楽', zatsuki: '社会・コラム', tech: 'テクノロジー', rakuten: '楽天', art: 'アート', devlog: '開発' };
-        const label = categoryLabels[category] || 'コラム';
-        if (hero) {
-            return `<article class="card card--hero" data-category="${category}">
+  function renderCard(p, opts = {}) {
+    const hero = opts.hero || false;
+    const excerpt = p.description || p.title;
+    const getCategory = (p) => {
+      const url = p.url || '';
+      if (url.includes('/humanoid/')) return 'humanoid';
+      if (url.includes('/music/')) return 'music';
+      if (url.includes('/tech/')) return 'tech';
+      if (url.includes('/rakuten/')) return 'rakuten';
+      if (url.includes('/art/')) return 'art';
+      if (url.includes('/devlog/')) return 'devlog';
+      const tags = (p.tags || []).join(' ').toLowerCase();
+      if (tags.includes('humanoid') || tags.includes('robot')) return 'humanoid';
+      if (tags.includes('music')) return 'music';
+      return 'zatsuki';
+    };
+    const category = getCategory(p);
+    const categoryLabels = { humanoid: 'ロボット・AI', music: '音楽', zatsuki: '社会・コラム', tech: 'テクノロジー', rakuten: '楽天', art: 'アート', devlog: '開発' };
+    const label = categoryLabels[category] || 'コラム';
+    if (hero) {
+      return `<article class="card card--hero" data-category="${category}">
               <div class="card__body">
                 <span class="card__cat">${label}</span>
                 <h2 class="card__title"><a href="${p.url}">${p.title}</a></h2>
@@ -164,17 +164,17 @@ async function build() {
                 <time class="card__date">${p.date}</time>
               </div>
             </article>`;
-        }
-        return `<article class="card" data-category="${category}">
+    }
+    return `<article class="card" data-category="${category}">
           <div class="card__body">
             <span class="card__cat">${label}</span>
             <h3 class="card__title"><a href="${p.url}">${p.title}</a></h3>
             <time class="card__date">${p.date}</time>
           </div>
         </article>`;
-    }
+  }
 
-    const indexHtml = `<!DOCTYPE html>
+  const indexHtml = `<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -281,21 +281,51 @@ document.getElementById('newsletter-form').addEventListener('submit', async (e) 
   e.preventDefault();
   const email = document.getElementById('newsletter-email').value.trim();
   const msgEl = document.getElementById('newsletter-msg');
+  const btn   = e.submitter;
   const API = window.location.hostname === 'localhost'
     ? 'http://localhost:8084/api/subscribe'
     : 'https://new-blog-system.onrender.com/api/subscribe';
+
+  btn.disabled = true;
+  msgEl.style.color = '#a0a0ff';
+  msgEl.textContent = '送信中...';
+
+  async function tryFetch() {
+    const ctrl = new AbortController();
+    const tid  = setTimeout(() => ctrl.abort(), 35000); // 35s for Render cold-start
+    try {
+      const res = await fetch(API, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({email}),
+        signal: ctrl.signal
+      });
+      clearTimeout(tid);
+      return res;
+    } catch(err) {
+      clearTimeout(tid);
+      throw err;
+    }
+  }
+
   try {
-    const res = await fetch(API, {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({email})
-    });
+    let res;
+    try {
+      res = await tryFetch();
+    } catch (firstErr) {
+      // Cold-start or network hiccup — show message and retry once
+      msgEl.textContent = 'サーバー起動中... もう少しお待ちください（初回は30秒ほどかかります）';
+      await new Promise(r => setTimeout(r, 3000));
+      res = await tryFetch(); // 2nd attempt
+    }
     const data = await res.json();
     msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
     msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
   } catch (err) {
     msgEl.style.color = '#cf6f6f';
-    msgEl.textContent = '接続エラー: ' + err.message;
+    msgEl.textContent = 'サーバーに接続できませんでした。時間をおいて再度お試しください。';
+  } finally {
+    btn.disabled = false;
   }
 });
 </script>
@@ -331,10 +361,10 @@ document.getElementById('newsletter-form').addEventListener('submit', async (e) 
 </script>
 </body>
 </html>`;
-    fs.writeFileSync(path.join(DIST_DIR, 'index.html'), indexHtml);
+  fs.writeFileSync(path.join(DIST_DIR, 'index.html'), indexHtml);
 
-    // 2. RSS Feed (feed.xml)
-    const rss = `<?xml version="1.0" encoding="UTF-8" ?>
+  // 2. RSS Feed (feed.xml)
+  const rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
   <title>chnmotoTmz Media Factory</title>
@@ -349,20 +379,20 @@ document.getElementById('newsletter-form').addEventListener('submit', async (e) 
   </item>`).join('')}
 </channel>
 </rss>`;
-    fs.writeFileSync(path.join(DIST_DIR, 'feed.xml'), rss);
+  fs.writeFileSync(path.join(DIST_DIR, 'feed.xml'), rss);
 
-    // 3. Sitemap (sitemap.xml)
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  // 3. Sitemap (sitemap.xml)
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>${BASE_URL}/index.html</loc></url>
   ${posts.map(p => `<url><loc>${BASE_URL}/${p.url}</loc></url>`).join('')}
 </urlset>`;
-    fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap);
+  fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap);
 
-    console.log('✅ Build Complete: Index, RSS, and Sitemap generated.');
+  console.log('✅ Build Complete: Index, RSS, and Sitemap generated.');
 }
 
 build().catch(err => {
-    console.error('Build failed:', err);
-    process.exit(1);
+  console.error('Build failed:', err);
+  process.exit(1);
 });
