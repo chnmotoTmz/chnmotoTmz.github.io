@@ -3,350 +3,188 @@ const path = require('path');
 
 const POSTS_DIR = path.join(__dirname, '../posts');
 const DIST_DIR = path.join(__dirname, '../'); // Root for GitHub Pages
-const BASE_URL = 'https://chnmotoTmz.github.io';
+const BASE_URL = 'https://chnmotoTmz.github.io'; // Change if needed
 
-// HTML Wrapper Template for individual posts
-const POST_WRAPPER = (title, content, date, description, category, rootPath) => `
+// HTML Wrapper Template
+const POST_WRAPPER = (title, content, date, description, tags) => `
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${title} | Humanoid Media Factory</title>
+    <title>${title} | chnmotoTmz Blog</title>
     <meta name="description" content="${description}">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${rootPath}assets/style.css">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="${BASE_URL}/${path.basename(title)}.html">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="site-header__inner">
-            <a class="brand" href="${rootPath}index.html">Humanoid <span>Media</span> Factory</a>
-            <nav class="header-nav">
-                <a href="${rootPath}index.html" class="tab">Home</a>
-                <a href="${rootPath}about.html" class="tab">About</a>
-                <a href="${rootPath}partnership.html" class="tab" style="text-decoration:none; background: linear-gradient(135deg, #1a1a2e, #2d2d5e); color:#a0a0ff;">提携</a>
-            </nav>
-        </div>
+    <header>
+        <h1><a href="index.html">chnmotoTmz Media Factory</a></h1>
     </header>
-
-    <main class="wrapper">
-        <article>
-            <header>
-                <h1>${title}</h1>
-                <div class="post-meta">
-                    <time>${date}</time> &nbsp;|&nbsp; <span>${category || 'Uncategorized'}</span>
-                </div>
-            </header>
-            <div class="content">
-                ${content}
-            </div>
-        </article>
-        
-        <aside class="sidebar" style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 24px;">
-           <div class="sidebar-box">
-             <h3 class="sidebar-title">📰 最新のニュース</h3>
-             <ul class="ranking-list" style="margin-left: 0; padding-left: 0;">
-                <li style="list-style: none; padding-left: 0;"><a href="${rootPath}index.html">Humanoid Media Factory トップページへ戻る</a></li>
-             </ul>
-           </div>
-        </aside>
+    <main>
+        ${content}
     </main>
-
     <footer>
-      <div class="footer-bottom">
-        <span>© 2026 chnmotoTmz · Humanoid Media Factory</span>
-        <span>Powered by Gemini × LINE × GitHub</span>
-      </div>
+        <p>&copy; ${new Date().getFullYear()} chnmotoTmz</p>
     </footer>
 </body>
 </html>
 `;
 
 function extractMetadata(content) {
-  const meta = {};
-  const match = content.match(/<!--([\s\S]*?)-->/);
-  if (match) {
-    const lines = match[1].trim().split('\n');
-    lines.forEach(line => {
-      const part = line.split(':');
-      if (part.length >= 2) {
-        meta[part[0].trim().toLowerCase()] = part.slice(1).join(':').trim();
-      }
-    });
-  }
-  return meta;
-}
-
-function getExcerpt(html) {
-  // Remove style, script, and comments
-  let clean = html.replace(/<style[\s\S]*?<\/style>/gi, '');
-  clean = clean.replace(/<script[\s\S]*?<\/script>/gi, '');
-  clean = clean.replace(/<figure[\s\S]*?<\/figure>/gi, ''); // Exclude thumbnails and captions from excerpt
-  clean = clean.replace(/<!--[\s\S]*?-->/g, '');
-  // Remove leaked CSS-like fragments even when they are plain text
-  clean = clean.replace(/@import\s+url\([^)]*\);?/gi, '');
-  clean = clean.replace(/[.#]?[\w\-\s,>]+\{[^{}]*\}/g, '');
-  clean = clean.replace(/\b[a-z\-]+\s*:\s*[^;{}]+;/gi, '');
-  // Remove tags
-  clean = clean.replace(/<[^>]*>/g, '').trim();
-  // Decode basic entities if needed or just collapse spaces
-  clean = clean.replace(/\s+/g, ' ');
-  return clean.substring(0, 120) + '...'; // Shorter excerpt for denser MSN layout
-}
-
-function getThumbnailFromContent(html) {
-  const imgMatch = html.match(/<img[^>]+src=["']([^"']+)["']/i);
-  return imgMatch ? imgMatch[1] : '';
-}
-
-function normalizeThumbnailUrl(url) {
-  const raw = String(url || '').trim();
-  if (!raw) return '';
-  if (/^(https?:)?\/\//i.test(raw) || raw.startsWith('data:')) return raw;
-  if (raw.startsWith('/')) return `${BASE_URL}${raw}`;
-
-  let normalized = raw;
-  if (normalized.startsWith('./')) normalized = normalized.slice(2);
-  while (normalized.startsWith('../')) {
-    normalized = normalized.slice(3);
-  }
-  return normalized;
-}
-
-function normalizeCategory(category) {
-  const val = String(category || '').toLowerCase();
-  if (val.includes('humanoid')) return 'humanoid';
-  if (val.includes('music')) return 'music';
-  if (val.includes('雑記')) return 'zatsuki';
-  return 'zatsuki';
-}
-
-function categoryLabel(category) {
-  const key = normalizeCategory(category);
-  if (key === 'humanoid') return 'HUMANOID';
-  if (key === 'music') return 'MUSIC';
-  return '雑記';
-}
-
-function categoryBadgeClass(category) {
-  const key = normalizeCategory(category);
-  if (key === 'humanoid') return 'badge--humanoid';
-  if (key === 'music') return 'badge--music';
-  return 'badge--zatsuki';
-}
-
-function placeholderSvgDataUri(category) {
-  const label = categoryLabel(category);
-  const color = category === 'humanoid' ? '#d60000' : category === 'music' ? '#1c7a34' : '#4a4a46';
-  const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f0f2f5"/>
-      <stop offset="100%" stop-color="#e2e2e2"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="675" fill="url(#g)"/>
-  <rect x="24" y="24" width="1152" height="627" fill="none" stroke="${color}" stroke-opacity="0.3" stroke-width="4"/>
-  <text x="60" y="380" fill="#999" font-family="sans-serif" font-size="64" font-weight="800">Media Factory</text>
-  <text x="60" y="470" fill="${color}" font-family="sans-serif" font-size="42" font-weight="700">${label}</text>
-</svg>`;
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
-}
-
-function renderCard(post, options = {}) {
-  const isHero = Boolean(options.hero);
-  const dateText = post.date || '';
-  const category = categoryLabel(post.category);
-  const categoryKey = normalizeCategory(post.category);
-  const badgeClass = categoryBadgeClass(post.category);
-  let thumb = normalizeThumbnailUrl(post.thumbnail) || placeholderSvgDataUri(post.category);
-
-  // Fix paths so they resolve well in root index.html
-  if (thumb && !thumb.startsWith('http') && !thumb.startsWith('data:')) {
-    thumb = thumb; // keep relative
-  }
-  const placeholder = placeholderSvgDataUri(post.category);
-
-  if (isHero) {
-    return `
-<article class="card card--hero" data-category="${categoryKey}">
-  <a class="card__link" href="${post.url}" aria-label="${post.title}">
-    <div class="card__thumb">
-      <img src="${thumb}" alt="${post.title}" loading="lazy" onerror="this.src='${placeholder}'">
-      <span class="card__badge ${badgeClass}">${category}</span>
-    </div>
-    <div class="card__body">
-      <h2 class="card__title">${post.title}</h2>
-      <p class="card__excerpt">${post.excerpt}</p>
-      <footer class="card__meta">
-        <time>${dateText}</time>
-        <span class="card__ai-label">✦ Gemini Report</span>
-      </footer>
-    </div>
-  </a>
-</article>`;
-  }
-
-  // Regular Card with excerpt for dense reading
-  return `
-<article class="card" data-category="${categoryKey}">
-  <a class="card__link" href="${post.url}" aria-label="${post.title}">
-    <div class="card__thumb">
-      <img src="${thumb}" alt="${post.title}" loading="lazy" onerror="this.src='${placeholder}'">
-      <span class="card__badge ${badgeClass}">${category}</span>
-    </div>
-    <div class="card__body">
-      <h2 class="card__title">${post.title}</h2>
-      <p class="card__excerpt">${post.excerpt}</p>
-      <footer class="card__meta">
-        <time>${dateText}</time>
-      </footer>
-    </div>
-  </a>
-</article>`;
-}
-
-function normalizePostContent(html) {
-  if (!html) return '';
-  let clean = html;
-
-  // 1. Unwrap POST_WRAPPER if it exists to prevent infinite nesting
-  const contentMatch = clean.match(/<div class="content">([\s\S]*?)<\/div>\s*<\/article>/i);
-  if (contentMatch && contentMatch[1]) {
-    clean = contentMatch[1];
-  } else {
-    const bodyMatch = clean.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-    if (bodyMatch && bodyMatch[1]) {
-      clean = bodyMatch[1];
+    const meta = {};
+    const match = content.match(/<!--([\s\S]*?)-->/);
+    if (match) {
+        const lines = match[1].strip ? match[1].strip().split('\n') : match[1].trim().split('\n');
+        lines.forEach(line => {
+            const part = line.split(':');
+            if (part.length >= 2) {
+                meta[part[0].trim()] = part.slice(1).join(':').trim();
+            }
+        });
     }
-  }
+    return meta;
+}
 
-  // 2. Remove inner <header> and <h1> elements (generated by LLM) to avoid duplicates with our own wrapper
-  clean = clean.replace(/<header[^>]*>[\s\S]*?<\/header>/gi, '');
-  clean = clean.replace(/<h1[^>]*>[\s\S]*?<\/h1>/gi, '');
+function collectHtmlFiles(dir) {
+    let results = [];
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+            results = results.concat(collectHtmlFiles(fullPath));
+        } else if (entry.isFile() && entry.name.endsWith('.html')) {
+            // Skip index files under posts/* to avoid listing category index pages as articles.
+            if (entry.name.toLowerCase() === 'index.html') {
+                continue;
+            }
+            results.push(fullPath);
+        }
+    }
+    return results;
+}
 
-  // 3. Remove boilerplate tags
-  clean = clean.replace(/<!DOCTYPE[^>]*>/gi, '');
-  clean = clean.replace(/<html[^>]*>/gi, '');
-  clean = clean.replace(/<\/html>/gi, '');
-  clean = clean.replace(/<head[\s\S]*?<\/head>/gi, '');
-  clean = clean.replace(/<body[^>]*>/gi, '');
-  clean = clean.replace(/<\/body>/gi, '');
-  clean = clean.replace(/<link[^>]*>/gi, '');
-  clean = clean.replace(/<style[\s\S]*?<\/style>/gi, '');
-  clean = clean.replace(/@import\s+url\([^)]*\);?/gi, '');
+function extractTitleFromHtml(content) {
+    const h1 = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    if (h1 && h1[1]) return h1[1].replace(/<[^>]+>/g, '').trim();
 
-  clean = clean.trim();
+    const title = content.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    if (title && title[1]) return title[1].replace(/<[^>]+>/g, '').trim();
 
-  return clean;
+    return '';
+}
+
+function extractDescriptionFromHtml(content) {
+    const p = content.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+    if (!p || !p[1]) return '';
+    return p[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
 async function build() {
-  console.log('🚀 Synchronizing Humanoid Media Factory Portal (MSN Design)...');
+    console.log('🚀 Building Industrial Media Factory...');
 
-  if (!fs.existsSync(POSTS_DIR)) {
-    console.error('Error: Posts directory not found');
-    return;
-  }
-
-  const getFiles = (dir) => {
-    let results = [];
-    const list = fs.readdirSync(dir);
-    list.forEach(file => {
-      const filePath = path.join(dir, file);
-      const stat = fs.statSync(filePath);
-      if (stat && stat.isDirectory()) {
-        results = results.concat(getFiles(filePath));
-      } else if (file.endsWith('.html') && file !== 'index.html') {
-        results.push(filePath);
-      }
-    });
-    return results;
-  };
-
-  const allFiles = getFiles(POSTS_DIR);
-  const posts = [];
-
-  allFiles.forEach(filePath => {
-    const rawContent = fs.readFileSync(filePath, 'utf8');
-    const normalizedContent = normalizePostContent(rawContent);
-    const meta = extractMetadata(rawContent);
-    const fileName = path.basename(filePath);
-    const slug = path.basename(fileName, '.html');
-
-    let pathRelativeToRoot = path.relative(DIST_DIR, filePath).replace(/\\/g, '/');
-    let dirRelativeToRoot = path.relative(DIST_DIR, path.dirname(filePath)).replace(/\\/g, '/');
-    let rootPath = '';
-    if (dirRelativeToRoot && dirRelativeToRoot !== '.') {
-      const depth = dirRelativeToRoot.split('/').length;
-      rootPath = '../'.repeat(depth);
-    } else {
-      rootPath = './';
+    if (!fs.existsSync(POSTS_DIR)) {
+        console.error('Error: Posts directory not found');
+        return;
     }
 
-    const relativePath = path.relative(POSTS_DIR, filePath);
-    const pathParts = relativePath.split(path.sep);
-    const dirCategory = pathParts.length > 1 ? pathParts[0] : null;
+    const files = collectHtmlFiles(POSTS_DIR);
+    const posts = [];
 
-    const post = {
-      title: meta.title || 'Untitled',
-      date: meta.date || new Date().toISOString().split('T')[0],
-      description: meta.description || '',
-      category: meta.category || dirCategory || '雑記',
-      emoji: meta.emoji || '🦾',
-      excerpt: getExcerpt(normalizedContent),
-      thumbnail: getThumbnailFromContent(normalizedContent),
-      slug: slug,
-      url: pathRelativeToRoot  // "posts/category/file.html"
-    };
+    files.forEach(filePath => {
+        const rawContent = fs.readFileSync(filePath, 'utf8');
+        const meta = extractMetadata(rawContent);
+        const relativePath = path.relative(POSTS_DIR, filePath).replace(/\\/g, '/');
+        const filename = path.basename(filePath);
+        const slug = path.basename(filename, '.html');
+        const isTopLevelPost = !relativePath.includes('/');
+        const dateFromFilename = (filename.match(/^(\d{4}-\d{2}-\d{2})/) || [])[1];
 
-    // Output full page using wrapper
-    const fullContent = POST_WRAPPER(post.title, normalizedContent, post.date, post.description, post.category, rootPath);
-    fs.writeFileSync(filePath, fullContent); // Overwrite post with correct template
+        const post = {
+            title: meta.title || extractTitleFromHtml(rawContent) || slug,
+            date: meta.date || dateFromFilename || new Date().toISOString().split('T')[0],
+            description: meta.description || extractDescriptionFromHtml(rawContent) || '',
+            tags: meta.tags ? meta.tags.split(',').map(t => t.trim()) : [],
+            slug: slug,
+            // Keep backward compatibility for top-level posts,
+            // and link nested posts directly under /posts/... (e.g. posts/devlog/...)
+            url: isTopLevelPost ? `${slug}.html` : `posts/${relativePath}`
+        };
 
-    posts.push(post);
-    // console.log(`- Refined ${slug}`);
-  });
+        if (isTopLevelPost) {
+            // Wrap only top-level partial HTML into a full page in root.
+            const fullContent = POST_WRAPPER(post.title, rawContent, post.date, post.description, post.tags);
+            fs.writeFileSync(path.join(DIST_DIR, `${slug}.html`), fullContent);
+            console.log(`- Synthesized ${slug}.html`);
+        } else {
+            console.log(`- Indexed nested post ${relativePath}`);
+        }
 
-  // Sort descending by date
-  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        posts.push(post);
+    });
 
-  // Data for templates
-  const featured = posts[0] || null;
-  const heroSide1 = posts[1] || null;
-  const heroSide2 = posts[2] || null;
-  // Main feed posts
-  const gridPosts = posts.slice(3);
+    // Sort descending
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // Top 5 posts for ranking sidebar (fake ranking logic: just the newest or most clicked)
-  const rankingPosts = posts.slice(2, 7);
+    // 1. index.html
+    const featured = posts[0];
+    const heroSide1 = posts[1];
+    const heroSide2 = posts[2];
+    const gridPosts = posts.slice(3, 11);
+    const rankingPosts = posts.slice(0, 5);
 
-  // Ticker text
-  const tickerText = posts.slice(0, 5).map(p => p.title).join('  &nbsp;|&nbsp;  ');
+    function renderCard(p, opts = {}) {
+        const hero = opts.hero || false;
+        const excerpt = p.description || p.title;
+        const getCategory = (p) => {
+            const url = p.url || '';
+            if (url.includes('/humanoid/')) return 'humanoid';
+            if (url.includes('/music/')) return 'music';
+            if (url.includes('/tech/')) return 'tech';
+            if (url.includes('/rakuten/')) return 'rakuten';
+            if (url.includes('/art/')) return 'art';
+            if (url.includes('/devlog/')) return 'devlog';
+            const tags = (p.tags || []).join(' ').toLowerCase();
+            if (tags.includes('humanoid') || tags.includes('robot')) return 'humanoid';
+            if (tags.includes('music')) return 'music';
+            return 'zatsuki';
+        };
+        const category = getCategory(p);
+        const categoryLabels = { humanoid: 'ロボット・AI', music: '音楽', zatsuki: '社会・コラム', tech: 'テクノロジー', rakuten: '楽天', art: 'アート', devlog: '開発' };
+        const label = categoryLabels[category] || 'コラム';
+        if (hero) {
+            return `<article class="card card--hero" data-category="${category}">
+              <div class="card__body">
+                <span class="card__cat">${label}</span>
+                <h2 class="card__title"><a href="${p.url}">${p.title}</a></h2>
+                <p class="card__excerpt">${excerpt}</p>
+                <time class="card__date">${p.date}</time>
+              </div>
+            </article>`;
+        }
+        return `<article class="card" data-category="${category}">
+          <div class="card__body">
+            <span class="card__cat">${label}</span>
+            <h3 class="card__title"><a href="${p.url}">${p.title}</a></h3>
+            <time class="card__date">${p.date}</time>
+          </div>
+        </article>`;
+    }
 
-  const categories = [...new Set(posts.map(p => p.category))];
-
-  const indexHtml = `<!DOCTYPE html>
+    const indexHtml = `<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humanoid Media Factory - MSN Style News</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanoid Media Factory | AI自動生成ニュースポータル</title>
+    <meta name="description" content="AI × ロボット × 社会の最前線を配信する自動生成ニュースメディア">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-<div class="ticker-strip" role="status" aria-live="polite">
-  <div class="ticker-strip__inner">
-    <span class="ticker-strip__live">BREAKING NEWS</span>
-    <div class="ticker-strip__track">
-      <div class="ticker-strip__content">${tickerText} &nbsp;|&nbsp; ${tickerText}</div>
-    </div>
-  </div>
-</div>
-
     <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href="index.html">Humanoid <span>Media</span> Factory</a>
@@ -356,7 +194,7 @@ async function build() {
       <button class="tab" data-filter="music">音楽</button>
       <button class="tab" data-filter="zatsuki">社会・コラム</button>
       <a href="about.html" class="tab" style="text-decoration:none;">About</a>
-      <a href="partnership.html" class="tab" style="text-decoration:none; background: linear-gradient(135deg, #1a1a2e, #2d2d5e); color:#a0a0ff;">提携</a>
+      <a href="partnership.html" class="tab" style="text-decoration:none; background: linear-gradient(135deg, #1a1a2e, #2d2d5e); color:#a0a0ff;">連絡先</a>
     </nav>
     <div class="header-tools">
       <input class="search" id="searchInput" type="search" placeholder="ニュースを検索..." aria-label="記事を検索">
@@ -402,7 +240,7 @@ async function build() {
           ${posts.slice(5, 8).map(p => `<li style="padding-left:0;"><a href="${p.url}">${p.title}</a></li>`).join('')}
         </ul>
       </div>
-      
+
       <div class="sidebar-ad">
         ADVERTISEMENT
       </div>
@@ -427,8 +265,8 @@ async function build() {
     </div>
     <div class="footer-links" style="margin-top:1.5rem; font-size:0.85rem; color:#888;">
       <a href="about.html" style="color:#a0a0ff; margin-right:1rem;">About</a>
-      <a href="partnership.html" style="color:#a0a0ff; margin-right:1rem;">提携・お問い合わせ</a>
-      <span>© 2026 chnmotoTmz / Humanoid Media Factory</span>
+      <a href="partnership.html" style="color:#a0a0ff; margin-right:1rem;">連絡先</a>
+      <span>© 2026 chnmoto / Humanoid Media Factory</span>
     </div>
   </div>
 </footer>
@@ -467,47 +305,41 @@ document.getElementById('newsletter-form').addEventListener('submit', async (e) 
   const tabs = document.querySelectorAll('.tab[data-filter]');
   const cards = document.querySelectorAll('.card[data-category]');
   const searchInput = document.getElementById('searchInput');
-  let activeFilter = 'all';
-
-  const applyFilter = () => {
-    const query = (searchInput?.value || '').trim().toLowerCase();
-    cards.forEach(card => {
-      const category = card.getAttribute('data-category');
-      const title = (card.querySelector('.card__title')?.textContent || '').toLowerCase();
-      const matchesCategory = activeFilter === 'all' || category === activeFilter;
-      const matchesQuery = !query || title.includes(query);
-      const visible = matchesCategory && matchesQuery;
-      card.classList.toggle('is-hidden', !visible);
-    });
-  };
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('is-active'));
       tab.classList.add('is-active');
-      activeFilter = tab.getAttribute('data-filter') || 'all';
-      applyFilter();
+      const filter = tab.dataset.filter;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+      });
     });
   });
 
   if (searchInput) {
-    searchInput.addEventListener('input', applyFilter);
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
   }
 })();
 </script>
-
 </body>
 </html>`;
+    fs.writeFileSync(path.join(DIST_DIR, 'index.html'), indexHtml);
 
-  fs.writeFileSync(path.join(DIST_DIR, 'index.html'), indexHtml);
-
-  // 2. RSS Feed (feed.xml)
-  const rss = `<?xml version="1.0" encoding="UTF-8" ?>
+    // 2. RSS Feed (feed.xml)
+    const rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
-  <title>Humanoid Media Factory</title>
+  <title>chnmotoTmz Media Factory</title>
   <link>${BASE_URL}</link>
-  <description>AI-Synthesized News Portal</description>
+  <description>AI-Synthesized Media Hub</description>
   ${posts.map(p => `
   <item>
     <title>${p.title}</title>
@@ -517,20 +349,20 @@ document.getElementById('newsletter-form').addEventListener('submit', async (e) 
   </item>`).join('')}
 </channel>
 </rss>`;
-  fs.writeFileSync(path.join(DIST_DIR, 'feed.xml'), rss);
+    fs.writeFileSync(path.join(DIST_DIR, 'feed.xml'), rss);
 
-  // 3. Sitemap
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    // 3. Sitemap (sitemap.xml)
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>${BASE_URL}/index.html</loc></url>
   ${posts.map(p => `<url><loc>${BASE_URL}/${p.url}</loc></url>`).join('')}
 </urlset>`;
-  fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap);
+    fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap);
 
-  console.log('✅ Build Complete: MSN Portal structure successfully generated.');
+    console.log('✅ Build Complete: Index, RSS, and Sitemap generated.');
 }
 
 build().catch(err => {
-  console.error('Build failed:', err);
-  process.exit(1);
+    console.error('Build failed:', err);
+    process.exit(1);
 });
