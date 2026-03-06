@@ -27,6 +27,16 @@
 
 ---
 
+## Other AI (Phase 2) の担当
+
+| タスク | ステータス | 備考 |
+|--------|-----------|------|
+| LINEフォールバック失敗時の再試行キュー | ✅ 完了 | `FailedNotification` DBモデル追加、`_notify_line_fallback` 強化、`/api/notify/retry` エンドポイント追加 |
+| pTIMER 投稿時の git push リトライ | ✅ 既実装 | `ptimer/api/app.py` の `api_post_dev_diary` に3回リトライ+指数バックオフ済み |
+| `/api/contact` 送信者向け自動返信メール | ✅ 完了 | `_send_contact_notification` にオーナー通知と分離した送信者向け受領メール処理を追加 |
+
+---
+
 ## 指示ファイルの場所
 
 - **Other AI への指示**: `c:\Users\motoc\chnmotoTmz.github.io\AI_HANDOFF.md`
@@ -49,8 +59,8 @@ new-blog-system (localhost:8084 / onrender.com)
 
 chnmotoTmz.github.io (静的サイト)
   ├─ ✅ index.html: ナビにAbout/提携、フッターにメルマガフォーム [Other AI]
-  ├─ ❌ about.html: 自己紹介・企業ページ [Other AI]
-  └─ ❌ partnership.html: 提携・コンタクト [Other AI]
+  ├─ ✅ about.html: 自己紹介・企業ページ [Other AI]
+  └─ ✅ partnership.html: 提携・コンタクト [Other AI]
 ```
 
 ---
