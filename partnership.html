@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partnership | chnmoto - Humanoid Media Factory</title>
+    <title>連絡先 | chnmoto</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     <style>
@@ -37,13 +37,13 @@
         .submit-btn {
             background: var(--accent);
             color: white;
-            padding: 16px;
+            padding: 14px;
             border: none;
             border-radius: 4px;
             font-weight: 700;
             cursor: pointer;
             transition: opacity 0.2s;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .submit-btn:disabled {
@@ -52,8 +52,8 @@
         }
 
         #form-status {
-            margin-top: 20px;
-            padding: 15px;
+            margin-top: 16px;
+            padding: 12px;
             border-radius: 4px;
             display: none;
         }
@@ -79,7 +79,7 @@
             <nav class="header-nav">
                 <a href="index.html" class="tab">Home</a>
                 <a href="about.html" class="tab">About</a>
-                <a href="partnership.html" class="tab is-active">提携</a>
+                <a href="partnership.html" class="tab is-active">連絡先</a>
             </nav>
         </div>
     </header>
@@ -87,44 +87,38 @@
     <main class="wrapper">
         <article class="premium-article">
             <header>
-                <h1>Partnership Inquiry</h1>
-                <div class="meta-date">ヒューマノイド開発・提携の加速</div>
+                <h1>連絡先</h1>
+                <div class="meta-date">気軽にどうぞ</div>
             </header>
 
             <section>
-                <h2 style="text-align:center;">Co-creating the Future of Autonomy</h2>
                 <p>
-                    次世代のヒューマノイドロボット開発、AIコンテンツパイプライン、または個人DX分野での強力なシナジーを求めています。
-                    技術提供、共同研究、メディア提携など、あらゆる可能性をお聞かせください。
+                    個人サイトへのご意見や、記事への感想など、なんでもお気軽にどうぞ。
+                    お返事できる場合もあれば難しい場合もありますが、読んでいます。
                 </p>
 
-                <form id="partnership-form" class="contact-form">
+                <form id="contact-form" class="contact-form">
                     <div class="form-group">
-                        <label for="name">お名前 / 貴社名</label>
-                        <input type="text" id="name" name="name" required placeholder="例: ヒューマノイド株式会社 山田太郎">
+                        <label for="name">お名前</label>
+                        <input type="text" id="name" name="name" required placeholder="ニックネームで構いません">
                     </div>
                     <div class="form-group">
-                        <label for="email">メールアドレス</label>
-                        <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                        <label for="email">メールアドレス（任意）</label>
+                        <input type="email" id="email" name="email" placeholder="返信不要の場合は空白のままで">
                     </div>
                     <div class="form-group">
-                        <label for="category">お問い合わせカテゴリ</label>
-                        <select id="category" name="category" required>
-                            <option value="humanoid" selected>ヒューマノイド開発提携</option>
-                            <option value="partnership">ビジネス・資本提携</option>
-                            <option value="general">その他一般のお問い合わせ</option>
+                        <label for="category">カテゴリ</label>
+                        <select id="category" name="category">
+                            <option value="general" selected>感想・雑談</option>
+                            <option value="humanoid">ヒューマノイド・技術の話</option>
+                            <option value="partnership">その他</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="subject">件名</label>
-                        <input type="text" id="subject" name="subject" required placeholder="お問い合わせ内容の要約">
+                        <label for="message">メッセージ</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="なんでも"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="message">ご相談内容</label>
-                        <textarea id="message" name="message" rows="6" required
-                            placeholder="具体的な提案、プロジェクト詳細など"></textarea>
-                    </div>
-                    <button type="submit" id="submit-btn" class="submit-btn">提携案を送信する</button>
+                    <button type="submit" id="submit-btn" class="submit-btn">送信する</button>
                 </form>
                 <div id="form-status"></div>
             </section>
@@ -132,7 +126,7 @@
     </main>
 
     <script>
-        const form = document.getElementById('partnership-form');
+        const form = document.getElementById('contact-form');
         const statusEl = document.getElementById('form-status');
         const btn = document.getElementById('submit-btn');
 
@@ -142,8 +136,13 @@
             btn.textContent = '送信中...';
             statusEl.style.display = 'none';
 
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            const data = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value || 'noreply@no-email.local',
+                category: document.getElementById('category').value,
+                subject: document.getElementById('category').options[document.getElementById('category').selectedIndex].text,
+                message: document.getElementById('message').value
+            };
 
             const API = window.location.hostname === 'localhost'
                 ? 'http://localhost:8084/api/contact'
@@ -155,17 +154,15 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-
                 const result = await response.json();
-
                 statusEl.style.display = 'block';
                 if (result.success) {
                     statusEl.className = 'status-success';
-                    statusEl.textContent = 'お問い合わせありがとうございます。メッセージを送信しました。';
+                    statusEl.textContent = '送信しました。ありがとうございます！';
                     form.reset();
                 } else {
                     statusEl.className = 'status-error';
-                    statusEl.textContent = '送信エラー: ' + (result.message || '不明なエラーが発生しました。');
+                    statusEl.textContent = 'エラーが発生しました: ' + (result.message || '不明');
                 }
             } catch (err) {
                 statusEl.style.display = 'block';
@@ -173,14 +170,14 @@
                 statusEl.textContent = '接続エラー: サーバーにアクセスできませんでした。';
             } finally {
                 btn.disabled = false;
-                btn.textContent = '提携案を送信する';
+                btn.textContent = '送信する';
             }
         });
     </script>
 
     <footer>
         <div class="footer-bottom">
-            <span>© 2026 chnmotoTmz · Humanoid Media Factory</span>
+            <span>© 2026 chnmoto · 個人サイト</span>
         </div>
     </footer>
 </body>
