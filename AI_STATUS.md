@@ -33,7 +33,23 @@
 |--------|-----------|------|
 | LINEフォールバック失敗時の再試行キュー | ✅ 完了 | `FailedNotification` DBモデル追加、`_notify_line_fallback` 強化、`/api/notify/retry` エンドポイント追加 |
 | pTIMER 投稿時の git push リトライ | ✅ 既実装 | `ptimer/api/app.py` の `api_post_dev_diary` に3回リトライ+指数バックオフ済み |
-| `/api/contact` 送信者向け自動返信メール | ✅ 完了 | `_send_contact_notification` にオーナー通知と分離した送信者向け受領メール処理を追加 |
+| `/api/contact` 送信者向け自動返信メール | ✅ 完了 | `_send_contact_notification` にオーナー通知と分離した送信者向け受領メール処理を追加（失敗時LINEフォールバック通知含む） |
+
+---
+
+## 実API検証ログ (2026-03-07)
+
+| 検証項目 | 結果 | 備考 |
+|--------|------|------|
+| `GET /` (localhost:8094) | ✅ 成功 | `status=running` を確認 |
+| `POST /api/contact` | ✅ 成功 | `{"success": true}` を確認 |
+| `GET /api/notify/failures` | ✅ 成功 | 初期状態 `count=0` を確認 |
+| `POST /api/notify/retry` | ✅ 成功 | 返却値 `retried/resolved/failed_permanent` を確認 |
+| 再試行状態遷移 | ✅ 成功 | `pending(0/3) -> pending(1/3)`、`pending(2/3) -> failed_permanent(3/3)` を確認 |
+
+注記:
+- 既定環境では LINE フォールバック先 user_id が未設定のため、`/api/contact` 実行のみでは `FailedNotification` が自動生成されないケースを確認。
+- 遷移検証はテスト用 `FailedNotification` レコードを投入して実施（検証後に削除済み）。
 
 ---
 

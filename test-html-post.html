@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML First Test Post | chnmotoTmz Blog</title>
+    <meta name="description" content="This is a test post for the new HTML-First Media Factory pipeline.">
+    <meta property="og:title" content="HTML First Test Post">
+    <meta property="og:description" content="This is a test post for the new HTML-First Media Factory pipeline.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chnmotoTmz.github.io/HTML First Test Post.html">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">chnmotoTmz Media Factory</a></h1>
+    </header>
+    <main>
+        <!--
+title: HTML First Test Post
+date: 2026-03-01
+description: This is a test post for the new HTML-First Media Factory pipeline.
+tags: test, html, industrial
+-->
+<article class="factory-post">
+  <header class="post-header">
+    <h1 class="post-title">HTML First Test Post</h1>
+  </header>
+  <div class="post-content">
+    <p>This article was synthesized from structural data. It represents the transition to the **Industrial Media Factory** model.</p>
+    <p>Everything is now HTML-centric for maximum control and distribution efficiency.</p>
+  </div>
+</article>
+
+    </main>
+    <footer>
+        <p>&copy; 2026 chnmotoTmz</p>
+    </footer>
+    <script>
+    (function() {
+        var API = window.location.hostname === 'localhost' ? 'http://localhost:8084/api/pageview' : 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/pageview';
+        fetch(API, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+            body: JSON.stringify({ path: window.location.pathname, referrer: document.referrer })
+        }).catch(e => {}); // Silent fail
+    })();
+    </script>
+</body>
+</html>
