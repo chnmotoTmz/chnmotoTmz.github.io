@@ -24,7 +24,7 @@ const POST_WRAPPER = (title, content, date, description, category, rootPath) => 
             <nav class="header-nav">
                 <a href="${rootPath}index.html" class="tab">Home</a>
                 <a href="${rootPath}about.html" class="tab">About</a>
-                <a href="${rootPath}partnership.html" class="tab">提携</a>
+                <a href="${rootPath}partnership.html" class="tab" style="text-decoration:none; background: linear-gradient(135deg, #1a1a2e, #2d2d5e); color:#a0a0ff;">提携</a>
             </nav>
         </div>
     </header>
@@ -356,7 +356,7 @@ async function build() {
       <button class="tab" data-filter="music">音楽</button>
       <button class="tab" data-filter="zatsuki">社会・コラム</button>
       <a href="about.html" class="tab" style="text-decoration:none;">About</a>
-      <a href="partnership.html" class="tab" style="text-decoration:none;">提携</a>
+      <a href="partnership.html" class="tab" style="text-decoration:none; background: linear-gradient(135deg, #1a1a2e, #2d2d5e); color:#a0a0ff;">提携</a>
     </nav>
     <div class="header-tools">
       <input class="search" id="searchInput" type="search" placeholder="ニュースを検索..." aria-label="記事を検索">
@@ -403,15 +403,6 @@ async function build() {
         </ul>
       </div>
       
-      <div class="sidebar-box">
-        <h3 class="sidebar-title">📩 メルマガ購読</h3>
-        <p style="font-size: 13px; color: var(--muted); margin-bottom: 12px;">最新のAI・ロボット情報を週1回お届けします。</p>
-        <form action="https://new-blog-system.onrender.com/api/subscribe" method="POST" style="display: flex; flex-direction: column; gap: 8px;">
-          <input type="email" name="email" placeholder="メールアドレス" required style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px;">
-          <button type="submit" style="background: var(--accent); color: white; border: none; padding: 8px; border-radius: 4px; font-weight: 700; cursor: pointer;">購読する</button>
-        </form>
-      </div>
-
       <div class="sidebar-ad">
         ADVERTISEMENT
       </div>
@@ -419,35 +410,57 @@ async function build() {
   </div>
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-title">Humanoid <span>Media</span> Factory 🦾</div>
-      <p class="footer-desc">AIとロボットが紡ぐ、次世代ニュースポータル。<br>最新のテクノロジー、社会情勢、知見を休むことなく配信中。</p>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="newsletter-signup">
+      <h3>📬 メールマガジン登録</h3>
+      <p>ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..."
+          style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit"
+          style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">
+          登録する
+        </button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
     </div>
-    <div>
-      <div class="footer-col-title">ナビゲーション</div>
-      <ul class="footer-links">
-        <li><a href="index.html">トップニュース</a></li>
-        <li><a href="about.html">About (自己紹介)</a></li>
-        <li><a href="partnership.html">提携・お仕事</a></li>
-      </ul>
+    <div class="footer-links" style="margin-top:1.5rem; font-size:0.85rem; color:#888;">
+      <a href="about.html" style="color:#a0a0ff; margin-right:1rem;">About</a>
+      <a href="partnership.html" style="color:#a0a0ff; margin-right:1rem;">提携・お問い合わせ</a>
+      <span>© 2026 chnmotoTmz / Humanoid Media Factory</span>
     </div>
-    <div>
-      <div class="footer-col-title">カテゴリー</div>
-      <ul class="footer-links">
-        <li><a href="#">テクノロジー・AI</a></li>
-        <li><a href="#">政治・社会</a></li>
-        <li><a href="#">経済・ビジネス</a></li>
-        <li><a href="#">エンタメ・音楽</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 chnmotoTmz · Humanoid Media Factory</span>
-    <span>Powered by Gemini × LINE × GitHub</span>
   </div>
 </footer>
+<style>
+.site-footer { background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem; }
+.site-footer__inner { max-width:800px; margin:0 auto; }
+.newsletter-signup h3 { color:#e0e0e0; margin-bottom:0.5rem; }
+.newsletter-signup p { color:#888; }
+</style>
+<script>
+document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('newsletter-email').value.trim();
+  const msgEl = document.getElementById('newsletter-msg');
+  const API = window.location.hostname === 'localhost'
+    ? 'http://localhost:8084/api/subscribe'
+    : 'https://new-blog-system.onrender.com/api/subscribe';
+  try {
+    const res = await fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({email})
+    });
+    const data = await res.json();
+    msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+    msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+  } catch (err) {
+    msgEl.style.color = '#cf6f6f';
+    msgEl.textContent = '接続エラー: ' + err.message;
+  }
+});
+</script>
 
 <script>
 (() => {

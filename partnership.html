@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,35 +13,65 @@
             gap: 20px;
             margin-top: 30px;
         }
+
         .form-group {
             display: grid;
             gap: 8px;
         }
+
         .form-group label {
             font-weight: 600;
             font-size: 14px;
         }
-        .form-group input, .form-group textarea {
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             padding: 12px;
             border: 1px solid var(--border);
             border-radius: 4px;
             font-family: inherit;
+            font-size: 15px;
         }
+
         .submit-btn {
             background: var(--accent);
             color: white;
-            padding: 14px;
+            padding: 16px;
             border: none;
             border-radius: 4px;
             font-weight: 700;
             cursor: pointer;
             transition: opacity 0.2s;
+            font-size: 16px;
         }
-        .submit-btn:hover {
-            opacity: 0.9;
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #form-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
     </style>
 </head>
+
 <body class="humanoid-content">
     <header class="site-header">
         <div class="site-header__inner">
@@ -56,40 +87,102 @@
     <main class="wrapper">
         <article class="premium-article">
             <header>
-                <h1>Partnership & Contact</h1>
-                <div class="meta-date">ヒューマノイド開発・提携のご相談</div>
+                <h1>Partnership Inquiry</h1>
+                <div class="meta-date">ヒューマノイド開発・提携の加速</div>
             </header>
-            
+
             <section>
+                <h2 style="text-align:center;">Co-creating the Future of Autonomy</h2>
                 <p>
-                    次世代のヒューマノイドロボット開発、AIコンテンツパイプラインの導入、技術コンサルティングなど、
-                    chnmotoとの提携をご希望の方は、以下のフォームよりお気軽にご連絡ください。
+                    次世代のヒューマノイドロボット開発、AIコンテンツパイプライン、または個人DX分野での強力なシナジーを求めています。
+                    技術提供、共同研究、メディア提携など、あらゆる可能性をお聞かせください。
                 </p>
 
-                <form action="https://formspree.io/f/mqaebrda" method="POST" class="contact-form">
+                <form id="partnership-form" class="contact-form">
                     <div class="form-group">
                         <label for="name">お名前 / 貴社名</label>
                         <input type="text" id="name" name="name" required placeholder="例: ヒューマノイド株式会社 山田太郎">
                     </div>
                     <div class="form-group">
                         <label for="email">メールアドレス</label>
-                        <input type="email" id="email" name="_replyto" required placeholder="example@domain.com">
+                        <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">お問い合わせカテゴリ</label>
+                        <select id="category" name="category" required>
+                            <option value="humanoid" selected>ヒューマノイド開発提携</option>
+                            <option value="partnership">ビジネス・資本提携</option>
+                            <option value="general">その他一般のお問い合わせ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">件名</label>
+                        <input type="text" id="subject" name="subject" required placeholder="お問い合わせ内容の要約">
                     </div>
                     <div class="form-group">
                         <label for="message">ご相談内容</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="提携内容、プロジェクト概要、ご予算など"></textarea>
+                        <textarea id="message" name="message" rows="6" required
+                            placeholder="具体的な提案、プロジェクト詳細など"></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">メッセージを送信する</button>
+                    <button type="submit" id="submit-btn" class="submit-btn">提携案を送信する</button>
                 </form>
+                <div id="form-status"></div>
             </section>
         </article>
     </main>
 
+    <script>
+        const form = document.getElementById('partnership-form');
+        const statusEl = document.getElementById('form-status');
+        const btn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.textContent = '送信中...';
+            statusEl.style.display = 'none';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            const API = window.location.hostname === 'localhost'
+                ? 'http://localhost:8084/api/contact'
+                : 'https://new-blog-system.onrender.com/api/contact';
+
+            try {
+                const response = await fetch(API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                statusEl.style.display = 'block';
+                if (result.success) {
+                    statusEl.className = 'status-success';
+                    statusEl.textContent = 'お問い合わせありがとうございます。メッセージを送信しました。';
+                    form.reset();
+                } else {
+                    statusEl.className = 'status-error';
+                    statusEl.textContent = '送信エラー: ' + (result.message || '不明なエラーが発生しました。');
+                }
+            } catch (err) {
+                statusEl.style.display = 'block';
+                statusEl.className = 'status-error';
+                statusEl.textContent = '接続エラー: サーバーにアクセスできませんでした。';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '提携案を送信する';
+            }
+        });
+    </script>
+
     <footer>
         <div class="footer-bottom">
-            <span>© 2026 chnmotoTmz · Partnership Page</span>
-            <span>Powered by Formspree</span>
+            <span>© 2026 chnmotoTmz · Humanoid Media Factory</span>
         </div>
     </footer>
 </body>
+
 </html>

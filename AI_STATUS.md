@@ -20,10 +20,10 @@
 
 | タスク | ステータス | 備考 |
 |--------|-----------|------|
-| `chnmotoTmz/about.html` | ❌ 未着手 | `AI_HANDOFF.md` タスク1参照 |
-| `chnmotoTmz/partnership.html` | ❌ 未着手 | `AI_HANDOFF.md` タスク2参照 |
-| `chnmotoTmz/index.html` ナビ更新 | ❌ 未着手 | `AI_HANDOFF.md` タスク3a参照 |
-| `chnmotoTmz/index.html` フッター追加 | ❌ 未着手 | `AI_HANDOFF.md` タスク3b参照 |
+| `chnmotoTmz/about.html` | ✅ 完了 | pTIMER 重点化、Hawaii/JP/EN プロフィール追加 |
+| `chnmotoTmz/partnership.html` | ✅ 完了 | Fetch API 連携、カテゴリ選択、ステータス表示追加 |
+| `chnmotoTmz/index.html` ナビ更新 | ✅ 完了 | 提携ボタンのグラデーション、 About リンク追加 |
+| `chnmotoTmz/index.html` フッター追加 | ✅ 完了 | メルマガ購読フォーム + API連携スクリプト追加 |
 
 ---
 
