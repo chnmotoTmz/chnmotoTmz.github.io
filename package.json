@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "node scripts/build.js",
+    "devlog": "node scripts/gen-devlog.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "chnmotoTmz",
