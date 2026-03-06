@@ -30,6 +30,16 @@ const POST_WRAPPER = (title, content, date, description, tags) => `
     <footer>
         <p>&copy; ${new Date().getFullYear()} chnmotoTmz</p>
     </footer>
+    <script>
+    (function() {
+        var API = window.location.hostname === 'localhost' ? 'http://localhost:8084/api/pageview' : 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/pageview';
+        fetch(API, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+            body: JSON.stringify({ path: window.location.pathname, referrer: document.referrer })
+        }).catch(e => {}); // Silent fail
+    })();
+    </script>
 </body>
 </html>
 `;
@@ -339,6 +349,16 @@ async function build() {
       });
     });
   }
+})();
+</script>
+<script>
+(function() {
+  var API = window.location.hostname === 'localhost' ? 'http://localhost:8084/api/pageview' : 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/pageview';
+  fetch(API, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+    body: JSON.stringify({ path: window.location.pathname, referrer: document.referrer })
+  }).catch(e => {});
 })();
 </script>
 </body>

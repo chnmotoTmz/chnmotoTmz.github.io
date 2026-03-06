@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard | Humanoid Media Factory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .dashboard {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .stat-card {
+            background: #1a1a2e;
+            border: 1px solid #2d2d5e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card h2 {
+            margin-top: 0;
+            color: #a0a0ff;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #2d2d5e;
+            padding-bottom: 10px;
+        }
+
+        .big-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #2d2d5e;
+        }
+
+        th {
+            color: #888;
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+
+        td {
+            color: #e0e0e0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #3a3a5e;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body class="humanoid-content">
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html">Humanoid <span>Media</span> Factory</a>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <header style="margin-bottom: 30px;">
+            <h1>リアルタイムダッシュボード</h1>
+            <p style="color:#888;">自前アクセス解析 (ngrok稼働中のみ記録)</p>
+            <div id="status" style="color:#cf6f6f; font-weight:bold; margin-top:10px;"></div>
+        </header>
+
+        <div class="stat-card">
+            <h2>総ページビュー</h2>
+            <div class="big-number" id="total-views">-</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+            <div class="stat-card">
+                <h2>人気ページ Top 10</h2>
+                <table id="top-paths">
+                    <thead>
+                        <tr>
+                            <th>パス</th>
+                            <th>ビュー</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">読み込み中...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="stat-card">
+                <h2>最新のアクセス (直近20件)</h2>
+                <table id="recent-views">
+                    <thead>
+                        <tr>
+                            <th>日時</th>
+                            <th>パス</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">読み込み中...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const API = window.location.hostname === 'localhost'
+            ? 'http://localhost:8084/api/stats'
+            : 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/stats';
+
+        function formatDate(isoStr) {
+            const d = new Date(isoStr);
+            return d.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        }
+
+        async function loadStats() {
+            try {
+                const res = await fetch(API, { headers: { 'ngrok-skip-browser-warning': '1' } });
+                if (!res.ok) throw new Error('Network response was not ok');
+                const data = await res.json();
+
+                document.getElementById('status').textContent = '';
+                document.getElementById('total-views').textContent = data.total_views.toLocaleString();
+
+                const topHtml = data.top_paths.map(p =>
+                    `<tr>
+                        <td style="word-break:break-all;"><a href="${p.path}" style="color:#a0a0ff;">${p.path}</a></td>
+                        <td><span class="badge">${p.views}</span></td>
+                    </tr>`
+                ).join('');
+                document.getElementById('top-paths').querySelector('tbody').innerHTML = topHtml || '<tr><td colspan="2">データなし</td></tr>';
+
+                const recentHtml = data.recent_views.slice(0, 20).map(pv =>
+                    `<tr>
+                        <td style="font-family:monospace; color:#888; white-space:nowrap;">${formatDate(pv.created_at)}</td>
+                        <td style="word-break:break-all;">${pv.path}</td>
+                    </tr>`
+                ).join('');
+                document.getElementById('recent-views').querySelector('tbody').innerHTML = recentHtml || '<tr><td colspan="2">データなし</td></tr>';
+
+            } catch (err) {
+                document.getElementById('status').textContent = 'サーバーに接続できません (APIが停止中の可能性があります)';
+            }
+        }
+
+        // 初回ロードと5秒おきの定期更新
+        loadStats();
+        setInterval(loadStats, 5000);
+    </script>
+</body>
+
+</html>
