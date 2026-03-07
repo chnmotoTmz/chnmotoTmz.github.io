@@ -13,7 +13,7 @@ platform: hatena-blog
 
 ## title: J-POP低音攻略！平井堅・BUMPに学ぶ「胸に響くAメロ」の作り方と宅録推奨機材レビュー date: 2026-03-03 description: J-POPの男性ボーカルにおいて、Aメロの低音は楽曲の説得力を決める生命線。平井堅やBUMP OF CHICKENのような「密度のある低音」を出すコツと、その魅力を最大限に引き出す高価格帯DTM機材をプロ視点で解説します。 [dedup:bd69b9cb84aea4c8] series_id: part_number: 1 total_parts: 1
 
-![J-POP低音攻略！平井堅・BUMPに学ぶ「胸に響くAメロ」の作り方と宅録推奨機材レビュー](../../images/J-POP低音攻略-平井堅・BUMPに学ぶ-胸に響くAメロ-の作り方と宅録推奨機材レビュー.jpg)
+![J-POP低音攻略！平井堅・BUMPに学ぶ「胸に響くAメロ」の作り方と宅録推奨機材レビュー](https://chnmototmz.github.io/images/J-POP低音攻略-平井堅・BUMPに学ぶ-胸に響くAメロ-の作り方と宅録推奨機材レビュー.jpg)
 
 どうも、深夜のスタジオからエナジードリンク片手に失礼します。「AI音楽制作スタジオ」のマスターライター、Lです。
 
