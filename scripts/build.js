@@ -226,7 +226,7 @@ async function build() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Humanoid Media Factory | AI自動生成ニュースポータル</title>
     <meta name="description" content="AI × ロボット × 社会の最前線を配信する自動生成ニュースメディア">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -261,8 +261,8 @@ async function build() {
       </section>
 
       ${observationGrid.length > 0 ? `
-      <div class="section-header" style="margin-top: 2rem; border-bottom: 2px solid #a0a0ff; padding-bottom: 0.5rem;">
-        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🔭 OBSERVATION（観察ログ）</h2>
+      <div class="section-header">
+        <h2 class="section-label" style="color: var(--accent-blue);">🔭 OBSERVATION</h2>
       </div>
       <section class="cards-grid" id="cardsGridA">
         ${observationGrid.map(p => renderCard(p)).join('')}
@@ -270,8 +270,8 @@ async function build() {
       ` : ''}
 
       ${experimentGrid.length > 0 ? `
-      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid #6fcf6f; padding-bottom: 0.5rem;">
-        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🛠 EXPERIMENT & HOWTO（実験と技術）</h2>
+      <div class="section-header">
+        <h2 class="section-label" style="color: var(--accent-green);">🛠 EXPERIMENT & HOWTO</h2>
       </div>
       <section class="cards-grid" id="cardsGridB">
         ${experimentGrid.map(p => renderCard(p)).join('')}
@@ -279,8 +279,8 @@ async function build() {
       ` : ''}
 
       ${essayGrid.length > 0 ? `
-      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid #cf6fcf; padding-bottom: 0.5rem;">
-        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🖋 ESSAY（思考ログ）</h2>
+      <div class="section-header">
+        <h2 class="section-label" style="color: var(--accent-purple);">🖋 ESSAY</h2>
       </div>
       <section class="cards-grid" id="cardsGridC">
         ${essayGrid.map(p => renderCard(p)).join('')}
