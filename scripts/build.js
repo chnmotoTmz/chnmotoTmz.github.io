@@ -117,6 +117,8 @@ async function build() {
       title: meta.title || extractTitleFromHtml(rawContent) || slug,
       date: meta.date || dateFromFilename || new Date().toISOString().split('T')[0],
       description: meta.description || extractDescriptionFromHtml(rawContent) || '',
+      articleType: meta.article_type || 'OBSERVATION',
+      seriesName: meta.series_name || '',
       tags: meta.tags ? meta.tags.split(',').map(t => t.trim()) : [],
       slug: slug,
       // Keep backward compatibility for top-level posts,
@@ -157,19 +159,21 @@ async function build() {
   };
 
   const humanoidPosts = posts.filter(p => getCategory(p) === 'humanoid');
-  const musicArtPosts = posts.filter(p => ['music', 'art', 'devlog'].includes(getCategory(p)));
-  const societyPosts = posts.filter(p => ['zatsuki', 'tech', 'gadget', 'english', 'rakuten'].includes(getCategory(p)));
 
   // Hero section uses overall latest
   const featured = posts[0];
   const heroSide1 = posts[1];
   const heroSide2 = posts[2];
 
-  // Specific category top posts (excluding those in hero to avoid duplication if possible)
   const heroUrls = [featured, heroSide1, heroSide2].filter(Boolean).map(p => p.url);
+
+  // Tech Media Grids
+  const observationGrid = posts.filter(p => !heroUrls.includes(p.url) && p.articleType === 'OBSERVATION').slice(0, 4);
+  const experimentGrid = posts.filter(p => !heroUrls.includes(p.url) && ['EXPERIMENT', 'HOWTO'].includes(p.articleType)).slice(0, 4);
+  const essayGrid = posts.filter(p => !heroUrls.includes(p.url) && p.articleType === 'ESSAY').slice(0, 4);
+
+  // Fallback for older posts
   const aiGrid = humanoidPosts.filter(p => !heroUrls.includes(p.url)).slice(0, 4);
-  const musicGrid = musicArtPosts.filter(p => !heroUrls.includes(p.url)).slice(0, 4);
-  const societyGrid = societyPosts.filter(p => !heroUrls.includes(p.url)).slice(0, 4);
 
   const rankingPosts = posts.slice(0, 5);
 
@@ -191,12 +195,15 @@ async function build() {
     };
     const category = getCategory(p);
     const categoryLabels = { humanoid: 'ロボット・AI', music: '音楽', zatsuki: '社会・コラム', tech: 'テクノロジー', rakuten: '楽天', art: 'アート', devlog: '開発' };
-    const label = categoryLabels[category] || 'コラム';
+    const label = p.articleType || 'OBSERVATION';
+    const seriesLabelHtml = p.seriesName ? `<div style="font-size:0.8rem; color:#a0a0ff; font-weight:bold; margin-bottom:5px;">📚 ${p.seriesName}</div>` : '';
+
     if (hero) {
       return `<article class="card card--hero" data-category="${category}">
               <div class="card__body">
                 <span class="card__cat">${label}</span>
                 <h2 class="card__title"><a href="${p.url}">${p.title}</a></h2>
+                ${p.seriesName ? `<div style="font-size:0.9rem; color:#a0a0ff; margin-bottom:8px; font-weight:bold;">📚 ${p.seriesName}</div>` : ''}
                 <p class="card__excerpt">${excerpt}</p>
                 <time class="card__date">${p.date}</time>
               </div>
@@ -206,6 +213,7 @@ async function build() {
           <div class="card__body">
             <span class="card__cat">${label}</span>
             <h3 class="card__title"><a href="${p.url}">${p.title}</a></h3>
+            ${seriesLabelHtml}
             <time class="card__date">${p.date}</time>
           </div>
         </article>`;
@@ -252,30 +260,39 @@ async function build() {
         </div>
       </section>
 
-      ${aiGrid.length > 0 ? `
+      ${observationGrid.length > 0 ? `
       <div class="section-header" style="margin-top: 2rem; border-bottom: 2px solid #a0a0ff; padding-bottom: 0.5rem;">
-        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🤖 ロボット・AI</h2>
+        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🔭 OBSERVATION（観察ログ）</h2>
+      </div>
+      <section class="cards-grid" id="cardsGridA">
+        ${observationGrid.map(p => renderCard(p)).join('')}
+      </section>
+      ` : ''}
+
+      ${experimentGrid.length > 0 ? `
+      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid #6fcf6f; padding-bottom: 0.5rem;">
+        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🛠 EXPERIMENT & HOWTO（実験と技術）</h2>
+      </div>
+      <section class="cards-grid" id="cardsGridB">
+        ${experimentGrid.map(p => renderCard(p)).join('')}
+      </section>
+      ` : ''}
+
+      ${essayGrid.length > 0 ? `
+      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid #cf6fcf; padding-bottom: 0.5rem;">
+        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🖋 ESSAY（思考ログ）</h2>
+      </div>
+      <section class="cards-grid" id="cardsGridC">
+        ${essayGrid.map(p => renderCard(p)).join('')}
+      </section>
+      ` : ''}
+      
+      ${(observationGrid.length === 0 && experimentGrid.length === 0 && essayGrid.length === 0 && aiGrid.length > 0) ? `
+      <div class="section-header" style="margin-top: 2rem; border-bottom: 2px solid #a0a0ff; padding-bottom: 0.5rem;">
+        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">アーカイブ（ロボット・AI）</h2>
       </div>
       <section class="cards-grid" id="cardsGridA">
         ${aiGrid.map(p => renderCard(p)).join('')}
-      </section>
-      ` : ''}
-
-      ${societyGrid.length > 0 ? `
-      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid #6fcf6f; padding-bottom: 0.5rem;">
-        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🌍 社会・テクノロジー・生活</h2>
-      </div>
-      <section class="cards-grid" id="cardsGridB">
-        ${societyGrid.map(p => renderCard(p)).join('')}
-      </section>
-      ` : ''}
-
-      ${musicGrid.length > 0 ? `
-      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid #cf6fcf; padding-bottom: 0.5rem;">
-        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🎵 音楽・アート・開発日誌</h2>
-      </div>
-      <section class="cards-grid" id="cardsGridC">
-        ${musicGrid.map(p => renderCard(p)).join('')}
       </section>
       ` : ''}
       
