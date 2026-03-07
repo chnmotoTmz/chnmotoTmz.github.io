@@ -5,41 +5,51 @@ const POSTS_DIR = path.join(__dirname, '../posts');
 const DIST_DIR = path.join(__dirname, '../'); // Root for GitHub Pages
 const BASE_URL = 'https://chnmotoTmz.github.io'; // Change if needed
 
-// HTML Wrapper Template
+// HTML Wrapper Template (MSN Header Style)
 const POST_WRAPPER = (title, content, date, description, tags) => `
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${title} | chnmotoTmz Blog</title>
+    <title>${title} | Humanoid Media Factory</title>
     <meta name="description" content="${description}">
-    <meta property="og:title" content="${title}">
-    <meta property="og:description" content="${description}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="${BASE_URL}/${path.basename(title)}.html">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <header>
-        <h1><a href="index.html">chnmotoTmz Media Factory</a></h1>
+    <header class="site-header">
+        <div class="header-top">
+            <a class="brand" href="index.html">Humanoid <span>Media</span> Factory</a>
+            <div class="header-search-container">
+                <div class="search-input-wrapper">
+                    <input class="search" type="search" placeholder="Search the web" aria-label="Search">
+                </div>
+            </div>
+            <div class="header-auth">
+                <button class="tab" style="background:#0078d4; color:#fff; border-radius:4px; padding:5px 15px;">Personalize</button>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <a href="index.html" class="tab is-active">トップ</a>
+            <a href="#" class="tab">ロボット・AI</a>
+            <a href="#" class="tab">テクノロジー</a>
+            <a href="#" class="tab">社会・コラム</a>
+            <a href="about.html" class="tab">About</a>
+        </nav>
     </header>
-    <main>
-        ${content}
+    <main class="premium-article">
+        <div class="devlog-meta" style="color:#616161; margin-bottom:10px;">
+            <time>${date}</time>
+            <span style="margin:0 10px;">|</span>
+            ${(tags || []).map(t => `<span class="card__cat" style="display:inline; margin-right:5px;">${t}</span>`).join('')}
+        </div>
+        <div class="content">
+            ${content}
+        </div>
     </main>
     <footer>
-        <p>&copy; ${new Date().getFullYear()} chnmotoTmz</p>
+        <p>&copy; ${new Date().getFullYear()} Humanoid Media Factory. All rights reserved.</p>
     </footer>
-    <script>
-    (function() {
-        var API = window.location.hostname === 'localhost' ? 'http://localhost:8084/api/pageview' : 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/pageview';
-        fetch(API, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
-            body: JSON.stringify({ path: window.location.pathname, referrer: document.referrer })
-        }).catch(e => {}); // Silent fail
-    })();
-    </script>
 </body>
 </html>
 `;
@@ -48,7 +58,7 @@ function extractMetadata(content) {
   const meta = {};
   const match = content.match(/<!--([\s\S]*?)-->/);
   if (match) {
-    const lines = match[1].strip ? match[1].strip().split('\n') : match[1].trim().split('\n');
+    const lines = match[1].trim().split('\n');
     lines.forEach(line => {
       const part = line.split(':');
       if (part.length >= 2) {
@@ -67,10 +77,7 @@ function collectHtmlFiles(dir) {
     if (entry.isDirectory()) {
       results = results.concat(collectHtmlFiles(fullPath));
     } else if (entry.isFile() && entry.name.endsWith('.html')) {
-      // Skip index files under posts/* to avoid listing category index pages as articles.
-      if (entry.name.toLowerCase() === 'index.html') {
-        continue;
-      }
+      if (entry.name.toLowerCase() === 'index.html') continue;
       results.push(fullPath);
     }
   }
@@ -80,10 +87,8 @@ function collectHtmlFiles(dir) {
 function extractTitleFromHtml(content) {
   const h1 = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
   if (h1 && h1[1]) return h1[1].replace(/<[^>]+>/g, '').trim();
-
   const title = content.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   if (title && title[1]) return title[1].replace(/<[^>]+>/g, '').trim();
-
   return '';
 }
 
@@ -94,7 +99,7 @@ function extractDescriptionFromHtml(content) {
 }
 
 async function build() {
-  console.log('🚀 Building Industrial Media Factory...');
+  console.log('🚀 Building MSN-Style Media Factory...');
 
   if (!fs.existsSync(POSTS_DIR)) {
     console.error('Error: Posts directory not found');
@@ -121,102 +126,77 @@ async function build() {
       seriesName: meta.series_name || '',
       tags: meta.tags ? meta.tags.split(',').map(t => t.trim()) : [],
       slug: slug,
-      // Keep backward compatibility for top-level posts,
-      // and link nested posts directly under /posts/... (e.g. posts/devlog/...)
       url: isTopLevelPost ? `${slug}.html` : `posts/${relativePath}`
     };
 
     if (isTopLevelPost) {
-      // Wrap only top-level partial HTML into a full page in root.
       const fullContent = POST_WRAPPER(post.title, rawContent, post.date, post.description, post.tags);
       fs.writeFileSync(path.join(DIST_DIR, `${slug}.html`), fullContent);
-      console.log(`- Synthesized ${slug}.html`);
-    } else {
-      console.log(`- Indexed nested post ${relativePath}`);
     }
 
     posts.push(post);
   });
 
-  // Sort descending
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // Category classification helper
+  // Category classification
   const getCategory = (p) => {
     const url = p.url || '';
     if (url.includes('/humanoid/')) return 'humanoid';
     if (url.includes('/music/')) return 'music';
     if (url.includes('/tech/')) return 'tech';
-    if (url.includes('/rakuten/')) return 'rakuten';
-    if (url.includes('/art/')) return 'art';
     if (url.includes('/devlog/')) return 'devlog';
-    if (url.includes('/english/')) return 'english';
-    if (url.includes('/gadget/')) return 'gadget';
-    const tags = (p.tags || []).join(' ').toLowerCase();
-    if (tags.includes('humanoid') || tags.includes('robot')) return 'humanoid';
-    if (tags.includes('music')) return 'music';
     return 'zatsuki';
   };
 
-  const humanoidPosts = posts.filter(p => getCategory(p) === 'humanoid');
+  // Content Partitioning to avoid duplication
+  let remainingPosts = [...posts];
 
-  // Hero section uses overall latest
-  const featured = posts[0];
-  const heroSide1 = posts[1];
-  const heroSide2 = posts[2];
+  const featured = remainingPosts.shift();
+  const heroSide = remainingPosts.splice(0, 2);
+  const heroUrls = [featured, ...heroSide].filter(Boolean).map(p => p.url);
 
-  const heroUrls = [featured, heroSide1, heroSide2].filter(Boolean).map(p => p.url);
+  const observationGrid = remainingPosts.filter(p => p.articleType === 'OBSERVATION').slice(0, 6);
+  const usedInObservation = observationGrid.map(p => p.url);
+  remainingPosts = remainingPosts.filter(p => !usedInObservation.includes(p.url));
 
-  // Tech Media Grids
-  const observationGrid = posts.filter(p => !heroUrls.includes(p.url) && p.articleType === 'OBSERVATION').slice(0, 4);
-  const experimentGrid = posts.filter(p => !heroUrls.includes(p.url) && ['EXPERIMENT', 'HOWTO'].includes(p.articleType)).slice(0, 4);
-  const essayGrid = posts.filter(p => !heroUrls.includes(p.url) && p.articleType === 'ESSAY').slice(0, 4);
+  const techGrid = remainingPosts.filter(p => ['EXPERIMENT', 'HOWTO'].includes(p.articleType)).slice(0, 6);
+  const usedInTech = techGrid.map(p => p.url);
+  remainingPosts = remainingPosts.filter(p => !usedInTech.includes(p.url));
 
-  // Fallback for older posts
-  const aiGrid = humanoidPosts.filter(p => !heroUrls.includes(p.url)).slice(0, 4);
+  const essayGrid = remainingPosts.filter(p => p.articleType === 'ESSAY').slice(0, 4);
 
   const rankingPosts = posts.slice(0, 5);
 
   function renderCard(p, opts = {}) {
-    const hero = opts.hero || false;
-    const excerpt = p.description || p.title;
-    const getCategory = (p) => {
-      const url = p.url || '';
-      if (url.includes('/humanoid/')) return 'humanoid';
-      if (url.includes('/music/')) return 'music';
-      if (url.includes('/tech/')) return 'tech';
-      if (url.includes('/rakuten/')) return 'rakuten';
-      if (url.includes('/art/')) return 'art';
-      if (url.includes('/devlog/')) return 'devlog';
-      const tags = (p.tags || []).join(' ').toLowerCase();
-      if (tags.includes('humanoid') || tags.includes('robot')) return 'humanoid';
-      if (tags.includes('music')) return 'music';
-      return 'zatsuki';
-    };
+    const isHero = opts.hero || false;
     const category = getCategory(p);
-    const categoryLabels = { humanoid: 'ロボット・AI', music: '音楽', zatsuki: '社会・コラム', tech: 'テクノロジー', rakuten: '楽天', art: 'アート', devlog: '開発' };
     const label = p.articleType || 'OBSERVATION';
-    const seriesLabelHtml = p.seriesName ? `<div style="font-size:0.8rem; color:#a0a0ff; font-weight:bold; margin-bottom:5px;">📚 ${p.seriesName}</div>` : '';
+    const excerpt = p.description || p.title;
+    const imgUrl = `https://picsum.photos/seed/${p.slug}/800/450`; // Placeholder for now
 
-    if (hero) {
-      return `<article class="card card--hero" data-category="${category}">
-              <div class="card__body">
-                <span class="card__cat">${label}</span>
-                <h2 class="card__title"><a href="${p.url}">${p.title}</a></h2>
-                ${p.seriesName ? `<div style="font-size:0.9rem; color:#a0a0ff; margin-bottom:8px; font-weight:bold;">📚 ${p.seriesName}</div>` : ''}
-                <p class="card__excerpt">${excerpt}</p>
-                <time class="card__date">${p.date}</time>
-              </div>
-            </article>`;
+    if (isHero) {
+      return `
+      <article class="card card--hero" style="background-image: url('${imgUrl}')">
+        <div class="card__body">
+          <span class="card__cat" style="color:#00f2ff; text-shadow: 0 0 10px rgba(0,0,0,0.5);">${label}</span>
+          <h2 class="card__title"><a href="${p.url}">${p.title}</a></h2>
+          <p class="card__excerpt" style="color:#eee;">${excerpt}</p>
+          <time class="card__date" style="color:#ccc;">${p.date}</time>
+        </div>
+      </article>`;
     }
-    return `<article class="card" data-category="${category}">
-          <div class="card__body">
-            <span class="card__cat">${label}</span>
-            <h3 class="card__title"><a href="${p.url}">${p.title}</a></h3>
-            ${seriesLabelHtml}
-            <time class="card__date">${p.date}</time>
-          </div>
-        </article>`;
+
+    return `
+    <article class="card" data-category="${category}">
+      <img src="${imgUrl}" alt="" class="card__image" loading="lazy">
+      <div class="card__body">
+        <span class="card__cat">${label}</span>
+        <h3 class="card__title"><a href="${p.url}">${p.title}</a></h3>
+        <p class="card__excerpt">${excerpt}</p>
+        <time class="card__date">${p.date}</time>
+      </div>
+    </article>`;
   }
 
   const indexHtml = `<!DOCTYPE html>
@@ -224,236 +204,145 @@ async function build() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humanoid Media Factory | AI自動生成ニュースポータル</title>
-    <meta name="description" content="AI × ロボット × 社会の最前線を配信する自動生成ニュースメディア">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <title>Humanoid Media Factory | MSN-Style Portal</title>
+    <meta name="description" content="AI × Digital Transformation for Humanoid Lifestyle">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
 </head>
 <body>
     <header class="site-header">
-  <div class="site-header__inner">
-    <a class="brand" href="index.html">Humanoid <span>Media</span> Factory</a>
-    <nav class="header-nav" aria-label="カテゴリー">
-      <button class="tab is-active" data-filter="all">トップ</button>
-      <button class="tab" data-filter="humanoid">ロボット・AI</button>
-      <button class="tab" data-filter="music">音楽</button>
-      <button class="tab" data-filter="zatsuki">社会・コラム</button>
-      <a href="about.html" class="tab" style="text-decoration:none;">About</a>
-      <a href="partnership.html" class="tab" style="text-decoration:none; background: linear-gradient(135deg, #1a1a2e, #2d2d5e); color:#a0a0ff;">連絡先</a>
-    </nav>
-    <div class="header-tools">
-      <input class="search" id="searchInput" type="search" placeholder="ニュースを検索..." aria-label="記事を検索">
-    </div>
-  </div>
-</header>
-
-<main class="portal">
-  <div class="portal-layout">
-    <div class="portal-main">
-      
-      <section class="hero-grid">
-        ${featured ? renderCard(featured, { hero: true }) : ''}
-        <div class="hero-side">
-          <h3 class="hero-side-title">🔥 注目のニュース</h3>
-          ${heroSide1 ? renderCard(heroSide1) : ''}
-          ${heroSide2 ? renderCard(heroSide2) : ''}
+        <div class="header-top">
+            <a class="brand" href="index.html">Humanoid <span>Media</span> Factory</a>
+            <div class="header-search-container">
+                <div class="search-input-wrapper">
+                    <input class="search" id="searchInput" type="search" placeholder="Search the web" aria-label="Search">
+                </div>
+            </div>
+            <div class="header-auth" style="display:flex; gap:15px; align-items:center;">
+                <span style="font-size:0.85rem; color:#616161;">Tokyo, 12°C ☀️</span>
+                <button class="tab" style="background:#0078d4; color:#fff; border-radius:4px; padding:5px 15px; border:none; cursor:pointer; font-weight:600;">Personalize</button>
+            </div>
         </div>
-      </section>
+        <nav class="header-nav">
+            <button class="tab is-active" data-filter="all">トップ</button>
+            <button class="tab" data-filter="humanoid">ロボット・AI</button>
+            <button class="tab" data-filter="tech">テクノロジー</button>
+            <button class="tab" data-filter="zatsuki">社会・コラム</button>
+            <a href="about.html" class="tab">About</a>
+        </nav>
+    </header>
 
-      ${observationGrid.length > 0 ? `
-      <div class="section-header">
-        <h2 class="section-label" style="color: var(--accent-blue);">🔭 OBSERVATION</h2>
-      </div>
-      <section class="cards-grid" id="cardsGridA">
-        ${observationGrid.map(p => renderCard(p)).join('')}
-      </section>
-      ` : ''}
+    <main class="portal">
+        <div class="portal-layout">
+            <div class="portal-main">
+                <!-- Hero Section -->
+                <section class="hero-grid">
+                    ${featured ? renderCard(featured, { hero: true }) : ''}
+                    <div class="hero-side" style="display:flex; flex-direction:column; gap:16px;">
+                        <div class="sidebar-box" style="margin:0; padding:15px;">
+                            <h3 style="margin:0 0 10px 0; font-size:1rem; border:none; color:#d13438;">🔥 Trending Now</h3>
+                            ${heroSide.map(p => `
+                                <div style="margin-bottom:15px; border-bottom:1px solid #f3f5f7; padding-bottom:10px;">
+                                    <h4 style="margin:0; font-size:0.95rem;"><a href="${p.url}" style="text-decoration:none; color:#1b1b1b;">${p.title}</a></h4>
+                                    <time style="font-size:0.75rem; color:#616161;">${p.date}</time>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div style="background:#0078d4; color:#fff; padding:20px; border-radius:8px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+                            <span style="font-size:2rem; margin-bottom:10px;">📬</span>
+                            <h4 style="margin:0 0 5px 0;">Newsletter</h4>
+                            <p style="font-size:0.8rem; margin:0 0 10px 0;">Get the latest AI news</p>
+                            <button style="background:#fff; color:#0078d4; border:none; padding:5px 15px; border-radius:4px; font-weight:700; cursor:pointer;">Subscribe</button>
+                        </div>
+                    </div>
+                </section>
 
-      ${experimentGrid.length > 0 ? `
-      <div class="section-header">
-        <h2 class="section-label" style="color: var(--accent-green);">🛠 EXPERIMENT & HOWTO</h2>
-      </div>
-      <section class="cards-grid" id="cardsGridB">
-        ${experimentGrid.map(p => renderCard(p)).join('')}
-      </section>
-      ` : ''}
+                <!-- Observation Section -->
+                <div class="section-header">
+                    <h2 class="section-label">Latest Observations</h2>
+                </div>
+                <section class="cards-grid">
+                    ${observationGrid.map(p => renderCard(p)).join('')}
+                </section>
 
-      ${essayGrid.length > 0 ? `
-      <div class="section-header">
-        <h2 class="section-label" style="color: var(--accent-purple);">🖋 ESSAY</h2>
-      </div>
-      <section class="cards-grid" id="cardsGridC">
-        ${essayGrid.map(p => renderCard(p)).join('')}
-      </section>
-      ` : ''}
-      
-      ${(observationGrid.length === 0 && experimentGrid.length === 0 && essayGrid.length === 0 && aiGrid.length > 0) ? `
-      <div class="section-header" style="margin-top: 2rem; border-bottom: 2px solid #a0a0ff; padding-bottom: 0.5rem;">
-        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">アーカイブ（ロボット・AI）</h2>
-      </div>
-      <section class="cards-grid" id="cardsGridA">
-        ${aiGrid.map(p => renderCard(p)).join('')}
-      </section>
-      ` : ''}
-      
-    </div>
-    
-    <aside class="sidebar">
-      <div class="sidebar-box">
-        <h3 class="sidebar-title">📈 人気のニュース</h3>
-        <ul class="ranking-list">
-          ${rankingPosts.map(p => `<li><a href="${p.url}">${p.title}</a></li>`).join('')}
-        </ul>
-      </div>
-      
-      <div class="sidebar-box">
-        <h3 class="sidebar-title">🤖 編集部のPick up</h3>
-        <ul class="ranking-list" style="counter-reset:none;">
-          ${posts.slice(5, 8).map(p => `<li style="padding-left:0;"><a href="${p.url}">${p.title}</a></li>`).join('')}
-        </ul>
-      </div>
+                <!-- Tech Section -->
+                <div class="section-header">
+                    <h2 class="section-label">Experiments & Development</h2>
+                </div>
+                <section class="cards-grid">
+                    ${techGrid.map(p => renderCard(p)).join('')}
+                </section>
+            </div>
 
-      <div class="sidebar-ad">
-        ADVERTISEMENT
-      </div>
-    </aside>
-  </div>
-</main>
+            <aside class="sidebar">
+                <div class="sidebar-box">
+                    <h3 class="sidebar-title">チャートで見るトレンド</h3>
+                    <ul class="ranking-list">
+                        ${rankingPosts.map((p, i) => `
+                            <li>
+                                <span style="font-size:1.5rem; font-weight:900; color:#e1dfdd; margin-right:10px;">${i + 1}</span>
+                                <a href="${p.url}">${p.title}</a>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
 
-<footer class="site-footer">
-  <div class="site-footer__inner">
-    <div class="newsletter-signup">
-      <h3>📬 メールマガジン登録</h3>
-      <p>ヒューマノイド・AI・開発の最新情報をお届けします</p>
-      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
-        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..."
-          style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
-        <button type="submit" id="newsletter-btn"
-          style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">
-          登録する
-        </button>
-      </form>
-      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
-    </div>
-    <div class="footer-links" style="margin-top:1.5rem; font-size:0.85rem; color:#888;">
-      <a href="about.html" style="color:#a0a0ff; margin-right:1rem;">About</a>
-      <a href="partnership.html" style="color:#a0a0ff; margin-right:1rem;">連絡先</a>
-      <span>© 2026 chnmoto / Humanoid Media Factory</span>
-    </div>
-  </div>
-</footer>
-<style>
-.site-footer { background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem; }
-.site-footer__inner { max-width:800px; margin:0 auto; }
-.newsletter-signup h3 { color:#e0e0e0; margin-bottom:0.5rem; }
-.newsletter-signup p { color:#888; }
-</style>
-<script>
-(function() {
-  // ngrok URL → localhost:8084 (new-blog-system). ngrok再起動時はここを更新。
-  var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
-  if (window.location.hostname === 'localhost') {
-    SUBSCRIBE_API = 'http://localhost:8084/api/subscribe';
-  }
+                <div class="sidebar-box" style="background: linear-gradient(135deg, #0078d4 0%, #00bcf2 100%); color:#fff; border:none;">
+                    <h3 class="sidebar-title" style="color:#fff; border-color:rgba(255,255,255,0.3);">Featured Project</h3>
+                    <p style="font-size:0.9rem; opacity:0.9;">pTIMER: The ultimate tool for personal productivity and DX logging.</p>
+                    <a href="#" style="color:#fff; font-weight:700; text-decoration:none;">Learn more →</a>
+                </div>
+            </aside>
+        </div>
+    </main>
 
-  document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    var email  = document.getElementById('newsletter-email').value.trim();
-    var msgEl  = document.getElementById('newsletter-msg');
-    var btn    = document.getElementById('newsletter-btn');
-    btn.disabled = true;
-    msgEl.style.color = '#a0a0ff';
-    msgEl.textContent = '送信中...';
-    try {
-      var res = await fetch(SUBSCRIBE_API, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
-        body: JSON.stringify({email: email})
-      });
-      var data = await res.json();
-      msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
-      msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
-    } catch(err) {
-      msgEl.style.color = '#cf6f6f';
-      msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
-    } finally {
-      btn.disabled = false;
-    }
-  });
-})();
-</script>
+    <footer>
+        <div style="margin-bottom:20px;">
+            <a href="index.html" class="brand" style="justify-content:center;">Humanoid <span>Media</span> Factory</a>
+        </div>
+        <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
+            <a href="#" class="tab">Privacy</a>
+            <a href="#" class="tab">Terms of Use</a>
+            <a href="about.html" class="tab">About Us</a>
+            <a href="partnership.html" class="tab">Contact</a>
+        </div>
+        <p>&copy; 2026 Humanoid Media Factory. All rights reserved.</p>
+    </footer>
 
+    <script>
+    (() => {
+        const tabs = document.querySelectorAll('.tab[data-filter]');
+        const cards = document.querySelectorAll('.card[data-category]');
+        const searchInput = document.getElementById('searchInput');
 
-<script>
-(() => {
-  const tabs = document.querySelectorAll('.tab[data-filter]');
-  const cards = document.querySelectorAll('.card[data-category]');
-  const searchInput = document.getElementById('searchInput');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('is-active'));
+                tab.classList.add('is-active');
+                const filter = tab.dataset.filter;
+                cards.forEach(card => {
+                    const show = filter === 'all' || card.dataset.category === filter;
+                    card.style.display = show ? '' : 'none';
+                });
+            });
+        });
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('is-active'));
-      tab.classList.add('is-active');
-      const filter = tab.dataset.filter;
-      cards.forEach(card => {
-        const show = filter === 'all' || card.dataset.category === filter;
-        card.style.display = show ? '' : 'none';
-      });
-    });
-  });
-
-  if (searchInput) {
-    searchInput.addEventListener('input', () => {
-      const q = searchInput.value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(q) ? '' : 'none';
-      });
-    });
-  }
-})();
-</script>
-<script>
-(function() {
-  var API = window.location.hostname === 'localhost' ? 'http://localhost:8084/api/pageview' : 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/pageview';
-  fetch(API, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
-    body: JSON.stringify({ path: window.location.pathname, referrer: document.referrer })
-  }).catch(e => {});
-})();
-</script>
+        if (searchInput) {
+            searchInput.addEventListener('input', () => {
+                const q = searchInput.value.toLowerCase();
+                cards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    card.style.display = text.includes(q) ? '' : 'none';
+                });
+            });
+        }
+    })();
+    </script>
 </body>
 </html>`;
+
   fs.writeFileSync(path.join(DIST_DIR, 'index.html'), indexHtml);
-
-  // 2. RSS Feed (feed.xml)
-  const rss = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
-<channel>
-  <title>chnmotoTmz Media Factory</title>
-  <link>${BASE_URL}</link>
-  <description>AI-Synthesized Media Hub</description>
-  ${posts.map(p => `
-  <item>
-    <title>${p.title}</title>
-    <link>${BASE_URL}/${p.url}</link>
-    <description>${p.description}</description>
-    <pubDate>${new Date(p.date).toUTCString()}</pubDate>
-  </item>`).join('')}
-</channel>
-</rss>`;
-  fs.writeFileSync(path.join(DIST_DIR, 'feed.xml'), rss);
-
-  // 3. Sitemap (sitemap.xml)
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>${BASE_URL}/index.html</loc></url>
-  ${posts.map(p => `<url><loc>${BASE_URL}/${p.url}</loc></url>`).join('')}
-</urlset>`;
-  fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap);
-
-  console.log('✅ Build Complete: Index, RSS, and Sitemap generated.');
+  console.log('✅ Build Complete: MSN-Style Portal generated.');
 }
 
 build().catch(err => {
