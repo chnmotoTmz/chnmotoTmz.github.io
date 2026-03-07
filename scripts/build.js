@@ -139,11 +139,38 @@ async function build() {
   // Sort descending
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // 1. index.html
+  // Category classification helper
+  const getCategory = (p) => {
+    const url = p.url || '';
+    if (url.includes('/humanoid/')) return 'humanoid';
+    if (url.includes('/music/')) return 'music';
+    if (url.includes('/tech/')) return 'tech';
+    if (url.includes('/rakuten/')) return 'rakuten';
+    if (url.includes('/art/')) return 'art';
+    if (url.includes('/devlog/')) return 'devlog';
+    if (url.includes('/english/')) return 'english';
+    if (url.includes('/gadget/')) return 'gadget';
+    const tags = (p.tags || []).join(' ').toLowerCase();
+    if (tags.includes('humanoid') || tags.includes('robot')) return 'humanoid';
+    if (tags.includes('music')) return 'music';
+    return 'zatsuki';
+  };
+
+  const humanoidPosts = posts.filter(p => getCategory(p) === 'humanoid');
+  const musicArtPosts = posts.filter(p => ['music', 'art', 'devlog'].includes(getCategory(p)));
+  const societyPosts = posts.filter(p => ['zatsuki', 'tech', 'gadget', 'english', 'rakuten'].includes(getCategory(p)));
+
+  // Hero section uses overall latest
   const featured = posts[0];
   const heroSide1 = posts[1];
   const heroSide2 = posts[2];
-  const gridPosts = posts.slice(3, 11);
+
+  // Specific category top posts (excluding those in hero to avoid duplication if possible)
+  const heroUrls = [featured, heroSide1, heroSide2].filter(Boolean).map(p => p.url);
+  const aiGrid = humanoidPosts.filter(p => !heroUrls.includes(p.url)).slice(0, 4);
+  const musicGrid = musicArtPosts.filter(p => !heroUrls.includes(p.url)).slice(0, 4);
+  const societyGrid = societyPosts.filter(p => !heroUrls.includes(p.url)).slice(0, 4);
+
   const rankingPosts = posts.slice(0, 5);
 
   function renderCard(p, opts = {}) {
@@ -225,14 +252,32 @@ async function build() {
         </div>
       </section>
 
-      <div class="section-header">
-        <h2 class="section-label">最新記事・コラム</h2>
-        <a href="#" class="section-link">もっと見る ›</a>
+      ${aiGrid.length > 0 ? `
+      <div class="section-header" style="margin-top: 2rem; border-bottom: 2px solid #a0a0ff; padding-bottom: 0.5rem;">
+        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🤖 ロボット・AI</h2>
       </div>
-
-      <section class="cards-grid" id="cardsGrid">
-        ${gridPosts.map(p => renderCard(p)).join('')}
+      <section class="cards-grid" id="cardsGridA">
+        ${aiGrid.map(p => renderCard(p)).join('')}
       </section>
+      ` : ''}
+
+      ${societyGrid.length > 0 ? `
+      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid #6fcf6f; padding-bottom: 0.5rem;">
+        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🌍 社会・テクノロジー・生活</h2>
+      </div>
+      <section class="cards-grid" id="cardsGridB">
+        ${societyGrid.map(p => renderCard(p)).join('')}
+      </section>
+      ` : ''}
+
+      ${musicGrid.length > 0 ? `
+      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid #cf6fcf; padding-bottom: 0.5rem;">
+        <h2 class="section-label" style="font-size: 1.5rem; color: #fff;">🎵 音楽・アート・開発日誌</h2>
+      </div>
+      <section class="cards-grid" id="cardsGridC">
+        ${musicGrid.map(p => renderCard(p)).join('')}
+      </section>
+      ` : ''}
       
     </div>
     
