@@ -152,41 +152,16 @@ ${articleSection}
     // devlog ディレクトリがなければ作成
     fs.mkdirSync(DEVLOG_DIR, { recursive: true });
 
-    // 同日のファイルが既にあれば上書き
-    const fullHtml = `<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>開発日誌 ${today} | chnmoto</title>
-    <meta name="description" content="chnmoto 個人開発日誌 ${today}">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/style.css">
-    <style>
-        .devlog-header { background: #1a1a2e; color: #e0e0e0; padding: 2rem; margin-bottom: 2rem; }
-        .devlog-body   { max-width: 720px; margin: 0 auto; padding: 2rem; line-height: 1.9; }
-        .devlog-body p { margin-bottom: 1.4rem; }
-        .devlog-tag    { display: inline-block; background: #2d2d5e; color: #a0a0ff;
-                         padding: 0.2rem 0.7rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; }
-    </style>
-</head>
-<body>
-    <div class="devlog-header">
-        <p style="margin:0 0 0.5rem; font-size:0.8rem; opacity:0.6;">
-            ◀ <a href="../../index.html" style="color:#a0a0ff;">Humanoid Media Factory</a>
-        </p>
-        <h1 style="margin:0; font-size:1.6rem;">開発日誌 ${today}</h1>
-    </div>
-    <div class="devlog-body">
-        <div style="color:#888; font-size:0.9rem; margin-bottom:1rem;">
-            <time>${today}</time>
-            <span class="devlog-tag">開発日誌</span>
-            <span class="devlog-tag">ルールベース自動生成</span>
-        </div>
-        ${diaryBody}
-    </div>
-</body>
-</html>`;
+    // 簡略化したテンプレート（build.js でラップされることを想定）
+    const fullHtml = `<!--
+title: 開発日誌 ${today}
+date: ${today}
+description: chnmoto 個人開発日誌 ${today}
+article_type: OBSERVATION
+-->
+<div class="devlog-content">
+    ${diaryBody}
+</div>`;
 
     fs.writeFileSync(outputPath, fullHtml, 'utf8');
     console.log(`✅ 生成完了: ${outputPath}`);
