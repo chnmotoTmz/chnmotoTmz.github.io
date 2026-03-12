@@ -7,29 +7,10 @@
     <meta name="description" content="AI × Digital Transformation for Humanoid Lifestyle">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="assets/components/site-header.js"></script>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-top">
-            <a class="brand" href="index.html">Humanoid <span>Media</span> Factory</a>
-            <div class="header-search-container">
-                <div class="search-input-wrapper">
-                    <input class="search" id="searchInput" type="search" placeholder="Search the web" aria-label="Search">
-                </div>
-            </div>
-            <div class="header-auth" style="display:flex; gap:15px; align-items:center;">
-                <span style="font-size:0.85rem; color:#616161;">Tokyo, 12°C ☀️</span>
-                <button class="tab" style="background:#0078d4; color:#fff; border-radius:4px; padding:5px 15px; border:none; cursor:pointer; font-weight:600;">Personalize</button>
-            </div>
-        </div>
-        <nav class="header-nav">
-            <button class="tab is-active" data-filter="all">トップ</button>
-            <button class="tab" data-filter="humanoid">ロボット・AI</button>
-            <button class="tab" data-filter="tech">テクノロジー</button>
-            <button class="tab" data-filter="zatsuki">社会・コラム</button>
-            <a href="about.html" class="tab">About</a>
-        </nav>
-    </header>
+    <site-header prefix=""></site-header>
 
     <main class="portal">
         <div class="portal-layout">
@@ -74,61 +55,68 @@
                     <h2 class="section-label">Latest Observations</h2>
                 </div>
                 <section class="cards-grid">
-                    
-    <article class="card" data-category="zatsuki">
-      <img src="https://picsum.photos/seed/2026-03-10-その羽音は通知か-それとも監視か-中国が放った0-2gの超小型スパイが変える戦争の定義/800/450" alt="" class="card__image" loading="lazy">
-      <div class="card__body">
-        <span class="card__cat">OBSERVATION</span>
-        <h3 class="card__title"><a href="posts/news/2026-03-10-その羽音は通知か-それとも監視か-中国が放った0-2gの超小型スパイが変える戦争の定義.html">その羽音は「通知」か、それとも「監視」か：中国が放った0.2gの超小型スパイが変える戦争の定義</a></h3>
-        <p class="card__excerpt">中国・国防科技大学（NUDT）が発表した、蚊サイズの超小型バイオミメティクス・ドローン。1円玉の5分の1という驚異的な軽さと、自然界に溶け込む羽ばたき機構。SF映画のガジェットが現実となった今、私たちのプライバシーと現代戦のルールは書き換えられようとしています。 [dedup:5e0eecf399ae5c22]</p>
-        <time class="card__date">2026-03-10</time>
-      </div>
-    </article>
-    <article class="card" data-category="zatsuki">
-      <img src="https://picsum.photos/seed/2026-03-10-深夜23-33のすっぽんぽん4-000万袋を売った赤いパウチのUXを解剖する/800/450" alt="" class="card__image" loading="lazy">
-      <div class="card__body">
-        <span class="card__cat">OBSERVATION</span>
-        <h3 class="card__title"><a href="posts/wellness/2026-03-10-深夜23-33のすっぽんぽん4-000万袋を売った赤いパウチのUXを解剖する.html">深夜23:33の「すっぽんぽん」——4,000万袋を売った赤いパウチのUXを解剖する</a></h3>
-        <p class="card__excerpt">深夜のインフォマーシャルで異彩を放つ「杜のすっぽん黒酢」。佐賀産すっぽんと鹿児島産黒酢もろみが織りなす『バイタリティの最適化』とは？ 膨大なユーザーレビューとテック的視点から、その長寿の理由を深掘りします。 [dedup:b423300d7773418c]</p>
-        <time class="card__date">2026-03-10</time>
-      </div>
-    </article>
-    <article class="card" data-category="zatsuki">
-      <img src="https://picsum.photos/seed/2026-03-09-254日間の猶予か-それとも破滅へのカウントダウンか-ホルムズ海峡封鎖という静かなる有事/800/450" alt="" class="card__image" loading="lazy">
-      <div class="card__body">
-        <span class="card__cat">OBSERVATION</span>
-        <h3 class="card__title"><a href="posts/news/2026-03-09-254日間の猶予か-それとも破滅へのカウントダウンか-ホルムズ海峡封鎖という静かなる有事.html">254日間の猶予か、それとも破滅へのカウントダウンか：ホルムズ海峡封鎖という「静かなる有事」</a></h3>
-        <p class="card__excerpt">2026年、突如として現実味を帯びたホルムズ海峡の封鎖。日本の原油輸入の9割を支えるこの大動脈が断たれた時、私たちが信じる「254日分の石油備蓄」は本当に盾となるのか。テックと地政学の視点から、エネルギー安全保障の真実を解き明かします。 [dedup:4d40403fab0ac9d8]</p>
-        <time class="card__date">2026-03-09</time>
-      </div>
-    </article>
+<!-- DYNAMIC_CARDS_START -->
+
     <article class="card" data-category="devlog">
-      <img src="https://picsum.photos/seed/2026-03-08-開発日誌-2026-03-08---pTIMERと過ごした一日/800/450" alt="" class="card__image" loading="lazy">
+      <img src="https://picsum.photos/seed/2026-03-13-%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%84%AA%E4%BD%8D%E6%80%A7%E3%81%A8-%E4%B8%8D%E4%BE%BF%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%81%AE%E8%B7%A1%E5%9C%B0%E3%81%A7%E8%80%83%E3%81%88%E3%81%9F%E3%81%93%E3%81%A8/800/450" alt="" class="card__image" loading="lazy">
       <div class="card__body">
         <span class="card__cat">OBSERVATION</span>
-        <h3 class="card__title"><a href="posts/devlog/2026-03-08-開発日誌-2026-03-08---pTIMERと過ごした一日.html">開発日誌 2026-03-08 — pTIMERと過ごした一日</a></h3>
-        <p class="card__excerpt">2026-03-08の作業記録。さっき、お風呂に入った。リンゴを食べた。今日は運動不足、就寝を記録などに取り組んだ。Quick Entry(1回), 就寝(1回)を主に使って作業を進めた。細かい部分の調整が多かったが、少しずつ前に進んでいる。明日も続けていく。</p>
-        <time class="card__date">2026-03-08</time>
+        <h3 class="card__title"><a href="posts/devlog/2026-03-13-ローカルデータの優位性と-不便になったインターネットの跡地で考えたこと.html">2026-03-13-ローカルデータの優位性と-不便になったインターネットの跡地で考えたこと</a></h3>
+        <p class="card__excerpt">Home &gt; devlog &gt; Archive &gt; 2026-03-13-ローカルデータの優位性と-不便になったインターネットの跡地で考えたこと 2026-03-13 | OBSER...</p>
+        <time class="card__date">2026-03-13</time>
       </div>
     </article>
-    <article class="card" data-category="humanoid">
-      <img src="https://picsum.photos/seed/2026-03-08-無題/800/450" alt="" class="card__image" loading="lazy">
+
+    <article class="card" data-category="wellness">
+      <img src="https://picsum.photos/seed/2026-03-13-%E6%98%A8%E5%A4%9C%E3%81%AE%E5%AE%B4%E4%BC%9A%E3%81%8C%E5%96%89%E3%81%AE%E5%B8%AF%E5%9F%9F%E3%82%92%E5%88%B6%E9%99%90%E3%81%99%E3%82%8B-%E3%82%A2%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%AB%E3%81%AB%E3%82%88%E3%82%8B%E7%94%9F%E4%BD%93%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9%E3%81%AE%E3%83%87%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89/800/450" alt="" class="card__image" loading="lazy">
       <div class="card__body">
         <span class="card__cat">OBSERVATION</span>
-        <h3 class="card__title"><a href="posts/humanoid/2026-03-08-無題.html">無題</a></h3>
-        <p class="card__excerpt">[dedup:d192015d2730f170]</p>
-        <time class="card__date">2026-03-08</time>
+        <h3 class="card__title"><a href="posts/wellness/2026-03-13-昨夜の宴会が喉の帯域を制限する-アルコールによる生体インターフェースのデグレード.html">昨夜の宴会が「喉」の帯域を制限する。アルコールによる生体インターフェースのデグレード</a></h3>
+        <p class="card__excerpt">会社の宴会明け、なぜか声の立ち上がりが悪い。単なる「二日酔い」で片付けるには惜しい、声帯という精密デバイスに起きた物理的なスペックダウンをテック視点で考察します。</p>
+        <time class="card__date">2026-03-13</time>
       </div>
     </article>
+
     <article class="card" data-category="devlog">
-      <img src="https://picsum.photos/seed/2026-03-07-devlog/800/450" alt="" class="card__image" loading="lazy">
+      <img src="https://picsum.photos/seed/2026-03-12-%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%8E%E3%82%A4%E3%83%89%E3%81%AE%E7%A8%AE%E3%81%BE%E3%81%8D%E3%81%A8-%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E6%A7%8B%E7%AF%89%E3%81%B8%E3%81%AE%E6%A8%A1%E7%B4%A2/800/450" alt="" class="card__image" loading="lazy">
       <div class="card__body">
         <span class="card__cat">OBSERVATION</span>
-        <h3 class="card__title"><a href="posts/devlog/2026-03-07-devlog.html">開発日誌 2026-03-07</a></h3>
-        <p class="card__excerpt">◀ Humanoid Media Factory</p>
-        <time class="card__date">2026-03-07</time>
+        <h3 class="card__title"><a href="posts/devlog/2026-03-12-ヒューマノイドの種まきと-エージェント構築への模索.html">2026-03-12-ヒューマノイドの種まきと-エージェント構築への模索</a></h3>
+        <p class="card__excerpt">Home &gt; devlog &gt; Archive &gt; 2026-03-12-ヒューマノイドの種まきと-エージェント構築への模索 2026-03-12 | OBSERVATION Hom...</p>
+        <time class="card__date">2026-03-12</time>
       </div>
     </article>
+
+    <article class="card" data-category="devlog">
+      <img src="https://picsum.photos/seed/2026-03-12-%E9%96%8B%E7%99%BA%E6%97%A5%E8%AA%8C-2026-03-12---pTIMER%E3%81%A8%E9%81%8E%E3%81%94%E3%81%97%E3%81%9F%E4%B8%80%E6%97%A5/800/450" alt="" class="card__image" loading="lazy">
+      <div class="card__body">
+        <span class="card__cat">OBSERVATION</span>
+        <h3 class="card__title"><a href="posts/devlog/2026-03-12-開発日誌-2026-03-12---pTIMERと過ごした一日.html">2026-03-12-開発日誌-2026-03-12---pTIMERと過ごした一日</a></h3>
+        <p class="card__excerpt">Home &gt; devlog &gt; Archive &gt; 2026-03-12-開発日誌-2026-03-12---pTIMERと過ごした一日 2026-03-12 | OBSERVATI...</p>
+        <time class="card__date">2026-03-12</time>
+      </div>
+    </article>
+
+    <article class="card" data-category="wellness">
+      <img src="https://picsum.photos/seed/2026-03-12-%E6%98%A8%E5%A4%9C%E3%81%AE%E5%AE%B4%E4%BC%9A%E3%81%8C%E5%96%89%E3%81%AE%E5%B8%AF%E5%9F%9F%E3%82%92%E5%88%B6%E9%99%90%E3%81%99%E3%82%8B-%E3%82%A2%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%AB%E3%81%AB%E3%82%88%E3%82%8B%E7%94%9F%E4%BD%93%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9%E3%81%AE%E3%83%87%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89/800/450" alt="" class="card__image" loading="lazy">
+      <div class="card__body">
+        <span class="card__cat">OBSERVATION</span>
+        <h3 class="card__title"><a href="posts/wellness/2026-03-12-昨夜の宴会が喉の帯域を制限する-アルコールによる生体インターフェースのデグレード.html">2026-03-12-昨夜の宴会が喉の帯域を制限する-アルコールによる生体インターフェースのデグレード</a></h3>
+        <p class="card__excerpt">Home &gt; wellness &gt; Archive &gt; 2026-03-12-昨夜の宴会が喉の帯域を制限する-アルコールによる生体インターフェースのデグレード 2026-03-12 ...</p>
+        <time class="card__date">2026-03-12</time>
+      </div>
+    </article>
+
+    <article class="card" data-category="affiliate">
+      <img src="https://picsum.photos/seed/2026-03-11-%E3%83%92%E3%83%9E%E3%83%AF%E3%83%AA%E3%81%AE%E7%A8%AE%E3%81%A8%E3%81%84%E3%81%86%E5%91%B3%E8%A6%9A%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%82%AF%E3%83%AD%E3%83%83%E3%82%AF-%E4%B8%AD%E5%9B%BD%E7%94%A3%E6%B4%BD%E6%B4%BD%E3%81%8C%E6%97%A5%E6%9C%AC%E3%81%AE%E3%82%B9%E3%83%8A%E3%83%83%E3%82%AF%E6%A6%82%E5%BF%B5%E3%82%92%E6%9B%B8%E3%81%8D%E6%8F%9B%E3%81%88%E3%82%8B/800/450" alt="" class="card__image" loading="lazy">
+      <div class="card__body">
+        <span class="card__cat">OBSERVATION</span>
+        <h3 class="card__title"><a href="posts/affiliate/2026-03-11-ヒマワリの種という味覚のオーバークロック-中国産洽洽が日本のスナック概念を書き換える.html">2026-03-11-ヒマワリの種という味覚のオーバークロック-中国産洽洽が日本のスナック概念を書き換える</a></h3>
+        <p class="card__excerpt">Home &gt; affiliate &gt; Archive &gt; 2026-03-11-ヒマワリの種という味覚のオーバークロック-中国産洽洽が日本のスナック概念を書き換える 2026-03-...</p>
+        <time class="card__date">2026-03-11</time>
+      </div>
+    </article>
+<!-- DYNAMIC_CARDS_END -->
                 </section>
 
                 <!-- Tech Section -->
@@ -203,35 +191,5 @@
         </div>
         <p>&copy; 2026 Humanoid Media Factory. All rights reserved.</p>
     </footer>
-
-    <script>
-    (() => {
-        const tabs = document.querySelectorAll('.tab[data-filter]');
-        const cards = document.querySelectorAll('.card[data-category]');
-        const searchInput = document.getElementById('searchInput');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('is-active'));
-                tab.classList.add('is-active');
-                const filter = tab.dataset.filter;
-                cards.forEach(card => {
-                    const show = filter === 'all' || card.dataset.category === filter;
-                    card.style.display = show ? '' : 'none';
-                });
-            });
-        });
-
-        if (searchInput) {
-            searchInput.addEventListener('input', () => {
-                const q = searchInput.value.toLowerCase();
-                cards.forEach(card => {
-                    const text = card.textContent.toLowerCase();
-                    card.style.display = text.includes(q) ? '' : 'none';
-                });
-            });
-        }
-    })();
-    </script>
 </body>
 </html>

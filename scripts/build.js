@@ -23,24 +23,10 @@ const POST_WRAPPER = (post, content, prevPost, nextPost, relatedPosts, prefix) =
     <meta name="description" content="${post.description}">
     <link rel="stylesheet" href="${prefix}assets/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="${prefix}assets/components/site-header.js"></script>
 </head>
 <body class="humanoid-content">
-    <header class="site-header">
-        <div class="header-top">
-            <a class="brand" href="${prefix}index.html">Humanoid <span>Media</span> Factory</a>
-            <div class="header-auth">
-                <span style="font-size:0.85rem; color:#616161;">Tokyo, 12°C ☀️</span>
-                <a href="${prefix}archive.html" class="tab" style="background:#0078d4; color:#fff; border-radius:4px; padding:5px 15px; text-decoration:none; font-weight:600;">Archive</a>
-            </div>
-        </div>
-        <nav class="header-nav">
-            <a href="${prefix}index.html" class="tab">トップ</a>
-            <button class="tab">ロボット・AI</button>
-            <button class="tab">テクノロジー</button>
-            <button class="tab">社会・コラム</button>
-            <a href="${prefix}about.html" class="tab">About</a>
-        </nav>
-    </header>
+    <site-header prefix="${prefix}"></site-header>
 
     <main class="premium-article">
         <nav class="breadcrumbs">
@@ -221,13 +207,10 @@ async function build() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive | Humanoid Media Factory</title>
     <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/components/site-header.js"></script>
 </head>
 <body class="humanoid-content">
-    <header class="site-header">
-        <div class="header-top">
-            <a class="brand" href="index.html">Humanoid <span>Media</span> Factory</a>
-        </div>
-    </header>
+    <site-header prefix=""></site-header>
     <main class="portal" style="max-width:800px; margin:0 auto; padding:40px 20px;">
         <h1>Article Archive</h1>
         <div class="archive-list">
@@ -252,8 +235,34 @@ async function build() {
     fs.writeFileSync(path.join(DIST_DIR, 'archive.html'), archiveHtml);
 
     // 3. Update index.html (Simple version for this demo, focusing on the portal part)
-    // In a real scenario, we'd reuse the renderCard logic from the original build.js
-    console.log('✅ Articles wrapped and Archive page generated.');
+    const indexCardsHtml = posts.slice(0, 6).map(p => {
+        // extract excerpt from description or core content
+        let excerpt = p.description || p.title;
+        if (!p.description && p.rawContent) {
+            const core = extractCoreContent(p.rawContent);
+            const temp = core.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            excerpt = temp.length > 100 ? temp.substring(0, 100) + '...' : temp;
+        }
+        return `
+    <article class="card" data-category="${p.categoryName || 'other'}">
+      <img src="https://picsum.photos/seed/${encodeURIComponent(p.slug)}/800/450" alt="" class="card__image" loading="lazy">
+      <div class="card__body">
+        <span class="card__cat">${p.articleType || 'OBSERVATION'}</span>
+        <h3 class="card__title"><a href="${p.url}">${p.title}</a></h3>
+        <p class="card__excerpt">${excerpt}</p>
+        <time class="card__date">${p.date}</time>
+      </div>
+    </article>`;
+    }).join('\n');
+
+    const indexPath = path.join(DIST_DIR, 'index.html');
+    if (fs.existsSync(indexPath)) {
+        let indexHtml = fs.readFileSync(indexPath, 'utf8');
+        indexHtml = indexHtml.replace(/<!-- DYNAMIC_CARDS_START -->[\s\S]*?<!-- DYNAMIC_CARDS_END -->/, `<!-- DYNAMIC_CARDS_START -->\n${indexCardsHtml}\n<!-- DYNAMIC_CARDS_END -->`);
+        fs.writeFileSync(indexPath, indexHtml, 'utf8');
+    }
+
+    console.log('✅ Articles wrapped, Archive generated, and top page updated dynamically.');
 }
 
 build().catch(console.error);
