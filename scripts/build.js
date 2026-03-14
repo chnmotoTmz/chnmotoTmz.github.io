@@ -176,47 +176,49 @@ function collectHtmlFiles(dir) {
     return results;
 }
 
-// Extract core content from article - Surgical Version
+// Extract core content from article - Surgical Version (Innermost focus)
 function extractCoreContent(html) {
-    // Look for metadata block as start anchor
-    const metaStartMatch = html.match(/<!--\s*title:/i);
-    if (!metaStartMatch) {
-        // If no metadata, attempt to find <div class="content"> or similar
-        const contentMatch = html.match(/<div[^>]*class="content"[^>]*>/i);
-        if (contentMatch) {
-            let start = contentMatch.index + contentMatch[0].length;
-            let sub = html.substring(start);
-            const endMatch = sub.match(/<\/div>\s*<\/article>/i) || sub.match(/<\/article>/i);
-            if (endMatch) return sub.substring(0, endMatch.index).trim();
+    // 1. Aggressively find the INNERMOST post-content
+    const postContentMatches = [...html.matchAll(/<article[^>]*class=["']post-content["'][^>]*>/gi)];
+    if (postContentMatches.length > 0) {
+        const lastMatch = postContentMatches[postContentMatches.length - 1];
+        let content = html.substring(lastMatch.index + lastMatch[0].length);
+        
+        // Find the first closing article tag after this point
+        const endMatch = content.match(/<\/article>/i);
+        if (endMatch) {
+            content = content.substring(0, endMatch.index);
         }
-        return html.replace(/<!DOCTYPE[\s\S]*?<body[^>]*>/i, '').replace(/<\/body>[\s\S]*?<\/html>/i, '').trim();
+        return content.trim();
     }
 
-    // Slice from metadata start
-    let content = html.substring(metaStartMatch.index);
+    // 2. Fallback to finding the metadata block and extracting everything after it
+    const metaMatches = [...html.matchAll(/<!--\s*title:[\s\S]*?-->/gi)];
+    if (metaMatches.length > 0) {
+        const lastMeta = metaMatches[metaMatches.length - 1];
+        let content = html.substring(lastMeta.index + lastMeta[0].length);
 
-    // Look for end markers (Next/Prev nav, Related posts, etc.)
-    const endMarkers = [
-        /<!-- Next\/Prev Navigation -->/i,
-        /<nav[^>]*class="post-nav"/i,
-        /<!-- Related Posts -->/i,
-        /<section[^>]*class="related-posts"/i,
-        /<\/article>\s*<\/main>/i
-    ];
+        // Look for end markers (Next/Prev nav, Related posts, etc.)
+        const endMarkers = [
+            /<!-- Next\/Prev Navigation -->/i,
+            /<nav[^>]*class="post-nav"/i,
+            /<!-- Related Posts -->/i,
+            /<section[^>]*class="related-posts"/i,
+            /<\/article>\s*<\/main>/i
+        ];
 
-    for (const marker of endMarkers) {
-        const match = content.match(marker);
-        if (match) {
-            content = content.substring(0, match.index);
-            break;
+        for (const marker of endMarkers) {
+            const match = content.match(marker);
+            if (match) {
+                content = content.substring(0, match.index);
+                break;
+            }
         }
+        return content.trim();
     }
 
-    // Remove any leftover structural junk at the very end
-    content = content.replace(/<\/article>\s*$/i, '');
-    content = content.replace(/<\/div>\s*$/i, '');
-
-    return content.trim();
+    // 3. Last resort: strip body but keep everything else
+    return html.replace(/<!DOCTYPE[\s\S]*?<body[^>]*>/i, '').replace(/<\/body>[\s\S]*?<\/html>/i, '').trim();
 }
 
 async function build() {
@@ -334,7 +336,7 @@ async function build() {
         let excerpt = p.description || p.title;
         if (!p.description && p.rawContent) {
             const core = extractCoreContent(p.rawContent);
-            const sanitized = core.replace(/<figure[^>]*>[\s\S]*?<\/figure>/ig, '');
+            const sanitized = core.replace(/<style[^>]*>[\s\S]*?<\/style>/ig, '').replace(/<figure[^>]*>[\s\S]*?<\/figure>/ig, '');
             const temp = sanitized.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
             excerpt = temp.length > 80 ? temp.substring(0, 80) + '...' : temp;
         }
