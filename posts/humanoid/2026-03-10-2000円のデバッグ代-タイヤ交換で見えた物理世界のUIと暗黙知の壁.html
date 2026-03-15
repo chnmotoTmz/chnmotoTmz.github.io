@@ -1,9 +1,15 @@
+<!--
+title: 2000円のデバッグ代-タイヤ交換で見えた物理世界のUIと暗黙知の壁
+date: 2026-03-10
+description:
+article_type: OBSERVATION
+-->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026-03-10-2000円のデバッグ代-タイヤ交換で見えた物理世界のUIと暗黙知の壁 | Humanoid Media Factory</title>
+    <title>2000円のデバッグ代-タイヤ交換で見えた物理世界のUIと暗黙知の壁 | Humanoid Media Factory</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="../../assets/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
@@ -34,243 +40,19 @@
                 <nav class="breadcrumbs">
                     <a href="../../index.html">Home</a> <span>&gt;</span>
                     <a href="../../archive.html">humanoid</a> <span>&gt;</span>
-                    <span style="color:var(--text-primary)">2026-03-10-2000円のデバッグ代-タイヤ交換で見えた物理世界のUIと暗黙知の壁</span>
+                    <span style="color:var(--text-primary)">2000円のデバッグ代-タイヤ交換で見えた物理世界のUIと暗黙知の壁</span>
                 </nav>
 
-                <div class="devlog-meta" style="color:#616161; margin-bottom:10px;">
+                <h1>2000円のデバッグ代-タイヤ交換で見えた物理世界のUIと暗黙知の壁</h1>
+
+                <div class="devlog-meta">
                     <time>2026-03-10</time>
-                    <span style="margin:0 10px;">|</span>
-                    <span class="card__cat" style="color:var(--accent-red)">OBSERVATION</span>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
                 </div>
 
                 <article class="post-content">
-                    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
-
-    .premium-article {
-        font-family: 'Noto Serif JP', serif;
-        line-height: 1.8;
-        color: #2c3e50;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background: #fdfdfd;
-    }
-
-    .main-thumbnail img {
-        width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        margin-bottom: 30px;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-        border-bottom: 2px solid #e74c3c;
-        padding-bottom: 10px;
-        margin-bottom: 30px;
-        color: #1a1a1a;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-        background: linear-gradient(transparent 70%, #ffeb3b 70%);
-        display: inline-block;
-        margin-top: 40px;
-        margin-bottom: 20px;
-    }
-
-    p {
-        margin-bottom: 1.5rem;
-        text-align: justify;
-    }
-
-    blockquote {
-        border-left: 5px solid #e74c3c;
-        padding: 15px 25px;
-        background: #f8f9fa;
-        font-style: italic;
-        margin: 30px 0;
-        border-radius: 0 8px 8px 0;
-    }
-
-    .fact-box {
-        border: 1px solid #dee2e6;
-        border-radius: 8px;
-        padding: 20px;
-        background: #f1f3f5;
-        margin: 30px 0;
-    }
-
-    .fact-box h3 {
-        margin-top: 0;
-        font-size: 1.1rem;
-        color: #495057;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .affiliate-links {
-        margin-top: 50px;
-        padding: 25px;
-        background: #fff9db;
-        border-radius: 12px;
-        border: 1px dashed #fab005;
-    }
-
-    .series-nav {
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #eee;
-        font-size: 0.9rem;
-    }
-
-    /* AI Consultation Section */
-    .ai-consultation {
-        margin: 40px 0;
-        padding: 30px;
-        background: linear-gradient(135deg, #e8f4fd 0%, #f0e6ff 100%);
-        border-radius: 16px;
-        border: 1px solid #c8d8e8;
-    }
-
-    .ai-consultation h2 {
-        background: none;
-        color: #2c3e50;
-        font-size: 1.5rem;
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-
-    .ai-intro {
-        font-size: 0.9rem;
-        color: #666;
-        font-style: italic;
-        margin-bottom: 25px;
-        padding-bottom: 15px;
-        border-bottom: 1px dashed #aab;
-    }
-
-    .qa-block {
-        margin-bottom: 25px;
-        padding: 20px;
-        background: rgba(255,255,255,0.7);
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .ai-question {
-        font-size: 1.1rem;
-        color: #2980b9;
-        margin-bottom: 12px;
-        padding: 10px 15px;
-        background: #eef6fa;
-        border-radius: 8px;
-        border-left: 4px solid #3498db;
-    }
-
-    .ai-answer {
-        line-height: 1.9;
-        color: #333;
-        padding: 10px 15px;
-    }
-
-    .ai-sources {
-        margin-top: 12px;
-        padding: 10px 15px;
-        background: #f8f9fa;
-        border-radius: 8px;
-        font-size: 0.9rem;
-    }
-
-    .ai-sources ul {
-        margin: 8px 0 0 0;
-        padding-left: 20px;
-    }
-
-    .ai-sources li {
-        margin-bottom: 6px;
-    }
-
-    .ai-sources a {
-        color: #2980b9;
-        text-decoration: none;
-        border-bottom: 1px dotted #2980b9;
-    }
-
-    .ai-sources a:hover {
-        color: #e74c3c;
-    }
-</style>
-<article class="premium-article"><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap'); .tech-article { font-family: 'Inter', 'Noto Sans JP', sans-serif; line-height: 1.8; color: #333; max-width: 800px; margin: auto; padding: 20px; } .tech-article h2 { border-bottom: 3px solid #1a1a1a; padding-bottom: 8px; margin-top: 50px; font-weight: 700; font-size: 1.8em; } .tech-article h3 { margin-top: 35px; color: #2c3e50; font-weight: 700; font-size: 1.4em; } .tech-article p { margin-bottom: 24px; } .tech-article blockquote { border-left: 6px solid #007aff; margin: 30px 0; padding: 15px 25px; background: #f8faff; font-style: italic; border-radius: 0 8px 8px 0; } .fact-box { background: #f1f3f5; padding: 25px; border-radius: 12px; margin: 30px 0; border: 1px solid #e1e4e8; shadow: 0 4px 6px rgba(0,0,0,0.05); } .fact-box h3 { margin-top: 0; font-size: 1.2em; color: #d35400; display: flex; align-items: center; } .fact-box h3::before { content: '💡'; margin-right: 10px; } .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95em; } .comparison-table th, .comparison-table td { border: 1px solid #dfe3e8; padding: 15px; text-align: left; } .comparison-table th { background: #1a1a1a; color: #ffffff; } .highlight { background: linear-gradient(transparent 70%, #ffdfba 70%); font-weight: bold; } .series-nav { background: #ffffff; padding: 25px; border-radius: 12px; margin-top: 60px; border: 2px solid #1a1a1a; box-shadow: 8px 8px 0px #1a1a1a; }</style><div class="tech-article"><section><p><strong>「自分でやれば無料」という考えは、時に最も高くつく授業料になる。</strong> 2026年、LLMがプログラミングのバグを瞬時に修正してくれる時代になっても、14インチの鉄製ホイールと格闘する私たちの肉体は、依然としてアナログな「物理法則」の支配下にあります。</p></section><h2>導入：『最適化』の裏側にあるブラックボックス</h2><p>私たちは今、テスラ・オプティマスの流麗な動作を動画で眺め、複雑な物理タスクもデジタルで解決可能だという錯覚に陥っています。しかし、いざ自分の手を動かして「タイヤ交換」という、一見単純なメンテナンスタスクに挑むと、そこには<span class="highlight">デジタルな演算だけでは到達できない「暗黙知」の集積</span>があることに気づかされます。</p><p>今回、私は設備を借りてDIYタイヤ交換に挑みましたが、それは「プロの技術料がいかに適正か」を痛感する、苦いデバッグの記録となりました。</p><h2>本編：30分間の「UI解読」と、物理的エラー</h2><p>作業自体は順調なスタートでした。過去のレクチャーを脳内からロードし、虫バルブを抜き、チェンジャでビードを落とす。ここまでは論理的なプロトコルです。<a href="https://www.pacific-ind.co.jp/products/car/valve/" target="_blank">太平洋工業（Pacific Industrial）</a>製のバルブを装着する際、逆向きに取り付けてゴムを傷つけるという「物理的な構文エラー」は発生したものの、気密性は保たれていました。</p><blockquote>「ここまでは問題なし。しかし、バランサーというデバイスが牙を剥く。」</blockquote><p>戦場は<strong>「ホイールバランサー」</strong>へと移ります。ホイールに刻印された<code>14×5.5J</code>というパラメータ。ネットを検索し、リム径・リム幅・オフセットの相関を特定するのに15分。さらに、そのデバイス特有の「右側7セグLEDに5.5をセットすれば、他は自動計測される」という独特なUIロジックを解釈するのに、さらに15分を要しました。</p><div class="fact-box"><h3>💡 ファクトチェック：ホイールバランスの重要性</h3><p>タイヤの重心が数グラムずれるだけで、高速走行時には巨大な遠心力となり、ステアリングの振動やサスペンションの摩耗を引き起こします。現代のバランサーはレーザー計測が主流ですが、旧式機の操作には「機械との対話」とも呼べる独自の習熟が必要です。<a href="https://www.jatma.or.jp/tyre_maintenance/" target="_blank">JATMA（日本自動車タイヤ協会）</a>のガイドラインでも、適切なバランス調整は安全走行の基本とされています。</p><h3>「リソース」不足によるタスクの強制終了</h3><p>試行錯誤の末、バランサーの固定ネジを締め直すことでようやく計測が完了しました。しかし、そこで冷酷なシステムメッセージが届きます。手元にあるのは「打ち込み式」のウェイト。対して、このホイールが要求していたのは「貼り付け式」のウェイト。<strong>適切な物理リソース（在庫）の欠如</strong>により、本日のタスクはスタックしました。</p><h2>教訓：2000円というコストの正体</h2><table class="comparison-table"><thead><tr><th>コスト要素</th><th>DIY（素人）</th><th>プロのサービス</th></tr></thead><tr><td><strong>時間的負債</strong></td><td>約90分（調査とリトライ）</td><td>約15分（最適化済み）</td></tr><tr><td><strong>技術的リスク</strong></td><td>パーツ損傷、バランスの不確実性</td><td>PL保険を含む品質保証</td></tr><tr><td><strong>在庫リソース</strong></td><td>特定のパーツのみ所持</td><td>あらゆる規格への即時対応</td></tr></table><p>私たちが支払う「タイヤ交換2000円」という対価。それは単なる肉体労働への対価ではなく、<span class="highlight">「迷わないためのUI解読費」であり、「試行錯誤をスキップして安全を買うためのサブスクリプション」</span>なのです。</p><h2>応用：自動化が埋められない「余白」</h2><p>2026年になっても、バランサーの蝶ネジが「なんとなく緩い」と感じて締め直すような、五感に基づいたフィードバック制御をAIが完全に代替するには至っていません。物理世界のバグは、常に画面の外で起きているのです。</p><h2>まとめ：物理レイヤーへの敬意</h2><p>作業を断念し、中途半端に組まれたタイヤを車に積み込む時、私は敗北感よりもむしろ清々しい敬意を抱いていました。デジタルで全てをハックできると傲慢になりがちな現代において、こうした<strong>物理レイヤーでの挫折</strong>こそが、私たちの「人間としての感覚」を正常にキャリブレーションしてくれる、最も価値のあるアップデートなのかもしれません。</p><section class="series-nav"><h2 style="margin-top:0;">📂 シリーズを読む</h2><p style="font-weight:bold; color:#555;">連載「2026年：物理世界のデバッグ日誌」</p><ul style="list-style-type:none; padding-left:0; line-height:1.8;"><li style="margin-bottom:8px;">✅ <a href="#">現在の記事：2000円のデバッグ代</a> <span style="font-size:0.9em; color:#e74c3c;">(読了)</span></li><li>⏭ <a href="#">「トルクレンチのクリック感に宿る、AIが描けない職人芸」</a></li></ul></section><section class="recommendations"><h2>🛒 関連アイテム</h2><div class="rakuten-items"><div class="rakuten-item"><a href="None" target="_blank"><img src="None" alt="2輪用接着式バランスウエイト(鉛)ST No.7-3 2輪用接着式ウェイトバイク用貼り付けウエイト（シルバー）板タイプ 1枚＝(5g＋10g)×6個刻み1PC(4枚入)IZUMI　泉産業貿易【二輪車用】"><h3>2輪用接着式バランスウエイト(鉛)ST No.7-3 2輪用接着式ウェイトバイク用貼り付けウエイト（シルバー）板タイプ 1枚＝(5g＋10g)×6個刻み1PC(4枚入)IZUMI　泉産業貿易【二輪車用】</h3></a><p>1430円</p></section><section class="references"><h2>🔗 参考文献・関連記事</h2><ul><li><a href="" target="_blank">タイヤの点検・整備：一般社団法人 日本自動車タイヤ協会 (JATMA)</a> — タイヤ交換の安全性や、ホイールバランスの物理的な重要性を専門的な見地から学べる公式ガイドです。</li><li><a href="" target="_blank">暗黙知 - Wikipedia</a> — 記事の核心テーマである「言語化できない熟練技能（暗黙知）」の哲学的・論理的な背景を深掘りできます。</li><li><a href="" target="_blank">太平洋工業株式会社：製品情報（バルブ・コア）</a> — 記事に登場した国内トップシェアメーカーによる、タイヤバルブの構造や種類に関する正確な製品仕様を確認できます。</li></ul></section>
-                
-
-                <!-- Next/Prev Navigation -->
-                
-
-                <!-- Related Posts -->
-                
-                
-                
-
-
-
-
-
-        
-    </div>
-                
-
-                <!-- Next/Prev Navigation -->
-                
-
-                <!-- Related Posts -->
-                
-                
-                
-
-
-
-
-
-        </div>
-    </div>
-                
-
-                <!-- Next/Prev Navigation -->
-                
-
-                <!-- Related Posts -->
-                
-                
-                
-
-
-
-
-
-        </div>
-    </div>
-                
-
-                <!-- Next/Prev Navigation -->
-                
-
-                <!-- Related Posts -->
-                
-                
-                
-
-
-
-
-
-        </div>
-
-                <!-- Next/Prev Navigation -->
-                
-
-                <!-- Related Posts -->
+                    <div class="tech-article"><section><p><strong>「自分でやれば無料」という考えは、時に最も高くつく授業料になる。</strong> 2026年、LLMがプログラミングのバグを瞬時に修正してくれる時代になっても、14インチの鉄製ホイールと格闘する私たちの肉体は、依然としてアナログな「物理法則」の支配下にあります。</p></section><h2>導入：『最適化』の裏側にあるブラックボックス</h2><p>私たちは今、テスラ・オプティマスの流麗な動作を動画で眺め、複雑な物理タスクもデジタルで解決可能だという錯覚に陥っています。しかし、いざ自分の手を動かして「タイヤ交換」という、一見単純なメンテナンスタスクに挑むと、そこには<span class="highlight">デジタルな演算だけでは到達できない「暗黙知」の集積</span>があることに気づかされます。</p><p>今回、私は設備を借りてDIYタイヤ交換に挑みましたが、それは「プロの技術料がいかに適正か」を痛感する、苦いデバッグの記録となりました。</p><h2>本編：30分間の「UI解読」と、物理的エラー</h2><p>作業自体は順調なスタートでした。過去のレクチャーを脳内からロードし、虫バルブを抜き、チェンジャでビードを落とす。ここまでは論理的なプロトコルです。<a href="https://www.pacific-ind.co.jp/products/car/valve/" target="_blank">太平洋工業（Pacific Industrial）</a>製のバルブを装着する際、逆向きに取り付けてゴムを傷つけるという「物理的な構文エラー」は発生したものの、気密性は保たれていました。</p><blockquote>「ここまでは問題なし。しかし、バランサーというデバイスが牙を剥く。」</blockquote><p>戦場は<strong>「ホイールバランサー」</strong>へと移ります。ホイールに刻印された<code>14×5.5J</code>というパラメータ。ネットを検索し、リム径・リム幅・オフセットの相関を特定するのに15分。さらに、そのデバイス特有の「右側7セグLEDに5.5をセットすれば、他は自動計測される」という独特なUIロジックを解釈するのに、さらに15分を要しました。</p><div class="fact-box"><h3>💡 ファクトチェック：ホイールバランスの重要性</h3><p>タイヤの重心が数グラムずれるだけで、高速走行時には巨大な遠心力となり、ステアリングの振動やサスペンションの摩耗を引き起こします。現代のバランサーはレーザー計測が主流ですが、旧式機の操作には「機械との対話」とも呼べる独自の習熟が必要です。<a href="https://www.jatma.or.jp/tyre_maintenance/" target="_blank">JATMA（日本自動車タイヤ協会）</a>のガイドラインでも、適切なバランス調整は安全走行の基本とされています。</p><h3>「リソース」不足によるタスクの強制終了</h3><p>試行錯誤の末、バランサーの固定ネジを締め直すことでようやく計測が完了しました。しかし、そこで冷酷なシステムメッセージが届きます。手元にあるのは「打ち込み式」のウェイト。対して、このホイールが要求していたのは「貼り付け式」のウェイト。<strong>適切な物理リソース（在庫）の欠如</strong>により、本日のタスクはスタックしました。</p><h2>教訓：2000円というコストの正体</h2><table class="comparison-table"><thead><tr><th>コスト要素</th><th>DIY（素人）</th><th>プロのサービス</th></tr></thead><tr><td><strong>時間的負債</strong></td><td>約90分（調査とリトライ）</td><td>約15分（最適化済み）</td></tr><tr><td><strong>技術的リスク</strong></td><td>パーツ損傷、バランスの不確実性</td><td>PL保険を含む品質保証</td></tr><tr><td><strong>在庫リソース</strong></td><td>特定のパーツのみ所持</td><td>あらゆる規格への即時対応</td></tr></table><p>私たちが支払う「タイヤ交換2000円」という対価。それは単なる肉体労働への対価ではなく、<span class="highlight">「迷わないためのUI解読費」であり、「試行錯誤をスキップして安全を買うためのサブスクリプション」</span>なのです。</p><h2>応用：自動化が埋められない「余白」</h2><p>2026年になっても、バランサーの蝶ネジが「なんとなく緩い」と感じて締め直すような、五感に基づいたフィードバック制御をAIが完全に代替するには至っていません。物理世界のバグは、常に画面の外で起きているのです。</p><h2>まとめ：物理レイヤーへの敬意</h2><p>作業を断念し、中途半端に組まれたタイヤを車に積み込む時、私は敗北感よりもむしろ清々しい敬意を抱いていました。デジタルで全てをハックできると傲慢になりがちな現代において、こうした<strong>物理レイヤーでの挫折</strong>こそが、私たちの「人間としての感覚」を正常にキャリブレーションしてくれる、最も価値のあるアップデートなのかもしれません。</p><section class="series-nav"><h2 style="margin-top:0;">📂 シリーズを読む</h2><p style="font-weight:bold; color:#555;">連載「2026年：物理世界のデバッグ日誌」</p><ul style="list-style-type:none; padding-left:0; line-height:1.8;"><li style="margin-bottom:8px;">✅ <a href="#">現在の記事：2000円のデバッグ代</a> <span style="font-size:0.9em; color:#e74c3c;">(読了)</span></li><li>⏭ <a href="#">「トルクレンチのクリック感に宿る、AIが描けない職人芸」</a></li></ul></section><section class="recommendations"><h2>🛒 関連アイテム</h2><div class="rakuten-items"><div class="rakuten-item"><a href="None" target="_blank"><img src="None" alt="2輪用接着式バランスウエイト(鉛)ST No.7-3 2輪用接着式ウェイトバイク用貼り付けウエイト（シルバー）板タイプ 1枚＝(5g＋10g)×6個刻み1PC(4枚入)IZUMI　泉産業貿易【二輪車用】"><h3>2輪用接着式バランスウエイト(鉛)ST No.7-3 2輪用接着式ウェイトバイク用貼り付けウエイト（シルバー）板タイプ 1枚＝(5g＋10g)×6個刻み1PC(4枚入)IZUMI　泉産業貿易【二輪車用】</h3></a><p>1430円</p></section><section class="references"><h2>🔗 参考文献・関連記事</h2><ul><li><a href="" target="_blank">タイヤの点検・整備：一般社団法人 日本自動車タイヤ協会 (JATMA)</a> — タイヤ交換の安全性や、ホイールバランスの物理的な重要性を専門的な見地から学べる公式ガイドです。</li><li><a href="" target="_blank">暗黙知 - Wikipedia</a> — 記事の核心テーマである「言語化できない熟練技能（暗黙知）」の哲学的・論理的な背景を深掘りできます。</li><li><a href="" target="_blank">太平洋工業株式会社：製品情報（バルブ・コア）</a> — 記事に登場した国内トップシェアメーカーによる、タイヤバルブの構造や種類に関する正確な製品仕様を確認できます。</li></ul></section>
                 </article>
 
                 <!-- Next/Prev Navigation -->
@@ -278,13 +60,13 @@
                     <div class="post-nav__item">
                         
                             <span class="post-nav__label">← Previous</span>
-                            <a href="../../posts/humanoid/2026-03-10-バイオ-ハックの原点-2026年の高機能AIが野草酵素というアナログな深淵に勝てない理由.html" class="post-nav__link">2026-03-10-バイオ-ハックの原点-2026年の高機能AIが野草酵素というアナログな深淵に勝てない理由</a>
+                            <a href="../../posts/humanoid/2026-03-10-バイオ-ハックの原点-2026年の高機能AIが野草酵素というアナログな深淵に勝てない理由.html" class="post-nav__link">バイオ-ハックの原点-2026年の高機能AIが野草酵素というアナログな深淵に勝てない理由</a>
                         
                     </div>
                     <div class="post-nav__item" style="text-align:right;">
                         
                             <span class="post-nav__label">Next →</span>
-                            <a href="../../posts/affiliate/2026-03-10-嗑瓜子ケ-グァズィという快楽-中国産ひまわりの種が-日本のスナック習慣をハックする日.html" class="post-nav__link">2026-03-10-嗑瓜子ケ-グァズィという快楽-中国産ひまわりの種が-日本のスナック習慣をハックする日</a>
+                            <a href="../../posts/affiliate/2026-03-10-嗑瓜子ケ-グァズィという快楽-中国産ひまわりの種が-日本のスナック習慣をハックする日.html" class="post-nav__link">嗑瓜子ケ-グァズィという快楽-中国産ひまわりの種が-日本のスナック習慣をハックする日</a>
                         
                     </div>
                 </nav>
@@ -296,17 +78,17 @@
                     <div class="related-grid">
                         
                             <a href="../../posts/humanoid/2026-03-14-2分間の約束を死守せよ-AI画像生成システムが手に入れた-多段フォールバックという名の堅牢な骨格.html" class="related-card">
-                                <h4 class="related-card__title">2026-03-14-2分間の約束を死守せよ-AI画像生成システムが手に入れた-多段フォールバックという名の堅牢な骨格</h4>
+                                <h4 class="related-card__title">2分間の約束を死守せよ-AI画像生成システムが手に入れた-多段フォールバックという名の堅牢な骨格</h4>
                                 <time class="related-card__date">2026-03-14</time>
                             </a>
                         
                             <a href="../../posts/humanoid/2026-03-14-硬い世界を柔らかくハックする-2026年-ソフトロボティクスが卵を割らずに未来を掴む.html" class="related-card">
-                                <h4 class="related-card__title">2026-03-14-硬い世界を柔らかくハックする-2026年-ソフトロボティクスが卵を割らずに未来を掴む</h4>
+                                <h4 class="related-card__title">硬い世界を柔らかくハックする-2026年-ソフトロボティクスが卵を割らずに未来を掴む</h4>
                                 <time class="related-card__date">2026-03-14</time>
                             </a>
                         
                             <a href="../../posts/humanoid/2026-03-14-硬さの支配が終わる日-2026年-ソフトロボティクスが優しさを実装する.html" class="related-card">
-                                <h4 class="related-card__title">2026-03-14-硬さの支配が終わる日-2026年-ソフトロボティクスが優しさを実装する</h4>
+                                <h4 class="related-card__title">硬さの支配が終わる日-2026年-ソフトロボティクスが優しさを実装する</h4>
                                 <time class="related-card__date">2026-03-14</time>
                             </a>
                         
@@ -322,38 +104,38 @@
         <ul class="ranking-list">
             
                 <li>
-                    <span style="font-size:1.2rem; font-weight:900; color:#e1dfdd; margin-right:10px;">1</span>
-                    <a href="../../posts/travel/2026-03-15-熱海-その極限のコントラスト-温泉街の静から黒岳の動へ-799メートルの視点で見えたもの.html">2026-03-15-熱海-その極限のコントラスト-温泉街の静から黒岳の動へ-799メートルの視点で見えたもの</a>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/travel/2026-03-15-熱海-その極限のコントラスト-温泉街の静から黒岳の動へ-799メートルの視点で見えたもの.html">熱海-その極限のコントラスト-温泉街の静から黒岳の動へ-799メートルの視点で見えたもの</a>
                 </li>
             
                 <li>
-                    <span style="font-size:1.2rem; font-weight:900; color:#e1dfdd; margin-right:10px;">2</span>
-                    <a href="../../posts/devlog/2026-03-14-タイマーの検討と-ヒューマノイドへの夢が膨らむ土曜日の朝.html">2026-03-14-タイマーの検討と-ヒューマノイドへの夢が膨らむ土曜日の朝</a>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/devlog/2026-03-14-タイマーの検討と-ヒューマノイドへの夢が膨らむ土曜日の朝.html">タイマーの検討と-ヒューマノイドへの夢が膨らむ土曜日の朝</a>
                 </li>
             
                 <li>
-                    <span style="font-size:1.2rem; font-weight:900; color:#e1dfdd; margin-right:10px;">3</span>
-                    <a href="../../posts/devlog/2026-03-14-歌のアプリとヒューマノイド-それに心肺機能の強化.html">2026-03-14-歌のアプリとヒューマノイド-それに心肺機能の強化</a>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/devlog/2026-03-14-歌のアプリとヒューマノイド-それに心肺機能の強化.html">歌のアプリとヒューマノイド-それに心肺機能の強化</a>
                 </li>
             
                 <li>
-                    <span style="font-size:1.2rem; font-weight:900; color:#e1dfdd; margin-right:10px;">4</span>
-                    <a href="../../posts/devlog/2026-03-14-歌アプリの構想と-活動の広がりを感じる土曜日の朝.html">2026-03-14-歌アプリの構想と-活動の広がりを感じる土曜日の朝</a>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/devlog/2026-03-14-歌アプリの構想と-活動の広がりを感じる土曜日の朝.html">歌アプリの構想と-活動の広がりを感じる土曜日の朝</a>
                 </li>
             
                 <li>
-                    <span style="font-size:1.2rem; font-weight:900; color:#e1dfdd; margin-right:10px;">5</span>
-                    <a href="../../posts/humanoid/2026-03-14-2分間の約束を死守せよ-AI画像生成システムが手に入れた-多段フォールバックという名の堅牢な骨格.html">2026-03-14-2分間の約束を死守せよ-AI画像生成システムが手に入れた-多段フォールバックという名の堅牢な骨格</a>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/humanoid/2026-03-14-2分間の約束を死守せよ-AI画像生成システムが手に入れた-多段フォールバックという名の堅牢な骨格.html">2分間の約束を死守せよ-AI画像生成システムが手に入れた-多段フォールバックという名の堅牢な骨格</a>
                 </li>
             
         </ul>
     </div>
-    <div class="sidebar-box" style="background: #f3f5f7; border:1px solid #e1dfdd;">
+    <div class="sidebar-box sidebar-box--highlight">
         <h3 class="sidebar-title">注目トピック</h3>
-        <div style="display:flex; flex-wrap:wrap; gap:8px;">
-            <span class="badge" style="background:#fff; padding:4px 8px; border-radius:4px; font-size:0.8rem; border:1px solid #e1dfdd;">#Humanoid</span>
-            <span class="badge" style="background:#fff; padding:4px 8px; border-radius:4px; font-size:0.8rem; border:1px solid #e1dfdd;">#AI_DX</span>
-            <span class="badge" style="background:#fff; padding:4px 8px; border-radius:4px; font-size:0.8rem; border:1px solid #e1dfdd;">#Robotics</span>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
         </div>
     </div>
 </aside>
