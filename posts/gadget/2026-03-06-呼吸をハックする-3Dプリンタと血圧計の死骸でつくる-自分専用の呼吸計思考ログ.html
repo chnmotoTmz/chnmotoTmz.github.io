@@ -1,0 +1,211 @@
+<!--
+title: 呼吸をハックする。3Dプリンタと「血圧計の死骸」でつくる、自分専用の呼吸計思考ログ
+date: 2026-03-06
+description: 市販の呼吸トレーニング器具をただ買うのは退屈だ。壊れた血圧計やPCファンを分解し、3Dプリンタで再構築する。数値と「映え」を両立させるDIY呼吸デバイスの構築プロセスを綴る。 [dedup:b478b8f1c69a0bb6]
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>呼吸をハックする。3Dプリンタと「血圧計の死骸」でつくる、自分専用の呼吸計思考ログ | Humanoid Media Factory</title>
+    <meta name="description" content="市販の呼吸トレーニング器具をただ買うのは退屈だ。壊れた血圧計やPCファンを分解し、3Dプリンタで再構築する。数値と「映え」を両立させるDIY呼吸デバイスの構築プロセスを綴る。 [dedup:b478b8f1c69a0bb6]">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list">
+            <li><a href="../../archive.html?cat=humanoid">🤖 ロボット・AI</a></li>
+            <li><a href="../../archive.html?cat=tech">💻 テクノロジー</a></li>
+            <li><a href="../../archive.html?cat=devlog">📝 開発ログ</a></li>
+            <li><a href="../../archive.html?cat=gadget">📱 ガジェット</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs">
+                    <a href="../../index.html">Home</a> <span>&gt;</span>
+                    <a href="../../archive.html">gadget</a> <span>&gt;</span>
+                    <span style="color:var(--text-primary)">呼吸をハックする。3Dプリンタと「血圧計の死骸」でつくる、自分専用の呼吸計思考ログ</span>
+                </nav>
+
+                <h1>呼吸をハックする。3Dプリンタと「血圧計の死骸」でつくる、自分専用の呼吸計思考ログ</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-03-06</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    <figure class="main-thumbnail"><img src="https://picsum.photos/id/854/1200/800" alt="呼吸をハックする。3Dプリンタと「血圧計の死骸」でつくる、自分専用の呼吸計思考ログ"><figcaption style="text-align:center;font-size:0.85rem;color:#888;margin-top:0.5rem;font-style:italic;">🎨 紙谷 千重（かみたに ちえ） — デジタルの紙片を無限に組み合わせるAI画家。偶然と必然の美しい衝突を生み出す。</figcaption></figure>
+<blockquote class="epigraph" style="border-left:3px solid #3498db;padding:1.2rem 2rem;margin:2.5rem auto;max-width:600px;background:#f0f8ff;border-radius:0 8px 8px 0;font-family:Georgia,serif;line-height:1.7;box-shadow: 0 2px 10px rgba(0,0,0,0.03);"><p style="margin:0 0 1rem 0;"><span style='font-size: 1.1rem; font-weight: bold; color: #2c3e50;'>I took a deep breath and listened to the old brag of my heart. I am, I am, I am.</span><br><span style='font-size: 0.95rem; color: #666; margin-top: 8px; display: inline-block;'>私は深く息を吸い込み、私の心臓が古くから自慢げに繰り返すその音を聞いた。私はここにある、私はここにある、私はここにある。</span></p></blockquote>
+<p>最近、ふと思った。市販の呼吸トレーニング器具って、高くないか？</p>
+<p>中身を想像してみる。空気が流れて、それをセンサーが拾う。ただそれだけのはずだ。</p>
+<p>「コピー」を作るんじゃない。構造を一度バラバラに壊して、自分の手元にあるゴミ（資源）で再構成してみたい。これ、ガジェット好きの性かもしれない。</p>
+
+<h2>ジャンク品はセンサーの宝箱だった</h2>
+<p>押し入れで眠っていた「壊れた電子血圧計」を引っ張り出してみた。</p>
+<p>なんだこれ、お宝の山じゃないか。中には精密な<strong>圧力センサー</strong>や小型ポンプ、バルブが詰まっている。これを呼吸計に流用できないだろうか。</p>
+<p>さらに、古いPCの冷却ファン。風で回るなら、その回転数から「流量」が逆算できるはず。この「代用」のパズルを解いている瞬間が、一番脳汁が出る。</p>
+
+<div class="fact-box">
+<h3>💡 ファクトチェック</h3>
+<p>電子血圧計の心臓部である圧力センサー（例えば <a href="https://www.nxp.com/products/sensors/pressure-sensors:PRESSURE_SENSORS">NXP製のMPXシリーズ</a> など）は、DIYの世界では定番のパーツだ。これを <a href="https://www.arduino.cc/">Arduino</a> に繋げば、スマホにリアルタイムで呼吸圧を飛ばせる。市販品を買うより1/10のコストで済むかもしれない。</p>
+
+
+<h2>3Dプリンタは「つなぎ」に徹する</h2>
+<p>全部をプリントしようとすると、大抵失敗する。強度の問題もあるし、何より時間がかかる。</p>
+<p>だから、印刷するのは「最小限の接合部」だけでいいんじゃないか。</p>
+<ul>
+<li>口に触れる<strong>マウスピース</strong></li>
+<li>空気の流れを整える<strong>流路チャンバー</strong></li>
+<li>血圧計から剥ぎ取った<strong>センサーの固定ホルダー</strong></li>
+</ul>
+<p>チャンバー本体は、ペットボトルで十分な気がする。透明だし、中の様子が見えるのがいい。結局、中身が見える方が「道具を使っている感」が出るから。</p>
+
+<h2>「映え」と「数値」の同居</h2>
+<p>スマホ画面に「MAX PRESSURE: 1350 Pa」と出る。それだけだと、多分3日で飽きる。</p>
+<p>流路に水柱を作って、呼吸で水位が上下するようにしたらどうだろう？</p>
+<p>吸うと水が上がり、吐くと風車が回ってLEDが光る。そこにスマホのグラフが同期する。これならトレーニングも続く気がする。というか、これってもう現代のアート作品じゃないか？</p>
+
+<p>「磁石とホールセンサー（磁気センサー）を使えば、もっと正確に回転が取れるかも……」</p>
+<p>そんなことを考えながら、またCADの画面を開いている。生産性を上げるためのツールを作っているはずが、作る過程自体に時間を溶かしている矛盾。</p>
+<p>でも、この試行錯誤がたまらなく面白い。次は、1番それっぽく見える「POWERbreathe風」の設計を試してみる。上手くいくかは、まだ分からないけど。</p><section class="affiliate-links"><h2>🛒 おすすめ関連商品</h2><div class="product-grid" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div class="product-item" style="border: 1px solid #eee; padding: 10px; border-radius: 8px; width: calc(33% - 20px); min-width: 200px;">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/elegoo/cabinet/10747343/10845872/10936116/imgrc0109346449.jpg?_ex=128x128" alt="＼★2個購入すると10％OFF★／ELEGOO PLA Plus フィラメント 1.75mm PLAプラス 3Dプリンター用フィラメント 寸法精度 +/- 0.02 mm 強靭で高強度 PLA+ ほとんどのFDMプリンターと互換性がある" style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px;">
+                    <div style="margin-top: 10px;">
+                        <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/elegoo/rt-jp-el-3d-pp/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" style="font-weight: bold; font-size: 0.9rem; display: block; height: 3em; overflow: hidden;">＼★2個購入すると10％OFF★／ELEGOO PLA Plus フィラメント 1.75mm PLAプラス 3Dプリンター用フィラメント 寸法精度 +/- 0.02 mm 強靭で高強度 PLA+ ほとんどのFDMプリンターと互換性がある</a>
+                        <p style="color: #e74c3c; font-weight: bold; margin-top: 5px;">¥1,900</p>
+
+                <div class="product-item" style="border: 1px solid #eee; padding: 10px; border-radius: 8px; width: calc(33% - 20px); min-width: 200px;">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/elegoo/cabinet/10747343/10845872/10933514/imgrc0114565863.jpg?_ex=128x128" alt="＼★2個購入すると10％OFF★／ELEGOO PLA フィラメント 1.75mm 3Dプリンター用フィラメント 寸法精度±0.02mm ほとんどのFDMプリンターに対応 (1KG/スプール 2.2 lbs)" style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px;">
+                    <div style="margin-top: 10px;">
+                        <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/elegoo/rt-jp-el-pla/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" style="font-weight: bold; font-size: 0.9rem; display: block; height: 3em; overflow: hidden;">＼★2個購入すると10％OFF★／ELEGOO PLA フィラメント 1.75mm 3Dプリンター用フィラメント 寸法精度±0.02mm ほとんどのFDMプリンターに対応 (1KG/スプール 2.2 lbs)</a>
+                        <p style="color: #e74c3c; font-weight: bold; margin-top: 5px;">¥1,950</p>
+
+                <div class="product-item" style="border: 1px solid #eee; padding: 10px; border-radius: 8px; width: calc(33% - 20px); min-width: 200px;">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/elegoo/cabinet/10747343/10845872/11269336/imgrc0119764919.jpg?_ex=128x128" alt="＼★2個購入すると10％OFF★／ELEGOO 高速 PETG フィラメント 1.75mm 印刷速度30-600mm/s対応 RAPID PETG フィラメント 3D プリンター用フィラメント 寸法精度±0.02mm ほとんどのFDMプリンターに対応 (1KG/スプール 2.2 lbs)" style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px;">
+                    <div style="margin-top: 10px;">
+                        <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/elegoo/rt-jp-el-ptg/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" style="font-weight: bold; font-size: 0.9rem; display: block; height: 3em; overflow: hidden;">＼★2個購入すると10％OFF★／ELEGOO 高速 PETG フィラメント 1.75mm 印刷速度30-600mm/s対応 RAPID PETG フィラメント 3D プリンター用フィラメント 寸法精度±0.02mm ほとんどのFDMプリンターに対応 (1KG/スプール 2.2 lbs)</a>
+                        <p style="color: #e74c3c; font-weight: bold; margin-top: 5px;">¥1,850</p>
+                    </div></section><section class="references"><h2>📚 参考・関連記事</h2><ul><li><a href="https://ja.wikipedia.org/wiki/%E5%91%BC%E5%90%B8" target="_blank">呼吸 - Wikipedia</a> — 呼吸の生理学的なメカニズムや、ガス交換の仕組みを基礎から理解するための標準的なリソースです。</li><li><a href="https://www.jamma.org/bloodpressure/type.html" target="_blank">血圧計の種類と特徴 | 一般社団法人 日本精密測器工業会</a> — 記事内で「死骸」として再利用された血圧計の本来の構造や、圧力センサーの仕組みを理解するのに役立ちます。</li><li><a href="https://canon.jp/business/solution/3d-printer/guide/case" target="_blank">3Dプリンターで何ができる？ 仕組みと活用事例 | キヤノン</a> — 個人でのものづくり（メイカーズ文化）において、3Dプリンタがどのようにプロトタイピングに活用されているかの実例を確認できます。</li></ul></section>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/gadget/2026-03-06-書かれない悩みをどう拾うか-インタビューとAIの意外な共通点についての独り言.html" class="post-nav__link">「書かれない悩み」をどう拾うか。インタビューとAIの意外な共通点についての独り言</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/english/2026-03-06-賢さは-何を無視するかで決まる-ウィリアム-ジェームズの名言が訳せない理由.html" class="post-nav__link">「賢さ」は、何を無視するかで決まる？ウィリアム・ジェームズの名言が訳せない理由</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/gadget/2026-03-07-SNSの華やかさに潜む脆弱性-ドバイ-ポルタポティ事件のログから学ぶ生存戦略.html" class="related-card">
+                                <h4 class="related-card__title">SNSの華やかさに潜む「脆弱性」。ドバイ・ポルタポティ事件のログから学ぶ生存戦略</h4>
+                                <time class="related-card__date">2026-03-07</time>
+                            </a>
+                        
+                            <a href="../../posts/gadget/2026-03-06-書かれない悩みをどう拾うか-インタビューとAIの意外な共通点についての独り言.html" class="related-card">
+                                <h4 class="related-card__title">「書かれない悩み」をどう拾うか。インタビューとAIの意外な共通点についての独り言</h4>
+                                <time class="related-card__date">2026-03-06</time>
+                            </a>
+                        
+                            <a href="../../posts/gadget/2026-03-06-脳の切り替えコストを削る-自動化と外部脳でつくる2026年の生産性ログ.html" class="related-card">
+                                <h4 class="related-card__title">脳の「切り替えコスト」を削る。自動化と外部脳でつくる2026年の生産性ログ</h4>
+                                <time class="related-card__date">2026-03-06</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/travel/2026-03-15-熱海-その極限のコントラスト-温泉街の静から黒岳の動へ-799メートルの視点で見えたもの.html">熱海-その極限のコントラスト-温泉街の静から黒岳の動へ-799メートルの視点で見えたもの</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/devlog/2026-03-14-タイマーの検討と-ヒューマノイドへの夢が膨らむ土曜日の朝.html">タイマーの検討と-ヒューマノイドへの夢が膨らむ土曜日の朝</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/devlog/2026-03-14-歌のアプリとヒューマノイド-それに心肺機能の強化.html">歌のアプリとヒューマノイド-それに心肺機能の強化</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/devlog/2026-03-14-歌アプリの構想と-活動の広がりを感じる土曜日の朝.html">歌アプリの構想と-活動の広がりを感じる土曜日の朝</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/humanoid/2026-03-14-2分間の約束を死守せよ-AI画像生成システムが手に入れた-多段フォールバックという名の堅牢な骨格.html">2分間の約束を死守せよ-AI画像生成システムが手に入れた-多段フォールバックという名の堅牢な骨格</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer>
+    <div style="margin-bottom:20px;">
+        <a href="../../index.html" class="brand" style="justify-content:center;">Humanoid <span>Media</span> Factory</a>
+    </div>
+    <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
+        <a href="#" class="tab">Privacy</a>
+        <a href="../../about.html" class="tab">About Us</a>
+        <a href="../../partnership.html" class="tab">Contact</a>
+    </div>
+    <p>&copy; 2026 Humanoid Media Factory. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
