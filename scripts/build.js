@@ -38,18 +38,18 @@ const SIDEBAR = (posts, prefix) => `
         <ul class="ranking-list">
             ${posts.slice(0, 5).map((p, i) => `
                 <li>
-                    <span style="font-size:1.2rem; font-weight:900; color:#e1dfdd; margin-right:10px;">${i + 1}</span>
+                    <span class="ranking-number">${i + 1}</span>
                     <a href="${prefix}${p.url}">${p.title}</a>
                 </li>
             `).join('')}
         </ul>
     </div>
-    <div class="sidebar-box" style="background: #f3f5f7; border:1px solid #e1dfdd;">
+    <div class="sidebar-box sidebar-box--highlight">
         <h3 class="sidebar-title">注目トピック</h3>
-        <div style="display:flex; flex-wrap:wrap; gap:8px;">
-            <span class="badge" style="background:#fff; padding:4px 8px; border-radius:4px; font-size:0.8rem; border:1px solid #e1dfdd;">#Humanoid</span>
-            <span class="badge" style="background:#fff; padding:4px 8px; border-radius:4px; font-size:0.8rem; border:1px solid #e1dfdd;">#AI_DX</span>
-            <span class="badge" style="background:#fff; padding:4px 8px; border-radius:4px; font-size:0.8rem; border:1px solid #e1dfdd;">#Robotics</span>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
         </div>
     </div>
 </aside>
@@ -70,7 +70,13 @@ const LEFT_COL = (prefix) => `
 `;
 
 // Layout Wrapper
-const POST_WRAPPER = (post, content, prevPost, nextPost, relatedPosts, prefix, allPosts) => `<!DOCTYPE html>
+const POST_WRAPPER = (post, content, prevPost, nextPost, relatedPosts, prefix, allPosts) => `<!--
+title: ${post.title}
+date: ${post.date}
+description: ${post.description}
+article_type: ${post.articleType}
+-->
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -95,10 +101,12 @@ const POST_WRAPPER = (post, content, prevPost, nextPost, relatedPosts, prefix, a
                     <span style="color:var(--text-primary)">${post.title}</span>
                 </nav>
 
-                <div class="devlog-meta" style="color:#616161; margin-bottom:10px;">
+                <h1>${post.title}</h1>
+
+                <div class="devlog-meta">
                     <time>${post.date}</time>
-                    <span style="margin:0 10px;">|</span>
-                    <span class="card__cat" style="color:var(--accent-red)">${post.articleType}</span>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">${post.articleType}</span>
                 </div>
 
                 <article class="post-content">
@@ -157,6 +165,16 @@ function extractMetadata(content) {
             }
         });
     }
+
+    // Fallback: Extract from HTML tags if comment metadata is missing
+    if (!meta.title) {
+        const titleMatch = content.match(/<title>([^|<-]+)(?:\s*\||\s*<)/i);
+        if (titleMatch) meta.title = titleMatch[1].trim();
+    }
+    if (!meta.description) {
+        const descMatch = content.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i);
+        if (descMatch) meta.description = descMatch[1].trim();
+    }
     return meta;
 }
 
@@ -178,47 +196,71 @@ function collectHtmlFiles(dir) {
 
 // Extract core content from article - Surgical Version (Innermost focus)
 function extractCoreContent(html) {
-    // 1. Aggressively find the INNERMOST post-content
-    const postContentMatches = [...html.matchAll(/<article[^>]*class=["']post-content["'][^>]*>/gi)];
-    if (postContentMatches.length > 0) {
-        const lastMatch = postContentMatches[postContentMatches.length - 1];
-        let content = html.substring(lastMatch.index + lastMatch[0].length);
-        
-        // Find the first closing article tag after this point
-        const endMatch = content.match(/<\/article>/i);
-        if (endMatch) {
-            content = content.substring(0, endMatch.index);
-        }
-        return content.trim();
+    // 1. Find all metadata blocks. We want the innermost one if nested.
+    const metaPattern = /<!--[\s\S]*?title:[\s\S]*?-->/gi;
+    let metaMatches = [];
+    let match;
+    while ((match = metaPattern.exec(html)) !== null) {
+        metaMatches.push(match);
     }
 
-    // 2. Fallback to finding the metadata block and extracting everything after it
-    const metaMatches = [...html.matchAll(/<!--\s*title:[\s\S]*?-->/gi)];
-    if (metaMatches.length > 0) {
-        const lastMeta = metaMatches[metaMatches.length - 1];
-        let content = html.substring(lastMeta.index + lastMeta[0].length);
+    if (metaMatches.length === 0) {
+        return html; // Fallback for raw snippets
+    }
 
-        // Look for end markers (Next/Prev nav, Related posts, etc.)
-        const endMarkers = [
-            /<!-- Next\/Prev Navigation -->/i,
-            /<nav[^>]*class="post-nav"/i,
-            /<!-- Related Posts -->/i,
-            /<section[^>]*class="related-posts"/i,
-            /<\/article>\s*<\/main>/i
-        ];
+    // Take the last metadata block to pierce through Matryoshka layers
+    const lastMeta = metaMatches[metaMatches.length - 1];
+    let startPos = lastMeta.index + lastMeta[0].length;
 
-        for (const marker of endMarkers) {
-            const match = content.match(marker);
-            if (match) {
-                content = content.substring(0, match.index);
-                break;
+    // 2. Find the earliest end anchor after the metadata block
+    const endAnchors = [
+        /<!-- Next\/Prev Navigation -->/i,
+        /<!-- Footer -->/i,
+        /<\/article>\s*<\/main>/i,
+        /<\/main>/i,
+        /<footer>/i
+    ];
+
+    let endPos = html.length;
+    for (const anchor of endAnchors) {
+        const m = html.substring(startPos).match(anchor);
+        if (m) {
+            const candidate = startPos + m.index;
+            if (candidate < endPos) {
+                endPos = candidate;
             }
         }
-        return content.trim();
     }
 
-    // 3. Last resort: strip body but keep everything else
-    return html.replace(/<!DOCTYPE[\s\S]*?<body[^>]*>/i, '').replace(/<\/body>[\s\S]*?<\/html>/i, '').trim();
+    let extracted = html.substring(startPos, endPos).trim();
+
+    // 3. Repeatedly dive into content containers to find raw innerHTML
+    // Handles cases where previous build cycles caught containers.
+    while (true) {
+        const diveMatch = extracted.match(/<article[^>]*class=["'](?:post-content|premium-article)["'][^>]*>/i);
+        if (diveMatch) {
+            // Dive deeper into the container
+            extracted = extracted.substring(diveMatch.index + diveMatch[0].length).trim();
+            // Strip the trailing tag from the end of the current block
+            extracted = extracted.replace(/<\/article>\s*$/i, '').trim();
+        } else {
+            break;
+        }
+    }
+
+    // 4. Final cleanup of problematic tags and artifacts
+    extracted = extracted.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+    extracted = extracted.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '');
+    extracted = extracted.replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, '');
+
+    // Generic strip of trailing layout closures if they exist
+    for (let i = 0; i < 5; i++) {
+        extracted = extracted.replace(/<\/article>\s*$/i, '').trim();
+        extracted = extracted.replace(/<\/main>\s*$/i, '').trim();
+        extracted = extracted.replace(/<\/div>\s*$/i, '').trim();
+    }
+
+    return extracted.trim();
 }
 
 async function build() {
@@ -257,8 +299,14 @@ async function build() {
         const slug = path.basename(filename, '.html');
         const dateFromFilename = (filename.match(/^(\d{4}-\d{2}-\d{2})/) || [])[1];
 
+        let displayTitle = meta.title || slug;
+        // Clean up title if it's just the slug with date
+        if (!meta.title && dateFromFilename && displayTitle.startsWith(dateFromFilename)) {
+            displayTitle = displayTitle.substring(dateFromFilename.length).replace(/^[-_]+/, '');
+        }
+
         postsData.push({
-            title: meta.title || slug,
+            title: displayTitle,
             date: meta.date || dateFromFilename || '2026-01-01',
             description: meta.description || '',
             articleType: meta.article_type || 'OBSERVATION',
@@ -309,7 +357,7 @@ async function build() {
 </head>
 <body class="humanoid-content">
     <site-header prefix=""></site-header>
-    <main class="portal" style="max-width:800px; margin:0 auto; padding:40px 20px;">
+    <main class="portal archive-portal">
         <h1>Article Archive</h1>
         <div class="archive-list">
             ${Object.keys(postsByYear).sort((a, b) => b - a).map(year => `
@@ -346,8 +394,8 @@ async function build() {
       <div class="card__body">
         <h3 class="card__title"><a href="${p.url}">${p.title}</a></h3>
         <p class="card__excerpt">${excerpt}</p>
-        <div style="display:flex; gap:10px; align-items:center;">
-            <span class="card__cat" style="font-size:0.7rem; color:var(--accent-red)">${p.articleType || 'NEWS'}</span>
+        <div class="card__meta-row">
+            <span class="card__cat card__cat--small">${p.articleType || 'NEWS'}</span>
             <time class="card__date">${p.date}</time>
         </div>
       </div>
