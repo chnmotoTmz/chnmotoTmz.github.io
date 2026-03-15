@@ -356,6 +356,32 @@ footer {
     color: var(--accent-ms);
 }
 
+.ranking-number {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #e1dfdd;
+    margin-right: 10px;
+}
+
+.sidebar-box--highlight {
+    background: #f3f5f7;
+    border: 1px solid #e1dfdd;
+}
+
+.topic-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.topic-badge {
+    background: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid #e1dfdd;
+}
+
 /* Article Page */
 .premium-article {
     background: var(--bg-main);
@@ -365,14 +391,23 @@ footer {
 }
 
 .premium-article h1 {
-    font-size: 2.5rem;
-    margin-bottom: 24px;
+    font-size: 2rem;
+    margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .premium-article .content {
     font-size: 1.125rem;
     line-height: 1.8;
+}
+
+.devlog-meta {
+    color: #616161;
+    margin-bottom: 10px;
+}
+
+.devlog-meta .separator {
+    margin: 0 10px;
 }
 
 /* Breadcrumbs */
@@ -401,6 +436,65 @@ footer {
 /* Post Content Container */
 .post-content {
     margin-top: 30px;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.post-content h2 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accent-red);
+    padding-bottom: 8px;
+    margin: 40px 0 20px;
+    color: var(--text-primary);
+}
+
+.post-content blockquote {
+    border-left: 5px solid var(--accent-red);
+    padding: 15px 25px;
+    background: #f8f9fa;
+    font-style: italic;
+    margin: 30px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.post-content .fact-box {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    background: #f1f3f5;
+    margin: 30px 0;
+}
+
+.post-content .fact-box h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.post-content .article-thumbnail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post-content .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.95rem;
+}
+
+.post-content .spec-table th, .post-content .spec-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #dee2e6;
+    text-align: left;
 }
 
 /* Next/Prev Navigation */
@@ -482,6 +576,12 @@ footer {
 }
 
 /* Archive Page Styling */
+.archive-portal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
 .archive-list {
     list-style: none;
     padding: 0;
