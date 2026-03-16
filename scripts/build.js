@@ -388,9 +388,25 @@ async function build() {
             const temp = sanitized.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
             excerpt = temp.length > 80 ? temp.substring(0, 80) + '...' : temp;
         }
+
+        // Extract thumbnail from content if not provided in meta
+        let thumbnail = p.thumbnail || '';
+        if (!thumbnail && p.rawContent) {
+            const imgMatch = p.rawContent.match(/<figure[^>]*class=["']article-thumbnail["'][^>]*>\s*<img[^>]*src=["']([^"']+)["']/i);
+            if (imgMatch) {
+                thumbnail = imgMatch[1];
+            } else {
+                // Generic image fallback
+                const genericMatch = p.rawContent.match(/<img[^>]*src=["']([^"']+)["']/i);
+                if (genericMatch) thumbnail = genericMatch[1];
+            }
+        }
+
+        const finalThumb = thumbnail || `https://picsum.photos/seed/${encodeURIComponent(p.slug)}/120/80`;
+
         return `
     <article class="card" data-category="${p.categoryName || 'other'}">
-      <img src="https://picsum.photos/seed/${encodeURIComponent(p.slug)}/120/80" alt="" class="card__image" loading="lazy">
+      <img src="${finalThumb}" alt="" class="card__image" loading="lazy">
       <div class="card__body">
         <h3 class="card__title"><a href="${p.url}">${p.title}</a></h3>
         <p class="card__excerpt">${excerpt}</p>
