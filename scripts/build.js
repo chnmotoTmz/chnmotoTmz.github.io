@@ -4,6 +4,7 @@ const path = require('path');
 const ROOT_DIR = path.join(__dirname, '..');
 const POSTS_DIR = path.join(ROOT_DIR, 'posts');
 const DIST_DIR = ROOT_DIR;
+const BASE_URL = 'https://chnmototmz.github.io/';
 
 // Utility: Correct relative path based on file depth
 function getRelativePrefix(filePath) {
@@ -70,7 +71,20 @@ const LEFT_COL = (prefix) => `
 `;
 
 // Layout Wrapper
-const POST_WRAPPER = (post, content, prevPost, nextPost, relatedPosts, prefix, allPosts) => `<!--
+const POST_WRAPPER = (post, content, prevPost, nextPost, relatedPosts, prefix, allPosts) => {
+    const absoluteUrl = new URL(post.url, BASE_URL).href;
+    let ogImage = '';
+    if (post.thumbnail) {
+        if (post.thumbnail.startsWith('http')) {
+            ogImage = post.thumbnail;
+        } else {
+            // Remove leading ../ or ./ and join with BASE_URL
+            const cleanThumb = post.thumbnail.replace(/^(\.\.\/|\.\/)+/, '');
+            ogImage = new URL(cleanThumb, BASE_URL).href;
+        }
+    }
+
+    return `<!--
 title: ${post.title}
 date: ${post.date}
 description: ${post.description}
@@ -83,6 +97,18 @@ article_type: ${post.articleType}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${post.title} | Humanoid Media Factory</title>
     <meta name="description" content="${post.description}">
+
+    <!-- OGP -->
+    <meta property="og:title" content="${post.title} | Humanoid Media Factory">
+    <meta property="og:description" content="${post.description}">
+    <meta property="og:url" content="${absoluteUrl}">
+    <meta property="og:image" content="${ogImage}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="${prefix}assets/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
     <script src="${prefix}assets/components/site-header.js"></script>
@@ -152,6 +178,7 @@ article_type: ${post.articleType}
     ${FOOTER(prefix)}
 </body>
 </html>`;
+};
 
 function extractMetadata(content) {
     const meta = {};
@@ -305,6 +332,17 @@ async function build() {
             displayTitle = displayTitle.substring(dateFromFilename.length).replace(/^[-_]+/, '');
         }
 
+        let thumbnail = meta.thumbnail || '';
+        if (!thumbnail) {
+            const imgMatch = rawContent.match(/<figure[^>]*class=["'](?:article-thumbnail|main-thumbnail)["'][^>]*>\s*<img[^>]*src=["']([^"']+)["']/i);
+            if (imgMatch) {
+                thumbnail = imgMatch[1];
+            } else {
+                const genericMatch = rawContent.match(/<img[^>]*src=["']([^"']+)["']/i);
+                if (genericMatch) thumbnail = genericMatch[1];
+            }
+        }
+
         postsData.push({
             title: displayTitle,
             date: meta.date || dateFromFilename || '2026-01-01',
@@ -315,7 +353,8 @@ async function build() {
             slug: slug,
             url: relativeUrl,
             absolutePath: filePath,
-            rawContent: rawContent
+            rawContent: rawContent,
+            thumbnail: thumbnail
         });
     });
 
@@ -352,6 +391,16 @@ async function build() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive | Humanoid Media Factory</title>
+    <!-- OGP -->
+    <meta property="og:title" content="Archive | Humanoid Media Factory">
+    <meta property="og:description" content="Article Archive for Humanoid Media Factory">
+    <meta property="og:url" content="${BASE_URL}archive.html">
+    <meta property="og:image" content="${BASE_URL}images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/components/site-header.js"></script>
 </head>
@@ -389,20 +438,7 @@ async function build() {
             excerpt = temp.length > 80 ? temp.substring(0, 80) + '...' : temp;
         }
 
-        // Extract thumbnail from content if not provided in meta
-        let thumbnail = p.thumbnail || '';
-        if (!thumbnail && p.rawContent) {
-            const imgMatch = p.rawContent.match(/<figure[^>]*class=["']article-thumbnail["'][^>]*>\s*<img[^>]*src=["']([^"']+)["']/i);
-            if (imgMatch) {
-                thumbnail = imgMatch[1];
-            } else {
-                // Generic image fallback
-                const genericMatch = p.rawContent.match(/<img[^>]*src=["']([^"']+)["']/i);
-                if (genericMatch) thumbnail = genericMatch[1];
-            }
-        }
-
-        const finalThumb = thumbnail || `https://picsum.photos/seed/${encodeURIComponent(p.slug)}/120/80`;
+        const finalThumb = p.thumbnail || `https://picsum.photos/seed/${encodeURIComponent(p.slug)}/120/80`;
 
         return `
     <article class="card" data-category="${p.categoryName || 'other'}">
@@ -427,6 +463,24 @@ async function build() {
         indexHtml = indexHtml.replace(/<site-header[^>]*>[\s\S]*?<\/site-header>/ig, '');
         indexHtml = indexHtml.replace(/<header[^>]*class="site-header"[^>]*>[\s\S]*?<\/header>/ig, '');
         indexHtml = indexHtml.replace(/<footer>[\s\S]*?<\/footer>/ig, '');
+
+        // Update head for OGP
+        const ogpHead = `
+    <!-- OGP -->
+    <meta property="og:title" content="Humanoid Media Factory | MSN-Style Portal">
+    <meta property="og:description" content="AI × Digital Transformation for Humanoid Lifestyle">
+    <meta property="og:url" content="${BASE_URL}">
+    <meta property="og:image" content="${BASE_URL}images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">`;
+
+        if (indexHtml.includes('<!-- OGP -->')) {
+            indexHtml = indexHtml.replace(/<!-- OGP -->[\s\S]*?<!-- Twitter -->[\s\S]*?<meta name="twitter:card" content="summary_large_image">/i, ogpHead);
+        } else {
+            indexHtml = indexHtml.replace(/<\/title>/i, `</title>${ogpHead}`);
+        }
 
         // Re-inject structure
         const headerHtml = HEADER('');
