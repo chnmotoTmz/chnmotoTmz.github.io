@@ -1,0 +1,230 @@
+<!--
+title: テクノロジーで解けない「空白」を求めて：既婚者合コンという名のバグと、そのデバッグ記録
+date: 2026-05-01
+description: テクノロジーで解けない「空白」を求めて：既婚者合コンという名のバグと、そのデバッグ記録
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テクノロジーで解けない「空白」を求めて：既婚者合コンという名のバグと、そのデバッグ記録 | Humanoid Media Factory</title>
+    <meta name="description" content="テクノロジーで解けない「空白」を求めて：既婚者合コンという名のバグと、そのデバッグ記録">
+
+    <!-- OGP -->
+    <meta property="og:title" content="テクノロジーで解けない「空白」を求めて：既婚者合コンという名のバグと、そのデバッグ記録 | Humanoid Media Factory">
+    <meta property="og:description" content="テクノロジーで解けない「空白」を求めて：既婚者合コンという名のバグと、そのデバッグ記録">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/uncategorized/2026-05-01-%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC%E3%81%A7%E8%A7%A3%E3%81%91%E3%81%AA%E3%81%84%E7%A9%BA%E7%99%BD%E3%82%92%E6%B1%82%E3%82%81%E3%81%A6-%E6%97%A2%E5%A9%9A%E8%80%85%E5%90%88%E3%82%B3%E3%83%B3%E3%81%A8%E3%81%84%E3%81%86%E5%90%8D%E3%81%AE%E3%83%90%E3%82%B0%E3%81%A8-%E3%81%9D%E3%81%AE%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E8%A8%98%E9%8C%B2.html">
+    <meta property="og:image" content="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8820/4988021718820.jpg?_ex=128x128">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list">
+            <li><a href="../../archive.html?cat=humanoid">🤖 ロボット・AI</a></li>
+            <li><a href="../../archive.html?cat=tech">💻 テクノロジー</a></li>
+            <li><a href="../../archive.html?cat=devlog">📝 開発ログ</a></li>
+            <li><a href="../../archive.html?cat=gadget">📱 ガジェット</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs">
+                    <a href="../../index.html">Home</a> <span>&gt;</span>
+                    <a href="../../archive.html">uncategorized</a> <span>&gt;</span>
+                    <span style="color:var(--text-primary)">テクノロジーで解けない「空白」を求めて：既婚者合コンという名のバグと、そのデバッグ記録</span>
+                </nav>
+
+                <h1>テクノロジーで解けない「空白」を求めて：既婚者合コンという名のバグと、そのデバッグ記録</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-05-01</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    テクノロジーで解けない「空白」を求めて：既婚者合コンという名のバグと、そのデバッグ記録
+
+現代のITエンジニアにとって、人生は常に最適化の対象です。Jiraでタスクを管理し、コードをリファクタリングして不純物を取り除き、AIエージェントに日報をまとめさせる。しかし、どれほどシステムを磨き上げても、コンソール画面の向こう側に「名前のない欠乏感」という名のバグが居座り続けることがあります。
+
+2026年5月1日、私はそのバグの正体を突き止めるべく、渋谷の地下へと続く階段を降りました。
+
+1. 既婚者合コン（キコンパ）という「非論理的」な磁場
+
+私たちは日常的に、複数の「ロール（役割）」を使い分けています。エンジニアとして、夫として、親として。それぞれのコンテキストで期待される出力を返し続ける日々は、安定してはいるものの、時として個としての「自分」という変数を摩耗させていきます。
+
+今回私が参加したのは、巷で「キコンパ」と呼ばれる既婚者限定の合コン。そこは、社会的なプロテクタを脱ぎ捨て、剥き出しの個性が交差する特殊な磁場でした。
+<section class="rakuten-products"><h2>🛒 関連アイテムのチェック</h2><div class="affiliate-links">
+                    <div class="product-card" style="display:flex;margin-bottom:15px;border:1px solid #eee;padding:10px;border-radius:8px;background:#fff;">
+                        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8820/4988021718820.jpg?_ex=128x128" style="width:100px;height:100px;object-fit:cover;margin-right:15px;border-radius:4px;">
+                        <div>
+                            <div style="font-weight:bold;margin-bottom:5px;">空白【Blu-ray】 [ 古田新太 ]</div>
+                            <div style="color:#e74c3c;font-weight:bold;margin-bottom:5px;">価格: 4,612円</div>
+                            <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/book/16981634/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" style="background:#bf0000;color:#fff;padding:5px 12px;text-decoration:none;border-radius:4px;font-size:0.8rem;">楽天で見る</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" style="display:flex;margin-bottom:15px;border:1px solid #eee;padding:10px;border-radius:8px;background:#fff;">
+                        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/1369/4988021141369.jpg?_ex=128x128" style="width:100px;height:100px;object-fit:cover;margin-right:15px;border-radius:4px;">
+                        <div>
+                            <div style="font-weight:bold;margin-bottom:5px;">空白 [ 古田新太 ]</div>
+                            <div style="color:#e74c3c;font-weight:bold;margin-bottom:5px;">価格: 3,546円</div>
+                            <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/book/16981635/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" style="background:#bf0000;color:#fff;padding:5px 12px;text-decoration:none;border-radius:4px;font-size:0.8rem;">楽天で見る</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" style="display:flex;margin-bottom:15px;border:1px solid #eee;padding:10px;border-radius:8px;background:#fff;">
+                        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/4076/9784492224076_1_3.jpg?_ex=128x128" style="width:100px;height:100px;object-fit:cover;margin-right:15px;border-radius:4px;">
+                        <div>
+                            <div style="font-weight:bold;margin-bottom:5px;">WHITE　SPACE　ホワイトスペース 仕事も人生もうまくいく空白時間術 [ ジュリエット・ファント ]</div>
+                            <div style="color:#e74c3c;font-weight:bold;margin-bottom:5px;">価格: 1,870円</div>
+                            <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/book/17223669/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" style="background:#bf0000;color:#fff;padding:5px 12px;text-decoration:none;border-radius:4px;font-size:0.8rem;">楽天で見る</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" style="display:flex;margin-bottom:15px;border:1px solid #eee;padding:10px;border-radius:8px;background:#fff;">
+                        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/bookfan/cabinet/00361/bk4884183002.jpg?_ex=128x128" style="width:100px;height:100px;object-fit:cover;margin-right:15px;border-radius:4px;">
+                        <div>
+                            <div style="font-weight:bold;margin-bottom:5px;">【送料無料】空白 SWITCH INTERVIEW Apr.2010-Mar.2012／井上雄彦</div>
+                            <div style="color:#e74c3c;font-weight:bold;margin-bottom:5px;">価格: 1,540円</div>
+                            <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/bookfan/bk-4884183002/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" style="background:#bf0000;color:#fff;padding:5px 12px;text-decoration:none;border-radius:4px;font-size:0.8rem;">楽天で見る</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" style="display:flex;margin-bottom:15px;border:1px solid #eee;padding:10px;border-radius:8px;background:#fff;">
+                        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6057/9784799766057_1_5.jpg?_ex=128x128" style="width:100px;height:100px;object-fit:cover;margin-right:15px;border-radius:4px;">
+                        <div>
+                            <div style="font-weight:bold;margin-bottom:5px;">次の空白を埋めよ。 （秒で分かるBL） [ 新本 浦子 ]</div>
+                            <div style="color:#e74c3c;font-weight:bold;margin-bottom:5px;">価格: 888円</div>
+                            <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/book/17864102/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" style="background:#bf0000;color:#fff;padding:5px 12px;text-decoration:none;border-radius:4px;font-size:0.8rem;">楽天で見る</a>
+                        </div>
+                    </div>
+                    </div></section><div class="manga-plan" style="margin:20px;padding:15px;background:#f9f9f9;border-left:5px solid #ccc;"><h3>🎨 4コマ漫画構成案</h3><pre style="white-space:pre-wrap;">4コマ漫画構成案：デバッグ完了？
+
+キャラクター設定: 主人公「テツ」は、仕事に真面目で少し理屈っぽいけど、家族思いのITエンジニア。</pre>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/finance/2026-04-30-サードプレイスとしての既婚者マッチング-閉塞感を突破するアルゴリズムと戦略的関係構築.html" class="post-nav__link">サードプレイスとしての「既婚者マッチング」：閉塞感を突破するアルゴリズムと戦略的関係構築</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/uncategorized/2026-05-01-Ordinary-Night-Extraordinary-Seek-既婚者合コンという名のワンピース探索行.html" class="post-nav__link">Ordinary Night, Extraordinary Seek: 既婚者合コンという名の「ワンピース」探索行</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/uncategorized/2026-05-01-Ordinary-Night-Extraordinary-Seek-既婚者合コンという名のワンピース探索行.html" class="related-card">
+                                <h4 class="related-card__title">Ordinary Night, Extraordinary Seek: 既婚者合コンという名の「ワンピース」探索行</h4>
+                                <time class="related-card__date">2026-05-01</time>
+                            </a>
+                        
+                            <a href="../../posts/uncategorized/2026-04-30-Dev-Diary-2026-04-30.html" class="related-card">
+                                <h4 class="related-card__title">Dev Diary (2026-04-30)</h4>
+                                <time class="related-card__date">2026-04-30</time>
+                            </a>
+                        
+                            <a href="../../posts/uncategorized/2026-04-20-開発日誌-2026-04-20.html" class="related-card">
+                                <h4 class="related-card__title">開発日誌 (2026-04-20)</h4>
+                                <time class="related-card__date">2026-04-20</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/humanoid/2026-05-01-2026年の孤独をハックせよ-AIが代替できない野生の承認を巡るCuddle攻略論.html">2026年の孤独をハックせよ：AIが代替できない「野生の承認」を巡るCuddle攻略論</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/humanoid/2026-05-01-2026年の孤独をハックせよ-テスラ-オプティマスが掃除を終えた後の余白をどう生きるか.html">2026年の孤独をハックせよ：テスラ・オプティマスが掃除を終えた後の「余白」をどう生きるか</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/humanoid/2026-05-01-AIが埋められない心の空白をハックせよ-2026年既婚者アプリ戦略的攻略論.html">AIが埋められない「心の空白」をハックせよ：2026年既婚者アプリ戦略的攻略論</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/humanoid/2026-05-01-ヒューマノイド-ロボットテスラ-オプティマスがリビングの掃除を終え-パーソナルAIエージェントが翌日のスケジュールを秒単.html">ヒューマノイド・ロボット「テスラ・オプティマス」がリビングの掃除を終え、パーソナルAIエージェントが翌日のスケジュールを秒単位で最適化してくれる2026年。私たちは人類史上、最も「自由な時間」を手に入れました。しかし、その余白に滑り込んできたのは、皮肉にもかつてないほど純度の高い、そして鋭い「孤独」でした。</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/humanoid/2026-05-01-ヒューマノイド時代のサードプレイス-既婚者マッチングという名の心理的デフラグ.html">ヒューマノイド時代の「サードプレイス」：既婚者マッチングという名の心理的デフラグ</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer>
+    <div style="margin-bottom:20px;">
+        <a href="../../index.html" class="brand" style="justify-content:center;">Humanoid <span>Media</span> Factory</a>
+    </div>
+    <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
+        <a href="#" class="tab">Privacy</a>
+        <a href="../../about.html" class="tab">About Us</a>
+        <a href="../../partnership.html" class="tab">Contact</a>
+    </div>
+    <p>&copy; 2026 Humanoid Media Factory. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
