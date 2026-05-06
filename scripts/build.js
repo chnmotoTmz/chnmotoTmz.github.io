@@ -29,6 +29,7 @@ const FOOTER = (prefix) => `
         <a href="${prefix}partnership.html" class="tab">Contact</a>
     </div>
     <p>&copy; ${new Date().getFullYear()} Humanoid Media Factory. All rights reserved.</p>
+    <p style="font-size:0.8rem; opacity:0.5; margin-top:10px;">Last Update: ${new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })} (JST)</p>
 </footer>
 `;
 
