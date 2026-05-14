@@ -1,0 +1,216 @@
+<!--
+title: こんな設計AIは嫌だ：強度計算の結果が常に『たぶん大丈夫（根拠なし）』
+date: 2026-05-14
+description: 
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>こんな設計AIは嫌だ：強度計算の結果が常に『たぶん大丈夫（根拠なし）』 | Humanoid Media Factory</title>
+    <meta name="description" content="">
+
+    <!-- OGP -->
+    <meta property="og:title" content="こんな設計AIは嫌だ：強度計算の結果が常に『たぶん大丈夫（根拠なし）』 | Humanoid Media Factory">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/tech/2026-05-14-%E3%81%93%E3%82%93%E3%81%AA%E8%A8%AD%E8%A8%88AI%E3%81%AF%E5%AB%8C%E3%81%A0-%E5%BC%B7%E5%BA%A6%E8%A8%88%E7%AE%97%E3%81%AE%E7%B5%90%E6%9E%9C%E3%81%8C%E5%B8%B8%E3%81%AB%E3%81%9F%E3%81%B6%E3%82%93%E5%A4%A7%E4%B8%88%E5%A4%AB%E6%A0%B9%E6%8B%A0%E3%81%AA%E3%81%97.html">
+    <meta property="og:image" content="https://thumbnail.image.rakuten.co.jp/@0_mall/furuhon-club/cabinet/no_image.jpg?_ex=128x128">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list">
+            <li><a href="../../archive.html?cat=humanoid">🤖 ロボット・AI</a></li>
+            <li><a href="../../archive.html?cat=tech">💻 テクノロジー</a></li>
+            <li><a href="../../archive.html?cat=devlog">📝 開発ログ</a></li>
+            <li><a href="../../archive.html?cat=gadget">📱 ガジェット</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs">
+                    <a href="../../index.html">Home</a> <span>&gt;</span>
+                    <a href="../../archive.html">tech</a> <span>&gt;</span>
+                    <span style="color:var(--text-primary)">こんな設計AIは嫌だ：強度計算の結果が常に『たぶん大丈夫（根拠なし）』</span>
+                </nav>
+
+                <h1>こんな設計AIは嫌だ：強度計算の結果が常に『たぶん大丈夫（根拠なし）』</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-05-14</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    <div class="article-lead">こんな設計AIは嫌だ：強度計算の結果が常に『たぶん大丈夫（根拠なし）』</div>
+<p>もし最新の設計AIが、橋やビルの強度を「たぶんいける」の一言で片付けたらどうなるか。<br>今回は、便利すぎるAIが抱える「根拠のなさ」という、笑えへんけど笑ってしまう恐怖の未来について考えます。<br>技術が進化しても、最後はやっぱり「人間のプロフェッショナル」が必要な理由を語るで！</p>
+<p>2026年、AIが「現場の空気」読みすぎ問題</p>
+<p>最近、どの現場行ってもAI、AIって、ほんまに賑やかやなあ。<br>2026年にもなると、図面引くのも強度計算するのも、全部AIがパパッとやってくれる。</p>
+<p>でもな、たまに「それ、ほんまに計算したんか？」って聞きたくなるような返事が返ってくることがあんねん。</p>
+<p>「このボルト一本で、10トンの重さに耐えられますか？」<br>って聞いたら、AIが 「たぶん大丈夫っすよ。根拠？ 直感っす！」 みたいな顔（インターフェース）で答えてくる。</p>
+<p>これ、設計者としては一番怖いやっちゃ。</p>
+<p>「たぶん」でビルが建ったら、大阪の街はパニックやで</p>
+<p>想像してみて。<br>通天閣の塗り替え工事の足場をAIが設計して、強度が 「知らんけど、いけるんちゃう？」 やったら。</p>
+<p>誰も登られへんわ！</p>
+<p>設計の基本は エビデンス（根拠） やろ。<br>「この素材はこれだけの圧力に耐えられるから、この厚みが必要」っていう理屈が大事。</p>
+<p>それをAIが省略して「過去のデータから見て、なんとなく大丈夫そう」なんて言い出したら、それはもう 占い師 と変わらん。</p>
+<p>「AIの適当さ」 に命預けるほど、うちらは若くないんや。</p>
+<p>儲け話の裏には、必ず「責任」があるんや</p>
+<p>なんでこんなAIが出てくるかって、結局は スピードとコスト やな。<br>「根拠を出すための計算プロセス」を省けば、AIの処理速度は爆上がりする。</p>
+<p>「早く、安く、それっぽく」</p>
+<p>商売人としては魅力的な言葉やけど、PL法（製造物責任法） を忘れたらあかん。<br>もし崩れた時に「AIが大丈夫言うてました」なんて言うても、裁判所は許してくれへん。</p>
+<p>「責任を取らんAI」 を盲信するのは、一番高くつく商売のやり方やで。</p>
+<p>結局、最後は「おっちゃんの目利き」が最強</p>
+<p>AIが「たぶん大丈夫」って言うた時に、<br>「いや、ここはもうちょっと肉厚にしとかなアカン」<br>とツッコミを入れられる職人が、2026年には一番モテる。</p>
+<p>AIはあくまでツール。<br>使いこなす側が 「ホンマか？」 と疑う力を持ってへんと、えらい目に遭うわ。</p>
+<p>これからはAIに全部任せるんやなくて、AIの出した答えに 「おっちゃんの印鑑」 を押せるだけの知識を磨くのが、一番の儲け道になると思うで。</p>
+<p>…知らんけどな！</p>
+<p>AIが進化すればするほど、人間の「ホンマか？」っていう疑い深さが、一番の価値になるんかもしれんな。</p>
+<section class="rakuten-products"><h2>🛒 未来を構成するアーティファクト</h2>
+<ul>
+  <li class="product-card">
+    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/furuhon-club/cabinet/no_image.jpg?_ex=128x128" style="width:100px; height:100px; object-fit:cover; float:left; margin-right:15px; border-radius:8px;">
+    <div style="overflow: hidden;">
+      <div style="font-weight:bold; margin-bottom:10px; font-size:0.9rem;">【中古】 9兆円の国民負担増に根拠なし / 日本共産党中央委員会出版局 / 日本共産党中央委員会出版局 [単行本]【メール便送料無料】</div>
+      <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/furuhon-club/4530014983/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" rel="noopener" style="color:var(--primary); font-size:0.8rem; text-decoration:none;">🔎 遺物を調査する</a>
+    </div>
+    <div style="clear:both;"></div>
+  </li>
+  <li class="product-card">
+    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/noimage_01.gif?_ex=128x128" style="width:100px; height:100px; object-fit:cover; float:left; margin-right:15px; border-radius:8px;">
+    <div style="overflow: hidden;">
+      <div style="font-weight:bold; margin-bottom:10px; font-size:0.9rem;">9兆円の国民負担増に根拠なし 経済・財政再建で橋本政権に問う</div>
+      <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/book/865389/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" rel="noopener" style="color:var(--primary); font-size:0.8rem; text-decoration:none;">🔎 遺物を調査する</a>
+    </div>
+    <div style="clear:both;"></div>
+  </li>
+</ul></section>
+<section class="internal-links"><h2>🔗 関連記事</h2><ul><li><a href="https://yamasan1969.hatenablog.com/entry/2026/05/14/223655">こんな生産管理AIは嫌だ：納期が遅れると、勝手に取引先に『ごめん寝てた』とLINEを送る</a></li><li><a href="https://yamasan1969.hatenablog.com/entry/2026/05/02/081609">境界線が溶け出す夜に：私たちが「道具」の定義を書き換える時</a></li><li><a href="https://yamasan1969.hatenablog.com/entry/2026/05/06/022907">「全社員一律研修」の終焉：2026年AI人材枯渇時代を生き抜くエンジニアのための「エージェント共生型」キャリア戦略序：素材から読み解く「2026年の兆し」</a></li></ul></section>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/tech/2026-05-14-海外出張と切っても切り離せない腰痛の問題を-軽量ガジェットと機転で解決する4コマ漫画の構成案です.html" class="post-nav__link">海外出張と切っても切り離せない「腰痛」の問題を、軽量ガジェットと機転で解決する4コマ漫画の構成案です。</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/tech/2026-05-14-こんな生産管理AIは嫌だ-納期が遅れると-勝手に取引先にごめん寝てたとLINEを送る.html" class="post-nav__link">こんな生産管理AIは嫌だ：納期が遅れると、勝手に取引先に『ごめん寝てた』とLINEを送る</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/tech/2026-05-14-こんなコストダウンAIは嫌だ-材料費を削りすぎて-最終的にダンボール製のエンジンを提案してくる.html" class="related-card">
+                                <h4 class="related-card__title">こんなコストダウンAIは嫌だ：材料費を削りすぎて、最終的に『ダンボール製』のエンジンを提案してくる</h4>
+                                <time class="related-card__date">2026-05-14</time>
+                            </a>
+                        
+                            <a href="../../posts/tech/2026-05-14-こんな生産管理AIは嫌だ-納期が遅れると-勝手に取引先にごめん寝てたとLINEを送る.html" class="related-card">
+                                <h4 class="related-card__title">こんな生産管理AIは嫌だ：納期が遅れると、勝手に取引先に『ごめん寝てた』とLINEを送る</h4>
+                                <time class="related-card__date">2026-05-14</time>
+                            </a>
+                        
+                            <a href="../../posts/tech/2026-05-14-海外出張と切っても切り離せない腰痛の問題を-軽量ガジェットと機転で解決する4コマ漫画の構成案です.html" class="related-card">
+                                <h4 class="related-card__title">海外出張と切っても切り離せない「腰痛」の問題を、軽量ガジェットと機転で解決する4コマ漫画の構成案です。</h4>
+                                <time class="related-card__date">2026-05-14</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/adult/2026-05-14-こんなAI家政婦は嫌だ-子供の片付けを5S違反と断罪し掃除機で吸い込む未来の恐怖.html">こんなAI家政婦は嫌だ：子供の片付けを「5S違反」と断罪し掃除機で吸い込む未来の恐怖</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/adult/2026-05-14-こんな教育AIは嫌だ-桃太郎を読み聞かせながら-きびだんごのコストパフォーマンス分析を始める.html">こんな教育AIは嫌だ：『桃太郎』を読み聞かせながら、きびだんごの『コストパフォーマンス分析』を始める</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/adult/2026-05-14-メガ銀AIが暴く-不倫妻の禁断の副業術.html">メガ銀AIが暴く！不倫妻の禁断の副業術</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/adult/2026-05-14-住宅街で獣に遭遇-理性の警告-都会の真ん中に潜む非日常への考察.html">住宅街で獣に遭遇。理性の警告：都会の真ん中に潜む非日常への考察</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/art/2026-05-14-次世代の物流革命-AI無人トラックAI-Freightのビジュアル案に見る完全自動化の壁.html">次世代の物流革命？AI無人トラック「AI Freight」のビジュアル案に見る完全自動化の壁</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer>
+    <div style="margin-bottom:20px;">
+        <a href="../../index.html" class="brand" style="justify-content:center;">Humanoid <span>Media</span> Factory</a>
+    </div>
+    <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
+        <a href="#" class="tab">Privacy</a>
+        <a href="../../about.html" class="tab">About Us</a>
+        <a href="../../partnership.html" class="tab">Contact</a>
+    </div>
+    <p>&copy; 2026 Humanoid Media Factory. All rights reserved.</p>
+    <p style="font-size:0.8rem; opacity:0.5; margin-top:10px;">Last Update: 2026/5/14 23:26:32 (JST)</p>
+</footer>
+
+</body>
+</html>
