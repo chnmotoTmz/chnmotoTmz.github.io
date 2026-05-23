@@ -99,7 +99,41 @@ article_type: ${post.articleType}
     <title>${post.title} | Humanoid Media Factory</title>
     <meta name="description" content="${post.description}">
 
+    <!-- SEO / Canonical / Robots -->
+    <link rel="canonical" href="${absoluteUrl}">
+    <meta name="robots" content="${post.dirName === 'adult' ? 'noindex, follow' : 'index, follow'}">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "${post.title.replace(/"/g, '\\"')}",
+      "description": "${post.description.replace(/"/g, '\\"')}",
+      "image": "${ogImage}",
+      "author": {
+        "@type": "Person",
+        "name": "chnmotoTmz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Humanoid Media Factory",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "${BASE_URL}images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
+        }
+      },
+      "datePublished": "${post.date}",
+      "dateModified": "${post.date}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "${absoluteUrl}"
+      }
+    }
+    </script>
+
     <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
     <meta property="og:title" content="${post.title} | Humanoid Media Factory">
     <meta property="og:description" content="${post.description}">
     <meta property="og:url" content="${absoluteUrl}">
@@ -109,6 +143,7 @@ article_type: ${post.articleType}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@chnmotoTmz">
 
     <link rel="stylesheet" href="${prefix}assets/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
@@ -122,10 +157,27 @@ article_type: ${post.articleType}
             ${LEFT_COL(prefix)}
 
             <main class="premium-article">
-                <nav class="breadcrumbs">
-                    <a href="${prefix}index.html">Home</a> <span>&gt;</span>
-                    <a href="${prefix}archive.html">${post.categoryName}</a> <span>&gt;</span>
-                    <span style="color:var(--text-primary)">${post.title}</span>
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style:none; padding:0; margin:0; display:flex; gap:8px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="${BASE_URL}">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="${BASE_URL}posts/${post.dirName}/index.html">
+                                <span itemprop="name">${post.categoryName}</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name" style="color:var(--text-primary)">${post.title}</span>
+                            <meta itemprop="position" content="3" />
+                        </li>
+                    </ol>
                 </nav>
 
                 <h1>${post.title}</h1>
@@ -392,7 +444,25 @@ async function build() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive | Humanoid Media Factory</title>
+    <!-- SEO / Canonical -->
+    <link rel="canonical" href="${BASE_URL}archive.html">
+    <meta name="robots" content="index, follow">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Archive | Humanoid Media Factory",
+      "description": "Article Archive for Humanoid Media Factory",
+      "url": "${BASE_URL}archive.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Humanoid Media Factory"
+      }
+    }
+    </script>
     <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
     <meta property="og:title" content="Archive | Humanoid Media Factory">
     <meta property="og:description" content="Article Archive for Humanoid Media Factory">
     <meta property="og:url" content="${BASE_URL}archive.html">
@@ -467,7 +537,46 @@ async function build() {
 
         // Update head for OGP
         const ogpHead = `
+    <!-- SEO / Canonical -->
+    <link rel="canonical" href="${BASE_URL}">
+    <meta name="robots" content="index, follow">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "${BASE_URL}#website",
+          "name": "Humanoid Media Factory",
+          "url": "${BASE_URL}",
+          "description": "朝の観察メディア - AI・社会・人間関係・アダルトまで、人間臭い視点で毎日更新",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "${BASE_URL}?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Blog",
+          "@id": "${BASE_URL}#blog",
+          "mainEntityOfPage": "${BASE_URL}",
+          "name": "Humanoid Media Factory",
+          "description": "AIエージェントが生成する実験的メディア。ヒューマノイド、最新テクノロジー、ガジェット情報から、日々の開発ログまで、独自の視点で未来を予測・発信します。",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Humanoid Media Factory",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "${BASE_URL}images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
+            }
+          }
+        }
+      ]
+    }
+    </script>
     <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
     <meta property="og:title" content="Humanoid Media Factory | MSN-Style Portal">
     <meta property="og:description" content="AI × Digital Transformation for Humanoid Lifestyle">
     <meta property="og:url" content="${BASE_URL}">
@@ -505,6 +614,105 @@ async function build() {
 
         fs.writeFileSync(indexPath, indexHtml, 'utf8');
     }
+
+    // 4. Generate Category Index Pages
+    const categories = [...new Set(postsData.filter(p => p.dirName !== '.').map(p => p.dirName))];
+    categories.forEach(cat => {
+        const catPosts = postsData.filter(p => p.dirName === cat);
+        const catDir = path.join(POSTS_DIR, cat);
+        if (!fs.existsSync(catDir)) fs.mkdirSync(catDir, { recursive: true });
+
+        const catTitle = `${cat.charAt(0).toUpperCase() + cat.slice(1)} Archive | Humanoid Media Factory`;
+        const catUrl = `${BASE_URL}posts/${cat}/index.html`;
+        const catDescription = `${cat} category article archive.`;
+        
+        let catHtml = `<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${catTitle}</title>
+    <meta name="description" content="${catDescription}">
+    <!-- SEO / Canonical -->
+    <link rel="canonical" href="${catUrl}">
+    <meta name="robots" content="${cat === 'adult' ? 'noindex, follow' : 'index, follow'}">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "${catTitle}",
+      "description": "${catDescription}",
+      "url": "${catUrl}"
+    }
+    </script>
+    <!-- OGP -->
+    <meta property="og:title" content="${catTitle}">
+    <meta property="og:description" content="${catDescription}">
+    <meta property="og:url" content="${catUrl}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    ${HEADER('../../')}
+    <main class="portal archive-portal">
+        <h1>${cat.charAt(0).toUpperCase() + cat.slice(1)} Archive</h1>
+        <div class="archive-list">
+            ${catPosts.map(p => `
+                <div class="archive-item">
+                    <time>${p.date}</time>
+                    <a href="../../${p.url}">${p.title}</a>
+                </div>
+            `).join('')}
+        </div>
+    </main>
+    ${FOOTER('../../')}
+</body>
+</html>`;
+        fs.writeFileSync(path.join(catDir, 'index.html'), catHtml, 'utf8');
+    });
+
+    // 5. Generate sitemap.xml
+    const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>${BASE_URL}</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>${BASE_URL}about.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>${BASE_URL}humanoid-portal.html</loc>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>${BASE_URL}archive.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>${BASE_URL}partnership.html</loc>
+        <priority>0.7</priority>
+    </url>
+    ${categories.map(cat => `
+    <url>
+        <loc>${BASE_URL}posts/${cat}/index.html</loc>
+        <priority>0.8</priority>
+    </url>`).join('')}
+    ${postsData.filter(p => p.dirName !== 'adult').map(p => `
+    <url>
+        <loc>${new URL(p.url, BASE_URL).href}</loc>
+        <lastmod>${p.date}</lastmod>
+        <priority>0.6</priority>
+    </url>`).join('')}
+</urlset>`;
+    fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
 
     console.log('✅ Surgical Build Complete.');
 }
