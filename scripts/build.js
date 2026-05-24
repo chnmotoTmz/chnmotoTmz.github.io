@@ -589,10 +589,14 @@ async function build() {
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">`;
 
-        if (indexHtml.includes('<!-- OGP -->')) {
-            indexHtml = indexHtml.replace(/<!-- OGP -->[\s\S]*?<!-- Twitter -->[\s\S]*?<meta name="twitter:card" content="summary_large_image">/i, ogpHead);
+        if (indexHtml.includes('<!-- SEO / Canonical -->')) {
+            indexHtml = indexHtml.replace(/<!-- SEO \/ Canonical -->[\s\S]*?<meta name="twitter:card"[^>]*>/i, ogpHead.trim());
+        } else if (indexHtml.includes('<!-- Structured Data (JSON-LD) -->')) {
+            indexHtml = indexHtml.replace(/<!-- Structured Data \(JSON-LD\) -->[\s\S]*?<meta name="twitter:card"[^>]*>/i, ogpHead.trim());
+        } else if (indexHtml.includes('<!-- OGP -->')) {
+            indexHtml = indexHtml.replace(/<!-- OGP -->[\s\S]*?<meta name="twitter:card"[^>]*>/i, ogpHead.trim());
         } else {
-            indexHtml = indexHtml.replace(/<\/title>/i, `</title>${ogpHead}`);
+            indexHtml = indexHtml.replace(/<\/title>/i, `</title>\n${ogpHead.trim()}`);
         }
 
         // Re-inject structure
