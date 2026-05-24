@@ -54,6 +54,9 @@ const SIDEBAR = (posts, prefix) => `
             <span class="badge topic-badge">#Robotics</span>
         </div>
     </div>
+    <div class="sidebar-box" style="text-align: center; padding-top: 15px; border-top: 1px dashed var(--rule); margin-top: 20px;">
+        <a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank"><img src="https://b.blogmura.com/internet/generativeai/88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 ネットブログ ChatGPT・生成AIへ" /></a><br /><a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank" style="font-size: 10px; color: var(--muted); text-decoration: none;">にほんブログ村</a>
+    </div>
 </aside>
 `;
 
@@ -677,7 +680,27 @@ async function build() {
         fs.writeFileSync(path.join(catDir, 'index.html'), catHtml, 'utf8');
     });
 
-    // 5. Generate sitemap.xml
+    // 5. Generate feed.xml (RSS)
+    const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+    <title>Humanoid Media Factory</title>
+    <link>${BASE_URL}</link>
+    <description>AIとロボットが紡ぐ、次世代コンテンツパイプライン</description>
+    <language>ja</language>
+    ${postsData.slice(0, 30).map(p => `
+    <item>
+        <title>${p.title}</title>
+        <link>${new URL(p.url, BASE_URL).href}</link>
+        <description><![CDATA[${p.description}]]></description>
+        <pubDate>${new Date(p.date).toUTCString()}</pubDate>
+        <guid>${new URL(p.url, BASE_URL).href}</guid>
+    </item>`).join('')}
+</channel>
+</rss>`;
+    fs.writeFileSync(path.join(DIST_DIR, 'feed.xml'), rssXml, 'utf8');
+
+    // 6. Generate sitemap.xml
     const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
