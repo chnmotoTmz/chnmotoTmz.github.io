@@ -741,6 +741,19 @@ async function build() {
 </urlset>`;
     fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
 
+    // 6. Send Ping to Blog Mura
+    try {
+        console.log("📡 Sending Ping to Blog Mura...");
+        const response = await fetch('https://ping.blogmura.com/xmlrpc/8tzjv6r74eed/');
+        if (response.ok) {
+            console.log("✅ Ping sent successfully.");
+        } else {
+            console.log(`⚠️ Ping returned status: ${response.status}`);
+        }
+    } catch (e) {
+        console.log("⚠️ Failed to send Ping to Blog Mura:", e.message);
+    }
+
     console.log('✅ Surgical Build Complete.');
 }
 
