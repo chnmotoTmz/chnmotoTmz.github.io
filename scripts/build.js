@@ -19,17 +19,55 @@ const HEADER = (prefix) => `
 `;
 
 const FOOTER = (prefix) => `
-<footer>
-    <div style="margin-bottom:20px;">
-        <a href="${prefix}index.html" class="brand" style="justify-content:center;">Humanoid <span>Media</span> Factory</a>
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
     </div>
-    <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
-        <a href="#" class="tab">Privacy</a>
-        <a href="${prefix}about.html" class="tab">About Us</a>
-        <a href="${prefix}partnership.html" class="tab">Contact</a>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="${prefix}about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="${prefix}partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; ${new Date().getFullYear()} Humanoid Media Factory</span>
     </div>
-    <p>&copy; ${new Date().getFullYear()} Humanoid Media Factory. All rights reserved.</p>
-    <p style="font-size:0.8rem; opacity:0.5; margin-top:10px;">Last Update: ${new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })} (JST)</p>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
 </footer>
 `;
 
@@ -60,22 +98,51 @@ const SIDEBAR = (posts, prefix) => `
 </aside>
 `;
 
-const LEFT_COL = (prefix) => `
+const CATEGORY_META = {
+    'humanoid': { icon: '🤖', name: 'ロボット・AI' },
+    'tech': { icon: '💻', name: 'テクノロジー' },
+    'devlog': { icon: '📝', name: '開発ログ' },
+    'gadget': { icon: '📱', name: 'ガジェット' },
+    'news': { icon: '📰', name: 'ニュース・時事' },
+    'finance': { icon: '💰', name: '金融・投資' },
+    'relationships': { icon: '❤️', name: '恋愛・人間関係' },
+    'adult': { icon: '🔞', name: 'アダルト' },
+    'art': { icon: '🎨', name: 'アート・創作' },
+    'education': { icon: '📚', name: '教育・学習' },
+    'english': { icon: '🔤', name: '英語学習' },
+    'entertainment': { icon: '🍿', name: 'エンタメ' },
+    'gourmet': { icon: '🍽️', name: 'グルメ' },
+    'music': { icon: '🎵', name: '音楽' },
+    'occult': { icon: '👽', name: 'オカルト' },
+    'rakuten': { icon: '🛍️', name: '楽天・お得' },
+    'sports': { icon: '⚽', name: 'スポーツ' },
+    'travel': { icon: '✈️', name: '旅行' },
+    'wellness': { icon: '🌿', name: '健康・ウェルネス' },
+    'uncategorized': { icon: '📦', name: 'その他' },
+    'affiliate': { icon: '💸', name: 'アフィリエイト' },
+};
+
+function getCategoryMeta(cat) {
+    if (CATEGORY_META[cat]) return CATEGORY_META[cat];
+    return { icon: '📁', name: cat.charAt(0).toUpperCase() + cat.slice(1) };
+}
+
+const LEFT_COL = (prefix, categories = []) => `
 <div class="left-col">
     <div class="sidebar-box">
         <h3 class="sidebar-title">主要カテゴリー</h3>
-        <ul class="ranking-list">
-            <li><a href="${prefix}posts/humanoid/index.html">🤖 ロボット・AI</a></li>
-            <li><a href="${prefix}posts/tech/index.html">💻 テクノロジー</a></li>
-            <li><a href="${prefix}posts/devlog/index.html">📝 開発ログ</a></li>
-            <li><a href="${prefix}posts/gadget/index.html">📱 ガジェット</a></li>
+        <ul class="ranking-list" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            ${categories.map(cat => {
+                const meta = getCategoryMeta(cat);
+                return '<li><a href="' + prefix + 'posts/' + cat + '/index.html">' + meta.icon + ' ' + meta.name + '</a></li>';
+            }).join('')}
         </ul>
     </div>
 </div>
 `;
 
 // Layout Wrapper
-const POST_WRAPPER = (post, content, prevPost, nextPost, relatedPosts, prefix, allPosts) => {
+const POST_WRAPPER = (post, content, prevPost, nextPost, relatedPosts, prefix, allPosts, categories) => {
     const absoluteUrl = new URL(post.url, BASE_URL).href;
     let ogImage = '';
     if (post.thumbnail) {
@@ -157,7 +224,7 @@ article_type: ${post.articleType}
 
     <div class="portal">
         <div class="portal-layout">
-            ${LEFT_COL(prefix)}
+            ${LEFT_COL(prefix, categories)}
 
             <main class="premium-article">
                 <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -437,6 +504,9 @@ async function build() {
     // Chronological Sort
     postsData.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+    // Extract categories early
+    const categories = [...new Set(postsData.filter(p => p.dirName !== '.').map(p => p.dirName))];
+
     // 1. Regenerate All Article Pages
     postsData.forEach((post, index) => {
         const prefix = getRelativePrefix(post.absolutePath);
@@ -448,7 +518,7 @@ async function build() {
             .slice(0, 3);
 
         const core = extractCoreContent(post.rawContent);
-        const wrapped = POST_WRAPPER(post, core, prevPost, nextPost, related, prefix, postsData);
+        const wrapped = POST_WRAPPER(post, core, prevPost, nextPost, related, prefix, postsData, categories);
 
         fs.writeFileSync(post.absolutePath, wrapped);
     });
@@ -523,30 +593,89 @@ async function build() {
     fs.writeFileSync(path.join(DIST_DIR, 'archive.html'), archiveHtml);
 
     // 3. Update index.html
-    const indexCardsHtml = postsData.slice(0, 15).map(p => {
+    // Generate Magazine Layout for index.html
+    const getExcerpt = (p) => {
         let excerpt = p.description || p.title;
         if (!p.description && p.rawContent) {
             const core = extractCoreContent(p.rawContent);
             const sanitized = core.replace(/<style[^>]*>[\s\S]*?<\/style>/ig, '').replace(/<figure[^>]*>[\s\S]*?<\/figure>/ig, '');
-            const temp = sanitized.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            const temp = sanitized.replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim();
             excerpt = temp.length > 80 ? temp.substring(0, 80) + '...' : temp;
         }
+        return excerpt;
+    };
 
-        const finalThumb = p.thumbnail || `https://picsum.photos/seed/${encodeURIComponent(p.slug)}/120/80`;
+    const getThumb = (p) => p.thumbnail ? (p.thumbnail.startsWith('http') ? p.thumbnail : new URL(p.thumbnail.replace(/^(\.\.\/|\.\/)+/, ''), BASE_URL).href) : '';
 
-        return `
-    <article class="card" data-category="${p.categoryName || 'other'}">
-      <img src="${finalThumb}" alt="" class="card__image" loading="lazy">
-      <div class="card__body">
-        <h3 class="card__title"><a href="${p.url}">${p.title}</a></h3>
-        <p class="card__excerpt">${excerpt}</p>
-        <div class="card__meta-row">
-            <span class="card__cat card__cat--small">${p.articleType || 'NEWS'}</span>
-            <time class="card__date">${p.date}</time>
-        </div>
-      </div>
-    </article>`;
-    }).join('\n');
+    const heroPosts = postsData.slice(0, 3);
+    const heroMain = heroPosts[0];
+    const heroSide1 = heroPosts[1];
+    const heroSide2 = heroPosts[2];
+
+    let indexCardsHtml = '';
+    if (heroMain) {
+        const thumb = getThumb(heroMain);
+        indexCardsHtml += '      <section class="hero-grid">\n';
+        indexCardsHtml += '        <article class="card card--hero" data-category="' + heroMain.dirName + '">\n';
+        if (thumb) indexCardsHtml += '            <img src="' + thumb + '" class="card__image" alt="" loading="lazy">\n';
+        indexCardsHtml += '            <div class="card__body">\n';
+        indexCardsHtml += '                <span class="card__cat">' + getCategoryMeta(heroMain.dirName).name + '</span>\n';
+        indexCardsHtml += '                <h2 class="card__title"><a href="' + heroMain.url + '">' + heroMain.title + '</a></h2>\n';
+        indexCardsHtml += '                <p class="card__excerpt">' + getExcerpt(heroMain) + '</p>\n';
+        indexCardsHtml += '                <time class="card__date">' + heroMain.date + '</time>\n';
+        indexCardsHtml += '            </div>\n';
+        indexCardsHtml += '        </article>\n';
+        indexCardsHtml += '        <div class="hero-side">\n';
+        indexCardsHtml += '          <h3 class="hero-side-title">🔥 注目のニュース</h3>\n';
+          
+        if (heroSide1) {
+            indexCardsHtml += '          <article class="card" data-category="' + heroSide1.dirName + '">\n';
+            indexCardsHtml += '            <div class="card__body">\n';
+            indexCardsHtml += '                <span class="card__cat">' + getCategoryMeta(heroSide1.dirName).name + '</span>\n';
+            indexCardsHtml += '                <h3 class="card__title"><a href="' + heroSide1.url + '">' + heroSide1.title + '</a></h3>\n';
+            indexCardsHtml += '                <time class="card__date">' + heroSide1.date + '</time>\n';
+            indexCardsHtml += '            </div>\n';
+            indexCardsHtml += '          </article>\n';
+        }
+        if (heroSide2) {
+            indexCardsHtml += '          <article class="card" data-category="' + heroSide2.dirName + '">\n';
+            indexCardsHtml += '            <div class="card__body">\n';
+            indexCardsHtml += '                <span class="card__cat">' + getCategoryMeta(heroSide2.dirName).name + '</span>\n';
+            indexCardsHtml += '                <h3 class="card__title"><a href="' + heroSide2.url + '">' + heroSide2.title + '</a></h3>\n';
+            indexCardsHtml += '                <time class="card__date">' + heroSide2.date + '</time>\n';
+            indexCardsHtml += '            </div>\n';
+            indexCardsHtml += '          </article>\n';
+        }
+        indexCardsHtml += '        </div>\n';
+        indexCardsHtml += '      </section>\n';
+    }
+
+    const remainingPosts = postsData.slice(3);
+    const categoryGroups = [
+        { title: '🤖 ロボット・AI', color: '#a0a0ff', filters: ['humanoid', 'tech'] },
+        { title: '🌍 社会・生活', color: '#6fcf6f', filters: ['news', 'finance', 'gadget', 'relationships'] },
+        { title: '🎵 エンタメ・アート', color: '#cf6fcf', filters: ['music', 'art', 'entertainment', 'devlog'] }
+    ];
+
+    categoryGroups.forEach((group, idx) => {
+        const groupPosts = remainingPosts.filter(p => group.filters.includes(p.dirName)).slice(0, 4);
+        if (groupPosts.length > 0) {
+            indexCardsHtml += '      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid ' + group.color + '; padding-bottom: 0.5rem;">\n';
+            indexCardsHtml += '        <h2 class="section-label" style="font-size: 1.5rem; color: var(--text-primary, #333);">' + group.title + '</h2>\n';
+            indexCardsHtml += '      </div>\n';
+            indexCardsHtml += '      <section class="cards-grid" id="cardsGrid' + idx + '">\n';
+            groupPosts.forEach(p => {
+                indexCardsHtml += '        <article class="card" data-category="' + p.dirName + '">\n';
+                indexCardsHtml += '          <div class="card__body">\n';
+                indexCardsHtml += '            <span class="card__cat">' + getCategoryMeta(p.dirName).name + '</span>\n';
+                indexCardsHtml += '            <h3 class="card__title"><a href="' + p.url + '">' + p.title + '</a></h3>\n';
+                indexCardsHtml += '            <time class="card__date">' + p.date + '</time>\n';
+                indexCardsHtml += '          </div>\n';
+                indexCardsHtml += '        </article>\n';
+            });
+            indexCardsHtml += '      </section>\n';
+        }
+    });
 
     const indexPath = path.join(DIST_DIR, 'index.html');
     if (fs.existsSync(indexPath)) {
@@ -623,7 +752,7 @@ async function build() {
         const headerHtml = HEADER('');
         const footerHtml = FOOTER('');
         const portalLayout = `<div class="portal-layout">
-            ${LEFT_COL('')}
+            ${LEFT_COL('', categories)}
             <div class="portal-main">
                 <!-- DYNAMIC_CARDS_START -->
                 ${indexCardsHtml}
@@ -643,7 +772,6 @@ async function build() {
     }
 
     // 4. Generate Category Index Pages
-    const categories = [...new Set(postsData.filter(p => p.dirName !== '.').map(p => p.dirName))];
     categories.forEach(cat => {
         const catPosts = postsData.filter(p => p.dirName === cat);
         const catDir = path.join(POSTS_DIR, cat);

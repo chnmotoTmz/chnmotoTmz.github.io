@@ -73,11 +73,8 @@ article_type: OBSERVATION
 <div class="left-col">
     <div class="sidebar-box">
         <h3 class="sidebar-title">主要カテゴリー</h3>
-        <ul class="ranking-list">
-            <li><a href="../../posts/humanoid/index.html">🤖 ロボット・AI</a></li>
-            <li><a href="../../posts/tech/index.html">💻 テクノロジー</a></li>
-            <li><a href="../../posts/devlog/index.html">📝 開発ログ</a></li>
-            <li><a href="../../posts/gadget/index.html">📱 ガジェット</a></li>
+        <ul class="ranking-list" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            <li><a href="../../posts/art/index.html">🎨 アート・創作</a></li><li><a href="../../posts/education/index.html">📚 教育・学習</a></li><li><a href="../../posts/finance/index.html">💰 金融・投資</a></li><li><a href="../../posts/news/index.html">📰 ニュース・時事</a></li><li><a href="../../posts/relationships/index.html">❤️ 恋愛・人間関係</a></li><li><a href="../../posts/tech/index.html">💻 テクノロジー</a></li><li><a href="../../posts/travel/index.html">✈️ 旅行</a></li><li><a href="../../posts/uncategorized/index.html">📦 その他</a></li><li><a href="../../posts/wellness/index.html">🌿 健康・ウェルネス</a></li><li><a href="../../posts/adult/index.html">🔞 アダルト</a></li><li><a href="../../posts/entertainment/index.html">🍿 エンタメ</a></li><li><a href="../../posts/gadget/index.html">📱 ガジェット</a></li><li><a href="../../posts/gourmet/index.html">🍽️ グルメ</a></li><li><a href="../../posts/humanoid/index.html">🤖 ロボット・AI</a></li><li><a href="../../posts/occult/index.html">👽 オカルト</a></li><li><a href="../../posts/sports/index.html">⚽ スポーツ</a></li><li><a href="../../posts/affiliate/index.html">💸 アフィリエイト</a></li><li><a href="../../posts/music/index.html">🎵 音楽</a></li><li><a href="../../posts/devlog/index.html">📝 開発ログ</a></li><li><a href="../../posts/english/index.html">🔤 英語学習</a></li><li><a href="../../posts/rakuten/index.html">🛍️ 楽天・お得</a></li>
         </ul>
     </div>
 </div>
@@ -352,17 +349,55 @@ Bridgeで一度視点を抽象化し、絆を強調した後、再びChorusへ�
     </div>
 
     
-<footer>
-    <div style="margin-bottom:20px;">
-        <a href="../../index.html" class="brand" style="justify-content:center;">Humanoid <span>Media</span> Factory</a>
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
     </div>
-    <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
-        <a href="#" class="tab">Privacy</a>
-        <a href="../../about.html" class="tab">About Us</a>
-        <a href="../../partnership.html" class="tab">Contact</a>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="../../about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="../../partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; 2026 Humanoid Media Factory</span>
     </div>
-    <p>&copy; 2026 Humanoid Media Factory. All rights reserved.</p>
-    <p style="font-size:0.8rem; opacity:0.5; margin-top:10px;">Last Update: 2026/5/26 6:53:03 (JST)</p>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
 </footer>
 
 </body>
