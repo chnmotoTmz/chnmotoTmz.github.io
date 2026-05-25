@@ -399,10 +399,29 @@ async function build() {
             }
         }
 
+        let absoluteThumbnail = '';
+        if (thumbnail) {
+            if (thumbnail.startsWith('http')) {
+                absoluteThumbnail = thumbnail;
+            } else {
+                const cleanThumb = thumbnail.replace(/^(\.\.\/|\.\/)+/, '');
+                absoluteThumbnail = new URL(cleanThumb, BASE_URL).href;
+            }
+        }
+
+        let excerpt = meta.description || '';
+        if (!excerpt && rawContent) {
+            const core = extractCoreContent(rawContent);
+            const sanitized = core.replace(/<style[^>]*>[\s\S]*?<\/style>/ig, '').replace(/<figure[^>]*>[\s\S]*?<\/figure>/ig, '');
+            const temp = sanitized.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            excerpt = temp.length > 100 ? temp.substring(0, 100) + '...' : temp;
+        }
+
         postsData.push({
             title: displayTitle,
             date: meta.date || dateFromFilename || '2026-01-01',
             description: meta.description || '',
+            excerpt: excerpt,
             articleType: meta.article_type || 'OBSERVATION',
             categoryName: categoryName,
             dirName: dirName,
@@ -410,7 +429,8 @@ async function build() {
             url: relativeUrl,
             absolutePath: filePath,
             rawContent: rawContent,
-            thumbnail: thumbnail
+            thumbnail: thumbnail,
+            absoluteThumbnail: absoluteThumbnail
         });
     });
 
@@ -696,7 +716,7 @@ async function build() {
     <item>
         <title>${p.title}</title>
         <link>${new URL(p.url, BASE_URL).href}</link>
-        <description><![CDATA[${p.description}]]></description>
+        <description><![CDATA[${p.absoluteThumbnail ? `<img src="${p.absoluteThumbnail}" /><br/>` : ''}${p.excerpt || p.title}]]></description>
         <pubDate>${new Date(p.date).toUTCString()}</pubDate>
         <guid>${new URL(p.url, BASE_URL).href}</guid>
     </item>`).join('')}
