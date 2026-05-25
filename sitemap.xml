@@ -34,6 +34,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -59,10 +63,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/wellness/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/entertainment/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -118,6 +118,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/education/2026-05-25-5ch%E8%AA%9E%E5%AD%A6%E3%82%B9%E3%83%AC%E7%9A%84%E6%8C%AB%E6%8A%98%E5%85%8B%E6%9C%8D%E8%A1%93.html</loc>
+        <lastmod>2026-05-25</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/2026-05-25-DIY%E7%B3%BBYouTuber-%E7%82%AD%E3%81%AE%E9%8C%AC%E9%87%91%E8%A1%93.html</loc>
         <lastmod>2026-05-25</lastmod>
         <priority>0.6</priority>
     </url>
