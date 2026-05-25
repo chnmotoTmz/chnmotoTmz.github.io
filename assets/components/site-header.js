@@ -46,11 +46,24 @@ class SiteHeader extends HTMLElement {
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('is-active'));
-                tab.classList.add('is-active');
-                
+                const prefix = this.getAttribute('prefix') || '';
                 const filter = tab.dataset.filter;
                 const cards = getCards();
+                
+                if (cards.length === 0) {
+                    if (filter === 'all') {
+                        window.location.href = `${prefix}index.html`;
+                    } else if (filter === 'zatsuki') {
+                        window.location.href = `${prefix}posts/news/index.html`;
+                    } else {
+                        window.location.href = `${prefix}posts/${filter}/index.html`;
+                    }
+                    return;
+                }
+
+                tabs.forEach(t => t.classList.remove('is-active'));
+                tab.classList.add('is-active');
+
                 cards.forEach(card => {
                     const show = filter === 'all' || card.dataset.category === filter;
                     card.style.display = show ? '' : 'none';

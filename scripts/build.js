@@ -65,10 +65,10 @@ const LEFT_COL = (prefix) => `
     <div class="sidebar-box">
         <h3 class="sidebar-title">主要カテゴリー</h3>
         <ul class="ranking-list">
-            <li><a href="${prefix}archive.html?cat=humanoid">🤖 ロボット・AI</a></li>
-            <li><a href="${prefix}archive.html?cat=tech">💻 テクノロジー</a></li>
-            <li><a href="${prefix}archive.html?cat=devlog">📝 開発ログ</a></li>
-            <li><a href="${prefix}archive.html?cat=gadget">📱 ガジェット</a></li>
+            <li><a href="${prefix}posts/humanoid/index.html">🤖 ロボット・AI</a></li>
+            <li><a href="${prefix}posts/tech/index.html">💻 テクノロジー</a></li>
+            <li><a href="${prefix}posts/devlog/index.html">📝 開発ログ</a></li>
+            <li><a href="${prefix}posts/gadget/index.html">📱 ガジェット</a></li>
         </ul>
     </div>
 </div>
