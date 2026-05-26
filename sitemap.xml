@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/gourmet/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -74,10 +78,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://chnmototmz.github.io/posts/gourmet/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://chnmototmz.github.io/posts/occult/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -106,6 +106,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/gourmet/2026-05-27-%E4%B8%87%E5%8D%9A%E3%81%A8%E9%A3%9F%E3%81%AE%E3%82%A2%E3%83%88%E3%83%A9%E3%82%B9.html</loc>
+        <lastmod>2026-05-27</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/art/2026-05-26-AI%E3%81%AC%E3%81%84%E3%81%90%E3%82%8B%E3%81%BF%E3%81%8C%E6%BC%AB%E7%94%BB%E3%82%92%E7%88%86%E8%AA%95.html</loc>
         <lastmod>2026-05-26</lastmod>
