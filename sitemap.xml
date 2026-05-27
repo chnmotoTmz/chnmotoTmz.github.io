@@ -62,6 +62,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/youtube/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -248,6 +252,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/movie/2026-05-27-Netflix%E7%A5%9E%E3%82%A2%E3%83%97%E3%83%872026-%E6%98%A0%E7%94%BB%E6%B2%BC%E4%BD%8F%E4%BA%BA%E3%81%8C%E8%AA%9E%E3%82%8B%E7%90%86%E6%83%B3%E3%81%AE%E8%A6%96%E8%81%B4%E4%BD%93%E9%A8%93.html</loc>
+        <lastmod>2026-05-27</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/youtube/2026-05-27-%E5%90%8D%E5%80%89%E6%BD%A4%E3%82%82%E5%94%B8%E3%82%8B-%E6%96%B0%E4%B8%96%E4%BB%A3YouTuber%E4%BC%81%E7%94%BB%E5%8A%9B%E7%88%86%E8%AA%95%E3%81%AE%E8%A3%8F%E5%81%B4.html</loc>
         <lastmod>2026-05-27</lastmod>
         <priority>0.6</priority>
     </url>
