@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/art/illustration/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/anime/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -202,6 +206,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/art/illustration/2026-05-28-%E6%BC%AB%E7%94%BB%E9%9B%91%E8%AA%8C-AI%E9%80%B2%E5%8C%96%E3%81%AE%E6%B3%A2.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/anime/2026-05-28-%E7%A5%9E%E4%BD%9C%E4%BC%9D%E7%B5%B1%E8%8A%B8%E8%83%BD-%E3%83%87%E3%82%A3%E3%82%BA%E3%83%8B%E3%83%BC%E3%82%A2%E3%83%8B%E3%83%A1%E6%AD%8C%E8%88%9E%E4%BC%8E%E5%8C%96%E8%A8%88%E7%94%BB.html</loc>
         <lastmod>2026-05-28</lastmod>
