@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/anime/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -51,10 +55,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/entertainment/anime/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -190,6 +190,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/anime/2026-05-28-%E7%A5%9E%E4%BD%9C%E4%BC%9D%E7%B5%B1%E8%8A%B8%E8%83%BD-%E3%83%87%E3%82%A3%E3%82%BA%E3%83%8B%E3%83%BC%E3%82%A2%E3%83%8B%E3%83%A1%E6%AD%8C%E8%88%9E%E4%BC%8E%E5%8C%96%E8%A8%88%E7%94%BB.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/art/2026-05-27-AI%E6%BC%AB%E7%94%BB%E5%A4%9C%E9%B7%B9%E9%85%B7%E8%A9%95%E7%82%8E%E4%B8%8A.html</loc>
         <lastmod>2026-05-27</lastmod>
