@@ -38,6 +38,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/movie/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -151,6 +155,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/2026-05-27-%E7%A5%9EV-AI%E9%80%B2%E5%8C%96%E8%AB%962042.html</loc>
+        <lastmod>2026-05-27</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/movie/2026-05-27-Netflix%E7%A5%9E%E3%82%A2%E3%83%97%E3%83%872026-%E6%98%A0%E7%94%BB%E6%B2%BC%E4%BD%8F%E4%BA%BA%E3%81%8C%E8%AA%9E%E3%82%8B%E7%90%86%E6%83%B3%E3%81%AE%E8%A6%96%E8%81%B4%E4%BD%93%E9%A8%93.html</loc>
         <lastmod>2026-05-27</lastmod>
         <priority>0.6</priority>
     </url>
