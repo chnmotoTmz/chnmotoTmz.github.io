@@ -138,6 +138,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/travel/hotel/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/travel/overseas/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -548,6 +552,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/travel/gear/2026-05-27-%E7%9D%80%E3%82%8B%E3%82%AE%E3%82%A2%E7%88%86%E8%AA%95-%E3%82%A2%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%AF%E3%83%AA%E3%83%BC%E3%81%AE%E8%A3%8F%E4%BA%8B%E6%83%85%E3%81%A8%E7%99%BB%E5%B1%B1%E3%82%A6%E3%82%A7%E3%82%A2%E8%BB%A2%E7%94%A8.html</loc>
+        <lastmod>2026-05-27</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/travel/hotel/2026-05-27-2039%E5%B9%B4%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%9B%E3%83%86%E3%83%AB%E6%BF%80%E5%A4%89%E4%BA%88%E6%B8%AC-%E7%99%BB%E5%B1%B1%E5%9F%BA%E5%9C%B0%E5%8C%96%E3%81%A8%E5%A4%9A%E6%8B%A0%E7%82%B9%E7%94%9F%E6%B4%BB.html</loc>
         <lastmod>2026-05-27</lastmod>
         <priority>0.6</priority>
     </url>
