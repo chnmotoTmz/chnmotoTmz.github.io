@@ -653,12 +653,13 @@ async function build() {
     const remainingPosts = postsData.slice(3);
     const categoryGroups = [
         { title: '🤖 ロボット・AI', color: '#a0a0ff', filters: ['humanoid', 'tech'] },
-        { title: '🌍 社会・生活', color: '#6fcf6f', filters: ['news', 'finance', 'gadget', 'relationships'] },
-        { title: '🎵 エンタメ・アート', color: '#cf6fcf', filters: ['music', 'art', 'entertainment', 'devlog'] }
+        { title: '🌍 社会・生活', color: '#6fcf6f', filters: ['news', 'finance', 'gadget', 'relationships', 'education'] },
+        { title: '🎵 エンタメ・アート', color: '#cf6fcf', filters: ['music', 'art', 'entertainment', 'devlog'] },
+        { title: '✈️ ライフスタイル', color: '#f0a050', filters: ['travel', 'wellness', 'gourmet'] }
     ];
 
     categoryGroups.forEach((group, idx) => {
-        const groupPosts = remainingPosts.filter(p => group.filters.includes(p.dirName)).slice(0, 4);
+        const groupPosts = remainingPosts.filter(p => group.filters.some(f => p.dirName === f || p.dirName.startsWith(f + '/'))).slice(0, 4);
         if (groupPosts.length > 0) {
             indexCardsHtml += '      <div class="section-header" style="margin-top: 2.5rem; border-bottom: 2px solid ' + group.color + '; padding-bottom: 0.5rem;">\n';
             indexCardsHtml += '        <h2 class="section-label" style="font-size: 1.5rem; color: var(--text-primary, #333);">' + group.title + '</h2>\n';
