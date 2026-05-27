@@ -34,6 +34,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/news/economy/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/news/net/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -126,10 +130,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://chnmototmz.github.io/posts/news/economy/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://chnmototmz.github.io/posts/relationships/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -218,6 +218,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/music/2026-05-28-ADHD%E6%B2%BB%E7%99%82%E8%96%AC%E3%81%A8%E9%AD%82%E3%81%AE%E6%B8%87%E3%81%8D.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/news/economy/2026-05-28-AI%E4%BC%9A%E8%A9%B1%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E9%96%8B%E7%99%BA%E7%AB%B6%E4%BA%89%E6%BF%80%E5%8C%96%E3%81%AE%E8%83%8C%E6%99%AF%E3%81%A8%E7%B5%8C%E6%B8%88%E5%8A%B9%E6%9E%9C.html</loc>
         <lastmod>2026-05-28</lastmod>
         <priority>0.6</priority>
     </url>
