@@ -70,6 +70,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/travel/gear/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/travel/hiking/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -186,10 +190,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://chnmototmz.github.io/posts/travel/gear/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://chnmototmz.github.io/posts/travel/hotel/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -292,6 +292,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/tech/ai/2026-05-28-%E7%9A%87%E7%B5%B1AI%E7%B6%AD%E6%8C%81%E8%AB%96-2070%E5%B9%B4.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/travel/gear/2026-05-28-%E5%86%B7%E6%84%9F%E3%82%BF%E3%82%AA%E3%83%AB-%E5%86%B7%E5%8D%B4%E3%82%B7%E3%83%BC%E3%83%88-%E7%99%BB%E5%B1%B1-%E9%A1%94%E6%B1%97%E5%AF%BE%E7%AD%96-%E6%9C%80%E6%96%B0%E3%81%B2%E3%82%93%E3%82%84%E3%82%8A%E3%82%B0%E3%83%83%E3%82%BA5%E9%81%B8.html</loc>
         <lastmod>2026-05-28</lastmod>
         <priority>0.6</priority>
     </url>
