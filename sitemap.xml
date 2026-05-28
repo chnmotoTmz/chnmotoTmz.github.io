@@ -70,6 +70,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/news/world/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/relationships/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -300,6 +304,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/news/net/2026-05-28-F1%E3%83%96%E3%83%BC%E3%83%A0%E5%86%8D%E7%87%83-%E9%88%B4%E9%B9%BF31%E4%B8%87%E4%BA%BA%E3%81%8C%E7%A4%BA%E3%81%99%E7%B5%8C%E6%B8%88%E5%8A%B9%E6%9E%9C%E3%81%A8%E8%AA%B2%E9%A1%8C.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/news/world/2026-05-28-%E5%89%AF%E9%A6%96%E9%83%BD-%E6%A9%9F%E8%83%BD%E5%88%86%E6%95%A3%E3%81%A8%E5%9C%B0%E6%94%BF%E5%AD%A6.html</loc>
         <lastmod>2026-05-28</lastmod>
         <priority>0.6</priority>
     </url>
