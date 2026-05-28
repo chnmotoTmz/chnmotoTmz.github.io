@@ -50,6 +50,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/movie/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/gourmet/recipe/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -135,10 +139,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/education/hack/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/entertainment/movie/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -279,6 +279,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/game/2026-05-28-RV-There-Yet-%E9%98%BF%E9%BC%BB%E5%8F%AB%E5%96%9A-%E7%88%86%E7%AC%91%E5%BF%85%E8%87%B3-%E9%99%90%E7%95%8C%E7%AA%81%E7%A0%B4%E7%8F%8D%E9%81%93%E4%B8%AD.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/entertainment/movie/2026-05-28-JAL%E9%A3%B2%E9%85%92%E5%95%8F%E9%A1%8C-%E9%97%87%E6%B7%B1%E3%81%99%E3%81%8E.html</loc>
         <lastmod>2026-05-28</lastmod>
         <priority>0.6</priority>
     </url>
