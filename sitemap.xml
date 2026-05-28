@@ -30,6 +30,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/gourmet/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/news/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -190,10 +194,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://chnmototmz.github.io/posts/gourmet/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://chnmototmz.github.io/posts/gourmet/sake/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -266,6 +266,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/2026-05-29-%E6%A0%83%E6%9C%A840%E4%BB%A3%E6%89%8B%E9%85%8D-%E7%A5%9E%E5%9B%9E%E9%81%BF%E8%A1%93.html</loc>
+        <lastmod>2026-05-29</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/gourmet/2026-05-29-EV%E4%B8%AD%E6%AD%A2%E3%81%A8%E5%A4%B1%E3%82%8F%E3%82%8C%E3%81%9F%E6%99%82.html</loc>
         <lastmod>2026-05-29</lastmod>
         <priority>0.6</priority>
     </url>
