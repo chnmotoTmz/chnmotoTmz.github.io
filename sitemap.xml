@@ -70,6 +70,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/tech/video/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/travel/gear/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -297,6 +301,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/tech/ai/2026-05-28-%E7%9A%87%E7%B5%B1AI%E7%B6%AD%E6%8C%81%E8%AB%96-2070%E5%B9%B4.html</loc>
+        <lastmod>2026-05-28</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/tech/video/2026-05-28-%E6%88%A6%E6%AD%BB%E8%80%8550%E4%B8%87%E3%81%A8AI%E3%81%AE%E4%BB%A3%E5%84%9F.html</loc>
         <lastmod>2026-05-28</lastmod>
         <priority>0.6</priority>
     </url>
