@@ -1,5 +1,5 @@
 <!--
-title: Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】
+title: Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】
 date: 2026-06-03
 description: 
 article_type: OBSERVATION
@@ -9,11 +9,11 @@ article_type: OBSERVATION
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】 | Humanoid Media Factory</title>
+    <title>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】 | Humanoid Media Factory</title>
     <meta name="description" content="">
 
     <!-- SEO / Canonical / Robots -->
-    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC1%E5%9B%9E-%E5%85%A8%E4%BD%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3.html">
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC4%E5%9B%9E-4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB%E3%82%B5%E3%83%A0%E3%83%8D%E3%82%A4%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90.html">
     <meta name="robots" content="index, follow">
 
     <!-- Structured Data (JSON-LD) -->
@@ -21,9 +21,9 @@ article_type: OBSERVATION
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】",
+      "headline": "Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】",
       "description": "",
-      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1780443751_Gemini-Python-1.png",
+      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1780443962_Gemini-Python-4-4.jpg",
       "author": {
         "@type": "Person",
         "name": "chnmotoTmz"
@@ -40,17 +40,17 @@ article_type: OBSERVATION
       "dateModified": "2026-06-03",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC1%E5%9B%9E-%E5%85%A8%E4%BD%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3.html"
+        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC4%E5%9B%9E-4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB%E3%82%B5%E3%83%A0%E3%83%8D%E3%82%A4%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90.html"
       }
     }
     </script>
 
     <!-- OGP -->
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:title" content="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】 | Humanoid Media Factory">
+    <meta property="og:title" content="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】 | Humanoid Media Factory">
     <meta property="og:description" content="">
-    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC1%E5%9B%9E-%E5%85%A8%E4%BD%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3.html">
-    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1780443751_Gemini-Python-1.png">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC4%E5%9B%9E-4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB%E3%82%B5%E3%83%A0%E3%83%8D%E3%82%A4%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90.html">
+    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1780443962_Gemini-Python-4-4.jpg">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Humanoid Media Factory">
 
@@ -98,13 +98,13 @@ article_type: OBSERVATION
                         </li>
                         <li style="color:var(--muted);">&gt;</li>
                         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                            <span itemprop="name" style="color:var(--text-primary)">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】</span>
+                            <span itemprop="name" style="color:var(--text-primary)">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】</span>
                             <meta itemprop="position" content="3" />
                         </li>
                     </ol>
                 </nav>
 
-                <h1>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】</h1>
+                <h1>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】</h1>
 
                 <div class="devlog-meta">
                     <time>2026-06-03</time>
@@ -113,60 +113,49 @@ article_type: OBSERVATION
                 </div>
 
                 <article class="post-content">
-                    <figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780443751_Gemini-Python-1.png" alt="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class='qiita-article'>
-こんにちは。個人でヒューマノイド開発をメインの目標に掲げている、しがないAIエンジニアです。
+                    <figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780443962_Gemini-Python-4-4.jpg" alt="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class='qiita-article'>
+連載第4回。ブログの「顔」となるアイキャッチ（サムネイル）画像についてです。
 
-今回は、私が構築した「完全自動かつ、人間よりも人間くさい」ブログ運営システムの裏側を全5回にわたって解説します。
-なぜヒューマノイド開発者がこんなものを作っているのかって？
-……寂しい人間しかこんなことはしないですよね（笑）。技術で承認欲求を満たしつつ、あわよくば副業収入を得たい。そして何より、進化の激しい**最新AI技術（LLM）のベンチマーク**を兼ねた個人的な実験でもあります。数年後には誰もが息をするように作れる時代が来るでしょうから、今のうちに遊んでおこうという魂胆です。
+## フリー素材からの脱却
 
-本連載では、コードの断片も交えながら、このシステムがいかにして「AI特有の無機質さ」を排除し、したたかにSEOと収益化を狙っているか、その技術的負債と泥臭いハックのすべてを公開します。
+よくある自動化ブログでは、UnsplashやO-DANなどのAPIから適当なフリー素材を引っ張ってきます。しかし技術者たるもの、そこで妥協したくありません。いかにもな外国人の笑顔やキーボードの写真は、読者に「またこの手の量産型ブログか」という無意識の拒否反応を与えます。
 
-## システムの全体像と技術スタック
+本システムでは、記事の内容を反映した**4コマ漫画の画像生成プロンプト**をAIに作らせ、完全にオリジナルのアイキャッチ画像を生成します。
 
-本システムは、単なる「ChatGPTのAPIを叩いてWordPressに投げるだけのスクリプト」ではありません。複数のペルソナ（ブログ）を同時に運用し、それぞれに全く異なる性格付けとデザインを適用するマルチテナント型のアーキテクチャを採用しています。
+## 記事の要約とプロンプトの動的構築
 
-*   **バックエンド**: Python 3.10+, Flask (軽量なWeb UI用)
-*   **非同期処理・ジョブ管理**: Celery / 独自キューシステム (SQLiteベースの軽量な状態管理)
-*   **LLMオーケストレーション**: Google Gemini Pro (1.5系)
-*   **画像生成**: DALL-E 3 / Midjourney API (4コマ漫画生成)
-*   **外部連携**: はてなブログ AtomPub API, 楽天商品検索API, DuckDuckGo検索API
+まず、生成された記事本文のHTMLからテキストを抽出し、先頭の600文字程度をGeminiに渡して要約させます。そして、第1回で紹介した `blogs.yml` から、そのブログ専用の画風設定（`manga_config`）を読み込みます。
 
-### アーキテクチャ図
-
-```mermaid
-graph TD
-    A[blogs.yml] --> B(Queue Manager)
-    C[RSS/Google News] --> B
-    B --> D{Blog Master Agent}
-    D -->|3階層テーマ生成| E[Article Pipeline]
-    E -->|MBTIペルソナ注入| F((Gemini API))
-    F -->|Markdown出力| E
-    E -->|商品検索| G[Rakuten API]
-    E -->|画像プロンプト| H[Image Gen API]
-    E --> I[Hatena Blog API]
+```python
+# article_pipeline.py (一部抜粋)
+manga_config = plan.get('blog_config', {}).get('manga_config', {})
+manga_characters = manga_config.get('characters', 'a woman and a quirky AI robot')
+manga_style = manga_config.get('style', 'colored manga style using a limited palette of 3 pastel colors')
+manga_author = manga_config.get('author', 'friendly, clean shounen manga art style')
 ```
 
-## `blogs.yml` によるマルチテナント管理
+これらを組み合わせて、画像生成AI（MidjourneyやDALL-E）向けの英語プロンプトを構築します。
 
-このシステムのコアは、`blogs.yml` という単一の設定ファイルによるペルソナ管理です。エンジニアとして本質的にやりたいことは「プロンプトエンジニアリングの抽象化とシステム化」です。
+```python
+manga_prompt_instruction = f"""
+記事タイトル: {extracted_title}
+記事の要約: {body_summary}
 
-```yaml
-  lifestyle_family:
-    hatena_id: "example_user"
-    blog_name: "30代主婦のウェルネス・ライフハック"
-    target_audience: "家庭と自分の時間を両立したい30〜50代女性"
-    tone: "同世代の主婦が共感できる、等身大で温かいトーン。"
-    trend_sources:
-      - "https://news.google.com/rss/search?q=主婦+ライフハック"
-    manga_config:
-      author: "friendly, clean shounen manga art style"
-      characters: "a busy 30-something housewife and her energetic pet dog"
+以下のテンプレートに従い、[TOPIC]部分だけを書き換えて英語のプロンプトを出力せよ:
+"A safe-for-work 4-panel Japanese manga comic strip (yonkoma style) about [TOPIC]. Drawn in a {manga_author}. Panel 1: setup scene with two characters ({manga_characters}). Panel 2: rising action with comedic misunderstanding. Panel 3: surprising twist related to [TOPIC]. Panel 4: funny resolution with both characters reacting. Clean lineart, family-friendly, {manga_style}."
+"""
 ```
 
-新しいブログ（ペルソナ）を立ち上げたいときは、このYAMLに数行追加するだけです。システムは自動的にこのYAMLをパースし、非同期ワーカーがそれぞれのペルソナに憑依して、全く異なるトーンのブログを並行して執筆し始めます。
+## ブログごとに劇的に変わる世界観
 
-次回、第2回では「いかにして読まれる（検索される）ネタを拾ってくるか」という、情報収集とテーマ選定の泥臭いロジックについて解説します。
+この仕組みにより、ブログごとに全く異なる世界観のアイキャッチが全自動で生成されます。
+
+*   **投資ブログの場合**: 真面目なスーツ姿の投資家と解説役のフクロウが、ビジネス書風のクリーンなスタイルでNISAの解説をする4コマ。
+*   **深夜のお悩み相談ブログの場合**: バーのマスターと悩める客が、セピア調の劇画タッチで人間関係を語る4コマ。
+
+画像生成モデルは驚異的なスピードで進化していますが、単にプロンプトを手打ちするのではなく、この「コンテキスト（文脈）を理解して適切なプロンプトを動的に組み立てる層（オーケストレーション）」をPythonで作っておくことが、今の時代におけるAIエンジニアの真の遊びであり、腕の見せ所だと思っています。
+
+いよいよ次回は最終回。「収益化（楽天アフィリエイト）と完全自動投稿」の仕組みについて解説します。
                 </article>
 
                 <!-- Next/Prev Navigation -->
@@ -174,13 +163,13 @@ graph TD
                     <div class="post-nav__item">
                         
                             <span class="post-nav__label">← Previous</span>
-                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第2回-3階層トレンド検索とファクトチェ.html" class="post-nav__link">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第2回：3階層トレンド検索とファクトチェック】</a>
+                            <a href="../../posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU同期ずれの未来解.html" class="post-nav__link">ROS 2 SLAM：LiDAR/IMU同期ずれの未来解</a>
                         
                     </div>
                     <div class="post-nav__item" style="text-align:right;">
                         
                             <span class="post-nav__label">Next →</span>
-                            <a href="../../posts/gadget/2026-06-03-静音と地図-在宅ロボット考.html" class="post-nav__link">静音と地図：在宅ロボット考</a>
+                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第3回-ランダムMBTIペルソナ注入.html" class="post-nav__link">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第3回：ランダムMBTIペルソナ注入】</a>
                         
                     </div>
                 </nav>
@@ -191,6 +180,11 @@ graph TD
                     <h3 class="related-posts__title">Related Stories</h3>
                     <div class="related-grid">
                         
+                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第1回-全体アーキテクチャ.html" class="related-card">
+                                <h4 class="related-card__title">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】</h4>
+                                <time class="related-card__date">2026-06-03</time>
+                            </a>
+                        
                             <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第2回-3階層トレンド検索とファクトチェ.html" class="related-card">
                                 <h4 class="related-card__title">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第2回：3階層トレンド検索とファクトチェック】</h4>
                                 <time class="related-card__date">2026-06-03</time>
@@ -198,11 +192,6 @@ graph TD
                         
                             <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第3回-ランダムMBTIペルソナ注入.html" class="related-card">
                                 <h4 class="related-card__title">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第3回：ランダムMBTIペルソナ注入】</h4>
-                                <time class="related-card__date">2026-06-03</time>
-                            </a>
-                        
-                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第4回-4コマ漫画サムネイルの自動生成.html" class="related-card">
-                                <h4 class="related-card__title">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】</h4>
                                 <time class="related-card__date">2026-06-03</time>
                             </a>
                         
