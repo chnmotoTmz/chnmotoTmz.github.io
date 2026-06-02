@@ -28,6 +28,13 @@
         <guid>https://chnmototmz.github.io/posts/gadget/2026-06-03-%E9%9D%99%E9%9F%B3%E3%81%A8%E5%9C%B0%E5%9B%B3-%E5%9C%A8%E5%AE%85%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E8%80%83.html</guid>
     </item>
     <item>
+        <title>ROS 2 SLAM：LiDAR/IMU同期ずれの未来解</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU%E5%90%8C%E6%9C%9F%E3%81%9A%E3%82%8C%E3%81%AE%E6%9C%AA%E6%9D%A5%E8%A7%A3.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780420519_ROS-2-SLAM-LiDAR-IMU.png" /><br/>なぁ、みんな！自律移動ロボットとかドローン、最近ほんまにすごいやろ？街中や空をスイスイ動いてるの見るたびに、未来を感じるわ。 でもな、その裏には地味〜に悩ましい、けどめっちゃ大事な問題があるんやで。そ...]]></description>
+        <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU%E5%90%8C%E6%9C%9F%E3%81%9A%E3%82%8C%E3%81%AE%E6%9C%AA%E6%9D%A5%E8%A7%A3.html</guid>
+    </item>
+    <item>
         <title>FA誌とタイムズの難易度</title>
         <link>https://chnmototmz.github.io/posts/news/2026-06-03-FA%E8%AA%8C%E3%81%A8%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E3%81%AE%E9%9B%A3%E6%98%93%E5%BA%A6.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780413898_FA.png" /><br/>要旨 国際情勢の分析において、FA誌（Foreign Affairs）やタイムズ（The Times, Financial Timesなど）といった専門メディアの報道は、その深さと多角的な視点から「難...]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780283181.png" /><br/>路線バス内で発生した無差別襲撃事件は、乗客に深い傷跡を残す。事件後の補償制度は、被害者の生活再建に不可欠だが、その実態は必ずしも十分とは言えない。本稿では、路線バス襲撃事件における補償の現状と課題を明...]]></description>
         <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/finance/2026-06-01-%E8%B7%AF%E7%B7%9A%E3%83%90%E3%82%B9%E8%A5%B2%E6%92%83%E4%BA%8B%E4%BB%B6%E3%81%A8%E8%A3%9C%E5%84%9F%E5%88%B6%E5%BA%A6.html</guid>
-    </item>
-    <item>
-        <title>台風一過、食の備忘録</title>
-        <link>https://chnmototmz.github.io/posts/gourmet/2026-06-01-%E5%8F%B0%E9%A2%A8%E4%B8%80%E9%81%8E-%E9%A3%9F%E3%81%AE%E5%82%99%E5%BF%98%E9%8C%B2.html</link>
-        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780287044.png" /><br/>台風が過ぎ去った後の食卓には、どこか特別な感慨深さが宿る。それは単なる空腹を満たす行為ではなく、自然の猛威を乗り越えた安堵と、日常への回帰を祝う儀式にも似ている。この記事では、台風一過の食が持つ意味を...]]></description>
-        <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/gourmet/2026-06-01-%E5%8F%B0%E9%A2%A8%E4%B8%80%E9%81%8E-%E9%A3%9F%E3%81%AE%E5%82%99%E5%BF%98%E9%8C%B2.html</guid>
     </item>
 </channel>
 </rss>
