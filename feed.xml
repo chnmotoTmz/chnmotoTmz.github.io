@@ -70,6 +70,13 @@
         <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC2%E5%9B%9E-3%E9%9A%8E%E5%B1%A4%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89%E6%A4%9C%E7%B4%A2%E3%81%A8%E3%83%95%E3%82%A1%E3%82%AF%E3%83%88%E3%83%81%E3%82%A7.html</guid>
     </item>
     <item>
+        <title>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第3回：ランダムMBTIペルソナ注入】</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC3%E5%9B%9E-%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0MBTI%E3%83%9A%E3%83%AB%E3%82%BD%E3%83%8A%E6%B3%A8%E5%85%A5.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780443902_Gemini-Python-3-MBTI.png" /><br/>連載第3回。個人的にはここが本システムで一番面白いところです。テーマは「AIの無機質さをどうやって消し去り、人間味を偽装するか」。 ## AI文章の限界と「人間味」の価値 AIにブログを書かせると、「...]]></description>
+        <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC3%E5%9B%9E-%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0MBTI%E3%83%9A%E3%83%AB%E3%82%BD%E3%83%8A%E6%B3%A8%E5%85%A5.html</guid>
+    </item>
+    <item>
         <title>ROS 2 SLAM：LiDAR/IMU同期ずれの未来解</title>
         <link>https://chnmototmz.github.io/posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU%E5%90%8C%E6%9C%9F%E3%81%9A%E3%82%8C%E3%81%AE%E6%9C%AA%E6%9D%A5%E8%A7%A3.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780420519_ROS-2-SLAM-LiDAR-IMU.png" /><br/>なぁ、みんな！自律移動ロボットとかドローン、最近ほんまにすごいやろ？街中や空をスイスイ動いてるの見るたびに、未来を感じるわ。 でもな、その裏には地味〜に悩ましい、けどめっちゃ大事な問題があるんやで。そ...]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780357219_AI-3-SEO.png" /><br/>要旨 「AI時代のコンテンツ戦略：検索ニーズを捉え、成果を生む3部作SEOガイド」は、発売から三年を経て、デジタルマーケティング界に一石を投じる歴史的成功を収めました。本ガイドは、AIの進化が検索行動...]]></description>
         <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/tech/2026-06-02-AI%E6%99%82%E4%BB%A3%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E6%88%A6%E7%95%A5-%E6%A4%9C%E7%B4%A2%E3%83%8B%E3%83%BC%E3%82%BA%E3%82%92%E6%8D%89%E3%81%88-%E6%88%90%E6%9E%9C%E3%82%92%E7%94%9F%E3%82%803%E9%83%A8%E4%BD%9CSEO%E3%82%AC%E3%82%A4%E3%83%89-%E6%AD%B4%E5%8F%B2%E7%9A%84%E6%88%90%E5%8A%9F%E3%82%92%E9%81%94%E6%88%90.html</guid>
-    </item>
-    <item>
-        <title>AI時代のコンテンツ戦略：検索ニーズを捉え、成果を生む3部作SEOガイド</title>
-        <link>https://chnmototmz.github.io/posts/tech/2026-06-02-AI%E6%99%82%E4%BB%A3%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E6%88%A6%E7%95%A5-%E6%A4%9C%E7%B4%A2%E3%83%8B%E3%83%BC%E3%82%BA%E3%82%92%E6%8D%89%E3%81%88-%E6%88%90%E6%9E%9C%E3%82%92%E7%94%9F%E3%82%803%E9%83%A8%E4%BD%9CSEO%E3%82%AC%E3%82%A4%E3%83%89.html</link>
-        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780357120_AI-3-SEO.png" /><br/>AI時代のコンテンツ戦略、正直「AIに全部任せたれ！」って思ってへん？ ちょっと待った！それやったら、もったいないことしてるかもしれへんで。 今日はな、AIをほんまもんの「相棒」にして、検索でも読者で...]]></description>
-        <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/tech/2026-06-02-AI%E6%99%82%E4%BB%A3%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E6%88%A6%E7%95%A5-%E6%A4%9C%E7%B4%A2%E3%83%8B%E3%83%BC%E3%82%BA%E3%82%92%E6%8D%89%E3%81%88-%E6%88%90%E6%9E%9C%E3%82%92%E7%94%9F%E3%82%803%E9%83%A8%E4%BD%9CSEO%E3%82%AC%E3%82%A4%E3%83%89.html</guid>
     </item>
 </channel>
 </rss>
