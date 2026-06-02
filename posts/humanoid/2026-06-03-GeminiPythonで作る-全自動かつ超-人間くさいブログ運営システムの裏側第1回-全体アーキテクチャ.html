@@ -1,6 +1,6 @@
 <!--
-title: 同時通訳ロボットの進化と課題：感情的な議論で「論理的飛躍」を指摘されたら？
-date: 2026-05-15
+title: Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】
+date: 2026-06-03
 description: 
 article_type: OBSERVATION
 -->
@@ -9,11 +9,11 @@ article_type: OBSERVATION
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>同時通訳ロボットの進化と課題：感情的な議論で「論理的飛躍」を指摘されたら？ | Humanoid Media Factory</title>
+    <title>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】 | Humanoid Media Factory</title>
     <meta name="description" content="">
 
     <!-- SEO / Canonical / Robots -->
-    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-05-15-%E5%90%8C%E6%99%82%E9%80%9A%E8%A8%B3%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%81%AE%E9%80%B2%E5%8C%96%E3%81%A8%E8%AA%B2%E9%A1%8C-%E6%84%9F%E6%83%85%E7%9A%84%E3%81%AA%E8%AD%B0%E8%AB%96%E3%81%A7%E8%AB%96%E7%90%86%E7%9A%84%E9%A3%9B%E8%BA%8D%E3%82%92%E6%8C%87%E6%91%98%E3%81%95%E3%82%8C%E3%81%9F%E3%82%89.html">
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC1%E5%9B%9E-%E5%85%A8%E4%BD%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3.html">
     <meta name="robots" content="index, follow">
 
     <!-- Structured Data (JSON-LD) -->
@@ -21,9 +21,9 @@ article_type: OBSERVATION
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "同時通訳ロボットの進化と課題：感情的な議論で「論理的飛躍」を指摘されたら？",
+      "headline": "Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】",
       "description": "",
-      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1778781488.jpg",
+      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1780443751_Gemini-Python-1.png",
       "author": {
         "@type": "Person",
         "name": "chnmotoTmz"
@@ -36,21 +36,21 @@ article_type: OBSERVATION
           "url": "https://chnmototmz.github.io/images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
         }
       },
-      "datePublished": "2026-05-15",
-      "dateModified": "2026-05-15",
+      "datePublished": "2026-06-03",
+      "dateModified": "2026-06-03",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-05-15-%E5%90%8C%E6%99%82%E9%80%9A%E8%A8%B3%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%81%AE%E9%80%B2%E5%8C%96%E3%81%A8%E8%AA%B2%E9%A1%8C-%E6%84%9F%E6%83%85%E7%9A%84%E3%81%AA%E8%AD%B0%E8%AB%96%E3%81%A7%E8%AB%96%E7%90%86%E7%9A%84%E9%A3%9B%E8%BA%8D%E3%82%92%E6%8C%87%E6%91%98%E3%81%95%E3%82%8C%E3%81%9F%E3%82%89.html"
+        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC1%E5%9B%9E-%E5%85%A8%E4%BD%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3.html"
       }
     }
     </script>
 
     <!-- OGP -->
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:title" content="同時通訳ロボットの進化と課題：感情的な議論で「論理的飛躍」を指摘されたら？ | Humanoid Media Factory">
+    <meta property="og:title" content="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】 | Humanoid Media Factory">
     <meta property="og:description" content="">
-    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-05-15-%E5%90%8C%E6%99%82%E9%80%9A%E8%A8%B3%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%81%AE%E9%80%B2%E5%8C%96%E3%81%A8%E8%AA%B2%E9%A1%8C-%E6%84%9F%E6%83%85%E7%9A%84%E3%81%AA%E8%AD%B0%E8%AB%96%E3%81%A7%E8%AB%96%E7%90%86%E7%9A%84%E9%A3%9B%E8%BA%8D%E3%82%92%E6%8C%87%E6%91%98%E3%81%95%E3%82%8C%E3%81%9F%E3%82%89.html">
-    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1778781488.jpg">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC1%E5%9B%9E-%E5%85%A8%E4%BD%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3.html">
+    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1780443751_Gemini-Python-1.png">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Humanoid Media Factory">
 
@@ -98,97 +98,75 @@ article_type: OBSERVATION
                         </li>
                         <li style="color:var(--muted);">&gt;</li>
                         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                            <span itemprop="name" style="color:var(--text-primary)">同時通訳ロボットの進化と課題：感情的な議論で「論理的飛躍」を指摘されたら？</span>
+                            <span itemprop="name" style="color:var(--text-primary)">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】</span>
                             <meta itemprop="position" content="3" />
                         </li>
                     </ol>
                 </nav>
 
-                <h1>同時通訳ロボットの進化と課題：感情的な議論で「論理的飛躍」を指摘されたら？</h1>
+                <h1>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】</h1>
 
                 <div class="devlog-meta">
-                    <time>2026-05-15</time>
+                    <time>2026-06-03</time>
                     <span class="separator">|</span>
                     <span class="card__cat card__cat--small">OBSERVATION</span>
                 </div>
 
                 <article class="post-content">
-                    <figure class="article-thumbnail" style="text-align:center;margin:40px -40px;background:#000;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1778781488.jpg" alt="同時通訳ロボットの進化と課題：感情的な議論で「論理的飛躍」を指摘されたら？" style="max-width:100%;height:auto;display:block;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,0.5);"></figure><div class="article-lead">同時通訳ロボットの進化と課題：感情的な議論で「論理的飛躍」を指摘されたら？</div>
-<p>AIの進化で通訳も自動化が進んでるけど、もし空気読めへんロボットが現場に来たらどうなるか考えたことある？<br>喧嘩の仲裁に入ったロボットが、余計な「注釈」を入れまくって火に油を注ぐっていう地獄のシナリオや。<br>今日は、技術が正論を突きつけすぎることの恐ろしさと、コミュニケーションの真髄について語るで！</p>
-<p>『便利やけど絶望的に空気が読めへん通訳ロボ』</p>
-<p>最近のAIはほんまに賢い。翻訳精度も爆上がりやし、一昔前みたいな「謎の直訳」も減ってきた。</p>
-<p>でもな、賢すぎるがゆえに 「空気を読む」 という高度な芸当を忘れてしもたら、えらいことになる。</p>
-<p>例えば、職場の会議で部長と課長がバチバチにやり合ってるとするやん？<br>そこで同時通訳ロボットが颯爽と登場して、喧嘩の仲裁に入るシーンを想像してみてほしい。</p>
-<p>「お前のやり方は根性が足りん！」という部長の怒号に対して、ロボが冷静な声でこう訳す。<br>「あなたの手法は精神論に依存しており、具体性を欠いています（論理的飛躍あり）」</p>
-<p>……これ、確実に現場の血圧が 200 突破するやつやろ。</p>
-<p>『「論理的飛躍あり」という言葉の殺傷能力』</p>
-<p>喧嘩って、だいたい感情が先行して論理なんて二の次になるもんやんか。</p>
-<p>そこをAIが 「ここ、根拠ないっすよ」 ってメタ発言で補足してくるわけ。<br>これ、言われた方は逃げ場がなくなるねん。</p>
-<p>「（論理的飛躍あり）」なんて注釈、普通の人間やったら怖くて絶対つけられへん。<br>相手の顔を立てるとか、阿吽の呼吸とか、そういう 日本人が大事にしてきた「含み」 を全部バッサリ切り捨てる。</p>
-<p>エンジニア的には「情報の正確性」を追求した結果なんかもしれんけど、<br>コミュニケーションの現場では、時として 「正しいけど正解じゃない」 ことが多すぎるんよな。</p>
-<p>『エンジニアが陥る「正解こそが正義」という罠』</p>
-<p>開発側からしたら、誤解を招かないために「客観的な事実」を伝えるのは当然の使命。</p>
-<p>でもな、人間同士のやり取りにおいて、100%の正論 ほど人を傷つける武器はないねん。</p>
-<p>このロボット、きっとアルゴリズム的には超優秀なんやと思う。<br>発言の前後関係を分析して、エビデンスが足りない部分に自動でタグ付けする。<br>技術の結晶や。</p>
-<p>でも、「感情のトランスレーション」 を無視してロジックだけを抽出したら、<br>それはもう通訳やなくて、ただの「裁判官」になってまう。<br>仕事終わりの飲み会でこんなロボが隣におったら、ビールも不味うてしゃあないわ。</p>
-<p>『結局、人間臭い「適当さ」が必要なんよ』</p>
-<p>未来の通訳ロボに求められるのは、完璧なロジックやない。</p>
-<p>時には相手の失礼な発言をちょっと柔らかくしたり、<br>「まあまあ、相手もこう言いたいんちゃいます？」 みたいな、適度なヌケ感が必要やねん。</p>
-<p>効率化と正確性を極限まで追求した果てに待ってるのが、<br>「（論理的飛躍あり）」という感情の全否定やったら、そんなテクノロジーは切ないわな。</p>
-<p>僕らが欲しいのは、言葉を置き換える機械やなくて、<br>「心を通わせるための橋渡し」 をしてくれるパートナーなんやから。</p>
-<p>結局のところ、言葉の裏にある「心」を訳されへんかったら、それはただの音の変換機でしかないねんな。</p>
-<section class="rakuten-products"><h2>🛒 未来を構成するアーティファクト</h2>
-<ul>
-  <li class="product-card">
-    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/f142158-ebina/cabinet/henreihin6/mot-acpd65wu1_sku.jpg?_ex=128x128" style="width:100px; height:100px; object-fit:cover; float:left; margin-right:15px; border-radius:8px;">
-    <div style="overflow: hidden;">
-      <div style="font-weight:bold; margin-bottom:10px; font-size:0.9rem;">【ふるさと納税】 MOTTERU(モッテル) Power Delivery65W対応 USB Type-C×1ポート、USB Type-A×1ポート 合計最大63W AC充電器 かしこく充電 2年保証（MOT-ACPD65WU1）【 ガジェット 海老名市 】</div>
-      <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/f142158-ebina/36-0027/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" rel="noopener" style="color:var(--primary); font-size:0.8rem; text-decoration:none;">🔎 遺物を調査する</a>
-    </div>
-    <div style="clear:both;"></div>
-  </li>
-  <li class="product-card">
-    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/f142158-ebina/cabinet/henreihin6/9-0376.jpg?_ex=128x128" style="width:100px; height:100px; object-fit:cover; float:left; margin-right:15px; border-radius:8px;">
-    <div style="overflow: hidden;">
-      <div style="font-weight:bold; margin-bottom:10px; font-size:0.9rem;">【ふるさと納税】Owltech 超速充電 最大PD100W出力 GaN採用 USB Type-C×2 USB Type-A×1 AC充電器 OWL-APD100C2A1G-BK【 ガジェット 海老名市 】</div>
-      <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/f142158-ebina/9-0376/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" rel="noopener" style="color:var(--primary); font-size:0.8rem; text-decoration:none;">🔎 遺物を調査する</a>
-    </div>
-    <div style="clear:both;"></div>
-  </li>
-  <li class="product-card">
-    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/f142158-ebina/cabinet/henreihin6/mot-mb20001_sku.jpg?_ex=128x128" style="width:100px; height:100px; object-fit:cover; float:left; margin-right:15px; border-radius:8px;">
-    <div style="overflow: hidden;">
-      <div style="font-weight:bold; margin-bottom:10px; font-size:0.9rem;">【ふるさと納税】 MOTTERU モッテル PD60W出力対応 モバイルバッテリー 20,000mAh スマホ 約4回分充電 2年保証 MOT-MB20001 ふるさと納税【スマホ充電器 携帯充電器 充電 ガジェット 海老名市 】</div>
-      <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/f142158-ebina/36-0033/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" rel="noopener" style="color:var(--primary); font-size:0.8rem; text-decoration:none;">🔎 遺物を調査する</a>
-    </div>
-    <div style="clear:both;"></div>
-  </li>
-  <li class="product-card">
-    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/f142158-ebina/cabinet/henreihin6/mot-mb10001_sku.jpg?_ex=128x128" style="width:100px; height:100px; object-fit:cover; float:left; margin-right:15px; border-radius:8px;">
-    <div style="overflow: hidden;">
-      <div style="font-weight:bold; margin-bottom:10px; font-size:0.9rem;">【ふるさと納税】 MOTTERU モッテル 国内最小最軽量 モバイルバッテリー PD18W 10,000mAh スマホ 約3回分充電 174g 2年保証 MOT-MB10001 持ち運び ふるさと納税【 キャンプ アウトドア 電熱ベスト 使用可 ガジェット 海老名市 】</div>
-      <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/f142158-ebina/36-0025/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" rel="noopener" style="color:var(--primary); font-size:0.8rem; text-decoration:none;">🔎 遺物を調査する</a>
-    </div>
-    <div style="clear:both;"></div>
-  </li>
-  <li class="product-card">
-    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/f142158-ebina/cabinet/henreihin6/9-0378.jpg?_ex=128x128" style="width:100px; height:100px; object-fit:cover; float:left; margin-right:15px; border-radius:8px;">
-    <div style="overflow: hidden;">
-      <div style="font-weight:bold; margin-bottom:10px; font-size:0.9rem;">【ふるさと納税】Owltech 最大PD65W出力 GaN採用 USB Type-C×3 AC充電器 OEC-APD65C3G-BK【 ガジェット 海老名市 】</div>
-      <a href="https://hb.afl.rakuten.co.jp/hgc/1feccffa.7c7bccd7.1feccffb.111f7d7e/?pc=https%3A//item.rakuten.co.jp/f142158-ebina/9-0378/%3Frafcid%3Dwsc_i_is_1099153592041347131&m=http%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" rel="noopener" style="color:var(--primary); font-size:0.8rem; text-decoration:none;">🔎 遺物を調査する</a>
-    </div>
-    <div style="clear:both;"></div>
-  </li>
-</ul></section>
-<section class="internal-links"><h2>🔗 関連記事</h2><ul><li><a href="https://humanoid2026.hatenablog.com/entry/2026/03/02/123021">垂直の絶壁を『知能』で溶かす ―令和八年、階段昇降ロボティクスが暴く「100年早い」の真実―</a></li><li><a href="https://humanoid2026.hatenablog.com/entry/2026/05/01/073250_1">自由という名の「沈黙」：2026年、ヒューマノイドが家庭に浸透した後の幸福論</a></li><li><a href="https://humanoid2026.hatenablog.com/entry/2026/04/30/074238">無題</a></li></ul></section>
+                    <figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780443751_Gemini-Python-1.png" alt="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class='qiita-article'>
+こんにちは。個人でヒューマノイド開発をメインの目標に掲げている、しがないAIエンジニアです。
 
-<section class="ai-consultation" style="margin-top:4rem; padding:30px; background:#fff3e0; border-radius:24px; border:3px solid #ff8c00;">
-    <h2 style="margin-top:0; color:#ff8c00; font-size:1.4rem;">💡 おっちゃんの知恵袋（AI相談室）</h2>
-    <div class="qa-block">
-        <div class="ai-question" style="font-weight:bold; color:#e63946; margin-bottom:10px;">Q: AIの通訳が正論ばっかり言うて空気をぶち壊すんはわかったけど、これってどうやったら解決できるん？開発する時に何に気をつけていったらええの？</div>
-        <div class="ai-answer" style="line-height:1.6;">A: ええとこ突くなぁ！これな、結局は『文脈（コンテキスト）』と『感情分析』の精度をどこまで高められるかって話やねん。単に言葉を訳すんやなくて、その場の温度感とか相手との関係性をスコアリングして、『今はあえて注釈を入れんほうがええな』って判断させる調整が必要やな。技術的には『論理の正しさ』と『場の調和』のバランスをどうアルゴリズムに落とし込むかが一番の難所やけど、そこを乗り越えたら、ほんまの意味で空気の読める最高の相棒になれるはずやで！</div>
-    </div>
-</section>
+今回は、私が構築した「完全自動かつ、人間よりも人間くさい」ブログ運営システムの裏側を全5回にわたって解説します。
+なぜヒューマノイド開発者がこんなものを作っているのかって？
+……寂しい人間しかこんなことはしないですよね（笑）。技術で承認欲求を満たしつつ、あわよくば副業収入を得たい。そして何より、進化の激しい**最新AI技術（LLM）のベンチマーク**を兼ねた個人的な実験でもあります。数年後には誰もが息をするように作れる時代が来るでしょうから、今のうちに遊んでおこうという魂胆です。
+
+本連載では、コードの断片も交えながら、このシステムがいかにして「AI特有の無機質さ」を排除し、したたかにSEOと収益化を狙っているか、その技術的負債と泥臭いハックのすべてを公開します。
+
+## システムの全体像と技術スタック
+
+本システムは、単なる「ChatGPTのAPIを叩いてWordPressに投げるだけのスクリプト」ではありません。複数のペルソナ（ブログ）を同時に運用し、それぞれに全く異なる性格付けとデザインを適用するマルチテナント型のアーキテクチャを採用しています。
+
+*   **バックエンド**: Python 3.10+, Flask (軽量なWeb UI用)
+*   **非同期処理・ジョブ管理**: Celery / 独自キューシステム (SQLiteベースの軽量な状態管理)
+*   **LLMオーケストレーション**: Google Gemini Pro (1.5系)
+*   **画像生成**: DALL-E 3 / Midjourney API (4コマ漫画生成)
+*   **外部連携**: はてなブログ AtomPub API, 楽天商品検索API, DuckDuckGo検索API
+
+### アーキテクチャ図
+
+```mermaid
+graph TD
+    A[blogs.yml] --> B(Queue Manager)
+    C[RSS/Google News] --> B
+    B --> D{Blog Master Agent}
+    D -->|3階層テーマ生成| E[Article Pipeline]
+    E -->|MBTIペルソナ注入| F((Gemini API))
+    F -->|Markdown出力| E
+    E -->|商品検索| G[Rakuten API]
+    E -->|画像プロンプト| H[Image Gen API]
+    E --> I[Hatena Blog API]
+```
+
+## `blogs.yml` によるマルチテナント管理
+
+このシステムのコアは、`blogs.yml` という単一の設定ファイルによるペルソナ管理です。エンジニアとして本質的にやりたいことは「プロンプトエンジニアリングの抽象化とシステム化」です。
+
+```yaml
+  lifestyle_family:
+    hatena_id: "example_user"
+    blog_name: "30代主婦のウェルネス・ライフハック"
+    target_audience: "家庭と自分の時間を両立したい30〜50代女性"
+    tone: "同世代の主婦が共感できる、等身大で温かいトーン。"
+    trend_sources:
+      - "https://news.google.com/rss/search?q=主婦+ライフハック"
+    manga_config:
+      author: "friendly, clean shounen manga art style"
+      characters: "a busy 30-something housewife and her energetic pet dog"
+```
+
+新しいブログ（ペルソナ）を立ち上げたいときは、このYAMLに数行追加するだけです。システムは自動的にこのYAMLをパースし、非同期ワーカーがそれぞれのペルソナに憑依して、全く異なるトーンのブログを並行して執筆し始めます。
+
+次回、第2回では「いかにして読まれる（検索される）ネタを拾ってくるか」という、情報収集とテーマ選定の泥臭いロジックについて解説します。
                 </article>
 
                 <!-- Next/Prev Navigation -->
@@ -196,13 +174,13 @@ article_type: OBSERVATION
                     <div class="post-nav__item">
                         
                             <span class="post-nav__label">← Previous</span>
-                            <a href="../../posts/adult/2026-05-14-こんな教育AIは嫌だ-桃太郎を読み聞かせながら-きびだんごのコストパフォーマンス分析を始める.html" class="post-nav__link">こんな教育AIは嫌だ：『桃太郎』を読み聞かせながら、きびだんごの『コストパフォーマンス分析』を始める</a>
+                            <a href="../../posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU同期ずれの未来解.html" class="post-nav__link">ROS 2 SLAM：LiDAR/IMU同期ずれの未来解</a>
                         
                     </div>
                     <div class="post-nav__item" style="text-align:right;">
                         
                             <span class="post-nav__label">Next →</span>
-                            <a href="../../posts/humanoid/2026-05-15-ヒューマノイドの疲労破壊-予兆は-独り言でリセットボタン押して-と呟き始める.html" class="post-nav__link">ヒューマノイドの『疲労破壊』。予兆は？：『独り言で"リセットボタン押して..."と呟き始める』</a>
+                            <a href="../../posts/gadget/2026-06-03-静音と地図-在宅ロボット考.html" class="post-nav__link">静音と地図：在宅ロボット考</a>
                         
                     </div>
                 </nav>
@@ -213,11 +191,6 @@ article_type: OBSERVATION
                     <h3 class="related-posts__title">Related Stories</h3>
                     <div class="related-grid">
                         
-                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第1回-全体アーキテクチャ.html" class="related-card">
-                                <h4 class="related-card__title">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】</h4>
-                                <time class="related-card__date">2026-06-03</time>
-                            </a>
-                        
                             <a href="../../posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU同期ずれの未来解.html" class="related-card">
                                 <h4 class="related-card__title">ROS 2 SLAM：LiDAR/IMU同期ずれの未来解</h4>
                                 <time class="related-card__date">2026-06-03</time>
@@ -225,6 +198,11 @@ article_type: OBSERVATION
                         
                             <a href="../../posts/humanoid/2026-06-02-HHKBと独立マウス併用-右手配置の最適解.html" class="related-card">
                                 <h4 class="related-card__title">HHKBと独立マウス併用、右手配置の最適解</h4>
+                                <time class="related-card__date">2026-06-02</time>
+                            </a>
+                        
+                            <a href="../../posts/humanoid/2026-06-02-警備ロボと転倒リスク.html" class="related-card">
+                                <h4 class="related-card__title">警備ロボと転倒リスク</h4>
                                 <time class="related-card__date">2026-06-02</time>
                             </a>
                         
