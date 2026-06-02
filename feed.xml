@@ -84,6 +84,13 @@
         <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC4%E5%9B%9E-4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB%E3%82%B5%E3%83%A0%E3%83%8D%E3%82%A4%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90.html</guid>
     </item>
     <item>
+        <title>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第5回：収益化と自動投稿】</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC5%E5%9B%9E-%E5%8F%8E%E7%9B%8A%E5%8C%96%E3%81%A8%E8%87%AA%E5%8B%95%E6%8A%95%E7%A8%BF.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780444024_Gemini-Python-5.jpg" /><br/>いよいよ最終回です。技術的欲求を満たした後は、現実的な欲求（副業収入）を満たすためのマネタイズと、はてなブログへの自動デプロイフェーズです。 ## 楽天アフィリエイト連携（商品選定アルゴリズム） ただ...]]></description>
+        <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC5%E5%9B%9E-%E5%8F%8E%E7%9B%8A%E5%8C%96%E3%81%A8%E8%87%AA%E5%8B%95%E6%8A%95%E7%A8%BF.html</guid>
+    </item>
+    <item>
         <title>ROS 2 SLAM：LiDAR/IMU同期ずれの未来解</title>
         <link>https://chnmototmz.github.io/posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU%E5%90%8C%E6%9C%9F%E3%81%9A%E3%82%8C%E3%81%AE%E6%9C%AA%E6%9D%A5%E8%A7%A3.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780420519_ROS-2-SLAM-LiDAR-IMU.png" /><br/>なぁ、みんな！自律移動ロボットとかドローン、最近ほんまにすごいやろ？街中や空をスイスイ動いてるの見るたびに、未来を感じるわ。 でもな、その裏には地味〜に悩ましい、けどめっちゃ大事な問題があるんやで。そ...]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780355353_15.png" /><br/>大人の出会い市場に投じられた15万円超のリアルな投資。そこから見えてくるのは、欲望と期待が生み出す非合理な選択、そして「サンクコストの罠」がもたらす損失の拡大である。本稿では、既婚者向け出会いの実態を...]]></description>
         <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/relationships/2026-06-02-15%E4%B8%87%E5%86%86%E3%81%AE%E6%8E%88%E6%A5%AD%E6%96%99-%E6%97%A2%E5%A9%9A%E8%80%85%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%BC%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%93%E9%A8%93%E8%AB%87%E3%81%8C%E6%9A%B4%E3%81%8F%E3%82%B5%E3%83%B3%E3%82%AF%E3%82%B3%E3%82%B9%E3%83%88%E3%81%AE%E7%BD%A0.html</guid>
-    </item>
-    <item>
-        <title>最新調査】婚活費用相場と当たり時間帯を徹底解説！平日昼間・リモートワークの裏側と女性心理</title>
-        <link>https://chnmototmz.github.io/posts/relationships/2026-06-02-%E6%9C%80%E6%96%B0%E8%AA%BF%E6%9F%BB%E5%A9%9A%E6%B4%BB%E8%B2%BB%E7%94%A8%E7%9B%B8%E5%A0%B4%E3%81%A8%E5%BD%93%E3%81%9F%E3%82%8A%E6%99%82%E9%96%93%E5%B8%AF%E3%82%92%E5%BE%B9%E5%BA%95%E8%A7%A3%E8%AA%AC-%E5%B9%B3%E6%97%A5%E6%98%BC%E9%96%93-%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E8%A3%8F%E5%81%B4%E3%81%A8%E5%A5%B3%E6%80%A7%E5%BF%83%E7%90%86.html</link>
-        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780357219_AI-3-SEO.png" /><br/>婚活、ぶっちゃけ「回数行けばええ」って言うけど、それだけやないで。お金も時間もかかる中で、どうせなら効率よく、ホンマの出会いを掴みたいやん？ 今回は、みんなが気になる「婚活のリアルな費用」と「当たり時...]]></description>
-        <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/relationships/2026-06-02-%E6%9C%80%E6%96%B0%E8%AA%BF%E6%9F%BB%E5%A9%9A%E6%B4%BB%E8%B2%BB%E7%94%A8%E7%9B%B8%E5%A0%B4%E3%81%A8%E5%BD%93%E3%81%9F%E3%82%8A%E6%99%82%E9%96%93%E5%B8%AF%E3%82%92%E5%BE%B9%E5%BA%95%E8%A7%A3%E8%AA%AC-%E5%B9%B3%E6%97%A5%E6%98%BC%E9%96%93-%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E8%A3%8F%E5%81%B4%E3%81%A8%E5%A5%B3%E6%80%A7%E5%BF%83%E7%90%86.html</guid>
     </item>
 </channel>
 </rss>
