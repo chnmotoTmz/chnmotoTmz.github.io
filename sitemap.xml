@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/news/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/wellness/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -35,10 +39,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/news/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -258,6 +258,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/news/2026-06-03-FA%E8%AA%8C%E3%81%A8%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E3%81%AE%E9%9B%A3%E6%98%93%E5%BA%A6.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/wellness/2026-06-03-%E6%80%A5%E3%81%AA%E3%81%BB%E3%81%A6%E3%82%8A%E5%AF%BE%E7%AD%96-%E9%A6%96%E3%82%92%E5%86%B7%E3%82%84%E3%81%99%E6%B8%A9%E6%B4%BB%E5%AE%B6%E9%9B%BB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC.html</loc>
         <lastmod>2026-06-03</lastmod>
