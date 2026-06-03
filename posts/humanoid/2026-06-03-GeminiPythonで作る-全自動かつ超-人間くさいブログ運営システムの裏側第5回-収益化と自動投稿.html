@@ -136,7 +136,7 @@ article_type: OBSERVATION
 <p>すべてが組み上がったMarkdown（HTML）は、はてなブログのAtomPub APIを経由して自動的に投稿（または下書き保存）されます。</p>
 <p>```python<br>
 def publish(self, title, content_html, is_draft=True):</p>
-<h1>AtomPub XMLの構築</h1>
+
 <p>xml_data = f"""<?xml version="1.0" encoding="utf-8"?><br>
     <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app"><br>
       <title>{title}</title><br>
@@ -176,6 +176,11 @@ def publish(self, title, content_html, is_draft=True):</p>
                     <h3 class="related-posts__title">Related Stories</h3>
                     <div class="related-grid">
                         
+                            <a href="../../posts/humanoid/2026-06-03-AI時代の逆張りネットで完結する時代のAIエンジニア生存戦略-横浜でフィジカルな本音に自己投資する理由.html" class="related-card">
+                                <h4 class="related-card__title">【AI時代の逆張り】ネットで完結する時代のAIエンジニア生存戦略。横浜で「フィジカルな本音」に自己投資する理由</h4>
+                                <time class="related-card__date">2026-06-03</time>
+                            </a>
+                        
                             <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第1回-全体アーキテクチャ.html" class="related-card">
                                 <h4 class="related-card__title">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】</h4>
                                 <time class="related-card__date">2026-06-03</time>
@@ -183,11 +188,6 @@ def publish(self, title, content_html, is_draft=True):</p>
                         
                             <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第2回-3階層トレンド検索とファクトチェ.html" class="related-card">
                                 <h4 class="related-card__title">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第2回：3階層トレンド検索とファクトチェック】</h4>
-                                <time class="related-card__date">2026-06-03</time>
-                            </a>
-                        
-                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第3回-ランダムMBTIペルソナ注入.html" class="related-card">
-                                <h4 class="related-card__title">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第3回：ランダムMBTIペルソナ注入】</h4>
                                 <time class="related-card__date">2026-06-03</time>
                             </a>
                         
