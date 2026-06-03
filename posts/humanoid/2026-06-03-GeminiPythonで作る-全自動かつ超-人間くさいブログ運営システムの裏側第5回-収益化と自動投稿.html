@@ -1,5 +1,5 @@
 <!--
-title: Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】
+title: Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第5回：収益化と自動投稿】
 date: 2026-06-03
 description: 
 article_type: OBSERVATION
@@ -9,11 +9,11 @@ article_type: OBSERVATION
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】 | Humanoid Media Factory</title>
+    <title>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第5回：収益化と自動投稿】 | Humanoid Media Factory</title>
     <meta name="description" content="">
 
     <!-- SEO / Canonical / Robots -->
-    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC4%E5%9B%9E-4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB%E3%82%B5%E3%83%A0%E3%83%8D%E3%82%A4%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90.html">
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC5%E5%9B%9E-%E5%8F%8E%E7%9B%8A%E5%8C%96%E3%81%A8%E8%87%AA%E5%8B%95%E6%8A%95%E7%A8%BF.html">
     <meta name="robots" content="index, follow">
 
     <!-- Structured Data (JSON-LD) -->
@@ -21,9 +21,9 @@ article_type: OBSERVATION
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】",
+      "headline": "Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第5回：収益化と自動投稿】",
       "description": "",
-      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1780443962_Gemini-Python-4-4.jpg",
+      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1780444024_Gemini-Python-5.jpg",
       "author": {
         "@type": "Person",
         "name": "chnmotoTmz"
@@ -40,17 +40,17 @@ article_type: OBSERVATION
       "dateModified": "2026-06-03",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC4%E5%9B%9E-4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB%E3%82%B5%E3%83%A0%E3%83%8D%E3%82%A4%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90.html"
+        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC5%E5%9B%9E-%E5%8F%8E%E7%9B%8A%E5%8C%96%E3%81%A8%E8%87%AA%E5%8B%95%E6%8A%95%E7%A8%BF.html"
       }
     }
     </script>
 
     <!-- OGP -->
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:title" content="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】 | Humanoid Media Factory">
+    <meta property="og:title" content="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第5回：収益化と自動投稿】 | Humanoid Media Factory">
     <meta property="og:description" content="">
-    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC4%E5%9B%9E-4%E3%82%B3%E3%83%9E%E6%BC%AB%E7%94%BB%E3%82%B5%E3%83%A0%E3%83%8D%E3%82%A4%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90.html">
-    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1780443962_Gemini-Python-4-4.jpg">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC5%E5%9B%9E-%E5%8F%8E%E7%9B%8A%E5%8C%96%E3%81%A8%E8%87%AA%E5%8B%95%E6%8A%95%E7%A8%BF.html">
+    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1780444024_Gemini-Python-5.jpg">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Humanoid Media Factory">
 
@@ -98,13 +98,13 @@ article_type: OBSERVATION
                         </li>
                         <li style="color:var(--muted);">&gt;</li>
                         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                            <span itemprop="name" style="color:var(--text-primary)">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】</span>
+                            <span itemprop="name" style="color:var(--text-primary)">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第5回：収益化と自動投稿】</span>
                             <meta itemprop="position" content="3" />
                         </li>
                     </ol>
                 </nav>
 
-                <h1>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】</h1>
+                <h1>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第5回：収益化と自動投稿】</h1>
 
                 <div class="devlog-meta">
                     <time>2026-06-03</time>
@@ -113,37 +113,45 @@ article_type: OBSERVATION
                 </div>
 
                 <article class="post-content">
-                    <figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780443962_Gemini-Python-4-4.jpg" alt="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class='qiita-article'>
-<p>連載第4回。ブログの「顔」となるアイキャッチ（サムネイル）画像についてです。</p>
-<h2>フリー素材からの脱却</h2>
-<p>よくある自動化ブログでは、UnsplashやO-DANなどのAPIから適当なフリー素材を引っ張ってきます。しかし技術者たるもの、そこで妥協したくありません。いかにもな外国人の笑顔やキーボードの写真は、読者に「またこの手の量産型ブログか」という無意識の拒否反応を与えます。</p>
-<p>本システムでは、記事の内容を反映した<strong class="insight-bold">4コマ漫画の画像生成プロンプト</strong>をAIに作らせ、完全にオリジナルのアイキャッチ画像を生成します。</p>
-<h2>記事の要約とプロンプトの動的構築</h2>
-<p>まず、生成された記事本文のHTMLからテキストを抽出し、先頭の600文字程度をGeminiに渡して要約させます。そして、第1回で紹介した `blogs.yml` から、そのブログ専用の画風設定（`manga_config`）を読み込みます。</p>
+                    <figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780444024_Gemini-Python-5.jpg" alt="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第5回：収益化と自動投稿】" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class='qiita-article'>
+<p>いよいよ最終回です。技術的欲求を満たした後は、現実的な欲求（副業収入）を満たすためのマネタイズと、はてなブログへの自動デプロイフェーズです。</p>
+<h2>楽天アフィリエイト連携（商品選定アルゴリズム）</h2>
+<p>ただAmazonや楽天のリンクを適当に貼るだけではクリックされません。システムは記事のタイトルと本文から「読者の検索意図に沿った具体的な商品キーワード」を抽出し、楽天APIを叩いて商品を検索します。</p>
 <p>```python</p>
 
-<p>manga_config = plan.get('blog_config', {}).get('manga_config', {})<br>
-manga_characters = manga_config.get('characters', 'a woman and a quirky AI robot')<br>
-manga_style = manga_config.get('style', 'colored manga style using a limited palette of 3 pastel colors')<br>
-manga_author = manga_config.get('author', 'friendly, clean shounen manga art style')<br>
+<p>def search_items(self, keyword):<br>
+    params = {<br>
+        'applicationId': self.app_id,<br>
+        'affiliateId': self.affiliate_id,<br>
+        'keyword': keyword,<br>
+        'sort': '-reviewCount', # レビュー数順でソートして信頼性を担保<br>
+        'hits': 5<br>
+    }<br>
+    response = requests.get('https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601', params=params)<br>
+    return response.json()['Items']<br>
 ```</p>
-<p>これらを組み合わせて、画像生成AI（MidjourneyやDALL-E）向けの英語プロンプトを構築します。</p>
+<p>さらに取得した上位5つの商品リストをGeminiに渡し、「この記事の文脈で最も読者が買いそうな商品を2つ選べ」と指示し、最終的な商品を選定します。<br>
+選ばれた商品は、ただのテキストリンクではなく、独自に定義したCSSを用いて<strong class="insight-bold">高品質なアフィリエイトブロック</strong>（商品画像、太字のタイトル、目を引く赤いCTAボタン）としてHTMLに組み込まれます。</p>
+<h2>はてなブログへの完全自動投稿</h2>
+<p>すべてが組み上がったMarkdown（HTML）は、はてなブログのAtomPub APIを経由して自動的に投稿（または下書き保存）されます。</p>
 <p>```python<br>
-manga_prompt_instruction = f"""<br>
-記事タイトル: {extracted_title}<br>
-記事の要約: {body_summary}</p>
-<p>以下のテンプレートに従い、[TOPIC]部分だけを書き換えて英語のプロンプトを出力せよ:<br>
-"A safe-for-work 4-panel Japanese manga comic strip (yonkoma style) about [TOPIC]. Drawn in a {manga_author}. Panel 1: setup scene with two characters ({manga_characters}). Panel 2: rising action with comedic misunderstanding. Panel 3: surprising twist related to [TOPIC]. Panel 4: funny resolution with both characters reacting. Clean lineart, family-friendly, {manga_style}."<br>
-"""<br>
+def publish(self, title, content_html, is_draft=True):</p>
+<h1>AtomPub XMLの構築</h1>
+<p>xml_data = f"""<?xml version="1.0" encoding="utf-8"?><br>
+    <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app"><br>
+      <title>{title}</title><br>
+      <content type="text/html"><![CDATA[{content_html}]]></content><br>
+      <app:control><app:draft>{"yes" if is_draft else "no"}</app:draft></app:control><br>
+    </entry>"""</p>
+<h1>WSSE認証ヘッダの生成（省略）</h1>
+<p>headers = {'X-WSSE': wsse_header}<br>
+    response = requests.post(self.endpoint, data=xml_data, headers=headers)<br>
 ```</p>
-<h2>ブログごとに劇的に変わる世界観</h2>
-<p>この仕組みにより、ブログごとに全く異なる世界観のアイキャッチが全自動で生成されます。</p>
-<ul>
-<li><strong class="insight-bold">投資ブログの場合</strong>: 真面目なスーツ姿の投資家と解説役のフクロウが、ビジネス書風のクリーンなスタイルでNISAの解説をする4コマ。</li>
-<li><strong class="insight-bold">深夜のお悩み相談ブログの場合</strong>: バーのマスターと悩める客が、セピア調の劇画タッチで人間関係を語る4コマ。</li>
-</ul>
-<p>画像生成モデルは驚異的なスピードで進化していますが、単にプロンプトを手打ちするのではなく、この「コンテキスト（文脈）を理解して適切なプロンプトを動的に組み立てる層（オーケストレーション）」をPythonで作っておくことが、今の時代におけるAIエンジニアの真の遊びであり、腕の見せ所だと思っています。</p>
-<p>いよいよ次回は最終回。「収益化（楽天アフィリエイト）と完全自動投稿」の仕組みについて解説します。</p>
+<h2>おわりに：エンジニアの「遊び」としてのAI</h2>
+<p>このシステムは現在、24時間365日バックグラウンドで稼働し続けています。</p>
+<p>数年後には、LLMがさらに進化し、誰もがノーコードツールや標準機能でこれと同等かそれ以上のシステムを簡単に作れる時代が来るでしょう。だからこそ、今のこの黎明期に「AIのハルシネーションをどうねじ伏せるか」「いかにプロンプトで人間らしさを偽装するか」をコードレベルでゴリゴリ実装するのは、AIエンジニアとして最高の遊びであり、技術のベンチマークでもあります。</p>
+<p>ヒューマノイド開発の傍らで息抜きに作ったシステムですが、技術で承認欲求を満たすという当初の目的は十分に達成できそうです（笑）。そして何より、AIの進化の最前線に立って、APIを直接叩きながら泥臭く試行錯誤した経験は、将来必ず生きてくると信じています。</p>
+<p>全5回の連載を最後までお読みいただき、本当にありがとうございました！</p>
                 </article>
 
                 <!-- Next/Prev Navigation -->
@@ -151,13 +159,13 @@ manga_prompt_instruction = f"""<br>
                     <div class="post-nav__item">
                         
                             <span class="post-nav__label">← Previous</span>
-                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第5回-収益化と自動投稿.html" class="post-nav__link">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第5回：収益化と自動投稿】</a>
+                            <a href="../../posts/music/2026-06-03-Suno-AI曲-カラオケ音源化-魂のワザ.html" class="post-nav__link">Suno AI曲、カラオケ音源化、魂のワザ</a>
                         
                     </div>
                     <div class="post-nav__item" style="text-align:right;">
                         
                             <span class="post-nav__label">Next →</span>
-                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第3回-ランダムMBTIペルソナ注入.html" class="post-nav__link">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第3回：ランダムMBTIペルソナ注入】</a>
+                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第4回-4コマ漫画サムネイルの自動生成.html" class="post-nav__link">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第4回：4コマ漫画サムネイルの自動生成】</a>
                         
                     </div>
                 </nav>
