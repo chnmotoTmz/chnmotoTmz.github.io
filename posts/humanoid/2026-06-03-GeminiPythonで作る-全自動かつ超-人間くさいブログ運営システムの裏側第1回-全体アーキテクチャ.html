@@ -114,59 +114,49 @@ article_type: OBSERVATION
 
                 <article class="post-content">
                     <figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780443751_Gemini-Python-1.png" alt="Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第1回：全体アーキテクチャ】" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class='qiita-article'>
-こんにちは。個人でヒューマノイド開発をメインの目標に掲げている、しがないAIエンジニアです。
-
-今回は、私が構築した「完全自動かつ、人間よりも人間くさい」ブログ運営システムの裏側を全5回にわたって解説します。
-なぜヒューマノイド開発者がこんなものを作っているのかって？
-……寂しい人間しかこんなことはしないですよね（笑）。技術で承認欲求を満たしつつ、あわよくば副業収入を得たい。そして何より、進化の激しい**最新AI技術（LLM）のベンチマーク**を兼ねた個人的な実験でもあります。数年後には誰もが息をするように作れる時代が来るでしょうから、今のうちに遊んでおこうという魂胆です。
-
-本連載では、コードの断片も交えながら、このシステムがいかにして「AI特有の無機質さ」を排除し、したたかにSEOと収益化を狙っているか、その技術的負債と泥臭いハックのすべてを公開します。
-
-## システムの全体像と技術スタック
-
-本システムは、単なる「ChatGPTのAPIを叩いてWordPressに投げるだけのスクリプト」ではありません。複数のペルソナ（ブログ）を同時に運用し、それぞれに全く異なる性格付けとデザインを適用するマルチテナント型のアーキテクチャを採用しています。
-
-*   **バックエンド**: Python 3.10+, Flask (軽量なWeb UI用)
-*   **非同期処理・ジョブ管理**: Celery / 独自キューシステム (SQLiteベースの軽量な状態管理)
-*   **LLMオーケストレーション**: Google Gemini Pro (1.5系)
-*   **画像生成**: DALL-E 3 / Midjourney API (4コマ漫画生成)
-*   **外部連携**: はてなブログ AtomPub API, 楽天商品検索API, DuckDuckGo検索API
-
-### アーキテクチャ図
-
-```mermaid
-graph TD
-    A[blogs.yml] --> B(Queue Manager)
-    C[RSS/Google News] --> B
-    B --> D{Blog Master Agent}
-    D -->|3階層テーマ生成| E[Article Pipeline]
-    E -->|MBTIペルソナ注入| F((Gemini API))
-    F -->|Markdown出力| E
-    E -->|商品検索| G[Rakuten API]
-    E -->|画像プロンプト| H[Image Gen API]
-    E --> I[Hatena Blog API]
-```
-
-## `blogs.yml` によるマルチテナント管理
-
-このシステムのコアは、`blogs.yml` という単一の設定ファイルによるペルソナ管理です。エンジニアとして本質的にやりたいことは「プロンプトエンジニアリングの抽象化とシステム化」です。
-
-```yaml
-  lifestyle_family:
-    hatena_id: "example_user"
-    blog_name: "30代主婦のウェルネス・ライフハック"
-    target_audience: "家庭と自分の時間を両立したい30〜50代女性"
-    tone: "同世代の主婦が共感できる、等身大で温かいトーン。"
-    trend_sources:
-      - "https://news.google.com/rss/search?q=主婦+ライフハック"
-    manga_config:
-      author: "friendly, clean shounen manga art style"
-      characters: "a busy 30-something housewife and her energetic pet dog"
-```
-
-新しいブログ（ペルソナ）を立ち上げたいときは、このYAMLに数行追加するだけです。システムは自動的にこのYAMLをパースし、非同期ワーカーがそれぞれのペルソナに憑依して、全く異なるトーンのブログを並行して執筆し始めます。
-
-次回、第2回では「いかにして読まれる（検索される）ネタを拾ってくるか」という、情報収集とテーマ選定の泥臭いロジックについて解説します。
+<p>こんにちは。個人でヒューマノイド開発をメインの目標に掲げている、しがないAIエンジニアです。</p>
+<p>今回は、私が構築した「完全自動かつ、人間よりも人間くさい」ブログ運営システムの裏側を全5回にわたって解説します。<br>
+なぜヒューマノイド開発者がこんなものを作っているのかって？<br>
+……寂しい人間しかこんなことはしないですよね（笑）。技術で承認欲求を満たしつつ、あわよくば副業収入を得たい。そして何より、進化の激しい<strong class="insight-bold">最新AI技術（LLM）のベンチマーク</strong>を兼ねた個人的な実験でもあります。数年後には誰もが息をするように作れる時代が来るでしょうから、今のうちに遊んでおこうという魂胆です。</p>
+<p>本連載では、コードの断片も交えながら、このシステムがいかにして「AI特有の無機質さ」を排除し、したたかにSEOと収益化を狙っているか、その技術的負債と泥臭いハックのすべてを公開します。</p>
+<h2>システムの全体像と技術スタック</h2>
+<p>本システムは、単なる「ChatGPTのAPIを叩いてWordPressに投げるだけのスクリプト」ではありません。複数のペルソナ（ブログ）を同時に運用し、それぞれに全く異なる性格付けとデザインを適用するマルチテナント型のアーキテクチャを採用しています。</p>
+<ul>
+<li><strong class="insight-bold">バックエンド</strong>: Python 3.10+, Flask (軽量なWeb UI用)</li>
+<li><strong class="insight-bold">非同期処理・ジョブ管理</strong>: Celery / 独自キューシステム (SQLiteベースの軽量な状態管理)</li>
+<li><strong class="insight-bold">LLMオーケストレーション</strong>: Google Gemini Pro (1.5系)</li>
+<li><strong class="insight-bold">画像生成</strong>: DALL-E 3 / Midjourney API (4コマ漫画生成)</li>
+<li><strong class="insight-bold">外部連携</strong>: はてなブログ AtomPub API, 楽天商品検索API, DuckDuckGo検索API</li>
+</ul>
+<h2># アーキテクチャ図</h2>
+<p>```mermaid<br>
+graph TD<br>
+    A[blogs.yml] --> B(Queue Manager)<br>
+    C[RSS/Google News] --> B<br>
+    B --> D{Blog Master Agent}<br>
+    D -->|3階層テーマ生成| E[Article Pipeline]<br>
+    E -->|MBTIペルソナ注入| F((Gemini API))<br>
+    F -->|Markdown出力| E<br>
+    E -->|商品検索| G[Rakuten API]<br>
+    E -->|画像プロンプト| H[Image Gen API]<br>
+    E --> I[Hatena Blog API]<br>
+```</p>
+<h2>`blogs.yml` によるマルチテナント管理</h2>
+<p>このシステムのコアは、`blogs.yml` という単一の設定ファイルによるペルソナ管理です。エンジニアとして本質的にやりたいことは「プロンプトエンジニアリングの抽象化とシステム化」です。</p>
+<p>```yaml<br>
+  lifestyle_family:<br>
+    hatena_id: "example_user"<br>
+    blog_name: "30代主婦のウェルネス・ライフハック"<br>
+    target_audience: "家庭と自分の時間を両立したい30〜50代女性"<br>
+    tone: "同世代の主婦が共感できる、等身大で温かいトーン。"<br>
+    trend_sources:<br>
+      - "https://news.google.com/rss/search?q=主婦+ライフハック"<br>
+    manga_config:<br>
+      author: "friendly, clean shounen manga art style"<br>
+      characters: "a busy 30-something housewife and her energetic pet dog"<br>
+```</p>
+<p>新しいブログ（ペルソナ）を立ち上げたいときは、このYAMLに数行追加するだけです。システムは自動的にこのYAMLをパースし、非同期ワーカーがそれぞれのペルソナに憑依して、全く異なるトーンのブログを並行して執筆し始めます。</p>
+<p>次回、第2回では「いかにして読まれる（検索される）ネタを拾ってくるか」という、情報収集とテーマ選定の泥臭いロジックについて解説します。</p>
                 </article>
 
                 <!-- Next/Prev Navigation -->
@@ -174,13 +164,13 @@ graph TD
                     <div class="post-nav__item">
                         
                             <span class="post-nav__label">← Previous</span>
-                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第2回-3階層トレンド検索とファクトチェ.html" class="post-nav__link">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第2回：3階層トレンド検索とファクトチェック】</a>
+                            <a href="../../posts/music/2026-06-03-Suno-AI曲-カラオケ音源化-魂のワザ.html" class="post-nav__link">Suno AI曲、カラオケ音源化、魂のワザ</a>
                         
                     </div>
                     <div class="post-nav__item" style="text-align:right;">
                         
                             <span class="post-nav__label">Next →</span>
-                            <a href="../../posts/humanoid/2026-06-03-AI時代の逆張りネットで完結する時代のAIエンジニア生存戦略-横浜でフィジカルな本音に自己投資する理由.html" class="post-nav__link">【AI時代の逆張り】ネットで完結する時代のAIエンジニア生存戦略。横浜で「フィジカルな本音」に自己投資する理由</a>
+                            <a href="../../posts/gadget/2026-06-03-静音と地図-在宅ロボット考.html" class="post-nav__link">静音と地図：在宅ロボット考</a>
                         
                     </div>
                 </nav>
@@ -191,19 +181,19 @@ graph TD
                     <h3 class="related-posts__title">Related Stories</h3>
                     <div class="related-grid">
                         
-                            <a href="../../posts/humanoid/2026-06-03-AI時代の逆張り-第2回習い事はコスパ最悪-50代AIエンジニアが既婚者集会をターゲットにするマーケティング的理由.html" class="related-card">
-                                <h4 class="related-card__title">【AI時代の逆張り 第2回】習い事はコスパ最悪？50代AIエンジニアが「既婚者集会」をターゲットにするマーケティング的理由</h4>
-                                <time class="related-card__date">2026-06-03</time>
+                            <a href="../../posts/humanoid/2026-06-02-HHKBと独立マウス併用-右手配置の最適解.html" class="related-card">
+                                <h4 class="related-card__title">HHKBと独立マウス併用、右手配置の最適解</h4>
+                                <time class="related-card__date">2026-06-02</time>
                             </a>
                         
-                            <a href="../../posts/humanoid/2026-06-03-AI時代の逆張りネットで完結する時代のAIエンジニア生存戦略-横浜でフィジカルな本音に自己投資する理由.html" class="related-card">
-                                <h4 class="related-card__title">【AI時代の逆張り】ネットで完結する時代のAIエンジニア生存戦略。横浜で「フィジカルな本音」に自己投資する理由</h4>
-                                <time class="related-card__date">2026-06-03</time>
+                            <a href="../../posts/humanoid/2026-06-02-警備ロボと転倒リスク.html" class="related-card">
+                                <h4 class="related-card__title">警備ロボと転倒リスク</h4>
+                                <time class="related-card__date">2026-06-02</time>
                             </a>
                         
-                            <a href="../../posts/humanoid/2026-06-03-GeminiPythonで作る-全自動かつ超-人間くさいブログ運営システムの裏側第2回-3階層トレンド検索とファクトチェ.html" class="related-card">
-                                <h4 class="related-card__title">Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第2回：3階層トレンド検索とファクトチェック】</h4>
-                                <time class="related-card__date">2026-06-03</time>
+                            <a href="../../posts/humanoid/2026-06-01-薬物汚染とAI捜査の壁.html" class="related-card">
+                                <h4 class="related-card__title">薬物汚染とAI捜査の壁</h4>
+                                <time class="related-card__date">2026-06-01</time>
                             </a>
                         
                     </div>
