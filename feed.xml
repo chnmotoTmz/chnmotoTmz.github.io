@@ -175,6 +175,13 @@
         <guid>https://chnmototmz.github.io/posts/gourmet/2026-06-03-%E5%A4%A7%E5%9D%82%E3%81%AE%E9%BA%BA%E9%A1%9E%E3%81%AB%E8%A6%8B%E3%82%8B-%E9%83%BD%E5%B8%82%E3%81%AE%E8%A8%98%E6%86%B6%E3%81%A8%E3%82%B3%E3%82%AF%E3%81%AE%E6%96%87%E8%84%88.html</guid>
     </item>
     <item>
+        <title>大阪食文化、歴史の皿</title>
+        <link>https://chnmototmz.github.io/posts/gourmet/2026-06-03-%E5%A4%A7%E9%98%AA%E9%A3%9F%E6%96%87%E5%8C%96-%E6%AD%B4%E5%8F%B2%E3%81%AE%E7%9A%BF.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780491180.png" /><br/>大阪の街を歩くと、五感を刺激する様々な音が聞こえてくる。特に、食の匂いは、まるで歴史の記憶を呼び覚ますかのように、人々の営みの奥深さを語りかけてくるものである。この地には、単なる味覚を超えた、豊かな物...]]></description>
+        <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/gourmet/2026-06-03-%E5%A4%A7%E9%98%AA%E9%A3%9F%E6%96%87%E5%8C%96-%E6%AD%B4%E5%8F%B2%E3%81%AE%E7%9A%BF.html</guid>
+    </item>
+    <item>
         <title>浪速の胃袋：記憶を辿る一皿</title>
         <link>https://chnmototmz.github.io/posts/gourmet/2026-06-03-%E6%B5%AA%E9%80%9F%E3%81%AE%E8%83%83%E8%A2%8B-%E8%A8%98%E6%86%B6%E3%82%92%E8%BE%BF%E3%82%8B%E4%B8%80%E7%9A%BF.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780477197.png" /><br/>大阪の活気、その根源にあるのは、紛れもなく「食」である。 一皿の料理が語るのは、単なる味覚の記憶ではない。それは、この街の歴史と、そこに生きる人々の確かな営みそのものなのだ。 浪速の息吹を感じる路地 ...]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780443831_Gemini-Python-2-3.png" /><br/>連載第2回です。AIエンジニアとして日々LLMを触っていて思うのは、AIに「適当にトレンド記事を書いて」と指示しても、誰も検索しないようなフワッとしたポエムが出来上がるだけだということです。技術で承認...]]></description>
         <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC2%E5%9B%9E-3%E9%9A%8E%E5%B1%A4%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89%E6%A4%9C%E7%B4%A2%E3%81%A8%E3%83%95%E3%82%A1%E3%82%AF%E3%83%88%E3%83%81%E3%82%A7.html</guid>
-    </item>
-    <item>
-        <title>Gemini×Pythonで作る！全自動かつ「超・人間くさい」ブログ運営システムの裏側【第3回：ランダムMBTIペルソナ注入】</title>
-        <link>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC3%E5%9B%9E-%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0MBTI%E3%83%9A%E3%83%AB%E3%82%BD%E3%83%8A%E6%B3%A8%E5%85%A5.html</link>
-        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780443902_Gemini-Python-3-MBTI.png" /><br/>連載第3回。個人的にはここが本システムで一番面白いところです。テーマは「AIの無機質さをどうやって消し去り、人間味を偽装するか」。 AI文章の限界と「人間味」の価値 AIにブログを書かせると、「〜につ...]]></description>
-        <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC3%E5%9B%9E-%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0MBTI%E3%83%9A%E3%83%AB%E3%82%BD%E3%83%8A%E6%B3%A8%E5%85%A5.html</guid>
     </item>
 </channel>
 </rss>
