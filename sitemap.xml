@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/education/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -55,10 +59,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/curation/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/education/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -260,6 +260,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/art/2026-06-04-AI%E3%81%8C%E6%8B%93%E3%81%8F%E5%89%B5%E9%80%A0-%E8%A1%A8%E7%8F%BE%E3%81%AE%E7%9C%9F%E9%AB%84.html</loc>
+        <lastmod>2026-06-04</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/education/2026-06-04-%E9%81%8E%E5%8E%BB%E5%AE%8C%E4%BA%86%E5%BD%A2-%E9%80%B2%E8%A1%8C%E5%BD%A2-%E6%B2%BC%E3%81%AE%E6%94%BB%E7%95%A5%E6%B3%95.html</loc>
         <lastmod>2026-06-04</lastmod>
         <priority>0.6</priority>
     </url>
