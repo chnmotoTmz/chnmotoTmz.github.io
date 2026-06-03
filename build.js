@@ -56,6 +56,8 @@ function build() {
             title: meta.title || filename,
             date: meta.date || '2026-01-01',
             description: meta.description || '',
+            excerpt: meta.excerpt || '',
+            thumbnail: meta.thumbnail || '',
             url: `./posts/${relativePath}`,
             category
         };
@@ -82,6 +84,18 @@ function build() {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .post-card { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; padding: 15px; border-radius: 8px; background: rgba(255,255,255,0.05); }
+        .post-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px; }
+        .post-card h3 { margin: 0; font-size: 1.2rem; }
+        .post-card p { margin: 0; font-size: 0.9rem; color: #ccc; }
+        .post-card .excerpt { font-size: 0.85rem; color: #aaa; margin-top: 5px; }
+        .post-card .date { font-size: 0.8rem; color: #888; }
+        @media(min-width: 768px){
+            .post-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+            .post-card { margin-bottom: 0; }
+        }
+    </style>
 </head>
 <body>
     <div class="hero">
@@ -93,22 +107,24 @@ function build() {
         <aside class="sidebar">
             <h2>Categories</h2>
             <ul>
-                ${Object.keys(postsByCategory).map(cat => `<li><a href="#${cat.replace(/\s+/g, '-').toLowerCase()}">${cat}</a></li>`).join('')}
+                ${Object.keys(postsByCategory).map(cat => `<li><a href="#${cat.replace(/\\s+/g, '-').toLowerCase()}">${cat}</a></li>`).join('')}
             </ul>
         </aside>
         <main class="content">
             <h1>Latest Articles</h1>
             ${Object.entries(postsByCategory).map(([cat, items]) => `
-            <section id="${cat.replace(/\s+/g, '-').toLowerCase()}">
+            <section id="${cat.replace(/\\s+/g, '-').toLowerCase()}">
                 <h2 class="category-title">${cat}</h2>
-                <ul class="post-list">
+                <div class="post-list">
                     ${items.map(p => `
-                    <li class="post-card">
+                    <div class="post-card">
+                        ${p.thumbnail ? `<img src="${p.thumbnail}" alt="${p.title}">` : ''}
                         <div class="date">${p.date}</div>
-                        <a href="${p.url}">${p.title}</a>
+                        <h3><a href="${p.url}">${p.title}</a></h3>
                         <p>${p.description}</p>
-                    </li>`).join('')}
-                </ul>
+                        ${p.excerpt ? `<div class="excerpt">${p.excerpt}</div>` : ''}
+                    </div>`).join('')}
+                </div>
             </section>`).join('')}
         </main>
     </div>
