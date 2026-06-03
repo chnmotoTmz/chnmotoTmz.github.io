@@ -91,6 +91,13 @@
         <guid>https://chnmototmz.github.io/posts/finance/2026-06-03-50%E4%BB%A3%E3%81%8B%E3%82%89%E3%81%AE%E8%80%81%E5%BE%8C%E8%B3%87%E9%87%91%E6%BA%96%E5%82%99%E3%81%A8%E9%80%80%E5%A0%B4%E8%80%85%E3%83%87%E3%83%BC%E3%82%BF.html</guid>
     </item>
     <item>
+        <title>出生率低下と制度改革</title>
+        <link>https://chnmototmz.github.io/posts/finance/2026-06-03-%E5%87%BA%E7%94%9F%E7%8E%87%E4%BD%8E%E4%B8%8B%E3%81%A8%E5%88%B6%E5%BA%A6%E6%94%B9%E9%9D%A9.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780485674.png" /><br/>なんだか最近、未来を描く絵の具が足りないような、そんな寂しさを感じることがありませんか？社会のキャンバスに、もっとたくさんの鮮やかな色が欲しいのに。 出生率の低下というニュースを見るたび、私はその背景...]]></description>
+        <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/finance/2026-06-03-%E5%87%BA%E7%94%9F%E7%8E%87%E4%BD%8E%E4%B8%8B%E3%81%A8%E5%88%B6%E5%BA%A6%E6%94%B9%E9%9D%A9.html</guid>
+    </item>
+    <item>
         <title>年金繰上vs通常 受給損益分岐点</title>
         <link>https://chnmototmz.github.io/posts/finance/2026-06-03-%E5%B9%B4%E9%87%91%E7%B9%B0%E4%B8%8Avs%E9%80%9A%E5%B8%B8-%E5%8F%97%E7%B5%A6%E6%90%8D%E7%9B%8A%E5%88%86%E5%B2%90%E7%82%B9.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780436977_vs.png" /><br/>みんな、年金の受け取り方って考えたことある？「まだ先の話やわ〜」って思ってる人も、実は今から知っとくと全然ちゃうねんで！ 早めに受け取る「繰上げ」か、普通に「通常」か。これ、ホンマに迷うポイントやんな...]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780444024_Gemini-Python-5.jpg" /><br/>いよいよ最終回です。技術的欲求を満たした後は、現実的な欲求（副業収入）を満たすためのマネタイズと、はてなブログへの自動デプロイフェーズです。 楽天アフィリエイト連携（商品選定アルゴリズム） ただAma...]]></description>
         <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC5%E5%9B%9E-%E5%8F%8E%E7%9B%8A%E5%8C%96%E3%81%A8%E8%87%AA%E5%8B%95%E6%8A%95%E7%A8%BF.html</guid>
-    </item>
-    <item>
-        <title>ROS 2 SLAM：LiDAR/IMU同期ずれの未来解</title>
-        <link>https://chnmototmz.github.io/posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU%E5%90%8C%E6%9C%9F%E3%81%9A%E3%82%8C%E3%81%AE%E6%9C%AA%E6%9D%A5%E8%A7%A3.html</link>
-        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780420519_ROS-2-SLAM-LiDAR-IMU.png" /><br/>なぁ、みんな！自律移動ロボットとかドローン、最近ほんまにすごいやろ？街中や空をスイスイ動いてるの見るたびに、未来を感じるわ。 でもな、その裏には地味〜に悩ましい、けどめっちゃ大事な問題があるんやで。そ...]]></description>
-        <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU%E5%90%8C%E6%9C%9F%E3%81%9A%E3%82%8C%E3%81%AE%E6%9C%AA%E6%9D%A5%E8%A7%A3.html</guid>
     </item>
 </channel>
 </rss>
