@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/relationships/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -55,10 +59,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/gourmet/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -260,6 +260,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/2026-06-04-%E5%85%B1%E6%84%9F%E7%88%86%E7%99%BA-%E7%A5%9EYouTuber.html</loc>
+        <lastmod>2026-06-04</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/humanoid/2026-06-04-2026%E5%B9%B4-IoT%E3%81%8C%E6%8F%8F%E3%81%8F%E6%97%A5%E5%B8%B8.html</loc>
         <lastmod>2026-06-04</lastmod>
         <priority>0.6</priority>
     </url>
