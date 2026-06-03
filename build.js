@@ -72,6 +72,36 @@ function build() {
         postsByCategory[post.category].push(post);
     }
 
+    // Generate Popular Articles (Mocked by picking 5 random/featured posts)
+    const shuffledPosts = [...posts].sort(() => 0.5 - Math.random());
+    const popularPosts = shuffledPosts.slice(0, 5);
+
+    function renderPostCard(p) {
+        return `
+        <div class="post-card">
+            ${p.thumbnail ? `<img src="${p.thumbnail}" alt="${p.title}">` : ''}
+            <div class="date">${p.date}</div>
+            <h3><a href="${p.url}">${p.title}</a></h3>
+            <p>${p.description}</p>
+            ${p.excerpt ? `<div class="excerpt">${p.excerpt}</div>` : ''}
+        </div>`;
+    }
+
+    function renderPopularSidebar(prefix = '') {
+        return `
+        <aside class="sidebar-ranking">
+            <h2 style="font-size: 1.2rem; border-bottom: 2px solid #ff8c00; padding-bottom: 5px;">🔥 人気記事ランキング</h2>
+            <ul style="list-style: none; padding: 0;">
+                ${popularPosts.map((p, i) => `
+                <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px;">
+                    <span style="font-weight: bold; font-size: 1.2rem; color: #ff8c00;">${i + 1}</span>
+                    <a href="${prefix}${p.url}" style="text-decoration: none; color: #fff; font-size: 0.95rem; line-height: 1.3;">${p.title}</a>
+                </li>
+                `).join('')}
+            </ul>
+        </aside>`;
+    }
+
     // 1. Generate index.html with sidebar navigation
     const indexHtml = `
 <!DOCTYPE html>
@@ -107,8 +137,9 @@ function build() {
         <aside class="sidebar">
             <h2>Categories</h2>
             <ul>
-                ${Object.keys(postsByCategory).map(cat => `<li><a href="#${cat.replace(/\\s+/g, '-').toLowerCase()}">${cat}</a></li>`).join('')}
+                ${Object.keys(postsByCategory).map(cat => `<li><a href="./category/${cat.replace(/[\s\/]+/g, '-').toLowerCase()}.html">${cat}</a></li>`).join('')}
             </ul>
+            ${renderPopularSidebar()}
         </aside>
         <main class="content">
             <h1>Latest Articles</h1>
@@ -116,14 +147,11 @@ function build() {
             <section id="${cat.replace(/\\s+/g, '-').toLowerCase()}">
                 <h2 class="category-title">${cat}</h2>
                 <div class="post-list">
-                    ${items.map(p => `
-                    <div class="post-card">
-                        ${p.thumbnail ? `<img src="${p.thumbnail}" alt="${p.title}">` : ''}
-                        <div class="date">${p.date}</div>
-                        <h3><a href="${p.url}">${p.title}</a></h3>
-                        <p>${p.description}</p>
-                        ${p.excerpt ? `<div class="excerpt">${p.excerpt}</div>` : ''}
-                    </div>`).join('')}
+                    ${items.slice(0, 3).map(p => renderPostCard(p)).join('')}
+                </div>
+                <div style="text-align: right; margin-top: 10px;">
+                    <a href="./category/${cat.replace(/[\s\/]+/g, '-').toLowerCase()}.html" style="color: #ff8c00; text-decoration: none; font-weight: bold;">もっと見る →</a>
+                </div>
                 </div>
             </section>`).join('')}
         </main>
@@ -132,6 +160,63 @@ function build() {
 </html>
 `;
     fs.writeFileSync(INDEX_FILE, indexHtml);
+
+    // 1.5 Generate Category Hub Pages
+    const CATEGORY_DIR = path.join(__dirname, 'category');
+    if (!fs.existsSync(CATEGORY_DIR)) {
+        fs.mkdirSync(CATEGORY_DIR, { recursive: true });
+    }
+
+    for (const [cat, items] of Object.entries(postsByCategory)) {
+        const catSlug = cat.replace(/[\s\/]+/g, '-').toLowerCase();
+        const catHtml = `
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${cat} - chnmotoTmz's Media Factory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .post-card { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; padding: 15px; border-radius: 8px; background: rgba(255,255,255,0.05); }
+        .post-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 10px; }
+        .post-card h3 { margin: 0; font-size: 1.2rem; }
+        .post-card p { margin: 0; font-size: 0.9rem; color: #ccc; }
+        @media(min-width: 768px){
+            .post-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+            .post-card { margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero" style="min-height: 20vh; padding: 40px 20px;">
+        <h1 class="hero-title">${cat} Articles</h1>
+        <p class="hero-sub"><a href="../index.html" style="color:#fff;">← Back to Home</a></p>
+    </div>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                ${Object.keys(postsByCategory).map(c => `<li><a href="./${c.replace(/[\s\/]+/g, '-').toLowerCase()}.html">${c}</a></li>`).join('')}
+            </ul>
+            ${renderPopularSidebar('../')}
+        </aside>
+        <main class="content">
+            <h2 class="category-title">${cat} 全記事一覧</h2>
+            <div class="post-list">
+                ${items.map(p => {
+                    const adjP = {...p, url: '../' + p.url.replace('./', '')};
+                    return renderPostCard(adjP);
+                }).join('')}
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+`;
+        fs.writeFileSync(path.join(CATEGORY_DIR, `${catSlug}.html`), catHtml);
+    }
 
     // 2. Generate feed.xml (unchanged)
 
