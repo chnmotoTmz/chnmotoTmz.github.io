@@ -133,6 +133,13 @@
         <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-GeminiPython%E3%81%A7%E4%BD%9C%E3%82%8B-%E5%85%A8%E8%87%AA%E5%8B%95%E3%81%8B%E3%81%A4%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A3%8F%E5%81%B4%E7%AC%AC5%E5%9B%9E-%E5%8F%8E%E7%9B%8A%E5%8C%96%E3%81%A8%E8%87%AA%E5%8B%95%E6%8A%95%E7%A8%BF.html</guid>
     </item>
     <item>
+        <title>ROS 2 SLAM：LiDAR/IMU同期ずれの未来解</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU%E5%90%8C%E6%9C%9F%E3%81%9A%E3%82%8C%E3%81%AE%E6%9C%AA%E6%9D%A5%E8%A7%A3.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780420519_ROS-2-SLAM-LiDAR-IMU.png" /><br/>なぁ、みんな！自律移動ロボットとかドローン、最近ほんまにすごいやろ？街中や空をスイスイ動いてるの見るたびに、未来を感じるわ。 でもな、その裏には地味〜に悩ましい、けどめっちゃ大事な問題があるんやで。そ...]]></description>
+        <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-03-ROS-2-SLAM-LiDAR-IMU%E5%90%8C%E6%9C%9F%E3%81%9A%E3%82%8C%E3%81%AE%E6%9C%AA%E6%9D%A5%E8%A7%A3.html</guid>
+    </item>
+    <item>
         <title>最新調査】レス×子なしが婚外多いは嘘？データが示す夫婦関係の意外な実態</title>
         <link>https://chnmototmz.github.io/posts/humanoid/2026-06-03-%E6%9C%80%E6%96%B0%E8%AA%BF%E6%9F%BB%E3%83%AC%E3%82%B9%E5%AD%90%E3%81%AA%E3%81%97%E3%81%8C%E5%A9%9A%E5%A4%96%E5%A4%9A%E3%81%84%E3%81%AF%E5%98%98-%E3%83%87%E3%83%BC%E3%82%BF%E3%81%8C%E7%A4%BA%E3%81%99%E5%A4%AB%E5%A9%A6%E9%96%A2%E4%BF%82%E3%81%AE%E6%84%8F%E5%A4%96%E3%81%AA%E5%AE%9F%E6%85%8B.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780449237.png" /><br/>ねぇ、私たち、ネットでよく目にする「常識」って、本当にそうかな？ データが紡ぐ物語は、時に私たちの想像を軽やかに裏切る。今回は、夫婦関係の意外な真実を一緒に覗いてみない？ ネットの「常識」は本当？ 「...]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780442365_AI.png" /><br/>近頃、AIという言葉を耳にしない日はない。それはもはやSFの産物ではなく、我々の日常に溶け込み始めた道具である。この新たな道具を、いかに自身の営みに活かすか。それは、現代における智の兵法と言えよう。 ...]]></description>
         <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/tech/2026-06-03-AI%E5%89%AF%E6%A5%AD-%E6%99%BA%E3%81%AE%E5%85%B5%E6%B3%95.html</guid>
-    </item>
-    <item>
-        <title>Gemini×Pythonで稼ぐ！超・人間くさいブログを全自動量産するマルチAIシステム構築術</title>
-        <link>https://chnmototmz.github.io/posts/tech/2026-06-03-GeminiPython%E3%81%A7%E7%A8%BC%E3%81%90-%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E5%85%A8%E8%87%AA%E5%8B%95%E9%87%8F%E7%94%A3%E3%81%99%E3%82%8B%E3%83%9E%E3%83%AB%E3%83%81AI%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A7%8B%E7%AF%89%E8%A1%93.html</link>
-        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780441608_Gemini-Python-AI.png" /><br/>近頃、AIの進化が止まらない。特に大規模言語モデルは、かつてSFの世界であった「思考する機械」を現実のものとしつつある。この技術が、人間の営みである「書く」行為にいかなる変革をもたらすのか。その一端を...]]></description>
-        <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/tech/2026-06-03-GeminiPython%E3%81%A7%E7%A8%BC%E3%81%90-%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E5%85%A8%E8%87%AA%E5%8B%95%E9%87%8F%E7%94%A3%E3%81%99%E3%82%8B%E3%83%9E%E3%83%AB%E3%83%81AI%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A7%8B%E7%AF%89%E8%A1%93.html</guid>
     </item>
 </channel>
 </rss>
