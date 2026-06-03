@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -43,10 +47,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/uncategorized/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -259,6 +259,11 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/art/2026-06-04-AI%E3%81%8C%E6%8B%93%E3%81%8F%E5%89%B5%E9%80%A0-%E8%A1%A8%E7%8F%BE%E3%81%AE%E7%9C%9F%E9%AB%84.html</loc>
+        <lastmod>2026-06-04</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/2026-06-04-%E5%85%B1%E6%84%9F%E7%88%86%E7%99%BA-%E7%A5%9EYouTuber.html</loc>
         <lastmod>2026-06-04</lastmod>
         <priority>0.6</priority>
@@ -270,6 +275,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/2026-06-04-2026%E5%B9%B4-IoT%E3%81%8C%E6%8F%8F%E3%81%8F%E6%97%A5%E5%B8%B8.html</loc>
+        <lastmod>2026-06-04</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/humanoid/2026-06-04-GeminiPython%E5%85%A8%E8%87%AA%E5%8B%95%E8%B6%85-%E4%BA%BA%E9%96%93%E3%81%8F%E3%81%95%E3%81%84AI%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A7%8B%E7%AF%89%E3%81%AE%E8%A3%8F%E5%81%B4%E3%82%92%E5%BE%B9%E5%BA%95%E8%A7%A3%E8%AA%AC.html</loc>
         <lastmod>2026-06-04</lastmod>
         <priority>0.6</priority>
     </url>
