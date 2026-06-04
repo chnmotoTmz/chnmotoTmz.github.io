@@ -46,6 +46,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/music/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -71,10 +75,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/gadget/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -300,6 +300,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/gourmet/2026-06-05-%E6%B5%AA%E9%80%9F%E3%81%AE%E7%9A%BF-%E6%AD%B4%E5%8F%B2%E3%81%8C%E8%AA%9E%E3%82%8B%E5%91%B3.html</loc>
+        <lastmod>2026-06-05</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/humanoid/2026-06-05-ESP32-nRF52-%E8%B6%85%E4%BD%8E%E9%9B%BB%E5%8A%9BIoT%E6%9C%AA%E6%9D%A5%E6%88%A6%E7%95%A5.html</loc>
         <lastmod>2026-06-05</lastmod>
         <priority>0.6</priority>
     </url>
