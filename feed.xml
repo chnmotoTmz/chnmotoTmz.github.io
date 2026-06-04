@@ -112,6 +112,13 @@
         <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-04-2026%E5%B9%B4-IoT%E3%81%8C%E6%8F%8F%E3%81%8F%E6%97%A5%E5%B8%B8.html</guid>
     </item>
     <item>
+        <title>Arm NPU：AI電力効率深掘り</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-06-04-Arm-NPU-AI%E9%9B%BB%E5%8A%9B%E5%8A%B9%E7%8E%87%E6%B7%B1%E6%8E%98%E3%82%8A.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780541983_Arm-NPU-AI.png" /><br/>SNSのタイムラインを眺めていたら、思わず手が止まった。 流れてきたのは、AIの心臓部とも言える「NPU」に関する、ある技術トレンドのニュース。 その内容に、私はただならぬ予感と、そして少しばかりの畏...]]></description>
+        <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-04-Arm-NPU-AI%E9%9B%BB%E5%8A%9B%E5%8A%B9%E7%8E%87%E6%B7%B1%E6%8E%98%E3%82%8A.html</guid>
+    </item>
+    <item>
         <title>Dev Diary (2026-06-04)</title>
         <link>https://chnmototmz.github.io/posts/humanoid/2026-06-04-Dev-Diary-2026-06-04.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780528792_Dev-Diary-2026-06-04.png" /><br/>ふとネットサーフィンをしていたら、ある日のタイムラインが目に飛び込んできて、思わず画面に釘付けになったんです。 まるで未来の「開発日誌」を覗き見ているかのような、 とてつもなく多岐にわたる記事の羅列 ...]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780510284_AI-SEO.jpg" /><br/>近頃、とあるニュースを目にし、思わず画面を二度見してしまった。AIが書いた記事が、検索エンジンの上位を独占しているというのだ。まるで、SF映画のワンシーンが現実になったような、そんな不思議な感覚に包ま...]]></description>
         <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/tech/2026-06-04-AI%E5%9F%B7%E7%AD%86-SEO%E8%A6%87%E6%A8%A9%E3%81%AE%E8%A1%8C%E6%96%B9.html</guid>
-    </item>
-    <item>
-        <title>Gemini 1.5 Flash&Pro徹底比較！API開発で探る生成AI最新トレンドとマルチモーダル活用</title>
-        <link>https://chnmototmz.github.io/posts/tech/2026-06-04-Gemini-1-5-FlashPro%E5%BE%B9%E5%BA%95%E6%AF%94%E8%BC%83-API%E9%96%8B%E7%99%BA%E3%81%A7%E6%8E%A2%E3%82%8B%E7%94%9F%E6%88%90AI%E6%9C%80%E6%96%B0%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89%E3%81%A8%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E6%B4%BB%E7%94%A8.html</link>
-        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1780531527_Gemini-1-5-Flash-Pro.png" /><br/>最近、時間の流れが加速しているように感じませんか？ ニュースや情報がとめどなく押し寄せ、いつの間にか一日が終わっている。そんな私たちに、Googleの最新AIがとんでもない答えを出してくれたんです。 ...]]></description>
-        <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/tech/2026-06-04-Gemini-1-5-FlashPro%E5%BE%B9%E5%BA%95%E6%AF%94%E8%BC%83-API%E9%96%8B%E7%99%BA%E3%81%A7%E6%8E%A2%E3%82%8B%E7%94%9F%E6%88%90AI%E6%9C%80%E6%96%B0%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89%E3%81%A8%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E6%B4%BB%E7%94%A8.html</guid>
     </item>
 </channel>
 </rss>
