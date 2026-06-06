@@ -70,6 +70,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/sociology/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -354,6 +358,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/relationships/2026-06-06-%E5%8D%98%E8%BA%AB%E8%B5%B4%E4%BB%BB%E5%A4%AB%E3%81%AE%E9%80%A3%E7%B5%A1%E9%81%8E%E5%B0%91%E5%BF%83%E7%90%86%E3%81%AE%E6%B7%B1%E5%B1%A4-%E6%94%BE%E7%BD%AE%E3%81%8C%E7%94%9F%E3%82%80%E6%82%B2%E5%8A%87%E3%82%92%E8%80%83%E5%AF%9F%E3%81%99%E3%82%8B.html</loc>
+        <lastmod>2026-06-06</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/sociology/2026-06-06-%E3%82%BD%E3%82%B7%E3%83%A3%E3%82%B2%E7%96%B2%E3%82%8C%E3%81%A8%E9%9F%B3%E9%9F%BF%E7%A9%BA%E9%96%93%E3%81%AE%E5%BF%83%E7%90%86%E5%AD%A6.html</loc>
         <lastmod>2026-06-06</lastmod>
         <priority>0.6</priority>
     </url>
