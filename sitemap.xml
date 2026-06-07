@@ -22,15 +22,15 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/hub/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -270,6 +270,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/art/2026-06-07-%E9%AA%A8%E4%BC%9D%E5%B0%8E%E7%A9%BA%E9%96%93%E3%82%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA-AI%E5%89%B5%E4%BD%9C%E3%81%AE%E9%9D%99%E5%AF%82%E5%A2%83%E5%9C%B0.html</loc>
+        <lastmod>2026-06-07</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/finance/2026-06-07-%E9%9B%BB%E6%B3%A2%E3%82%BC%E3%83%AD%E5%9C%B0%E5%B8%AF%E3%81%AE%E8%B3%87%E6%9C%AC%E9%98%B2%E8%A1%9B.html</loc>
         <lastmod>2026-06-07</lastmod>
