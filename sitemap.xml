@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/education/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -51,10 +55,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/wellness/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/education/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -272,6 +272,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/art/2026-06-09-%E6%B7%B1%E5%A4%9C%E3%81%AE%E5%AF%86%E9%96%89%E9%9F%B3-%E5%91%BC%E5%90%B8%E3%81%A8Suno%E3%81%AE%E3%83%8E%E3%82%A4%E3%82%BA%E5%AF%BE%E7%AD%96.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/education/2026-06-09-%E7%8C%AB%E3%81%AE%E9%B3%B4%E3%81%8D%E5%A3%B0%E3%81%A7%E5%8B%95%E3%81%8FIoT%E3%81%AE%E3%83%90%E3%82%B0%E3%81%A8%E8%AA%8D%E7%9F%A5%E5%BF%83%E7%90%86%E5%AD%A6.html</loc>
         <lastmod>2026-06-09</lastmod>
         <priority>0.6</priority>
     </url>
