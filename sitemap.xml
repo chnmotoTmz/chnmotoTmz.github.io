@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -55,10 +59,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -276,6 +276,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/2026-06-11-Dev-Diary-2026-06-10.html</loc>
+        <lastmod>2026-06-11</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/travel/2026-06-11-4%E3%83%88%E3%83%A9MTR-%E3%83%8E%E3%82%A4%E3%82%BA%E3%81%A8%E5%90%91%E3%81%8D%E5%90%88%E3%81%86%E6%84%89%E3%81%97%E3%81%BF.html</loc>
         <lastmod>2026-06-11</lastmod>
         <priority>0.6</priority>
     </url>
