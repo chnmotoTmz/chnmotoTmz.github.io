@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/sociology/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -47,10 +51,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/lifestyle/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/sociology/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -276,6 +276,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/2026-06-11-Dev-Diary-2026-06-10.html</loc>
+        <lastmod>2026-06-11</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/sociology/2026-06-11-%E3%83%AC%E3%83%B3%E3%82%BF%E3%83%AB%E5%8F%8B%E9%81%94%E3%81%AE%E5%8D%B1%E3%81%86%E3%81%84%E4%BE%9D%E5%AD%98%E3%81%A8%E5%AD%A4%E7%8B%AC%E3%81%AE%E5%87%A6%E6%96%B9%E7%AE%8B.html</loc>
         <lastmod>2026-06-11</lastmod>
         <priority>0.6</priority>
     </url>
