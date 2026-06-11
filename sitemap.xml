@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/hub/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -43,10 +47,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/hub/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -274,6 +274,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/hub/2026-06-11-%E6%96%B0%E8%8C%B6%E3%81%AE%E8%8B%A6%E5%91%B3%E3%81%A8iPad%E8%AA%AD%E6%9B%B8-%E8%84%B3%E7%96%B2%E5%8A%B4%E3%82%92%E9%98%B2%E3%81%90%E6%89%8B%E8%A7%A6%E3%82%8A%E3%81%AE%E6%80%9D%E8%80%83%E6%B3%95.html</loc>
+        <lastmod>2026-06-11</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/2026-06-11-Dev-Diary-2026-06-10.html</loc>
         <lastmod>2026-06-11</lastmod>
