@@ -42,6 +42,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/sports/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -59,10 +63,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/lifestyle/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/sports/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -301,6 +301,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/sociology/2026-06-11-%E7%99%BB%E5%B1%B1vs%E6%97%A2%E5%A9%9A%E8%80%85%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%BC-%E8%84%B3%E7%A7%91%E5%AD%A6%E3%81%A7%E7%B4%90%E8%A7%A3%E3%81%8F%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9%E8%A7%A3%E6%B6%88%E3%81%A8%E6%84%9F%E6%83%85%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E9%A9%9A%E3%81%8F%E3%81%B9%E3%81%8D%E9%81%95%E3%81%84.html</loc>
+        <lastmod>2026-06-11</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/sports/2026-06-11-%E9%BB%92%E7%88%AA%E3%82%92%E9%98%B2%E3%81%90-%E9%9A%99%E9%96%93%E3%82%92%E5%9F%8B%E3%82%81%E3%82%8B%E9%9D%B4%E7%B4%90%E3%81%AE%E7%B5%90%E3%81%B3%E6%96%B9.html</loc>
         <lastmod>2026-06-11</lastmod>
         <priority>0.6</priority>
     </url>
