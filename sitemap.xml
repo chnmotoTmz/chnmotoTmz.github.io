@@ -54,6 +54,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/gourmet/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -103,10 +107,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/entertainment/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/gourmet/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -325,6 +325,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/gadget/2026-06-13-%E6%80%9D%E7%B4%A2%E3%81%AE%E4%BD%99%E7%99%BD-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%99%82%E4%BB%A3%E3%81%AE%E7%84%A1%E9%A1%8C%E3%81%AE%E6%8A%95%E7%A8%BF%E3%81%8C%E8%AA%9E%E3%82%8B%E3%82%82%E3%81%AE.html</loc>
+        <lastmod>2026-06-13</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/gourmet/2026-06-13-%E8%A1%8C%E5%88%97%E3%81%AB%E4%B8%A6%E3%81%B6%E4%BE%A1%E5%80%A4%E3%81%82%E3%82%8A-%E6%B5%AA%E9%80%9F%E3%81%AE%E3%82%AC%E3%83%83%E3%83%84%E3%83%AA%E4%BA%BA%E6%83%85%E3%83%A1%E3%82%B7.html</loc>
         <lastmod>2026-06-13</lastmod>
         <priority>0.6</priority>
     </url>
