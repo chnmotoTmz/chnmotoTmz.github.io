@@ -74,6 +74,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/relationships/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/sociology/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -111,10 +115,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/music/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/relationships/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -355,6 +355,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/news/2026-06-13-%E3%82%B7%E3%83%9F%E6%B6%88%E3%81%97%E7%B5%86%E5%89%B5%E8%86%8F%E3%81%AE%E8%AA%A4%E7%AE%97%E7%BF%8C%E6%97%A5%E3%81%AE%E8%B5%A4%E3%81%BF%E3%82%B1%E3%82%A2.html</loc>
+        <lastmod>2026-06-13</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/relationships/2026-06-13-sexless_wife_confession-%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6-%E5%A4%AB%E3%81%B8%E3%81%AE%E6%84%9B%E6%83%85%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E7%9E%AC%E9%96%93%E3%81%A8-%E3%81%9D%E3%82%8C%E3%81%A7%E3%82%82%E7%A7%81%E3%81%8C%E9%9B%A2%E5%A9%9A%E3%81%97%E3%81%AA%E3%81%84%E6%9C%AC%E5%BD%93%E3%81%AE%E7%90%86%E7%94%B1%E5%A5%B3%E3%81%A8.html</loc>
         <lastmod>2026-06-13</lastmod>
         <priority>0.6</priority>
     </url>
