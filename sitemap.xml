@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/education/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -75,10 +79,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/affiliate/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/education/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -280,6 +280,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/art/2026-06-14-Suno%E3%81%AE2mix%E5%B8%AF%E5%9F%9F%E3%81%B6%E3%81%A4%E3%81%8B%E3%82%8A%E8%A7%A3%E6%B6%88%E8%A1%93.html</loc>
+        <lastmod>2026-06-14</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/education/2026-06-14-3D%E3%83%97%E3%83%A9PLA%E6%B9%BF%E6%B0%97%E3%82%AA%E3%83%BC%E3%83%96%E3%83%B3%E5%BE%A9%E6%B4%BB%E3%81%AE%E3%82%B3%E3%83%84.html</loc>
         <lastmod>2026-06-14</lastmod>
         <priority>0.6</priority>
     </url>
