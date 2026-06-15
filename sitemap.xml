@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/lifestyle/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -47,10 +51,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/lifestyle/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -278,6 +278,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/lifestyle/2026-06-16-%E6%97%A9%E6%9C%9D%E3%81%AE%E8%84%B3%E3%82%92%E8%A6%9A%E9%86%92%E3%81%95%E3%81%9B%E3%82%8B%E9%9D%99%E5%AF%82%E3%81%AE%E6%A7%8B%E7%AF%89%E8%A1%93.html</loc>
+        <lastmod>2026-06-16</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/art/2026-06-15-LogicAI%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E9%81%95%E5%92%8C%E6%84%9F%E6%B6%88%E3%81%99%E6%8A%80.html</loc>
         <lastmod>2026-06-15</lastmod>
