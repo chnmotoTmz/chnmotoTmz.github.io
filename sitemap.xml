@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/gadget/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -47,10 +51,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/uncategorized/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
