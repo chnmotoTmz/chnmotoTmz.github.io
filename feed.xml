@@ -84,6 +84,13 @@
         <guid>https://chnmototmz.github.io/posts/gadget/2026-06-19-%E3%83%87%E3%82%B9%E3%82%AF%E3%82%92%E5%96%8B%E3%82%89%E3%81%9B%E3%82%8D-%E8%87%AA%E5%8B%95%E5%8C%96%E3%81%AE%E6%A5%B5%E6%84%8F.html</guid>
     </item>
     <item>
+        <title>LLMとSLAMの乖離を埋める</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-06-19-LLM%E3%81%A8SLAM%E3%81%AE%E4%B9%96%E9%9B%A2%E3%82%92%E5%9F%8B%E3%82%81%E3%82%8B.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1781876985_LLM-SLAM.png" /><br/>空間を読み解くという、静かな実験 西日が強く差し込む書斎で、私はまたしてもデスクの上の散らかり具合を眺めていた。モニターには自律型ヒューマノイドのために書いているコードが並んでいる。画面の中のAIは、...]]></description>
+        <pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-06-19-LLM%E3%81%A8SLAM%E3%81%AE%E4%B9%96%E9%9B%A2%E3%82%92%E5%9F%8B%E3%82%81%E3%82%8B.html</guid>
+    </item>
+    <item>
         <title>LLMとSLAMの統合遅延をどう切るか</title>
         <link>https://chnmototmz.github.io/posts/humanoid/2026-06-19-LLM%E3%81%A8SLAM%E3%81%AE%E7%B5%B1%E5%90%88%E9%81%85%E5%BB%B6%E3%82%92%E3%81%A9%E3%81%86%E5%88%87%E3%82%8B%E3%81%8B.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1781833129_LLM-SLAM.png" /><br/>珈琲とプログラムの間の沈黙 淹れたての珈琲が冷めていく。机の上のモニターでは、先ほどまで走り回っていたヒューマノイドのシミュレーションが、今はただの停止したポリゴンとしてそこに留まっている。 窓の外で...]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1781826452_5.jpg" /><br/>密会を特別な温度に変える、小さな贅沢の選び方 ふとSNSを眺めていると、日常の延長にあるはずの時間を、どうすれば少しだけ「非日常」に引き寄せられるかという話題を見かけました。私も専業主婦として家事や育...]]></description>
         <pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/uncategorized/2026-06-19-%E5%AF%86%E4%BC%9A%E6%A0%BC%E4%B8%8A%E3%81%92-%E9%AB%98%E7%B4%9A%E3%81%8A%E3%81%A4%E3%81%BE%E3%81%BF5%E9%81%B8.html</guid>
-    </item>
-    <item>
-        <title>夜10時就寝、家事の引き算で肌が変わる</title>
-        <link>https://chnmototmz.github.io/posts/wellness/2026-06-19-%E5%A4%9C10%E6%99%82%E5%B0%B1%E5%AF%9D-%E5%AE%B6%E4%BA%8B%E3%81%AE%E5%BC%95%E3%81%8D%E7%AE%97%E3%81%A7%E8%82%8C%E3%81%8C%E5%A4%89%E3%82%8F%E3%82%8B.html</link>
-        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1781873272_10.png" /><br/>夜10時就寝、家事の引き算で肌が変わる ふと鏡に映った自分の顔を見て、思わず目を逸らしたくなることはありませんか。目の下のどんよりとした影や、夕方になると深くなるほうれい線。まるで「お疲れ様」と刻まれ...]]></description>
-        <pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/wellness/2026-06-19-%E5%A4%9C10%E6%99%82%E5%B0%B1%E5%AF%9D-%E5%AE%B6%E4%BA%8B%E3%81%AE%E5%BC%95%E3%81%8D%E7%AE%97%E3%81%A7%E8%82%8C%E3%81%8C%E5%A4%89%E3%82%8F%E3%82%8B.html</guid>
     </item>
 </channel>
 </rss>
