@@ -42,6 +42,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/lifestyle/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -63,10 +67,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/wellness/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -295,6 +295,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/gadget/2026-06-21-HHKB%E3%81%A8SwitchBot%E3%81%A7%E3%83%87%E3%82%B9%E3%82%AF%E5%85%A8%E8%87%AA%E5%8B%95%E5%8C%96.html</loc>
+        <lastmod>2026-06-21</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/humanoid/2026-06-21-LLM%E3%81%AFSLAM%E3%81%AE%E5%A4%A2%E3%82%92%E8%A6%8B%E3%82%8B%E3%81%8B.html</loc>
         <lastmod>2026-06-21</lastmod>
         <priority>0.6</priority>
     </url>
