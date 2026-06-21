@@ -58,12 +58,24 @@
                             <option value="GBPJPY=X">英ポンド / 円 (GBP/JPY)</option>
                             <option value="AUDUSD=X">豪ドル / 米ドル (AUD/USD)</option>
                         </optgroup>
-                        <optgroup label="国内株式 (Japan Stocks)">
-                            <option value="7203.T">トヨタ自動車 (7203)</option>
+                        <optgroup label="AI・テクノロジー (AI & Tech)">
+                            <option value="NVDA">エヌビディア (NVDA)</option>
+                            <option value="MSFT">マイクロソフト (MSFT)</option>
+                            <option value="AAPL">アップル (AAPL)</option>
+                            <option value="GOOGL">アルファベット (GOOGL)</option>
                             <option value="9984.T">ソフトバンクグループ (9984)</option>
-                            <option value="6758.T">ソニーグループ (6758)</option>
-                            <option value="9983.T">ファーストリテイリング (9983)</option>
-                            <option value="7974.T">任天堂 (7974)</option>
+                        </optgroup>
+                        <optgroup label="エネルギー (Energy)">
+                            <option value="1605.T">INPEX (1605)</option>
+                            <option value="5020.T">ENEOSホールディングス (5020)</option>
+                            <option value="XOM">エクソンモービル (XOM)</option>
+                            <option value="CVX">シェブロン (CVX)</option>
+                        </optgroup>
+                        <optgroup label="防衛・重工 (Defense & Heavy Industry)">
+                            <option value="7011.T">三菱重工業 (7011)</option>
+                            <option value="7012.T">川崎重工業 (7012)</option>
+                            <option value="7013.T">IHI (7013)</option>
+                            <option value="LMT">ロックヒード・マーティン (LMT)</option>
                         </optgroup>
                         <optgroup label="主要指数 (Indices)">
                             <option value="^N225">日経平均株価 (Nikkei 225)</option>
@@ -191,8 +203,16 @@
                         <div class="stat-value" id="stat-signal">---</div>
                     </div>
                     <div class="stat-card card-glass">
-                        <span class="stat-label">総シグナル数</span>
+                        <span class="stat-label">総シグナル (後知恵)</span>
                         <div class="stat-value" id="stat-signal-count">0</div>
+                    </div>
+                    <div class="stat-card card-glass">
+                        <span class="stat-label">実戦シグナル (確定)</span>
+                        <div class="stat-value" id="stat-replay-count">0</div>
+                    </div>
+                    <div class="stat-card card-glass">
+                        <span class="stat-label">消滅したダマシ</span>
+                        <div class="stat-value" id="stat-phantom-count">0 (0%)</div>
                     </div>
                 </div>
             </header>
@@ -222,6 +242,7 @@
                                 <tr>
                                     <th>日時</th>
                                     <th>シグナル</th>
+                                    <th>状態 (検証)</th>
                                     <th>ブレイクアウト価格</th>
                                     <th>RSI値</th>
                                     <th>ブレイク目標線値</th>
@@ -230,7 +251,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td colspan="6" class="no-data">チャートのデータを読み込んでください。</td>
+                                    <td colspan="7" class="no-data">チャートのデータを読み込んでください。</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -261,6 +282,13 @@
                                 <strong>売買シグナル</strong><br>
                                 <span class="text-buy">▲ 買い：</span> RSIが上値抵抗線（予想線）を上に超えた（+マージン）瞬間。<br>
                                 <span class="text-sell">▼ 売り：</span> RSIが下値支持線（予想線）を下に割った（-マージン）瞬間。
+                            </li>
+                            <li>
+                                <strong>リペイント検証（Walk-Forward Replay）</strong><br>
+                                チャートを後から一括計算した「後知恵の線」と、過去にタイムスリップして1日ずつ進めて計算した「実戦の線」を比較検証しています。<br>
+                                <span style="color:#10b981; font-weight:600;">確定 (確)：</span> リアルタイムでも発生し、現在もチャートに残っている信頼性の高いシグナル。<br>
+                                <span style="color:#64748b; text-decoration:line-through;">消滅 (消)：</span> リアルタイムで一度画面に出たものの、その後の波形変化（リペイント）でトレンドラインが引き直されて歴史から消えたダマシシグナル。<br>
+                                <span style="color:#f59e0b; font-weight:600;">実戦のみ (実)：</span> 当時の波形でブレイクしたが、最新のライン描画制限などで過去チャートから見えなくなっているシグナル。
                             </li>
                         </ul>
                     </div>
