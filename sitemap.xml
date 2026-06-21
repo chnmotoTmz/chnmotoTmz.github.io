@@ -42,6 +42,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/relationships/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/uncategorized/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -59,10 +63,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/relationships/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -300,6 +300,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/news/2026-06-21-AI%E6%99%82%E4%BB%A3%E3%82%82%E8%B2%A0%E3%81%91%E3%81%B8%E3%82%93-%E4%BA%BA%E9%96%93%E5%8A%9B%E3%81%AE%E7%A3%A8%E3%81%8D%E6%96%B9.html</loc>
+        <lastmod>2026-06-21</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/relationships/2026-06-21-%E5%A4%A7%E4%BA%BA%E3%81%AE%E8%89%B2%E6%B0%97%E6%BC%82%E3%81%86%E5%A4%9C%E3%82%92%E6%BC%94%E5%87%BA-%E6%97%A2%E5%A9%9A%E8%80%85%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1%E5%A4%A7%E4%BC%9A%E3%81%A7%E7%9B%9B%E3%82%8A%E4%B8%8A%E3%81%8C%E3%82%8B80%E5%B9%B4%E4%BB%A3%E3%83%A0%E3%83%BC%E3%83%89%E6%AD%8C%E8%AC%A1-%E5%88%87%E3%81%AA%E3%81%84%E5%90%8D%E6%9B%B2%E3%83%90%E3%83%A9%E3%83%BC%E3%83%89%E5%8E%B3%E9%81%B8%E9%9B%86.html</loc>
         <lastmod>2026-06-21</lastmod>
         <priority>0.6</priority>
     </url>
