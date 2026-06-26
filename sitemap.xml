@@ -30,6 +30,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -47,10 +51,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -285,6 +285,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/2026-06-27-%E6%B5%B7%E5%A4%96%E3%81%AE%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88-AI%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%81%A7%E9%A9%9A%E3%81%84%E3%81%9F%E3%81%93%E3%81%A8-Industrial-automation-accelera.html</loc>
+        <lastmod>2026-06-27</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/travel/2026-06-27-%E4%BB%8A%E6%97%A5%E3%81%AE%E6%B0%97%E8%B1%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%81%A7%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8-World-Vision-scales-up-support.html</loc>
         <lastmod>2026-06-27</lastmod>
         <priority>0.6</priority>
     </url>
