@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -35,10 +39,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/news/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -278,6 +278,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/tech/2026-06-29-ChatGPT%E3%82%92%E7%9A%84%E4%B8%AD%E3%81%95%E3%81%9B%E3%81%9F%E7%A7%81%E3%81%8C%E5%8D%A0%E3%81%86-2026%E5%B9%B4%E3%81%AEAI%E4%BA%88%E6%B8%AC6%E9%81%B8.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/finance/2026-06-28-An-unusual-Fed-rate-check-triggered-a-free-fall-in-the-U-S-d.html</loc>
         <lastmod>2026-06-28</lastmod>
