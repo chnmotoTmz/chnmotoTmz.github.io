@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/news/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -31,10 +35,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/news/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -278,6 +278,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/news/2026-06-30-%E3%82%A4%E3%83%B3%E3%83%89%E9%81%B8%E6%8C%99%E3%81%8C%E6%8F%BA%E3%82%8B%E3%81%8C%E3%81%99%E4%B8%96%E7%95%8C%E3%81%AE%E8%A1%8C%E6%96%B9.html</loc>
+        <lastmod>2026-06-30</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/finance/2026-06-29-FTSE100%E3%81%A8%E3%83%89%E3%83%AB%E5%86%86%E3%81%AE%E5%B1%95%E6%9C%9B-%E6%B3%A8%E7%9B%AE%E3%81%99%E3%81%B9%E3%81%8D2%E3%81%A4%E3%81%AE%E3%83%88%E3%83%AC%E3%83%BC%E3%83%89%E6%88%A6%E7%95%A5.html</loc>
         <lastmod>2026-06-29</lastmod>
