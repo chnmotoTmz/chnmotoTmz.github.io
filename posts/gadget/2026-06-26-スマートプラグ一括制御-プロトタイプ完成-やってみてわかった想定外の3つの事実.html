@@ -1,0 +1,323 @@
+<!--
+title: スマートプラグ一括制御、プロトタイプ完成。やってみてわかった想定外の3つの事実
+date: 2026-06-26
+description: 
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スマートプラグ一括制御、プロトタイプ完成。やってみてわかった想定外の3つの事実 | Humanoid Media Factory</title>
+    <meta name="description" content="">
+
+    <!-- SEO / Canonical / Robots -->
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/gadget/2026-06-26-%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%97%E3%83%A9%E3%82%B0%E4%B8%80%E6%8B%AC%E5%88%B6%E5%BE%A1-%E3%83%97%E3%83%AD%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E5%AE%8C%E6%88%90-%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%A6%E3%82%8F%E3%81%8B%E3%81%A3%E3%81%9F%E6%83%B3%E5%AE%9A%E5%A4%96%E3%81%AE3%E3%81%A4%E3%81%AE%E4%BA%8B%E5%AE%9F.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "スマートプラグ一括制御、プロトタイプ完成。やってみてわかった想定外の3つの事実",
+      "description": "",
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/tplinkdirect/cabinet/06321509/tapo-p110m-alt.jpg?_ex=128x128",
+      "author": {
+        "@type": "Person",
+        "name": "chnmotoTmz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Humanoid Media Factory",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://chnmototmz.github.io/images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
+        }
+      },
+      "datePublished": "2026-06-26",
+      "dateModified": "2026-06-26",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://chnmototmz.github.io/posts/gadget/2026-06-26-%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%97%E3%83%A9%E3%82%B0%E4%B8%80%E6%8B%AC%E5%88%B6%E5%BE%A1-%E3%83%97%E3%83%AD%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E5%AE%8C%E6%88%90-%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%A6%E3%82%8F%E3%81%8B%E3%81%A3%E3%81%9F%E6%83%B3%E5%AE%9A%E5%A4%96%E3%81%AE3%E3%81%A4%E3%81%AE%E4%BA%8B%E5%AE%9F.html"
+      }
+    }
+    </script>
+
+    <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="スマートプラグ一括制御、プロトタイプ完成。やってみてわかった想定外の3つの事実 | Humanoid Media Factory">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/gadget/2026-06-26-%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%97%E3%83%A9%E3%82%B0%E4%B8%80%E6%8B%AC%E5%88%B6%E5%BE%A1-%E3%83%97%E3%83%AD%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E5%AE%8C%E6%88%90-%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%A6%E3%82%8F%E3%81%8B%E3%81%A3%E3%81%9F%E6%83%B3%E5%AE%9A%E5%A4%96%E3%81%AE3%E3%81%A4%E3%81%AE%E4%BA%8B%E5%AE%9F.html">
+    <meta property="og:image" content="https://thumbnail.image.rakuten.co.jp/@0_mall/tplinkdirect/cabinet/06321509/tapo-p110m-alt.jpg?_ex=128x128">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@chnmotoTmz">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            <li><a href="../../posts/diary/index.html">📁 Diary</a></li><li><a href="../../posts/education/index.html">📚 教育・学習</a></li><li><a href="../../posts/news/index.html">📰 ニュース・時事</a></li><li><a href="../../posts/tech/index.html">💻 テクノロジー</a></li><li><a href="../../posts/lifestyle/index.html">📁 Lifestyle</a></li><li><a href="../../posts/finance/index.html">💰 金融・投資</a></li><li><a href="../../posts/travel/index.html">✈️ 旅行</a></li><li><a href="../../posts/adult/index.html">🔞 アダルト</a></li><li><a href="../../posts/humanoid/index.html">🤖 ロボット・AI</a></li><li><a href="../../posts/relationships/index.html">❤️ 恋愛・人間関係</a></li><li><a href="../../posts/wellness/index.html">🌿 健康・ウェルネス</a></li><li><a href="../../posts/gadget/index.html">📱 ガジェット</a></li><li><a href="../../posts/uncategorized/index.html">📦 その他</a></li><li><a href="../../posts/art/index.html">🎨 アート・創作</a></li><li><a href="../../posts/gourmet/index.html">🍽️ グルメ</a></li><li><a href="../../posts/monetization/index.html">📁 Monetization</a></li><li><a href="../../posts/sports/index.html">⚽ スポーツ</a></li><li><a href="../../posts/affiliate/index.html">💸 アフィリエイト</a></li><li><a href="../../posts/english/index.html">🔤 英語学習</a></li><li><a href="../../posts/family/index.html">📁 Family</a></li><li><a href="../../posts/sociology/index.html">📁 Sociology</a></li><li><a href="../../posts/hub/index.html">📁 Hub</a></li><li><a href="../../posts/curation/index.html">📁 Curation</a></li><li><a href="../../posts/entertainment/index.html">🍿 エンタメ</a></li><li><a href="../../posts/music/index.html">🎵 音楽</a></li><li><a href="../../posts/art/illustration/index.html">📁 Art/illustration</a></li><li><a href="../../posts/education/english/index.html">📁 Education/english</a></li><li><a href="../../posts/education/multilingual/index.html">📁 Education/multilingual</a></li><li><a href="../../posts/entertainment/anime/index.html">📁 Entertainment/anime</a></li><li><a href="../../posts/entertainment/game/index.html">📁 Entertainment/game</a></li><li><a href="../../posts/entertainment/movie/index.html">📁 Entertainment/movie</a></li><li><a href="../../posts/gourmet/recipe/index.html">📁 Gourmet/recipe</a></li><li><a href="../../posts/gourmet/restaurant/index.html">📁 Gourmet/restaurant</a></li><li><a href="../../posts/gourmet/sweets/index.html">📁 Gourmet/sweets</a></li><li><a href="../../posts/news/economy/index.html">📁 News/economy</a></li><li><a href="../../posts/news/entertainment/index.html">📁 News/entertainment</a></li><li><a href="../../posts/news/net/index.html">📁 News/net</a></li><li><a href="../../posts/news/world/index.html">📁 News/world</a></li><li><a href="../../posts/tech/ai/index.html">📁 Tech/ai</a></li><li><a href="../../posts/tech/gadget/index.html">📁 Tech/gadget</a></li><li><a href="../../posts/tech/robotics/index.html">📁 Tech/robotics</a></li><li><a href="../../posts/tech/video/index.html">📁 Tech/video</a></li><li><a href="../../posts/travel/gear/index.html">📁 Travel/gear</a></li><li><a href="../../posts/travel/hiking/index.html">📁 Travel/hiking</a></li><li><a href="../../posts/wellness/diet/index.html">📁 Wellness/diet</a></li><li><a href="../../posts/wellness/health/index.html">📁 Wellness/health</a></li><li><a href="../../posts/wellness/mental/index.html">📁 Wellness/mental</a></li><li><a href="../../posts/wellness/skincare/index.html">📁 Wellness/skincare</a></li><li><a href="../../posts/art/music/index.html">📁 Art/music</a></li><li><a href="../../posts/art/writing/index.html">📁 Art/writing</a></li><li><a href="../../posts/education/hack/index.html">📁 Education/hack</a></li><li><a href="../../posts/entertainment/youtube/index.html">📁 Entertainment/youtube</a></li><li><a href="../../posts/finance/crypto/index.html">📁 Finance/crypto</a></li><li><a href="../../posts/finance/news/index.html">📁 Finance/news</a></li><li><a href="../../posts/finance/saving/index.html">📁 Finance/saving</a></li><li><a href="../../posts/finance/stock/index.html">📁 Finance/stock</a></li><li><a href="../../posts/gourmet/sake/index.html">📁 Gourmet/sake</a></li><li><a href="../../posts/news/domestic/index.html">📁 News/domestic</a></li><li><a href="../../posts/tech/programming/index.html">📁 Tech/programming</a></li><li><a href="../../posts/travel/domestic/index.html">📁 Travel/domestic</a></li><li><a href="../../posts/travel/hotel/index.html">📁 Travel/hotel</a></li><li><a href="../../posts/travel/overseas/index.html">📁 Travel/overseas</a></li><li><a href="../../posts/occult/index.html">👽 オカルト</a></li><li><a href="../../posts/devlog/index.html">📝 開発ログ</a></li><li><a href="../../posts/rakuten/index.html">🛍️ 楽天・お得</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style:none; padding:0; margin:0; display:flex; gap:8px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/posts/gadget/index.html">
+                                <span itemprop="name">gadget</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name" style="color:var(--text-primary)">スマートプラグ一括制御、プロトタイプ完成。やってみてわかった想定外の3つの事実</span>
+                            <meta itemprop="position" content="3" />
+                        </li>
+                    </ol>
+                </nav>
+
+                <h1>スマートプラグ一括制御、プロトタイプ完成。やってみてわかった想定外の3つの事実</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-06-26</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    <div class="article-lead">先週、子供の習い事の送り迎えで駐車場に停まって待っていたとき、隣にいたお父さんが「スマートホームって結局ただのコンセントやな」とぼやいていた。アプリが3つあって操作がバラバラで、全然スマートじゃないって。</div>
+<p>わかる。というか、1ヶ月前の私がそれだった。</p>
+<h2>今月やろうとしていたこと</h2>
+<p>SwitchBotプラグミニとTP-Link Kasa KP115を計10台、Pythonスクリプトで一括制御する。デスク周りの電源を全部まとめて管理して、消費電力も可視化する。それが今月の目標だった。</p>
+<p>約3週間で動くものは完成した。でも道中に、まったく予想していなかった壁に3回ぶつかった。</p>
+<h2>ブレーカーが落ちた</h2>
+<p>最初にやらかしたのはこれだ。</p>
+<p>10台を同時にONにしたら、瞬間最大3,200Wの負荷が発生してブレーカーが落ちた。家電は起動時に定格の2〜3倍の電流が流れる。それが10台同時だから、突入電流が一気に重なる。「同時制御の方が効率的」という思い込みが、そのまま失敗につながった。</p>
+<p>500msずつずらしてシーケンシャルに起動するように変えたら、あっさり解決した。<strong class="insight-bold">「同時」を目指すことが、実は問題の原因だった。</strong></p>
+<h2>APIに半日溶けた</h2>
+<p>SwitchBot Cloud APIには1日1万リクエストの上限がある。</p>
+<p>10台のプラグを5秒ごとにポーリング監視すると、1日で約17,280リクエストになる。余裕で上限を超える。エラーコード429が返ってきたとき、最初は何が起きているか全然わからなかった。英語のドキュメントで情報も薄くて、原因特定だけで半日以上潰れた。</p>
+<p>Webhookに切り替えたらリクエスト数が約95%削減できた。SwitchBotのWebhookは2023年のAPIアップデートで追加された機能なんだけど、日本語のドキュメントがほぼない。国内ユーザーの多くがまだポーリングのままだと思う。知らずに上限に近づいている人は結構いるはずだ。</p>
+<h2>ローカル制御の速度差</h2>
+<p>これが一番意外だった。</p>
+<p>TP-Link Kasa KP115にはローカルLAN制御がある。クラウドAPI経由だと平均1.2秒かかるところ、ローカル制御は0.08〜0.1秒。<strong class="insight-bold">約12倍の差がある。</strong></p>
+<p>SwitchBotはクラウド経由が前提の設計なので、この差はそのままレスポンスの差になる。「電源OFF」を押してから実際に切れるまでのラグが、体感でまったく違う。スクリプトで連続制御する場合、この差は地味に効いてくる。</p>
+<h2>---</h2>
+<p>余談だけど、Meross MSS310という1,480円のプラグも比べてみた。SwitchBotプラグミニは3,480円。消費電力の測定精度を比べたら、誤差が±4.8%と±5.2%でほぼ同等だった。2,000円の差が精度に直結しないというのは、正直驚いた。</p>
+<h2>---</h2>
+<h2>スペック比較</h2>
+<table>
+  <tr><th>項目</th><th>TP-Link Kasa KP115</th><th>SwitchBotプラグミニ</th><th>Meross MSS310</th></tr>
+  <tr><td>実勢価格</td><td>1,980円</td><td>3,480円</td><td>1,480円</td></tr>
+  <tr><td>電力計測精度</td><td>±3%</td><td>±5.2%</td><td>±4.8%</td></tr>
+  <tr><td>ローカル制御</td><td>◎（python-kasa対応）</td><td>△（クラウド経由主体）</td><td>△（制限あり）</td></tr>
+  <tr><td>応答速度</td><td>0.08〜0.1秒</td><td>約1.2秒</td><td>約1.0〜1.5秒</td></tr>
+  <tr><td>APIレート制限</td><td>なし（ローカル）</td><td>1万req/日</td><td>なし（ローカル限定）</td></tr>
+  <tr><td>Webhook対応</td><td>不要（ローカルで完結）</td><td>○（要設定）</td><td>△</td></tr>
+  <tr><td>購入先</td><td>Amazon / TP-Link公式</td><td>Amazon / SwitchBot公式</td><td>Amazon</td></tr>
+</table>
+<h2>使って気づいたこと</h2>
+<p><strong class="insight-bold">良かった点</strong></p>
+<ul>
+<li>Kasa KP115のローカルLAN制御が速くて安定している</li>
+<li>python-kasaライブラリが成熟していて、Pythonスクリプトが書きやすい</li>
+<li>安価なMerossでも電力計測の精度は実用上ほぼ同水準</li>
+</ul>
+<p><strong class="insight-bold">気になった点</strong></p>
+<ul>
+<li>SwitchBotはWebhook移行が必要で、国内の情報がほぼない</li>
+<li>スマートプラグ自体の待機電力が月あたり18〜22円かかる。月に数回しか使わない家電に使っても、節電効果がマイナスになるケースがある</li>
+</ul>
+<h2>向く人・向かない人</h2>
+<p><strong class="insight-bold">向く人</strong></p>
+<ul>
+<li>Pythonでデスク周りを自動制御したい人</li>
+<li>APIレート制限なしでローカルLANだけで動かしたい人</li>
+</ul>
+<p><strong class="insight-bold">向かない人</strong></p>
+<ul>
+<li>スマホアプリだけで完結させたい人</li>
+<li>月に数回しか操作しない家電に節電目的で使いたい人（効果が出ない可能性が高い）</li>
+</ul>
+<h2>---</h2>
+<p>これ全然関係ない話だけど、昨日の夜に子供に「スマートプラグって何がスマートなん？」と聞かれた。「遠隔で電源操作できる」と答えたら「じゃあ手で切った方が速くない？」と返ってきた。8歳に核心を突かれた気がして、一瞬黙ってしまった。</p>
+<h2>---</h2>
+<p>今月の目標だった「プロトタイプ完成」はひとまず達成できた。動いたし、3つの壁も全部乗り越えた。</p>
+<p>次にやることは決まっている。ローカルLAN制御ベースに設計を統一して、APIレート制限を意識しなくていいアーキテクチャに作り直す。WebhookとシーケンシャルONを組み合わせれば、もっとシンプルで安定した構成になるはずだ。</p>
+<p>皆さんはスマートプラグ、どう使っていますか？「全部まとめて操作できるはずが、アプリが増えてむしろ面倒」という経験はありませんか。もしあるなら、ローカルLAN制御に切り替えてみる価値はあると思います。</p>
+<section class="rakuten-products"><h2>🛒 おすすめ商品</h2><ul><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00sbb08.uw1yy84b.g00sbb08.uw1yzb28/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftplinkdirect%2F4895252506020%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftplinkdirect%2Fi%2F10001377%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tplinkdirect/cabinet/06321509/tapo-p110m-alt.jpg?_ex=128x128" alt="TP-Link WiFi スマートプラグ Bluetooth設定 遠隔操作..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">TP-Link WiFi スマートプラグ Bluetooth設定 遠隔操作...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00sbb08.uw1yy84b.g00sbb08.uw1yzb28/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftplinkdirect%2F4895252506020%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftplinkdirect%2Fi%2F10001377%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00uppg8.uw1yy24f.g00uppg8.uw1yz780/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsootune%2Fhino1a4694792f%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsootune%2Fi%2F10007247%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sootune/cabinet/onesell116/hino1a4694792f_0.jpg?_ex=128x128" alt="TP-Link Tapo スマートWi-Fi電源タップ USB-C x1 ..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">TP-Link Tapo スマートWi-Fi電源タップ USB-C x1 ...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00uppg8.uw1yy24f.g00uppg8.uw1yz780/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsootune%2Fhino1a4694792f%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsootune%2Fi%2F10007247%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00r7ld8.uw1yy0c1.g00r7ld8.uw1yz475/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4897098681671%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbiccamera%2Fi%2F13518713%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/biccamera/cabinet/product/5773/00000008279103_a01.jpg?_ex=128x128" alt="TP-Link｜ティーピーリンク Wi-Fi スマートプラグ Blueto..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">TP-Link｜ティーピーリンク Wi-Fi スマートプラグ Blueto...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00r7ld8.uw1yy0c1.g00r7ld8.uw1yz475/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4897098681671%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbiccamera%2Fi%2F13518713%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00sbb08.uw1yy84b.g00sbb08.uw1yzb28/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftplinkdirect%2Fp105x4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftplinkdirect%2Fi%2F10001113%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tplinkdirect/cabinet/06321509/tapo-p105-alt.jpg?_ex=128x128" alt="TP-Link WiFi スマートプラグ 遠隔操作 直差しコンセント Ec..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">TP-Link WiFi スマートプラグ 遠隔操作 直差しコンセント Ec...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00sbb08.uw1yy84b.g00sbb08.uw1yzb28/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftplinkdirect%2Fp105x4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftplinkdirect%2Fi%2F10001113%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00uncs8.uw1yyeab.g00uncs8.uw1yz9dc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnuvem%2F20250110154239_189%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnuvem%2Fi%2F10056183%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/nuvem/cabinet/r_2024102555/20250110154239_189_1.jpg?_ex=128x128" alt="TP-Link WiFi スマートプラグ タイマー コンセント 遠隔操作 ..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">TP-Link WiFi スマートプラグ タイマー コンセント 遠隔操作 ...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00uncs8.uw1yyeab.g00uncs8.uw1yz9dc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnuvem%2F20250110154239_189%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnuvem%2Fi%2F10056183%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li></ul></section><section class="internal-links" style="margin-top:40px; padding:20px; background:#fffaf0; border-left:5px solid #ff8c00; border-radius:4px;"><h2 style="font-size:1.25em; margin-top:0; color:#333;">📚 あわせて読みたい（シリーズ記事）</h2><ul style="list-style-type:none; padding-left:0; margin-bottom:0;"><li style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px dashed #e0e0e0; display:flex; align-items:flex-start;"><span style="background:#ff8c00; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.8em; margin-right:10px; white-space:nowrap; margin-top:2px;">Check</span><a href="https://chnmotoTmz.github.io/posts/gadget/2026-06-26-%E3%83%87%E3%82%B9%E3%82%AF%E4%B8%8A%E3%81%AE%E5%85%A8%E3%81%A6%E3%81%AE%E9%9B%BB%E5%8A%9B%E3%82%92%E8%A6%8B%E3%81%88%E3%82%8B%E5%8C%96%E3%81%97%E3%81%9F%E3%82%89-%E5%89%8A%E6%B8%9B%E3%81%99%E3%81%B9%E3%81%8D%E7%84%A1%E9%A7%84%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%A6%E3%81%8D%E3%81%9F.html" style="text-decoration:none; color:#0056b3; font-weight:bold; line-height:1.4;">デスク上の全ての電力を見える化したら、削減すべき無駄が見えてきた</a></li><li style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px dashed #e0e0e0; display:flex; align-items:flex-start;"><span style="background:#ff8c00; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.8em; margin-right:10px; white-space:nowrap; margin-top:2px;">Check</span><a href="https://chnmotoTmz.github.io/posts/gadget/2026-06-24-%E5%85%A8%E5%91%A8%E8%BE%BA%E6%A9%9F%E5%99%A8%E3%82%92%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%97%E3%83%A9%E3%82%B0%E3%81%B8%E7%B9%8B%E3%81%84%E3%81%A7%E3%81%BF%E3%81%9F%E3%82%89-%E9%9B%BB%E5%8A%9B%E3%81%AE%E7%84%A1%E9%A7%84%E3%81%8C%E4%B8%B8%E8%A3%B8%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F.html" style="text-decoration:none; color:#0056b3; font-weight:bold; line-height:1.4;">全周辺機器をスマートプラグへ繋いでみたら、電力の無駄が丸裸になった</a></li><li style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px dashed #e0e0e0; display:flex; align-items:flex-start;"><span style="background:#ff8c00; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.8em; margin-right:10px; white-space:nowrap; margin-top:2px;">Check</span><a href="https://chnmotoTmz.github.io/posts/gadget/2026-06-23-%E3%83%87%E3%82%B9%E3%82%AF%E8%87%AA%E5%8B%95%E5%8C%96%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9-%E6%B6%88%E8%B2%BB%E9%9B%BB%E5%8A%9B%E3%81%AE%E8%A6%8B%E3%81%88%E3%82%8B%E5%8C%96%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E8%A8%88%E7%94%BB.html" style="text-decoration:none; color:#0056b3; font-weight:bold; line-height:1.4;">デスク自動化の第一歩。消費電力の見える化から始める環境構築計画</a></li><li style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px dashed #e0e0e0; display:flex; align-items:flex-start;"><span style="background:#ff8c00; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.8em; margin-right:10px; white-space:nowrap; margin-top:2px;">Check</span><a href="https://chnmotoTmz.github.io/posts/gadget/2026-06-23-%E3%83%87%E3%82%B9%E3%82%AF%E8%87%AA%E5%8B%95%E5%8C%96%E3%81%AE%E3%83%97%E3%83%AD%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E6%A7%8B%E7%AF%89-%E9%9B%BB%E5%8A%9B%E8%A8%88%E6%B8%AC%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E4%BB%8A%E6%9C%88%E3%81%AE%E7%9B%AE%E6%A8%99.html" style="text-decoration:none; color:#0056b3; font-weight:bold; line-height:1.4;">デスク自動化のプロトタイプ構築。電力計測から始める今月の目標</a></li></ul></section>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/gadget/2026-06-26-デスク上の全ての電力を見える化したら-削減すべき無駄が見えてきた.html" class="post-nav__link">デスク上の全ての電力を見える化したら、削減すべき無駄が見えてきた</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/education/2026-06-26-受講生1名の試験運用が終わって-良かったことと直さなあかんことを正直に書く.html" class="post-nav__link">受講生1名の試験運用が終わって、良かったことと直さなあかんことを正直に書く</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/gadget/2026-06-26-デスク上の全ての電力を見える化したら-削減すべき無駄が見えてきた.html" class="related-card">
+                                <h4 class="related-card__title">デスク上の全ての電力を見える化したら、削減すべき無駄が見えてきた</h4>
+                                <time class="related-card__date">2026-06-26</time>
+                            </a>
+                        
+                            <a href="../../posts/gadget/2026-06-24-全周辺機器をスマートプラグへ繋いでみたら-電力の無駄が丸裸になった.html" class="related-card">
+                                <h4 class="related-card__title">全周辺機器をスマートプラグへ繋いでみたら、電力の無駄が丸裸になった</h4>
+                                <time class="related-card__date">2026-06-24</time>
+                            </a>
+                        
+                            <a href="../../posts/gadget/2026-06-23-デスク自動化のプロトタイプ構築-電力計測から始める今月の目標.html" class="related-card">
+                                <h4 class="related-card__title">デスク自動化のプロトタイプ構築。電力計測から始める今月の目標</h4>
+                                <time class="related-card__date">2026-06-23</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/diary/2026-07-02-日々是好日-暮らしの模様替え.html">日々是好日、暮らしの模様替え</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/education/2026-07-02-横浜カンフーに見た-AIで加速する超速学習の未来.html">横浜カンフーに見た！AIで加速する『超速』学習の未来</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/news/2026-07-02-Xの賑わい-八百屋の親父とタンポポと.html">Xの賑わい、八百屋の親父とタンポポと</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/tech/2026-07-02-Xトレンドの先-100年後の世界を覗く.html">Xトレンドの先、100年後の世界を覗く</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/lifestyle/2026-07-01-既婚女性が彼氏と呼ぶのはキモい-男性の本音から紐解く恋愛ごっこの違和感と不倫の本質.html">既婚女性が彼氏と呼ぶのはキモい？男性の本音から紐解く恋愛ごっこの違和感と不倫の本質</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+    <div class="sidebar-box" style="text-align: center; padding-top: 15px; border-top: 1px dashed var(--rule); margin-top: 20px;">
+        <a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank"><img src="https://b.blogmura.com/internet/generativeai/88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 ネットブログ ChatGPT・生成AIへ" /></a><br /><a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank" style="font-size: 10px; color: var(--muted); text-decoration: none;">にほんブログ村</a>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
+    </div>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="../../about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="../../partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; 2026 Humanoid Media Factory</span>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>
