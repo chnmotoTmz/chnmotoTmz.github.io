@@ -91,6 +91,13 @@
         <guid>https://chnmototmz.github.io/posts/news/2026-07-04-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%AE%B6%E9%9B%BB%E3%81%A8%E5%AE%B6%E6%97%8F%E3%81%AE%E4%BD%93%E6%B8%A9-%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E5%B0%8E%E5%85%A5%E8%A8%98.html</guid>
     </item>
     <item>
+        <title>資料作成を自動化したい。最新LLMのマルチモーダルで検証を始めてみた</title>
+        <link>https://chnmototmz.github.io/posts/tech/2026-07-04-%E8%B3%87%E6%96%99%E4%BD%9C%E6%88%90%E3%82%92%E8%87%AA%E5%8B%95%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84-%E6%9C%80%E6%96%B0LLM%E3%81%AE%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E3%81%A7%E6%A4%9C%E8%A8%BC%E3%82%92%E5%A7%8B%E3%82%81%E3%81%A6%E3%81%BF%E3%81%9F.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1783130360_LLM.png" /><br/>OBSERVATION 2026-07-04  金曜の夜22時、オフィスには私一人。窓の外はもう真っ暗で、街の明かりがぼんやりと見える。営業活動が終わった後、ここからが本番だ。毎週この時間になると、...]]></description>
+        <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/tech/2026-07-04-%E8%B3%87%E6%96%99%E4%BD%9C%E6%88%90%E3%82%92%E8%87%AA%E5%8B%95%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84-%E6%9C%80%E6%96%B0LLM%E3%81%AE%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E3%81%A7%E6%A4%9C%E8%A8%BC%E3%82%92%E5%A7%8B%E3%82%81%E3%81%A6%E3%81%BF%E3%81%9F.html</guid>
+    </item>
+    <item>
         <title>妻と楽しむ週末燻製！新しいウッドチップを探しに</title>
         <link>https://chnmototmz.github.io/posts/travel/2026-07-04-%E5%A6%BB%E3%81%A8%E6%A5%BD%E3%81%97%E3%82%80%E9%80%B1%E6%9C%AB%E7%87%BB%E8%A3%BD-%E6%96%B0%E3%81%97%E3%81%84%E3%82%A6%E3%83%83%E3%83%89%E3%83%81%E3%83%83%E3%83%97%E3%82%92%E6%8E%A2%E3%81%97%E3%81%AB.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1783104366.png" /><br/>OBSERVATION 2026-07-04  週末は、ホンマにええ天気やったね。ベランダで昔のスモーカー引っ張り出して、チーズとベーコンを燻製にしたんやわ。ええ匂いに誘われて、独立した娘が顔出して...]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1782835489_2026-ChatGPT-9-LifeP.png" /><br/>OBSERVATION 2026-07-01  共通テスト満点AIに見る弱点の質 今朝、日課のRSSリーダーをチェックしていたら、めちゃくちゃ興味深いデータが目に飛び込んできた。なんと2026年度の...]]></description>
         <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/tech/2026-07-01-%E5%85%B1%E9%80%9A%E3%83%86%E3%82%B9%E3%83%882026-ChatGPT%E6%9C%80%E6%96%B0%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8C9%E7%A7%91%E7%9B%AE%E6%BA%80%E7%82%B9LifePrompt%E6%A4%9C%E8%A8%BC-%E7%B2%BE%E5%BA%A6%E3%81%AE%E5%85%88%E3%81%A7%E6%B5%AE%E3%81%8B%E3%81%B6%E5%BC%B1%E7%82%B9%E3%81%AE%E8%B3%AA.html</guid>
-    </item>
-    <item>
-        <title>米中AI戦争激変！最先端の無料オープンモデルGLM-5.2が日本企業の調達に与える影響</title>
-        <link>https://chnmototmz.github.io/posts/tech/2026-07-01-%E7%B1%B3%E4%B8%ADAI%E6%88%A6%E4%BA%89%E6%BF%80%E5%A4%89-%E6%9C%80%E5%85%88%E7%AB%AF%E3%81%AE%E7%84%A1%E6%96%99%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%83%A2%E3%83%87%E3%83%ABGLM-5-2%E3%81%8C%E6%97%A5%E6%9C%AC%E4%BC%81%E6%A5%AD%E3%81%AE%E8%AA%BF%E9%81%94%E3%81%AB%E4%B8%8E%E3%81%88%E3%82%8B%E5%BD%B1%E9%9F%BF.html</link>
-        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1782855856_AI-GLM-5-2.png" /><br/>OBSERVATION 2026-07-01  米中AIの分水嶺！無償モデルGLM-5.2が投げかける「調達」の問い 米中がAIをめぐって完全に正反対の選択を見せた。片や米国は自国の最先端モデルをガ...]]></description>
-        <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/tech/2026-07-01-%E7%B1%B3%E4%B8%ADAI%E6%88%A6%E4%BA%89%E6%BF%80%E5%A4%89-%E6%9C%80%E5%85%88%E7%AB%AF%E3%81%AE%E7%84%A1%E6%96%99%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%83%A2%E3%83%87%E3%83%ABGLM-5-2%E3%81%8C%E6%97%A5%E6%9C%AC%E4%BC%81%E6%A5%AD%E3%81%AE%E8%AA%BF%E9%81%94%E3%81%AB%E4%B8%8E%E3%81%88%E3%82%8B%E5%BD%B1%E9%9F%BF.html</guid>
     </item>
 </channel>
 </rss>
