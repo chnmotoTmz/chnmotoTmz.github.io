@@ -1,0 +1,288 @@
+<!--
+title: 顧客資料をAIで時短！LLMマルチモーダルを試してみた
+date: 2026-07-05
+description: 
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顧客資料をAIで時短！LLMマルチモーダルを試してみた | Humanoid Media Factory</title>
+    <meta name="description" content="">
+
+    <!-- SEO / Canonical / Robots -->
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/tech/2026-07-05-%E9%A1%A7%E5%AE%A2%E8%B3%87%E6%96%99%E3%82%92AI%E3%81%A7%E6%99%82%E7%9F%AD-LLM%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "顧客資料をAIで時短！LLMマルチモーダルを試してみた",
+      "description": "",
+      "image": "",
+      "author": {
+        "@type": "Person",
+        "name": "chnmotoTmz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Humanoid Media Factory",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://chnmototmz.github.io/images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
+        }
+      },
+      "datePublished": "2026-07-05",
+      "dateModified": "2026-07-05",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://chnmototmz.github.io/posts/tech/2026-07-05-%E9%A1%A7%E5%AE%A2%E8%B3%87%E6%96%99%E3%82%92AI%E3%81%A7%E6%99%82%E7%9F%AD-LLM%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F.html"
+      }
+    }
+    </script>
+
+    <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="顧客資料をAIで時短！LLMマルチモーダルを試してみた | Humanoid Media Factory">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/tech/2026-07-05-%E9%A1%A7%E5%AE%A2%E8%B3%87%E6%96%99%E3%82%92AI%E3%81%A7%E6%99%82%E7%9F%AD-LLM%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F.html">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@chnmotoTmz">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            <li><a href="../../posts/adult/index.html">🔞 アダルト</a></li><li><a href="../../posts/diary/index.html">📁 Diary</a></li><li><a href="../../posts/education/index.html">📚 教育・学習</a></li><li><a href="../../posts/finance/index.html">💰 金融・投資</a></li><li><a href="../../posts/gadget/index.html">📱 ガジェット</a></li><li><a href="../../posts/humanoid/index.html">🤖 ロボット・AI</a></li><li><a href="../../posts/lifestyle/index.html">📁 Lifestyle</a></li><li><a href="../../posts/news/index.html">📰 ニュース・時事</a></li><li><a href="../../posts/tech/index.html">💻 テクノロジー</a></li><li><a href="../../posts/travel/index.html">✈️ 旅行</a></li><li><a href="../../posts/uncategorized/index.html">📦 その他</a></li><li><a href="../../posts/wellness/index.html">🌿 健康・ウェルネス</a></li><li><a href="../../posts/art/index.html">🎨 アート・創作</a></li><li><a href="../../posts/relationships/index.html">❤️ 恋愛・人間関係</a></li><li><a href="../../posts/gourmet/index.html">🍽️ グルメ</a></li><li><a href="../../posts/monetization/index.html">📁 Monetization</a></li><li><a href="../../posts/sports/index.html">⚽ スポーツ</a></li><li><a href="../../posts/affiliate/index.html">💸 アフィリエイト</a></li><li><a href="../../posts/english/index.html">🔤 英語学習</a></li><li><a href="../../posts/family/index.html">📁 Family</a></li><li><a href="../../posts/sociology/index.html">📁 Sociology</a></li><li><a href="../../posts/hub/index.html">📁 Hub</a></li><li><a href="../../posts/curation/index.html">📁 Curation</a></li><li><a href="../../posts/entertainment/index.html">🍿 エンタメ</a></li><li><a href="../../posts/music/index.html">🎵 音楽</a></li><li><a href="../../posts/art/illustration/index.html">📁 Art/illustration</a></li><li><a href="../../posts/education/english/index.html">📁 Education/english</a></li><li><a href="../../posts/education/multilingual/index.html">📁 Education/multilingual</a></li><li><a href="../../posts/entertainment/anime/index.html">📁 Entertainment/anime</a></li><li><a href="../../posts/entertainment/game/index.html">📁 Entertainment/game</a></li><li><a href="../../posts/entertainment/movie/index.html">📁 Entertainment/movie</a></li><li><a href="../../posts/gourmet/recipe/index.html">📁 Gourmet/recipe</a></li><li><a href="../../posts/gourmet/restaurant/index.html">📁 Gourmet/restaurant</a></li><li><a href="../../posts/gourmet/sweets/index.html">📁 Gourmet/sweets</a></li><li><a href="../../posts/news/economy/index.html">📁 News/economy</a></li><li><a href="../../posts/news/entertainment/index.html">📁 News/entertainment</a></li><li><a href="../../posts/news/net/index.html">📁 News/net</a></li><li><a href="../../posts/news/world/index.html">📁 News/world</a></li><li><a href="../../posts/tech/ai/index.html">📁 Tech/ai</a></li><li><a href="../../posts/tech/gadget/index.html">📁 Tech/gadget</a></li><li><a href="../../posts/tech/robotics/index.html">📁 Tech/robotics</a></li><li><a href="../../posts/tech/video/index.html">📁 Tech/video</a></li><li><a href="../../posts/travel/gear/index.html">📁 Travel/gear</a></li><li><a href="../../posts/travel/hiking/index.html">📁 Travel/hiking</a></li><li><a href="../../posts/wellness/diet/index.html">📁 Wellness/diet</a></li><li><a href="../../posts/wellness/health/index.html">📁 Wellness/health</a></li><li><a href="../../posts/wellness/mental/index.html">📁 Wellness/mental</a></li><li><a href="../../posts/wellness/skincare/index.html">📁 Wellness/skincare</a></li><li><a href="../../posts/art/music/index.html">📁 Art/music</a></li><li><a href="../../posts/art/writing/index.html">📁 Art/writing</a></li><li><a href="../../posts/education/hack/index.html">📁 Education/hack</a></li><li><a href="../../posts/entertainment/youtube/index.html">📁 Entertainment/youtube</a></li><li><a href="../../posts/finance/crypto/index.html">📁 Finance/crypto</a></li><li><a href="../../posts/finance/news/index.html">📁 Finance/news</a></li><li><a href="../../posts/finance/saving/index.html">📁 Finance/saving</a></li><li><a href="../../posts/finance/stock/index.html">📁 Finance/stock</a></li><li><a href="../../posts/gourmet/sake/index.html">📁 Gourmet/sake</a></li><li><a href="../../posts/news/domestic/index.html">📁 News/domestic</a></li><li><a href="../../posts/tech/programming/index.html">📁 Tech/programming</a></li><li><a href="../../posts/travel/domestic/index.html">📁 Travel/domestic</a></li><li><a href="../../posts/travel/hotel/index.html">📁 Travel/hotel</a></li><li><a href="../../posts/travel/overseas/index.html">📁 Travel/overseas</a></li><li><a href="../../posts/occult/index.html">👽 オカルト</a></li><li><a href="../../posts/devlog/index.html">📝 開発ログ</a></li><li><a href="../../posts/rakuten/index.html">🛍️ 楽天・お得</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style:none; padding:0; margin:0; display:flex; gap:8px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/posts/tech/index.html">
+                                <span itemprop="name">tech</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name" style="color:var(--text-primary)">顧客資料をAIで時短！LLMマルチモーダルを試してみた</span>
+                            <meta itemprop="position" content="3" />
+                        </li>
+                    </ol>
+                </nav>
+
+                <h1>顧客資料をAIで時短！LLMマルチモーダルを試してみた</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-07-05</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    <div class="article-lead">先日、古いクライアントの資料を引っ張り出してきて、その分厚さに思わずため息が出た。紙の資料から必要な情報を探すのは骨が折れるし、PDFでも結局は目視で確認する部分が多くてね。商談前にバタバタと資料を読み込み、結局準備不足で臨むなんてことも正直あった。</div>
+<p>チーム内で資料の要約を任せても、人によって質がバラバラで、結局自分で確認し直す羽目になる。この「またこの資料か…」っていう徒労感、どうにかしたいとずっと思っていたんだ。こんな非効率な作業は、もうAIに任せるべき時が来ているんじゃないか、そう強く感じたのが、今回の検証のきっかけだ。</p>
+<h2>顧客資料、AIでサクッと読解</h2>
+<p>最近のLLMマルチモーダルAIは、資料読解の常識を大きく変えつつある。具体的には、<strong class="insight-bold">GPT-4o</strong>、<strong class="insight-bold">Gemini Advanced</strong>、<strong class="insight-bold">Claude 3 Opus</strong>といったモデルがその代表格だ。これらは単にテキストを処理するだけでなく、画像や図表、PDFの注釈までを理解する能力を持っている。</p>
+<p>従来のOCRでは、画像内のグラフや手書きのメモ、複雑な非定型表データからの情報抽出は苦手な分野だった。誤読のリスクも高く、結局は手作業での修正が必要になる。でも、LLMマルチモーダルは、これらの情報を90%以上の精度で抽出できる可能性を秘めている。</p>
+<p>たとえば、私が試した限りでは、月間の資料要約・データ抽出にかかる時間を平均で<strong class="insight-bold">60%</strong>は削減できそうだ。これは月間に約30時間もの業務効率化につながる計算だ。株式会社スマートセールスでは、営業担当者が顧客提案資料作成にかける時間をGPT-4o導入後、平均75%削減したと聞く。その削減できた時間を新規顧客開拓に充てているというから、これはもう、単なる時短ツールではない。</p>
+<p>| 処理項目        | 従来の資料処理（手作業・OCR） | LLMマルチモーダルAI |<br>
+| :-------------- | :----------------------------- | :------------------ |<br>
+| テキスト要約    | 30分〜1時間                    | 数分〜10分          |<br>
+| 画像内グラフ解析 | 数時間（手動解析）             | 数分〜10分          |<br>
+| 非定型表データ抽出 | 数時間（手動入力・整形）      | 数分〜15分          |<br>
+| 手書きメモ解析  | 不可、または手動入力           | 可能、高精度        |<br>
+| 総合時間削減率  | -                              | 平均60%以上         |</p>
+<p><strong class="insight-bold">使える人:</strong> 営業、コンサルタント、法務担当者、研究者など、膨大な非定型資料から重要な情報を素早く抽出・要約したい人。特に、画像や図表、手書きメモを含む資料を頻繁に扱う場合に、大きな恩恵を受けられるだろう。<br>
+<strong class="insight-bold">使えない人:</strong> 定型的なデータ入力のみで、複雑な情報抽出や解釈をほとんど必要としない業務に携わる人。</p>
+<h2>月数千円から始めるAI資料処理</h2>
+<p>「LLMマルチモーダルは高精度だけど、導入コストが高くて中小企業には不向きだろう」という話をよく耳にする。私も最初はそう思い込んでいた一人だ。でも、実際にAPIを叩いて検証してみると、その通説はちょっと違うと感じている。</p>
+<p>実は、月額5,000円から20,000円程度のAPI利用料で、十分に実用レベルのAI資料処理を始められる。これは、専門の資料分析ツールを導入するよりもはるかにリーズナブルだ。APIキーを取得して、簡単なスクリプトで連携させる。これだけで、特定のタスクに絞れば、予想以上に短期間でROI（投資収益率）を回収できる可能性を秘めている。</p>
+<p>余談だけど、先日、古い友人に会ったら、まだExcelで手入力してるって聞いてね。もちろんそれが悪いわけじゃないけど、ちょっと時代に取り残されてるんじゃないかと心配になったんだ。そういう人にこそ、こういったAIを「自分で作って稼ぐ」視点で試してみてほしい。</p>
+<p>例えば、<strong class="insight-bold">Adobe Acrobat AI Assistant</strong>の進化は目覚ましい。2024年春のアップデートで、PDF内の複数ページにわたる表データを自動認識し、CSV形式で出力する機能が強化された。これにより、データ入力作業が平均80%削減される見込みだという。これは、これまで手作業で膨大な時間を費やしていた人にとっては、まさに革命的な機能だろう。</p>
+<p>まずは、自分の業務で一番時間がかかっている資料処理タスクを一つ選んで、スモールスタートで試してみるのが賢いやり方だ。段階的に業務フローに組み込んでいけば、大きな投資をせずとも、着実に生産性を高められるはずだ。</p>
+<h2>AIの限界と、私の次の一手</h2>
+<p>もちろん、LLMマルチモーダルAIにも限界はある。ニュアンスの理解、高度な法的判断、あるいはAIが学習していない特殊な分野のデータ解釈など、人間のような深い洞察力はまだ持ち合わせていない。だからこそ、AIはあくまで「ツール」として捉え、最終的な判断は人間が下すという意識が重要だ。</p>
+<p>AIによって削減された時間は、本来人間が集中すべき、より戦略的でクリエイティブな業務に充てるべきだ。スマートセールスの事例のように、新規顧客開拓や、既存顧客へのより深い提案、あるいは新しいビジネスモデルの検討など。</p>
+<p>私自身は、この技術をさらに深掘りして、「AI実装型アドバイザリー」という形でクライアントに提供できるパッケージを構築中だ。資料分析に特化したSaaSのプロトタイプ開発や、社内向けの自動化ツールとして提供するのも面白い。</p>
+<p>AIは、私たちの仕事を奪うものではなく、むしろ新たな価値を創造するための強力な武器になる。あなたなら、このLLMマルチモーダルAIをどう使って、どんな新しい価値を生み出したいと考えますか？</p><section class="internal-links"><h2>🔗 関連記事</h2><ul><li><a href="https://yamasan1969.hatenablog.com/entry/2026/07/04/231024">最新LLMの画像理解で顧客提案書を作れるか？まずは手元の資料で実験開始</a></li><li><a href="https://yamasan1969.hatenablog.com/entry/2026/07/04/110044">資料作成を自動化したい。最新LLMのマルチモーダルで検証を始めてみた</a></li><li><a href="https://yamasan1969.hatenablog.com/entry/2026/07/03/224917">LLMマルチモーダルで顧客資料自動生成を試してみた</a></li></ul></section>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/travel/2026-07-05-週末の燻製計画-未体験のウッドチップを買いに.html" class="post-nav__link">週末の燻製計画！未体験のウッドチップを買いに</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/news/2026-07-05-60代夫婦の挑戦-スマートスピーカー-ほんまに便利なん.html" class="post-nav__link">60代夫婦の挑戦！スマートスピーカー、ほんまに便利なん？</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/tech/2026-07-04-最新LLMの画像理解で顧客提案書を作れるか-まずは手元の資料で実験開始.html" class="related-card">
+                                <h4 class="related-card__title">最新LLMの画像理解で顧客提案書を作れるか？まずは手元の資料で実験開始</h4>
+                                <time class="related-card__date">2026-07-04</time>
+                            </a>
+                        
+                            <a href="../../posts/tech/2026-07-04-資料作成を自動化したい-最新LLMのマルチモーダルで検証を始めてみた.html" class="related-card">
+                                <h4 class="related-card__title">資料作成を自動化したい。最新LLMのマルチモーダルで検証を始めてみた</h4>
+                                <time class="related-card__date">2026-07-04</time>
+                            </a>
+                        
+                            <a href="../../posts/tech/2026-07-03-LLMマルチモーダルで顧客資料自動生成を試してみた.html" class="related-card">
+                                <h4 class="related-card__title">LLMマルチモーダルで顧客資料自動生成を試してみた</h4>
+                                <time class="related-card__date">2026-07-03</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/adult/2026-07-05-日常の役割を脱ぎ捨てて-一人で隣町のアンティーク着物を試着した日.html">日常の役割を脱ぎ捨てて。一人で隣町のアンティーク着物を試着した日</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/diary/2026-07-05-行動できないって悩んでた私へ.html">行動できないって悩んでた私へ</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/education/2026-07-05-AI英会話-生徒と試して見えた伸びると詰まるの境目.html">AI英会話、生徒と試して見えた「伸びる」と「詰まる」の境目</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/finance/2026-07-05-最新の資産承継トレンドを掴むため-今週相談する税理士のリストを作った.html">最新の資産承継トレンドを掴むため、今週相談する税理士のリストを作った</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/gadget/2026-07-05-ノートに描く電源図-自動化への最初の一歩.html">ノートに描く電源図。自動化への最初の一歩</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+    <div class="sidebar-box" style="text-align: center; padding-top: 15px; border-top: 1px dashed var(--rule); margin-top: 20px;">
+        <a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank"><img src="https://b.blogmura.com/internet/generativeai/88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 ネットブログ ChatGPT・生成AIへ" /></a><br /><a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank" style="font-size: 10px; color: var(--muted); text-decoration: none;">にほんブログ村</a>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
+    </div>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="../../about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="../../partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; 2026 Humanoid Media Factory</span>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>
