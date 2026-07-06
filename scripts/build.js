@@ -480,14 +480,14 @@ async function build() {
         if (!excerpt && rawContent) {
             const core = extractCoreContent(rawContent);
             const sanitized = core.replace(/<style[^>]*>[\s\S]*?<\/style>/ig, '').replace(/<figure[^>]*>[\s\S]*?<\/figure>/ig, '');
-            const temp = sanitized.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            const temp = sanitized.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').replace(/["<>]/g, '').trim();
             excerpt = temp.length > 100 ? temp.substring(0, 100) + '...' : temp;
         }
 
         postsData.push({
             title: displayTitle,
             date: meta.date || dateFromFilename || '2026-01-01',
-            description: meta.description || '',
+            description: meta.description || excerpt || '',
             excerpt: excerpt,
             articleType: meta.article_type || 'OBSERVATION',
             categoryName: categoryName,
