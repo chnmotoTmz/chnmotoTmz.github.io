@@ -37,7 +37,7 @@
     <item>
         <title>計画外の発見。手を動かして見つけた私の進む道</title>
         <link>https://chnmototmz.github.io/posts/diary/2026-07-06-%E8%A8%88%E7%94%BB%E5%A4%96%E3%81%AE%E7%99%BA%E8%A6%8B-%E6%89%8B%E3%82%92%E5%8B%95%E3%81%8B%E3%81%97%E3%81%A6%E8%A6%8B%E3%81%A4%E3%81%91%E3%81%9F%E7%A7%81%E3%81%AE%E9%80%B2%E3%82%80%E9%81%93.html</link>
-        <description><![CDATA[最近、ずっと頭の中にあった「漠然としたアイデア」を、ようやく具体的な形にする最初の一歩を踏み出しました。なんだかんだで、最初の一歩を踏み出すって、すごく勇気がいることなんですね。でも、実際に手を動かし...]]></description>
+        <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>最近、ずっと頭の中にあった「漠然としたアイデア」を、ようやく具体的な形にする最初の一歩を踏み出しました。なんだかんだで、最初の一歩を踏み出すって、すごく勇気がいることなんですね。でも、実際に手を動かし...]]></description>
         <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/diary/2026-07-06-%E8%A8%88%E7%94%BB%E5%A4%96%E3%81%AE%E7%99%BA%E8%A6%8B-%E6%89%8B%E3%82%92%E5%8B%95%E3%81%8B%E3%81%97%E3%81%A6%E8%A6%8B%E3%81%A4%E3%81%91%E3%81%9F%E7%A7%81%E3%81%AE%E9%80%B2%E3%82%80%E9%81%93.html</guid>
     </item>
@@ -68,6 +68,13 @@
         <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>最近、うちの冷蔵庫の音がなんかおかしい気がしてな。もう10年選手やから、そろそろ寿命かとヒヤヒヤしてたんや。高価なもんやから、簡単に買い替えるわけにもいかんし、かといって急に壊れたら家族みんなが困るや...]]></description>
         <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/gadget/2026-07-06-%E3%81%88%E3%81%88%E3%82%82%E3%82%93%E3%82%92%E9%95%B7%E3%81%8F%E4%BD%BF%E3%81%86-%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%97%E3%83%A9%E3%82%B0%E3%81%AE%E9%9B%BB%E5%8A%9B%E8%A8%88%E6%B8%AC%E3%82%92%E8%A8%88%E7%94%BB.html</guid>
+    </item>
+    <item>
+        <title>触覚で学ぶロボットの進化。LLM統合の概念設計を僕がどう進めるか</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-07-06-%E8%A7%A6%E8%A6%9A%E3%81%A7%E5%AD%A6%E3%81%B6%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%81%AE%E9%80%B2%E5%8C%96-LLM%E7%B5%B1%E5%90%88%E3%81%AE%E6%A6%82%E5%BF%B5%E8%A8%AD%E8%A8%88%E3%82%92%E5%83%95%E3%81%8C%E3%81%A9%E3%81%86%E9%80%B2%E3%82%81%E3%82%8B%E3%81%8B.html</link>
+        <description><![CDATA[朝、ベランダで育てているハーブに水をやっていると、指先に土の冷たさと葉の柔らかな感触が伝わってきた。ごく当たり前のことだが、この「触れる」という行為が、どれほど多くの情報を僕らに与えているか。そう考え...]]></description>
+        <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-07-06-%E8%A7%A6%E8%A6%9A%E3%81%A7%E5%AD%A6%E3%81%B6%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%81%AE%E9%80%B2%E5%8C%96-LLM%E7%B5%B1%E5%90%88%E3%81%AE%E6%A6%82%E5%BF%B5%E8%A8%AD%E8%A8%88%E3%82%92%E5%83%95%E3%81%8C%E3%81%A9%E3%81%86%E9%80%B2%E3%82%81%E3%82%8B%E3%81%8B.html</guid>
     </item>
     <item>
         <title>触覚データとLLM統合。僕の次なる設計への第一歩を計画する</title>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1783185460.png" /><br/>OBSERVATION 2026-07-05  最近、ネットで「行動力がない」って悩む人の記事をふと目にしたんだ。読んでみたら、まさに私のことだって思う部分がたくさんあって、思わず頷いちゃった。アイ...]]></description>
         <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/diary/2026-07-05-%E8%A1%8C%E5%8B%95%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E3%81%A3%E3%81%A6%E6%82%A9%E3%82%93%E3%81%A7%E3%81%9F%E7%A7%81%E3%81%B8.html</guid>
-    </item>
-    <item>
-        <title>AIで英会話を教えてみたら、予想外の課題と解決策が見つかった</title>
-        <link>https://chnmototmz.github.io/posts/education/2026-07-05-AI%E3%81%A7%E8%8B%B1%E4%BC%9A%E8%A9%B1%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F%E3%82%89-%E4%BA%88%E6%83%B3%E5%A4%96%E3%81%AE%E8%AA%B2%E9%A1%8C%E3%81%A8%E8%A7%A3%E6%B1%BA%E7%AD%96%E3%81%8C%E8%A6%8B%E3%81%A4%E3%81%8B%E3%81%A3%E3%81%9F.html</link>
-        <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>最近、うちの子供がやたらと「パパ、英語でこれなんて言うん？」って聞いてくるようになったんや。来年あたり家族で海外旅行行きたいなぁ、なんて話してるから、そら興味も湧くわな。 そんな子供のキラキラした目を...]]></description>
-        <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/education/2026-07-05-AI%E3%81%A7%E8%8B%B1%E4%BC%9A%E8%A9%B1%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F%E3%82%89-%E4%BA%88%E6%83%B3%E5%A4%96%E3%81%AE%E8%AA%B2%E9%A1%8C%E3%81%A8%E8%A7%A3%E6%B1%BA%E7%AD%96%E3%81%8C%E8%A6%8B%E3%81%A4%E3%81%8B%E3%81%A3%E3%81%9F.html</guid>
     </item>
 </channel>
 </rss>
