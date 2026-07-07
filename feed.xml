@@ -84,9 +84,16 @@
         <guid>https://chnmototmz.github.io/posts/tech/2026-07-07-AI%E3%81%AF%E9%81%93%E5%85%B7-LLM%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E3%81%A7%E8%B3%87%E6%96%99%E4%BD%9C%E6%88%90%E3%81%A9%E3%81%93%E3%81%BE%E3%81%A7%E4%BB%BB%E3%81%9B%E3%82%89%E3%82%8C%E3%82%8B.html</guid>
     </item>
     <item>
+        <title>終わらない資料作成、この非効率どうにかせな</title>
+        <link>https://chnmototmz.github.io/posts/tech/2026-07-07-%E7%B5%82%E3%82%8F%E3%82%89%E3%81%AA%E3%81%84%E8%B3%87%E6%96%99%E4%BD%9C%E6%88%90-%E3%81%93%E3%81%AE%E9%9D%9E%E5%8A%B9%E7%8E%87%E3%81%A9%E3%81%86%E3%81%AB%E3%81%8B%E3%81%9B%E3%81%AA.html</link>
+        <description><![CDATA[「松本さん、うちの資料作成、どうにかなりませんかね？もう、毎月20時間以上も無駄にしてる気がして…」]]></description>
+        <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/tech/2026-07-07-%E7%B5%82%E3%82%8F%E3%82%89%E3%81%AA%E3%81%84%E8%B3%87%E6%96%99%E4%BD%9C%E6%88%90-%E3%81%93%E3%81%AE%E9%9D%9E%E5%8A%B9%E7%8E%87%E3%81%A9%E3%81%86%E3%81%AB%E3%81%8B%E3%81%9B%E3%81%AA.html</guid>
+    </item>
+    <item>
         <title>今週は燻製材料を物色。妻と新しい味を創り出そう</title>
         <link>https://chnmototmz.github.io/posts/travel/2026-07-07-%E4%BB%8A%E9%80%B1%E3%81%AF%E7%87%BB%E8%A3%BD%E6%9D%90%E6%96%99%E3%82%92%E7%89%A9%E8%89%B2-%E5%A6%BB%E3%81%A8%E6%96%B0%E3%81%97%E3%81%84%E5%91%B3%E3%82%92%E5%89%B5%E3%82%8A%E5%87%BA%E3%81%9D%E3%81%86.html</link>
-        <description><![CDATA[週末、SNSでベランダで手軽に燻製を楽しんでる投稿をよう見かけるようになったんや。ワイも昔から燻製には興味あったんやけど、娘が独立して妻と二人きりになってから、なんか新しいこと始めたいなぁって思っとったんや。]]></description>
+        <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>週末、SNSでベランダで手軽に燻製を楽しんでる投稿をよう見かけるようになったんや。ワイも昔から燻製には興味あったんやけど、娘が独立して妻と二人きりになってから、なんか新しいこと始めたいなぁって思っとったんや。]]></description>
         <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/travel/2026-07-07-%E4%BB%8A%E9%80%B1%E3%81%AF%E7%87%BB%E8%A3%BD%E6%9D%90%E6%96%99%E3%82%92%E7%89%A9%E8%89%B2-%E5%A6%BB%E3%81%A8%E6%96%B0%E3%81%97%E3%81%84%E5%91%B3%E3%82%92%E5%89%B5%E3%82%8A%E5%87%BA%E3%81%9D%E3%81%86.html</guid>
     </item>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>朝、ベランダで育てているハーブに水をやっていると、指先に土の冷たさと葉の柔らかな感触が伝わってきた。ごく当たり前のことだが、この「触れる」という行為が、どれほど多くの情報を僕らに与えているか。そう考え...]]></description>
         <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/humanoid/2026-07-06-%E8%A7%A6%E8%A6%9A%E3%81%A7%E5%AD%A6%E3%81%B6%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%81%AE%E9%80%B2%E5%8C%96-LLM%E7%B5%B1%E5%90%88%E3%81%AE%E6%A6%82%E5%BF%B5%E8%A8%AD%E8%A8%88%E3%82%92%E5%83%95%E3%81%8C%E3%81%A9%E3%81%86%E9%80%B2%E3%82%81%E3%82%8B%E3%81%8B.html</guid>
-    </item>
-    <item>
-        <title>触覚データとLLM統合。僕の次なる設計への第一歩を計画する</title>
-        <link>https://chnmototmz.github.io/posts/humanoid/2026-07-06-%E8%A7%A6%E8%A6%9A%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8LLM%E7%B5%B1%E5%90%88-%E5%83%95%E3%81%AE%E6%AC%A1%E3%81%AA%E3%82%8B%E8%A8%AD%E8%A8%88%E3%81%B8%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9%E3%82%92%E8%A8%88%E7%94%BB%E3%81%99%E3%82%8B.html</link>
-        <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>SNSで触覚AIに関する議論を見かけたとき、多くの人が「時期尚早だ」と口にするのを聞いた。だが、僕にはそうは思えない。むしろ、今こそが指先の宇宙を解き放ち、次世代HCI設計の具体的な第一歩を踏み出すべ...]]></description>
-        <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/humanoid/2026-07-06-%E8%A7%A6%E8%A6%9A%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8LLM%E7%B5%B1%E5%90%88-%E5%83%95%E3%81%AE%E6%AC%A1%E3%81%AA%E3%82%8B%E8%A8%AD%E8%A8%88%E3%81%B8%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9%E3%82%92%E8%A8%88%E7%94%BB%E3%81%99%E3%82%8B.html</guid>
     </item>
 </channel>
 </rss>
