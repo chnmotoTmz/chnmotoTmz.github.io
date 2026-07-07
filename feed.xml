@@ -37,7 +37,7 @@
     <item>
         <title>『詰んだ』と思ったら開く私の実践ノート。次にやるべきことが見つかる3つの視点</title>
         <link>https://chnmototmz.github.io/posts/diary/2026-07-07-%E8%A9%B0%E3%82%93%E3%81%A0%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%9F%E3%82%89%E9%96%8B%E3%81%8F%E7%A7%81%E3%81%AE%E5%AE%9F%E8%B7%B5%E3%83%8E%E3%83%BC%E3%83%88-%E6%AC%A1%E3%81%AB%E3%82%84%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8%E3%81%8C%E8%A6%8B%E3%81%A4%E3%81%8B%E3%82%8B3%E3%81%A4%E3%81%AE%E8%A6%96%E7%82%B9.html</link>
-        <description><![CDATA[この前、ブログの構成を考えていたら、なんだか頭の中がごちゃごちゃになってしまって。「あー、もう何から手をつけていいか分からない！」って、思わずため息が出ちゃったんです。ちょうど隣でコーヒーを淹れていたミカちゃんが、「どう…]]></description>
+        <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>この前、ブログの構成を考えていたら、なんだか頭の中がごちゃごちゃになってしまって。「あー、もう何から手をつけていいか分からない！」って、思わずため息が出ちゃったんです。ちょうど隣でコーヒーを淹れていたミカちゃんが、「どう…]]></description>
         <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/diary/2026-07-07-%E8%A9%B0%E3%82%93%E3%81%A0%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%9F%E3%82%89%E9%96%8B%E3%81%8F%E7%A7%81%E3%81%AE%E5%AE%9F%E8%B7%B5%E3%83%8E%E3%83%BC%E3%83%88-%E6%AC%A1%E3%81%AB%E3%82%84%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8%E3%81%8C%E8%A6%8B%E3%81%A4%E3%81%8B%E3%82%8B3%E3%81%A4%E3%81%AE%E8%A6%96%E7%82%B9.html</guid>
     </item>
@@ -68,6 +68,13 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1783364454_SLAM.png" /><br/>OBSERVATION 2026-07-07  最近、研究室の窓から見える空が、少しずつ高くなってきたように感じる。季節の変わり目、研究のペースもまた、新しいフェーズに入りつつあるのかもしれない。特...]]></description>
         <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/humanoid/2026-07-07-SLAM%E3%81%A7%E3%81%AE%E8%A7%A6%E8%A6%9A%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%81%A9%E3%81%86%E6%96%99%E7%90%86%E3%81%99%E3%82%8B%E3%81%8B-%E3%81%BE%E3%81%9A%E3%81%AF%E5%AE%9F%E9%A8%93%E7%B5%90%E6%9E%9C%E3%81%AE%E5%88%86%E6%9E%90%E8%A8%88%E7%94%BB%E3%82%92%E7%AB%8B%E3%81%A6%E3%82%8B.html</guid>
+    </item>
+    <item>
+        <title>汎用判断アルゴリズムへ。触覚統合の概念設計を僕が描く</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-07-07-%E6%B1%8E%E7%94%A8%E5%88%A4%E6%96%AD%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%B8-%E8%A7%A6%E8%A6%9A%E7%B5%B1%E5%90%88%E3%81%AE%E6%A6%82%E5%BF%B5%E8%A8%AD%E8%A8%88%E3%82%92%E5%83%95%E3%81%8C%E6%8F%8F%E3%81%8F.html</link>
+        <description><![CDATA[「ロボットが卵を割らずに掴む」なんて、そんな当たり前のことがなぜできないのか、と佐藤さんが首を傾げた。ランチ休憩中、僕が最近取り組んでいる自律型ヒューマノイドの『汎用的な状況判断アルゴリズム』の話をしていた時のことだ。]]></description>
+        <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-07-07-%E6%B1%8E%E7%94%A8%E5%88%A4%E6%96%AD%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%B8-%E8%A7%A6%E8%A6%9A%E7%B5%B1%E5%90%88%E3%81%AE%E6%A6%82%E5%BF%B5%E8%A8%AD%E8%A8%88%E3%82%92%E5%83%95%E3%81%8C%E6%8F%8F%E3%81%8F.html</guid>
     </item>
     <item>
         <title>サウナで沈黙の2時間。私の生存戦略は磨かれたか</title>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>最近、ずっと頭の中にあった「漠然としたアイデア」を、ようやく具体的な形にする最初の一歩を踏み出しました。なんだかんだで、最初の一歩を踏み出すって、すごく勇気がいることなんですね。でも、実際に手を動かし...]]></description>
         <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/diary/2026-07-06-%E8%A8%88%E7%94%BB%E5%A4%96%E3%81%AE%E7%99%BA%E8%A6%8B-%E6%89%8B%E3%82%92%E5%8B%95%E3%81%8B%E3%81%97%E3%81%A6%E8%A6%8B%E3%81%A4%E3%81%91%E3%81%9F%E7%A7%81%E3%81%AE%E9%80%B2%E3%82%80%E9%81%93.html</guid>
-    </item>
-    <item>
-        <title>頭でっかちは卒業。アイデアを動かす「たった一つ」の実験</title>
-        <link>https://chnmototmz.github.io/posts/diary/2026-07-06-%E9%A0%AD%E3%81%A7%E3%81%A3%E3%81%8B%E3%81%A1%E3%81%AF%E5%8D%92%E6%A5%AD-%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E3%81%9F%E3%81%A3%E3%81%9F%E4%B8%80%E3%81%A4%E3%81%AE%E5%AE%9F%E9%A8%93.html</link>
-        <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>最近、私も自分のアイデアをどうにか形にしたいなと思って、いろいろ試行錯誤しているところ。今日のお昼、久しぶりに近所のカフェでサンドイッチを食べたんだけど、新しいメニューの組み合わせがすごく面白くて。そ...]]></description>
-        <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/diary/2026-07-06-%E9%A0%AD%E3%81%A7%E3%81%A3%E3%81%8B%E3%81%A1%E3%81%AF%E5%8D%92%E6%A5%AD-%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E3%81%9F%E3%81%A3%E3%81%9F%E4%B8%80%E3%81%A4%E3%81%AE%E5%AE%9F%E9%A8%93.html</guid>
     </item>
 </channel>
 </rss>
