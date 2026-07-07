@@ -22,15 +22,15 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -282,6 +282,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/art/2026-07-08-Suno%E3%81%8C%E8%AA%98%E3%81%86-%E9%9D%99%E5%AF%82%E3%81%AE%E9%9F%B3%E6%A5%BD%E5%AE%A4.html</loc>
+        <lastmod>2026-07-08</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/tech/2026-07-08-AI%E3%82%B3%E3%83%B3%E3%82%B5%E3%83%AB%E6%9D%BE%E6%9C%AC-LLM%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%AB%E3%81%A7%E9%A1%A7%E5%AE%A2%E8%B3%87%E6%96%99%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90%E3%82%92%E5%AE%9F%E8%B7%B5.html</loc>
         <lastmod>2026-07-08</lastmod>
