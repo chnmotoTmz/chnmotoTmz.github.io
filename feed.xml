@@ -16,9 +16,16 @@
     <item>
         <title>動けば動くほど楽しくなる！小さな成功を重ねる加速術</title>
         <link>https://chnmototmz.github.io/posts/diary/2026-07-11-%E5%8B%95%E3%81%91%E3%81%B0%E5%8B%95%E3%81%8F%E3%81%BB%E3%81%A9%E6%A5%BD%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8B-%E5%B0%8F%E3%81%95%E3%81%AA%E6%88%90%E5%8A%9F%E3%82%92%E9%87%8D%E3%81%AD%E3%82%8B%E5%8A%A0%E9%80%9F%E8%A1%93.html</link>
-        <description><![CDATA[「ねぇパパ、今日のご飯なに？」]]></description>
+        <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>「ねぇパパ、今日のご飯なに？」]]></description>
         <pubDate>Sat, 11 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/diary/2026-07-11-%E5%8B%95%E3%81%91%E3%81%B0%E5%8B%95%E3%81%8F%E3%81%BB%E3%81%A9%E6%A5%BD%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8B-%E5%B0%8F%E3%81%95%E3%81%AA%E6%88%90%E5%8A%9F%E3%82%92%E9%87%8D%E3%81%AD%E3%82%8B%E5%8A%A0%E9%80%9F%E8%A1%93.html</guid>
+    </item>
+    <item>
+        <title>触覚をLLMに伝える、プロンプト試作の第一歩</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-07-11-%E8%A7%A6%E8%A6%9A%E3%82%92LLM%E3%81%AB%E4%BC%9D%E3%81%88%E3%82%8B-%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E8%A9%A6%E4%BD%9C%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9.html</link>
+        <description><![CDATA[{ title: 触覚をLLMに伝える、プロンプト試作の第一歩, author: 木村テツヤ, date: 2024-07-29, body: [ { heading: 指先に宿る記憶、AIはそれを知覚できるか？, co…]]></description>
+        <pubDate>Sat, 11 Jul 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-07-11-%E8%A7%A6%E8%A6%9A%E3%82%92LLM%E3%81%AB%E4%BC%9D%E3%81%88%E3%82%8B-%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E8%A9%A6%E4%BD%9C%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9.html</guid>
     </item>
     <item>
         <title>鏡の中の私と、見慣れない画面の小さな灯り</title>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>最近、天神橋筋商店街をぶらぶらしてたら、ええ感じの立ち飲み屋を見つけてな。ついフラッと入ってもうたわ。ビール一杯ひっかけて、さあ会計って時に焦ったんや。財布に小銭がほとんど入ってへん。PayPayとかd払いも使えん店で、…]]></description>
         <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/news/2026-07-10-%E5%A4%A9%E7%A5%9E%E6%A9%8B%E7%AD%8B%E3%81%A7Suica%E4%BD%BF%E3%81%88%E3%81%B8%E3%82%93%E3%81%8B%E3%81%A3%E3%81%9F%E8%A9%B1-%E3%81%82%E3%82%93%E3%81%9F%E3%82%82%E3%81%82%E3%82%8B%E3%82%84%E3%82%8D.html</guid>
-    </item>
-    <item>
-        <title>52歳ITコンサル、小型AIを組み立てて音声認識を試す</title>
-        <link>https://chnmototmz.github.io/posts/tech/2026-07-10-52%E6%AD%B3IT%E3%82%B3%E3%83%B3%E3%82%B5%E3%83%AB-%E5%B0%8F%E5%9E%8BAI%E3%82%92%E7%B5%84%E3%81%BF%E7%AB%8B%E3%81%A6%E3%81%A6%E9%9F%B3%E5%A3%B0%E8%AA%8D%E8%AD%98%E3%82%92%E8%A9%A6%E3%81%99.html</link>
-        <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>最近、同業の健一さんと話してたんです。彼もクラウドAIの月額費用に頭を悩ませていてね。「松本さん、毎月の出費、結構なもんですわ。もっと安うならんもんかな」と。私も同じように感じていたんです。AI技術に興味はあるけど、初期…]]></description>
-        <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/tech/2026-07-10-52%E6%AD%B3IT%E3%82%B3%E3%83%B3%E3%82%B5%E3%83%AB-%E5%B0%8F%E5%9E%8BAI%E3%82%92%E7%B5%84%E3%81%BF%E7%AB%8B%E3%81%A6%E3%81%A6%E9%9F%B3%E5%A3%B0%E8%AA%8D%E8%AD%98%E3%82%92%E8%A9%A6%E3%81%99.html</guid>
     </item>
 </channel>
 </rss>
