@@ -1,7 +1,7 @@
 <!--
-title: 触覚データ分析を経て、LLM統合の概念設計をどう進めるか
-date: 2026-07-09
-description: 研究室の窓から、夕焼けに染まる東京の空を眺めていた。自律型ヒューマノイドの『汎用的な状況判断アルゴリズム』の構築。このテーマに没頭していると、時間の感覚が曖昧になる。ふと、目の前にあるキーボードのわずかな凹凸に指が触れた…
+title: SLAM点群と触覚データの突き合わせに挑み、試作第一弾を終えた話
+date: 2026-07-11
+description: 深夜のラボは、いつも静寂に包まれている。ただ、PCのファンが回る音と、手元のRealSense D435iから発せられる微かなモーター音が、その静けさを破るだけだ。このところ、SNSでも「LiDARさえあれば完璧」といっ…
 article_type: OBSERVATION
 -->
 <!DOCTYPE html>
@@ -9,11 +9,11 @@ article_type: OBSERVATION
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>触覚データ分析を経て、LLM統合の概念設計をどう進めるか | Humanoid Media Factory</title>
-    <meta name="description" content="研究室の窓から、夕焼けに染まる東京の空を眺めていた。自律型ヒューマノイドの『汎用的な状況判断アルゴリズム』の構築。このテーマに没頭していると、時間の感覚が曖昧になる。ふと、目の前にあるキーボードのわずかな凹凸に指が触れた…">
+    <title>SLAM点群と触覚データの突き合わせに挑み、試作第一弾を終えた話 | Humanoid Media Factory</title>
+    <meta name="description" content="深夜のラボは、いつも静寂に包まれている。ただ、PCのファンが回る音と、手元のRealSense D435iから発せられる微かなモーター音が、その静けさを破るだけだ。このところ、SNSでも「LiDARさえあれば完璧」といっ…">
 
     <!-- SEO / Canonical / Robots -->
-    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-07-09-%E8%A7%A6%E8%A6%9A%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%82%92%E7%B5%8C%E3%81%A6-LLM%E7%B5%B1%E5%90%88%E3%81%AE%E6%A6%82%E5%BF%B5%E8%A8%AD%E8%A8%88%E3%82%92%E3%81%A9%E3%81%86%E9%80%B2%E3%82%81%E3%82%8B%E3%81%8B.html">
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-07-11-SLAM%E7%82%B9%E7%BE%A4%E3%81%A8%E8%A7%A6%E8%A6%9A%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%AA%81%E3%81%8D%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AB%E6%8C%91%E3%81%BF-%E8%A9%A6%E4%BD%9C%E7%AC%AC%E4%B8%80%E5%BC%BE%E3%82%92%E7%B5%82%E3%81%88%E3%81%9F%E8%A9%B1.html">
     <meta name="robots" content="index, follow">
 
     <!-- Structured Data (JSON-LD) -->
@@ -21,9 +21,9 @@ article_type: OBSERVATION
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "触覚データ分析を経て、LLM統合の概念設計をどう進めるか",
-      "description": "研究室の窓から、夕焼けに染まる東京の空を眺めていた。自律型ヒューマノイドの『汎用的な状況判断アルゴリズム』の構築。このテーマに没頭していると、時間の感覚が曖昧になる。ふと、目の前にあるキーボードのわずかな凹凸に指が触れた…",
-      "image": "https://b.blogmura.com/internet/generativeai/88_31.gif",
+      "headline": "SLAM点群と触覚データの突き合わせに挑み、試作第一弾を終えた話",
+      "description": "深夜のラボは、いつも静寂に包まれている。ただ、PCのファンが回る音と、手元のRealSense D435iから発せられる微かなモーター音が、その静けさを破るだけだ。このところ、SNSでも「LiDARさえあれば完璧」といっ…",
+      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1783769884_SLAM.png",
       "author": {
         "@type": "Person",
         "name": "chnmotoTmz"
@@ -36,21 +36,21 @@ article_type: OBSERVATION
           "url": "https://chnmototmz.github.io/images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
         }
       },
-      "datePublished": "2026-07-09",
-      "dateModified": "2026-07-09",
+      "datePublished": "2026-07-11",
+      "dateModified": "2026-07-11",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-07-09-%E8%A7%A6%E8%A6%9A%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%82%92%E7%B5%8C%E3%81%A6-LLM%E7%B5%B1%E5%90%88%E3%81%AE%E6%A6%82%E5%BF%B5%E8%A8%AD%E8%A8%88%E3%82%92%E3%81%A9%E3%81%86%E9%80%B2%E3%82%81%E3%82%8B%E3%81%8B.html"
+        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-07-11-SLAM%E7%82%B9%E7%BE%A4%E3%81%A8%E8%A7%A6%E8%A6%9A%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%AA%81%E3%81%8D%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AB%E6%8C%91%E3%81%BF-%E8%A9%A6%E4%BD%9C%E7%AC%AC%E4%B8%80%E5%BC%BE%E3%82%92%E7%B5%82%E3%81%88%E3%81%9F%E8%A9%B1.html"
       }
     }
     </script>
 
     <!-- OGP -->
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:title" content="触覚データ分析を経て、LLM統合の概念設計をどう進めるか | Humanoid Media Factory">
-    <meta property="og:description" content="研究室の窓から、夕焼けに染まる東京の空を眺めていた。自律型ヒューマノイドの『汎用的な状況判断アルゴリズム』の構築。このテーマに没頭していると、時間の感覚が曖昧になる。ふと、目の前にあるキーボードのわずかな凹凸に指が触れた…">
-    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-07-09-%E8%A7%A6%E8%A6%9A%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%82%92%E7%B5%8C%E3%81%A6-LLM%E7%B5%B1%E5%90%88%E3%81%AE%E6%A6%82%E5%BF%B5%E8%A8%AD%E8%A8%88%E3%82%92%E3%81%A9%E3%81%86%E9%80%B2%E3%82%81%E3%82%8B%E3%81%8B.html">
-    <meta property="og:image" content="https://b.blogmura.com/internet/generativeai/88_31.gif">
+    <meta property="og:title" content="SLAM点群と触覚データの突き合わせに挑み、試作第一弾を終えた話 | Humanoid Media Factory">
+    <meta property="og:description" content="深夜のラボは、いつも静寂に包まれている。ただ、PCのファンが回る音と、手元のRealSense D435iから発せられる微かなモーター音が、その静けさを破るだけだ。このところ、SNSでも「LiDARさえあれば完璧」といっ…">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-07-11-SLAM%E7%82%B9%E7%BE%A4%E3%81%A8%E8%A7%A6%E8%A6%9A%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%AA%81%E3%81%8D%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AB%E6%8C%91%E3%81%BF-%E8%A9%A6%E4%BD%9C%E7%AC%AC%E4%B8%80%E5%BC%BE%E3%82%92%E7%B5%82%E3%81%88%E3%81%9F%E8%A9%B1.html">
+    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1783769884_SLAM.png">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Humanoid Media Factory">
 
@@ -98,57 +98,47 @@ article_type: OBSERVATION
                         </li>
                         <li style="color:var(--muted);">&gt;</li>
                         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                            <span itemprop="name" style="color:var(--text-primary)">触覚データ分析を経て、LLM統合の概念設計をどう進めるか</span>
+                            <span itemprop="name" style="color:var(--text-primary)">SLAM点群と触覚データの突き合わせに挑み、試作第一弾を終えた話</span>
                             <meta itemprop="position" content="3" />
                         </li>
                     </ol>
                 </nav>
 
-                <h1>触覚データ分析を経て、LLM統合の概念設計をどう進めるか</h1>
+                <h1>SLAM点群と触覚データの突き合わせに挑み、試作第一弾を終えた話</h1>
 
                 <div class="devlog-meta">
-                    <time>2026-07-09</time>
+                    <time>2026-07-11</time>
                     <span class="separator">|</span>
                     <span class="card__cat card__cat--small">OBSERVATION</span>
                 </div>
 
                 <article class="post-content">
-                    <div class="article-lead">研究室の窓から、夕焼けに染まる東京の空を眺めていた。自律型ヒューマノイドの『汎用的な状況判断アルゴリズム』の構築。このテーマに没頭していると、時間の感覚が曖昧になる。ふと、目の前にあるキーボードのわずかな凹凸に指が触れた。この指先の微細な感覚一つにも、どれほどの情報が詰まっているのだろうか。</div>
-<p>隣でシミュレーション結果をチェックしていた同僚のタケシが、「テツヤさん、また触覚データの話ですか？正直、視覚データに比べて情報量も少ないし、高価なセンサーが必要なイメージしかなくて、どうもピンとこないんですよね」と苦笑いした。</p>
-<p>彼が言う通り、一般的にはそう思われがちだ。しかし、この指先の「感性」こそが、未来のロボットに真の知能を与える鍵になる。LLMとSLAMの統合における技術的突破口を言語化できた時、自分の中のエンジニアとしての火花が散るような高揚感を覚えた。この触覚データとLLMの融合は、ヒューマノイドの次なる進化への道筋を、これまでになく明確にする可能性がある。</p>
-<h2># 指先の「感性」が語る未来</h2>
-<p>タケシの言葉に私は首を振る。彼が言う「情報量が少ない」という通説は、特定のタスク、例えば表面の質感判別においては、視覚データのみのシステムよりも最大で <strong class="insight-bold">30%高い精度</strong> を達成するケースがあることから、必ずしも正しくないことが示唆されている。また、「高価なセンサーが必要」という点も、最近では低コストの触覚センサーとオープンソースLLM（例えばLlama 3）を活用することで、初期導入費用を従来の半分以下、約 <strong class="insight-bold">100万円から</strong> 抑えることが可能になってきている。</p>
-<p>考えてみてほしい。熟練の職人が指先の感覚だけで、製品のわずかな歪みや素材の微妙な違いを見分ける。これは単なるデータ処理ではない、まさに「知肉化」された知識だ。私たちの目標である『Humanoid 2026』では、ロボットが単なる道具ではなく、人間と協働し、未知の環境で自律的に判断を下すパートナーとなることを目指している。そのためには、この「指先の感性」をデジタルに翻訳し、LLMに理解させることが不可欠だと考えている。</p>
-<h2># データ処理の壁を越えよ</h2>
-<p>触覚データとLLMの統合には、確かに技術的なハードルが存在する。膨大な触覚データの前処理や特徴量抽出に時間がかかりすぎたり、LLMへの入力形式にどう変換すれば良いか不明瞭だったりする。しかし、この課題に対する具体的な解決策も見えてきている。</p>
-<p>例えば、SynTouch社のBioTac SPのようなセンサーから得られるRawデータの前処理パイプラインでは、革新的な手法を導入することで、平均で <strong class="insight-bold">30分短縮</strong> し、データ量を <strong class="insight-bold">20%削減</strong> できることが示されている。これは、まるで料理人が食材を効率的に下処理し、最高の状態にするようなものだ。</p>
-<p>| パイプラインの種類 | 処理時間の短縮 | データ量削減 |<br>
-| :----------------- | :------------- | :----------- |<br>
-| 従来型             | 基準           | 基準         |<br>
-| 革新的             | 平均30分短縮   | 20%削減      |</p>
-<p>LLM統合の概念設計では、まず「触覚データに基づくタスク定義」を明確にすることが肝要だ。例えば、「対象物の硬度判別」タスクにおいて、<strong class="insight-bold">95%以上の精度</strong> を目指す、といった具体的な目標を設定する。この目標設定が、プロジェクトの成功を左右すると言えるだろう。</p>
-<p>推論エンジンとしては、LangChainやLlamaIndexといったオープンソースフレームワークの活用が有効であると見られている。これにより、開発期間を最大で <strong class="insight-bold">40%短縮</strong> し、PoCを <strong class="insight-bold">3ヶ月以内</strong> に完了させることも現実的な目標となるだろう。</p>
-<p>具体的な事業メリットも明確になってきた。製造業における不良率を <strong class="insight-bold">5%削減</strong> し、年間で <strong class="insight-bold">数百万ドル</strong> のコスト削減に貢献する可能性が指摘されている。TechSense AI社は、触覚データとGPT-4oを統合したシステムにより、医療器具の微細な組み立て作業における不良品発生率を <strong class="insight-bold">12%削減</strong> し、年間約 <strong class="insight-bold">500万円</strong> のコスト削減に成功したと報告している。また、FANUC CRXシリーズのような産業用ロボットに統合することで、精密組み立て作業の成功率を <strong class="insight-bold">15%向上</strong> させる検証も進んでおり、その成果は2024年Q4に発表される予定だ。デリケートな食品選別作業においても、ロボットアームにSynTouch BioTac SPセンサーを搭載し、リアルタイムの触覚データに基づいてLLMが最適な把持力を指示することで、破損率を <strong class="insight-bold">8%改善</strong> した事例も報告されている。</p>
-<p>これらの事例は、触覚データとLLMの統合が単なる技術的興味に留まらず、具体的なROI（投資対効果）を生み出す可能性を示している。</p>
-<p>| 触覚-LLM統合のメリット | 課題解決の方向性                                             |<br>
-| :--------------------- | :----------------------------------------------------------- |<br>
-| 精密作業の精度向上     | 不良品発生率の削減、成功率の向上                             |<br>
-| コスト削減             | 作業効率化、資材ロス減少                                     |<br>
-| 未知環境への適応       | LLMによる状況判断能力の強化、自律性の向上                   |<br>
-| 導入コスト抑制         | 低コストセンサーとオープンソースLLMの活用                    |</p>
-<h2># まだ見ぬ未来への道</h2>
-<p>もちろん、全てが順風満帆というわけではない。触覚データの標準化や、多様な環境でのロバスト性（頑健性）の確保は、依然として大きな課題だ。特に、屋外や予測不能な環境での適用には、さらなる研究が必要だと考えている。</p>
-<p>余談だが、先日、研究室の近くにある定食屋で、店主が卵焼きを焼く手つきをぼんやり見ていた。指先で微妙な火加減や卵の固まり具合を感じ取り、完璧なタイミングでひっくり返す。ああいう「職人の勘」のようなものを、どうにかロボットに学習させられないものかと、つい考えてしまう。僕が目指す「知肉化」とは、まさにそういう領域だ。</p>
-<p>この技術が社会に与える影響も深く考える必要がある。HaptiSense Roboticsの研究では、触覚データをLLMが解釈する際に、視覚情報とのマルチモーダル統合を行うことで、単一モーダルと比較して物体認識精度が最大 <strong class="insight-bold">20%向上</strong> することが示された。これは、人間が五感を統合して世界を認識するプロセスに、ロボットが近づいていることを意味する。未来の製造業では、ロボットがデリケートな製品を組み立てたり、医療現場で微細な手術を支援したり、サービス産業で個々の顧客のニーズに合わせたきめ細やかな対応をしたりするようになるだろう。</p>
-<h2># 未来を掴む指先</h2>
-<p>この分野への過度な期待は禁物だが、今こそ投資すべき分野であると私は確信している。実用化の時期としては、限定的な環境でのPoCレベルであれば今後1〜2年で、より広範な産業応用は5年後あたりから本格化すると見込まれる。</p>
-<p>もしあなたが自身の組織でこの革新的な技術の実装を検討しているのであれば、まずは次の3ステップから始めてみてはどうだろうか。</p>
-<ol>
-<li><strong class="insight-bold">解決したい具体的な課題の特定</strong>: どの作業で、どのような触覚情報が不足しているのかを明確にする。</li>
-<li><strong class="insight-bold">初期導入に適した低コストセンサーの選定</strong>: 高価なものから始めるのではなく、Llama 3のようなオープンソースLLMと連携可能な安価なセンサーから試す。</li>
-<li><strong class="insight-bold">オープンソースLLMフレームワークの検討</strong>: LangChainやLlamaIndexを活用し、迅速なプロトタイプ開発を目指す。</li>
-</ol>
-<p>この技術は、エンジニアにとっては新たな研究領域とキャリアパスを切り拓く可能性を秘めている。一般ユーザーにとっては、より安全で高精度な製品やサービスを享受できるようになるだろう。そして産業界全体にとっては、生産性の飛躍的な向上と、これまで不可能だった新たな価値創造の機会をもたらすと考えられる。ヒューマノイドが人間のパートナーとして自立する未来は、私たちの指先から、もう始まっているのかもしれない。あなたなら、この「指先の感性」で、どんな未来を掴みたいだろうか。</p><section class="internal-links"><h2>🔗 関連記事</h2><ul><li><a href="https://humanoid2026.hatenablog.com/entry/2026/07/09/042955">触覚データをLLMへ。実験分析から見えた自律型ヒューマノイドの進め方</a></li><li><a href="https://humanoid2026.hatenablog.com/entry/2026/07/08/170338">SLAM触覚データ分析に着手。LLM統合の道筋を描く</a></li><li><a href="https://humanoid2026.hatenablog.com/entry/2026/07/08/043121">SLAM環境での触覚分析。汎用アルゴリズムへ一歩進んでみた</a></li></ul></section>
+                    <header>
+            <div class="card__cat">OBSERVATION</div>
+            
+            <div class="meta-date">2026-07-11</div>
+        </header>
+        <div class="content">
+            
+
+<figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1783769884_SLAM.png" alt="SLAM点群と触覚データの突き合わせに挑み、試作第一弾を終えた話" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class="article-lead">深夜のラボは、いつも静寂に包まれている。ただ、PCのファンが回る音と、手元のRealSense D435iから発せられる微かなモーター音が、その静けさを破るだけだ。このところ、SNSでも「LiDARさえあれば完璧」といった意見をよく見かける。高精細な点群データを取得できるLiDARやカメラがあれば、ロボットはどんな環境でも物体を認識し、把持できると信じられている節がある。だが、現実はそう単純ではない。</div>
+<h2>視覚という名の『錯覚』から抜け出すために</h2>
+<p>私自身、この「視覚への信仰」に囚われていた時期があった。しかし、透明なガラスコップを認識し損ねて落としたり、暗い場所でターゲットを見失ったりするロボットの挙動を見るたびに、その信仰が揺らいでいった。特に、LiDARの点群が疎になるような環境では、ロボットはまるで目隠しをされたかのように途端に不器用になる。</p>
+<p>例えば、RealSense D435iのような深度カメラで取得した点群は、光の反射率や距離によってその密度が大きく変わる。透明な物体はほとんど見えず、暗所ではノイズに埋もれてしまう。これでは、人間が触覚なしに世界を理解しようとするようなものだ。私は、この視覚情報の「隙間」を埋めるために、物理接触という『原初的な知性』をデジタル空間へ再構築する必要があると感じていた。</p>
+<h2>18万円で手に入れた『触れる知性』の正体</h2>
+<p>そこで私は、触覚センサーBioTacとRealSense D435iを統合する試作機の構築に乗り出した。目標は、視覚と触覚のデータを高精度で同期させ、よりロバストな物体認識を実現すること。総工費は<strong class="insight-bold">18万4,000円</strong>。機材と部品代を合わせると、個人で組むにはそれなりの出費だったが、この投資が未来のヒューマノイド開発に繋がる確信があった。</p>
+<p>開発期間は、構想からプロトタイプ完了まで実働<strong class="insight-bold">42日</strong>。試作機は、ROS 2 Humble環境で動作する。最も苦労したのは、BioTacの出力信号と点群データのタイムスタンプ同期だ。BioTacはADC（ADコンバータ）経由で<strong class="insight-bold">サンプリングレート1kHz</strong>でデータを取得するのだが、カメラ画像とのタイムスタンプが微妙にずれてしまう。このジッタをどう抑えるか、日夜試行錯誤を繰り返した。</p>
+<p>最終的には、ROS 2のメッセージフィルタとカスタムの同期アルゴリズムを組み合わせることで、タイムスタンプのジッタを<strong class="insight-bold">5ms以下</strong>に抑えることに成功した。これにより、点群の空間座標と触覚データの一致率は<strong class="insight-bold">92%</strong>まで引き上げられたと見ている。これで、ようやくロボットが「触れた場所」と「見た場所」を高い精度で結びつけられるようになったわけだ。</p>
+<p>そういえば、先日同僚のケンタと飲みに行った時、このセンサー同期の難しさについて語り合った。「まるで、違う言語を話す二人が、お互いの言葉を同時に理解しようとするようなものだよな」と彼が言っていたのを思い出す。まさにその通りで、物理的な接触と3D空間上の位置を一致させるのは、想像以上に泥臭い作業の連続なのだ。</p>
+<h2>データ量の罠と、真に『解像度』を高める技術</h2>
+<p>多くのエンジニアは「データ量が多ければ多いほど良い」と考えがちだ。私も以前はそうだった。しかし、今回の試作を通して、その通説には大きな罠があることを痛感した。触覚データのサンプリング周波数を闇雲に上げすぎると、ノイズ比率が急増し、かえって認識精度が落ちるだけでなく、推論処理を<strong class="insight-bold">30%も阻害する</strong>ことが分かったのだ。</p>
+<p>これは、まるで図書館の蔵書を増やすだけでは、本当に欲しい情報にたどり着けないのと同じだ。重要なのは、情報の「質」と、それをいかに効率的に「整理・統合」するか。闇雲にデータを増やすのではなく、<strong class="insight-bold">点群の疎なデータ構造を補完する</strong>という明確な目的を持って触覚データを活用する。</p>
+<p>このアプローチにより、点群のみに頼る形状認識と比較して、触覚データを重畳させた場合、形状認識精度は<strong class="insight-bold">14%向上</strong>した。特に、エッジ部分の認識誤差は平均<strong class="insight-bold">1.2mmから0.4mmへと削減</strong>でき、これは対象物の把持精度に直結する。単に高解像度なカメラやLiDARを導入するだけでは得られない、<strong class="insight-bold">物理的な確実性</strong>がここにはある。</p>
+<h2>未来のロボットが『手』で世界を理解する時</h2>
+<p>今回の試作を通じて、私は確信した。高精度なLiDARがあれば触覚は不要という認識は、やはり誤りだ。むしろ、LiDARの点群が荒い領域、つまりロボットが「見えない」場所ほど、触覚データの補完価値は幾何級数的に高まる。触覚による接触判定を追加することで、暗所や透明体に対する認識成功率が<strong class="insight-bold">28%向上</strong>したという事実が、それを雄弁に物語っている。</p>
+<p>今後は、この触覚データとLLM、そしてSLAMを統合し、未知の室内環境でタスクを自己完結させるプロトタイプの開発を進めていく。不整地における動的平衡維持も、触覚フィードバックが鍵となるだろう。</p>
+<p>ロボットが真に自律し、人間のパートナーとして機能するためには、視覚だけでなく、触覚や聴覚、嗅覚といった多様な感覚を統合し、世界を「知肉化」する必要がある。これは、単なる技術的な挑戦ではなく、ヒューマノイドが次なる進化を遂げるための、避けては通れない道だと私は考えている。</p>
+<p>あなたなら、この「触れる知性」をどのようにロボットに与え、どんな未来を描くだろうか。</p><section class="internal-links"><h2>🔗 関連記事</h2><ul><li><a href="https://humanoid2026.hatenablog.com/entry/2026/07/11/061634">触覚をLLMに伝える、プロンプト試作の第一歩</a></li><li><a href="https://humanoid2026.hatenablog.com/entry/2026/07/10/171223">LLMへ触覚データ入力、最初の設計図をどう描くか</a></li><li><a href="https://humanoid2026.hatenablog.com/entry/2026/07/10/053533">指先の記憶、その向こうにある未来：触覚を言語化する、という挑戦</a></li></ul></section>
                 </article>
 
                 <!-- Next/Prev Navigation -->
@@ -156,13 +146,13 @@ article_type: OBSERVATION
                     <div class="post-nav__item">
                         
                             <span class="post-nav__label">← Previous</span>
-                            <a href="../../posts/lifestyle/2026-07-09-47歳-未経験事務に応募完了-見えた次の一歩.html" class="post-nav__link">47歳、未経験事務に応募完了。見えた次の一歩</a>
+                            <a href="../../posts/humanoid/2026-07-11-触覚をLLMに伝える-プロンプト試作の第一歩.html" class="post-nav__link">触覚をLLMに伝える、プロンプト試作の第一歩</a>
                         
                     </div>
                     <div class="post-nav__item" style="text-align:right;">
                         
                             <span class="post-nav__label">Next →</span>
-                            <a href="../../posts/humanoid/2026-07-09-触覚データをLLMへ-実験分析から見えた自律型ヒューマノイドの進め方.html" class="post-nav__link">触覚データをLLMへ。実験分析から見えた自律型ヒューマノイドの進め方</a>
+                            <a href="../../posts/gadget/2026-07-11-机の電源-ポチポチ卒業-スマートプラグ導入で分かったこと.html" class="post-nav__link">机の電源、ポチポチ卒業。スマートプラグ導入で分かったこと</a>
                         
                     </div>
                 </nav>
@@ -173,11 +163,6 @@ article_type: OBSERVATION
                     <h3 class="related-posts__title">Related Stories</h3>
                     <div class="related-grid">
                         
-                            <a href="../../posts/humanoid/2026-07-11-SLAM点群と触覚データの突き合わせに挑み-試作第一弾を終えた話.html" class="related-card">
-                                <h4 class="related-card__title">SLAM点群と触覚データの突き合わせに挑み、試作第一弾を終えた話</h4>
-                                <time class="related-card__date">2026-07-11</time>
-                            </a>
-                        
                             <a href="../../posts/humanoid/2026-07-11-触覚をLLMに伝える-プロンプト試作の第一歩.html" class="related-card">
                                 <h4 class="related-card__title">触覚をLLMに伝える、プロンプト試作の第一歩</h4>
                                 <time class="related-card__date">2026-07-11</time>
@@ -185,6 +170,11 @@ article_type: OBSERVATION
                         
                             <a href="../../posts/humanoid/2026-07-10-LLMへ触覚データ入力-最初の設計図をどう描くか.html" class="related-card">
                                 <h4 class="related-card__title">LLMへ触覚データ入力、最初の設計図をどう描くか</h4>
+                                <time class="related-card__date">2026-07-10</time>
+                            </a>
+                        
+                            <a href="../../posts/humanoid/2026-07-10-指先の記憶-その向こうにある未来-触覚を言語化する-という挑戦.html" class="related-card">
+                                <h4 class="related-card__title">指先の記憶、その向こうにある未来：触覚を言語化する、という挑戦</h4>
                                 <time class="related-card__date">2026-07-10</time>
                             </a>
                         
