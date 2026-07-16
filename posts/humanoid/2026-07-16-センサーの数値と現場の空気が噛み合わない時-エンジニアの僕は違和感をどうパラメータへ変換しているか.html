@@ -1,0 +1,285 @@
+<!--
+title: センサーの数値と現場の空気が噛み合わない時、エンジニアの僕は「違和感」をどうパラメータへ変換しているか
+date: 2026-07-16
+description: 最近、自宅の古いエアコンの室外機から、妙な唸り音が聞こえるようになった。エラー表示は一切出ていないし、冷房も効いている。だが、これまでとは明らかに違う、どこか無理をしているような低い響きだ。こういう「違和感」を、僕は仕事…
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>センサーの数値と現場の空気が噛み合わない時、エンジニアの僕は「違和感」をどうパラメータへ変換しているか | Humanoid Media Factory</title>
+    <meta name="description" content="最近、自宅の古いエアコンの室外機から、妙な唸り音が聞こえるようになった。エラー表示は一切出ていないし、冷房も効いている。だが、これまでとは明らかに違う、どこか無理をしているような低い響きだ。こういう「違和感」を、僕は仕事…">
+
+    <!-- SEO / Canonical / Robots -->
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-07-16-%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%AE%E6%95%B0%E5%80%A4%E3%81%A8%E7%8F%BE%E5%A0%B4%E3%81%AE%E7%A9%BA%E6%B0%97%E3%81%8C%E5%99%9B%E3%81%BF%E5%90%88%E3%82%8F%E3%81%AA%E3%81%84%E6%99%82-%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E5%83%95%E3%81%AF%E9%81%95%E5%92%8C%E6%84%9F%E3%82%92%E3%81%A9%E3%81%86%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%B8%E5%A4%89%E6%8F%9B%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%81%8B.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "センサーの数値と現場の空気が噛み合わない時、エンジニアの僕は「違和感」をどうパラメータへ変換しているか",
+      "description": "最近、自宅の古いエアコンの室外機から、妙な唸り音が聞こえるようになった。エラー表示は一切出ていないし、冷房も効いている。だが、これまでとは明らかに違う、どこか無理をしているような低い響きだ。こういう「違和感」を、僕は仕事…",
+      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1784176007.png",
+      "author": {
+        "@type": "Person",
+        "name": "chnmotoTmz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Humanoid Media Factory",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://chnmototmz.github.io/images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
+        }
+      },
+      "datePublished": "2026-07-16",
+      "dateModified": "2026-07-16",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-07-16-%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%AE%E6%95%B0%E5%80%A4%E3%81%A8%E7%8F%BE%E5%A0%B4%E3%81%AE%E7%A9%BA%E6%B0%97%E3%81%8C%E5%99%9B%E3%81%BF%E5%90%88%E3%82%8F%E3%81%AA%E3%81%84%E6%99%82-%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E5%83%95%E3%81%AF%E9%81%95%E5%92%8C%E6%84%9F%E3%82%92%E3%81%A9%E3%81%86%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%B8%E5%A4%89%E6%8F%9B%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%81%8B.html"
+      }
+    }
+    </script>
+
+    <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="センサーの数値と現場の空気が噛み合わない時、エンジニアの僕は「違和感」をどうパラメータへ変換しているか | Humanoid Media Factory">
+    <meta property="og:description" content="最近、自宅の古いエアコンの室外機から、妙な唸り音が聞こえるようになった。エラー表示は一切出ていないし、冷房も効いている。だが、これまでとは明らかに違う、どこか無理をしているような低い響きだ。こういう「違和感」を、僕は仕事…">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-07-16-%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%AE%E6%95%B0%E5%80%A4%E3%81%A8%E7%8F%BE%E5%A0%B4%E3%81%AE%E7%A9%BA%E6%B0%97%E3%81%8C%E5%99%9B%E3%81%BF%E5%90%88%E3%82%8F%E3%81%AA%E3%81%84%E6%99%82-%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E5%83%95%E3%81%AF%E9%81%95%E5%92%8C%E6%84%9F%E3%82%92%E3%81%A9%E3%81%86%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%B8%E5%A4%89%E6%8F%9B%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%81%8B.html">
+    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1784176007.png">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@chnmotoTmz">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            <li><a href="../../posts/adult/index.html">🔞 アダルト</a></li><li><a href="../../posts/art/index.html">🎨 アート・創作</a></li><li><a href="../../posts/diary/index.html">📁 Diary</a></li><li><a href="../../posts/education/index.html">📚 教育・学習</a></li><li><a href="../../posts/finance/index.html">💰 金融・投資</a></li><li><a href="../../posts/gadget/index.html">📱 ガジェット</a></li><li><a href="../../posts/humanoid/index.html">🤖 ロボット・AI</a></li><li><a href="../../posts/lifestyle/index.html">📁 Lifestyle</a></li><li><a href="../../posts/monetization/index.html">📁 Monetization</a></li><li><a href="../../posts/news/index.html">📰 ニュース・時事</a></li><li><a href="../../posts/relationships/index.html">❤️ 恋愛・人間関係</a></li><li><a href="../../posts/tech/index.html">💻 テクノロジー</a></li><li><a href="../../posts/travel/index.html">✈️ 旅行</a></li><li><a href="../../posts/uncategorized/index.html">📦 その他</a></li><li><a href="../../posts/wellness/index.html">🌿 健康・ウェルネス</a></li><li><a href="../../posts/gourmet/index.html">🍽️ グルメ</a></li><li><a href="../../posts/sports/index.html">⚽ スポーツ</a></li><li><a href="../../posts/affiliate/index.html">💸 アフィリエイト</a></li><li><a href="../../posts/english/index.html">🔤 英語学習</a></li><li><a href="../../posts/family/index.html">📁 Family</a></li><li><a href="../../posts/sociology/index.html">📁 Sociology</a></li><li><a href="../../posts/hub/index.html">📁 Hub</a></li><li><a href="../../posts/curation/index.html">📁 Curation</a></li><li><a href="../../posts/entertainment/index.html">🍿 エンタメ</a></li><li><a href="../../posts/music/index.html">🎵 音楽</a></li><li><a href="../../posts/art/illustration/index.html">📁 Art/illustration</a></li><li><a href="../../posts/education/english/index.html">📁 Education/english</a></li><li><a href="../../posts/education/multilingual/index.html">📁 Education/multilingual</a></li><li><a href="../../posts/entertainment/anime/index.html">📁 Entertainment/anime</a></li><li><a href="../../posts/entertainment/game/index.html">📁 Entertainment/game</a></li><li><a href="../../posts/entertainment/movie/index.html">📁 Entertainment/movie</a></li><li><a href="../../posts/gourmet/recipe/index.html">📁 Gourmet/recipe</a></li><li><a href="../../posts/gourmet/restaurant/index.html">📁 Gourmet/restaurant</a></li><li><a href="../../posts/gourmet/sweets/index.html">📁 Gourmet/sweets</a></li><li><a href="../../posts/news/economy/index.html">📁 News/economy</a></li><li><a href="../../posts/news/entertainment/index.html">📁 News/entertainment</a></li><li><a href="../../posts/news/net/index.html">📁 News/net</a></li><li><a href="../../posts/news/world/index.html">📁 News/world</a></li><li><a href="../../posts/tech/ai/index.html">📁 Tech/ai</a></li><li><a href="../../posts/tech/gadget/index.html">📁 Tech/gadget</a></li><li><a href="../../posts/tech/robotics/index.html">📁 Tech/robotics</a></li><li><a href="../../posts/tech/video/index.html">📁 Tech/video</a></li><li><a href="../../posts/travel/gear/index.html">📁 Travel/gear</a></li><li><a href="../../posts/travel/hiking/index.html">📁 Travel/hiking</a></li><li><a href="../../posts/wellness/diet/index.html">📁 Wellness/diet</a></li><li><a href="../../posts/wellness/health/index.html">📁 Wellness/health</a></li><li><a href="../../posts/wellness/mental/index.html">📁 Wellness/mental</a></li><li><a href="../../posts/wellness/skincare/index.html">📁 Wellness/skincare</a></li><li><a href="../../posts/art/music/index.html">📁 Art/music</a></li><li><a href="../../posts/art/writing/index.html">📁 Art/writing</a></li><li><a href="../../posts/education/hack/index.html">📁 Education/hack</a></li><li><a href="../../posts/entertainment/youtube/index.html">📁 Entertainment/youtube</a></li><li><a href="../../posts/finance/crypto/index.html">📁 Finance/crypto</a></li><li><a href="../../posts/finance/news/index.html">📁 Finance/news</a></li><li><a href="../../posts/finance/saving/index.html">📁 Finance/saving</a></li><li><a href="../../posts/finance/stock/index.html">📁 Finance/stock</a></li><li><a href="../../posts/gourmet/sake/index.html">📁 Gourmet/sake</a></li><li><a href="../../posts/news/domestic/index.html">📁 News/domestic</a></li><li><a href="../../posts/tech/programming/index.html">📁 Tech/programming</a></li><li><a href="../../posts/travel/domestic/index.html">📁 Travel/domestic</a></li><li><a href="../../posts/travel/hotel/index.html">📁 Travel/hotel</a></li><li><a href="../../posts/travel/overseas/index.html">📁 Travel/overseas</a></li><li><a href="../../posts/occult/index.html">👽 オカルト</a></li><li><a href="../../posts/devlog/index.html">📝 開発ログ</a></li><li><a href="../../posts/rakuten/index.html">🛍️ 楽天・お得</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style:none; padding:0; margin:0; display:flex; gap:8px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/posts/humanoid/index.html">
+                                <span itemprop="name">humanoid</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name" style="color:var(--text-primary)">センサーの数値と現場の空気が噛み合わない時、エンジニアの僕は「違和感」をどうパラメータへ変換しているか</span>
+                            <meta itemprop="position" content="3" />
+                        </li>
+                    </ol>
+                </nav>
+
+                <h1>センサーの数値と現場の空気が噛み合わない時、エンジニアの僕は「違和感」をどうパラメータへ変換しているか</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-07-16</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    <header>
+            <div class="card__cat">OBSERVATION</div>
+            
+            <div class="meta-date">2026-07-16</div>
+        </header>
+        <div class="content">
+            
+
+<figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1784176007.png" alt="センサーの数値と現場の空気が噛み合わない時、エンジニアの僕は「違和感」をどうパラメータへ変換しているか" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class="article-lead">最近、自宅の古いエアコンの室外機から、妙な唸り音が聞こえるようになった。エラー表示は一切出ていないし、冷房も効いている。だが、これまでとは明らかに違う、どこか無理をしているような低い響きだ。こういう「違和感」を、僕は仕事でも散々経験してきた。</div>
+<h2># 計器の「正常」が現場を裏切る</h2>
+<p>僕が以前関わった生産ラインで、まさに同じような状況に直面したことがある。Grafanaの監視画面上では、全てのセンサー値が正常範囲を示していた。にもかかわらず、現場の機器からは明らかに異音が発せられ、作業員たちは「なんかおかしい」と顔を見合わせていた。その空気感は、計器の数値とはまるで別物だった。</p>
+<p>「数値は正常です」と報告しても、上司は「じゃあ問題ないだろ」の一点張り。自分の肌感覚を論理的に説明できないもどかしさと、誰にも信じてもらえない孤独感は、今でも鮮明に覚えている。過去には、こうした「正常」の裏で重大な故障が発生し、アラートが鳴らないまま生産が停止した苦い経験もあった。後追いでデータを確認しても、そこには「正常」という記録が残るばかりで、何が真実だったのかわからなくなる。</p>
+<h2># 高精度センサーという幻想を捨てる</h2>
+<p>多くのエンジニアが高価な高精度センサーを導入すれば、こうした現場の違和感が解決すると信じている節がある。しかし、それは幻想だと僕は見ている。実際には、数万円程度の安価なセンサーを複数箇所に分散配置し、そのデータを<strong class="insight-bold">あえて粗く加工する</strong>方が、現場の状況をより正確に再現できるケースが多い。</p>
+<p>例えば、<strong class="insight-bold">キーエンスのKV-8000</strong>経由で取得した振動データに対し、標準偏差が15%を超えた時点のログに自動でフラグを立てるようなヒューリスティック・モデルを導入したことがある。これは、ノイズと見過ごされがちな微細な変化を初期シグナルとして捉える試みだ。さらに、過去3年間のトラブル事例を分析すると、エラー発生の約5分前に検知される「ノイズの微細なスペクトル変化」が共通して存在した。これを移動平均線から<strong class="insight-bold">±2.5σ</strong>の範囲で監視するトレンドベースの閾値として設定することで、従来の平均値ベースの監視よりも早期に異常の予兆を捉えることが可能になると考えられる。</p>
+<h2># 「違和感」をパラメータに翻訳する</h2>
+<p>現場の「違和感」をデジタルパラメータへと翻訳するアルゴリズムは、決して複雑な数式ばかりではない。室温と作業員の疲労度の相関を分析した結果、湿度が55%を下回る環境では、センサーの数値が正常範囲内であっても作業効率が<strong class="insight-bold">12%低下</strong>することが判明した。これは、直接的な故障ではないが、生産性という観点から見れば明らかな異常だ。そこで、この湿度と作業効率の相関をパラメータとして組み込み、環境制御のロジックに反映させる修正を行った。</p>
+<p>余談だが、先日読んだ本で、数値化できない人間の感覚をどうデザインに落とし込むか、という話が載っていて、まさにこれだと膝を打った。僕らの仕事も、結局は同じことの繰り返しなのだ。現場の「肌感覚」や「空気感」を、いかにして工学的な指標に落とし込むか。上司から「なぜこの数値に設定したのか？」と問われた時に、直感的な違和感を論理的なパラメータとして説明できるか、それがプロとしての腕の見せ所だと考えている。</p>
+<h2># 現場の真実が語り始めるシステムへ</h2>
+<p>センサーの数値を絶対視せず、作業員の主観評価（10段階）とセンサーの出力値を回帰分析にかけることで、相関係数が0.85に達しない場合は、センサーの設置箇所が物理的に間違っている可能性が90%であると推測できる。このアプローチにより、設置箇所の正当性を評価し、最適な配置を導き出すことが可能になる。</p>
+<p><strong class="insight-bold">Node-RED</strong>を用いたプロトタイプ環境での検証では、このような物理的違和感を検知するロジックを導入した結果、保守要員の現場到着までのレスポンスタイムを平均<strong class="insight-bold">45分から30分へ短縮</strong>できた実績がある。これは、単にアラートを増やすのではなく、本当に意味のあるシグナルを捉えることで、現場の効率が大幅に改善されることを示唆している。</p>
+<p>この取り組みは、エンジニアにとっては、数値の奴隷ではなく、システムを統御する存在としての自信と誇りを取り戻すきっかけになるだろう。一般ユーザーにとっては、より安定した製品やサービスを享受できることに繋がり、産業界全体としては、無駄な保守コストを削減し、生産効率を向上させる可能性を秘めていると見ている。具体的な実用化時期は、各企業の導入フェーズによって異なると考えられるが、今後2〜3年で、こうした「違和感検知モデル」が広く普及していく可能性もあるだろう。まずは、僕自身の「言葉にする力」を鍛える中で、こうした現場の声を具体的なモデルへと変換するプロセスを、もっと明確に言語化していくことから始めたい。</p>
+<section class="rakuten-products" style="margin-top:40px; padding:20px; background:#fff5f5; border:1px solid #ffccd5; border-radius:12px;"><h2 style="font-size:1.2em; margin-top:0; color:#bf0000; border-bottom:2px solid #ffccd5; padding-bottom:8px;">🛒 関連のおすすめ商品</h2><ul class="product-grid" style="list-style:none; padding-left:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:20px; margin-bottom:0;"><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00tw2q8.uw1yy753.g00tw2q8.uw1yz644/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprolabshop%2F1-2400-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fprolabshop%2Fi%2F10008908%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/prolabshop/cabinet/001/1240001.jpg?_ex=128x128" alt="温湿度SDデータロガー 熱中症指数計 / 熱中症指数モニター AD-5696" style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">温湿度SDデータロガー 熱中症指数計 / 熱中症指数モニター AD-5696</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00tw2q8.uw1yy753.g00tw2q8.uw1yz644/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprolabshop%2F1-2400-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fprolabshop%2Fi%2F10008908%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00sl7w8.uw1yy5ae.g00sl7w8.uw1yzd55/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhotprice%2Fmot01077%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhotprice%2Fi%2F10000910%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/hotprice/cabinet/shiro/s01077shiro.jpg?_ex=128x128" alt="温度データロガー 測定範囲：-30～60度 データメモリー：16000 専..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">温度データロガー 測定範囲：-30～60度 データメモリー：16000 専...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00sl7w8.uw1yy5ae.g00sl7w8.uw1yzd55/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhotprice%2Fmot01077%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhotprice%2Fi%2F10000910%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00powo8.uw1yy256.g00powo8.uw1yzf60/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftuzukiya%2Fa241-0596%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftuzukiya%2Fi%2F12791089%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tuzukiya/cabinet/0/0/9154/a241-0596.jpg?_ex=128x128" alt="エー・アンド・ディ デジタル温度データロガー(外部温度センサー付き) パー..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">エー・アンド・ディ デジタル温度データロガー(外部温度センサー付き) パー...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00powo8.uw1yy256.g00powo8.uw1yzf60/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftuzukiya%2Fa241-0596%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftuzukiya%2Fi%2F12791089%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00powo8.uw1yy256.g00powo8.uw1yzf60/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftuzukiya%2Ff49-0001%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftuzukiya%2Fi%2F10653740%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tuzukiya/cabinet/0/0/6302/f49-0001.jpg?_ex=128x128" alt="藤田電機製作所 表示付温度データロガー（フェリカタイプ） KT-155F 1" style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">藤田電機製作所 表示付温度データロガー（フェリカタイプ） KT-155F 1</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00powo8.uw1yy256.g00powo8.uw1yzf60/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftuzukiya%2Ff49-0001%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftuzukiya%2Fi%2F10653740%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00urdy8.uw1yycea.g00urdy8.uw1yz70c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftimetechnology%2Fdt-178a%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftimetechnology%2Fi%2F10000423%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/timetechnology/cabinet/cem/img0080269051.jpg?_ex=128x128" alt="USB衝撃振動データロガー リアルタイム測定 スペクトラル測定 USB接続..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">USB衝撃振動データロガー リアルタイム測定 スペクトラル測定 USB接続...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00urdy8.uw1yycea.g00urdy8.uw1yz70c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftimetechnology%2Fdt-178a%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftimetechnology%2Fi%2F10000423%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li></ul></section><section class="internal-links"><h2>🔗 関連記事</h2><ul><li><a href="https://humanoid2026.hatenablog.com/entry/2026/07/16/012607">ロボット工学の現場で「言葉にできない」感覚を、LLMで構造化するための3ステップ訓練法</a></li><li><a href="https://humanoid2026.hatenablog.com/entry/2026/07/15/205845">筋トレより効果的？初心者でも自宅でできるピラティスの魅力と効果を徹底解説！おすすめ本も紹介</a></li><li><a href="https://humanoid2026.hatenablog.com/entry/2026/07/14/180006">急騰後のAI関連株は今が買い時？7/31決算前の株価予測と戦略を徹底解説</a></li></ul></section>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/humanoid/2026-07-16-ロボット工学の現場で言葉にできない感覚を-LLMで構造化するための3ステップ訓練法.html" class="post-nav__link">ロボット工学の現場で「言葉にできない」感覚を、LLMで構造化するための3ステップ訓練法</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/gadget/2026-07-16-山道で息が切れる理由-介護現場で腰が痛む理由-ウェアラブルデータで可視化して分かったこと.html" class="post-nav__link">山道で息が切れる理由、介護現場で腰が痛む理由。ウェアラブルデータで可視化して分かったこと</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/humanoid/2026-07-16-ロボット工学の現場で言葉にできない感覚を-LLMで構造化するための3ステップ訓練法.html" class="related-card">
+                                <h4 class="related-card__title">ロボット工学の現場で「言葉にできない」感覚を、LLMで構造化するための3ステップ訓練法</h4>
+                                <time class="related-card__date">2026-07-16</time>
+                            </a>
+                        
+                            <a href="../../posts/humanoid/2026-07-15-筋トレより効果的-初心者でも自宅でできるピラティスの魅力と効果を徹底解説-おすすめ本も紹介.html" class="related-card">
+                                <h4 class="related-card__title">筋トレより効果的？初心者でも自宅でできるピラティスの魅力と効果を徹底解説！おすすめ本も紹介</h4>
+                                <time class="related-card__date">2026-07-15</time>
+                            </a>
+                        
+                            <a href="../../posts/humanoid/2026-07-14-急騰後のAI関連株は今が買い時-7-31決算前の株価予測と戦略を徹底解説.html" class="related-card">
+                                <h4 class="related-card__title">急騰後のAI関連株は今が買い時？7/31決算前の株価予測と戦略を徹底解説</h4>
+                                <time class="related-card__date">2026-07-14</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/adult/2026-07-16-家族会議の翌日-私が手に入れた自分時間のリアルな感触.html">家族会議の翌日。私が手に入れた「自分時間」のリアルな感触</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/art/2026-07-16-AI音楽生成に挑む-来月の制作に向けた-僕の最初の音の実験記録.html">AI音楽生成に挑む。来月の制作に向けた、僕の最初の音の実験記録</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/diary/2026-07-16-9割の地点で公開してしまう実験-完璧を捨てたら-プロジェクトの進みが劇的に軽くなった話.html">9割の地点で公開してしまう実験。完璧を捨てたら、プロジェクトの進みが劇的に軽くなった話</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/diary/2026-07-16-アイデアを具体化する途中で挫折した時-私が書き換えている失敗記録のフォーマット.html">アイデアを具体化する途中で挫折した時、私が書き換えている「失敗記録」のフォーマット</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/education/2026-07-16-家族旅行に向けて-AI活用で英語のキーフレーズを絞り込んでみた.html">家族旅行に向けて！AI活用で英語のキーフレーズを絞り込んでみた</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+    <div class="sidebar-box" style="text-align: center; padding-top: 15px; border-top: 1px dashed var(--rule); margin-top: 20px;">
+        <a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank"><img src="https://b.blogmura.com/internet/generativeai/88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 ネットブログ ChatGPT・生成AIへ" /></a><br /><a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank" style="font-size: 10px; color: var(--muted); text-decoration: none;">にほんブログ村</a>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
+    </div>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="../../about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="../../partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; 2026 Humanoid Media Factory</span>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>
