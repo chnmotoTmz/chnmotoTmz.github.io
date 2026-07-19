@@ -50,6 +50,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/uncategorized/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -75,10 +79,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -319,6 +319,11 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/news/2026-07-20-%E5%8A%B9%E7%8E%87%E5%8C%96%E3%81%AB%E7%96%B2%E3%82%8C%E3%81%9F%E3%82%89-%E4%B8%8D%E4%BE%BF%E3%82%92%E6%A5%BD%E3%81%97%E3%82%82%E3%81%86-%E7%A7%81%E3%81%8C%E5%B1%B1%E7%99%BB%E3%82%8A%E3%81%A8%E8%AA%AD%E6%9B%B8%E3%81%A7%E5%8F%96%E3%82%8A%E6%88%BB%E3%81%97%E3%81%9F%E8%87%AA%E5%88%86%E3%81%AE%E6%89%8B%E3%81%A7%E6%8E%B4%E3%82%80%E5%AE%9F%E6%84%9F.html</loc>
+        <lastmod>2026-07-20</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/travel/2026-07-20-%E5%91%BC%E5%90%B8%E7%AD%8B%E3%82%92%E9%8D%9B%E3%81%88%E3%81%9F%E3%82%89%E7%99%BB%E3%82%8A%E3%81%AE%E6%81%AF%E5%88%87%E3%82%8C%E3%81%8C%E5%8D%8A%E6%B8%9B-PowerBreathe%E3%82%923%E3%83%B6%E6%9C%88%E7%B6%9A%E3%81%91%E3%81%9F%E7%B5%90%E6%9E%9C.html</loc>
         <lastmod>2026-07-20</lastmod>
         <priority>0.6</priority>
     </url>
