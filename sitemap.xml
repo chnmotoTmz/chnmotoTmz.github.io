@@ -22,15 +22,15 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/diary/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/diary/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -282,6 +282,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/diary/2026-07-19-Dev-Diary-2026-07-19.html</loc>
+        <lastmod>2026-07-19</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/art/2026-07-18-%E5%85%B1%E5%89%B5%E3%81%AE%E8%A8%98%E9%8C%B2%E3%82%92%E6%9C%AC%E3%81%AB%E3%81%99%E3%82%8B%E7%AC%AC%E4%B8%80%E6%AD%A9-%E6%9D%A5%E6%9C%88%E3%81%AE%E3%83%97%E3%83%AD%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E9%85%8D%E5%B8%83%E3%81%AB%E5%90%91%E3%81%91%E3%81%9F%E8%A1%8C%E5%8B%95%E3%83%AA%E3%82%B9%E3%83%88.html</loc>
         <lastmod>2026-07-18</lastmod>
