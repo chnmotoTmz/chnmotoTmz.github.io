@@ -49,6 +49,13 @@
         <guid>https://chnmototmz.github.io/posts/news/2026-07-25-%E9%99%B6%E8%8A%B8%E9%81%93%E5%85%B7-%E6%9C%80%E5%88%9D%E3%81%AE%E4%B8%80%E3%81%A4%E3%81%AF%E4%BD%95%E3%82%92%E9%81%B8%E3%81%B6-%E5%AE%A4%E7%94%BA%E6%99%82%E4%BB%A3%E3%81%AE%E4%BE%98%E3%81%B3%E5%AF%82%E3%81%B3%E3%81%AB%E5%AD%A6%E3%81%B6%E5%A4%B1%E6%95%97%E3%81%97%E3%81%AA%E3%81%84%E5%9F%BA%E6%BA%96.html</guid>
     </item>
     <item>
+        <title>新幹線2時間20分を研究時間に変えた音声入力×LLM記録術</title>
+        <link>https://chnmototmz.github.io/posts/tech/2026-07-25-%E6%96%B0%E5%B9%B9%E7%B7%9A2%E6%99%82%E9%96%9320%E5%88%86%E3%82%92%E7%A0%94%E7%A9%B6%E6%99%82%E9%96%93%E3%81%AB%E5%A4%89%E3%81%88%E3%81%9F%E9%9F%B3%E5%A3%B0%E5%85%A5%E5%8A%9BLLM%E8%A8%98%E9%8C%B2%E8%A1%93.html</link>
+        <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/charasma/cabinet/shohin/notchara/01top-gmd-37.jpg?_ex=128x128" /><br/>「新幹線の中で独り言をブツブツ言う」——正直、最初はかなり抵抗があった。だが横浜と京都を往復する生活を続けて分かったのは、この抵抗感こそが一番の誤解だったということだ。]]></description>
+        <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/tech/2026-07-25-%E6%96%B0%E5%B9%B9%E7%B7%9A2%E6%99%82%E9%96%9320%E5%88%86%E3%82%92%E7%A0%94%E7%A9%B6%E6%99%82%E9%96%93%E3%81%AB%E5%A4%89%E3%81%88%E3%81%9F%E9%9F%B3%E5%A3%B0%E5%85%A5%E5%8A%9BLLM%E8%A8%98%E9%8C%B2%E8%A1%93.html</guid>
+    </item>
+    <item>
         <title>弁護士事務所の扉を開けた日、離婚相談で感じた小さな安心</title>
         <link>https://chnmototmz.github.io/posts/uncategorized/2026-07-25-%E5%BC%81%E8%AD%B7%E5%A3%AB%E4%BA%8B%E5%8B%99%E6%89%80%E3%81%AE%E6%89%89%E3%82%92%E9%96%8B%E3%81%91%E3%81%9F%E6%97%A5-%E9%9B%A2%E5%A9%9A%E7%9B%B8%E8%AB%87%E3%81%A7%E6%84%9F%E3%81%98%E3%81%9F%E5%B0%8F%E3%81%95%E3%81%AA%E5%AE%89%E5%BF%83.html</link>
         <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/0737/9784817850737.jpg?_ex=128x128" /><br/>先週、締め切り前の作業の合間に、知人から「離婚の相談って、弁護士事務所に行ったらもう後戻りできないんでしょ？」と聞かれました。答えに詰まった自分がいて、気になって調べてみることにしました。]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1784789534.png" /><br/>夕方になってPCの画面を閉じると、頭がズキンと重くて目ぇがチカチカする。そんな経験、あんたにもあるちゃうか？]]></description>
         <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/news/2026-07-23-%E8%81%B7%E4%BA%BA%E3%82%82%E5%83%A7%E4%BE%B6%E3%82%82%E5%AE%9F%E3%81%AF%E5%90%8C%E3%81%98%E3%81%93%E3%81%A8%E3%81%97%E3%81%A6%E3%81%9F-%E6%89%8B%E4%BB%95%E4%BA%8B%E3%81%97%E3%81%AA%E3%81%8C%E3%82%89%E5%AD%A6%E3%81%B6%E6%98%94%E3%81%8B%E3%82%89%E3%81%AE%E7%9F%A5%E6%81%B5.html</guid>
-    </item>
-    <item>
-        <title>現場の声をデータ資産へ：PythonとLLMによる介護ニーズ構造化、マルチモーダルRAG実践論</title>
-        <link>https://chnmototmz.github.io/posts/tech/2026-07-23-%E7%8F%BE%E5%A0%B4%E3%81%AE%E5%A3%B0%E3%82%92%E3%83%87%E3%83%BC%E3%82%BF%E8%B3%87%E7%94%A3%E3%81%B8-Python%E3%81%A8LLM%E3%81%AB%E3%82%88%E3%82%8B%E4%BB%8B%E8%AD%B7%E3%83%8B%E3%83%BC%E3%82%BA%E6%A7%8B%E9%80%A0%E5%8C%96-%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%ABRAG%E5%AE%9F%E8%B7%B5%E8%AB%96.html</link>
-        <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/1314/9784814401314_1_3.jpg?_ex=128x128" /><br/>日々の介護記録、それはまさに情報の宝庫でありながら、同時に現場のスタッフにとっては重い負担になっている。朝から晩まで、手書きの申し送りノート、タブレットへの入力、そして利用者さんやご家族からの電話相談。これら一つ一つが、…]]></description>
-        <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/tech/2026-07-23-%E7%8F%BE%E5%A0%B4%E3%81%AE%E5%A3%B0%E3%82%92%E3%83%87%E3%83%BC%E3%82%BF%E8%B3%87%E7%94%A3%E3%81%B8-Python%E3%81%A8LLM%E3%81%AB%E3%82%88%E3%82%8B%E4%BB%8B%E8%AD%B7%E3%83%8B%E3%83%BC%E3%82%BA%E6%A7%8B%E9%80%A0%E5%8C%96-%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%ABRAG%E5%AE%9F%E8%B7%B5%E8%AB%96.html</guid>
     </item>
 </channel>
 </rss>
