@@ -49,6 +49,13 @@
         <guid>https://chnmototmz.github.io/posts/lifestyle/2026-07-27-%E6%89%BF%E8%AA%8D%E6%AC%B2%E6%B1%82%E3%82%92%E7%89%A9%E7%90%86%E7%9A%84%E3%81%AA%E6%AD%A6%E5%99%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81-%E6%9D%A5%E6%9C%88%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%82%92%E8%B2%B7%E3%81%A3%E3%81%A6%E9%96%8B%E7%99%BA%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%E8%A8%88%E7%94%BB%E3%82%92%E7%AB%8B%E3%81%A6%E3%81%A6%E3%81%BF%E3%81%9F.html</guid>
     </item>
     <item>
+        <title>データ読み込みと日時表記の正規化（イメージ）</title>
+        <link>https://chnmototmz.github.io/posts/tech/2026-07-27-%E3%83%87%E3%83%BC%E3%82%BF%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E3%81%A8%E6%97%A5%E6%99%82%E8%A1%A8%E8%A8%98%E3%81%AE%E6%AD%A3%E8%A6%8F%E5%8C%96%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8.html</link>
+        <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1785093034.png" /><br/>OutlookとJiraのCSVをPython×Gemini APIで統合！優先度付きサマリーCLIの作り方 毎朝30分の『ツール往復運動』で脳のMPを使い果たしていないか]]></description>
+        <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/tech/2026-07-27-%E3%83%87%E3%83%BC%E3%82%BF%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E3%81%A8%E6%97%A5%E6%99%82%E8%A1%A8%E8%A8%98%E3%81%AE%E6%AD%A3%E8%A6%8F%E5%8C%96%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8.html</guid>
+    </item>
+    <item>
         <title>大倉尾根の木段でポールの長さを5cm変えてみた。登りと下りで変わる膝と腿の疲労度検証</title>
         <link>https://chnmototmz.github.io/posts/travel/2026-07-27-%E5%A4%A7%E5%80%89%E5%B0%BE%E6%A0%B9%E3%81%AE%E6%9C%A8%E6%AE%B5%E3%81%A7%E3%83%9D%E3%83%BC%E3%83%AB%E3%81%AE%E9%95%B7%E3%81%95%E3%82%925cm%E5%A4%89%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F-%E7%99%BB%E3%82%8A%E3%81%A8%E4%B8%8B%E3%82%8A%E3%81%A7%E5%A4%89%E3%82%8F%E3%82%8B%E8%86%9D%E3%81%A8%E8%85%BF%E3%81%AE%E7%96%B2%E5%8A%B4%E5%BA%A6%E6%A4%9C%E8%A8%BC.html</link>
         <description><![CDATA[<img src="https://chnmotoTmz.github.io/images/thumbnails/t_1785078528_5cm.png" /><br/>昨日の日曜日は丹沢の大倉尾根、通称「バカ尾根」に足を伸ばしてきたんやわ。標高差1,200m、距離にして約7kmをひたすら登って下りるタフなルート。山歩きを終えて月曜の朝、職場の階段を降りるときに膝が笑って呻いている人、ほ…]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/yuukatsukan/cabinet/05946816/05995738/imgrc0071647268.jpg?_ex=128x128" /><br/>先週SNス覗いてたら、陶芸始めた人の投稿がようけ流れてきてな。「電動ろくろ買うたった!」ってテンション高い書き込みの数か月後に、「押し入れで埃かぶっとる…」て呟いとる人が何人もおったんや。ワイも今、新しい趣味の候補探して…]]></description>
         <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/news/2026-07-25-%E9%99%B6%E8%8A%B8%E9%81%93%E5%85%B7-%E6%9C%80%E5%88%9D%E3%81%AE%E4%B8%80%E3%81%A4%E3%81%AF%E4%BD%95%E3%82%92%E9%81%B8%E3%81%B6-%E5%AE%A4%E7%94%BA%E6%99%82%E4%BB%A3%E3%81%AE%E4%BE%98%E3%81%B3%E5%AF%82%E3%81%B3%E3%81%AB%E5%AD%A6%E3%81%B6%E5%A4%B1%E6%95%97%E3%81%97%E3%81%AA%E3%81%84%E5%9F%BA%E6%BA%96.html</guid>
-    </item>
-    <item>
-        <title>PDCAの「P」すら存在しない領域──56歳が半年間、一度も向き合わなかった本丸の話</title>
-        <link>https://chnmototmz.github.io/posts/tech/2026-07-25-PDCA%E3%81%AEP%E3%81%99%E3%82%89%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84%E9%A0%98%E5%9F%9F56%E6%AD%B3%E3%81%8C%E5%8D%8A%E5%B9%B4%E9%96%93-%E4%B8%80%E5%BA%A6%E3%82%82%E5%90%91%E3%81%8D%E5%90%88%E3%82%8F%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E6%9C%AC%E4%B8%B8%E3%81%AE%E8%A9%B1.html</link>
-        <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenkobo-ebooks/cabinet/5258/2000006495258.jpg?_ex=128x128" /><br/>半年分のログを読み返していて、手が止まった項目がひとつだけあった。夫婦関係だ。他はどれだけ雑でも一応「P」の痕跡があった。ここだけ、Planの欄が最初から白紙だった。]]></description>
-        <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/tech/2026-07-25-PDCA%E3%81%AEP%E3%81%99%E3%82%89%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84%E9%A0%98%E5%9F%9F56%E6%AD%B3%E3%81%8C%E5%8D%8A%E5%B9%B4%E9%96%93-%E4%B8%80%E5%BA%A6%E3%82%82%E5%90%91%E3%81%8D%E5%90%88%E3%82%8F%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E6%9C%AC%E4%B8%B8%E3%81%AE%E8%A9%B1.html</guid>
     </item>
 </channel>
 </rss>
