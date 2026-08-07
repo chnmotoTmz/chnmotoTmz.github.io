@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/news/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -47,10 +51,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/lifestyle/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/news/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -284,6 +284,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/gadget/2026-08-07-56%E6%AD%B3%E5%8D%98%E8%BA%AB%E8%B5%B4%E4%BB%BB-%E6%96%B0%E5%B9%B9%E7%B7%9A%E3%81%A7%E8%AB%96%E6%96%87%E3%82%92%E6%9B%B8%E3%81%8F-iPad%E3%81%A8%E9%9F%B3%E5%A3%B0%E5%85%A5%E5%8A%9B%E3%81%AE%E6%9C%80%E5%BC%B7%E3%82%BF%E3%83%83%E3%82%B0%E8%A1%93.html</loc>
+        <lastmod>2026-08-07</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/news/2026-08-07-%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%B7%E3%83%A5%E3%81%AF%E3%82%93-%E5%B8%82%E5%A0%B4%E3%82%92%E5%8F%B3%E5%BE%80%E5%B7%A6%E5%BE%80%E3%81%95%E3%81%9B%E3%82%93%E3%81%A8%E3%81%84%E3%81%A6%E3%81%8F%E3%82%8C.html</loc>
         <lastmod>2026-08-07</lastmod>
         <priority>0.6</priority>
     </url>
