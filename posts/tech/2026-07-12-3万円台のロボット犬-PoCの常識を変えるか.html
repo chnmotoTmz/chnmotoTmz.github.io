@@ -1,0 +1,308 @@
+<!--
+title: 3万円台のロボット犬、PoCの常識を変えるか
+date: 2026-07-12
+description: 先日、SNSでtazikuの田中さんが面白い話をしててな。3万円台でロボット犬を組み立てて、PythonやC++で制御できるって言うから、思わず食いついてしまったわ。これ、今の自分の「AI実装型アドバイザリー」への移行を…
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3万円台のロボット犬、PoCの常識を変えるか | Humanoid Media Factory</title>
+    <meta name="description" content="先日、SNSでtazikuの田中さんが面白い話をしててな。3万円台でロボット犬を組み立てて、PythonやC++で制御できるって言うから、思わず食いついてしまったわ。これ、今の自分の「AI実装型アドバイザリー」への移行を…">
+
+    <!-- SEO / Canonical / Robots -->
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/tech/2026-07-12-3%E4%B8%87%E5%86%86%E5%8F%B0%E3%81%AE%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E7%8A%AC-PoC%E3%81%AE%E5%B8%B8%E8%AD%98%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B%E3%81%8B.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "3万円台のロボット犬、PoCの常識を変えるか",
+      "description": "先日、SNSでtazikuの田中さんが面白い話をしててな。3万円台でロボット犬を組み立てて、PythonやC++で制御できるって言うから、思わず食いついてしまったわ。これ、今の自分の「AI実装型アドバイザリー」への移行を…",
+      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1783812778_3-PoC.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "chnmotoTmz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Humanoid Media Factory",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://chnmototmz.github.io/images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
+        }
+      },
+      "datePublished": "2026-07-12",
+      "dateModified": "2026-07-12",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://chnmototmz.github.io/posts/tech/2026-07-12-3%E4%B8%87%E5%86%86%E5%8F%B0%E3%81%AE%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E7%8A%AC-PoC%E3%81%AE%E5%B8%B8%E8%AD%98%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B%E3%81%8B.html"
+      }
+    }
+    </script>
+
+    <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="3万円台のロボット犬、PoCの常識を変えるか | Humanoid Media Factory">
+    <meta property="og:description" content="先日、SNSでtazikuの田中さんが面白い話をしててな。3万円台でロボット犬を組み立てて、PythonやC++で制御できるって言うから、思わず食いついてしまったわ。これ、今の自分の「AI実装型アドバイザリー」への移行を…">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/tech/2026-07-12-3%E4%B8%87%E5%86%86%E5%8F%B0%E3%81%AE%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E7%8A%AC-PoC%E3%81%AE%E5%B8%B8%E8%AD%98%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B%E3%81%8B.html">
+    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1783812778_3-PoC.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@chnmotoTmz">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            <li><a href="../../posts/diary/index.html">📁 Diary</a></li><li><a href="../../posts/uncategorized/index.html">📦 その他</a></li><li><a href="../../posts/adult/index.html">🔞 アダルト</a></li><li><a href="../../posts/art/index.html">🎨 アート・創作</a></li><li><a href="../../posts/finance/index.html">💰 金融・投資</a></li><li><a href="../../posts/gadget/index.html">📱 ガジェット</a></li><li><a href="../../posts/humanoid/index.html">🤖 ロボット・AI</a></li><li><a href="../../posts/lifestyle/index.html">📁 Lifestyle</a></li><li><a href="../../posts/news/index.html">📰 ニュース・時事</a></li><li><a href="../../posts/tech/index.html">💻 テクノロジー</a></li><li><a href="../../posts/travel/index.html">✈️ 旅行</a></li><li><a href="../../posts/wellness/index.html">🌿 健康・ウェルネス</a></li><li><a href="../../posts/relationships/index.html">❤️ 恋愛・人間関係</a></li><li><a href="../../posts/education/index.html">📚 教育・学習</a></li><li><a href="../../posts/monetization/index.html">📁 Monetization</a></li><li><a href="../../posts/hub/index.html">📁 Hub</a></li><li><a href="../../posts/gourmet/index.html">🍽️ グルメ</a></li><li><a href="../../posts/sports/index.html">⚽ スポーツ</a></li><li><a href="../../posts/affiliate/index.html">💸 アフィリエイト</a></li><li><a href="../../posts/english/index.html">🔤 英語学習</a></li><li><a href="../../posts/family/index.html">📁 Family</a></li><li><a href="../../posts/sociology/index.html">📁 Sociology</a></li><li><a href="../../posts/curation/index.html">📁 Curation</a></li><li><a href="../../posts/entertainment/index.html">🍿 エンタメ</a></li><li><a href="../../posts/music/index.html">🎵 音楽</a></li><li><a href="../../posts/art/illustration/index.html">📁 Art/illustration</a></li><li><a href="../../posts/education/english/index.html">📁 Education/english</a></li><li><a href="../../posts/education/multilingual/index.html">📁 Education/multilingual</a></li><li><a href="../../posts/entertainment/anime/index.html">📁 Entertainment/anime</a></li><li><a href="../../posts/entertainment/game/index.html">📁 Entertainment/game</a></li><li><a href="../../posts/entertainment/movie/index.html">📁 Entertainment/movie</a></li><li><a href="../../posts/gourmet/recipe/index.html">📁 Gourmet/recipe</a></li><li><a href="../../posts/gourmet/restaurant/index.html">📁 Gourmet/restaurant</a></li><li><a href="../../posts/gourmet/sweets/index.html">📁 Gourmet/sweets</a></li><li><a href="../../posts/news/economy/index.html">📁 News/economy</a></li><li><a href="../../posts/news/entertainment/index.html">📁 News/entertainment</a></li><li><a href="../../posts/news/net/index.html">📁 News/net</a></li><li><a href="../../posts/news/world/index.html">📁 News/world</a></li><li><a href="../../posts/tech/ai/index.html">📁 Tech/ai</a></li><li><a href="../../posts/tech/gadget/index.html">📁 Tech/gadget</a></li><li><a href="../../posts/tech/robotics/index.html">📁 Tech/robotics</a></li><li><a href="../../posts/tech/video/index.html">📁 Tech/video</a></li><li><a href="../../posts/travel/gear/index.html">📁 Travel/gear</a></li><li><a href="../../posts/travel/hiking/index.html">📁 Travel/hiking</a></li><li><a href="../../posts/wellness/diet/index.html">📁 Wellness/diet</a></li><li><a href="../../posts/wellness/health/index.html">📁 Wellness/health</a></li><li><a href="../../posts/wellness/mental/index.html">📁 Wellness/mental</a></li><li><a href="../../posts/wellness/skincare/index.html">📁 Wellness/skincare</a></li><li><a href="../../posts/art/music/index.html">📁 Art/music</a></li><li><a href="../../posts/art/writing/index.html">📁 Art/writing</a></li><li><a href="../../posts/education/hack/index.html">📁 Education/hack</a></li><li><a href="../../posts/entertainment/youtube/index.html">📁 Entertainment/youtube</a></li><li><a href="../../posts/finance/crypto/index.html">📁 Finance/crypto</a></li><li><a href="../../posts/finance/news/index.html">📁 Finance/news</a></li><li><a href="../../posts/finance/saving/index.html">📁 Finance/saving</a></li><li><a href="../../posts/finance/stock/index.html">📁 Finance/stock</a></li><li><a href="../../posts/gourmet/sake/index.html">📁 Gourmet/sake</a></li><li><a href="../../posts/news/domestic/index.html">📁 News/domestic</a></li><li><a href="../../posts/tech/programming/index.html">📁 Tech/programming</a></li><li><a href="../../posts/travel/domestic/index.html">📁 Travel/domestic</a></li><li><a href="../../posts/travel/hotel/index.html">📁 Travel/hotel</a></li><li><a href="../../posts/travel/overseas/index.html">📁 Travel/overseas</a></li><li><a href="../../posts/occult/index.html">👽 オカルト</a></li><li><a href="../../posts/devlog/index.html">📝 開発ログ</a></li><li><a href="../../posts/rakuten/index.html">🛍️ 楽天・お得</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style:none; padding:0; margin:0; display:flex; gap:8px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/posts/tech/index.html">
+                                <span itemprop="name">tech</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name" style="color:var(--text-primary)">3万円台のロボット犬、PoCの常識を変えるか</span>
+                            <meta itemprop="position" content="3" />
+                        </li>
+                    </ol>
+                </nav>
+
+                <h1>3万円台のロボット犬、PoCの常識を変えるか</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-07-12</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    <header>
+            <div class="card__cat">OBSERVATION</div>
+            
+            <div class="meta-date">2026-07-12</div>
+        </header>
+        <div class="content">
+            
+
+<figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1783812778_3-PoC.jpg" alt="3万円台のロボット犬、PoCの常識を変えるか" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class="article-lead">先日、SNSでtazikuの田中さんが面白い話をしててな。3万円台でロボット犬を組み立てて、PythonやC++で制御できるって言うから、思わず食いついてしまったわ。これ、今の自分の「AI実装型アドバイザリー」への移行を考えている身としては、無視できない話やなと。</div>
+<h2>ロボット導入の壁、昔は高かった</h2>
+<p>昔、大手SIerにいた頃、工場向けに数百万、数千万する産業用ロボットの導入プロジェクトに関わったことがある。PoC（概念実証）だけで数週間、いや数ヶ月かかるなんてザラやった。初期投資もそうやけど、セットアップの複雑さ、専門知識のハードルの高さがネックで、中小企業には手が出しにくい代物やったな。</p>
+<p>それが今、3万円台で「初回体験で制御できる感覚まで届く」ってのは、地味にすごいことやと思う。まさに隔世の感や。</p>
+<h2>Petoi Bittle Xって何？</h2>
+<p>Petoiが出してるロボット犬「Bittle X」は、4足歩行ロボットの開発キットらしい。提供元はPetoi Roboticsで、公式サイトで販売してる。価格はモデルによって変わるけど、<strong class="insight-bold">だいたい3万円台後半から5万円弱</strong>で手に入る。組み立て式で、ハードウェアの理解から、PythonやC++でのソフトウェア制御まで一気通貫で学べるのが特徴や。</p>
+<p>これは単なるホビーガジェットとしてだけじゃなく、<strong class="insight-bold">企業のAI/ロボットPoCの入口</strong>として、かなり実用的な「教材」になるんちゃうかな。現場のエンジニアが実際に触って、仮説を立てるにはこれほど手軽で、かつ本格的なツールは他になかなか無い。</p>
+<h2>AIの次はロボットの民主化</h2>
+<p>AIの民主化はChatGPTで一気に進んだのはみんな知ってる通りや。次はロボティクスの番やと思う。3万円台でロボットを制御できる体験が手に入るってことは、企業のR&D部門がPoCを始めるハードルが劇的に下がるということや。</p>
+<p>例えるなら、昔のパソコンがそうやったな。最初は一部の専門家や研究機関しか触れなかったものが、徐々にパーソナルな存在になって、誰もが手軽にプログラミングを学べるようになった。Bittle Xは、ロボット界の「初期のパーソナルコンピューター」みたいなもんやないかな。高額なBoston Dynamicsのロボットをいきなり導入する前に、まずこのBittle Xで「ロボットで何ができるか」の肌感覚を掴む。この段階的なアプローチこそが、ロボット導入を成功させる鍵やと自分は見てる。</p>
+<h2>使える人、使えない人</h2>
+<p>じゃあ、このBittle Xは誰に「使える」のか、「使えない」のか、率直に言うとこうやな。</p>
+<p><strong class="insight-bold">使える人:</strong><br>
+*   AI/ロボット分野への参入を考えている中小企業の開発担当者。<br>
+*   組み込み系やIoTのエンジニアで、物理ロボット分野にスキルを広げたい人。<br>
+*   ロボット工学やプログラミング教育の教材を探している学校や個人。<br>
+*   手を動かして学びたい、とにかく好奇心旺盛なエンジニア。</p>
+<p><strong class="insight-bold">使えない人:</strong><br>
+*   「完成品」としてすぐにビジネスに投入したい、あるいは高度な精密作業を求める企業。<br>
+*   組み立てやプログラミングに抵抗がある、あるいはそのための学習時間を確保できない人。<br>
+*   産業用レベルの耐久性や安定性を求める人。</p>
+<h2>欠点と落とし穴</h2>
+<p>もちろん、良いことばかりやない。欠点と落とし穴もちゃんとある。</p>
+<ul>
+<li><strong class="insight-bold">あくまで開発キット</strong>: 自分で組み立てて、コードを書くのが前提。箱から出してすぐに動く「完成品」を期待すると肩透かしを食らう。</li>
+<li><strong class="insight-bold">耐久性と安定性</strong>: 産業用ロボットとは比較にならん。ちょっとした衝撃で壊れたり、長時間稼働には向いてなかったりする可能性は高い。</li>
+<li><strong class="insight-bold">機能の限界</strong>: 搭載できるセンサーの種類や数、バッテリー駆動時間には限りがある。複雑な環境認識や、重いものを運ぶといったタスクには不向きや。</li>
+<li><strong class="insight-bold">サポートとコミュニティ</strong>: オープンソースベースとはいえ、困ったときにどこまで手厚いサポートを受けられるか、活発なコミュニティがあるかは事前に確認しといた方がええ。</li>
+<li><strong class="insight-bold">「おもちゃ」で終わる可能性</strong>: 3万円台とはいえ、ちゃんと目的意識を持って取り組まんと、ただの動くおもちゃで終わってしまう。PoCの具体的なゴール設定が重要や。</li>
+</ul>
+<p>余談やけど、最近、ベランダのミニトマトがようやく色づき始めたんや。毎日水やりしながら、こういう小さな変化に気づくのが、日々の仕事の合間の息抜きになってる。全く関係ない話やけどな。</p>
+<h2>私ならこう使う</h2>
+<p>今の私は、フリーランスのITコンサルタントとして「AI実装型アドバイザリー」への完全移行を進めている最中や。具体的なパイプライン構想も言語化できて、ビジネスモデルの解像度も上がってきてる。そんな中で、このBittle Xは、クライアントに<strong class="insight-bold">「AIと物理世界の融合」を説明する際のデモンストレーションツール</strong>として使えるかもしれん。</p>
+<p>例えば、特定のセンサーを搭載して、簡単な環境モニタリングや巡回タスクのPoCを、実際のロボットを動かしながらクライアントと一緒に考える。これまでの資料ベースの説明だけでは伝わりにくかった、ロボット活用の「肌感覚」を共有できるのは大きい。私自身、昔は組み込み系の仕事もしてたから、こういうのを触るのは単純に楽しいし、新しい技術への好奇心を刺激されるわ。</p>
+<h2>明日からの一歩</h2>
+<p>Petoi Bittle Xは、単なるおもちゃじゃなくて、これからのAIと物理世界をつなぐ、ひとつの重要なブリッジになる可能性を秘めていると思う。エンジニアとして、この波に乗るかどうかは、自分次第やな。</p>
+<p>まずは触ってみて、その可能性を肌で感じてみることが大事や。3万円台の投資で、新しいビジネスのヒントや、自身のスキルアップに繋がるなら、十分すぎるリターンがあるんちゃうかな。試しに一台、導入を検討してみるのも悪くない選択やと思うで。</p>
+<p style="display:none;"><a href="https://x.com/taziku_co/status/2066279035454501015'">Source Material</a></p><section class="internal-links"><h2>🔗 関連記事</h2><ul><li><a href="https://yamasan1969.hatenablog.com/entry/2026/07/11/011859">AI時代の脳リブート術：大阪クラフトビールで五感を研ぎ澄ます</a></li><li><a href="https://yamasan1969.hatenablog.com/entry/2026/07/10/130412">松本浩二、小型物理AIを組み上げ音声認識に挑む</a></li><li><a href="https://yamasan1969.hatenablog.com/entry/2026/07/10/005739">52歳ITコンサル、小型AIを組み立てて音声認識を試す</a></li></ul></section>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/tech/2026-07-12-AIコスト-まさかの6分の1-知らないと損する中国AIのリアルな実力.html" class="post-nav__link">AIコスト、まさかの6分の1！？知らないと損する「中国AI」のリアルな実力</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/relationships/2026-07-12-なぁなぁ-聞いてや-ヨシコの健康作戦会議や.html" class="post-nav__link">なぁなぁ、聞いてや！ヨシコの健康作戦会議や！</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/tech/2026-08-08-介護ヒューマノイド最前線-京都-横浜と山が育む集中力の循環.html" class="related-card">
+                                <h4 class="related-card__title">介護ヒューマノイド最前線！京都・横浜と山が育む『集中力』の循環</h4>
+                                <time class="related-card__date">2026-08-08</time>
+                            </a>
+                        
+                            <a href="../../posts/tech/2026-08-08-共感を生むプロダクト開発-データドリブンで測る心の絆と収益化戦略.html" class="related-card">
+                                <h4 class="related-card__title">共感を生むプロダクト開発：データドリブンで測る『心の絆』と収益化戦略</h4>
+                                <time class="related-card__date">2026-08-08</time>
+                            </a>
+                        
+                            <a href="../../posts/tech/2026-08-06-HUG-T1-身体知で変わる介護.html" class="related-card">
+                                <h4 class="related-card__title">HUG-T1、身体知で変わる介護</h4>
+                                <time class="related-card__date">2026-08-06</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/diary/2026-08-09-何から手をつければ-を脱出-アイデア即実行のための超具体的3ステップ.html">何から手をつければ…」を脱出！アイデア即実行のための超具体的3ステップ</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/uncategorized/2026-08-09-現代の詩集公開へ-プロンプトとの対話で得た確信.html">『現代の詩集』公開へ、プロンプトとの対話で得た確信</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/adult/2026-08-08-49歳パート-家族以外にキャンプ飯を振る舞う場所を探してみた.html">49歳パート、家族以外にキャンプ飯を振る舞う場所を探してみた</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/adult/2026-08-08-夕暮れのキッチン-私の人生はこのまま終わるのかしら.html">夕暮れのキッチン、私の人生はこのまま終わるのかしら</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/art/2026-08-08-僕の創作エッセイ-友人の声で確信が深まった瞬間.html">僕の創作エッセイ、友人の声で確信が深まった瞬間</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+    <div class="sidebar-box" style="text-align: center; padding-top: 15px; border-top: 1px dashed var(--rule); margin-top: 20px;">
+        <a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank"><img src="https://b.blogmura.com/internet/generativeai/88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 ネットブログ ChatGPT・生成AIへ" /></a><br /><a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank" style="font-size: 10px; color: var(--muted); text-decoration: none;">にほんブログ村</a>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
+    </div>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="../../about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="../../partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; 2026 Humanoid Media Factory</span>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>

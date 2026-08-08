@@ -1,0 +1,292 @@
+<!--
+title: 感覚で踊っていたサルサの重心移動をAIで可視化して驚いた、本当の体重移動のコツ
+date: 2026-08-06
+description: 最近、サルサの練習でちょっと壁にぶち当たっとったんやわ。もう長年踊ってるから、そこそこは自信あったつもりやったんやけど、インストラクターやベテランのパートナーから、たまに「おっちゃん、ちょっと重心が浮いてるで」「なんか重…
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感覚で踊っていたサルサの重心移動をAIで可視化して驚いた、本当の体重移動のコツ | Humanoid Media Factory</title>
+    <meta name="description" content="最近、サルサの練習でちょっと壁にぶち当たっとったんやわ。もう長年踊ってるから、そこそこは自信あったつもりやったんやけど、インストラクターやベテランのパートナーから、たまに「おっちゃん、ちょっと重心が浮いてるで」「なんか重…">
+
+    <!-- SEO / Canonical / Robots -->
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/travel/2026-08-06-%E6%84%9F%E8%A6%9A%E3%81%A7%E8%B8%8A%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%B5%E3%83%AB%E3%82%B5%E3%81%AE%E9%87%8D%E5%BF%83%E7%A7%BB%E5%8B%95%E3%82%92AI%E3%81%A7%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%A6%E9%A9%9A%E3%81%84%E3%81%9F-%E6%9C%AC%E5%BD%93%E3%81%AE%E4%BD%93%E9%87%8D%E7%A7%BB%E5%8B%95%E3%81%AE%E3%82%B3%E3%83%84.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "感覚で踊っていたサルサの重心移動をAIで可視化して驚いた、本当の体重移動のコツ",
+      "description": "最近、サルサの練習でちょっと壁にぶち当たっとったんやわ。もう長年踊ってるから、そこそこは自信あったつもりやったんやけど、インストラクターやベテランのパートナーから、たまに「おっちゃん、ちょっと重心が浮いてるで」「なんか重…",
+      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1785947357_AI.png",
+      "author": {
+        "@type": "Person",
+        "name": "chnmotoTmz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Humanoid Media Factory",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://chnmototmz.github.io/images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
+        }
+      },
+      "datePublished": "2026-08-06",
+      "dateModified": "2026-08-06",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://chnmototmz.github.io/posts/travel/2026-08-06-%E6%84%9F%E8%A6%9A%E3%81%A7%E8%B8%8A%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%B5%E3%83%AB%E3%82%B5%E3%81%AE%E9%87%8D%E5%BF%83%E7%A7%BB%E5%8B%95%E3%82%92AI%E3%81%A7%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%A6%E9%A9%9A%E3%81%84%E3%81%9F-%E6%9C%AC%E5%BD%93%E3%81%AE%E4%BD%93%E9%87%8D%E7%A7%BB%E5%8B%95%E3%81%AE%E3%82%B3%E3%83%84.html"
+      }
+    }
+    </script>
+
+    <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="感覚で踊っていたサルサの重心移動をAIで可視化して驚いた、本当の体重移動のコツ | Humanoid Media Factory">
+    <meta property="og:description" content="最近、サルサの練習でちょっと壁にぶち当たっとったんやわ。もう長年踊ってるから、そこそこは自信あったつもりやったんやけど、インストラクターやベテランのパートナーから、たまに「おっちゃん、ちょっと重心が浮いてるで」「なんか重…">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/travel/2026-08-06-%E6%84%9F%E8%A6%9A%E3%81%A7%E8%B8%8A%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%B5%E3%83%AB%E3%82%B5%E3%81%AE%E9%87%8D%E5%BF%83%E7%A7%BB%E5%8B%95%E3%82%92AI%E3%81%A7%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%A6%E9%A9%9A%E3%81%84%E3%81%9F-%E6%9C%AC%E5%BD%93%E3%81%AE%E4%BD%93%E9%87%8D%E7%A7%BB%E5%8B%95%E3%81%AE%E3%82%B3%E3%83%84.html">
+    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1785947357_AI.png">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@chnmotoTmz">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            <li><a href="../../posts/diary/index.html">📁 Diary</a></li><li><a href="../../posts/uncategorized/index.html">📦 その他</a></li><li><a href="../../posts/adult/index.html">🔞 アダルト</a></li><li><a href="../../posts/art/index.html">🎨 アート・創作</a></li><li><a href="../../posts/finance/index.html">💰 金融・投資</a></li><li><a href="../../posts/gadget/index.html">📱 ガジェット</a></li><li><a href="../../posts/humanoid/index.html">🤖 ロボット・AI</a></li><li><a href="../../posts/lifestyle/index.html">📁 Lifestyle</a></li><li><a href="../../posts/news/index.html">📰 ニュース・時事</a></li><li><a href="../../posts/tech/index.html">💻 テクノロジー</a></li><li><a href="../../posts/travel/index.html">✈️ 旅行</a></li><li><a href="../../posts/wellness/index.html">🌿 健康・ウェルネス</a></li><li><a href="../../posts/relationships/index.html">❤️ 恋愛・人間関係</a></li><li><a href="../../posts/education/index.html">📚 教育・学習</a></li><li><a href="../../posts/monetization/index.html">📁 Monetization</a></li><li><a href="../../posts/hub/index.html">📁 Hub</a></li><li><a href="../../posts/gourmet/index.html">🍽️ グルメ</a></li><li><a href="../../posts/sports/index.html">⚽ スポーツ</a></li><li><a href="../../posts/affiliate/index.html">💸 アフィリエイト</a></li><li><a href="../../posts/english/index.html">🔤 英語学習</a></li><li><a href="../../posts/family/index.html">📁 Family</a></li><li><a href="../../posts/sociology/index.html">📁 Sociology</a></li><li><a href="../../posts/curation/index.html">📁 Curation</a></li><li><a href="../../posts/entertainment/index.html">🍿 エンタメ</a></li><li><a href="../../posts/music/index.html">🎵 音楽</a></li><li><a href="../../posts/art/illustration/index.html">📁 Art/illustration</a></li><li><a href="../../posts/education/english/index.html">📁 Education/english</a></li><li><a href="../../posts/education/multilingual/index.html">📁 Education/multilingual</a></li><li><a href="../../posts/entertainment/anime/index.html">📁 Entertainment/anime</a></li><li><a href="../../posts/entertainment/game/index.html">📁 Entertainment/game</a></li><li><a href="../../posts/entertainment/movie/index.html">📁 Entertainment/movie</a></li><li><a href="../../posts/gourmet/recipe/index.html">📁 Gourmet/recipe</a></li><li><a href="../../posts/gourmet/restaurant/index.html">📁 Gourmet/restaurant</a></li><li><a href="../../posts/gourmet/sweets/index.html">📁 Gourmet/sweets</a></li><li><a href="../../posts/news/economy/index.html">📁 News/economy</a></li><li><a href="../../posts/news/entertainment/index.html">📁 News/entertainment</a></li><li><a href="../../posts/news/net/index.html">📁 News/net</a></li><li><a href="../../posts/news/world/index.html">📁 News/world</a></li><li><a href="../../posts/tech/ai/index.html">📁 Tech/ai</a></li><li><a href="../../posts/tech/gadget/index.html">📁 Tech/gadget</a></li><li><a href="../../posts/tech/robotics/index.html">📁 Tech/robotics</a></li><li><a href="../../posts/tech/video/index.html">📁 Tech/video</a></li><li><a href="../../posts/travel/gear/index.html">📁 Travel/gear</a></li><li><a href="../../posts/travel/hiking/index.html">📁 Travel/hiking</a></li><li><a href="../../posts/wellness/diet/index.html">📁 Wellness/diet</a></li><li><a href="../../posts/wellness/health/index.html">📁 Wellness/health</a></li><li><a href="../../posts/wellness/mental/index.html">📁 Wellness/mental</a></li><li><a href="../../posts/wellness/skincare/index.html">📁 Wellness/skincare</a></li><li><a href="../../posts/art/music/index.html">📁 Art/music</a></li><li><a href="../../posts/art/writing/index.html">📁 Art/writing</a></li><li><a href="../../posts/education/hack/index.html">📁 Education/hack</a></li><li><a href="../../posts/entertainment/youtube/index.html">📁 Entertainment/youtube</a></li><li><a href="../../posts/finance/crypto/index.html">📁 Finance/crypto</a></li><li><a href="../../posts/finance/news/index.html">📁 Finance/news</a></li><li><a href="../../posts/finance/saving/index.html">📁 Finance/saving</a></li><li><a href="../../posts/finance/stock/index.html">📁 Finance/stock</a></li><li><a href="../../posts/gourmet/sake/index.html">📁 Gourmet/sake</a></li><li><a href="../../posts/news/domestic/index.html">📁 News/domestic</a></li><li><a href="../../posts/tech/programming/index.html">📁 Tech/programming</a></li><li><a href="../../posts/travel/domestic/index.html">📁 Travel/domestic</a></li><li><a href="../../posts/travel/hotel/index.html">📁 Travel/hotel</a></li><li><a href="../../posts/travel/overseas/index.html">📁 Travel/overseas</a></li><li><a href="../../posts/occult/index.html">👽 オカルト</a></li><li><a href="../../posts/devlog/index.html">📝 開発ログ</a></li><li><a href="../../posts/rakuten/index.html">🛍️ 楽天・お得</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style:none; padding:0; margin:0; display:flex; gap:8px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/posts/travel/index.html">
+                                <span itemprop="name">travel</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name" style="color:var(--text-primary)">感覚で踊っていたサルサの重心移動をAIで可視化して驚いた、本当の体重移動のコツ</span>
+                            <meta itemprop="position" content="3" />
+                        </li>
+                    </ol>
+                </nav>
+
+                <h1>感覚で踊っていたサルサの重心移動をAIで可視化して驚いた、本当の体重移動のコツ</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-08-06</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    <header>
+            <div class="card__cat">OBSERVATION</div>
+            
+            <div class="meta-date">2026-08-06</div>
+        </header>
+        <div class="content">
+            
+
+<figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1785947357_AI.png" alt="感覚で踊っていたサルサの重心移動をAIで可視化して驚いた、本当の体重移動のコツ" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class="article-lead">最近、サルサの練習でちょっと壁にぶち当たっとったんやわ。もう長年踊ってるから、そこそこは自信あったつもりやったんやけど、インストラクターやベテランのパートナーから、たまに「おっちゃん、ちょっと重心が浮いてるで」「なんか重いな」「タイミングが合わへん時があるわ」なんて言われることがあってな。</div>
+<p>自分ではそんなつもりないし、一生懸命やってるんやけど、どうも具体的な改善策が見つからへんくて。動画を撮って見ても、どこをどう直したらええのか、客観的な指標がないから途方に暮れるばかりやったんや。丹沢の山で、地図もコンパスもなしに「こっちやろ！」って感覚だけで進んで、結局道に迷うようなもんやね。経験だけじゃあかん時もあるんやな、ってつくづく思ったわ。</p>
+<h2>『SwingLogic Pro』が暴いた、私の重心移動の「真実」</h2>
+<p>そんな時、たまたまSNSで見かけたのが、AIを使ったモーションキャプチャシステム『SwingLogic Pro』っちゅうやつやったんや。都内にあるStudio『Rhythm-X』で体験できるって聞いて、これは試してみる価値あるで、って思ったんやな。自分のサルサ・オン・ツーのベーシックステップを10分間計測してもらったんやけど、全身17箇所にセンサーを装着して、1秒間に60フレームでX・Y・Z軸の移動量を記録するらしいわ。もう、SF映画みたいやったで。</p>
+<p>結果は、もう衝撃やったね。理想とされる重心移動幅って、左右に±5cm以内らしいんやけど、私の場合、なんと <strong class="insight-bold">±15cm以上もブレてた</strong> らしいんやわ！「え、マジか…」って声出てもうたで。インストラクターに「もっと重心を低く」って言われとったんやけど、データで見たら、膝の屈伸運動はちゃんとしとるものの、肝心の骨盤の水平移動がほとんど行われてへんかったんや。グラフで可視化された自分の動きを見て、初めて納得したわ。</p>
+<p>それに、感覚では合ってると思ってた体重移動のタイミングも、実際は <strong class="insight-bold">0.2秒も遅れてた</strong> らしい。これが「重い」踊り手って認識される原因やったんやな、って。</p>
+<p>| 項目             | 私の感覚（修正前）               | 『SwingLogic Pro』解析結果（修正前） | 理想値の目安               |<br>
+| :--------------- | :------------------------------- | :--------------------------------- | :------------------------- |<br>
+| 重心移動の左右幅 | 「ブレていない」と思っていた       | ±15cm以上ブレ                           | ±5cm以内                   |<br>
+| 骨盤の動き       | 「8の字」を意識していた            | 膝の屈伸が主で水平移動が不足             | 床を水平にプッシュする意識 |<br>
+| 体重移動のタイミング | 「合っている」と思っていた         | 0.2秒遅れ                               | リアルタイム               |</p>
+<p>この表を見せられた時は、自分の長年の感覚がガラガラと崩れ落ちるような感覚やったわ。でも、同時に「これでやっと具体的な改善策が見つかる！」って、希望も湧いてきたんやで。</p>
+<h2>「膝を緩める」の常識を覆す、AIが導いた重心移動の極意</h2>
+<p>解析結果に基づいて、インストラクターから具体的な修正指導を受けたわけやけど、これがまた目から鱗やったんや。サルサの教則本なんかでは、よく「膝を緩める」ことが強調されるやろ？私もずっとそう信じて実践してきたんやけど、『SwingLogic Pro』のAI解析では、膝を緩めすぎると、かえって床からの反発力が得られへんくなって、重心移動が滞るっていう逆説的な事実が判明したらしいんや。これは、まさに専門家としての反論やね。</p>
+<p>指導されたのは、骨盤を「8の字」に動かすんやなくて、 <strong class="insight-bold">床を「水平にプッシュ」する意識</strong> に変えることやった。床をしっかり踏み込んで、その反発力を骨盤の水平移動に繋げる感覚やね。丹沢の急登で足裏全体で地面を捉える感覚と、ちょっと似てるかもしれへんな。山道で足の置き方が不安定やと、すぐに膝が笑うし、体全体のバランスも崩れるもんな。</p>
+<p>この新しい意識で、骨盤の回旋角度を意識した修正練習を、毎日20分、2週間続けてみたんや。最初は慣れへんくて変な感じやったけど、だんだん体が覚えてきてな。その結果、再計測してみたら、重心移動の左右差がなんと <strong class="insight-bold">18%から5%以内にまで短縮</strong> されとったんや！高速スピン時のふらつきも、約70%も軽減されたって言うから、もうビックリやで。フロアで踊ってても、明らかに軸が安定してるのが自分でもわかるし、パートナーからも「おっちゃん、最近めっちゃ安定してるやん！」って褒められるようになったんや。</p>
+<h2>感覚とデータの融合が拓く、踊りの新たな高みへ</h2>
+<p>長年趣味として続けてきたことって、どうしても自分の感覚に頼りがちになるもんやね。それはそれで大事な経験なんやけど、時にそれが盲点になって、上達の妨げになることもあるんやな、って今回のサルサの経験で痛感したわ。客観的なデータってのは、自分の感覚だけでは見えへん真実を突きつけてくれる、いわば「山の地形図」みたいなもんやね。</p>
+<p>抽象的な指導に悩んでるダンサーさんには、AI解析みたいなデータ活用って、一つの大きな選択肢になると思うんや。登山でも、天候やルートのデータ分析が安全と成功に繋がるように、趣味においても科学的なアプローチを取り入れることで、新しい喜びが生まれるんやな。私自身、サルサへの情熱がデータによって、より深く、より安定したものになったんやから。</p>
+<p>これからも、この新しい視点を取り入れて、サルサをもっともっと楽しんでいきたいと思ってるんや。自分の情熱を多角的な視点から深掘りするって、ほんまに面白いことやで。</p>
+<p>あなたやったら、自分の趣味にどうやってデータを取り入れてみたいと思う？感覚とデータの融合って、きっと新しい世界を見せてくれるはずやで。</p>
+<section class="rakuten-products" style="margin-top:40px; padding:20px; background:#fff5f5; border:1px solid #ffccd5; border-radius:12px;"><h2 style="font-size:1.2em; margin-top:0; color:#bf0000; border-bottom:2px solid #ffccd5; padding-bottom:8px;">🛒 関連のおすすめ商品</h2><ul class="product-grid" style="list-style:none; padding-left:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:20px; margin-bottom:0;"><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00qmht8.uw1yy15f.g00qmht8.uw1yzf2f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-faniture%2F0540069%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fa-faniture%2Fi%2F10003840%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/a-faniture/cabinet/oo/nj-0085oo.jpg?_ex=128x128" alt="突っ張り壁面ミラー ワイド 幅80cm ホワイト色 シルバー色 全身ミラー..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">突っ張り壁面ミラー ワイド 幅80cm ホワイト色 シルバー色 全身ミラー...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00qmht8.uw1yy15f.g00qmht8.uw1yzf2f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-faniture%2F0540069%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fa-faniture%2Fi%2F10003840%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00ulez8.uw1yyef2.g00ulez8.uw1yz82b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fzen-interior%2Fm18c090002%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fzen-interior%2Fi%2F10000114%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/zen-interior/cabinet/nonskid/others/m18c090002.jpg?_ex=128x128" alt="ダンスリューム・ライト ビニル床シート（910mm巾/1.5mm厚/3色/..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">ダンスリューム・ライト ビニル床シート（910mm巾/1.5mm厚/3色/...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00ulez8.uw1yyef2.g00ulez8.uw1yz82b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fzen-interior%2Fm18c090002%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fzen-interior%2Fi%2F10000114%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00u1wi8.uw1yy4a3.g00u1wi8.uw1yz9a3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjohnlife%2Fstdmr-10%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjohnlife%2Fi%2F10000122%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/johnlife/cabinet/08519371/09810347/imgrc0276377559.jpg?_ex=128x128" alt="johnlife キャスター付鏡 タンスミラー 割れない 姿見 全身 フィ..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">johnlife キャスター付鏡 タンスミラー 割れない 姿見 全身 フィ...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00u1wi8.uw1yy4a3.g00u1wi8.uw1yz9a3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjohnlife%2Fstdmr-10%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjohnlife%2Fi%2F10000122%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00r1368.uw1yyc9b.g00r1368.uw1yz8ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F95872%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11006474%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/rakuten24/cabinet/872/95872.jpg?_ex=128x128" alt="カゴメ サルサソース(240g*2個セット)" style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">カゴメ サルサソース(240g*2個セット)</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00r1368.uw1yyc9b.g00r1368.uw1yz8ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F95872%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11006474%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00r1368.uw1yyc9b.g00r1368.uw1yz8ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F541705%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11127416%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/rakuten24/cabinet/705/541705.jpg?_ex=128x128" alt="サルサホット(240g*2個セット)" style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">サルサホット(240g*2個セット)</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00r1368.uw1yyc9b.g00r1368.uw1yz8ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F541705%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11127416%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li></ul></section><section class="internal-links"><h2>🔗 関連記事</h2><ul><li><a href="https://arafo40tozan.hatenadiary.jp/entry/20260803/1785689603">異なる専門性との『対等な対話』は未来をどう変えるか：ワークショップで得た3つの視点</a></li><li><a href="https://arafo40tozan.hatenadiary.jp/entry/20260801/1785520911">数年のブランクで踏めなくなったサルサ。リズム感を呼び戻した3つの身体調整法</a></li><li><a href="https://arafo40tozan.hatenadiary.jp/entry/20260730/1785352553">大倉尾根の階段下りで膝が笑う人へ。15年で見つけたストライド調整と加重分散のコツ</a></li></ul></section>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/uncategorized/2026-08-06-デザインの方向性を再考-AIと私の詩をどう並べるか.html" class="post-nav__link">デザインの方向性を再考。AIと私の詩をどう並べるか</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/tech/2026-08-06-娘のお店の味に学ぶ-ヒューマノイド動作のパーソナライズ技術.html" class="post-nav__link">娘の「お店の味」に学ぶ、ヒューマノイド動作のパーソナライズ技術</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/travel/2026-08-08-対等な視点を引き出す質問-読書会で試したい3つの対話の足場.html" class="related-card">
+                                <h4 class="related-card__title">『対等な視点』を引き出す質問。読書会で試したい3つの「対話の足場</h4>
+                                <time class="related-card__date">2026-08-08</time>
+                            </a>
+                        
+                            <a href="../../posts/travel/2026-08-07-AIは単なるツールじゃない-大人のサークルを共創で変える15年後の姿.html" class="related-card">
+                                <h4 class="related-card__title">AIは単なるツールじゃない：大人のサークルを『共創』で変える15年後の姿</h4>
+                                <time class="related-card__date">2026-08-07</time>
+                            </a>
+                        
+                            <a href="../../posts/travel/2026-08-07-積ん読を卒業-AI要約と手書きノートで実践する書籍の構造化術.html" class="related-card">
+                                <h4 class="related-card__title">積ん読を卒業。AI要約と手書きノートで実践する書籍の構造化術</h4>
+                                <time class="related-card__date">2026-08-07</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/diary/2026-08-09-何から手をつければ-を脱出-アイデア即実行のための超具体的3ステップ.html">何から手をつければ…」を脱出！アイデア即実行のための超具体的3ステップ</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/uncategorized/2026-08-09-現代の詩集公開へ-プロンプトとの対話で得た確信.html">『現代の詩集』公開へ、プロンプトとの対話で得た確信</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/adult/2026-08-08-49歳パート-家族以外にキャンプ飯を振る舞う場所を探してみた.html">49歳パート、家族以外にキャンプ飯を振る舞う場所を探してみた</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/adult/2026-08-08-夕暮れのキッチン-私の人生はこのまま終わるのかしら.html">夕暮れのキッチン、私の人生はこのまま終わるのかしら</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/art/2026-08-08-僕の創作エッセイ-友人の声で確信が深まった瞬間.html">僕の創作エッセイ、友人の声で確信が深まった瞬間</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+    <div class="sidebar-box" style="text-align: center; padding-top: 15px; border-top: 1px dashed var(--rule); margin-top: 20px;">
+        <a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank"><img src="https://b.blogmura.com/internet/generativeai/88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 ネットブログ ChatGPT・生成AIへ" /></a><br /><a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank" style="font-size: 10px; color: var(--muted); text-decoration: none;">にほんブログ村</a>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
+    </div>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="../../about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="../../partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; 2026 Humanoid Media Factory</span>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>
