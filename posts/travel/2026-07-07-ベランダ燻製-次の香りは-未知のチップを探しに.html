@@ -273,4 +273,13 @@ article_type: OBSERVATION
             msgEl.style.color = '#cf6f6f';
             msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
           } finally {
-            
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>

@@ -281,3 +281,15 @@ article_type: OBSERVATION
             msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
           } catch(err) {
             msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>
