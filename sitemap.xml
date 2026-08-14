@@ -30,6 +30,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/news/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -63,10 +67,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/lifestyle/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/humanoid/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -284,6 +284,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/gadget/2026-08-15-2%E4%B8%87%E5%86%86%E3%81%AE%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E6%A9%9F%E6%9D%90%E3%81%8C%E6%95%97%E6%AD%BB%E3%81%97%E3%81%9F%E8%A9%B1-%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1%E7%B7%B4%E7%BF%92%E7%94%A8%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89-%E7%B5%90%E5%B1%80%E3%81%84%E3%81%8F%E3%82%89%E3%81%8C%E6%AD%A3%E8%A7%A3%E3%82%84%E3%81%AD%E3%82%93%E5%95%8F%E9%A1%8C%E3%82%92%E8%87%AA%E8%85%B9%E3%81%A7%E6%B1%BA%E7%9D%80%E3%81%A4%E3%81%91%E3%81%9F%E3%82%8B.html</loc>
+        <lastmod>2026-08-15</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/humanoid/2026-08-15-%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E7%B5%8C%E6%B8%88%E8%A1%8C%E5%8B%95%E3%83%A2%E3%83%87%E3%83%AB%E8%80%83-8-6%E5%8D%83%E9%87%8C%E3%81%AE%E6%95%A3%E8%B2%A1%E6%8A%91%E6%AD%A2%E3%81%A8AI%E6%8A%95%E8%B3%87%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%81%AE%E6%A7%8B%E7%AF%89.html</loc>
         <lastmod>2026-08-15</lastmod>
         <priority>0.6</priority>
     </url>
