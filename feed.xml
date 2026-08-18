@@ -16,7 +16,7 @@
     <item>
         <title>ザラ場中に「新高値」を待ち構える男 ― 含み損ブルと、殴り返すための監視システム構想</title>
         <link>https://chnmototmz.github.io/posts/finance/2026-08-18-%E3%82%B6%E3%83%A9%E5%A0%B4%E4%B8%AD%E3%81%AB%E6%96%B0%E9%AB%98%E5%80%A4%E3%82%92%E5%BE%85%E3%81%A1%E6%A7%8B%E3%81%88%E3%82%8B%E7%94%B7-%E5%90%AB%E3%81%BF%E6%90%8D%E3%83%96%E3%83%AB%E3%81%A8-%E6%AE%B4%E3%82%8A%E8%BF%94%E3%81%99%E3%81%9F%E3%82%81%E3%81%AE%E7%9B%A3%E8%A6%96%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A7%8B%E6%83%B3.html</link>
-        <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenkobo-ebooks/cabinet/3784/2000000253784.jpg?_ex=128x128" /><br/>前回の記事で、Yahoo Financeの無料APIを使ってザラ場中の新高値更新を検知する技術検証を行った。結論としては、無料APIの遅延と個別銘柄を一つずつ確認する方式では、東証全体を見渡す本格的なNH-NLライン（新…]]></description>
+        <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/bookfan/cabinet/00377/bk4822242978.jpg?_ex=128x128" /><br/>日々の相場を眺める中で、個別銘柄の値動きだけに目を奪われがちな自分に気づく。特に含み損を抱えていると、どうしても目の前の数字に一喜一憂してしまう。しかし、その「上がり下がり」が市場全体の真の力によるものなのか、それとも一…]]></description>
         <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/finance/2026-08-18-%E3%82%B6%E3%83%A9%E5%A0%B4%E4%B8%AD%E3%81%AB%E6%96%B0%E9%AB%98%E5%80%A4%E3%82%92%E5%BE%85%E3%81%A1%E6%A7%8B%E3%81%88%E3%82%8B%E7%94%B7-%E5%90%AB%E3%81%BF%E6%90%8D%E3%83%96%E3%83%AB%E3%81%A8-%E6%AE%B4%E3%82%8A%E8%BF%94%E3%81%99%E3%81%9F%E3%82%81%E3%81%AE%E7%9B%A3%E8%A6%96%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A7%8B%E6%83%B3.html</guid>
     </item>
