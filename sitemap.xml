@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/gadget/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -51,10 +55,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/wellness/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/art/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -282,6 +282,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/art/2026-08-29-%E6%8E%A8%E3%81%97%E6%B4%BB%E4%BB%B2%E9%96%93%E3%82%BC%E3%83%AD%E3%81%A7%E3%82%82%E6%BA%80%E8%B6%B3-%E5%B1%B1%E4%B8%8B%E9%81%94%E9%83%8E%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%96%E3%81%A8AI%E5%89%B5%E4%BD%9C%E3%81%8C%E6%95%99%E3%81%88%E3%82%8B%E5%80%8B%E4%BA%BA%E3%81%A7%E5%AE%8C%E7%B5%90%E3%81%99%E3%82%8B%E6%8E%A8%E3%81%97%E6%96%B9.html</loc>
+        <lastmod>2026-08-29</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/gadget/2026-08-29-GAFA%E3%81%8C%E6%9C%AC%E6%B0%97%E3%82%92%E5%87%BA%E3%81%99%E5%89%8D%E3%81%AB-%E3%81%AA%E3%81%9C56%E6%AD%B3%E3%81%AE%E3%81%8A%E3%81%A3%E3%81%95%E3%82%93%E3%81%AF%E8%87%AA%E5%AE%85%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%A7%E9%87%8E%E8%89%AFAI%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8A%E7%B6%9A%E3%81%91%E3%82%8B%E3%81%AE%E3%81%8B.html</loc>
         <lastmod>2026-08-29</lastmod>
