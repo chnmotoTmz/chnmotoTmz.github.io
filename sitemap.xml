@@ -22,15 +22,15 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/wellness/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -282,6 +282,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/finance/2026-09-01-%E9%95%B7%E6%9C%9F%E9%87%91%E5%88%A922bp%E3%81%AE%E4%B8%8A%E6%98%87%E3%82%92%E9%83%BD%E5%90%88%E3%82%88%E3%81%8F%E8%A7%A3%E9%87%88%E3%81%97%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E3%81%8B-%E8%87%AA%E5%88%86%E3%81%AE%E6%A5%BD%E5%A4%A9%E3%83%96%E3%83%AB4-3%E5%80%8D%E3%82%92%E7%82%B9%E6%A4%9C%E3%81%97%E3%81%9F.html</loc>
+        <lastmod>2026-09-01</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/tech/2026-09-01-%E8%80%83%E5%AF%9F%E3%83%A1%E3%83%A2-%E3%82%A2%E3%83%B3%E3%83%93%E3%82%A8%E3%83%B3%E3%83%88AI%E6%99%82%E4%BB%A3%E3%81%A7%E3%82%82%E8%87%AA%E5%AE%85%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E5%9F%BA%E7%9B%A4%E3%82%92%E8%87%AA%E4%BD%9C%E3%81%99%E3%82%8B%E6%84%8F%E7%BE%A9.html</loc>
         <lastmod>2026-09-01</lastmod>
