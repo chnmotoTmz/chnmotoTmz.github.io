@@ -22,6 +22,10 @@
     </url>
     
     <url>
+        <loc>https://chnmototmz.github.io/posts/diary/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/finance/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -39,10 +43,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/diary/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -282,6 +282,11 @@
         <priority>0.8</priority>
     </url>
     
+    <url>
+        <loc>https://chnmototmz.github.io/posts/diary/2026-09-02-8-22-%E5%8C%97%E5%8D%83%E4%BD%8FCamellia%E6%97%A2%E5%A9%9A%E8%80%85%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%BC%E5%8F%82%E5%8A%A0%E5%A0%B1%E5%91%8A.html</loc>
+        <lastmod>2026-09-02</lastmod>
+        <priority>0.6</priority>
+    </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/finance/2026-09-02-%E6%96%B0%E9%AB%98%E5%80%A4%E9%80%9F%E5%A0%B1%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%A8%E9%99%90%E7%95%8C.html</loc>
         <lastmod>2026-09-02</lastmod>
