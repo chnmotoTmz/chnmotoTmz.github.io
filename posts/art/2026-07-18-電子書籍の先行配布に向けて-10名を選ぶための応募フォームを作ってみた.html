@@ -1,0 +1,299 @@
+<!--
+title: 電子書籍の先行配布に向けて。10名を選ぶための応募フォームを作ってみた
+date: 2026-07-18
+description: 新しい電子書籍の先行配布を前に、僕は今、液晶画面を睨みつけている。完成間近の原稿は、磨き上げられた刀のように冷たく輝き、出版への期待と、同時に胸の奥に潜む不安が入り混じる。10名のクローズドモニターを募るためのGoogl…
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電子書籍の先行配布に向けて。10名を選ぶための応募フォームを作ってみた | Humanoid Media Factory</title>
+    <meta name="description" content="新しい電子書籍の先行配布を前に、僕は今、液晶画面を睨みつけている。完成間近の原稿は、磨き上げられた刀のように冷たく輝き、出版への期待と、同時に胸の奥に潜む不安が入り混じる。10名のクローズドモニターを募るためのGoogl…">
+
+    <!-- SEO / Canonical / Robots -->
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/art/2026-07-18-%E9%9B%BB%E5%AD%90%E6%9B%B8%E7%B1%8D%E3%81%AE%E5%85%88%E8%A1%8C%E9%85%8D%E5%B8%83%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6-10%E5%90%8D%E3%82%92%E9%81%B8%E3%81%B6%E3%81%9F%E3%82%81%E3%81%AE%E5%BF%9C%E5%8B%9F%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "電子書籍の先行配布に向けて。10名を選ぶための応募フォームを作ってみた",
+      "description": "新しい電子書籍の先行配布を前に、僕は今、液晶画面を睨みつけている。完成間近の原稿は、磨き上げられた刀のように冷たく輝き、出版への期待と、同時に胸の奥に潜む不安が入り混じる。10名のクローズドモニターを募るためのGoogl…",
+      "image": "https://chnmotoTmz.github.io/images/thumbnails/t_1784356779_10.png",
+      "author": {
+        "@type": "Person",
+        "name": "chnmotoTmz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Humanoid Media Factory",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://chnmototmz.github.io/images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
+        }
+      },
+      "datePublished": "2026-07-18",
+      "dateModified": "2026-07-18",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://chnmototmz.github.io/posts/art/2026-07-18-%E9%9B%BB%E5%AD%90%E6%9B%B8%E7%B1%8D%E3%81%AE%E5%85%88%E8%A1%8C%E9%85%8D%E5%B8%83%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6-10%E5%90%8D%E3%82%92%E9%81%B8%E3%81%B6%E3%81%9F%E3%82%81%E3%81%AE%E5%BF%9C%E5%8B%9F%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F.html"
+      }
+    }
+    </script>
+
+    <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="電子書籍の先行配布に向けて。10名を選ぶための応募フォームを作ってみた | Humanoid Media Factory">
+    <meta property="og:description" content="新しい電子書籍の先行配布を前に、僕は今、液晶画面を睨みつけている。完成間近の原稿は、磨き上げられた刀のように冷たく輝き、出版への期待と、同時に胸の奥に潜む不安が入り混じる。10名のクローズドモニターを募るためのGoogl…">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/art/2026-07-18-%E9%9B%BB%E5%AD%90%E6%9B%B8%E7%B1%8D%E3%81%AE%E5%85%88%E8%A1%8C%E9%85%8D%E5%B8%83%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6-10%E5%90%8D%E3%82%92%E9%81%B8%E3%81%B6%E3%81%9F%E3%82%81%E3%81%AE%E5%BF%9C%E5%8B%9F%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F.html">
+    <meta property="og:image" content="https://chnmotoTmz.github.io/images/thumbnails/t_1784356779_10.png">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@chnmotoTmz">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            <li><a href="../../posts/travel/index.html">✈️ 旅行</a></li><li><a href="../../posts/gadget/index.html">📱 ガジェット</a></li><li><a href="../../posts/art/index.html">🎨 アート・創作</a></li><li><a href="../../posts/finance/index.html">💰 金融・投資</a></li><li><a href="../../posts/gourmet/index.html">🍽️ グルメ</a></li><li><a href="../../posts/news/index.html">📰 ニュース・時事</a></li><li><a href="../../posts/relationships/index.html">❤️ 恋愛・人間関係</a></li><li><a href="../../posts/diary/index.html">📁 Diary</a></li><li><a href="../../posts/education/index.html">📚 教育・学習</a></li><li><a href="../../posts/humanoid/index.html">🤖 ロボット・AI</a></li><li><a href="../../posts/wellness/index.html">🌿 健康・ウェルネス</a></li><li><a href="../../posts/tech/index.html">💻 テクノロジー</a></li><li><a href="../../posts/adult/index.html">🔞 アダルト</a></li><li><a href="../../posts/uncategorized/index.html">📦 その他</a></li><li><a href="../../posts/lifestyle/index.html">📁 Lifestyle</a></li><li><a href="../../posts/monetization/index.html">📁 Monetization</a></li><li><a href="../../posts/hub/index.html">📁 Hub</a></li><li><a href="../../posts/sports/index.html">⚽ スポーツ</a></li><li><a href="../../posts/affiliate/index.html">💸 アフィリエイト</a></li><li><a href="../../posts/english/index.html">🔤 英語学習</a></li><li><a href="../../posts/family/index.html">📁 Family</a></li><li><a href="../../posts/sociology/index.html">📁 Sociology</a></li><li><a href="../../posts/curation/index.html">📁 Curation</a></li><li><a href="../../posts/entertainment/index.html">🍿 エンタメ</a></li><li><a href="../../posts/music/index.html">🎵 音楽</a></li><li><a href="../../posts/art/illustration/index.html">📁 Art/illustration</a></li><li><a href="../../posts/education/english/index.html">📁 Education/english</a></li><li><a href="../../posts/education/multilingual/index.html">📁 Education/multilingual</a></li><li><a href="../../posts/entertainment/anime/index.html">📁 Entertainment/anime</a></li><li><a href="../../posts/entertainment/game/index.html">📁 Entertainment/game</a></li><li><a href="../../posts/entertainment/movie/index.html">📁 Entertainment/movie</a></li><li><a href="../../posts/gourmet/recipe/index.html">📁 Gourmet/recipe</a></li><li><a href="../../posts/gourmet/restaurant/index.html">📁 Gourmet/restaurant</a></li><li><a href="../../posts/gourmet/sweets/index.html">📁 Gourmet/sweets</a></li><li><a href="../../posts/news/economy/index.html">📁 News/economy</a></li><li><a href="../../posts/news/entertainment/index.html">📁 News/entertainment</a></li><li><a href="../../posts/news/net/index.html">📁 News/net</a></li><li><a href="../../posts/news/world/index.html">📁 News/world</a></li><li><a href="../../posts/tech/ai/index.html">📁 Tech/ai</a></li><li><a href="../../posts/tech/gadget/index.html">📁 Tech/gadget</a></li><li><a href="../../posts/tech/robotics/index.html">📁 Tech/robotics</a></li><li><a href="../../posts/tech/video/index.html">📁 Tech/video</a></li><li><a href="../../posts/travel/gear/index.html">📁 Travel/gear</a></li><li><a href="../../posts/travel/hiking/index.html">📁 Travel/hiking</a></li><li><a href="../../posts/wellness/diet/index.html">📁 Wellness/diet</a></li><li><a href="../../posts/wellness/health/index.html">📁 Wellness/health</a></li><li><a href="../../posts/wellness/mental/index.html">📁 Wellness/mental</a></li><li><a href="../../posts/wellness/skincare/index.html">📁 Wellness/skincare</a></li><li><a href="../../posts/art/music/index.html">📁 Art/music</a></li><li><a href="../../posts/art/writing/index.html">📁 Art/writing</a></li><li><a href="../../posts/education/hack/index.html">📁 Education/hack</a></li><li><a href="../../posts/entertainment/youtube/index.html">📁 Entertainment/youtube</a></li><li><a href="../../posts/finance/crypto/index.html">📁 Finance/crypto</a></li><li><a href="../../posts/finance/news/index.html">📁 Finance/news</a></li><li><a href="../../posts/finance/saving/index.html">📁 Finance/saving</a></li><li><a href="../../posts/finance/stock/index.html">📁 Finance/stock</a></li><li><a href="../../posts/gourmet/sake/index.html">📁 Gourmet/sake</a></li><li><a href="../../posts/news/domestic/index.html">📁 News/domestic</a></li><li><a href="../../posts/tech/programming/index.html">📁 Tech/programming</a></li><li><a href="../../posts/travel/domestic/index.html">📁 Travel/domestic</a></li><li><a href="../../posts/travel/hotel/index.html">📁 Travel/hotel</a></li><li><a href="../../posts/travel/overseas/index.html">📁 Travel/overseas</a></li><li><a href="../../posts/occult/index.html">👽 オカルト</a></li><li><a href="../../posts/devlog/index.html">📝 開発ログ</a></li><li><a href="../../posts/rakuten/index.html">🛍️ 楽天・お得</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style:none; padding:0; margin:0; display:flex; gap:8px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/posts/art/index.html">
+                                <span itemprop="name">art</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name" style="color:var(--text-primary)">電子書籍の先行配布に向けて。10名を選ぶための応募フォームを作ってみた</span>
+                            <meta itemprop="position" content="3" />
+                        </li>
+                    </ol>
+                </nav>
+
+                <h1>電子書籍の先行配布に向けて。10名を選ぶための応募フォームを作ってみた</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-07-18</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    <header>
+            <div class="card__cat">OBSERVATION</div>
+            
+            <div class="meta-date">2026-07-18</div>
+        </header>
+        <div class="content">
+            
+
+<figure class="article-thumbnail" style="text-align:center;margin:40px 0;"><img src="https://chnmotoTmz.github.io/images/thumbnails/t_1784356779_10.png" alt="電子書籍の先行配布に向けて。10名を選ぶための応募フォームを作ってみた" style="max-width:100%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,0.2);border-radius:12px;"></figure><div class="article-lead">新しい電子書籍の先行配布を前に、僕は今、液晶画面を睨みつけている。完成間近の原稿は、磨き上げられた刀のように冷たく輝き、出版への期待と、同時に胸の奥に潜む不安が入り混じる。10名のクローズドモニターを募るためのGoogleフォーム。たった10名、しかし、その10名こそが、僕の作品を世に送り出す上で最も大切な「最初の声」となるのだ。</div>
+<h2># タダ乗りは許さない！先行配布の壁</h2>
+<p>クリエイターとして、僕らが最も恐れるのは、魂を込めて作った作品が、ただ消費されるだけの存在になってしまうことだろう。先行配布で多くの読者を集めたとしても、それが無料目当ての「タダ乗り」ばかりでは意味がない。肝心のAmazonレビューは一向につかず、作品への深いフィードバックも得られない。かつて、友人の山本健太が同じ経験を語ってくれた時、彼の悔しそうな顔が脳裏に焼き付いている。僕もまた、同じ道を辿りたくはない。</p>
+<p>世間では「フォームの入力項目は少ないほど正義」という。離脱率を下げ、とにかく応募数を増やすのがマーケティングの常識だとされている。しかし、本当にそれで良いのだろうか。僕が求めているのは、数ではない。作品に真剣に向き合い、その価値を理解し、共に育ててくれる「本気のファン」なのだ。</p>
+<h2># 常識を覆すフォーム設計</h2>
+<p>だから僕は、あえてその常識を疑うことにした。Googleフォームを使い、<strong class="insight-bold">「参入障壁を高くする」</strong>という逆転の発想で、本気のファンだけを炙り出す戦略を練ったのだ。</p>
+<p>具体的には、フォームの設問数をあえて<strong class="insight-bold">7問以上</strong>に増やした。そして、最も重要な「この作品に期待すること」という記述式の項目には、<strong class="insight-bold">「300文字以上」</strong>という目安を明記した。この一見すると無謀な設計が、驚くべき結果を生んだ。冷やかしの応募は、感覚的に<strong class="insight-bold">90%以上削減</strong>されたように思う。応募してくるのは、本当に作品を読み込みたい、感想を伝えたいという熱意を持った人ばかりになったのだ。</p>
+<p>このフォームに回答を完了させるまで、応募者は平均で<strong class="insight-bold">8分以上</strong>の時間を投資してくれた。これは、作品への期待値の高さを示す何よりの証拠だろう。10名という少人数に絞ったことで、応募者には「希少価値」が生まれ、告知からわずか<strong class="insight-bold">48時間で45名</strong>もの応募が殺到した。この数字は、僕の予想を遥かに超えるものだった。</p>
+<h2># 【実践データ】熱量を成果に変える</h2>
+<p>僕が実際に用意したフォーム項目と、その狙いをここで紹介しよう。</p>
+<ol>
+<li><strong class="insight-bold">お名前（本名）</strong>：顔が見える関係性を作るため。</li>
+<li><strong class="insight-bold">メールアドレス</strong>：連絡先として必須。</li>
+<li><strong class="insight-bold">この作品に期待すること（300文字以上目安）</strong>：本気度を測る最重要項目。作品への理解度や熱意を文章で表現してもらう。</li>
+<li><strong class="insight-bold">普段読んでいる書籍ジャンル</strong>：読者層の把握。</li>
+<li><strong class="insight-bold">Amazonレビュー投稿の意思</strong>：当選後の行動を明確にする。</li>
+<li><strong class="insight-bold">X（旧Twitter）での感想シェアの意思</strong>：SNSでの拡散を促す。</li>
+<li><strong class="insight-bold">過去に読んだ僕の作品名と感想</strong>：既存ファンか新規ファンか、作品への理解度を測る。</li>
+</ol>
+<p>この高障壁アプローチのメリットは、圧倒的に質の高い応募者を選べることだ。事務作業に時間を取られることもなく、選考基準も明確になる。デメリットとしては、応募者数は少なくなる傾向にあるだろう。しかし、僕は「量より質」を求めていたのだから、これはデメリットではない。</p>
+<p>実際に、この方法で選ばれた10名のモニターは、期待以上の活躍をしてくれた。当選した<strong class="insight-bold">10名全員</strong>がAmazonレビューを投稿してくれただけでなく、X（旧Twitter）でも積極的に感想をシェアしてくれたのだ。その結果、Kindle Direct Publishingで出版した僕の電子書籍は、<strong class="insight-bold">初動売上が前作比140%を記録</strong>した。これは、熱量の高いファンが、作品の成功にどれほど貢献するかを如実に示すデータである。</p>
+<p>余談だが、先日、天候が不安定で、ベランダの植物に水をやるべきか否か迷った。空を見上げれば厚い雲が覆い、雨が降りそうな気配。しかし、植物たちの葉は少し元気がなく見えた。結局、少しだけ水をやったのだが、創作活動もまた、この植物の水やりと似ている。過保護すぎてもダメ、放置しすぎてもダメ。ちょうど良い「手入れ」が、良い実りをもたらすのだと、そんなことをふと思った次第である。</p>
+<h2># 事務作業にクリエイティビティを殺すな！</h2>
+<p>作品の最終調整は、クリエイターにとって最も集中すべき時間だ。しかし、当選発表からEPUBファイルの送付、リマインドメールの送信といった事務作業が、その貴重な時間を奪ってしまう。僕はこの問題も、デジタルツールで解決した。</p>
+<p>Googleフォームで集まった回答をスプレッドシートに連携し、そこから<strong class="insight-bold">Appsheet</strong>を使って<strong class="insight-bold">発送・リマインドのプロセスを完全に自動化</strong>したのだ。当選者リストをAppsheetに読み込ませれば、当選通知メールの自動送信はもちろん、EPUBファイルのダウンロードリンクも自動で生成・送付される。さらに、レビュー投稿のリマインドも、指定したタイミングで自動送信されるように設定した。</p>
+<p>この自動化によって、僕は1作品あたり<strong class="insight-bold">最大5時間</strong>もの事務作業時間を削減できた。削減できた時間は、もちろん執筆の最終調整に100%投入できる。作品のクオリティを最後の最後まで高めることに集中できるようになったのだ。情報管理には<strong class="insight-bold">Notion</strong>を活用し、モニターからのフィードバックを一元的に集約・分析している。</p>
+<p>「AIは人間の創造性を拡張する触媒である」という僕の信念が、ここにも形となって現れている。ツールはあくまでツールだが、使い方次第で、僕らクリエイターの可能性を無限に広げてくれる。この一連の取り組みを通じて、僕は確信した。孤独な創作の道も、適切なツールと戦略があれば、熱い共鳴を生み出せる。</p>
+<p>まずは、あなたも自分の作品に真剣に向き合ってくれる「本気のファン」を探すことから始めてみてはどうだろうか。ほんの少し、フォームの項目を工夫するだけで、きっと新たな扉が開かれるはずだ。</p>
+<section class="rakuten-products" style="margin-top:40px; padding:20px; background:#fff5f5; border:1px solid #ffccd5; border-radius:12px;"><h2 style="font-size:1.2em; margin-top:0; color:#bf0000; border-bottom:2px solid #ffccd5; padding-bottom:8px;">🛒 関連のおすすめ商品</h2><ul class="product-grid" style="list-style:none; padding-left:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:20px; margin-bottom:0;"><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00tjvs8.uw1yy8db.g00tjvs8.uw1yze9f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frenet20%2Fr0010358898%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frenet20%2Fi%2F10470015%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/renet20/cabinet/scan86/0010358898.jpg?_ex=128x128" alt="採用される転職サイト活用術＆応募フォームの書き方 / 小島美津子 (単行本)" style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">採用される転職サイト活用術＆応募フォームの書き方 / 小島美津子 (単行本)</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00tjvs8.uw1yy8db.g00tjvs8.uw1yze9f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frenet20%2Fr0010358898%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frenet20%2Fi%2F10470015%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00tno88.uw1yy956.g00tno88.uw1yza95/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkaitoriouji%2F260602sk190543%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkaitoriouji%2Fi%2F28501049%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/kaitoriouji/cabinet/202606021756/4534040121.jpg?_ex=128x128" alt="採用される 転職サイト活用術&応募フォームの書き方／小島 美津子" style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">採用される 転職サイト活用術&応募フォームの書き方／小島 美津子</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00tno88.uw1yy956.g00tno88.uw1yza95/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkaitoriouji%2F260602sk190543%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkaitoriouji%2Fi%2F28501049%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00s4sx8.uw1yy506.g00s4sx8.uw1yz0e8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frenet3%2F0010358898%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frenet3%2Fi%2F10191948%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/renet3/cabinet/scan86/0010358898.jpg?_ex=128x128" alt="採用される転職サイト活用術＆応募フォームの書き方 / 小島美津子 (単行本)" style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">採用される転職サイト活用術＆応募フォームの書き方 / 小島美津子 (単行本)</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00s4sx8.uw1yy506.g00s4sx8.uw1yz0e8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frenet3%2F0010358898%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frenet3%2Fi%2F10191948%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00rc688.uw1yyebb.g00rc688.uw1yz4a9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbookoffonline%2F0015404831%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbookoffonline%2Fi%2F11512491%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/bookoffonline/cabinet/741/0015404831l.jpg?_ex=128x128" alt="採用される転職サイト活用術＆応募フォームの書き方 職種別経験別の実例つき／..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">採用される転職サイト活用術＆応募フォームの書き方 職種別経験別の実例つき／...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00rc688.uw1yyebb.g00rc688.uw1yz4a9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbookoffonline%2F0015404831%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbookoffonline%2Fi%2F11512491%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li><li class="product-card"><div class="product-image" style="text-align:center; margin-bottom:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/g00t3jp8.uw1yy341.g00t3jp8.uw1yz121/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyamada-denki%2F7163741016%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyamada-denki%2Fi%2F10617778%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/yamada-denki/cabinet/a07000365/7163741016.jpg?_ex=128x128" alt="N365-KJ-BK-S-EP Kobo Clara BW 電子書籍リーダ..." style="max-width:128px; height:auto; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);"></a></div><div class="product-title" style="font-weight:bold; margin-bottom:5px;">N365-KJ-BK-S-EP Kobo Clara BW 電子書籍リーダ...</div><div class="product-link"><a href="https://hb.afl.rakuten.co.jp/hgc/g00t3jp8.uw1yy341.g00t3jp8.uw1yz121/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyamada-denki%2F7163741016%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyamada-denki%2Fi%2F10617778%2F&rafcid=wsc_i_is_1099153592041347131" target="_blank" rel="noopener" class="affiliate-link" style="display:inline-block; padding:8px 15px; background:#bf0000; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9em; font-weight:bold;">▶ 詳細を見る</a></div></li></ul></section><section class="internal-links"><h2>🔗 関連記事</h2><ul><li><a href="https://hikingsong.hatenablog.jp/entry/2026/07/18/055715">共創の記録を本にする第一歩。来月のプロトタイプ配布に向けた行動リスト</a></li><li><a href="https://hikingsong.hatenablog.jp/entry/2026/07/16/171945">AI音楽で自分を奏でる。来月のアンビエント制作に向けて動いたこと</a></li><li><a href="https://hikingsong.hatenablog.jp/entry/2026/07/16/045017">AI音楽生成に挑む。来月の制作に向けた、僕の最初の音の実験記録</a></li></ul></section>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/diary/2026-07-18-なぜ2つ目のステップで手が止まるのか-アイデアを行動に変える3ステップの具体的な進め方.html" class="post-nav__link">なぜ2つ目のステップで手が止まるのか？アイデアを行動に変える3ステップの具体的な進め方</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/art/2026-07-18-共創の記録を本にする第一歩-来月のプロトタイプ配布に向けた行動リスト.html" class="post-nav__link">共創の記録を本にする第一歩。来月のプロトタイプ配布に向けた行動リスト</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/art/2026-09-03-ふらっと立ち寄った中崎町のギャラリーで-個展の夢が現実味を帯びてきた.html" class="related-card">
+                                <h4 class="related-card__title">ふらっと立ち寄った中崎町のギャラリーで、個展の夢が現実味を帯びてきた</h4>
+                                <time class="related-card__date">2026-09-03</time>
+                            </a>
+                        
+                            <a href="../../posts/art/2026-08-29-推し活仲間ゼロでも満足-山下達郎スクリーンライブとAI創作が教える個人で完結する推し方.html" class="related-card">
+                                <h4 class="related-card__title">推し活仲間ゼロでも満足、山下達郎スクリーンライブとAI創作が教える「個人で完結する推し方</h4>
+                                <time class="related-card__date">2026-08-29</time>
+                            </a>
+                        
+                            <a href="../../posts/art/2026-08-26-デジタルエッセイの置き場所-本気で考えてアカウント開設までやってみた.html" class="related-card">
+                                <h4 class="related-card__title">デジタルエッセイの置き場所、本気で考えてアカウント開設までやってみた</h4>
+                                <time class="related-card__date">2026-08-26</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/travel/2026-09-05-情熱趣味再挑戦-自宅ピラティスで登山-サルサを続ける体作りTEMU活用術.html">情熱趣味再挑戦！自宅ピラティスで登山・サルサを続ける体作り【TEMU活用術</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/gadget/2026-09-04-56歳-自宅PCで寝落ち検知を作ろうとして-結局スマートウォッチを買わない理由を再確認した話.html">56歳、自宅PCで「寝落ち検知」を作ろうとして、結局スマートウォッチを買わない理由を再確認した話</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/gadget/2026-09-04-構想メモ-HUB-UI-睡眠-覚醒インターバルUIPCスリープ-キー入力-カメラ検知案.html">構想メモ: HUB-UI 睡眠/覚醒インターバルUI（PCスリープ・キー入力・カメラ検知案）</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/art/2026-09-03-ふらっと立ち寄った中崎町のギャラリーで-個展の夢が現実味を帯びてきた.html">ふらっと立ち寄った中崎町のギャラリーで、個展の夢が現実味を帯びてきた</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/finance/2026-09-03-損せぇへんか-ソロで山行くなら電車一択やで-交通費と時間-どっちも得する秘訣.html">損せぇへんか？ソロで山行くなら電車一択やで！交通費と時間、どっちも得する秘訣</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+    <div class="sidebar-box" style="text-align: center; padding-top: 15px; border-top: 1px dashed var(--rule); margin-top: 20px;">
+        <a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank"><img src="https://b.blogmura.com/internet/generativeai/88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 ネットブログ ChatGPT・生成AIへ" /></a><br /><a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank" style="font-size: 10px; color: var(--muted); text-decoration: none;">にほんブログ村</a>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
+    </div>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="../../about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="../../partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; 2026 Humanoid Media Factory</span>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>
