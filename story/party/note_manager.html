@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Master Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: rgba(23, 28, 41, 0.7);
+            --accent-color: #00f2ff;
+            --accent-secondary: #7000ff;
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --success: #00ff88;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(112, 0, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 242, 255, 0.05) 0%, transparent 40%);
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 280px;
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid var(--border-color);
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .nav-item {
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            transform: translateX(5px);
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(112, 0, 255, 0.1));
+            color: var(--accent-color);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+        }
+
+        .status-card {
+            background: var(--glass-bg);
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 13px;
+            border: 1px solid var(--border-color);
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            margin-right: 8px;
+            box-shadow: 0 0 10px var(--success);
+        }
+
+        /* Main Content Styling */
+        .main {
+            flex-grow: 1;
+            margin-left: 280px;
+            padding: 50px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 242, 255, 0.4);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Grid Layout */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 242, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-image {
+            height: 180px;
+            background: #1a1f2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-image .placeholder {
+            font-size: 40px;
+            opacity: 0.2;
+        }
+
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .card-date {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .card-preview {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .card-footer {
+            padding: 20px 25px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-footer .btn {
+            flex: 1;
+            font-size: 13px;
+            padding: 10px;
+        }
+
+        /* Toast Notifications */
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 15px 25px;
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+        }
+
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .loader {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">Note Master</div>
+            <ul class="nav-menu">
+                <li class="nav-item active" onclick="loadArticles()">
+                    <span>記事管理 (Articles)</span>
+                </li>
+                <li class="nav-item" onclick="runScript('scrape')">
+                    <span>記事の同期 (Scrape)</span>
+                </li>
+                <li class="nav-item" onclick="runScript('capture')">
+                    <span>ログイン (Login)</span>
+                </li>
+            </ul>
+            <div class="status-card">
+                <div id="status"><span class="status-dot"></span> System Ready</div>
+            </div>
+        </nav>
+
+        <main class="main">
+            <header>
+                <h1>記事一覧</h1>
+                <div class="header-actions">
+                    <button class="btn btn-ghost" onclick="loadArticles()">リロード</button>
+                    <button class="btn btn-primary" onclick="showToast('新しい執筆はエディタで行ってください')">+ 新規作成</button>
+                </div>
+            </header>
+
+            <div class="article-grid" id="article-grid">
+                <!-- Articles loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <div id="toast">Message here</div>
+
+    <script>
+        async function loadArticles() {
+            const grid = document.getElementById('article-grid');
+            grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; opacity: 0.5;">読み込み中...</div>';
+            
+            try {
+                const response = await fetch('/api/articles');
+                const articles = await response.json();
+                
+                if (articles.length === 0) {
+                    grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; opacity: 0.5;">記事が見つかりません。</div>';
+                    return;
+                }
+
+                grid.innerHTML = articles.map(article => `
+                    <div class="article-card">
+                        <div class="card-image">
+                            ${article.thumbnail 
+                                ? `<img src="/articles/${article.thumbnail}" alt="thumbnail">`
+                                : `<div class="placeholder">📝</div>`
+                            }
+                        </div>
+                        <div class="card-content">
+                            <div class="card-date">${article.date || 'No Date'}</div>
+                            <div class="card-title">${article.title}</div>
+                            <div class="card-preview">${article.preview}</div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" onclick="postArticle('${article.filename}', this)">
+                                <span class="btn-text">Noteへ投稿</span>
+                                <div class="loader"></div>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: #ff5555;">エラーが発生しました。</div>';
+            }
+        }
+
+        async function runScript(name) {
+            showToast(`${name.capitalize()}を開始します...`);
+            try {
+                const response = await fetch(`/api/run/${name}`);
+                const data = await response.json();
+                showToast(data.message);
+            } catch (error) {
+                showToast("実行に失敗しました。");
+            }
+        }
+
+        async function postArticle(filename, btn) {
+            const text = btn.querySelector('.btn-text');
+            const loader = btn.querySelector('.loader');
+            
+            text.style.display = 'none';
+            loader.style.display = 'block';
+            btn.disabled = true;
+
+            showToast(`${filename} を投稿中...`);
+
+            try {
+                const response = await fetch('/api/post', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename })
+                });
+                const data = await response.json();
+                showToast(data.message);
+            } catch (error) {
+                showToast("投稿に失敗しました。");
+            } finally {
+                text.style.display = 'block';
+                loader.style.display = 'none';
+                btn.disabled = false;
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        String.prototype.capitalize = function() {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        }
+
+        // Initial load
+        window.onload = loadArticles;
+    </script>
+</body>
+</html>
