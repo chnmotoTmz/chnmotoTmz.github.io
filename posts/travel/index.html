@@ -49,6 +49,11 @@
                 </div>
             
                 <div class="archive-item">
+                    <time>2026-10-22</time>
+                    <a href="../../posts/travel/2026-10-22-塔ノ岳-10月20日2-3一人分の装備では足りない同行者がいる日に変わったザックの考え方.html">【塔ノ岳・10月20日（2/3）】一人分の装備では足りない――同行者がいる日に変わったザックの考え方</a>
+                </div>
+            
+                <div class="archive-item">
                     <time>2026-10-17</time>
                     <a href="../../posts/travel/2026-10-17-山手線全駅を歩く東京ヤマソンに挑戦-40km超を完走するための準備と戦略.html">山手線全駅を歩く「東京ヤマソン」に挑戦！40km超を完走するための準備と戦略</a>
                 </div>
@@ -1119,4 +1124,18 @@
             });
             var data = await res.json();
             msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
-          
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>
