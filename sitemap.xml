@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/gourmet/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/adult/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -71,10 +75,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/travel/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/gourmet/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -284,6 +284,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/finance/2026-10-31-%E6%96%B0NISA%E3%81%AE%E6%88%90%E9%95%B7%E6%8A%95%E8%B3%87%E6%9E%A0%E3%81%AF%E3%81%A9%E3%81%86%E4%BD%BF%E3%81%86-%E4%B8%80%E6%8B%AC%E3%81%A8%E7%A9%8D%E7%AB%8B-%E6%90%8D%E5%BE%97%E3%81%AF%E3%81%A9%E3%81%A3%E3%81%A1%E3%82%84.html</loc>
+        <lastmod>2026-10-31</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/gourmet/2026-10-31-%E6%98%BC%E3%81%8B%E3%82%89%E3%81%B2%E3%81%A8%E3%82%8A%E4%B8%80%E6%9D%AF-%E5%A4%A7%E9%98%AA-%E4%B8%8B%E7%94%BA%E3%81%AE%E6%A8%AA%E4%B8%81%E3%82%92%E8%AA%AD%E3%81%BF%E8%A7%A3%E3%81%8F.html</loc>
         <lastmod>2026-10-31</lastmod>
         <priority>0.6</priority>
     </url>
