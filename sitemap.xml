@@ -26,6 +26,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://chnmototmz.github.io/posts/education/index.html</loc>
         <priority>0.8</priority>
     </url>
@@ -47,10 +51,6 @@
     </url>
     <url>
         <loc>https://chnmototmz.github.io/posts/relationships/index.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://chnmototmz.github.io/posts/tech/index.html</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -284,6 +284,11 @@
     
     <url>
         <loc>https://chnmototmz.github.io/posts/gadget/2026-11-12-2026%E5%B9%B4%E6%9C%80%E6%96%B0%E3%82%AC%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E6%B4%BB%E7%94%A8%E8%A1%93%E3%83%86%E3%82%B9%E3%83%88.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://chnmototmz.github.io/posts/tech/2026-11-12-%E6%A8%99%E6%BA%96%E6%A9%9F%E8%83%BD%E3%81%A7%E3%81%AF%E6%95%B0%E7%A7%9210%E7%A7%92%E7%A8%8B%E5%BA%A6%E3%81%AB%E9%99%90%E3%82%89%E3%82%8C%E3%82%8BAI%E5%8B%95%E7%94%BB%E7%94%9F%E6%88%90%E3%81%AE%E5%A3%81%E3%82%92-%E4%BB%AE%E6%83%B3%E5%AE%9F%E8%A1%8C%E7%92%B0%E5%A2%83Python-FFmpeg%E3%81%A8%E3%82%B9%E3%82%AD%E3%83%AB%E5%AE%9A%E7%BE%A9skill-m.html</loc>
         <lastmod>2026-11-12</lastmod>
         <priority>0.6</priority>
     </url>
