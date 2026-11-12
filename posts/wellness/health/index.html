@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness/health Archive | Humanoid Media Factory</title>
+    <meta name="description" content="wellness/health category article archive.">
+    <!-- SEO / Canonical -->
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/wellness/health/index.html">
+    <meta name="robots" content="index, follow">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Wellness/health Archive | Humanoid Media Factory",
+      "description": "wellness/health category article archive.",
+      "url": "https://chnmototmz.github.io/posts/wellness/health/index.html"
+    }
+    </script>
+    <!-- OGP -->
+    <meta property="og:title" content="Wellness/health Archive | Humanoid Media Factory">
+    <meta property="og:description" content="wellness/health category article archive.">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/wellness/health/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+    <main class="portal archive-portal">
+        <h1>Wellness/health Archive</h1>
+        <div class="archive-list">
+            
+                <div class="archive-item">
+                    <time>2026-05-28</time>
+                    <a href="../../posts/wellness/health/2026-05-28-睡眠負債は朝のせい-専門医が教えるNG習慣と改善策.html">睡眠負債は朝のせい？専門医が教えるNG習慣と改善策</a>
+                </div>
+            
+                <div class="archive-item">
+                    <time>2026-05-27</time>
+                    <a href="../../posts/wellness/health/2026-05-27-富裕層も注目-睡眠ウェルネス最新トレンド体験記.html">富裕層も注目！睡眠ウェルネス最新トレンド体験記</a>
+                </div>
+            
+                <div class="archive-item">
+                    <time>2026-05-27</time>
+                    <a href="../../posts/wellness/health/2026-05-27-睡眠負債は過去の遺物-時間効率睡眠ギアで美魔女時間創出.html">睡眠負債は過去の遺物？時間効率睡眠ギアで美魔女時間創出</a>
+                </div>
+            
+        </div>
+    </main>
+    
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
+    </div>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="../../about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="../../partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; 2026 Humanoid Media Factory</span>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>
