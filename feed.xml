@@ -7,6 +7,13 @@
     <language>ja</language>
     
     <item>
+        <title>Test</title>
+        <link>https://chnmototmz.github.io/posts/humanoid/2026-11-20-Test.html</link>
+        <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/booksdream/cabinet/racoon_78/4796163786.jpg?_ex=128x128" /><br/>AIエージェントにブログ記事の執筆を任せるとき、「まるで自分が体験したかのように自然な文章を書いてほしい」と思うことは少なくない。しかし、最新のAI動向や自動執筆の仕組みを追いかけるなかで、ひとつの大きな違和感に突き当たった。]]></description>
+        <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+        <guid>https://chnmototmz.github.io/posts/humanoid/2026-11-20-Test.html</guid>
+    </item>
+    <item>
         <title>AI実務・副業・自分で作って稼ぐ: AI生成コンテンツのSEO評価とGoogle検索アルゴリズムの最新動向</title>
         <link>https://chnmototmz.github.io/posts/tech/2026-11-16-AI%E5%AE%9F%E5%8B%99-%E5%89%AF%E6%A5%AD-%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%A6%E7%A8%BC%E3%81%90-AI%E7%94%9F%E6%88%90%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%81%AESEO%E8%A9%95%E4%BE%A1%E3%81%A8Google%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%AE%E6%9C%80%E6%96%B0%E5%8B%95%E5%90%91.html</link>
         <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/vaboo/cabinet/items/bk0731/im250905294710.jpg?_ex=128x128" /><br/>2026年10月23日にターゲットメディアが公開した解説記事で、Google公式方針と支援先の具体的なCVデータが示されました。「AIで記事を量産すれば副業で不労所得」という甘い期待に、ずっと違和感を抱いていた私にとって、このデータは冷徹な答え合わせになりました。なお、調査時に確認したCanvaのAI副業関連ページは読]]></description>
@@ -208,13 +215,6 @@
         <description><![CDATA[<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/wondershare/cabinet/item1/icon/12571140/imgrc0099369416.jpg?_ex=128x128" /><br/>近所の商店の店先を撮った一枚を見ていて、「これがちょっと動いたら、SNSで足の止まり方が変わるやろな」と思った。写真を数秒動かす程度なら、AIツールで実際にできるらしい。そこでRunway、Pika、Lumaの3つを、料金と商用利用の線引きという実務の目で調べてみた。]]></description>
         <pubDate>Tue, 03 Nov 2026 00:00:00 GMT</pubDate>
         <guid>https://chnmototmz.github.io/posts/art/2026-11-03-%E3%83%8A%E3%83%8B%E3%83%AF%E3%81%AE%E7%88%86%E9%80%9F%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC-AI%E3%81%A7%E4%BD%95%E3%81%A7%E3%82%82%E4%BD%9C%E3%81%A3%E3%81%9F%E3%82%8B-Runway-Pika-Luma%E3%81%AE%E6%96%99%E9%87%91%E3%81%A8%E5%95%86%E7%94%A8%E3%81%AE%E7%B7%9A.html</guid>
-    </item>
-    <item>
-        <title>50代の一人英語練習はAI音声でどこまで回せるのか</title>
-        <link>https://chnmototmz.github.io/posts/education/2026-11-03-50%E4%BB%A3%E3%81%AE%E4%B8%80%E4%BA%BA%E8%8B%B1%E8%AA%9E%E7%B7%B4%E7%BF%92%E3%81%AFAI%E9%9F%B3%E5%A3%B0%E3%81%A7%E3%81%A9%E3%81%93%E3%81%BE%E3%81%A7%E5%9B%9E%E3%81%9B%E3%82%8B%E3%81%AE%E3%81%8B.html</link>
-        <description><![CDATA[<img src="https://b.blogmura.com/internet/generativeai/88_31.gif" /><br/>単身赴任で横浜に住んでいると、夜に話す相手がいません。英会話スクールに通う気力もお金も、正直なところ今は重いです。そこで「スマホとAIだけで発音とリスニングを鍛えられるのか」を、継続調査テーマとして調べてみました。]]></description>
-        <pubDate>Tue, 03 Nov 2026 00:00:00 GMT</pubDate>
-        <guid>https://chnmototmz.github.io/posts/education/2026-11-03-50%E4%BB%A3%E3%81%AE%E4%B8%80%E4%BA%BA%E8%8B%B1%E8%AA%9E%E7%B7%B4%E7%BF%92%E3%81%AFAI%E9%9F%B3%E5%A3%B0%E3%81%A7%E3%81%A9%E3%81%93%E3%81%BE%E3%81%A7%E5%9B%9E%E3%81%9B%E3%82%8B%E3%81%AE%E3%81%8B.html</guid>
     </item>
 </channel>
 </rss>
