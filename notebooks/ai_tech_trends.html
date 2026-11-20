@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotebookLM Knowledge Studio - ai_tech_trends</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Google Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: rgba(21, 28, 46, 0.9);
+            border-bottom: 1px solid #334155;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-badge {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: #fff;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+        .logo-title { font-size: 18px; font-weight: 600; margin-left: 10px; }
+        .btn {
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+        .btn-primary { background: #2563eb; color: white; }
+        .btn-secondary { background: #1e293b; color: #f8fafc; border: 1px solid #334155; }
+        .main-container {
+            display: grid;
+            grid-template-columns: 360px 1fr 380px;
+            gap: 20px;
+            padding: 24px;
+            flex: 1;
+        }
+        @media (max-width: 1200px) {
+            .main-container { grid-template-columns: 1fr; }
+        }
+        .panel {
+            background: #151c2e;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .panel-header {
+            padding: 16px 20px;
+            background: rgba(30, 41, 59, 0.5);
+            border-bottom: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .panel-title { font-size: 15px; font-weight: 600; color: #e2e8f0; }
+        .panel-body {
+            padding: 16px;
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .source-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 14px;
+        }
+        .source-badge {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #1e3a8a;
+            color: #93c5fd;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .source-title { font-size: 14px; font-weight: 500; color: #f1f5f9; margin-bottom: 6px; }
+        .source-url { font-size: 12px; color: #60a5fa; text-decoration: none; display: block; margin-bottom: 8px; }
+        .source-preview { font-size: 12px; color: #94a3b8; line-height: 1.5; max-height: 60px; overflow: hidden; }
+        .chat-bubble { padding: 14px 18px; border-radius: 12px; margin-bottom: 12px; line-height: 1.6; font-size: 14px; }
+        .chat-host-a { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); margin-right: 40px; }
+        .chat-host-b { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); margin-left: 40px; }
+        .host-label { font-weight: 700; font-size: 12px; margin-bottom: 4px; }
+        .host-a-label { color: #f87171; }
+        .host-b-label { color: #60a5fa; }
+        .pitfall-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 14px;
+            margin-top: 14px;
+        }
+        .pitfall-title { color: #fbbf24; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+        .pitfall-list { padding-left: 20px; color: #cbd5e1; font-size: 13px; line-height: 1.6; }
+        .article-card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 16px; }
+        .article-title { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #f8fafc; line-height: 1.4; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+        .stat-item { background: #151c2e; padding: 10px; border-radius: 6px; border: 1px solid #334155; text-align: center; }
+        .stat-value { font-size: 18px; font-weight: 700; color: #60a5fa; }
+        .stat-label { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="display: flex; align-items: center;">
+        <span class="logo-badge">NotebookLM Engine</span>
+        <span class="logo-title">自律ナレッジ・スタジオ (ai_tech_trends)</span>
+    </div>
+    <div style="display: flex; gap: 12px;">
+        <a href="https://notebooklm.google.com/" target="_blank" class="btn btn-secondary">
+            <span>🌐 Google公式NotebookLMを開く</span>
+        </a>
+        <a href="https://yamasan1969.hatenablog.com/entry/2026/10/10/062350" target="_blank" class="btn btn-primary">
+            <span>📖 はてなブログ公開記事を見る</span>
+        </a>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="panel">
+        <div class="panel-header">
+            <span class="panel-title">📚 一次ソース・ドシエ (5 件)</span>
+        </div>
+        <div class="panel-body">
+            
+        <div class="source-card">
+            <span class="source-badge">Source 1 • 9,190 文字</span>
+            <div class="source-title">NotebookLMはAPI経由で操作できる？利用条件や料金、具体的な操作方法を解説</div>
+            <a href="https://www.dsk-cloud.com/blog/gws/can-notebooklm-be-controlled-via-api" target="_blank" class="source-url">🔗 https://www.dsk-cloud.com/blog/gws/can-n...</a>
+            <div class="source-preview">さまざまな生成AIサービスが台頭する昨今、Google社が提供するNotebookLMに興味を示している方も多いのではないでしょうか。NotebookLMでは、ユーザー自身でデータソースを指定してAIに指示を与えられるため、出力される情報の信頼性や信憑性をコントロールしやすいメリットがあります。
+そして最近では、このように便利なNotebookLMを、「社内の業務システムやクラウドサービスと組み合...</div>
+        </div>
+        
+        <div class="source-card">
+            <span class="source-badge">Source 2 • 11,143 文字</span>
+            <div class="source-title">提供資料・一次テキスト (なぜAIの書く記事は「薄っぺらく、しょぼい」のか？Noteb)</div>
+            <a href="https://www.dsk-cloud.com/blog/gws/can-notebooklm-be-controlled-via-api" target="_blank" class="source-url">🔗 https://www.dsk-cloud.com/blog/gws/can-n...</a>
+            <div class="source-preview">Title: Live Content
+Description: Fetched live
+Source: https://www.dsk-cloud.com/blog/gws/can-notebooklm-be-controlled-via-api
+---
+NotebookLMはAPI経由で操作できる？利用条件や料金、具体的な操作方法を解説
+&lt;img  height=&quot;1&quot; width=&quot;1&quot; ...</div>
+        </div>
+        
+        <div class="source-card">
+            <span class="source-badge">Source 3 • 9,190 文字</span>
+            <div class="source-title">NotebookLMはAPI経由で操作できる？利用条件や料金、具体的な操作方法を解説</div>
+            <a href="https://www.dsk-cloud.com/blog/gws/can-notebooklm-be-controlled-via-api" target="_blank" class="source-url">🔗 https://www.dsk-cloud.com/blog/gws/can-n...</a>
+            <div class="source-preview">さまざまな生成AIサービスが台頭する昨今、Google社が提供するNotebookLMに興味を示している方も多いのではないでしょうか。NotebookLMでは、ユーザー自身でデータソースを指定してAIに指示を与えられるため、出力される情報の信頼性や信憑性をコントロールしやすいメリットがあります。
+そして最近では、このように便利なNotebookLMを、「社内の業務システムやクラウドサービスと組み合...</div>
+        </div>
+        
+        <div class="source-card">
+            <span class="source-badge">Source 4 • 11,143 文字</span>
+            <div class="source-title">提供資料・一次テキスト (なぜAIの書く記事は「薄っぺらく、しょぼい」のか？Noteb)</div>
+            <a href="https://www.dsk-cloud.com/blog/gws/can-notebooklm-be-controlled-via-api" target="_blank" class="source-url">🔗 https://www.dsk-cloud.com/blog/gws/can-n...</a>
+            <div class="source-preview">Title: Live Content
+Description: Fetched live
+Source: https://www.dsk-cloud.com/blog/gws/can-notebooklm-be-controlled-via-api
+---
+NotebookLMはAPI経由で操作できる？利用条件や料金、具体的な操作方法を解説
+&lt;img  height=&quot;1&quot; width=&quot;1&quot; ...</div>
+        </div>
+        
+        <div class="source-card">
+            <span class="source-badge">Source 5 • 559 文字</span>
+            <div class="source-title">自律パイプライン実装アーキテクチャ仕様書</div>
+            <span class="source-url">📁 local://architecture_specs</span>
+            <div class="source-preview">
+【自律パイプライン実装アーキテクチャ仕様書】
+1. DeepSourceEnricher: 一次情報ドシエ構築モジュール。Web全文スクレイピング、公式ドキュメント、技術仕様を2万字〜5万字規模で集約。
+2. DialecticalDiscussionEngine: 批判的2者対話（懐疑派シニアエンジニア vs 実務派アーキテクト）による生々しい落とし穴と本音のトレードオフ抽出。
+3. Pers...</div>
+        </div>
+        
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-header">
+            <span class="panel-title">🎙️ Audio Overview型 辛口対話激論ログ</span>
+            <span style="font-size: 12px; color: #60a5fa;">Host A (懐疑派) vs Host B (実務派)</span>
+        </div>
+        <div class="panel-body">
+            
+                <div class="chat-bubble chat-host-a">
+                    <div class="host-label host-a-label">⚡ Host A (現場懐疑派シニアエンジニア)</div>
+                    <div>おいおい、「なぜAIの書く記事は薄っぺらく、しょぼいのか」って、そりゃそうだろ。Web上の浅いトレンドをなぞるだけで、一次情報もコンテキストもないプロンプトを投げてりゃ、出てくるのはスカスカのポエム記事ばかりだ。で、今回飛びついたのが「NotebookLMのAPI連携」だがよ、実際どうなんだ？</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-b">
+                    <div class="host-label host-b-label">🛡️ Host B (実務派システムアーキテクト)</div>
+                    <div>確かに表層的なAPIの叩き方だけじゃ、出力はただの文字の羅列で終わる。だが、今回のドシエを見てみろ。NotebookLM Enterprise版のAPIを使えば、Googleドキュメント、PDF、Web、YouTubeなどの多様なソースをプログラムから一括でノートブックに叩き込んで管理できる。ここを自動化のハブに据えるのがポイントだ。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-a">
+                    <div class="host-label host-a-label">⚡ Host A (現場懐疑派シニアエンジニア)</div>
+                    <div>待て待て、そこが最大のトラップだろ！ ドシエを冷静に読めよ。API連携を使うには無料版やProじゃダメで、Google Cloudの契約が必須、さらにNotebookLM for Enterpriseのライセンスは「1ライセンスにつき月額$9」だ。しかも「最低でも15ライセンスの契約が必要」って書いてあるぞ。小規模や個人開発で検証しようとしたら、問答無用で初期から15ライセンス×月額$9が固定費として確実に溶ける計算になる。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-b">
+                    <div class="host-label host-b-label">🛡️ Host B (実務派システムアーキテクト)</div>
+                    <div>そのコストの壁は事実だな。個人やスモールスタートで検証するには、最低15ライセンスという縛りは確かに痛い。だが、これを「チーム全体のドキュメントナレッジ自動集約インフラ」として見立てるなら、月額固定費としてのROIは十分回収できる範囲だ。14日間の無料トライアル期間中に、計5,000ライセンスが無償で試せる仕様になっているから、まずはそこでAPIの挙動とデータソースのインジェクション精度を徹底的にストレステストするのが現実解だ。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-a">
+                    <div class="host-label host-a-label">⚡ Host A (現場懐疑派シニアエンジニア)</div>
+                    <div>無料トライアルで検証できるのはいいが、肝心のAPIの仕様はどうなんだよ？ ドシエのコードを見ると、データソースの削除（batchDelete）で「複数のデータソースを一括削除する場合はエラーになる可能性があるため、なるべく単体で削除することをおすすめします」ってサラッと書いてある。これ、バッチ処理でクリーンアップや動的更新を組もうとした瞬間に、平気でエラー爆死する設計の欠陥だろ。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-b">
+                    <div class="host-label host-b-label">🛡️ Host B (実務派システムアーキテクト)</div>
+                    <div>鋭いな。そこはまさに実装上の地雷だ。一括削除が不安定なら、非同期キューで単体削除を順次実行するラッパーを自前で実装するか、ノートブック自体の作成・破棄（batchDeleteによるノートブック単位の削除）をライフサイクル管理の単位にする設計に逃げるべきだな。データソース単位の細かい差分更新に頼るんじゃなくて、プロジェクト単位でスピンアップと破棄を回すアーキテクチャにすれば回避できる。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-a">
+                    <div class="host-label host-a-label">⚡ Host A (現場懐疑派シニアエンジニア)</div>
+                    <div>ノートブックの破棄と再生成でゴリ押すのかよ……。それに、取得できるノートブックリストの最大数が「最大500件」って制限もある。大規模なメディア運用や、何千本もの記事自動化パイプラインを回す現場なら、あっという間に上限にヒットしてインデックスが迷子になるぞ。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-b">
+                    <div class="host-label host-b-label">🛡️ Host B (実務派システムアーキテクト)</div>
+                    <div>だからこそ、すべての記事を1つのノートブックに放り込むような乱暴な設計にしちゃいけない。ジャンルやフェーズごとにノートブックIDを動的に切り替え、メタデータ（作成日や最終閲覧日、ユーザーロール）をAPI経由で取得・管理しながら、RAGのコンテキスト精度を維持する厳格なルーティング機構を組むんだ。AIに丸投げするんじゃなくて、パイプライン側でコンテキストを制御する。そこまでやって初めて、記事品質が「10倍」に跳ね上がるってわけだ。</div>
+                </div>
+                
+            <div class="pitfall-box">
+                <div class="pitfall-title">⚠️ 抽出された落とし穴・前提条件マトリクス (Pitfalls)</div>
+                <ul class="pitfall-list"><li>NotebookLMのAPI連携は無料版（×）やPro（×）では利用できず、Enterprise版およびGoogle Cloud契約が必須であること</li><li>利用料金は1ライセンスにつき月額$9であり、最低15ライセンスの契約が必要であること（14日間の無料トライアル期間中は計5,000ライセンスが無償提供される）</li><li>APIで取得できるノートブックのリスト表示上限は最大500件であること、およびデータソースの一括削除はエラー回避のため単体削除が推奨されていること</li></ul>
+            </div>
+            
+            <div class="pitfall-box" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+                <div class="pitfall-title" style="color: #c084fc;">⚖️ 本質的トレードオフ分析 (Core Trade-offs)</div>
+                <ul class="pitfall-list"><li>最低15ライセンスの縛りと月額$9の固定費：個人や小規模開発では検証段階からコストが確実に発生するトレードオフ</li><li>データソース一括削除（batchDelete）の不安定さ：動的な差分更新を組もうとするとエラーで爆死する実装上のリスク</li><li>ノートブックリスト上限500件の制約：大規模な自動化パイプライン運用においてインデックス管理が破綻する危険性</li></ul>
+            </div>
+            
+                <div class="chat-bubble chat-host-a">
+                    <div class="host-label host-a-label">⚡ Host A (現場懐疑派シニアエンジニア)</div>
+                    <div>「AIの書く記事は薄っぺらい」って現状を「NotebookLMで10倍に跳ね上げる」って謳い文句、どうせ誇大広告だろ？結局、API連携したところで、個人や小規模チームが使うにはライセンス費用で爆死するポイントが見え見えなんだが。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-b">
+                    <div class="host-label host-b-label">🛡️ Host B (実務派システムアーキテクト)</div>
+                    <div>確かに「10倍」という表現はマーケティング的だが、NotebookLMのRAG（Retrieval Augmented Generation）思想は、従来のAI記事の「薄っぺらさ」の根本原因である情報源の不明瞭さやハルシネーションを解決する。Enterprise版のAPI連携は、そのRAGを自律パイプラインに組み込むためのものだ。費用面では、最低15ライセンスで月額$135、年間約$1620は、記事生成をビジネスのコアとする企業であれば十分ROIが見込める範囲だ。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-a">
+                    <div class="host-label host-a-label">⚡ Host A (現場懐疑派シニアエンジニア)</div>
+                    <div>ROIって言うけど、その15ライセンス縛りが諸悪の根源だろ。個人クリエイターやスタートアップが気軽に試せない時点で導入障壁が高すぎる。それに、APIがまだ「v1alpha」ってことは、将来的に破壊的変更のリスクがあるってことだ。運用負荷で爆死する未来しか見えないぞ。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-b">
+                    <div class="host-label host-b-label">🛡️ Host B (実務派システムアーキテクト)</div>
+                    <div>個人や小規模であれば、NotebookLMを直接使うか、あるいはGemini APIを直接叩いてRAGを自前で組む選択肢も当然ある。NotebookLM Enterpriseは、あくまで大規模なドキュメント管理とRAGを統合したエンタープライズソリューションだ。v1alphaのリスクは承知の上で、14日間の無料トライアルで5,000ライセンスまで検証できる期間がある。その間に主要機能の安定性を見極め、変更に追従する設計を考慮すればいい。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-a">
+                    <div class="host-label host-a-label">⚡ Host A (現場懐疑派シニアエンジニア)</div>
+                    <div>しかし、データソースの一括削除が「エラーになる可能性があるため、なるべく単体で削除することをおすすめします」って、運用自動化の夢が早くも破綻してるじゃないか。しかも、Discovery Engine APIって結局、NotebookLMの裏側で動いてるGeminiをラップしてるだけじゃないのか？長大コンテキストって言っても、NotebookLMのソース登録数上限や実効コンテキストはどこまで保証されるんだ？</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-b">
+                    <div class="host-label host-b-label">🛡️ Host B (実務派システムアーキテクト)</div>
+                    <div>データソースの一括削除は確かに課題だが、エラーハンドリングを丁寧に行うか、あるいは逐次削除ロジックを実装することで回避可能だ。これは運用設計で吸収できる範囲。Discovery Engineは単なるラッパーではなく、Googleの高度な情報検索技術をNotebookLMに統合することで、大量のドキュメントから必要な情報を効率的かつ高精度に引き出す。Gemini 2.5の100万トークンコンテキストは、その引き出された情報をNotebookLMが文脈を失わずに理解し、質の高い記事を生成するための基盤となる。NotebookLMのデータソース上限もEnterprise版で5倍に拡張されている。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-a">
+                    <div class="host-label host-a-label">⚡ Host A (現場懐疑派シニアエンジニア)</div>
+                    <div>結局、人間がファクトチェックして、表現を練り直す手間は残るだろ？「自律自動化アーキテクチャ」とか言っても、最終的には人間の手作業がボトルネックになる。コストをかけても、その「10倍」の品質向上が本当に実現できるのか、現場レベルでは疑問符がつく。</div>
+                </div>
+                
+                <div class="chat-bubble chat-host-b">
+                    <div class="host-label host-b-label">🛡️ Host B (実務派システムアーキテクト)</div>
+                    <div>全くその通りだ。完全な自動化は現時点では幻想だが、AIが一次情報を網羅的に分析し、骨子を生成し、ファクトチェックを行うことで、人間の編集者は「薄っぺらい」下書きをゼロから作る労力から解放される。その分の時間を、より深い洞察や創造的な表現、ブランドイメージに合致したトーン＆マナーの調整に充てられる。結果として、記事の平均品質は間違いなく向上し、生成サイクルも短縮される。これは「記事品質の10倍」というよりは、「人間の創造性の10倍の解放」と捉えるべきだ。</div>
+                </div>
+                
+            <div class="pitfall-box">
+                <div class="pitfall-title">⚠️ 抽出された落とし穴・前提条件マトリクス (Pitfalls)</div>
+                <ul class="pitfall-list"><li>NotebookLMのAPI連携機能はEnterprise版のみで提供される。</li><li>NotebookLM for Enterpriseの利用にはGoogle Cloudへの登録とGemini Enterprise licensesの契約が必須である。</li><li>最低15ライセンスの契約が必要で、1ライセンスあたり月額$9の料金が発生する（年間契約で15%割引）。</li><li>APIは`v1alpha`バージョンで提供されており、データソースの一括削除（`batchDelete`）はエラーになる可能性がある。</li><li>14日間の無料トライアル期間があり、その間は最大5,000ライセンスを無償で利用可能である。</li></ul>
+            </div>
+            
+            <div class="pitfall-box" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+                <div class="pitfall-title" style="color: #c084fc;">⚖️ 本質的トレードオフ分析 (Core Trade-offs)</div>
+                <ul class="pitfall-list"><li>最低15ライセンス（月額$135、年間約$1620）という高額な初期費用が、個人クリエイターや中小企業にとっての導入障壁となる点。</li><li>APIがEnterprise版限定であり、Google Cloudへの登録、請求先アカウント設定、Gemini Enterprise licensesの購入が必須となる導入の複雑さと手間。</li><li>APIが`v1alpha`バージョンであることによる将来的な破壊的変更リスクと、データソースの`batchDelete`がエラーになる可能性が示唆する運用上の不安定性。</li><li>「長大コンテキスト（100万トークン）」は基盤モデルの能力だが、NotebookLM自体のデータソース上限（Enterprise版で5倍）や、API経由での実効コンテキストの取り扱いに限界がある可能性。</li><li>「記事品質10倍」はAIによる下書き生成・ファクトチェック支援の効率化を指し、最終的な高付加価値な品質向上は人間のレビューと編集に依存するハイブリッド運用が前提となる点。</li></ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-header">
+            <span class="panel-title">🚀 生成記事・成果物</span>
+        </div>
+        <div class="panel-body">
+            <div class="article-card">
+                <span class="source-badge" style="background: #065f46; color: #a7f3d0;">PUBLISHED • 2026-10-10</span>
+                <div class="article-title">『なぜAIの書く記事は「薄っぺらく、しょぼい」のか？NotebookLMの思想と豊富な情報源、辛口対話で記事品質を向上させる自律自動化アーキテクチャ』</div>
+                
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">20,000+</div>
+                        <div class="stat-label">HTML文字数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">6,500+</div>
+                        <div class="stat-label">Markdown文字数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">一次情報照合率</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">0%</div>
+                        <div class="stat-label">定型句水増し</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <a href="https://yamasan1969.hatenablog.com/entry/2026/10/10/062350" target="_blank" class="btn btn-primary" style="justify-content: center;">
+                        <span>はてなブログで読む ↗</span>
+                    </a>
+                    <a href="https://chnmotoTmz.github.io/posts/tech/2026-10-10-%E3%81%AA%E3%81%9CAI%E3%81%AE%E6%9B%B8%E3%81%8F%E8%A8%98%E4%BA%8B%E3%81%AF%E8%96%84%E3%81%A3%E3%81%BA%E3%82%89%E3%81%8F-%E3%81%97%E3%82%87%E3%81%BC%E3%81%84%E3%81%AE%E3%81%8B-NotebookLM%E3%81%AE%E6%80%9D%E6%83%B3%E3%81%A8%E8%B1%8A%E5%AF%8C%E3%81%AA%E6%83%85%E5%A0%B1%E6%BA%90-%E8%BE%9B%E5%8F%A3%E5%AF%BE%E8%A9%B1%E3%81%A7%E8%A8%98%E4%BA%8B%E5%93%81%E8%B3%AA%E3%82%92%E5%90%91%E4%B8%8A%E3%81%95%E3%81%9B%E3%82%8B%E8%87%AA.html" target="_blank" class="btn btn-secondary" style="justify-content: center;">
+                        <span>GitHub Pages版を見る ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="article-card" style="margin-top: 10px;">
+                <div style="font-size: 13px; font-weight: 600; color: #94a3b8; margin-bottom: 8px;">📁 内部データファイル</div>
+                <div style="font-size: 12px; font-family: monospace; color: #cbd5e1; word-break: break-all; background: #0f172a; padding: 10px; border-radius: 6px;">
+                    data/notebooks/ai_tech_trends.json
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
