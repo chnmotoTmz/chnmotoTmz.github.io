@@ -1,0 +1,313 @@
+<!--
+title: 世界モデルがヒューマノイド全身制御の壁を壊す——1000倍高速化の「SuperMimic」とNVIDIA「DreamZero」が示すフィジカルAIの現在地
+date: 2026-11-20
+description: SuperMimicとNVIDIA DreamZeroの一次資料から、世界モデルが全身制御とロボット操作をどう変えるか、成果・違い・限界を整理する。
+article_type: OBSERVATION
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界モデルがヒューマノイド全身制御の壁を壊す——1000倍高速化の「SuperMimic」とNVIDIA「DreamZero」が示すフィジカルAIの現在地 | Humanoid Media Factory</title>
+    <meta name="description" content="SuperMimicとNVIDIA DreamZeroの一次資料から、世界モデルが全身制御とロボット操作をどう変えるか、成果・違い・限界を整理する。">
+
+    <!-- SEO / Canonical / Robots -->
+    <link rel="canonical" href="https://chnmototmz.github.io/posts/humanoid/2026-11-20-%E4%B8%96%E7%95%8C%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8C%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%8E%E3%82%A4%E3%83%89%E5%85%A8%E8%BA%AB%E5%88%B6%E5%BE%A1%E3%81%AE%E5%A3%81%E3%82%92%E5%A3%8A%E3%81%991000%E5%80%8D%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AESuperMimic%E3%81%A8NVIDIADreamZero%E3%81%8C%E7%A4%BA%E3%81%99.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "世界モデルがヒューマノイド全身制御の壁を壊す——1000倍高速化の「SuperMimic」とNVIDIA「DreamZero」が示すフィジカルAIの現在地",
+      "description": "SuperMimicとNVIDIA DreamZeroの一次資料から、世界モデルが全身制御とロボット操作をどう変えるか、成果・違い・限界を整理する。",
+      "image": "https://b.blogmura.com/internet/generativeai/88_31.gif",
+      "author": {
+        "@type": "Person",
+        "name": "chnmotoTmz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Humanoid Media Factory",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://chnmototmz.github.io/images/2026年の決意-AI共生時代に刻む-後悔しない30年-への全力疾走.jpg"
+        }
+      },
+      "datePublished": "2026-11-20",
+      "dateModified": "2026-11-20",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://chnmototmz.github.io/posts/humanoid/2026-11-20-%E4%B8%96%E7%95%8C%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8C%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%8E%E3%82%A4%E3%83%89%E5%85%A8%E8%BA%AB%E5%88%B6%E5%BE%A1%E3%81%AE%E5%A3%81%E3%82%92%E5%A3%8A%E3%81%991000%E5%80%8D%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AESuperMimic%E3%81%A8NVIDIADreamZero%E3%81%8C%E7%A4%BA%E3%81%99.html"
+      }
+    }
+    </script>
+
+    <!-- OGP -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="世界モデルがヒューマノイド全身制御の壁を壊す——1000倍高速化の「SuperMimic」とNVIDIA「DreamZero」が示すフィジカルAIの現在地 | Humanoid Media Factory">
+    <meta property="og:description" content="SuperMimicとNVIDIA DreamZeroの一次資料から、世界モデルが全身制御とロボット操作をどう変えるか、成果・違い・限界を整理する。">
+    <meta property="og:url" content="https://chnmototmz.github.io/posts/humanoid/2026-11-20-%E4%B8%96%E7%95%8C%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8C%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%8E%E3%82%A4%E3%83%89%E5%85%A8%E8%BA%AB%E5%88%B6%E5%BE%A1%E3%81%AE%E5%A3%81%E3%82%92%E5%A3%8A%E3%81%991000%E5%80%8D%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AESuperMimic%E3%81%A8NVIDIADreamZero%E3%81%8C%E7%A4%BA%E3%81%99.html">
+    <meta property="og:image" content="https://b.blogmura.com/internet/generativeai/88_31.gif">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Humanoid Media Factory">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@chnmotoTmz">
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <script src="../../assets/components/site-header.js"></script>
+</head>
+<body class="humanoid-content">
+    
+<site-header prefix="../../"></site-header>
+
+
+    <div class="portal">
+        <div class="portal-layout">
+            
+<div class="left-col">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">主要カテゴリー</h3>
+        <ul class="ranking-list" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            <li><a href="../../posts/gadget/index.html">📱 ガジェット</a></li><li><a href="../../posts/diary/index.html">📁 Diary</a></li><li><a href="../../posts/adult/index.html">🔞 アダルト</a></li><li><a href="../../posts/art/index.html">🎨 アート・創作</a></li><li><a href="../../posts/education/index.html">📚 教育・学習</a></li><li><a href="../../posts/finance/index.html">💰 金融・投資</a></li><li><a href="../../posts/gourmet/index.html">🍽️ グルメ</a></li><li><a href="../../posts/humanoid/index.html">🤖 ロボット・AI</a></li><li><a href="../../posts/news/index.html">📰 ニュース・時事</a></li><li><a href="../../posts/relationships/index.html">❤️ 恋愛・人間関係</a></li><li><a href="../../posts/tech/index.html">💻 テクノロジー</a></li><li><a href="../../posts/travel/index.html">✈️ 旅行</a></li><li><a href="../../posts/uncategorized/index.html">📦 その他</a></li><li><a href="../../posts/wellness/index.html">🌿 健康・ウェルネス</a></li><li><a href="../../posts/lifestyle/index.html">📁 Lifestyle</a></li><li><a href="../../posts/monetization/index.html">📁 Monetization</a></li><li><a href="../../posts/hub/index.html">📁 Hub</a></li><li><a href="../../posts/sports/index.html">⚽ スポーツ</a></li><li><a href="../../posts/affiliate/index.html">💸 アフィリエイト</a></li><li><a href="../../posts/english/index.html">🔤 英語学習</a></li><li><a href="../../posts/family/index.html">📁 Family</a></li><li><a href="../../posts/sociology/index.html">📁 Sociology</a></li><li><a href="../../posts/curation/index.html">📁 Curation</a></li><li><a href="../../posts/entertainment/index.html">🍿 エンタメ</a></li><li><a href="../../posts/music/index.html">🎵 音楽</a></li><li><a href="../../posts/art/illustration/index.html">📁 Art/illustration</a></li><li><a href="../../posts/education/english/index.html">📁 Education/english</a></li><li><a href="../../posts/education/multilingual/index.html">📁 Education/multilingual</a></li><li><a href="../../posts/entertainment/anime/index.html">📁 Entertainment/anime</a></li><li><a href="../../posts/entertainment/game/index.html">📁 Entertainment/game</a></li><li><a href="../../posts/entertainment/movie/index.html">📁 Entertainment/movie</a></li><li><a href="../../posts/gourmet/recipe/index.html">📁 Gourmet/recipe</a></li><li><a href="../../posts/gourmet/restaurant/index.html">📁 Gourmet/restaurant</a></li><li><a href="../../posts/gourmet/sweets/index.html">📁 Gourmet/sweets</a></li><li><a href="../../posts/news/economy/index.html">📁 News/economy</a></li><li><a href="../../posts/news/entertainment/index.html">📁 News/entertainment</a></li><li><a href="../../posts/news/net/index.html">📁 News/net</a></li><li><a href="../../posts/news/world/index.html">📁 News/world</a></li><li><a href="../../posts/tech/ai/index.html">📁 Tech/ai</a></li><li><a href="../../posts/tech/gadget/index.html">📁 Tech/gadget</a></li><li><a href="../../posts/tech/robotics/index.html">📁 Tech/robotics</a></li><li><a href="../../posts/tech/video/index.html">📁 Tech/video</a></li><li><a href="../../posts/travel/gear/index.html">📁 Travel/gear</a></li><li><a href="../../posts/travel/hiking/index.html">📁 Travel/hiking</a></li><li><a href="../../posts/wellness/diet/index.html">📁 Wellness/diet</a></li><li><a href="../../posts/wellness/health/index.html">📁 Wellness/health</a></li><li><a href="../../posts/wellness/mental/index.html">📁 Wellness/mental</a></li><li><a href="../../posts/wellness/skincare/index.html">📁 Wellness/skincare</a></li><li><a href="../../posts/art/music/index.html">📁 Art/music</a></li><li><a href="../../posts/art/writing/index.html">📁 Art/writing</a></li><li><a href="../../posts/education/hack/index.html">📁 Education/hack</a></li><li><a href="../../posts/entertainment/youtube/index.html">📁 Entertainment/youtube</a></li><li><a href="../../posts/finance/crypto/index.html">📁 Finance/crypto</a></li><li><a href="../../posts/finance/news/index.html">📁 Finance/news</a></li><li><a href="../../posts/finance/saving/index.html">📁 Finance/saving</a></li><li><a href="../../posts/finance/stock/index.html">📁 Finance/stock</a></li><li><a href="../../posts/gourmet/sake/index.html">📁 Gourmet/sake</a></li><li><a href="../../posts/news/domestic/index.html">📁 News/domestic</a></li><li><a href="../../posts/tech/programming/index.html">📁 Tech/programming</a></li><li><a href="../../posts/travel/domestic/index.html">📁 Travel/domestic</a></li><li><a href="../../posts/travel/hotel/index.html">📁 Travel/hotel</a></li><li><a href="../../posts/travel/overseas/index.html">📁 Travel/overseas</a></li><li><a href="../../posts/occult/index.html">👽 オカルト</a></li><li><a href="../../posts/devlog/index.html">📝 開発ログ</a></li><li><a href="../../posts/rakuten/index.html">🛍️ 楽天・お得</a></li>
+        </ul>
+    </div>
+</div>
+
+
+            <main class="premium-article">
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style:none; padding:0; margin:0; display:flex; gap:8px;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="https://chnmototmz.github.io/posts/humanoid/index.html">
+                                <span itemprop="name">humanoid</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                        <li style="color:var(--muted);">&gt;</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name" style="color:var(--text-primary)">世界モデルがヒューマノイド全身制御の壁を壊す——1000倍高速化の「SuperMimic」とNVIDIA「DreamZero」が示すフィジカルAIの現在地</span>
+                            <meta itemprop="position" content="3" />
+                        </li>
+                    </ol>
+                </nav>
+
+                <h1>世界モデルがヒューマノイド全身制御の壁を壊す——1000倍高速化の「SuperMimic」とNVIDIA「DreamZero」が示すフィジカルAIの現在地</h1>
+
+                <div class="devlog-meta">
+                    <time>2026-11-20</time>
+                    <span class="separator">|</span>
+                    <span class="card__cat card__cat--small">OBSERVATION</span>
+                </div>
+
+                <article class="post-content">
+                    <header>
+            <div class="card__cat">OBSERVATION</div>
+            
+            <div class="meta-date">2026-11-20</div>
+        </header>
+        <div class="content">
+            <p>ヒューマノイドを人間のように歩かせ、走らせ、転びそうになったら立て直させる。そのための全身制御（Whole-Body Control、WBC）は、ロボットの多数の関節を一つの身体として協調させる技術です。</p>
+<p>今回見つけた日経クロステックの記事を起点に一次資料までたどると、「世界モデル」という同じ言葉の下で、性格の異なる二つの進歩が起きていることが分かります。一つは、ヒューマノイドの力学を学習して全身動作の訓練を軽くする <strong class="insight-bold">SuperMimic</strong>。もう一つは、未来の映像と行動を同時に予測して物体操作の汎化を狙うNVIDIAの <strong class="insight-bold">DreamZero</strong> です。</p>
+<p>先に重要な点を明確にしておきます。両者は同じシステムの上下層として接続された研究ではありません。扱う問題、入力、出力、評価対象が異なります。「将来は補完関係になり得る」という見方はできますが、現時点では設計上の可能性であり、実証済みの統合構成ではありません。</p>
+<h2>全身制御は、なぜ計算を大量に使うのか</h2>
+<p>ヒューマノイドは脚だけでなく、腰、胴体、腕、頭まで動かしてバランスを取ります。ある関節の動きが全身へ波及するため、制御器は「今この力を加えたら、少し先の身体はどう動くか」を考え続けなければなりません。</p>
+<p>従来の大規模なモーション追従では、モデルフリー強化学習を使い、シミュレータ内で膨大な試行錯誤を繰り返す方法が主流でした。性能は高くても、多数の動作へ広げるほど学習計算量が膨らみます。</p>
+<h2>SuperMimicが変えたのは「学習のしかた」</h2>
+<p><a href="https://arxiv.org/abs/2610.28480" target="_blank">SuperMimicの論文</a>は、標準的な剛体シミュレータから得た状態遷移を使い、ロボットの共通力学を表す単一の微分可能な世界モデルを学習します。その世界モデルとモーション追従ポリシーを同じループで訓練し、短い「想像上のロールアウト」に時間方向の誤差逆伝播（BPTT）をかけます。</p>
+<p>たとえるなら、従来法が何度も実際に転んで正解へ近づく方法だとすれば、SuperMimicは短い脳内シミュレーションを行い、「どの操作をどちらへ直せば誤差が減るか」という勾配を直接受け取る方法です。</p>
+<p>論文が報告した主な結果は次の通りです。</p>
+<ul>
+<li>単一GPUで3時間学習し、128基のGPUを7日間使った最先端ベースラインのリターンを上回った</li>
+<li>GPU時間を1000分の1以下に削減した</li>
+<li>12万9514件のベンチマーク動作のうち、3時間時点の失敗は25件。比較対象は179件だった</li>
+<li>2基のGPUで9.8時間学習すると、同ベンチマークで失敗ゼロになった</li>
+<li>学習したポリシーを実機のUnitree G1へ転移し、多様でアクロバティックな動作を確認した</li>
+</ul>
+<p>ここでいう「1000倍」は、<strong class="insight-bold">ロボットの動作速度や推論速度ではなく、比較対象に対する学習GPU時間の削減</strong>です。また、論文の成果は大規模なモーション追従に関するもので、家庭内のあらゆる作業を自律実行できるという意味ではありません。</p>
+<h2>DreamZeroは「未来の映像」と「行動」を一緒に出す</h2>
+<p><a href="https://dreamzero0.github.io/" target="_blank">DreamZeroの公式プロジェクト</a>と<a href="https://arxiv.org/abs/2602.15922" target="_blank">論文</a>が扱う中心課題は、全身のトルク制御ではなく、未知の物体や環境を含むロボット操作です。</p>
+<p>一般的なVision-Language-Action（VLA）モデルは、画像と言語指示から行動を出力します。DreamZeroは、事前学習済みの動画拡散モデルを基盤にした140億パラメータのWorld Action Model（WAM）で、未来の映像とロボットの行動を同時に予測します。「この動作を選ぶと世界がどう変化するか」を映像として学ぶことが、未知の動きへの手掛かりになるという発想です。</p>
+<p>公式発表では、実ロボット実験で未知のタスクと環境への汎化が最先端VLAに比べて2倍以上に向上しました。人や別のロボットによる10〜20分の映像だけを加えた転移では、未見タスクの性能が相対値で42％以上改善しました。新しいYAMロボットへは、30分、55軌道のプレイデータで適応しています。モデルとシステムの最適化によって推論を38倍高速化し、約7Hzの閉ループ制御も実現しました。コードとモデルは<a href="https://github.com/dreamzero0/dreamzero" target="_blank">公式GitHub</a>で公開されています。</p>
+<h2>7Hzを「軽量化」と読み違えてはいけない</h2>
+<p>DreamZeroの7Hzは大きな技術成果ですが、論文によれば実行には <strong class="insight-bold">2基のNVIDIA GB200</strong> を使用しています。現在のVLAが民生GPUで20Hzを超える場合があるのに対し、DreamZeroは140億パラメータと反復的なデノイジングのため、依然として計算負荷が高いと研究チーム自身が記しています。</p>
+<p>ほかにも、現在の視覚メモリーは約6秒の短期範囲であり、長時間の計画には別の上位プランナーか、より長い文脈が必要です。鍵の挿入や精密組み立てのようなサブセンチメートル精度の作業も課題として挙げられています。</p>
+<h2>二つの「世界モデル」は何が違うのか</h2>
+<ul>
+<li><strong class="insight-bold">SuperMimic</strong> は、関節状態や身体の力学を予測する微分可能モデルを訓練時に使い、全身モーション追従ポリシーを効率よく学習させる</li>
+<li><strong class="insight-bold">DreamZero</strong> は、カメラ映像、言語、自己状態から未来の映像と行動を同時生成し、未知の物体操作や環境への汎化を狙う</li>
+</ul>
+<p>同じ「世界モデル」でも、前者は身体の動力学と低レベル制御の学習、後者は視覚的な未来予測と操作行動の生成に重心があります。</p>
+<p>将来、DreamZeroのようなWAMが「何をどう操作するか」という短期の行動を提案し、SuperMimicのような技術で学習した全身制御器が、重心や接触を崩さずに身体を動かす構成は考えられます。ただし、これは二つの論文が示した統合結果ではなく、両研究から自然に導ける<strong class="insight-bold">工学上の仮説</strong>です。実際には、異なる行動表現の変換、制御周期の差、接触時の安全制約、実機上の計算資源を解かなければなりません。</p>
+<h2>いま確実に言えること</h2>
+<p>今回の進歩を「ロボットが人間のように何でもできるようになった」とまとめるのは早計です。一方で、二つのボトルネックが具体的に動いたことは確かです。</p>
+<p>SuperMimicは、大規模な全身モーション追従で学習計算量が支配的になる問題に対し、単一の微分可能世界モデルを共有する道を示しました。DreamZeroは、映像の未来予測と行動生成を一体化し、未知タスクや別の身体へ知識を移す道を示しました。</p>
+<p>「身体をどう安定して動かすか」と「未知の状況で何をするか」は、ヒューマノイド実用化に必要な別々の難問です。今回の二つの研究が面白いのは、その両側で世界モデルが単なる予測器ではなく、実際の制御ポリシーを学び、動かすための中核へ入り始めた点にあります。</p>
+<h2>参照した資料</h2>
+<ul>
+<li><a href="https://xtech.nikkei.com/atcl/nxt/mag/rob/18/012600001/00199/" target="_blank">日経クロステック：今回の調査の起点となった記事</a></li>
+<li><a href="https://arxiv.org/abs/2610.28480" target="_blank">SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model</a></li>
+<li><a href="https://dreamzero0.github.io/" target="_blank">DreamZero公式プロジェクト</a></li>
+<li><a href="https://arxiv.org/abs/2602.15922" target="_blank">World Action Models are Zero-shot Policies</a></li>
+<li><a href="https://github.com/dreamzero0/dreamzero" target="_blank">DreamZero公式コード</a></li>
+<li><a href="https://developer.nvidia.com/blog/pretrained-to-imagine-fine-tuned-to-act-the-rise-of-world-action-models/" target="_blank">NVIDIA Technical Blog: The Rise of World-Action Models</a></li>
+</ul>
+                </article>
+
+                <!-- Next/Prev Navigation -->
+                <nav class="post-nav">
+                    <div class="post-nav__item">
+                        
+                            <span class="post-nav__label">← Previous</span>
+                            <a href="../../posts/uncategorized/2026-11-20-In-Flight-Title.html" class="post-nav__link">In Flight Title</a>
+                        
+                    </div>
+                    <div class="post-nav__item" style="text-align:right;">
+                        
+                            <span class="post-nav__label">Next →</span>
+                            <a href="../../posts/gadget/2026-11-20-神Webツール深掘り月額課金Photoshopはもう不要-ブラウザだけでプロ級画像編集ができるPhotopeaがエンジニ.html" class="post-nav__link">【神Webツール深掘り】月額課金Photoshopはもう不要？ブラウザだけでプロ級画像編集ができる「Photopea」がエンジニア・ブロガーの最強武器になる理由</a>
+                        
+                    </div>
+                </nav>
+
+                <!-- Related Posts -->
+                
+                <section class="related-posts">
+                    <h3 class="related-posts__title">Related Stories</h3>
+                    <div class="related-grid">
+                        
+                            <a href="../../posts/humanoid/2026-11-22-Humanoid-2026-Microsoft-GraphRAG-vs-従来型ベクトルRAG-社内非構造化ドキュメント検.html" class="related-card">
+                                <h4 class="related-card__title">Humanoid 2026: Microsoft GraphRAG vs 従来型ベクトルRAG 社内非構造化ドキュメント検索の精度と構築コストの比較検証</h4>
+                                <time class="related-card__date">2026-11-22</time>
+                            </a>
+                        
+                            <a href="../../posts/humanoid/2026-11-03-4万円のベア損失を買い物に換算したら-冬の勝負服の選び方が決まった.html" class="related-card">
+                                <h4 class="related-card__title">4万円のベア損失を買い物に換算したら、冬の勝負服の選び方が決まった</h4>
+                                <time class="related-card__date">2026-11-03</time>
+                            </a>
+                        
+                            <a href="../../posts/humanoid/2026-11-01-Humanoid-2026-ボストン-ダイナミクス新型電動Atlasに見る油圧から全電動化への劇的シフトの理由.html" class="related-card">
+                                <h4 class="related-card__title">Humanoid 2026: ボストン・ダイナミクス新型電動Atlasに見る油圧から全電動化への劇的シフトの理由</h4>
+                                <time class="related-card__date">2026-11-01</time>
+                            </a>
+                        
+                    </div>
+                </section>
+                
+            </main>
+
+            
+<aside class="sidebar">
+    <div class="sidebar-box">
+        <h3 class="sidebar-title">アクセスランキング</h3>
+        <ul class="ranking-list">
+            
+                <li>
+                    <span class="ranking-number">1</span>
+                    <a href="../../posts/gadget/2026-11-27-Anker-Prime-Wall-Charger-67Wは買いか-移動の荷物を減らす3ポート充電器を徹底検証.html">Anker Prime Wall Charger (67W)は買いか？移動の荷物を減らす3ポート充電器を徹底検証</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">2</span>
+                    <a href="../../posts/diary/2026-11-24-秋晴れの築地散策築地本願寺の荘厳な佇まいとAI映画制作の衝動56歳現役エンジニア-古刹の静寂から次なる表現へ挑む.html">【秋晴れの築地散策】築地本願寺の荘厳な佇まいとAI映画制作の衝動——56歳現役エンジニア、古刹の静寂から次なる表現へ挑む</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">3</span>
+                    <a href="../../posts/diary/2026-11-24-築地散策大波を鎮めた波除稲荷の厄除天井大獅子に祈る荒波を乗り越える56歳現役エンジニアの仕事と人生.html">【築地散策】大波を鎮めた「波除稲荷」の厄除天井大獅子に祈る——荒波を乗り越える56歳現役エンジニアの仕事と人生</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">4</span>
+                    <a href="../../posts/adult/2026-11-22-家族-親-介護-世代のリアル-噛む力が弱った親のやわらか食と育ち盛りの家族の食事を別々に作る限界に-市販のムース食-やわ.html">家族・親・介護・世代のリアル: 噛む力が弱った親のやわらか食と育ち盛りの家族の食事を別々に作る限界に、市販のムース食・やわらか宅配食と通常のミールキットを併用する場合の1ヶ</a>
+                </li>
+            
+                <li>
+                    <span class="ranking-number">5</span>
+                    <a href="../../posts/adult/2026-11-22-家族-親-介護-世代のリアル-在宅介護とパート勤務を両立する40代-50代のための介護休業給付金とショートステイ短期入所.html">家族・親・介護・世代のリアル: 在宅介護とパート勤務を両立する40代・50代のための「介護休業給付金」と「ショートステイ（短期入所生活介護）」の活用条件・自己負担額の目安ま</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="sidebar-box sidebar-box--highlight">
+        <h3 class="sidebar-title">注目トピック</h3>
+        <div class="topic-list">
+            <span class="badge topic-badge">#Humanoid</span>
+            <span class="badge topic-badge">#AI_DX</span>
+            <span class="badge topic-badge">#Robotics</span>
+        </div>
+    </div>
+    <div class="sidebar-box" style="text-align: center; padding-top: 15px; border-top: 1px dashed var(--rule); margin-top: 20px;">
+        <a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank"><img src="https://b.blogmura.com/internet/generativeai/88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 ネットブログ ChatGPT・生成AIへ" /></a><br /><a href="https://internet.blogmura.com/generativeai/ranking/in?p_cid=11215182" target="_blank" style="font-size: 10px; color: var(--muted); text-decoration: none;">にほんブログ村</a>
+    </div>
+</aside>
+
+        </div>
+    </div>
+
+    
+<footer class="site-footer" style="background:#0d0d1a; border-top:1px solid #2d2d5e; padding:2.5rem 1rem; text-align:center; margin-top:3rem;">
+  <div class="site-footer__inner" style="max-width:800px; margin:0 auto;">
+    <div class="newsletter-signup">
+      <h3 style="color:#e0e0e0; margin-bottom:0.5rem;">📬 メールマガジン登録</h3>
+      <p style="color:#888;">ヒューマノイド・AI・開発の最新情報をお届けします</p>
+      <form id="newsletter-form" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+        <input type="email" id="newsletter-email" placeholder="メールアドレスを入力..." style="padding:0.6rem 1rem; border:1px solid #4a4a8e; background:#1a1a2e; color:#e0e0e0; border-radius:4px; min-width:260px;" required>
+        <button type="submit" id="newsletter-btn" style="padding:0.6rem 1.2rem; background:linear-gradient(135deg,#2d2d5e,#1a1a2e); color:#a0a0ff; border:1px solid #4a4a8e; border-radius:4px; cursor:pointer; font-weight:600;">登録する</button>
+      </form>
+      <div id="newsletter-msg" style="margin-top:0.75rem; font-size:0.9rem; min-height:1.2em;"></div>
+    </div>
+    <div class="footer-links" style="display:flex; justify-content:center; gap:20px; margin-top:1.5rem; font-size:0.85rem; color:#888;">
+        <a href="../../about.html" style="color:#a0a0ff;">About Us</a>
+        <a href="../../partnership.html" style="color:#a0a0ff;">Contact</a>
+        <span>&copy; 2026 Humanoid Media Factory</span>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var SUBSCRIBE_API = 'https://eda5-2404-7a84-87c0-1800-c1f6-e390-d7bf-39f7.ngrok-free.app/api/subscribe';
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email  = document.getElementById('newsletter-email').value.trim();
+          var msgEl  = document.getElementById('newsletter-msg');
+          var btn    = document.getElementById('newsletter-btn');
+          btn.disabled = true;
+          msgEl.style.color = '#a0a0ff';
+          msgEl.textContent = '送信中...';
+          try {
+            var res = await fetch(SUBSCRIBE_API, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1'},
+              body: JSON.stringify({email: email})
+            });
+            var data = await res.json();
+            msgEl.style.color = data.success ? '#6fcf6f' : '#cf6f6f';
+            msgEl.textContent = data.message || (data.success ? '登録しました！' : 'エラーが発生しました');
+          } catch(err) {
+            msgEl.style.color = '#cf6f6f';
+            msgEl.textContent = 'サーバーに接続できませんでした: ' + err.message;
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    }
+  })();
+  </script>
+</footer>
+
+</body>
+</html>
